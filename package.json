@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aoi.js": "^5.1.2",
+    "aoi.js-light": "^1.1.0"
+  }
+}
