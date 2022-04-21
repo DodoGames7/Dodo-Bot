@@ -1,7 +1,7 @@
 module.exports ={
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 1.5.3 (2022 Apr 14th)**]
+  code: `$title[1;** ⚙️Version: 1.5.4 (2022 Apr 18th)**]
 $description[1;
 **Changes**
  ↪️ brought back timeout feature
