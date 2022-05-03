@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "aoi.js": "^5.1.2",
-    "aoi.js-light": "^1.1.0"
+    "discord-gamecord": "^2.0.0",
+    "leaf-utils": "^1.1.2"
   }
 }
