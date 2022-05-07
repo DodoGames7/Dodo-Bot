@@ -1,7 +1,25 @@
 {
+  "name": "dodogames",
+  "version": "1.6.1-test",
+  "description": "a test package",
+  "main": "index.js",
   "dependencies": {
-    "aoi.js": "^5.1.2",
+    "discord.js": "^13.6.0",
+    "fs": "^0.0.2",
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.1",
     "discord-gamecord": "^2.0.0",
     "leaf-utils": "^1.1.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=16.x"
+  },
+  "author": "dodo",
+  "license": "ISC"
 }
