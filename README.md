@@ -18,3 +18,16 @@ after filling everything, make sure to invite your bot to the server where it ha
 node deploy-commands.js
 ```
 once it sends "Successfully registered application commands.", then you're good to go!
+# packages
+[@discordjs/builders](https://www.npmjs.com/package/@discordjs/builders): used to build slash commands, version: 0.13.0
+
+[@discordjs/rest](https://www.npmjs.com/package/@discordjs/rest): a rest api for discord.js library, version: 0.4.1
+
+[discord-api-types](https://www.npmjs.com/package/discord-api-types): a package to import the api version from discord, version: 0.32.1
+
+[discord-gamecord](https://www.npmjs.com/package/discord-gamecord): a package that's used to implement possible mini games, version: 2.0.0
+
+[leaf-utils](https://www.npmjs.com/package/leaf-utils): a package that used to implement some fun commands such as `/meme`, version: 1.1.2
+
+# Credits
+this bot code was mostly taken from [discord.js's guide](https://github.com/discordjs/guide), but modified to include some nice commands, etc
