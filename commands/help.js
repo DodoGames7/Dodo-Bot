@@ -18,7 +18,7 @@ module.exports = {
 
         const page2 = new Discord.MessageEmbed()
             .setTitle("Fun Commands")
-            .setDescription('snake\n c4\n ttt\n rps\n meme')
+            .setDescription('snake\n c4\n ttt\n rps\n meme\n akin')
             .setColor('RANDOM')
             .setFooter('page 2/3')
             .setTimestamp()
