@@ -9,8 +9,8 @@ module.exports = {
     async execute(interaction) {
     const embedver = new Discord.MessageEmbed()
     .setAuthor('made in djs', 'https://i.imgur.com/AfFp7pu.png')
-    .setTitle('Version 1.6.1-test')
-    .setDescription('help command is now using pages with buttons!\nadded meme command!')
+    .setTitle('Version 1.6.2-test')
+    .setDescription('added akinator game `\\akin`')
     .setColor('RANDOM');
 		return interaction.reply({ embeds: [embedver] });
 	},
