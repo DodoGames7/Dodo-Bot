@@ -1,6 +1,6 @@
 {
   "name": "dodogames",
-  "version": "1.6.1-test",
+  "version": "1.6.2-test",
   "description": "a test package",
   "main": "index.js",
   "dependencies": {
@@ -10,7 +10,8 @@
     "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.32.1",
     "discord-gamecord": "^2.0.0",
-    "leaf-utils": "^1.1.2"
+    "leaf-utils": "^1.1.2",
+    "discord.js-akinator": "^3.4.3"
   },
   "devDependencies": {},
   "scripts": {
