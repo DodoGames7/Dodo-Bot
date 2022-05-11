@@ -21,3 +21,8 @@ however you are allowed to:
 
 2. reporting bugs in the bot
 
+# Packages
+
+[discord-gamecord](https://www.npmjs.com/package/discord-gamecord)
+
+[leaf-utils](https://www.npmjs.com/package/leaf-utils)
