@@ -2,6 +2,7 @@ module.exports = {
   name: "trivia",
   aliases:["triv"],
   code: `$djsEval[const { Trivia } = require('discord-gamecord')
+
 new Trivia({
   message: message,
   slash_command: false,

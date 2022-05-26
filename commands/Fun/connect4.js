@@ -1,7 +1,8 @@
 module.exports = {
   name: "connectfour",
-  aliases:["connec4", "connect4", "c4"],
+  aliases:["connec4", "connect4","c4"],
   code: `$djsEval[const { Connect4 } = require('discord-gamecord')
+
 new Connect4({
   message: message,
   slash_command: false,
