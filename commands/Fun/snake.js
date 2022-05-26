@@ -1,6 +1,7 @@
 module.exports = {
   name: "snake",
   code: `$djsEval[const { Snake } = require('leaf-utils');
+
  new Snake({
             message: message,
             slash_command: false,

@@ -1,7 +1,17 @@
 {
+  "name": "Dodo-Bot",
+  "version": "1.5.7",
+  "description": "What am I about?",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "aoi.js": "^5.1.2",
     "discord-gamecord": "^2.0.0",
     "leaf-utils": "^1.1.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

@@ -1,12 +1,13 @@
 module.exports = {
-name: "rps",
-code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord')
+  name: "rps",
+  code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord')
+
 new RockPaperScissors({
   message: message,
   slash_command: false,
   opponent: message.mentions.users.first(),
   embed: {
-    title: 'Rock Paper Scissors',
+    title: 'RPS',
     description: 'Press a button below to make a choice!',
     color: '#5865F2',
   },
@@ -31,4 +32,4 @@ new RockPaperScissors({
   gameEndMessage: 'The game went unfinished :(',
 }).startGame();]
 $argsCheck[1;mention someone to play?]`
-}
+} // plays Rps game
