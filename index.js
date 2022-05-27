@@ -2,7 +2,7 @@ const aoijs = require('aoi.js')
 
 
 const bot = new aoijs.Bot({
-   token: process.env.TOKENTEST,
+   token: process.env.TOKEN,
  //Discord Bot Token, (ofc it's hidden what did you expect)
    prefix: ["+", "$getServerVar[prefix]"],  //Discord Bot Prefix
    intents: "all"
