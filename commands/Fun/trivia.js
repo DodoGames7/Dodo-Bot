@@ -1,7 +1,9 @@
 module.exports = {
   name: "trivia",
   aliases:["triv"],
-  code: `$djsEval[const { Trivia } = require('discord-gamecord')
+  code: `
+$cooldown[3s;you need to wait %time% before running this again]
+$djsEval[const { Trivia } = require('discord-gamecord')
 
 new Trivia({
   message: message,

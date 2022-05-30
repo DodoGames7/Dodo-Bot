@@ -11,8 +11,8 @@ const bot = new aoijs.Bot({
 
 
 bot.variables({
-prefix: "",
-var2: "value2"
+prefix: "no prefix set",
+reportlogs: "none"
 })
 
 bot.onInteractionCreate() // allows making interactions command work
