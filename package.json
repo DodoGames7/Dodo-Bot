@@ -7,9 +7,9 @@
     "start": "node ."
   },
   "dependencies": {
-    "aoi.js": "^5.1.2",
+    "aoi.js": "^5.2.0",
     "discord-gamecord": "^2.0.0",
-    "discord.js-akinator": "^3.4.4",
+    "discord.js-akinator": "^3.4.5",
     "leaf-utils": "^1.1.2",
     "aoi.js-plugins": "^1.6.2"
   },
