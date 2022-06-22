@@ -12,11 +12,9 @@ const bot = new aoijs.Bot({
 
 bot.variables({
 prefix: "+",
-reportlogs: "none",
 trivia_game_mode: "medium",
 akin_buttons: "false",
 akin_gametype: "character",
-warns: "0"
 })
 
 bot.onInteractionCreate() // allows making interactions command work
