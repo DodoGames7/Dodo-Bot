@@ -6,6 +6,8 @@ module.exports = {
   $addField[1;Views (temp);$getObjectProperty[views.short]]
   $addField[1;Published at;$getObjectProperty[publishedtime];yes]
   $addField[1;ID;$getObjectProperty[id];yes]
-  $thumbnail[1;$getObjectProperty[thumbnails.url.1]]
-  $createObject[$jsonRequest[https://apiv2.spapi.ga/fun/ytvinfo?search=$message;;could not find that video name]`
+  $thumbnail[1;$getObjectProperty[thumbnails[0].url]]
+  $onlyIf[$getObjectProperty[title]!=undefined;could not find what you're looking for]
+  $createObject[$jsonRequest[https://apiv2.spapi.ga/fun/ytvinfo?search=$message]
+  $onlyIf[$message!=;provide something to search for yt video]`
 }
