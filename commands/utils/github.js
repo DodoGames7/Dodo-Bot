@@ -6,13 +6,13 @@ module.exports = {
   $addField[1;Followers;$getObjectProperty[followers];yes]
   $addField[1;Following;$getObjectProperty[following];yes]
   $addField[1;Created At;$getObjectProperty[created_at];yes]
-  $thumbnail[1;$getobjectProperty[avatar]]
   $addField[1;company;$getobjectProperty[company];yes]
   $addField[1;Email;$getobjectProperty[email];yes]
   $addField[1;Bio;$getobjectProperty[bio];yes]
   $addField[1;location;$getobjectproperty[location];yes]
+  $thumbnail[1;$getobjectProperty[avatar]]
+  $onlyIf[$getObjectProperty[name]!=undefined;something went wrong, maybe a api error or the user doesn't exist]
   $createObject[$jsonRequest[https://api.popcat.xyz/github/$noMentionMessage]
-  $suppressErrors[something went wrong, maybe a api error or the user doesn't exist]
-  $argsCheck[1;give me a github username to search]
+  $onlyIf[$noMentionMessage!=;give me a github username to search]
   `
 }
