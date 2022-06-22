@@ -4,15 +4,19 @@ const aoijs = require('aoi.js')
 const bot = new aoijs.Bot({
    token: process.env.TOKEN,
  //Discord Bot Token, (ofc it's hidden what did you expect)
-   prefix: ["+", "$getServerVar[prefix]"],  //Discord Bot Prefix
+   prefix: ["$getServerVar[prefix]", "<@$clientID>"],  //Discord Bot Prefix
    intents: "all"
  })
 
 
 
 bot.variables({
-prefix: "",
-var2: "value2"
+prefix: "+",
+reportlogs: "none",
+trivia_game_mode: "medium",
+akin_buttons: "false",
+akin_gametype: "character",
+warns: "0"
 })
 
 bot.onInteractionCreate() // allows making interactions command work
