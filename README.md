@@ -1,3 +1,6 @@
+# important
+the [main](https://github.com/DodoGames7/Dodo-Bot/tree/main) github branch has been deprecated due to stablity problems of the bot, for more info see this [issue](https://github.com/DodoGames7/Dodo-Bot/issues/3)
+
 # disclaimer
 this is currently in development, along with epik man project, so stay tuned for Updates! ❤
 
@@ -49,4 +52,9 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 [discord-gamecord](https://www.npmjs.com/package/discord-gamecord)
 
 [leaf-utils](https://www.npmjs.com/package/leaf-utils)
+
+[discord.js-akinator](https://www.npmjs.com/package/discord.js-akinator)
+
+[aoi.js-plugins](https://www.npmjs.com/package/aoi.js-plugins)
+
 
