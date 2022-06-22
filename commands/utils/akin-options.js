@@ -8,5 +8,6 @@ module.exports = {
 $editIn[2m; {
  "embeds" : "{newEmbed:{title:Akinator Options}{description:you can customize options of akinator game, use buttons below to select what do you want to change}}" ,
  "components" : "{actionRow:{button:Use Buttons:primary:useakinbuttons:yes}{button:Game Mode:primary:akingamemode:yes}{button:language (WIP):secondary:akinlanguage:yes}}"
- }]`
+ }]
+ $onlyPerms[manageserver;you need \`MANAGE_SERVER\` permission in order to use this]`
 }
