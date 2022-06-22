@@ -2,6 +2,7 @@ module.exports = {
 name: "stats",
 code: `$title[1;$username[$clientID] stats]
 $addField[1;Dependencies;$packageDependencies;no]
+$addField[1;Node.js;\`$nodeVersion\`;yes]
 $addField[1;Server Count;$serverCount;yes]
 $addField[1;Aoi.js;\`$packageVersion\`;yes]
 $addField[1;Uptime;$uptime;yes]

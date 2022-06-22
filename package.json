@@ -1,6 +1,6 @@
 {
-  "name": "Dodo-Bot",
-  "version": "1.5.7",
+  "name": "Dodo-Dev",
+  "version": "1.5.8",
   "description": "What am I about?",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,14 @@
   "dependencies": {
     "aoi.js": "^5.1.2",
     "discord-gamecord": "^2.0.0",
-    "leaf-utils": "^1.1.2"
+    "discord.js-akinator": "^3.4.4",
+    "leaf-utils": "^1.1.2",
+    "aoi.js-plugins": "^1.6.2"
   },
   "engines": {
     "node": "16.x"
+  },
+  "devDependencies": {
+    "node": "^16.13.2"
   }
 }

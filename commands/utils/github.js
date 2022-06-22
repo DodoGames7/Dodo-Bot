@@ -11,7 +11,7 @@ module.exports = {
   $addField[1;Email;$getobjectProperty[email];yes]
   $addField[1;Bio;$getobjectProperty[bio];yes]
   $addField[1;location;$getobjectproperty[location];yes]
-  $createObject[$jsonRequest[https://api.popcat.xyz/github/$message]
+  $createObject[$jsonRequest[https://api.popcat.xyz/github/$noMentionMessage]
   $suppressErrors[something went wrong, maybe a api error or the user doesn't exist]
   $argsCheck[1;give me a github username to search]
   `

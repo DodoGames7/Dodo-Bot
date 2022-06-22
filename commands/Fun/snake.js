@@ -7,7 +7,7 @@ module.exports = {
             slash_command: false,
             snake: {
                 head: '🟢',
-                body: '🟩',
+                body: '🟢',
                 tail: '🟢',
                 over: '💀'
             },
