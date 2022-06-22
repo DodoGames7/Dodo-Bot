@@ -22,8 +22,10 @@ fixed almost all of image commands and text modifyers commands
 fixed whole kick command (now working again but different this time)
 fixed prefix system being broken ;/
 fixed trivia command being leading to an error code if spammed by adding cooldown for 3 seconds
+fixed almost all api commands like \`github\` and \`npm\` being not returning an error if no results found by what the member searched for
 
 **other**
+added youtube info command \`youtube-info\`, for now it doesn't return much info about an video
 added support command (it just dms you the invite of support server for dodo bot)
 added say command \`say\`
 added avatar command
@@ -37,7 +39,6 @@ akinator game with buttons disabled will not work if the user have disabled \`MA
 
 using bot mention as a prefix affects half of the image commands (only commands that takes user's avatar like \`wasted\`)
 
-npm command with different api this time does not respond if there's no results for the author searched for, also it might return "undefined" for some certain packages in some details
 
 ]
 $color[1;#673ab7]`
