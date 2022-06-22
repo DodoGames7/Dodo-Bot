@@ -9,9 +9,9 @@ module.exports = {
   $addField[1;version;$getObjectProperty[package.version];yes]
   $addField[1;description;$getObjectProperty[package.description];yes]
   $addField[1;author;$getObjectProperty[package.author.name];yes]
+  $onlyIf[$getObjectProperty[package.name]!=undefined;cannot find that package name]
   $createObject[$jsonRequest[https://apiv1.spapi.ga/fun/npm?pkg=$noMentionMessage]
-  $argsCheck[1;give me a package name to search]
+  $onlyIf[$noMentionMessage!=;give me a package name to search]
   $onlyif[$checkcontains[$toLowercase[$noMentionMessage];nsfw-test-word]==false;{newEmbed:{title: NSFW DETECTED}{description: you can't search for nsfw npm packages, Dodo bot attempts to be clean to users without any 18+ content, not for your bad needs}}]
-  $suppressErrors[cannot find that package name]
   $color[1;RANDOM]`
 }
