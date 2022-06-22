@@ -2,7 +2,7 @@ module.exports = {
 name:"kick",
 aliases: "gtfo",
 usage: "kick < userID > < reason >",
-code: ` $kick[$findMember[$message[1];yes];$guildID;0;$if[$messageslice[1]==;No reason provided;$messageslice[1]]]
+code: ` $kick[$guildID;$findMember[$message[1];yes];0;$if[$messageslice[1]==;No reason provided;$messageslice[1]]]
 $author[1;Member kicked;$authorAvatar]
 $color[1;DEFAULT]
 $description[1;**$username** **kicked user \`$userTag[$findMember[$message[1];yes]]\`
@@ -19,4 +19,4 @@ $onlyIf[$hasPerms[$guildid;$authorid;kick]==true;**$username** You are missing *
 $onlyIf[$hasPerms[$guildid;$clientid;kick]==true;**$username** I am missing **\`kick\`** permission]
 $argsCheck[>0; **Correct usage: \`\`\`js
 $getservervar[prefix]$commandname < @user > < reason >\`\`\`]
-`}
+`} // credit: https://github.com/Snipedprox/Flare/blob/main/commands/moderation/kick.js
