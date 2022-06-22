@@ -1,10 +1,9 @@
 module.exports ={
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 1.5.8 (2022 june 9th)** (BETA)]
+  code: `$title[1;** ⚙️Version: 1.5.8 (2022 june 22th)**]
 $description[1;
-**IMPORTANT**
-this release isn't currently fully finished, also not stable sometimes, report any bugs with \`report\` command
+long time ago since the open source version wasn't updated, this update has huge improvements and bug fixes to the bot
 
 **changes**
 commands with buttons now automatically disable itself after certain of time of inactivity not just in mini games...
@@ -15,11 +14,14 @@ added a option to set difficulty of trivia \`set-trivia-mode\`
 removed squares from snake game
 added 5 image commands \`drip\` \`ss\`, \`changemymind\`, \`emergencymeeting\` and \`tweet\`
 added 2048 game \`2048\`
+update to aoi.js 5.2 release
 
 **fixes**
 fixed reverse command being not allowing user to put space after typing the first letter
 fixed almost all of image commands and text modifyers commands
 fixed whole kick command (now working again but different this time)
+fixed prefix system being broken ;/
+fixed trivia command being leading to an error code if spammed by adding cooldown for 3 seconds
 
 **other**
 added support command (it just dms you the invite of support server for dodo bot)
