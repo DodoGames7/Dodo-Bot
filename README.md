@@ -47,6 +47,11 @@ NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking h
 # reporting bugs
 if you have a problem or some broken stuff you found, then you're welcome to open a pull request, before opening, make sure to double check if your fix is working, and if everything works fine then you can go ahead to open a pr request (i will also give credits if you got approved)
 
+# branches
+djs-v13: experimental version of the bot, slash command only
+main: deprecated, should not be used
+final: actively maintained and up to date with aoi.js changes
+
 # Packages
 
 [discord-gamecord](https://www.npmjs.com/package/discord-gamecord)
