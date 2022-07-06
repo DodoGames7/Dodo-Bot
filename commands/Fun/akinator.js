@@ -4,7 +4,7 @@ module.exports = {
   code: `$djsEval[
   const akinator = require("discord.js-akinator");
 
-const language = "en";
+const language = "$getServerVar[akin_language]";
 const childMode = true;
 const gameType = "$getServerVar[akin_gametype]";
 const useButtons = $getServerVar[akin_buttons];
