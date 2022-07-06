@@ -49,6 +49,7 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 
 # branches
 * **djs-v13** - experimental version of the bot, slash command only
+* **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **main** - deprecated, should not be used
 * **final** - actively maintained and up to date with aoi.js changes
 
