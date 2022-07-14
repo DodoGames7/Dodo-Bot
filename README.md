@@ -1,3 +1,6 @@
+# warning
+this version will not be actively maintained for a while, you should use aoi.js version isntead
+
 # notice
 this version of Dodo bot is currently very experimental, based on my current javascript knowledge, i had to use other packages for possible mini games, i am currently working on this as soon as i have time enough
 
