@@ -51,6 +51,7 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 * **djs-v13** - experimental version of the bot, slash command only
 * **main** - deprecated, should not be used
 * **final** - actively maintained and up to date with aoi.js changes
+* **v2** - the upcoming version of the bot, soon will be rewriten
 
 # Packages
 
@@ -60,6 +61,6 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 
 [discord.js-akinator](https://www.npmjs.com/package/discord.js-akinator)
 
-[aoi.js-plugins](https://www.npmjs.com/package/aoi.js-plugins)
+
 
 
