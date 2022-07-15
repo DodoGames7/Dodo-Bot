@@ -32,7 +32,7 @@ reminder: if you have deployed the bot to railway or heroku, then be aware that 
 
 if you're using glitch, replit:
 
-when cloning the bot code from this repo, add a variable named `TOKEN` to .env file, you can also change the custom prefix in the main bot file, in fact you're free to change anything in the bot code as long as you know what are you doing
+when cloning the bot code from this repo, add a variable named `TOKEN` to .env file, you can also change the custom prefix in the variables file, in fact you're free to change anything in the bot code as long as you know what are you doing
 
 if you're using railway:
 
@@ -50,6 +50,7 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 # branches
 * **djs-v13** - experimental version of the bot, slash command only
 * **main** - deprecated, should not be used
+* **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **final** - actively maintained and up to date with aoi.js changes
 * **v2** - the upcoming version of the bot, soon will be rewriten
 
