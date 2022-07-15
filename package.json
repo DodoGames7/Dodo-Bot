@@ -10,8 +10,7 @@
     "aoi.js": "^5.5.0",
     "discord-gamecord": "^2.0.0",
     "discord.js-akinator": "^3.4.5",
-    "leaf-utils": "^1.1.3",
-    "aoi.js-plugins": "^1.6.2"
+    "leaf-utils": "^1.1.3"
   },
   "engines": {
     "node": "16.x"
