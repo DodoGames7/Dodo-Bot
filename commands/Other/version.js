@@ -22,7 +22,7 @@ fixed 8ball command being suddenly stopped working
 fixed support command being broken if user has dms closed
 
 **other**
-added caluatolator command \`&calculator\`
+added calculator command \`&calculator\`
 added credits command \`credits\`
 
 *will list other changes soon*
