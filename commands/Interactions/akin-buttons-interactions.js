@@ -34,5 +34,5 @@ code: `$interactionUpdate[;{newEmbed:{title:Use Buttons Option}{description:succ
   name: "backakinoption",
   type: "interaction",
   prototype: "button",
-  code: `$interactionUpdate[;{newEmbed:{title:Akinator Options}{description:you can customize options of akinator game, use buttons below to select what do you want to change}};{actionRow:{button:Use Buttons:primary:useakinbuttons:no}{button:Game Mode:primary:akingamemode:no}{button:language (WIP):secondary:akinlanguage:yes}};;no]`
+  code: `$interactionUpdate[;{newEmbed:{title:Akinator Options}{description:you can customize options of akinator game, use buttons below to select what do you want to change}};{actionRow:{button:Use Buttons:primary:useakinbuttons:no}{button:Game Mode:primary:akingamemode:no}{button:language:primary:akinlanguage:no}};;no]`
 }]
