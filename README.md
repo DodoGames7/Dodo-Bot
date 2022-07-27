@@ -32,15 +32,12 @@ reminder: if you have deployed the bot to railway or heroku, then be aware that 
 
 if you're using glitch, replit:
 
-when cloning the bot code from this repo, add a variable named `TOKEN` to .env file, you can also change the custom prefix in the main bot file, in fact you're free to change anything in the bot code as long as you know what are you doing
+when cloning the bot code from this repo, add a variable named `TOKEN` to .env file, you can also change the custom prefix in the variables file, in fact you're free to change anything in the bot code as long as you know what are you doing
 
 if you're using railway:
 
-before deploying, fork the repo (or download bot code instead and make a private or public repo to upload files) and add a file named `Procfile` (without any file extension name), and add the following to the file content:
-```
-worker: node .
-```
-once you're done, add a new service and after setting up, the moment when railway starts deploy the bot code, hover over activity side bar and click on the latest deployment status and from there, move to variables section and make a variable named `TOKEN`, and fill it with your bot token, after that railway should restart the deployment according to your new configurations's changes, after that once railway sucessfully deploys the bot code without any issue, then you're good to go
+Dodo Bot supports Railway as well as a template to the bot, you can click here if you don't want to manually do steps and host it
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/O6clYk?referralCode=88DGWn)
 
 NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking having your bot hacked by a random users, to prevent this, do not remove it, also make sure you're running node.js v16 as this bot will not work with older versions of node
 
@@ -51,7 +48,9 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 * **djs-v13** - experimental version of the bot, slash command only
 * **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **main** - deprecated, should not be used
+* **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **final** - actively maintained and up to date with aoi.js changes
+* **v2** - the upcoming version of the bot, soon will be rewriten
 
 # Packages
 
@@ -61,6 +60,6 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 
 [discord.js-akinator](https://www.npmjs.com/package/discord.js-akinator)
 
-[aoi.js-plugins](https://www.npmjs.com/package/aoi.js-plugins)
+
 
 
