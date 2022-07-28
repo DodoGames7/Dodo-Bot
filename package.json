@@ -7,7 +7,7 @@
     "start": "node ."
   },
   "dependencies": {
-    "aoi.js": "^5.2.0",
+    "aoi.js": "github:AkaruiDevelopment/aoi.js#v6",
     "discord-gamecord": "^2.0.0",
     "discord.js-akinator": "^4.0.1",
     "leaf-utils": "^1.1.3",
