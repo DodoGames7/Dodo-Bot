@@ -3,7 +3,7 @@ module.exports = {
   code: `$title[Dodo Bot Credits]
   $description[dodoGames#7509 - main developer of the bot
   
-  Begula#1234 - for some code fixes and advices
+  $userTag[760580796695969844] - for some code fixes and advices
   ]
   $color[BLURPLE]`
 }
