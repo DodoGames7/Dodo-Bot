@@ -4,7 +4,7 @@ module.exports = {
   $if: "v4",
   prototype: "selectMenu",
   code: `$if[$message==mod]
-$interactionUpdate[;{newEmbed:{title:**🛡 Mod**}{field:Actions:\`kick\` \`purge\` \`setnick\` \`timeout\` \`untimeout\`
+$interactionUpdate[;{newEmbed:{title:**🛡 Mod**}{field:Actions:\`kick\` \`purge\` \`ban\` \`setnick\` \`timeout\` \`untimeout\` \`warn\`
 :no}{field:Other Moderation Tools:\`serverinfo\` \`set-delete\` \`reset-delete\`:no};{actionRow:{selectMenu:help:Select an Category:1:1:no:{selectMenuOptions:Mod:mod:Mod Commands category!:no:🛡}{selectMenuOptions:Fun:fun:Fun Commands category!:no:🤣}{selectMenuOptions:Utility:utility:Utility Commands category!:no:⚙️}}
 ;;no}]
 $endif
