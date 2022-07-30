@@ -6,6 +6,7 @@ akin_buttons: "false",
 akin_gametype: "character",
 akin_language: "en",
 deletedlogs: "none",
+warns: 0,
 money: 0,
 bank: 0
 })
