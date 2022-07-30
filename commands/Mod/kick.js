@@ -2,7 +2,7 @@ module.exports = {
 name:"kick",
 aliases: "gtfo",
 usage: "kick < userID > < reason >",
-code: ` $kick[$guildID;$findMember[$message[1];yes];0;$if[$messageslice[1]==;No reason provided;$messageslice[1]]]
+code: ` $kick[$findMember[$message[1];yes];0;$if[$messageslice[1]==;No reason provided;$messageslice[1]]]
 $author[1;Member kicked;$authorAvatar]
 $color[1;DEFAULT]
 $description[1;**$username** **kicked user \`$userTag[$findMember[$message[1];yes]]\`
