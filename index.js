@@ -5,7 +5,7 @@ const bot = new aoijs.AoiClient({
    token: process.env.TOKEN,
  //Discord Bot Token, (ofc it's hidden what did you expect)
    prefix: ["$getServerVar[prefix]", "<@$clientID>"],  //Discord Bot Prefix
-   intents: ["GUILDS", "GUILD_MESSAGES"] // the discord.js intents
+   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_BANS"] // the discord.js intents
  })
 
 
