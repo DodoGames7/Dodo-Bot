@@ -7,6 +7,7 @@ $author[1;Member banned;$authorAvatar]
 $color[1;DEFAULT]
 $description[1;**$username** **banned user** \`$userTag[$findMember[$message[1];yes]]\`
 Reason: $if[$messageslice[1]==;No reason provided;$messageslice[1]]**]
+$sendDM[{newEmbed:{title:you have been banned from an server}{description:you have been banned from $serverName for the following reason: $if[$messageslice[1]==;No reason provided;$messageslice[1]]}{color:RED}};$findMember[$message[1];yes]]
  $onlyIf[$rolePosition[$highestRole[$authorID]]<$rolePosition[$highestRole[$findMember[$message[1];yes]]]; **$username** You can't ban that user]
  $onlyIf[$highestRole[$findMember[$message[1];yes]]!=$highestRole[$authorID];**$username** They have the same role as me]
  $onlyIf[$rolePosition[$highestRole[$clientID]]<$rolePosition[$highestRole[$findMember[$message[1];yes]]];**$username** They have a higher role than you]
