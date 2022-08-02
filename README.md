@@ -60,6 +60,8 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 
 [discord.js-akinator](https://www.npmjs.com/package/discord.js-akinator)
 
+[@akarui/panel](https://github.com/AkaruiDevelopment/panel)
+
 
 
 
