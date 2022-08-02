@@ -37,6 +37,7 @@ when cloning the bot code from this repo, add a variable named `TOKEN` to .env f
 if you're using railway:
 
 Dodo Bot supports Railway as well as a template to the bot, you can click here if you don't want to manually do steps and host it
+
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/O6clYk?referralCode=88DGWn)
 
 NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking having your bot hacked by a random users, to prevent this, do not remove it, also make sure you're running node.js v16 as this bot will not work with older versions of node
