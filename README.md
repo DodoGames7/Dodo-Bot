@@ -26,7 +26,7 @@ however you are allowed to:
 
 
 # running the bot
-this bot supports both glitch and replit, you can also deploy it to [Railway](https://railway.app) or heroku to make the bot running 24 hours online, before doing any of these, you should know on how tu use glitch or replit or Railway, otherwise there will be no support for non-related issue there,
+this bot supports both glitch and replit, you can also deploy it to [Railway](https://railway.app) or heroku to make the bot running 24 hours online, before doing any of these, you should know on how to use glitch or replit or Railway, otherwise there will be no support for non-related issue there,
 
 reminder: if you have deployed the bot to railway or heroku, then be aware that any data the bot stored it (such as custom prefix, etc) will be reseted automatically next time the bot code is redeployed, you can use hosts like glitch or replit to avoid this (does not apply to discord bot hosting companies, VPS Hosts), optionally, you could also run `(prefix)eval $readFile[database/main/main_scheme_1.sql]` to view database data, so you can backup your stuff before re deploying
 
