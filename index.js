@@ -27,9 +27,9 @@ require('./handlers/customfuncs')(bot) // for loading custom made functions usin
 
 // dashboard support
 const panel = new Panel({
-  username:"admin",//username for logging in
-  password:"",//password for logging in
-  secret: "example",//session secret
+  username: process.env.username,//username for logging in
+  password: process.env.password,//password for logging in
+  secret: process.env.secret,//session secret
   port: 3000,//port on which website is hosted, Not required! Default 3000
   bot:bot,//your aoi.js client
   mainFile:"index.js",//Main file where code is running.Not required, default taken from package.json
