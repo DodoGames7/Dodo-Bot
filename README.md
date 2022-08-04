@@ -45,6 +45,16 @@ NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking h
 # reporting bugs
 if you have a problem or some broken stuff you found, then you're welcome to open a pull request, before opening, make sure to double check if your fix is working, and if everything works fine then you can go ahead to open a pr request (i will also give credits if you got approved)
 
+# Dashboard Setup
+as of v1.7-beta, dodo bot now has support for dashboard for bot developers to manage their bot commands and variables, to get started, fill in the required details using `process.env`:
+
+`process.env.username`: username for dashboard,
+`process.env.password`: password for logging into dashboard using username, strong password is very likely recommended
+`process.env.secret`: session secret, e.g `AOIJSOP`
+
+once you're done, restart the project and you will be greeted with an url where you can login in there and manage your bot through panel features
+
+
 # branches
 * **djs-v13** - experimental version of the bot, slash command only
 * **main** - deprecated, should not be used
