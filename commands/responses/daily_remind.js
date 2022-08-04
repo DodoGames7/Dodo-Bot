@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
   name: "remind",
   type: "timeout",
   code: `
@@ -15,4 +15,4 @@ module.exports = {
   $color[BLURPLE]
   $dm[$timeoutData[user]]
   `
-}
+}]
