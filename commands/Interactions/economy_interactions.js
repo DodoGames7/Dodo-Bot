@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
 name: "daily",
 type: "interaction",
 prototype: "button",
@@ -12,4 +12,4 @@ $setTimeout[remind;1d;user: $interactionData[author.id]]
   code: `$interactionReply[you will be reminded after one week!;;;;everyone;yes]
 $setTimeout[wremind;7d;user: $interactionData[author.id]]
 `
-}
+}]
