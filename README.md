@@ -48,9 +48,12 @@ if you have a problem or some broken stuff you found, then you're welcome to ope
 # Dashboard Setup
 as of v1.7-beta, dodo bot now has support for dashboard for bot developers to manage their bot commands and variables, to get started, fill in the required details using `process.env`:
 
-`process.env.username`: username for dashboard,
+`process.env.username`: username for dashboard
+
 `process.env.password`: password for logging into dashboard using username, strong password is very likely recommended
+
 `process.env.secret`: session secret, e.g `AOIJSOP`
+
 
 once you're done, restart the project and you will be greeted with an url where you can login in there and manage your bot through panel features
 
