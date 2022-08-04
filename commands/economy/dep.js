@@ -14,4 +14,4 @@ $onlyif[$isnumber[$get[amount]]==true;{newEmbed:{description:Not a number!}{colo
 $onlyif[$message!=; you need to provide an amount]
 $let[amount;$replaceText[$replaceText[$replaceText[$replaceText[$tolowercase[$message[1]];k;000;1];m;000000;1];all;$getGlobalUserVar[money;$authorID];1];max;$getGlobalUserVar[money;$authorID];1]]
 `
-}
+} // credit: https://github.com/Snipedprox/Zeon/blob/main/commands/economy/deposit.js
