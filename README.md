@@ -40,9 +40,6 @@ Dodo Bot supports Railway as well as a template to the bot, you can click here i
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/O6clYk?referralCode=88DGWn)
 
-other:
-
-[![Open in Gitpod](https://camo.githubusercontent.com/76e60919474807718793857d8eb615e7a50b18b04050577e5a35c19421f260a3/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod.io/#https://github.com/DodoGames7/Dodo-Bot/tree/beta)
 
 NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking having your bot hacked by a random users, to prevent this, do not remove it, also make sure you're running node.js v16 as this bot will not work with older versions of node
 
