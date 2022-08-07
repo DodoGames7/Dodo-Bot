@@ -19,5 +19,6 @@ $interactionUpdate[;{newEmbed:{title:**⚙️ Utility**}{field:Misc:\`fact\` \`a
 $endif
 $if[$message==eco]
 $interactionUpdate[;{newEmbed:{title:**🤑 Economy**}{field:getting money:\`daily\` \`weekly\`:no}{field:other:\`balance\` \`deposit\` \`withdraw\`}};{actionRow:{selectMenu:help:Select an Category:1:1:no:{selectMenuOptions:Mod:mod:Mod Commands category!:no:🛡}{selectMenuOptions:Fun:fun:Fun Commands category!:no:🤣}{selectMenuOptions:Utility:utility:Utility Commands category!:no:⚙️}{selectMenuOptions:Economy:eco:Economy Commands category!:no:🤑}};;no]
+$endif
 `
 }
