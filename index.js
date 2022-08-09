@@ -1,4 +1,4 @@
-const { Panel } = require("@akarui/panel")
+const { Panel } = require("@akarui/aoi.panel")
 
 const aoijs = require('aoi.js')
 
@@ -35,4 +35,6 @@ const panel = new Panel({
   mainFile:"index.js",//Main file where code is running.Not required, default taken from package.json
   commands: "commands"
 })
-panel.loadPanel()
+panel.loadPanel()//Load The Panel
+
+panel.onError()//Will detect errors, and send it to aoi.panel's error page.
