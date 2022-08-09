@@ -17,7 +17,6 @@
     "node": "16.x"
   },
   "devDependencies": {
-    "node": "^16.16.0",
-    "aoi.db": "^1.0.0"
+    "node": "^16.16.0"
   }
 }
