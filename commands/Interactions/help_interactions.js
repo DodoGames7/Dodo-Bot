@@ -4,8 +4,8 @@ module.exports = {
   $if: "v4",
   prototype: "selectMenu",
   code: `$if[$message==mod]
-$interactionUpdate[;{newEmbed:{title:**🛡 Mod**}{field:Actions:\`kick\` \`purge\` \`setnick\` \`timeout\` \`untimeout\`
-:no}{field:Other Moderation Tools:\`serverinfo\` \`set-delete\` \`reset-delete\`:no};{actionRow:{selectMenu:help:Select an Category:1:1:no:{selectMenuOptions:Mod:mod:Mod Commands category!:no:🛡}{selectMenuOptions:Fun:fun:Fun Commands category!:no:🤣}{selectMenuOptions:Utility:utility:Utility Commands category!:no:⚙️}{selectMenuOptions:Economy:eco:Economy Commands category!:no:🤑}}
+$interactionUpdate[;{newEmbed:{title:**🛡 Mod**}{field:Actions: \`ban\` \`kick\` \`purge\` \`setnick\` \`timeout\` \`untimeout\`
+:no}{field:Other Moderation Tools:\`serverinfo\` \`set-delete\` \`reset-delete\` \`warn\` \`unwarn\`:no};{actionRow:{selectMenu:help:Select an Category:1:1:no:{selectMenuOptions:Mod:mod:Mod Commands category!:no:🛡}{selectMenuOptions:Fun:fun:Fun Commands category!:no:🤣}{selectMenuOptions:Utility:utility:Utility Commands category!:no:⚙️}{selectMenuOptions:Economy:eco:Economy Commands category!:no:🤑}}
 ;;no}]
 $endif
 $if[$message==fun]
