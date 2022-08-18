@@ -1,9 +1,8 @@
 module.exports ={
   name:"info",
-  code: `$title[1;about the Rewrite Version]
-$description[1;this rewrite version is coded in Aoi.js and it's currently in Development, this rewrite aims to be alternative to BDFD and it's restrictions as well as this allows me to make unlimited commands and make the bot really 24 hours online without having to renew hosting time in BDFD, but it's also open source this time and anyone can self host it with their very own custom bot, stay tuned for Updates! ❤️]
-$footer[1;Rewrite maintained by dodoGames!]
-$addButton[1;invite BDFD Version;link;https://discord.com/api/oauth2/authorize?client_id=748517727932776479&permissions=1100787084359&scope=bot%20applications.commands;no]
-$addButton[1;invite Rewrite Version;link;https://discord.com/api/oauth2/authorize?client_id=958351401719844874&permissions=1100787076167&scope=bot;no]
-$addButton[1;Source Code;link;https://github.com/DodoGames7/Dodo-Bot;no]`
-} // shows a important information regarding the Rewrite Version
+  code: `$title[1;About Dodo Bot]
+$description[1;Dodo Bot is an personal aoi.js v5 multipurpose bot that aims to improve user experience per Guilds, if you're feeling suspicious about whether if this bot is malicious or not then our code is available on github which you can host it if you're really worried]
+$color[1;BLURPLE]
+$addButton[1;Github;link;https://github.com/DodoGames7/Dodo-Bot;no]
+`
+}
