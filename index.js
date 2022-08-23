@@ -13,7 +13,7 @@ const bot = new aoijs.AoiClient({
 
 
 // handlers
-require('./handlers/variables')(bot) // for bot variables (important, do not delete)
+bot.variables(require("./handlers/variables.js")); // for bot variables (important, do not delete)
 require('./handlers/callbacks')(bot) // for loading most callbacks used in bot 
 require('./handlers/customfuncs')(bot) // for loading custom made functions using function manager
 
