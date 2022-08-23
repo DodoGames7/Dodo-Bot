@@ -1,5 +1,4 @@
-module.exports=(bot)=>{
-bot.variables({
+module.exports = {
 prefix: "&",
 trivia_game_mode: "medium",
 akin_buttons: "false",
@@ -10,5 +9,4 @@ warns: 0,
 money: 0,
 bank: 0,
 chatbot: ""
-})
 }
