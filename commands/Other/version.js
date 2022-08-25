@@ -9,6 +9,7 @@ $description[1;
 fixed weather command being returning failed result if user didn't even specify anything such as city
 fixed emojify command being missing of help fun menu cmd
 fix non-existing moderation cmds being listed for some reason
+fixed grammar of mcserver cmd error
 ]
 $color[1;BLURPLE]`
 } // returns a list of changes in the bot code
