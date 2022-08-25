@@ -6,7 +6,7 @@ const bot = new AoiClient({
     prefix: "&"
 })
 
-bot.addEvent("onMessage")
+require('./utils/callbacks')(bot)
 
 bot.commands.load("./commands/")
 
