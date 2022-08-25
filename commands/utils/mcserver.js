@@ -10,5 +10,5 @@ module.exports = {
   $addField[1;Port;$getObjectProperty[port];yes]
   $onlyIf[$getObjectProperty[hostname]!=undefined;couldn't find info about that mc server]
   $createObject[$jsonRequest[https://apiv2.spapi.ga/mc/bedrock?host=$uri[$message;encode]
-  $onlyIf[$message!=;you need to prove information about mc server]`
+  $onlyIf[$message!=;you need to provide information about minecraft server]`
 }
