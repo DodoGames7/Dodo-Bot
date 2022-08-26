@@ -15,7 +15,8 @@ const bot = new aoijs.AoiClient({
     tables: ["main"],
     extraOptions: {
       dbType: "KeyValue",
-    }
+    },
+  }
  })
 
 
