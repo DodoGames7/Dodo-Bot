@@ -5,5 +5,6 @@ module.exports = {
   
   $userTag[760580796695969844] - for some code fixes and advices
   ]
+  $footer[©2019 dodoGames]
   $color[BLURPLE]`
 }
