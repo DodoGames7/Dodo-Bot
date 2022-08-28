@@ -60,11 +60,11 @@ once you're done, restart the project and you will be greeted with an url where 
 
 
 # branches
-* **djs-v13** - experimental version of the bot, slash command only
+* **djs-v14** - experimental version of the bot, slash command only
 * **main** - deprecated, should not be used
 * **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
-* **final** - actively maintained and up to date with aoi.js changes
-* **v2** - the upcoming version of the bot, soon will be rewriten
+* **v1** - actively maintained and up to date with aoi.js changes
+* **v2** - the major release of the bot, with support for aoi.js v6!
 
 # Packages
 
@@ -76,6 +76,7 @@ once you're done, restart the project and you will be greeted with an url where 
 
 [@akarui/panel](https://github.com/AkaruiDevelopment/panel)
 
+[aoi.db](https://github.com/Leref/aoi.db)
 
 
 
