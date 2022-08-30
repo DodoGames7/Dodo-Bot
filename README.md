@@ -45,7 +45,7 @@ NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking h
 if you have a problem or some broken stuff you found, then you're welcome to open a pull request, before opening, make sure to double check if your fix is working, and if everything works fine then you can go ahead to open a pr request (i will also give credits if you got approved)
 
 # branches
-* **djs-v14** - experimental version of the bot, slash command only
+* **canary** - a branch with lot of experiments, not meant for public either and shouldn't be used (likely unrecommended due to issues)
 * **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **main** - deprecated, should not be used
 * **v1** - actively maintained and up to date with aoi.js changes
