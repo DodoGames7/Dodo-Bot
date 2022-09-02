@@ -11,7 +11,7 @@ require('./utils/callbacks')(bot)
 bot.commands.load("./commands/")
 
 bot.start()
-
+const  { Panel } = require("@akarui/aoi.panel")
 // v6 panel dashboard
 const panel = new Panel({
     username: process.env.username,//username for logging in
