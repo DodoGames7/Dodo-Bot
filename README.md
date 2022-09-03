@@ -2,7 +2,7 @@
 the [main](https://github.com/DodoGames7/Dodo-Bot/tree/main) github branch has been deprecated due to stablity problems of the bot, for more info see this [issue](https://github.com/DodoGames7/Dodo-Bot/issues/3)
 
 # disclaimer
-this is currently in development, along with epik man project, so stay tuned for Updates! ❤
+this is currently in development, along with epik man project, so stay tuned for Updates! ❤, also to use dodo bot now you must enable Message Privileged Intent from discord developer portal, this breaking change is done by discord in order to force verified bots to migrate to slash commands
 
 # Dodo-Bot
 [WIP]: a discord multipurpose aoi.js bot that aims to be improving user experience with discord servers
