@@ -1,8 +1,9 @@
-module.exports ={
-  name:"restart",
-  aliases:["restartcmds", "reload"],
-  code:`
-Successfully Restarted the bot Commands, it took $executionTime ms to reload all Existing Commands!
-$updateCommands
-$onlyForIDs[$botOwnerID;you cannot use this command]`
-} // restarts all bot commands
+module.exports = {
+  type: "basicCommand",
+  name: "reload",
+  aliases: ["restart", "cmd-update", "update-commands"],
+  code: `$let[update;$updateCommands]
+  $onlyIf[$authorID==$clientOwnerID;you're not dev]
+  updated commands!
+`
+}

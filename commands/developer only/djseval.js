@@ -1,5 +1,8 @@
 module.exports = {
-  name: "djseval",
-  code: `$djsEval[$message]
-  $onlyForIDS[$botOwnerID; you cannot use this command]`
-  }
+  type: "basicCommand",
+  name: "jseval",
+  code: `$onlyIf[$authorID==$clientOwnerID;you're not dev]
+  $onlyIf[$message!=;you need to type something to eval]
+  $djsEval[true;$message]
+  `
+}

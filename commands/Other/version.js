@@ -2,20 +2,18 @@ module.exports ={
   type: "basicCommand",
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 2.0.0-beta (2022 aug 27th)**]
+  code: `$title[1;** ⚙️Version: 2.0.0-beta-1 (2022 sep 2th)**]
 $description[1;
-**MAJOR CHANGES**
-drop support for aoi.js v5 and introduce support for aoi.js v6!
-
-dodo bot now uses discord api v10 since discord api v9 will be deprecated in 4 months, basically making the bot being up to date with the breaking changes
-
-moved from dev to beta as aoi.js v6-dev is officially released
-
-to use dodo bot v2, Node.js 16.9.0 or newer is now required., if you're running on older lts version then you need to update first and then migrate to v2-beta
+**changes**
+added \`caution\` command
+updated some commands to reflect v6 changes
 
 **other**
-added new category for help command which is config, an category for server configuration commands to configure on how should the bot work
-added 2 new mini games (but broken currently)
+improve eval to use embeds now
+rename \`djsEval\` cmd to \`jsEval\` now
+changed sub command names for \`restart\` cmd
+list bot version in \`stats\` cmd not just in version cmd and in package.json file
+set aoi.panel mode to v6 so it can be usable too
 ]
 $color[1;Blurple]`
 } // returns a list of changes in the bot code
