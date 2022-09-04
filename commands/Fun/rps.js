@@ -31,5 +31,5 @@ new RockPaperScissors({
   winMessage: '{winner} won the game!',
   gameEndMessage: 'The game went unfinished :(',
 }).startGame();]
-$argsCheck[1;mention someone to play?]`
+$onlyIf[$mentioned[1]!=$authorID;mention someone to play?]`
 } // plays Rps game

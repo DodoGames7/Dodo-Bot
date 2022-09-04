@@ -26,6 +26,6 @@ new Connect4({
   timeEndMessage: 'Since the opponent didnt answer, i dropped the game!',
 }).startGame()
 ]
-$argsCheck[1;mention someone to play?]
+$onlyIf[$mentioned[1]!=$authorID;mention someone to play?]
 `
 }
