@@ -8,5 +8,6 @@ deletedlogs: "none",
 warns: 0,
 money: 0,
 bank: 0,
-chatbot: ""
+chatbot: "none",
+pollchannel: "none"
 }
