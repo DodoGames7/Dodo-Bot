@@ -21,6 +21,8 @@ module.exports = [{
         
 }]
 
+$createApplicationCommand[global;support;get the link to the support server;true;slash]
+
     $onlyif[$get[authorID]==$interactionData[author.id];{
         "content" : "You aren't the author of this interaction.",
         "ephemeral" : true,
