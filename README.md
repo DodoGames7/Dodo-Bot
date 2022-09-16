@@ -24,11 +24,15 @@ however you are allowed to:
 
 2. reporting bugs in the bot
 
+# Requirements
+- have node.js v16 installed (at least version 16.6.0 or later to run Dodo Bot)
+- an host that let's your project have an url (at least for the panel compatibility)
+- have an hosting to run Dodo Bot (which must follow the other shown requirements below), local host is fine
 
 # running the bot
 this bot supports both glitch and replit, you can also deploy it to [Railway](https://railway.app) or heroku to make the bot running 24 hours online, before doing any of these, you should know on how to use glitch or replit or Railway, otherwise there will be no support for non-related issue there,
 
-reminder: if you have deployed the bot to railway or heroku, then be aware that any data the bot stored it (such as custom prefix, etc) will be reseted automatically next time the bot code is redeployed, you can use hosts like glitch or replit to avoid this (does not apply to discord bot hosting companies, VPS Hosts), optionally, you could also run `(prefix)eval $readFile[database/main/main_scheme_1.sql]` to view database data, so you can backup your stuff before re deploying
+reminder: if you have deployed the bot to railway or heroku, then be aware that any data the bot stored it (such as custom prefix, etc) will be reseted automatically next time the bot code is redeployed, you can use hosts like glitch or replit to avoid this, optionally, you could also run `(prefix)eval $readFile[database/main/main_scheme_1.sql]` to view database data, so you can backup your stuff before re deploying
 
 if you're using glitch, replit:
 
@@ -41,7 +45,7 @@ Dodo Bot supports Railway as well as a template to the bot, you can click here i
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/O6clYk?referralCode=88DGWn)
 
 
-NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking having your bot hacked by a random users, to prevent this, do not remove it, also make sure you're running node.js v16 as this bot will not work with older versions of node
+NOTE: if you replaced `process.env.TOKEN` with your token, then you're risking having your bot hacked by a random users, to prevent this, do not remove it, you do not need to do this if your hosting the bot locally on your computer with something like VSC
 
 # reporting bugs
 if you have a problem or some broken stuff you found, then you're welcome to open a pull request, before opening, make sure to double check if your fix is working, and if everything works fine then you can go ahead to open a pr request (i will also give credits if you got approved)
@@ -55,12 +59,11 @@ as of v1.7-beta, dodo bot now has support for dashboard for bot developers to ma
 
 `process.env.secret`: session secret, e.g `AOIJSOP`
 
-
 once you're done, restart the project and you will be greeted with an url where you can login in there and manage your bot through panel features
 
 
 # branches
-* **djs-v14** - experimental version of the bot, slash command only
+* **canary** - a branch with lot of experiments, not meant for public either and shouldn't be used (likely unrecommended due to issues)
 * **main** - deprecated, should not be used
 * **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **v1** - actively maintained and up to date with aoi.js changes
