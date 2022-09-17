@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "1.7.0-beta",
+  "version": "1.7.0-preview",
   "description": "What am I about?",
   "main": "index.js",
   "scripts": {
