@@ -1,3 +1,4 @@
 module.exports = (bot) => {
-bot.addEvent("onMessage")
+    bot.onMessage();
+    bot.onInteractionCreate();
 }

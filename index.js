@@ -1,16 +1,28 @@
-const { AoiClient } = require("aoi.js");
+const aoijs = require('aoi.js')
 
-const bot = new AoiClient({
-    token: process.env.TOKEN,
-    intents: ["Guilds", "GuildMessages", "MessageContent"],
-    prefix: "&"
-})
 
-require('./utils/callbacks')(bot)
+const bot = new aoijs.AoiClient({
+   token: process.env.TOKEN,
+ //Discord Bot Token, (ofc it's hidden what did you expect)
+   prefix: ["$getServerVar[prefix]", "<@$clientID>"],  //Discord Bot Prefix
+   intents: ["Guilds", "GuildMessages", "MessageContent"] // the discord.js intents
+ })
 
-bot.commands.load("./commands/")
 
-bot.start()
+
+// handlers
+require('./handlers/variables')(bot) // for bot variables (important, do not delete)
+require('./utils/callbacks')(bot) // for loading most callbacks used in bot 
+require('./handlers/customfuncs')(bot) // for loading custom made functions using function manager
+
+ const loader = new aoijs.LoadCommands(bot)
+ loader.load(bot.cmd,"./commands/")
+
+ /*
+ bot.cmd is object of Collections where the command data will be stored
+ "./commands/" is the path of folder where all the commands' code will be present
+ */
+
 const  { Panel } = require("@akarui/aoi.panel")
 // v6 panel dashboard
 const panel = new Panel({
