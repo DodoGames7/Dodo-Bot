@@ -1,9 +1,8 @@
-module.exports = {
-  type: "basicCommand",
-  name: "reload",
-  aliases: ["restart", "cmd-update", "update-commands"],
-  code: `$let[update;$updateCommands]
-  $onlyIf[$authorID==$clientOwnerID;you're not dev]
-  updated commands!
-`
-}
+module.exports ={
+  name:"restart",
+  aliases:["restartcmds", "cmd-update", "update-commands", "refresh"],
+  code:`
+Successfully Reloaded The Commands
+$updateCommands
+$onlyForIDs[$botOwnerID;you cannot use this command]`
+} // restarts all bot commands
