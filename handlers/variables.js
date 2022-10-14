@@ -16,5 +16,6 @@ rank: "Normie",
 taco: 0,
 heckercard: 0,
 rickroller: 0,
-suncard: 0
+suncard: 0,
+star: 0
 }
