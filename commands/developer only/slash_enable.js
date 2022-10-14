@@ -13,13 +13,25 @@ module.exports = [{
     
     $interactionReply[successfully Enabled Slash Commands;;;;everyone;yes]
 
-    $createApplicationCommand[global;say;say something!;true;slash;{
-        "name" : "message",
-        "description" : "the message to repeat",
-        "type" : 3,
-        "required" : true
-        
-}]
+    $createApplicationCommand[global;say;makes the bot say whatever you want;true;slash;[{
+        "name": "text",
+          "description": "the content of the message",
+          "required": true,
+          "type": "STRING" 
+        },
+        {
+          "name": "embed",
+          "description": "use embeds?",
+          "required": true,
+          "type": "STRING",
+        "choices" : [{
+        "name" : "true",
+        "value" : "true"
+        },{
+        "name" : "false",
+        "value" : "false"
+        }]
+        }]
 
 $createApplicationCommand[global;support;get the link to the support server;true;slash]
 
@@ -40,6 +52,8 @@ $createApplicationCommand[global;support;get the link to the support server;true
     code: `$interactionReply[successfully Disabled Slash Commands;;;;everyone;yes]
     
     $deleteApplicationCommand[global;$getApplicationCommandID[say]]
+    $deleteApplicationCommand[global;$getApplicationCommandID[support]]
+    $deleteApplicationCommand[global;$getApplicationCommandID[text]]
     
     $onlyif[$get[authorID]==$interactionData[author.id];{
         "content" : "You aren't the author of this interaction.",

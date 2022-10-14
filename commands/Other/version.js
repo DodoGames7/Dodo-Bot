@@ -1,27 +1,24 @@
 module.exports ={
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 1.7.0 (2022 sep 14th)** **(Final Beta)**]
-$description[1;
-  note: this version includes a lot of changes after two months of developing
+  code: `$title[** ⚙️Version: 1.7.1 (2022 oct 14th) **(Beta)**]
+$description[
+  an new beta build of 1.7.1 has been published!, here are the following new changes:
+  added profiles system!, you can now have an profile in economy with the ability to change embed color with both bio and rank to your liking!
+  added an shop with items system (including inventory), they're still WIP so it's very incomplete
+  improved slash commands such as \`\say\`, context menu commands may be added soon
+  finished chatbot system
+  added an settings to customize your profile in economy (\`settings\`)
+  
+  **other**
+  updated node.js version to 16.17.1
+  replaced the gift emoji in \`Remind me\` button with timer thingy
+  show time left in both \`daily\` and \`weekly\` command for better economy experience!
 
-**changes**
-added author button only
-added economy
-added chatbot system + poll system
-added copyright icon to \`credits\`
-added slash commands support (devs can choose to whether enable them or not now)
-
-**fixes**
-fixed a lot of bugs like mini games command arguments
-fixed \`info\` being outdated since rewrite starting development
-fixed errors appearing even if dev hasn't even specifed anything in dev cmds
-fixed \`credit\` cmd being outdated (especially one of the authors names)
-
-**other**
-added \`reports\` cmd
+  **deprecations**
+  deprecate \`f\` command and replace it with \`sus\` command, \`Reason\`: api used for \`f\` command got shutdown
 
 
 ]
-$color[1;BLURPLE]`
+$color[BLURPLE]`
 } // returns a list of changes in the bot code

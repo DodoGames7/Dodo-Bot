@@ -9,5 +9,12 @@ warns: 0,
 money: 0,
 bank: 0,
 chatbot: "none",
-pollchannel: "none"
+pollchannel: "none",
+profilecolor: "DEFAULT",
+profilebio: "no bio set",
+rank: "Normie",
+taco: 0,
+heckercard: 0,
+rickroller: 0,
+suncard: 0
 }
