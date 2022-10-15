@@ -12,7 +12,9 @@ module.exports = [{
     code: `
     
     $interactionReply[successfully Enabled Slash Commands;;;;everyone;yes]
-
+     
+     $createApplicationCommand[global;view balance;.;true;user]
+    
     $createApplicationCommand[global;say;makes the bot say whatever you want;true;slash;[{
         "name": "text",
           "description": "the content of the message",
