@@ -17,6 +17,6 @@
     "node": "16.x"
   },
   "devDependencies": {
-    "node": "^16.17.0"
+    "node": "^18.12.0"
   }
 }
