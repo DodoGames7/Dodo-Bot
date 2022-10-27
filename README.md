@@ -67,6 +67,7 @@ once you're done, restart the project and you will be greeted with an url where 
 
 # branches
 * **canary** - a branch with lot of experiments, not meant for public either and shouldn't be used (likely unrecommended due to issues)
+* **djs-rewrite** - the discord.js version of the bot known as v3, it attempts to make everything as much as simple before
 * **main** - deprecated, should not be used
 * **beta** - a branch which prepares upcoming versions of the bot, usually had bugs but a preview of new features, fixes, etc
 * **v1** - actively maintained and up to date with aoi.js changes
