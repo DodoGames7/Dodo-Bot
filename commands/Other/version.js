@@ -1,9 +1,9 @@
 module.exports ={
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 1.7.0 (2022 sep 19th)** **(Preview)**]
+  code: `$title[1;** ⚙️Version: 1.7.0 (2022 oct 27th)**]
 $description[1;
-  note: this version includes a lot of changes after two months of developing
+  this version is a huge update which adds many stuff, more stuff will be completed in the next update aka 1.7.1
 
 **changes**
 added author button only
