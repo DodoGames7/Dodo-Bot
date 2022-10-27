@@ -8,7 +8,7 @@ $attachment[$userAvatar[632607624742961153];dodoGames.png]
 ` //THE ACTUAL CODE IT WILL BE RETURN
 }) 
   bot.functionManager.createCustomFunction({
-    name : '$os',
+    name : '$system',
     type : 'djs',
     code : async d => {
       const data = d.util.aoiFunc(d);

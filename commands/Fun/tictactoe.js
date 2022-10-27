@@ -26,5 +26,5 @@ new TicTacToe({
   winMessage: '{emoji} | **{winner}** won the game!',
   gameEndMessage: 'The game went unfinished :(',
 }).startGame();]
-$argsCheck[1;mention someone to play?]`
+$onlyIf[$mentioned[1]!=$authorID;mention someone to play?]`
 }

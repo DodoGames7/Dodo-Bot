@@ -1,9 +1,10 @@
 module.exports = {
   name: "credits",
   code: `$title[Dodo Bot Credits]
-  $description[dodoGames#7509 - main developer of the bot
+  $description[$userTag[632607624742961153] - main developer of the bot
   
-  bg#0231 - for some code fixes and advices
+  $userTag[760580796695969844] - for some code fixes and advices
   ]
+  $footer[@2019 dodoGames development]
   $color[BLURPLE]`
 }

@@ -37,7 +37,6 @@ await FastClick({
 });
 
 })()]
-$onlyIf[$mentioned[1]!=$authorID;you cannot play with yourself!]
-$argsCheck[1;mention someone to play?]
+$onlyIf[$mentioned[1]!=$authorID;mention someone to play?]
 $onlyIf[$isBot[$mentioned[1]]!=true;you can't play with bots!]`
 }
