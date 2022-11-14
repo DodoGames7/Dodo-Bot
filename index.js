@@ -1,11 +1,12 @@
 const aoijs = require('aoi.js')
-
+const config = require("./config.json")
 
 const bot = new aoijs.AoiClient({
    token: process.env.TOKEN,
  //Discord Bot Token, (ofc it's hidden what did you expect)
    prefix: ["$getServerVar[prefix]", "<@$clientID>"],  //Discord Bot Prefix
-   intents: ["Guilds", "GuildMessages", "MessageContent"] // the discord.js intents
+   intents: ["Guilds", "GuildMessages", "MessageContent"], // the discord.js intents
+   disableLogs: config.disableLogs
  })
 
 
