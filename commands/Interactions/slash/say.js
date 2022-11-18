@@ -5,6 +5,7 @@ module.exports = {
     $if: "v4",
     code: `$if[$slashOption[embed]==false]
 $interactionReply[$slashOption[text]]
+$disableMentionType[all]
 $else
 $if[$slashOption[embed]==true]
 $interactionReply[;{newEmbed:{author:$userTag:$authorAvatar}{title:Say Command}{description:$slashOption[text]}{color:BLURPLE}}]
