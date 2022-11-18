@@ -32,7 +32,7 @@ module.exports = [{
         code: `$setGlobalUserVar[profilecolor;$textInputValue[code];$authorID]
     $interactionReply[the color has been changed to the one you choose run \`profile\` command to check out;;;;everyone;yes]
     
-    $onlyIf[$isValidHex[$textInputValue[code]]!=false;{
+    $onlyIf[$isValidHex[$textInputValue[code]]==true;{
     "content" : "invalid hex code!",
     "ephemeral" : true,
     "options" : { "interaction" : true }
