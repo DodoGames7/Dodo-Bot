@@ -9,6 +9,6 @@ module.exports = {
     $addField[1;Node.js;\`$nodeVersion\`;yes]
     $addField[1;Ping;\`$pingms\`;yes]
     $addField[1;Package Dependencies;$packageDependencies;yes]
-    $footer[1;Build: 07e11c2] 
+    $footer[1;Build: 0jfZ5O1] 
     `
   }
