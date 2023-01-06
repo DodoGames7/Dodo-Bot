@@ -2,7 +2,9 @@ module.exports = {
   name: "shutdown",
   code: `
   $shutdown
-  $wait[2s]
-  bot has been shutdown
+$wait[3s]
+$sendMessage[Done!]
+$wait[5s]
+$sendMessage[shutting down..]
   $onlyForIDS[$botOwnerId;you can't use this command]`
 }
