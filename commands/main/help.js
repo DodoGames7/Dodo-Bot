@@ -1,5 +1,6 @@
 module.exports = {
   name: "help",
+  executeAt: "both",
   code: `$title[Help Menu]
   $description[Select one of the modules to view it's available commands!]
   $footer[developed by $userTag[632607624742961153]

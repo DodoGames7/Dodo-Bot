@@ -1,5 +1,6 @@
 module.exports = [{
   name:"capturetheflag",
+  executeAt: "both",
   aliases:"ctf",
 code:`$title[🚩 | Capture the flag!]
       $description[There is a hidden flag somewhere around 1-3, where you think the flag is on?]

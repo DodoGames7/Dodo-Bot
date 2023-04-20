@@ -1,5 +1,6 @@
 module.exports = {
   name: "coinflip",
+  executeAt: "both",
   code: `$title[Coin Flip]
   $description[The coin is in the air Choose heads or tails below.]
   $color[Red]

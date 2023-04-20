@@ -1,5 +1,6 @@
 module.exports = {
   name: "minesweeper",
+  executeAt: "both",
   code: `$djsEval[const { Minesweeper } = require('discord-gamecord');
 
 const Game = new Minesweeper({

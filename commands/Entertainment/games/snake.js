@@ -1,5 +1,6 @@
 module.exports = {
   name: "snake",
+  executeAt: "both",
   aliases: "snek",
   code: `$djsEval[const { Snake } = require('discord-gamecord');
 

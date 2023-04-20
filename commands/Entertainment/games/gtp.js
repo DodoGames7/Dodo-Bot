@@ -1,5 +1,6 @@
 module.exports = {
   name: "wouldyourather",
+  executeAt: "both",
   aliases: "wyr",
   code: `$djsEval[const { WouldYouRather } = require('discord-gamecord');
 

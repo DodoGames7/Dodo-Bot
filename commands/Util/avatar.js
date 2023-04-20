@@ -1,5 +1,6 @@
 module.exports = {
   name: "avatar",
+  executeAt: "guild",
   aliases: ["av","userav"],
   code: `$title[$username[$mentioned[1;true]]'s Avatar]
   $image[$userAvatar[$mentioned[1;true]]

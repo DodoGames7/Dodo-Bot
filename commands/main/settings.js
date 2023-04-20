@@ -1,5 +1,6 @@
 module.exports = {
   name: "settings",
+  executeAt: "guild",
   aliases: "panel",
   code: `$title[Advanced Settings]
   $description[This settings let's you manage any feature or settings of an certain system, for example managing on how trivia should start.]

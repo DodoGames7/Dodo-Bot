@@ -1,5 +1,6 @@
 module.exports = {
   name: "serverinfo",
+  executeAt: "guild",
   aliases: "server",
   code: `$title[Server Info]
   $addField[verification level;$get[verifylevel]]

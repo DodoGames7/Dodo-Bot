@@ -3,10 +3,11 @@ const { AoiClient, LoadCommands, Util} = require("aoi.js");
 const bot = new AoiClient({
   token: process.env.TOKEN,
   prefix: "$getGuildVar[prefix]",
-  intents: ["MessageContent", "Guilds", "GuildMessages"],
+  intents: ["MessageContent", "Guilds", "GuildMessages", "DirectMessages"],
   events: ["onMessage", "onInteractionCreate"],
   aoiLogs: false,
-  aoiWarning: true
+  aoiWarning: true,
+  guildOnly: false
 });
 
 

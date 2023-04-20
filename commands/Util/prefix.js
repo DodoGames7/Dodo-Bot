@@ -1,5 +1,6 @@
 module.exports = [{
   name: "prefix",
+  executeAt: "guild",
   code: `
   $setGuildVar[prefix;$message]
   changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`
@@ -13,6 +14,7 @@ module.exports = [{
   `
 },{
     name: "prefix-reset",
+    executeAt: "guild",
     aliases: "reset-prefix",
     code: ` $setGuildVar[prefix;]
 the prefix has been successfully resetted <3

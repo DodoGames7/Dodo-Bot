@@ -1,5 +1,6 @@
 module.exports = {
   name: "execute",
+  executeAt: "both",
   aliases: "exec",
   code: `
   \`\`\`js

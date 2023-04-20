@@ -1,5 +1,6 @@
 module.exports = {
   name: "invite",
+  executeAt: "both",
   code: `$title[invite Dodo Bot]
   $description[Dodo Bot is an entertainment bot trying it's best to make users have fun while at the same time, provide useful cmds to the user.]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]

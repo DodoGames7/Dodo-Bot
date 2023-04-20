@@ -1,5 +1,6 @@
 module.exports = {
   name: "say",
+  executeAt: "both",
   $if: "old",
   code: `$if[$message[1]==embed]
   $author[$userTag;$userAvatar]

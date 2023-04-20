@@ -1,5 +1,6 @@
 module.exports = {
   name: "match-pairs",
+  executeAt: "both",
   code: `$djsEval[const { MatchPairs } = require('discord-gamecord');
 
 const Game = new MatchPairs({

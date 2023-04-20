@@ -1,5 +1,6 @@
 module.exports = {
 name: "stats",
+executeAt: "guild",
 aliases: "botinfo",
 code: `$title[$username[$clientID] stats]
 $addField[Dependencies;$packageDependencies;false]
