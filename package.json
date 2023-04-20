@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "aoi.js": "^6.1.1",
+    "discord.js": "^14.9.0",
     "aoi.parser": "^1.2.5",
     "discord-gamecord": "^4.4.0",
     "discord.js-akinator": "^4.0.4"
