@@ -46,7 +46,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 
   **Current Settings**
   
-  this system is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s Engine}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
+  This system is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s Engine}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
 
 
 `
