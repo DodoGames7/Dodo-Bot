@@ -8,7 +8,7 @@ module.exports = {
   $addField[Emojis Count;$emojiCount[$guildID]]
   $addField[Channels Count;$channelCount]
   $addField[Members Count;$membersCount]
-  $thumbnail[$guildIcon]
+  $thumbnail[$userAvatar[$clientID]]
   $cooldown[2s;slow down, don't spam the command]
   
   $let[verifylevel;$replaceText[$replaceText[$replaceText[$replaceText[$GuildVerificationLevel;1;Low];2;Medium];3;High];4;Very High]]
