@@ -14,7 +14,7 @@ module.exports = [{
   $endif
   
   $onlyif[$get[authorID]==$interactionData[author.id];
-you're not the author of this interaction
+{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -41,7 +41,7 @@ $textSplit[$interactionData[customId];_]
   $endif
   
   $onlyif[$get[authorID]==$interactionData[author.id];
-you're not the author of this interaction
+{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]

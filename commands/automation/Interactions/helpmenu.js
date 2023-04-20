@@ -6,7 +6,7 @@ module.exports = [{
 
   
   $onlyif[$get[authorID]==$interactionData[author.id];
-  You aren't the author of this interaction.
+  {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -24,7 +24,7 @@ $onlyIf[$interactionData[values[0]]==general;]`
 
   
   $onlyif[$get[authorID]==$interactionData[author.id];
-  You aren't the author of this interaction.
+  {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -43,7 +43,7 @@ $onlyIf[$interactionData[values[0]]==entertainment;]
 
   
   $onlyif[$get[authorID]==$interactionData[author.id];
-  You aren't the author of this interaction.
+  {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
