@@ -1,25 +1,30 @@
-const aoijs = require('aoi.js')
-const config = require("./config.json")
+const { AoiClient, LoadCommands, Util} = require("aoi.js");
 
-const bot = new aoijs.AoiClient({
-   token: process.env.TOKEN,
- //Discord Bot Token, (ofc it's hidden what did you expect)
-   prefix: ["$getServerVar[prefix]", "<@$clientID>"],  //Discord Bot Prefix
-   intents: ["Guilds", "GuildMessages", "MessageContent"], // the discord.js intents
-   disableLogs: config.disableLogs
- })
+const bot = new AoiClient({
+  token: process.env.TOKEN,
+  prefix: "$getGuildVar[prefix]",
+  intents: ["MessageContent", "Guilds", "GuildMessages"],
+  events: ["onMessage", "onInteractionCreate"],
+  aoiLogs: false,
+  aoiWarning: true
+});
 
 
+const loader = new LoadCommands(bot)
+loader.load(bot.cmd,"./commands/")
 
-// handlers
-bot.variables(require("./utils/variables.js")); // for bot variables (important, do not delete)
-require('./utils/callbacks')(bot) // for loading most callbacks used in bot 
 
- const loader = new aoijs.LoadCommands(bot)
- loader.load(bot.cmd,"./commands/")
+bot.variables(require("./handler/variables.js"));
 
- /*
- bot.cmd is object of Collections where the command data will be stored
- "./commands/" is the path of folder where all the commands' code will be present
- */
-
+// parser support
+const { parse, createAst, parseChatInputOptions } = require('aoi.parser');
+const {
+    parseExtraOptions
+} = require('aoi.parser/components');
+ 
+Util.parsers.ErrorHandler = parse;
+ 
+Util.parsers.OptionsParser = (data) => {
+    return createAst(data).children.map(parseExtraOptions);
+}
+ 
