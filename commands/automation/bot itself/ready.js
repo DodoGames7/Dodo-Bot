@@ -1,5 +1,6 @@
 module.exports = {
   type: "ready",
   channel: "",
-  code: `$log[Dodo Bot is ready! Invite it using this link: $getBotInvite[sendmessages;viewchannel;readmessagehistory]`
+  code: `$log[Dodo Bot is ready! Invite it using this link: $getBotInvite[sendmessages;viewchannel;readmessagehistory]
+]`
 }
