@@ -1,5 +1,6 @@
 module.exports = {
   name: "2048",
+  executeAt: "both",
   code: `$djsEval[const { TwoZeroFourEight } = require('discord-gamecord');
 
 const Game = new TwoZeroFourEight({

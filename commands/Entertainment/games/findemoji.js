@@ -1,5 +1,6 @@
 module.exports = {
 name: "findemoji",
+executeAt: "both",
 code: `$djsEval[const { FindEmoji } = require('discord-gamecord');
 
 const Game = new FindEmoji({
