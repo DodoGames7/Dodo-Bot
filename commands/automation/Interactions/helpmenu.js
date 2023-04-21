@@ -38,7 +38,7 @@ $onlyIf[$interactionData[values[0]]==entertainment;]
 },{
   type: "interaction",
   prototype: "selectMenu",
-  code: `$interactionUpdate[;{newEmbed:{title:Util}{field:Managing:\`prefix\` (**Can be used to change Prefix**), \`set-prefix\`}{field:other Util:\`avatar\`}{description:**note**#COLON# \`prefix\` allows you to also change prefix, just make sure your command has arguments on it}};{actionRow:{selectMenu:helpmenu_$get[authorID]:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}{selectMenuOptions:info:info:explore information commands:false}}}]
+  code: `$interactionUpdate[;{newEmbed:{title:Util}{field:Managing:\`prefix\` (**Can be used to change Prefix**), \`reset-prefix\`}{field:other Util:\`avatar\`}{description:**note**#COLON# \`prefix\` allows you to also change prefix, just make sure your command has arguments on it}};{actionRow:{selectMenu:helpmenu_$get[authorID]:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}{selectMenuOptions:info:info:explore information commands:false}}}]
 
 
   
