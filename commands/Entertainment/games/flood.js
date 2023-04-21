@@ -1,5 +1,6 @@
 module.exports = {
   name: "flood",
+  executeAt: "guild",
   code: `$djsEval[const { Flood } = require('discord-gamecord');
 
 const Game = new Flood({

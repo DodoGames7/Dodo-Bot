@@ -1,5 +1,6 @@
 module.exports = {
 name: "connect4",
+executeAt: "guild",
 aliases: "c4",
 code: `$djsEval[const { Connect4 } = require('discord-gamecord');
 

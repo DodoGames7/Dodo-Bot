@@ -1,5 +1,6 @@
 module.exports = {
 name: "rock-paper-scissors",
+executeAt: "guild",
 aliases: "rps",
 code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord');
 

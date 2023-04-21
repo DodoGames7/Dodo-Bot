@@ -1,5 +1,6 @@
 module.exports = {
   name: "trivia",
+  executeAt: "guild",
   aliases: "triv",
   code: `$djsEval[const { Trivia } = require('discord-gamecord');
 
