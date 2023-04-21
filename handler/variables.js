@@ -5,5 +5,8 @@ module.exports = {
   flood_difficulty: 13,
   // server variables
   prefix: "n!",
+  // bot variables
+  reportchannel: "none",
+  canreport: "true"
   
 }
