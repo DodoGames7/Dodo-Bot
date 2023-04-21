@@ -10,15 +10,15 @@ module.exports = [{
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
   $onlyPerms[manageguild;you need to have \`ManageServer\` perm]
-  $onlyIf[$message!=;prefix: \`$getGuildVar[prefix]\` (change prefix by putting symbol/letters/numbers in your cmd argument!)]
+  $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix]\` (change prefix by putting symbol/letters/numbers in your cmd argument!)]
   `
 },{
     name: "prefix-reset",
     executeAt: "guild",
     aliases: "reset-prefix",
     code: ` $setGuildVar[prefix;]
-the prefix has been successfully resetted <3
-$onlyPerms[manageguild;you need to have \`ManageServer\` perm]
+The prefix has been successfully resetted. <3
 $cooldown[2s;slow down, don't spam the command]
-$onlyIf[$getGuildVar[prefix]!=n!;cannot reset when the prefix is default]`
+$onlyIf[$getGuildVar[prefix]!=n!;cannot reset when the prefix is default]
+$onlyPerms[manageguild;you need to have \`ManageServer\` perm]`
 }]
