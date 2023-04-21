@@ -72,7 +72,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 
   **difficulty**#COLON# Changes the difficulty of Flood
 
-  **Status**
+  **Current Settings**
   difficulty#COLON# $get[type]
     }};{actionRow:{button:difficulty:1:floodmode:false}};;all;true]
 
@@ -151,7 +151,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   $setGuildVar[trivia_difficulty;easy]
 
   $onlyIf[$getGuildVar[trivia_difficulty]!=easy;
-  you have already selected easy mode.
+  You have already selected easy mode.
   {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -164,7 +164,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   $setGuildVar[trivia_difficulty;medium]
 
   $onlyIf[$getGuildVar[trivia_difficulty]!=medium;
-  you have already selected medium mode.
+  You have already selected medium mode.
   {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -177,7 +177,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   $setGuildVar[trivia_difficulty;hard]
 
   $onlyIf[$getGuildVar[trivia_difficulty]!=hard;
-  you have already selected hard mode.
+  You have already selected hard mode.
   {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -194,5 +194,44 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 
     }};{actionRow:{button:Animal:1:animalopt:false}{button:Object:1:objectopt:false}{button:Character:1:characteropt:false}};;all;true]
   
+  `
+},{
+  name: "animalopt",
+  type: "interaction",
+  prototype: "button",
+  code: `$interactionReply[Changed akinator's game type to \`Animal\`.;;;;all;true]
+  $setGuildVar[akin_gametype;animal]
+  
+  $onlyIf[$getGuildVar[akin_gametype]!=animal;
+  You have already selected animal mode.
+  {options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+  `
+},{
+  name: "objectopt",
+  type: "interaction",
+  prototype: "button",
+  code: `$interactionReply[Changed akinator's game type to \`Object\`.;;;;all;true]
+  $setGuildVar[akin_gametype;object]
+  
+  $onlyIf[$getGuildVar[akin_gametype]!=object;
+  You have already selected object mode.
+  {options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+  `
+},{
+  name: "characteropt",
+  type: "interaction",
+  prototype: "button",
+  code: `$interactionReply[Changed akinator's game type to \`Character\`.;;;;all;true]
+  $setGuildVar[akin_gametype;character]
+  
+  $onlyIf[$getGuildVar[akin_gametype]!=character;
+  You have already selected object mode.
+  {options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
   `
 }]
