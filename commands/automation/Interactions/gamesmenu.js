@@ -46,7 +46,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 
   **Current Settings**
   **Type**#COLON# \`$getGuildVar[akin_gametype]\`
-  
+
   This system is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s Settings for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
 
 
@@ -85,9 +85,9 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   prototype: "button",
   code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use.
 
-  **Easy**#COLON# Less blocks
-  **Normal**#COLON# Start with blocks in the normal average size
-  **Hard**#COLON# Large amount of blocks
+  **Easy**#COLON# Starts with Less blocks
+  **Normal**#COLON# Starts with Medium sized blocks
+  **Hard**#COLON# Starts with Large amount of blocks
 
     }};{actionRow:{button:Easy:1:floodopteasy:false}{button:Normal:1:floodoptnormal:false}{button:Hard:1:floodopthard:false}};;all;true]
   
