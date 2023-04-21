@@ -18,7 +18,7 @@ loader.load(bot.cmd,"./commands/")
 bot.variables(require("./handler/variables.js"));
 
 // parser support
-const { parse, createAst, parseChatInputOptions } = require('aoi.parser');
+const { parse, createAst } = require('aoi.parser');
 const {
     parseExtraOptions
 } = require('aoi.parser/components');
