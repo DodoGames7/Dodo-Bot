@@ -29,7 +29,7 @@ const Game = new Connect4({
 });
 Game.startGame();
 ]
-$onlyIf[$isBot[$mentioned[1;true]]!=true;you cannot play with bots!]
+$onlyIf[$isBot[$mentioned[1;true]]==false;you cannot play with bots!]
 $onlyIf[$mentioned[1;true]!=$authorID;mention someone to play with]
 $cooldown[2s;slow down, don't spam the command]
 `
