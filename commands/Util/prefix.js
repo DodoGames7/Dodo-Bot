@@ -9,8 +9,8 @@ module.exports = [{
   $onlyIf[$charCount[$message]<=5;prefix can't be longer than 5 characters]
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
-  $onlyIf[$message!=;prefix: \`$getGuildVar[prefix]\` (change prefix by putting symbol/letters/numbers in your cmd argument!)]
   $onlyPerms[manageguild;you need to have \`ManageServer\` perm]
+  $onlyIf[$message!=;prefix: \`$getGuildVar[prefix]\` (change prefix by putting symbol/letters/numbers in your cmd argument!)]
   `
 },{
     name: "prefix-reset",
