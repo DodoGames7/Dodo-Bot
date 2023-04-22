@@ -6,11 +6,11 @@ module.exports = [{
   
   $interactionFollowUp[GG, **$username** The coin landed on **Heads**]
   
-  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air Choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:3:headsbutton_$authorID:true}{button:Tails:1:tailsbutton_$authorID:true}}]
+  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air, choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:3:headsbutton_$authorID:true}{button:Tails:1:tailsbutton_$authorID:true}}]
   $else
   $interactionFollowUp[you lost, The coin landed on **Tails**]
   
-  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air Choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:4:headsbutton_$authorID:true}{button:Tails:1:tailsbutton_$authorID:true}}]
+  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air, choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:4:headsbutton_$authorID:true}{button:Tails:1:tailsbutton_$authorID:true}}]
   $endif
   
   $onlyif[$get[authorID]==$interactionData[author.id];
@@ -33,11 +33,11 @@ $textSplit[$interactionData[customId];_]
   
   $interactionFollowUp[GG, **$username** The coin landed on **Tails**]
   
-  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air Choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:4:headsbutton_$authorID:true}{button:Tails:3:tailsbutton_$authorID:true}}]
+  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air, choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:4:headsbutton_$authorID:true}{button:Tails:3:tailsbutton_$authorID:true}}]
   $else
   $interactionFollowUp[you lost, The coin landed on **Heads**]
   
-  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air Choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:1:headsbutton_$authorID:true}{button:Tails:4:tailsbutton_$authorID:true}}]
+  $interactionUpdate[;{newEmbed:{title:Coin Flip}{description:The coin is in the air, choose heads or tails below.}{color:Red}};{actionRow:{button:Heads:1:headsbutton_$authorID:true}{button:Tails:4:tailsbutton_$authorID:true}}]
   $endif
   
   $onlyif[$get[authorID]==$interactionData[author.id];
