@@ -17,6 +17,6 @@ module.exports = {
               embedColor: embedColor 
           });
           ]
-          cooldown[2s;slow down, don't spam the command]
+          $cooldown[2s;slow down, don't spam the command]
           `
         }
