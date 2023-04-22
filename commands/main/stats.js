@@ -3,7 +3,6 @@ name: "stats",
 executeAt: "guild",
 aliases: "botinfo",
 code: `$title[$username[$clientID] stats]
-$addField[Dependencies;$packageDependencies;false]
 $addField[Node.js version;\`$nodeVersion\`;true]
 $addField[Servers;$guildCount;true]
 $addField[Aoi.js version;\`$packageVersion\`;true]
