@@ -10,7 +10,7 @@ const bot = new AoiClient({
   guildOnly: false // don't limit commands to server only
 });
 
-
+// loading handlers
 const loader = new LoadCommands(bot)
 loader.load(bot.cmd,"./commands/")
 
