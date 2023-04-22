@@ -230,7 +230,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   $setGuildVar[akin_gametype;character]
   
   $onlyIf[$getGuildVar[akin_gametype]!=character;
-  You have already selected object mode.
+  You have already selected character mode.
   {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
