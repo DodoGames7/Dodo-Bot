@@ -47,7 +47,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   **Current Settings**
   **Type**#COLON# \`$getGuildVar[akin_gametype]\`
 
-  This system is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s Settings for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
+  This Settings is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s System for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
 
 
 `
