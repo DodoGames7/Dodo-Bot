@@ -8,8 +8,5 @@ module.exports = {
   akin_embedcolor: "#1F1E33",
   // server variables
   prefix: "n!",
-  // bot variables
-  reportchannel: "none",
-  canreport: "true"
   
 }
