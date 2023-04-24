@@ -1,29 +1,15 @@
 module.exports ={
   name:"version",
   aliases:["updates","news","ver"],
-  code: `$title[1;** ⚙️Version: 1.7.0 (2022 oct 27th)**]
+  code: `$title[1;** ⚙️Version: 1.7.0-1 (2023 April 24th)**]
 $description[1;
-  this version is a huge update which adds many stuff, more stuff will be completed in the next update aka 1.7.1
+  **end of support for v1**
+  As of v2 beta, v1 is no longer supported with updates and fixes, Last release will be \`1.7.0-1\` which will fix \`TextBased\` issue.
+  We recommend migrating to Dodo Bot v2 for improvements with various new features! Be aware that v2 is gonna be different than v1, And It's also not going to be multi-purpose anymore.
+  read this official [announcement](https://github.com/DodoGames7/Dodo-Bot/tree/v2#its-no-longer-multi-purpose) for more information regarding the end of support for v1.
 
-**changes**
-added author button only
-added economy
-added chatbot system + poll system
-added copyright icon to \`credits\`
-added slash commands support (devs can choose to whether enable them or not now)
-allow embeds to be used in \`say\` command (\`$getServerVar[prefix]say embedded content\`)
-
-**fixes**
-fixed a lot of bugs like mini games command arguments
-fixed \`info\` being outdated since rewrite starting development
-fixed errors appearing even if dev hasn't even specifed anything in dev cmds
-fixed \`credit\` cmd being outdated (especially one of the authors names)
-fixed automatic cooldown of disabling select menu after certain of time refusing to work and just weirdly removes the default blurple color
-fixed the wrong placeholder name for select menu of \`help\` command
-
-**other**
-added \`reports\` cmd
-bot now can managed by panel for devs
+  Finally, Thanks to everyone who have been using Dodo Bot v1. It was great version that it's state didn't last longer.
+  See you in v2!
 ]
 $color[1;BLURPLE]`
 } // returns a list of changes in the bot code

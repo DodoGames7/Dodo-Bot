@@ -3,8 +3,12 @@ the [main](https://github.com/DodoGames7/Dodo-Bot/tree/main) github branch has b
 
 # disclaimer
 
-to use dodo bot now you must enable Message Privileged Intent from discord developer portal, this breaking change is done by discord in order to force verified bots to migrate to slash commands
+As of v2 beta from scratch being started, v1 is no longer supported with updates and fixes. The last update that will be provided will be 1.7.0-1 to fix interaction crashes which will be the last fix released on this project to v1, Please consider using v2 if you can, we won't provide support for v1 no matter what the reason was. Thanks to everyone who have been using v1, See you in v2!
 
+# why?
+Even, since early versions of v1 on aoi.js. It wasn't even safe from bugs and issues. Maintaining multi-purpose bot was painful when i decided to rewrite v1 from bdfd to use aoi.js, So i can have freedom at anything i like to do. Another reason is that, aoi.js v5 has been no longer maintained since 2022 (which is what Dodo Bot v1 uses to provide it's features), And so this means that, aoi.js v5 will began to break in the upcoming months, And stop working by multiple discord api changes. At the time of writing this, v5 seems to no longer work with interactions anymore, Since it does crash upon using any interaction like buttons.
+
+Conclusion: unfortunately not every discord bot is going to work Perfectly forever without some rewrite needed, And so this is a reason on why Dodo Bot v2 development has been started (Even from the beginning), in order to continue to be up to date by discord api changes. Discord always has api versions system that, If you never updated then they're going to make your bot stop working unless you decided to rewrite everything to their new api version, Which is what every discord bot library and even aoi.js are forced to do. I Apologize if this has frustrated you, But sadly, there is nothing people can do about it, Not even me either. 
 
 # Dodo-Bot
 a discord multipurpose aoi.js bot that aims to be improving user experience with discord servers
