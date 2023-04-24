@@ -5,7 +5,7 @@ module.exports = {
   code: `$title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
-server Created since: $creationDate[$guildID;date]
+Server Created since: $creationDate[$guildID;date]
 Content Filter: $get[content]
 Server ID: $guildID
 ]
