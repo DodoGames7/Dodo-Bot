@@ -7,5 +7,10 @@ Yes, but there is a reason for that. When I first started Dodo-Bot Project, I th
 # The story
 v2 was supposed to be discord.js-based bot, but due to some issues, it has been made to use aoi.js v6. Even though, almost every release of dodo bot were bugged having a lot of bugs (including early releases of v1 tbh). This release aims to make everything as much as simple as it was before. This bot (with v2 update) is likely made for you to learn as well as enjoy it, it's probably the first aoi.js v6 bot to be open sourced here. Note that this project was somehow a bit experimental considering that v2 has been started from scratch but hey, at least. You get to try the new cool stuff out there!
 
+# Important Requirements
+You can host the bot on any Host as long as you meet the following Requirements:
+* have node.js version 17 installed or higher (we recommend node.js version 18, latest node.js is fine but untested)
+* have an host ready to handle Bot's Features (Obviously)
+
 # Credits
 Most of code belongs to me. You can also credit me using my tag: dodoGames#7509 in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.
