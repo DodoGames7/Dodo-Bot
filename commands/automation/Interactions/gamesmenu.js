@@ -46,6 +46,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 
   **Current Settings**
   **Type**#COLON# \`$getGuildVar[akin_gametype]\`
+  **Color**#COLON# \`$getGuildVar[akin_embedcolor]\`
 
   This Settings is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s System for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
 
@@ -235,4 +236,34 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 {extraOptions:{interaction: true}}
 ]
   `
+},{
+  name: "akincolor",
+  type: "interaction",
+  prototype: "button",
+  code: ` $interactionModal[Set an Color for Akinator cmd;akincolormodal;
+{actionRow:
+  {textInput:Hex code for akinator embed color.:1:colorInput:true:example#COLON# #1F1E33:7:7}
+}]
+
+`
+},{
+  name: "akincolormodal",
+  type: "interaction",
+  prototype: "modal",
+  code: `$setGuildVar[akin_embedcolor;$textInputValue[colorInput]]
+$interactionReply[Successfully changed the embed color of akinator command.;;;;all;true]
+
+$onlyIf[$isValidHex[$textInputValue[colorInput]]==true;
+Invalid Hex code, Please make sure that you have set an valid hex code!
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+
+$onlyIf[$checkContains[$textInputValue[colorInput];#]==true;
+Setting an hex code requires \`#\`, example usage: \`#1F1E33\`.
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+
+`
 }]
