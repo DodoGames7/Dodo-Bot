@@ -9,7 +9,7 @@ $addField[Aoi.js version;\`$packageVersion\`;true]
 $addField[Uptime Bot;$uptime[humanize];true]
 $addField[Ping;$pingms;true]
 $addField[Cpu Usage;$cpu;true]
-$addField[Ram Usage;$round[$ram]%;true]
+$addField[Ram Usage;$round[$ram]MB;true]
 $addField[Users;$allMembersCount;true]
 $cooldown[2s;slow down, don't spam the command]
 `
