@@ -9,5 +9,5 @@ module.exports = {
   // server variables
   prefix: "n!",
   // bot variables (do not touch)
-  autopingreply: "true"
+  autopingreply: "false"
 }
