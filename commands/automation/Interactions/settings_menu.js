@@ -11,7 +11,7 @@ module.exports = [{
     **Auto Reply**#COLON# \`$get[autoreply]\`
     
     **Option Types**
-    **Toggle**#COLON# Click/tab on the option to enable! Click/tab again to disable.
+    **Toggle**#COLON# Click/tap on the option to enable! Click/tap again to disable.
     **Select**#COLON# Available customization for This Option to Choose.
     
     }};{actionRow:{button:Auto Reply:1:autoreply:false}};;all;true]
