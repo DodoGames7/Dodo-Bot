@@ -9,7 +9,7 @@ module.exports = {
 [Askers](https://discord.ly/askers)
 ]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]
-  $addButton[1;Invite;5;$nonEscape[$getBotInvite[sendmessages;readmessagehistory;viewchannel]];false]
+  $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;readmessagehistory;viewchannel]];false]
   $cooldown[2s;slow down, don't spam the command]
   `
 }

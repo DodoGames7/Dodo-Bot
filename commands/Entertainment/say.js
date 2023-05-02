@@ -15,7 +15,7 @@ module.exports = {
 $endif
 $onlyIf[$message[1]!=;say something first. (you can also use embeds mode by putting \`embed\` in your cmd argument)]
 $disableMentionType[all]
-$let[botlink;$nonEscape[$getBotInvite[viewchannel;sendmessages;attachfiles;addreactions]]]
+$let[botlink;$nonEscape[$getClientInvite[viewchannel;sendmessages;attachfiles;addreactions]]]
 $cooldown[2s;slow down, don't spam the command]
   `
 }

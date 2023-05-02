@@ -5,17 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm install",
+    "setup": "npm install",
     "start": "node ."
   },
   "keywords": [],
   "author": "dodo",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "^6.1.1",
-    "discord.js": "^14.9.0",
+    "aoi.js": "^6.2.0",
     "aoi.parser": "^1.2.5",
     "discord-gamecord": "^4.4.0",
     "discord.js-akinator": "^4.0.4"
+  },
+  "devDependencies": {
+    "discord.js": "^14.10.2",
+    "typescript": "^4.9.5",
+    "@discordjs/builders": "^1.6.2"
   }
 }
