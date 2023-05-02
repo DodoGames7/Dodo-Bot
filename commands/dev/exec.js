@@ -7,7 +7,7 @@ module.exports = {
   $exec[$message]
   \`\`\`
   $onlyIf[$message!=;send me an terminal command to be executed.]
-  $onlyForIds[$botOwnerID;]
+  $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
 
   `
 }
