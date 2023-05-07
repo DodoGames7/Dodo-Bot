@@ -49,6 +49,14 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   **Color**#COLON# \`$getGuildVar[akin_embedcolor]\`
 
   This Settings is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s System for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
+  $onlyIf[disabled!=disabled;{newEmbed:{title:Uh Oh!}{description:The API that akinator uses to function no longer works.
+            
+    We have disabled akinator's settings temporary (including it's dedicated command for starting the game as well). You may be able to still manage other games settings normally, but sorry for inconvenience.
+  
+    **Note**#COLON# Features or commands that are being disabled are subject to be either fixed or removed. We have no eta on when that will happen for these features/commands.}{color:Blurple}}
+    {options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
 
 
 `
