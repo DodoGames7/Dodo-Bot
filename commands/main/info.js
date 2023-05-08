@@ -5,6 +5,7 @@ module.exports = {
     
     **Note**
     While we may usually encounter and fix an bug, However. Reporting Bugs in v2 is appreciated and helps making the bot More Stable! If you ever have found an bug, No matter what command or feature you tried to use, Please make sure to report it using \`report\` command. It means a lot for us!]
+    $footer[current Version: 2.0.0 (Nightly Build)]
     $color[Blurple]
     $cooldown[5s;slow down, don't spam the command]
     `
