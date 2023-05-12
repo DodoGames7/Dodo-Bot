@@ -19,6 +19,7 @@ Server Boosts: $guildBoostCount[$guildID]
 Total: $channelCount[$guildID;all]
 Text Channels: $channelCount[$guildID;Text]
 Voice Channels: $channelCount[$guildID;Voice]
+Forum Channels: $channelCount[$guildID;Forum]
 Categorys: $channelCount[$guildID;Category]
 ]
   $addField[Members information;
