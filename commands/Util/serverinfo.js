@@ -23,7 +23,7 @@ Forum Channels: $channelCount[$guildID;Forum]
 Categorys: $channelCount[$guildID;Category]
 ]
   $addField[Members information;
-Total: $membersCount
+Total: $membersCount[$guildID;all;true]
 Humans: $membersCount[$guildID;all;false]
 Bots: $botCount[$guildID]
 ]
