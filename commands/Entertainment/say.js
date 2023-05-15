@@ -17,7 +17,7 @@ $endif
 $onlyIf[$message[1]!=;Say something first.
 **Note**: you can also use embed mode. Make sure that your command argument starts with the word \`embed\` for that to work.]
 $disableMentionType[all]
-$let[botlink;$nonEscape[$getClientInvite[viewchannel;sendmessages;attachfiles;addreactions]]]
+$let[botlink;$nonEscape[$getClientInvite[viewchannel;sendmessages;addreactions]]]
 $cooldown[2s;slow down, don't spam the command]
   `
 }
