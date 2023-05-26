@@ -9,5 +9,7 @@ module.exports = {
   // server variables
   prefix: "n!",
   // bot variables (do not touch)
-  autopingreply: "false"
+  autopingreply: "false",
+   // system variables (aka Features)
+  suggestionchannel: "none"
 }
