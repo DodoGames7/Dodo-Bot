@@ -27,10 +27,11 @@ Total: $membersCount[$guildID;all;true]
 Humans: $membersCount[$guildID;all;false]
 Bots: $botCount[$guildID]
 ]
-  $thumbnail[$userAvatar[$clientID]]
+  $thumbnail[$get[serverimage]]
   $cooldown[2s;slow down, don't spam the command]
   
   $let[verifylevel;$replaceText[$replaceText[$replaceText[$replaceText[$GuildVerificationLevel;1;Low];2;Medium];3;High];4;Very High]]
   $let[content;$replaceText[$replaceText[$replaceText[$guildContentFilter[$guildID];0;Disabled];1;Medium];2;High]]
+  $let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon!=];false;$userAvatar[$clientID]];true;$guildIcon]]
 `
 }
