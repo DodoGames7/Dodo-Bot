@@ -6,7 +6,7 @@ const bot = new AoiClient({
   intents: ["MessageContent", "Guilds", "GuildMessages", "DirectMessages", "GuildPresences"], // discord.js intents (v14)
   events: ["onMessage", "onInteractionCreate"], // mostly for making the bot interactions work
   aoiLogs: false, // don't show aoi.js default console message
-  aoiWarning: true, // disable aoi.js update warning
+  aoiWarning: false, // disable aoi.js update warning
   guildOnly: true, // limit commands to server only
   database: { // use aoi.db for storing data
     type: "aoi.db",
