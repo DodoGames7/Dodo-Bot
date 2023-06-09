@@ -42,7 +42,7 @@ module.exports = [{
     \`AddReactions\`
     ]
 
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[suggestionchannel]]==true;Hmm. the channel set for the Suggestion system seems to be deleted. The system will not function until a new channel is set from \`suggest-set\`.]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[suggestionchannel]]==true;Hmm. The channel set for the Suggestion system seems to be deleted. The system will not function until a new channel is set from \`suggest-set\`.]
 
     $onlyIf[$getGuildVar[suggestionchannel]!=none;Hmm. There is no channel used to send Suggestion currently.
     For server staff, please run \`suggest-set\` to set a channel.
