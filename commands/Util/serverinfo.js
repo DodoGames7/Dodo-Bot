@@ -10,7 +10,7 @@ Content Filter: $get[content]
 Server ID: $guildID
 ]
   $addField[General;
-Roles: $roleCount
+Roles: $roleCount[$guildID;true]
 Emojis: $emojiCount[$guildID] 
 Server Boosts: $guildBoostCount[$guildID]
 
