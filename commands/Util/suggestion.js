@@ -27,7 +27,7 @@ module.exports = [{
     $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
     },{
         name: "suggest",
-        code: `$author[Suggestion by $username;$userAvatar]
+        code: `$author[Suggestion by $get[usernamechecker];$userAvatar]
     $description[$message]
     $footer[Suggestion created since]
     $addTimestamp
@@ -49,5 +49,6 @@ module.exports = [{
     ]
     $onlyIf[$charCount[$message]<=3950;Your suggestion cannot be longer than 3950 characters.]
     $onlyIf[$message!=;Please suggest something.]
+    $let[usernamechecker;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username];false;$userTag]]
     `
     }]
