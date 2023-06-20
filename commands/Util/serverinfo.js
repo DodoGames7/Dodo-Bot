@@ -20,7 +20,7 @@ Total: $channelCount[$guildID;all]
 Text Channels: $channelCount[$guildID;Text]
 Voice Channels: $channelCount[$guildID;Voice]
 Forum Channels: $channelCount[$guildID;Forum]
-Categorys: $channelCount[$guildID;Category]
+Categories: $channelCount[$guildID;Category]
 ]
   $addField[Members information;
 Total: $membersCount[$guildID;all;true]
