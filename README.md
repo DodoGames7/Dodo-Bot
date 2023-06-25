@@ -15,4 +15,4 @@ You can host the bot on any Host as long as you meet the following Requirements:
 You can use node.js v16 on the Bot but it will not work properly for Packages, And so, It can result in errors that comes from node.js versions being lower.
 
 # Credits
-Most of code belongs to me. You can also credit me using my tag: dodoGames#7509 in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.
+Most of code belongs to me. You can also credit me using my discord username: dodogames in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.
