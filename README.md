@@ -11,6 +11,7 @@ v2 was supposed to be discord.js-based bot, but due to some issues, it has been 
 You can host the bot on any Host as long as you meet the following Requirements:
 * have node.js version 17 installed or higher (we recommend node.js version 18, latest node.js is fine but untested)
 * have an host ready to handle Bot's Features (Obviously)
+### Note
 You can use node.js v16 on the Bot but it will not work properly for Packages, And so, It can result in errors that comes from node.js versions being lower.
 
 # Credits
