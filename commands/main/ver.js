@@ -17,6 +17,7 @@ Partially finished welcome system (except for autorole). Means you can now switc
 Fixed verify level section in \`serverinfo\` command showing \`0\` if server verify level is set to none
 Fixed grammar of \`settings\` command
 Fixed mentions being usable as prefix in \`prefix\` command (somehow no one noticed this)
+And more fixes such as \`prefix\` not preventing mentions as the new prefix!
 
 **Note**
 There're also a lot of other changes so feel free to check them out!
