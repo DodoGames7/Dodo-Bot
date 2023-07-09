@@ -12,8 +12,8 @@
   "author": "dodo",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "github:AkaruiDevelopment/aoi.js#970b5f8",
-    "aoi.parser": "^1.2.6",
+    "aoi.js": "6.3.0",
+    "@akarui/aoi.parser": "^1.0.1",
     "discord-gamecord": "^4.4.0",
     "discord.js-akinator": "^4.0.6",
     "@nottca/weky": "^4.0.5"
@@ -22,6 +22,7 @@
     "discord.js": "^14.11.0",
     "typescript": "^4.9.5",
     "@discordjs/builders": "^1.6.2",
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "@akarui/aoi.db": "^1.0.0"
   }
 }

@@ -10,6 +10,23 @@ module.exports = {
   prefix: "n!",
   // bot variables (do not touch)
   autopingreply: "false",
-   // system variables (aka Features)
-  suggestionchannel: "none"
+  includebots: "true",
+  // system variables
+  suggestionchannel: "none",
+  pollchannel: "none",
+  welcomemessage: "undefined",
+  welcomechannel: "none",
+  welcometype: "text",
+  welcomesystem: "false",
+  leavechannel: "none",
+  leavesystem: "false",
+  leavetype: "text",
+  leavemessage: "undefined",
+  msglogdeletedchannel: "none",
+  msglogeditchannel: "none",
+  banneduserschannel: "none",
+  unbanneduserschannel: "none",
+  anonymous: "false",
+  betacommands: "false"
+  
 }
