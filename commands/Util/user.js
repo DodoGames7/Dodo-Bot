@@ -22,8 +22,8 @@ User ID: $findUser[$message;true]
 $if[$memberExists[$findUser[$message;true];$guildID]==true]
 $addField[Server information;
 Joined the server at: <t:$truncate[$divide[$memberJoinDate[$findUser[$message;true];$guildID];1000]]:f>
-Highest Role: $highestRole[$findUser[$message;true];$guildID;name]
-Lowest Role: $roleName[$lowestRole[$findUser[$message;true];$guildID]]
+Highest Role: $userHighestRole[$findUser[$message;true];$guildID;name]
+Lowest Role: $roleName[$userLowestRole[$findUser[$message;true];$guildID]]
 Status: $userStatus[$guildID;$findUser[$message;true]]
 Server Booster: $isBoosting[$findUser[$message;true];$guildID]
 ]
