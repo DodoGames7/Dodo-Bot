@@ -35,7 +35,7 @@ module.exports = [{
     $setGlobalUserVar[betacommands;false]
     
     $onlyIf[$getGlobalUserVar[betacommands]==true;
-    You're already a beta tester!
+   You're not a beta tester to opt out of beta commands!
     {options:{ephemeral:true}}
     {extraOptions:{interaction:true}}
     ]
