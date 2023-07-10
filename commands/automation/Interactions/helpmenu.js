@@ -19,7 +19,7 @@ $onlyIf[$interactionData[values[0]]==general;]`
 },{
   type: "interaction",
   prototype: "selectMenu",
-  code: `$interactionUpdate[;{newEmbed:{title:Entertainment}{field:Games:\`ctf\`, \`rps\`, \`snake\`, \`matchpairs\`, \`2048\`, \`flood\` \`minesweeper\`, \`slots\`, \`trivia\`, \`c4\`, \`findemoji\`, \`coinflip\`, \`akinator\`, \`fight\` }{field:General Fun stuff:\`say\`, \`howgamer\`, \`fact\`, \`yesorno\`, \`whoasked\`, \`randomtopic\`, \`fact\`}{field:Images:\`car\`}};{actionRow:{selectMenu:helpmenu_$get[authorID]:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}}}]
+  code: `$interactionUpdate[;{newEmbed:{title:Entertainment}{field:Games:\`ctf\`, \`rps\`, \`snake\`, \`matchpairs\`, \`2048\`, \`flood\` \`minesweeper\`, \`slots\`, \`trivia\`, \`c4\`, \`findemoji\`, \`coinflip\`, \`akinator\`, \`fight\` }{field:General Fun stuff:\`say\`, \`howgamer\`, \`fact\`, \`yesorno\`, \`whoasked\`, \`randomtopic\`}{field:Images:\`car\`}};{actionRow:{selectMenu:helpmenu_$get[authorID]:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}}}]
 
 
   
