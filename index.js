@@ -1,40 +1,19 @@
-const { AoiClient, LoadCommands, Util} = require("aoi.js");
+// imports
+const { AoiClient, defaultCacheConfig } = require("aoi.js");
+const { Intents } = require("zeneth");
 
+// create a new client
 const bot = new AoiClient({
-  token: process.env.TOKEN, // token is private by using env method
-  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default used prefix: n!)
-  intents: ["MessageContent", "Guilds", "GuildMessages", "DirectMessages", "GuildPresences"], // discord.js intents (v14)
-  events: ["onMessage", "onInteractionCreate"], // mostly for making the bot interactions work
-  aoiLogs: false, // don't show aoi.js default console message
-  aoiWarning: false, // disable aoi.js update warning
-  guildOnly: true, // limit commands to server only
-  database: { // use aoi.db for storing data
-    type: "aoi.db",
-    db: require("aoi.db"),
-    tables: ["main"],
-    path: "./database/",
-    extraOptions: {
-        dbType: "KeyValue"
-    },
-}
+    token: process.env.TOKEN,
+    prefixes: "&&",
+    intents: Intents.Guilds | Intents.GuildMessages | Intents.MessageContent,
+    events: ["MessageCreate", "Ready"],
+    caches: defaultCacheConfig(),
 });
 
-// loading handlers
-const loader = new LoadCommands(bot)
-loader.load(bot.cmd,"./commands/")
 
+(async () => {
+    await bot.managers.commands.load({ path: "./commands"});
+})();
 
-bot.variables(require("./handler/variables.js"));
-
-// parser support
-const { parse, createAst } = require('aoi.parser');
-const {
-    parseExtraOptions
-} = require('aoi.parser/components');
- 
-Util.parsers.ErrorHandler = parse;
- 
-Util.parsers.OptionsParser = (data) => {
-    return createAst(data).children.map(parseExtraOptions);
-}
  
