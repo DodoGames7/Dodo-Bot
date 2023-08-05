@@ -37,7 +37,7 @@ $get[content]
 $endif
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[leavechannel]]==true;]
 $onlyIf[$getGuildVar[leavechannel]!=none;]
-$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$ownerID]];<server.name>;$guildName];<owner.id>;$ownerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]]]
+$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount members left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$ownerID]];<server.name>;$guildName];<owner.id>;$ownerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]]]
 $onlyIf[$getGuildVar[leavesystem]==true;]
 $disableMentionType[roles]
 $disableMentionType[everyone]

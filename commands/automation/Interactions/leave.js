@@ -55,6 +55,7 @@ Please set a valid channel which exists inside this server.
 
 `
 },{
+    name: "leavetest",
     type: "interaction",
     $if: "old",
     prototype: "button",
@@ -73,7 +74,7 @@ $get[content]]
 ]
 $endif
 
-$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$ownerID]];<server.name>;$guildName];<owner.id>;$ownerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]]]
+$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount members left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$ownerID]];<server.name>;$guildName];<owner.id>;$ownerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
 \`SendMessages\`
@@ -97,18 +98,7 @@ $onlyIf[$getGuildVar[leavesystem]==true;Cannot test when the leave feature is di
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
-
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-$onlyif[$get[customId]==leavetest;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
+ 
 $disableMentionType[roles]
 $disableMentionType[everyone]
 `
@@ -150,7 +140,7 @@ $textSplit[$interactionData[customId];_]
 **Current Settings**
 **Type (Welcome message type)**#COLON# \`$getGuildVar[leavesystem]\`
 To check your leave message, you may need to click/tap the "Test Leave" button.
-}};{actionRow:{button:Text:2:leavetext:false}{button:Type:1:leavemode:false}{button:Funcs:2:leavefuncs:false}};;all;true]
+}};{actionRow:{button:Text:2:leavetext:false}{button:Type:1:leavemode:false}{button:Funcs:2:leavefuncs:false}{button:Test Leave:2:leavetest:false}};;all;true]
 
 $onlyif[$get[authorID]==$interactionData[author.id];
 {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

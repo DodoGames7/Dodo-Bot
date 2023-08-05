@@ -7,6 +7,7 @@ module.exports = {
 Note: you may need to have an Github account to report.]
     $color[Blurple]
     $addButton[1;Report;5;https://github.com/DodoGames7/Dodo-Bot/issues/new/choose;false]
-
+    $cooldown[2s; Slow down! Don't spam the command!
+    Time left: \`%time%\`]
     `
 }

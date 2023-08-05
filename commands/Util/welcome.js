@@ -11,7 +11,6 @@ To get started, click on the "Enable" button!
 $get[welcomesystem]
 ]
 $color[Blurple]
-$addButton[1;Test greeting;2;weltest_$authorID;false]
 $addButton[1;Welcome settings;4;welsetting_$authorID;false]
 $addButton[1;Channel;1;welchannel_$authorID;false]
 $addButton[1;Enable;3;enablewel_$authorID;false]

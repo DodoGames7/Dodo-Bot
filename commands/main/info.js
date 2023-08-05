@@ -8,6 +8,7 @@ While we may usually encounter and fix an bug, However. Reporting Bugs in v2 is 
 $footer[v2 Developed by $username[632607624742961153] (Re-worked)]
 $color[Blurple]
 $addButton[1;Known bugs;5;https://github.com/DodoGames7/Dodo-Bot/discussions/20;false]
-$cooldown[5s;slow down, don't spam the command]
+$cooldown[5s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
 `
 }

@@ -9,6 +9,8 @@ module.exports = [{
     $color[Blurple]
     $addButton[1;Opt out of beta cmds;4;optout_$authorID;false]
     $addButton[1;Join as beta tester;1;betatest_$authorID;false]
+    $cooldown[2s; Slow down! Don't spam the command!
+    Time left: \`%time%\`]
     `
     },{
         type: "interaction",

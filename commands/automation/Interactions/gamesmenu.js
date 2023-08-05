@@ -2,7 +2,7 @@ module.exports = [{
   type: "interaction",
   prototype: "selectMenu",
   code: `
-  $interactionReply[Which Game do you want to manage.;;{actionRow:{button:Akinator:1:akinatorbutton:false}{button:Trivia:1:trivbutton:false}{button:Flood:1:floodbutton:false}};;all;true]
+  $interactionReply[Which Game do you want to manage.;;{actionRow:{button:Trivia:1:trivbutton:false}{button:Flood:1:floodbutton:false}};;all;true]
 
   
   $onlyif[$get[authorID]==$interactionData[author.id];
@@ -35,34 +35,6 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 `
 },
 {
-  name: "akinatorbutton",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Akinator Settings}{description:this settings contains all the available options for the game Akinator!
-  
-  **type**#COLON# Changes the game mode of akinator
-  **color**#COLON# Changes the embed color of akinator
-  **Language**#COLON# Changes the current language of Akinator
-
-  **Current Settings**
-  **Type**#COLON# \`$getGuildVar[akin_gametype]\`
-  **Color**#COLON# \`$getGuildVar[akin_embedcolor]\`
-
-  This Settings is using [Askers](https#COLON#//github.com/DodoGames7/Askers)'s System for Akinator}{color:Blurple}};{actionRow:{button:type:1:akintype:false}{button:color:1:akincolor:false}{button:Language:1:akinlang:false}};;all;true]
-
-$onlyIf[disabled!=disabled;{newEmbed:{title:Uh Oh!}{description:The API that akinator uses to function no longer works.
-            
-    We have disabled akinator's settings temporary (including it's dedicated command for starting the game as well). You may be able to still manage other games settings normally, but sorry for inconvenience.
-  
-    **Note**#COLON# Features or commands that are being disabled are subject to be either fixed or removed. We have no eta on when that will happen for these features/commands.}{color:Blurple}}
-    {options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-
-
-`
-},{
   name: "triviatype",
   type: "interaction",
   $if: "old",
@@ -194,86 +166,4 @@ $onlyIf[disabled!=disabled;{newEmbed:{title:Uh Oh!}{description:The API that aki
 {extraOptions:{interaction: true}}
 ]
   `
-},{
-  name: "akintype",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Akinator Game Type}{description:which Game Type do you prefer to use.
-
-  **Animal**#COLON# Starts akinator on animal-related questions
-  **Object**#COLON# Starts akinator on object-related questions
-  **Character**#COLON# Starts akinator on Character-related questions
-
-    }};{actionRow:{button:Animal:1:animalopt:false}{button:Object:1:objectopt:false}{button:Character:1:characteropt:false}};;all;true]
-  
-  `
-},{
-  name: "animalopt",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[Changed akinator's game type to \`Animal\`.;;;;all;true]
-  $setGuildVar[akin_gametype;animal]
-  
-  $onlyIf[$getGuildVar[akin_gametype]!=animal;
-  You have already selected animal mode.
-  {options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-  `
-},{
-  name: "objectopt",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[Changed akinator's game type to \`Object\`.;;;;all;true]
-  $setGuildVar[akin_gametype;object]
-  
-  $onlyIf[$getGuildVar[akin_gametype]!=object;
-  You have already selected object mode.
-  {options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-  `
-},{
-  name: "characteropt",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[Changed akinator's game type to \`Character\`.;;;;all;true]
-  $setGuildVar[akin_gametype;character]
-  
-  $onlyIf[$getGuildVar[akin_gametype]!=character;
-  You have already selected character mode.
-  {options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-  `
-},{
-    name: "akincolor",
-    type: "interaction",
-    prototype: "button",
-    code: ` $interactionModal[Set an Color for Akinator cmd;akincolormodal;
-{actionRow:
-    {textInput:Hex code for akinator embed color.:1:colorInput:true:example#COLON# #1F1E33:7:7}
-  }]
-
-`
-},{
-    name: "akincolormodal",
-    type: "interaction",
-    prototype: "modal",
-    code: `$setGuildVar[akin_embedcolor;$textInputValue[colorInput]]
-$interactionReply[Successfully changed the embed color of akinator command.;;;;all;true]
-
-$onlyIf[$isValidHex[$textInputValue[colorInput]]==true;
-Invalid Hex code, Please make sure that you have set an valid hex code!
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-$onlyIf[$checkContains[$textInputValue[colorInput];#]==true;
-Setting an hex code requires \`#\`, example usage: \`#1F1E33\`.
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-`
 }]

@@ -53,6 +53,7 @@ Please set a valid channel which exists inside this server.
 
 `
 },{
+    name: "weltest",
     type: "interaction",
     prototype: "button",
     $if: "old",
@@ -95,17 +96,6 @@ $onlyIf[$getGuildVar[welcomesystem]==true;Cannot test when the welcome feature i
 {extraOptions:{interaction: true}}
 ]
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-$onlyif[$get[customId]==weltest;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
 $disableMentionType[roles]
 $disableMentionType[everyone]
 `
@@ -149,7 +139,7 @@ $textSplit[$interactionData[customId];_]
 **Current Settings**
 **Type (Welcome message type)**#COLON# \`$getGuildVar[welcometype]\`
 To check your welcome message, you may need to click/tap the "Test greeting" button.
-}};{actionRow:{button:Text:2:welcometext:false}{button:AutoRole (Soon):1:welrole:true}{button:Type:1:welcomemode:false}{button:Funcs:2:welfuncs:false}};;all;true]
+}};{actionRow:{button:Text:2:welcometext:false}{button:AutoRole (Soon):1:welrole:true}{button:Type:1:welcomemode:false}{button:Funcs:2:welfuncs:false}{button:Test greeting:2:weltest:false}};;all;true]
 
 $onlyif[$get[authorID]==$interactionData[author.id];
 {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

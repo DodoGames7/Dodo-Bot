@@ -3,10 +3,10 @@ module.exports = [{
   executeAt: "guild",
   code: `
   $setGuildVar[prefix;$message]
-  changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`
-  $onlyIf[$getGuildVar[prefix]!=$message; this prefix is already in use]
+  Changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`.
+  $onlyIf[$getGuildVar[prefix]!=$message; This prefix is already in use.]
   $cooldown[2s;slow down, don't spam the command]
-  $onlyIf[$charCount[$message]<=5;prefix can't be longer than 5 characters]
+  $onlyIf[$charCount[$message]<=5;Prefix can't be longer than 5 characters.]
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
   $onlyPerms[manageguild;you need to have \`ManageServer\` perm]

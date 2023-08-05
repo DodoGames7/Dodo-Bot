@@ -11,7 +11,6 @@ To get started, click on the "Enable" button!
 $get[leavesystem]
 ]
 $color[Blurple]
-$addButton[1;Test Leave;2;leavetest_$authorID;false]
 $addButton[1;Leave settings;4;leavesetting_$authorID;false]
 $addButton[1;Channel;1;leavechannel_$authorID;false]
 $addButton[1;Enable;3;enableleave_$authorID;false]
