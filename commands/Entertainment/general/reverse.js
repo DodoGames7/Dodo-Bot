@@ -7,5 +7,6 @@ module.exports = {
 Time left: \`%time%\`]
 $onlyIf[$getGlobalUserVar[betacommands]==true;You're not a beta tester to use this command currently!
 To use this command, please opt in for the beta commands by running \`beta\` command.]
+$disableMentionType[all]
 `
 }
