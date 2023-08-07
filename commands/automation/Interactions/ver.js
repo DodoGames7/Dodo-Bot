@@ -9,6 +9,7 @@ module.exports = [{
 * Removed \`readfile\` command from the bot
 * Updated returned invite links in commands such as \`invite\` to work with the latest stuff of discord
 * Moved test message buttons of both leave and welcome to their settings
+* Returning the bot's token using dev commands is no longer possible to increase security
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}};;all;true]
     
     

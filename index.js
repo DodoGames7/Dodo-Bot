@@ -15,7 +15,8 @@ const bot = new AoiClient({
      extraOptions: {
          dbType: "KeyValue"
      },
- }
+ },
+ disableFunctions: ["$clientToken"]
 });
 
 // loading handlers
