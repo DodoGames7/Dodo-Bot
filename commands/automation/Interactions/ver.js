@@ -32,7 +32,7 @@ module.exports = [{
 * Fixed outdated credits for Dodo-bot v1 in \`credits\` command
 * Group ids for dms no longer breaks channel detections in commands such as \`suggest-set\` command!
 * Fixed markdown formatting of this command
-* Fixed mentions beung usable in the beta command \`reverse\`
+* Fixed mentions being usable in the beta command \`reverse\`
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:true}};;all;true]
     
     
