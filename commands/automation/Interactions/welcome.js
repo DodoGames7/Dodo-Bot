@@ -133,13 +133,12 @@ $textSplit[$interactionData[customId];_]
     code:`$interactionReply[;{newEmbed:{title:Welcome Settings}{description:Here are the avaliable options to choose from#COLON#
 
 \`Text\`#COLON# text to use for the custom message.
-\`AutoRole\`#COLON# should the user be given an role upon joining server? (Soon)
 \`Type\`#COLON# use text or embed?
 
 **Current Settings**
 **Type (Welcome message type)**#COLON# \`$getGuildVar[welcometype]\`
 To check your welcome message, you may need to click/tap the "Test greeting" button.
-}};{actionRow:{button:Text:2:welcometext:false}{button:AutoRole (Soon):1:welrole:true}{button:Type:1:welcomemode:false}{button:Funcs:2:welfuncs:false}{button:Test greeting:2:weltest:false}};;all;true]
+}};{actionRow:{button:Text:2:welcometext:false}{button:Type:1:welcomemode:false}{button:Funcs:2:welfuncs:false}{button:Test greeting:2:weltest:false}};;all;true]
 
 $onlyif[$get[authorID]==$interactionData[author.id];
 {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

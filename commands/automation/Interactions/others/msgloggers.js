@@ -37,7 +37,7 @@ $onlyIf[$guildID==$guildID;]
     $if: "old",
 channel: "$getGuildVar[msglogeditchannel]",
 code: `$author[a Message was edited!;$authorAvatar]
-$if[$charCount[$message]||$charCount[$oldMessage]>=1024]
+$if[$charCount[$message]>=1024||$charCount[$oldMessage]>=1024]
 $description[**Before**:
 $oldMessage
 $messageAttachment
@@ -64,7 +64,7 @@ $footer[Message ID: $messageID
 ]
 $color[Blue]
 $addTimestamp
-$if[$charCount[$message]||$charCount[$oldMessage]>=4096]
+$if[$charCount[$message]>=4096||$charCount[$oldMessage]>=4096]
 Text is too large to be included in the embed. Sending as a file instead.
 $createFile[
 Member: <#$authorID>
@@ -82,7 +82,7 @@ $endif
 $if[$getGuildVar[includebots]==false]
 $onlyIf[$isBot==false;]
 $endif
-$onlyIf[$oldMessage||$message!=;]
+$onlyIf[$oldMessage!=||$message!=;]
 $onlyIf[$oldMessage!=$message;]
 $onlyIf[$authorID!=$clientID;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogeditchannel]]==true;]

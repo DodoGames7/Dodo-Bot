@@ -7,6 +7,7 @@ module.exports = [{
 * New design for version command! Now no longer lists all changes in one embed (alongside with a better look for listing changes)
 * Removed akinator game completely (including it's own settings). No longer works properly due to package's unsolvable issues
 * Removed \`readfile\` command from the bot
+* Removed mentions of autorole in welcome settings
 * Updated returned invite links in commands such as \`invite\` to work with the latest stuff of discord
 * Moved test message buttons of both leave and welcome to their settings
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}};;all;true]
@@ -33,6 +34,7 @@ module.exports = [{
 * Group ids for dms no longer breaks channel detections in commands such as \`suggest-set\` command!
 * Fixed markdown formatting of this command
 * Fixed mentions being usable in the beta command \`reverse\`
+* Ensure permeant stability of message logs feature
 * Returning the bot's token using dev commands is no longer possible to increase security
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:true}};;all;true]
     
