@@ -11,9 +11,9 @@ v2 was supposed to be discord.js-based bot, but due to some issues, it has been 
 
 This bot (with v2 update) is likely made for you to learn as well as enjoy it, it's probably the first aoi.js v6 bot to be open sourced here. Note that this project was somehow a bit experimental considering that v2 has been started from scratch but hey, at least. You get to try the new cool stuff out there!
 # Versions
-* **V1**: the discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time
-* **V2 (main)**: the current version of the bot, maintained with lot of bug fixes and uses a lot of discord events than v1
-* **V3**: experimental version made to try discord.js. Dodo-Bot was supposed to switch to djs but got cancelled. Currently on pause
+* **[V1](https://github.com/DodoGames7/Dodo-Bot/tree/v1)**: the discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time
+* **[V2 (main)](https://github.com/DodoGames7/Dodo-Bot/tree/v2)**: the current version of the bot, maintained with lot of bug fixes and uses a lot of discord events than v1
+* **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: experimental version made to try discord.js. Dodo-Bot was supposed to switch to djs but got cancelled. Currently on pause
 # Important Requirements
 You can host the bot on any Host as long as you meet the following Requirements:
 * Have node.js version 17 installed or higher (we recommend node.js version 18, latest node.js is fine but untested)
