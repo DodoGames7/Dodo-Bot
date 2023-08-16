@@ -26,6 +26,7 @@ module.exports = {
   banneduserschannel: "none",
   unbanneduserschannel: "none",
   anonymous: "false",
-  betacommands: "false"
+  betacommands: "false",
+  betaserver: "false"
   
 }

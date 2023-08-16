@@ -19,7 +19,8 @@ $onlyClientPerms[viewauditlog;I'm missing the permission \`ViewAuditLog\`! Pleas
 
 This is so to return the name of the responsible moderator who banned an member of your server! This permission does not apply in case you have enabled \`Anonymous Staff\` mode.]
 $onlyIf[$getGlobalUserVar[betacommands]==true;You're not a beta tester to use this command currently!
-To use this command, please opt in for the beta commands by running \`beta\` command.]`
+To use this command, please opt in for the beta commands by running \`beta\` command.]
+$onlyIf[$getGuildVar[betaserver]==true;]`
 },{
 name: "reset-banlog",
 code: `$setGuildVar[banneduserschannel;none]
@@ -27,7 +28,8 @@ Successfully resetted the ban log channel!
 $onlyIf[$getGuildVar[banneduserschannel]!=none;There is no channel to reset currently.]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 $onlyIf[$getGlobalUserVar[betacommands]==true;You're not a beta tester to use this command currently!
-To use this command, please opt in for the beta commands by running \`beta\` command.]`
+To use this command, please opt in for the beta commands by running \`beta\` command.]
+$onlyIf[$getGuildVar[betaserver]==true;]`
 },{
 name: "set-unbanlog",
 code: `$onlyIf[a!=a;]`

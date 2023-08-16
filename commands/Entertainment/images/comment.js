@@ -7,5 +7,6 @@ Time left: \`%time%\`]
 $onlyIf[$message!=;Please Type something.]
 $onlyIf[$getGlobalUserVar[betacommands]==true;You're not a beta tester to use this command currently!
 To use this command, please opt in for the beta commands by running \`beta\` command.]
+$onlyIf[$getGuildVar[betaserver]==true;]
 `
 }
