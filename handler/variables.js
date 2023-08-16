@@ -1,10 +1,12 @@
+const config = require("./config.json");
 module.exports = {
   // games variables
   trivia_type: "multiple",
   trivia_difficulty: "medium",
   flood_difficulty: 13,
   // server variables
-  prefix: "n!",
+  prefix: config.prefix,
+  originalprefix: config.prefix,
   // bot variables (do not touch)
   autopingreply: "false",
   includebots: "true",

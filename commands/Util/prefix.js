@@ -21,6 +21,6 @@ Usage to change prefix: \`$getGuildVar[prefix]prefix < new prefix here> \`]
     code: ` $setGuildVar[prefix;]
 The prefix has been successfully resetted. <3
 $cooldown[2s;slow down, don't spam the command]
-$onlyIf[$getGuildVar[prefix]!=n!;cannot reset when the prefix is default]
+$onlyIf[$getGuildVar[prefix]!=$getGuildVar[originalprefix];cannot reset when the prefix is default]
 $onlyPerms[manageguild;you need to have \`ManageServer\` perm]`
 }]

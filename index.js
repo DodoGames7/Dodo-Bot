@@ -1,4 +1,5 @@
 const { AoiClient, LoadCommands, Util } = require("aoi.js");
+const { PluginManager } = require("aoi.js-library");
 
 const bot = new AoiClient({
   token: process.env.TOKEN, // token is private by using env method
@@ -38,5 +39,10 @@ Util.parsers.OptionsParser = (data) => {
     return createAst(data).children.map(parseExtraOptions);
 }
 
-
+// Plugins (testing, for now)
+new PluginManager(bot).loadPlugins(
+    "fafa/fetchinvite",
+    "jollyjolli/encodebase64",
+    "jollyjolli/decodebase64"
+)
  

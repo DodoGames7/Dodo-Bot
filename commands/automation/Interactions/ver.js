@@ -49,4 +49,24 @@ module.exports = [{
     $let[authorID;$splitText[2]]
     $let[customId;$splitText[1]] 
     $textSplit[$interactionData[customId];_]`
+    },{
+      type: "interaction",
+    prototype: "button",
+    code: `$interactionUpdate[;{newEmbed:{title:Other}{description:
+* It is now possible to configure the default prefix of the bot when it comes to the source code
+* }};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}]
+
+      $onlyif[$get[authorID]==$interactionData[author.id];
+      {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {options:{ephemeral: true}}
+    {extraOptions:{interaction: true}}
+    ]
+    
+    $onlyif[$get[customId]==versionother;]
+    $let[authorID;$splitText[2]]
+    $let[customId;$splitText[1]] 
+    $textSplit[$interactionData[customId];_]
+
+      `
+      
     }]
