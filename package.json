@@ -22,6 +22,7 @@
     "typescript": "^4.9.5",
     "@discordjs/builders": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
-    "@akarui/aoi.db": "^1.0.0"
+    "@akarui/aoi.db": "^1.0.0",
+    "aoi.js-library": "^2.0.2"
   }
 }
