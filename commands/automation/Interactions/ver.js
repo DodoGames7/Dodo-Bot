@@ -54,7 +54,9 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[;{newEmbed:{title:Other}{description:
 * It is now possible to configure the default prefix of the bot when it comes to the source code
-* }};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}]
+* \`aoi.js-library\` support 
+* Ban logs are now out of beta with the addition of unban logs being included as well
+ }};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}]
 
       $onlyif[$get[authorID]==$interactionData[author.id];
       {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

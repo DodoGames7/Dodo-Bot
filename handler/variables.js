@@ -25,7 +25,6 @@ module.exports = {
   msglogeditchannel: "none",
   banneduserschannel: "none",
   unbanneduserschannel: "none",
-  anonymous: "false",
   betacommands: "false",
   betaserver: "false"
   

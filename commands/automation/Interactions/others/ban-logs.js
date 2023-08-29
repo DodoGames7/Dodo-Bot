@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
 name: "ban-logger",
 type: "banAdd",
 channel: "$getGuildVar[banneduserschannel]",
@@ -15,4 +15,18 @@ $onlyIf[$guildID==$guildID;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banneduserschannel]]==true;]
 $onlyIf[$getGuildVar[banneduserschannel]!=none;]
 `
-}
+},{
+    name: "unban-logger",
+    type: "banRemove",
+    channel: "$getGuildVar[unbanneduserschannel]",
+    code: `$author[$username was unbanned from the server!;$userAvatar;$userAvatar]
+$description[They can now join the server again.]
+$footer[Unbanned $get[botchecker] ID: $authorID]
+$addTimeStamp
+$color[Green]
+$let[botchecker;$replaceText[$replaceText[$checkCondition[$isBot==true];true;bot];false;member]]
+$onlyIf[$guildID==$guildID;]
+$onlyIf[$guildChannelExists[$guildID;$getGuildVar[unbanneduserschannel]]==true;]
+$onlyIf[$getGuildVar[unbanneduserschannel]!=none;]
+`
+}]
