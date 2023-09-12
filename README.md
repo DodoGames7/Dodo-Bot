@@ -18,11 +18,20 @@ This bot (with v2 update) is likely made for you to learn as well as enjoy it, i
 You can host the bot on any Host as long as you meet the following Requirements:
 * Have Latest node.js version installed (LTS like v18 or non-LTS such as v19, v20 for example) 
 * Have an host ready to handle Bot's Features (Obviously)
-### Note
-You can use node.js v16 on the Bot but it will not work properly for Packages, And so, It can result in errors that comes from node.js versions being lower. Also, it's not recommended due to it's support ending in September 2023 so packages dropping support for it is expected! Be aware!
+
 
 # config.json
 It is now possible to configure some stuff in Dodo-Bot before turning it on! You can go into the file by going into the `handler` folder of the bot and then open the file `config.json` and modify it to your liking based on current options in the file content.
+# Node.js Compliability
+This is for you if you're confused on what node.js version is supported to run Dodo-Bot! This contains a list of what node.js version is supported and what is not. If your node.js is not supported then it is recommended to update it to a supported version of node.js.
+| Node.js | Supported? | 
+|--------|--------|
+| **v12** | ❌ |
+| **v14** | ❌ |
+| **v16** | ❌ |
+| **v17** | ✅ |
+| **v18** | ✅ |
+| **v20** | ✅ |
 
 # Credits
 Most of code belongs to me. You can also credit me using my discord username: "dodogames", in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.
