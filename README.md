@@ -24,15 +24,15 @@ You can host the bot on any Host as long as you meet the following Requirements:
 It is now possible to configure some stuff in Dodo-Bot before turning it on! You can go into the file by going into the `handler` folder of the bot and then open the file `config.json` and modify it to your liking based on current options in the file content.
 # Node.js Compliability
 This is for you if you're confused on what Node.js version is supported to run Dodo-Bot! This contains a list of what Node.js version is supported and what is not. If your Node.js is not supported then it is recommended to update it to a supported version of Node.js.
-| Node.js | Supported? | 
-|--------|--------|
-| **Older versions** | ❌ |
-| **v12** | ❌ |
-| **v14** | ❌ |
-| **v16** | ❌ |
-| **v17** | ✅ |
-| **v18** | ✅ |
-| **v20** | ✅ |
+| Node.js | Supported? | Notes |
+|--------|--------|--------|
+| **Older versions** | ❌ | None |
+| **v12** | ❌ | None |
+| **v14** | ❌ | None |
+| **v16** | ⚠  | May not work properly. Update to latest for better experience |
+| **v17** | ✅ | None |
+| **v18** | ✅ | None | 
+| **v20** | ✅ | None |
 
 # Credits
 Most of code belongs to me. You can also credit me using my discord username: "dodogames", in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.
