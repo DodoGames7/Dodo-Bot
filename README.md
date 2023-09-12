@@ -16,7 +16,7 @@ This bot (with v2 update) is likely made for you to learn as well as enjoy it, i
 * **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: experimental version made to try discord.js. Dodo-Bot was supposed to switch to djs but got cancelled. Currently on pause
 # Important Requirements
 You can host the bot on any Host as long as you meet the following Requirements:
-* Have Latest Node.js version installed (LTS like v18 or non-LTS such as v19, v20 for example) 
+* Supported Node.js version. See [Compliability List](https://github.com/DodoGames7/Dodo-Bot#nodejs-compliability) for more info
 * Have an host ready to handle Bot's Features (Obviously)
 
 
