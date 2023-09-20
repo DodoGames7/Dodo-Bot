@@ -6,7 +6,7 @@ module.exports = {
   $description[
   * **Version**: 2.0.0-beta.5 (Redeveloped)
   * **Release type**: Beta
-  * **Date of build**: <t:$truncate[$divide[1693317473184;1000]]:f>
+  * **Date of build**: <t:$truncate[$divide[1694503290266;1000]]:f>
   
   Check changes of the version by using the buttons below.
   ]
