@@ -1,3 +1,4 @@
 {
-    "prefix": "n!"
+    "prefix": "n!",
+    "disableErrors": false
 }

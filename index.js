@@ -1,5 +1,6 @@
 const { AoiClient, LoadCommands, Util } = require("aoi.js");
 const { PluginManager } = require("aoi.js-library");
+const config = require("./handler/config.json");
 
 const bot = new AoiClient({
   token: process.env.TOKEN, // token is private by using env method
@@ -17,7 +18,8 @@ const bot = new AoiClient({
          dbType: "KeyValue"
      },
  },
- disableFunctions: ["$clientToken"]
+ disableFunctions: ["$clientToken"],
+ suppressAllErrors: config.disableErrors
 });
 
 // loading handlers
