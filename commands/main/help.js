@@ -11,5 +11,6 @@ $addSelectMenu[1;helpmenu_$authorID;Select an Module;1;1;false;Main:explore Gene
 $else
 $addSelectMenu[1;helpmenu_$authorID;Select an Module;1;1;false;Main:explore General Commands:general:false;Entertainment:explore fun commands:entertainment:false;Util:explore util commands:util:false]
 $endif
-  $cooldown[2s;slow down, don't spam the command]`
+$cooldown[2s; Slow down! Don't spam the command!
+Time left: \`%time%\`]`
 }
