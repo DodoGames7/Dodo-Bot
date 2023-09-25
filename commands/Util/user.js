@@ -18,6 +18,7 @@ $addField[General;
 Joined discord at: $creationDate[$findUser[$message];date]
 Bot account: $isBot[$findUser[$message];true]
 User ID: $findUser[$message;true]
+Display name: $get[displayname]
 ]
 $if[$memberExists[$findUser[$message;true];$guildID]==true]
 $addField[Server information;
@@ -30,6 +31,6 @@ Server Booster: $isBoosting[$findUser[$message;true];$guildID]
 $endif
 $cooldown[5s; Slow down! Don't spam the command!
 Time left: \`%time%\`]
+$let[displayname;$replaceText[$replaceText[$checkCondition[$userDisplayName[$findUser[$message;true]]==$username[$findUser[$message;true]]];true;same as username];false;$userDisplayName[$findUser[$message;true]]]]
 `
-
 }

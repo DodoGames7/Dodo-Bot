@@ -10,7 +10,8 @@ module.exports = [{
 * Removed mentions of autorole in welcome settings
 * Updated returned invite links in commands such as \`invite\` to work with the latest stuff of discord
 * Moved test message buttons of both leave and welcome to their settings
-    }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}};;all;true]
+* Added function \`<leave.time>\` to leave system! It returns the time when user left the server
+    }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     
     $onlyif[$get[authorID]==$interactionData[author.id];
@@ -37,7 +38,7 @@ module.exports = [{
 * Fixed mentions being usable in the beta command \`reverse\`
 * Ensure permeant stability of message logs feature
 * Returning the bot's token using dev commands is no longer possible to increase security
-    }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}};;all;true]
+    }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     
     $onlyif[$get[authorID]==$interactionData[author.id];
@@ -59,7 +60,9 @@ module.exports = [{
 * Ban logs are now out of beta with the addition of unban logs being included as well
 * Bot now fully supports current username support
 * Add a dev-only command for custom status \`setcustomstatus\`
- }};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}]
+* Added an option to disable errors when setting up the bot from source code
+* Include display name of the user in \`user\` command
+ }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}}]
 
       $onlyif[$get[authorID]==$interactionData[author.id];
       {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

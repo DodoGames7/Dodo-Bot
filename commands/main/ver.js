@@ -6,11 +6,12 @@ module.exports = {
   $description[
   * **Version**: 2.0.0-beta.5 (Redeveloped)
   * **Release type**: Beta
-  * **Date of build**: <t:$truncate[$divide[1694503290266;1000]]:f>
+  * **Date of build**: <t:$truncate[$divide[1695665333319;1000]]:f>
   
   Check changes of the version by using the buttons below.
   ]
   $color[Blurple]
+  $addButton[1;Full Changelog;5;https://github.com/DodoGames7/Dodo-Bot/releases;false]
   $addButton[1;Other;2;versionother_$authorID;false]
   $addButton[1;Bug Fixes;3;versionbugfixes_$authorID;false]
   $addButton[1;Changes;1;versionchanges_$authorID;false]

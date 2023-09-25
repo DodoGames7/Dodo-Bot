@@ -26,6 +26,8 @@ module.exports = {
   banneduserschannel: "none",
   unbanneduserschannel: "none",
   betacommands: "false",
-  betaserver: "false"
+  betaserver: "false",
+  // other
+  leavetime: ""
   
 }

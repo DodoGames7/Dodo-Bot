@@ -74,7 +74,7 @@ $get[content]]
 ]
 $endif
 
-$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount members left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]]]
+$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount members left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:d>]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
 \`SendMessages\`
@@ -227,6 +227,8 @@ You're already using embed mode for leave message!
 \`<owner.id>\` - returns the id of the server owner
 \`<server.name>\` - returns the server name
 \`<server.id>\` - returns the server id
+}{field:Extra:
+\`<leave.time>\` - displays the time when the user left the server
 }};;;all;true]
 `
 }]
