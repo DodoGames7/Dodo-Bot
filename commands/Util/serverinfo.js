@@ -13,7 +13,8 @@ Server ID: $guildID
 Roles: $roleCount[$guildID;true]
 Emojis: $emojiCount[$guildID] 
 Server Boosts: $guildBoostCount[$guildID]
-
+Server owner: $username[$guildOwnerID] 
+Server owner's id: $guildOwnerID
 ]
   $addField[Channels;
 Total: $channelCount[$guildID;all]

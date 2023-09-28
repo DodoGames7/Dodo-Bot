@@ -8,18 +8,13 @@ $interactionModal[Channel to set.;leavesetchannel;
     {textInput:Channel id to use:1:leaveidInput:true:channel id here:0:200}
   }]
 
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+  {options:{ephemeral: true}}
+  {extraOptions:{interaction: true}}
+  ]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavechannel;]
 
- $onlyif[$get[authorID]==$interactionData[author.id];
-  {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
-
-$onlyif[$get[customId]==leavechannel;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_]
+ 
 `
 },{
 name: "leavesetchannel",
@@ -115,17 +110,12 @@ $interactionReply[Successfully disabled Leave system!;;;;all;true]
 $endelseif
 $endif
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+  {options:{ephemeral: true}}
+  {extraOptions:{interaction: true}}
+  ]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==enableleave;]
 
-$onlyif[$get[customId]==enableleave;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
 
 `
 
@@ -142,17 +132,13 @@ $textSplit[$interactionData[customId];_]
 To check your leave message, you may need to click/tap the "Test Leave" button.
 }};{actionRow:{button:Text:2:leavetext:false}{button:Type:1:leavemode:false}{button:Funcs:2:leavefuncs:false}{button:Test Leave:2:leavetest:false}};;all;true]
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
 
-$onlyif[$get[customId]==leavesetting;]
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+  {options:{ephemeral: true}}
+  {extraOptions:{interaction: true}}
+  ]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesetting;]
 
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
 `
 },{ 
     name: "leavetext",

@@ -4,9 +4,9 @@ module.exports = {
   aliases: "ver",
   code: `$title[Dodo-Bot version]
   $description[
-  * **Version**: 2.0.0-beta.5 (Redeveloped)
-  * **Release type**: Beta
-  * **Date of build**: <t:$truncate[$divide[1695665333319;1000]]:f>
+  * **Version**: 2.0.0
+  * **Release type**: Stable
+  * **Date of build**: <t:$truncate[$divide[1695906206960;1000]]:f>
   
   Check changes of the version by using the buttons below.
   ]

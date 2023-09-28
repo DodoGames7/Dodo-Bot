@@ -6,17 +6,11 @@ code: `$interactionModal[Channel to set.;welsetchannel;
     {textInput:Channel id to use:1:idInput:true:channel id here:0:200}
   }]
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
-
-$onlyif[$get[customId]==welchannel;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welchannel;]
 
   `
 },{
@@ -85,13 +79,13 @@ Cancelled test greeting as a result. Please set a new channel instead.
 {extraOptions:{interaction: true}}
 ]
 
-$onlyIf[$getGuildVar[welcomechannel]!=none;There is no channel set to test the welcome message.
+$onlyIf[$getGuildVar[welcomechannel]!=none;There is no channel set to test the welcomer message.
 Please set a new channel first.
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
 
-$onlyIf[$getGuildVar[welcomesystem]==true;Cannot test when the welcome feature is disabled.
+$onlyIf[$getGuildVar[welcomesystem]==true;Cannot test when the welcomer feature is disabled.
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -106,51 +100,40 @@ $disableMentionType[everyone]
     $if: "old",
     code:`$if[$getGuildVar[welcomesystem]==false]
 $setGuildVar[welcomesystem;true]
-$interactionReply[Successfully enabled Welcome system!;;;;all;true]
+$interactionReply[Successfully enabled Welcomer system!;;;;all;true]
 $elseif[$getGuildVar[welcomesystem]==true]
 $setGuildVar[welcomesystem;false]
-$interactionReply[Successfully disabled Welcome system!;;;;all;true]
+$interactionReply[Successfully disabled Welcomer system!;;;;all;true]
 $endelseif
 $endif
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
-
-$onlyif[$get[customId]==enablewel;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==enablewel;]
 
 `
 
 },{
     type: "interaction", 
     prototype: "button",
-    code:`$interactionReply[;{newEmbed:{title:Welcome Settings}{description:Here are the avaliable options to choose from#COLON#
+    code:`$interactionReply[;{newEmbed:{title:Welcomer Settings}{description:Here are the avaliable options to choose from#COLON#
 
 \`Text\`#COLON# text to use for the custom message.
 \`Type\`#COLON# use text or embed?
 
 **Current Settings**
-**Type (Welcome message type)**#COLON# \`$getGuildVar[welcometype]\`
-To check your welcome message, you may need to click/tap the "Test greeting" button.
+**Type (Welcomer message type)**#COLON# \`$getGuildVar[welcometype]\`
+To check your welcomer message, you may need to click/tap the "Test greeting" button.
 }};{actionRow:{button:Text:2:welcometext:false}{button:Type:1:welcomemode:false}{button:Funcs:2:welfuncs:false}{button:Test greeting:2:weltest:false}};;all;true]
 
-$onlyif[$get[authorID]==$interactionData[author.id];
-{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
-
-$onlyif[$get[customId]==welsetting;]
-
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_] 
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsetting;]
+ 
 `
 },{ 
     name: "welcometext",
@@ -189,7 +172,7 @@ $interactionReply[Successfully set the welcome message.;;;;all;true]
     name: "welcomemode",
     type: "interaction",
     prototype: "button",
-    code: `$interactionReply[;{newEmbed:{title:Welcome message Type}{description:
+    code: `$interactionReply[;{newEmbed:{title:Welcomer message Type}{description:
 
 **Important**
 This feature is currently in beta so no customizations is available for now.
@@ -199,7 +182,7 @@ There are two types when it comes to our welcome message types!
 **Text**
 **Embed**
 
-By default, \`Text\` type is used for welcome message type when you first setup the welcome system in a server. This type will not work if the welcome message has at least 2000 characters which in this case, we will use the \`Embed\` type due to discord's character limit for bots.
+By default, \`Text\` type is used for welcomer message type when you first setup the welcome system in a server. This type will not work if the welcome message has at least 2000 characters which in this case, we will use the \`Embed\` type due to discord's character limit for bots.
 
 Embeds are mainly just your welcome message in embed description with the new member being mentioned in embed author and a random embed color used by Default. There is nothing fancy when it comes to this type so.}};{actionRow:{button:Text:1:weltextmode:false}{button:Embed:1:welembedmode:false}};;all;true]
 `
@@ -207,11 +190,11 @@ Embeds are mainly just your welcome message in embed description with the new me
     name: "weltextmode",
     type: "interaction",
     prototype: "button",
-    code: `$interactionReply[Successfully changed welcome message to use texts now.;;;;all;true]
+    code: `$interactionReply[Successfully changed welcomer message to use texts now.;;;;all;true]
 $setGuildVar[welcometype;text]
 
 $onlyIf[$getGuildVar[welcometype]!=text;
-You're already using text mode for welcome message!
+You're already using text mode for welcomer message!
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
@@ -220,11 +203,11 @@ You're already using text mode for welcome message!
     name: "welembedmode",
     type: "interaction",
     prototype: "button",
-    code: `$interactionReply[Successfully changed welcome message to use embeds now.;;;;all;true]
+    code: `$interactionReply[Successfully changed welcomer message to use embeds now.;;;;all;true]
 $setGuildVar[welcometype;embed]
 
 $onlyIf[$getGuildVar[welcometype]!=embed;
-You're already using embed mode for welcome message!
+You're already using embed mode for welcomer message!
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]

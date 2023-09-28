@@ -4,17 +4,13 @@ module.exports = [{
   code: `
   $interactionReply[Which Game do you want to manage.;;{actionRow:{button:Trivia:1:trivbutton:false}{button:Flood:1:floodbutton:false}};;all;true]
 
-  
-  $onlyif[$get[authorID]==$interactionData[author.id];
-  {newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-{options:{ephemeral: true}}
-{extraOptions:{interaction: true}}
-]
 
-$onlyif[$get[customId]==settingsmenu;]
-$let[authorID;$splitText[2]]
-$let[customId;$splitText[1]] 
-$textSplit[$interactionData[customId];_]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+  {options:{ephemeral: true}}
+  {extraOptions:{interaction: true}}
+  ]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
+
 $onlyIf[$interactionData[values[0]]==gamesmenu;]`
 },{
   name: "trivbutton",
