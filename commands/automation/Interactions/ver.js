@@ -6,6 +6,7 @@ module.exports = [{
 * Added flags feature
 * Removed v1 credits from \`credits\` command. We will move them into our upcoming docs of the bot
 * Channel set commands now use select menu for channels! This makes it much easier to select channels
+* Deprecate node.js v17 support and add an warning for using unsupported versions at the console
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
