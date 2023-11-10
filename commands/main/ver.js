@@ -5,7 +5,7 @@ module.exports = {
   code: `$title[Dodo-Bot version]
   $description[
   * **Version**: 2.0.1
-  * **Release type**: Dev
+  * **Release type**: Dev (see \`$getGuildVar[prefix]gitbuilds\` for more information)
   * **Date of build**: <t:$truncate[$divide[1699622812931;1000]]:f>
   
   Check changes of the version by using the buttons below.
