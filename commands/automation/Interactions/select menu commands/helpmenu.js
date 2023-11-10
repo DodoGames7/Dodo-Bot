@@ -1,7 +1,7 @@
 module.exports = [{
   type: "interaction",
   prototype: "selectMenu",
-  code: `$interactionUpdate[;{newEmbed:{title:General}{field:Main stuff:\`ping\`, \`settings\`, \`beta\`}{field:bot-related:\`stats\`, \`ver\`, \`invite\`, \`credits\`, \`info\`, \`report\`}};{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}}}]
+  code: `$interactionUpdate[;{newEmbed:{title:General}{field:Main stuff:\`ping\`, \`settings\`, \`beta\`, \`flags\`}{field:bot-related:\`stats\`, \`ver\`, \`invite\`, \`credits\`, \`info\`, \`report\`, \`gitbuilds\`}};{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{selectMenuOptions:Main:general:explore General Commands:false}{selectMenuOptions:Entertainment:entertainment:explore Fun Commands:false}{selectMenuOptions:Util:util:explore Util Commands:false}}}]
 
 
   

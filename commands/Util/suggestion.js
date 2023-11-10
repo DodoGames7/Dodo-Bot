@@ -1,25 +1,19 @@
 module.exports = [{
-name: "suggestion-set",
-aliases: "suggest-set",
-usage: "suggestion-set channel-name/channel ID or <#channel ID>",
-code: `
-$setGuildVar[suggestionchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the suggestion channel.
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
-\`ViewChannel\`
-\`SendMessages\`
-\`AddReactions\`
-]
-$onlyIf[$findChannel[$message]!=$getGuildVar[suggestionchannel]; You already have set this channel for Suggestions. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
-$cooldown[5s; Slow down! Don't spam the command!
-Time left: \`%time%\`]
-$onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;usage]]\`]
-$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
-`
-},{
+    name: "suggestion-set",
+    aliases: "suggest-set",
+    usage: "suggestion-set channel-name/channel ID or <#channel ID>",
+    code: `
+    $title[Select an channel]
+    $description[Open the select menu to choose an channel to set for suggestion!
+    
+    Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.]
+    $color[Blurple]
+    $addSelectMenu[1;channel;suggestmenu_$authorID;Open The menu.;1;1;false]
+    $cooldown[5s; Slow down! Don't spam the command!
+    Time left: \`%time%\`]
+    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
+    `
+    },{
     name: "suggest-reset",
     code: `$setGuildVar[suggestionchannel;none]
 Successfully resetted suggestion Channel. Run \`suggest-set\` to set a channel.
