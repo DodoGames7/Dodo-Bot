@@ -24,7 +24,7 @@ module.exports = [{
 * Fixed the version simply still reading as "2.0.0" in \`stats\` command.
 * Fixed inconsistencies between \`welcomer\` and \`leave\` command at "Getting started" part
 * Fixed the flag \`--embed\` not working from previous build of 2.0.1 on Gthub
-* Fixed view channel permissions being not enforced on channel-set commands like message delete logging
+* Fixed view channel permissions being not enforced on features like message delete logging
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
