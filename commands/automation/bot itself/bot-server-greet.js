@@ -9,7 +9,7 @@ module.exports = {
     
     You can explore all of my commands using \`$getGuildVar[prefix]help\`!
     }{color:Blurple}}{actionRow:{button:Support server:5:https#COLON#//discord.gg/pFwKjAaZvj:false}{button:Source code:5:https#COLON#//github.com/DodoGames7/Dodo-Bot:false}};false]
-    $onlyIf[$hasPermsInChannel[$get[channelselector];$clientID;sendmessages]==true;]
+    $onlyIf[$hasPermsInChannel[$get[channelselector];$clientID;sendmessages;viewchannel]==true;]
     $let[channelselector;$replaceText[$replaceText[$checkCondition[$guildSystemChannelID[$guildID]==];true;$randomChannelID[$guildID;Text]];false;$guildSystemChannelID[$guildID]]]
     $onlyIf[$getVar[botgreeting]==true;]
     `
