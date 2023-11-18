@@ -13,7 +13,7 @@ This bot (with v2 update) is likely made for you to learn as well as enjoy it, i
 # Versions
 * **[V1](https://github.com/DodoGames7/Dodo-Bot/tree/v1)**: The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time
 * **[V2 (main)](https://github.com/DodoGames7/Dodo-Bot/tree/v2)**: The current version of the bot, maintained with lot of bug fixes and uses a lot of discord events than v1
-* **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Experimental version made to aoi.js v7. Currently on pause.
+* **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Experimental version made to test aoi.js v7. Currently on pause.
 # Important Requirements
 You can host the bot on any Host as long as you meet the following Requirements:
 * Supported Node.js version. See [Compliability List](https://github.com/DodoGames7/Dodo-Bot#nodejs-compliability) for more info
