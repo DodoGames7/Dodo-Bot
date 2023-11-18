@@ -15,7 +15,7 @@ $author[$get[usernamechecker];$userAvatar]
   - from \`$get[usernamechecker]\`
 $endif
 $onlyIf[$message[1]!=;Say something first.
-**Note**: you can also use embed mode. Make sure that your command argument starts with the word \`embed\` for that to work.]
+**Note**: you can also use embed mode. Make sure that your command argument starts with the flag \`--embed\` for that to work.]
 $disableMentionType[all]
 $let[botlink;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles]]]
 $let[usernamechecker;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username];false;$userTag]]
