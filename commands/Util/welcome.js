@@ -6,7 +6,7 @@ $description[Welcomer system is an way to greet new members of your server with 
 
 We also offer unique functions that you can use on your own welcome message such as \`<id>\`.
 
-To get started, click on the "Enable" button!
+To get started, click on the "Toggle" button!
 
 $get[welcomesystem]
 ]

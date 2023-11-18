@@ -29,10 +29,12 @@ This is for you if you're confused on what Node.js version is supported to run D
 | **Older versions** | ❌ | None |
 | **v12** | ❌ | None |
 | **v14** | ❌ | None |
-| **v16** | ⚠  | May not work properly. Update to latest for better experience |
-| **v17** | ✅ | None |
-| **v18** | ✅ | None | 
+| **v16** | 🛑 | Deprecated, will display a warning at console |
+| **v17** | 🛑 | Deprecated, will display a warning at console |
+| **v18** | ✅ | None |
+| **v19** | ✅ | None |
 | **v20** | ✅ | None |
+| **v21** | ✅ | None |
 
 # Credits
 Most of code belongs to me. You can also credit me using my discord username: "dodogames", in case using my code for development purposes. You really agree to not to claim that you made it otherwise i may ask you to credit. Anything involves in violating credits (including making any bot public using this code) is not allowed.

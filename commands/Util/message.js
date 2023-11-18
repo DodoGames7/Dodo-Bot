@@ -1,20 +1,17 @@
 module.exports = [{
 name: "set-messagedeletelog",
 aliases: "set-logdelete",
-usage: "set-logdelete channel-name/channel ID or <#channel ID>",
-code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message deletion log channel.
+usage: "set-logdelete > open menu > select the channel",
+code: `$title[Select an channel]
+$description[Open the select menu to choose an channel to set for message delete logging!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>
-\`SendMessages\`
-]
-$onlyIf[$findChannel[$message]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message deletion logs. Please mention a different one instead.]
-$onlyIf[$channelType[$findChannel[$message]]==text;We only support Text channels for now for the message log deletion feature.
-Please set an text channel instead.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
 
-$onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logdelete;usage]]\`]
+NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
+$color[Blurple]
+$addSelectMenu[1;channel;msgdeletelogmenu_$authorID;Open The menu.;1;1;false]
+$cooldown[5s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 `
 
@@ -37,22 +34,17 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
 },{
     name: "set-messageeditlog",
     aliases: "set-logedit",
-    usage: "set-logedit channel-name/channel ID or <#channel ID>",
-    code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message edit log channel.
+    usage: "set-logedit > open menu > select the channel",
+    code: `$title[Select an channel]
+$description[Open the select menu to choose an channel to set for message edit logging!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>
-\`SendMessages\`
-]
+Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
 
-$onlyIf[$findChannel[$message]!=$getGuildVar[msglogeditchannel]; You already have set this channel for message edit logs. Please mention a different one instead.]
-$onlyIf[$channelType[$findChannel[$message]]==text;We only support Text channels for now for the message log deletion feature.
-Please set an text channel instead.]
-
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
-
-$onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logedit;usage]]\`]
+NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
+$color[Blurple]
+$addSelectMenu[1;channel;msgeditlogmenu_$authorID;Open The menu.;1;1;false]
+$cooldown[5s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 `
 

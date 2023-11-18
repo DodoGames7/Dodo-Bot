@@ -20,7 +20,8 @@ prototype: "modal",
 code: `$setGuildVar[welcomechannel;$textInputValue[idInput]]
 $interactionReply[Successfully set <#$textInputValue[idInput]> as the welcome channel!;;;;all;true]
 
-$onlyIf[$hasPermsInChannel[$textInputValue[idInput];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$textInputValue[idInput]>:
+$onlyIf[$hasPermsInChannel[$textInputValue[idInput];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$textInputValue[idInput]>:
+\`ViewChannel\`
 \`SendMessages\`
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
@@ -67,7 +68,8 @@ $endif
 
 $let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[welcomemessage];undefined;Welcome to the server $username!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]];<position>;$memberJoinPosition]]
 
-$onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[welcomechannel]>:
+$onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[welcomechannel]>:
+\`ViewChannel\`
 \`SendMessages\`
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}

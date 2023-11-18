@@ -6,7 +6,7 @@ $description[Leave System just like welcomer system is an way to setup an channe
 
 Just like welcomer system, we also offer unique functions as well!
 
-To get started, click on the "Enable" button!
+To get started, click on the "Toggle" button!
 
 $get[leavesystem]
 ]

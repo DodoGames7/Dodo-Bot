@@ -5,14 +5,12 @@ module.exports = {
     ]
     $addField[General;
     * \`--embed\` - Enables embeds for \`say\` command
-    * \`--serverav\` - View member's server avatars instead of their main avatars in \`avatar\` command!
-     * Disables the ability to view avatars from anyone outside of the server
-     * Will return default one if no server avatar is used
-    
     ]
     $addField[Example(s);
     * \`(prefix)commandname --flag\`
     * \`$getGuildVar[prefix]say --embed Hi\`
     ]
-    $color[Blurple]`
+    $color[Blurple]
+    $cooldown[2s; Slow down! Don't spam the command!
+Time left: \`%time%\`]`
     }

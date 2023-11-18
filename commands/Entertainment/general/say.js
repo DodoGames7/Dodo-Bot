@@ -2,7 +2,7 @@ module.exports = {
   name: "say",
   executeAt: "guild",
   $if: "old",
-  code: `$if[$stringStartsWith[$tolowercase[$message[1]];embed]==true]
+  code: `$if[$stringStartsWith[$tolowercase[$message[1]];--embed]==true]
 $author[$get[usernamechecker];$userAvatar]
   $title[Say Cmd!;$get[botlink]]
   $description[$messageSlice[1]]
