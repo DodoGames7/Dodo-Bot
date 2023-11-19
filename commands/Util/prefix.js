@@ -5,7 +5,8 @@ module.exports = [{
   $setGuildVar[prefix;$message]
   Changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`.
   $onlyIf[$getGuildVar[prefix]!=$message; This prefix is already in use.]
-  $cooldown[2s;slow down, don't spam the command]
+  $cooldown[2s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
   $onlyIf[$charCount[$message]<=5;Prefix can't be longer than 5 characters.]
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
@@ -19,8 +20,9 @@ Usage to change prefix: \`$getGuildVar[prefix]prefix < new prefix here> \`]
     executeAt: "guild",
     aliases: "reset-prefix",
     code: ` $setGuildVar[prefix;]
-The prefix has been successfully resetted. <3
-$cooldown[2s;slow down, don't spam the command]
+The prefix has been successfully reset. <3
+$cooldown[2s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
 $onlyIf[$getGuildVar[prefix]!=$getGuildVar[originalprefix];cannot reset when the prefix is default]
 $onlyPerms[manageguild;you need to have \`ManageServer\` perm]`
 }]
