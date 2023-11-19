@@ -19,7 +19,7 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     name: "reset-messagedeletelog",
     aliases: "reset-logdelete",
     code: `$setGuildVar[msglogdeletedchannel;none]
-Successfully resetted the message delete log channel!
+Successfully reset the message delete log channel!
 $onlyIf[$getGuildVar[msglogdeletedchannel]!=none;There is no channel to reset currently.]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 `
@@ -27,7 +27,7 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     name: "reset-messageeditlog",
     aliases: "reset-logedit",
     code: `$setGuildVar[msglogeditchannel;none]
-Successfully resetted the message edit log channel!
+Successfully reset the message edit log channel!
 $onlyIf[$getGuildVar[msglogeditchannel]!=none;There is no channel to reset currently.]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 `

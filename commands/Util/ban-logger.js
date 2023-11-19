@@ -19,7 +19,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
 },{
 name: "reset-banlog",
 code: `$setGuildVar[banneduserschannel;none]
-Successfully resetted the ban log channel!
+Successfully reset the ban log channel!
 $onlyIf[$getGuildVar[banneduserschannel]!=none;There is no channel to reset currently.]
 $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
 `
@@ -43,7 +43,7 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     },{
     name: "reset-unbanlog",
     code: `$setGuildVar[unbanneduserschannel;none]
-    Successfully resetted the un-ban log channel!
+    Successfully reset the un-ban log channel!
     $onlyIf[$getGuildVar[unbanneduserschannel]!=none;There is no channel to reset currently.]
     $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]`
     }]

@@ -16,7 +16,7 @@ module.exports = [{
     },{
     name: "suggest-reset",
     code: `$setGuildVar[suggestionchannel;none]
-Successfully resetted suggestion Channel. Run \`suggest-set\` to set a channel.
+Successfully reset suggestion Channel. Run \`suggest-set\` to set a channel.
 $cooldown[5s; Slow down! Don't spam the command!
 Time left: \`%time%\`]
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
