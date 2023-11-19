@@ -6,7 +6,9 @@ module.exports = [{
     $title[Select an channel]
     $description[Open the select menu to choose an channel to set for suggestion!
     
-    Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.]
+    Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
+
+    NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
     $color[Blurple]
     $addSelectMenu[1;channel;suggestmenu_$authorID;Open The menu.;1;1;false]
     $cooldown[5s; Slow down! Don't spam the command!
