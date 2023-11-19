@@ -1,5 +1,5 @@
 {
     "BotToken": "TOKEN HERE",
-    "prefix": "n!",
+    "prefix": "d!",
     "disableErrors": false
 }
