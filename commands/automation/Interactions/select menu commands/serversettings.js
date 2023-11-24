@@ -1,11 +1,8 @@
 module.exports = [{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionReply[;{newEmbed:{title:Server Settings}{description:What settings do you want to change?
-    
-    **What is each option about?**
-    **Beta access**#COLON# allow Dodo-Bot beta command testers to use beta commands in this server. This is not recommended for public servers as beta commands are not fully stable for release! Use this at your own risk!
-    Option Type: \`toggle\`
+    code: `$interactionReply[;{newEmbed:{title:Server Settings}{description:
+        Select an option which you want to change?
     
     **Current Settings**
     **Beta access**#COLON# \`$get[betaserver]\`
@@ -14,7 +11,7 @@ module.exports = [{
     **Toggle**#COLON# Click/tap on the option to enable! Click/tap again to disable.
     **Select**#COLON# Available customization for This Option to Choose.
     
-    }};{actionRow:{button:Beta access:1:serverbeta:false}};;all;true]
+    }};{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{selectMenuOptions:Beta access:serverbeta:Allow everyone to use beta commands!:false}}};;all;true]
     
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -25,6 +22,24 @@ module.exports = [{
 
     $onlyIf[$interactionData[values[0]]==servermenu;]
     $let[betaserver;$replaceText[$replaceText[$getGuildVar[betaserver];true;Enabled];false;Disabled]]
+    `
+    }{
+        type: "interaction",
+        prototype: "selectMenu",
+        code: `$interactionUpdate[;{newEmbed:{title:Beta access}{description:
+            Allow anyone who're part of beta commands system to use beta commands in this server. This is not recommended for public servers as beta commands are not fully stable for release! Use this at your own risk!
+    Option Type: \`toggle\`
+
+
+        }};{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{selectMenuOptions:Beta access:serverbeta:Allow everyone to use beta commands!:false}}}{actionRow:{button:Toggle:1:serverbeta:false}}]
+
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {options:{ephemeral: true}}
+    {extraOptions:{interaction: true}}
+    ]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
+
+    $onlyIf[$interactionData[values[0]]==serverbeta;]
     `
     },{
         name: "serverbeta",

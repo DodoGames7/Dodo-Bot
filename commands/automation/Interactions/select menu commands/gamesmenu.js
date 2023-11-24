@@ -2,7 +2,7 @@ module.exports = [{
   type: "interaction",
   prototype: "selectMenu",
   code: `
-  $interactionReply[Which Game do you want to manage.;;{actionRow:{button:Trivia:1:trivbutton:false}{button:Flood:1:floodbutton:false}};;all;true]
+  $interactionReply[Which game do you want to manage.;;{actionRow:{button:Trivia:1:trivbutton:false}{button:Flood:1:floodbutton:false}};;all;true]
 
 
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

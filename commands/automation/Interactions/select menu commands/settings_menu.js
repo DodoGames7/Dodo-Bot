@@ -1,14 +1,9 @@
 module.exports = [{
 type: "interaction",
 prototype: "selectMenu",
-code: `$interactionReply[;{newEmbed:{title:Dodo Bot Settings}{description: What do you want to customise?
+code: `$interactionReply[;{newEmbed:{title:Dodo Bot Settings}{description:
 
-**What is each option about?**
-**Auto Reply**#COLON# having this Option on will allow the bot to respond by just pinging it, Which will let you know on what prefix it currently uses for your server. Disable this If It's used purposefully for spamming.
-Option Type: \`toggle\`
-
-**Include Bots**#COLON# this option let's you decide whether or not bots should be included in logs feature such as message deletion logs. By default, this is enabled but you can choose to disable it for whatever reason.
-Option Type: \`toggle\`
+Select the options which you want to customise?
 
 
 **Current Settings**
@@ -19,7 +14,7 @@ Option Type: \`toggle\`
 **Toggle**#COLON# Click/tap on the option to enable! Click/tap again to disable.
 **Select**#COLON# Available customization for This Option to Choose.
 
-}};{actionRow:{button:Auto Reply:1:autoreply:false}{button:Include Bots:1:includebots:false}};;all;true]
+}};{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{selectMenuOptions:Auto Reply:autoreply:Automatically reply to pings.:false}{selectMenuOptions:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}};;all;true]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -31,6 +26,44 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 $onlyIf[$interactionData[values[0]]==botmenu;]
 $let[autoreply;$replaceText[$replaceText[$getGuildVar[autopingreply];true;Enabled];false;Disabled]]
 $let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];true;Enabled];false;Disabled]]
+`
+},{
+ type: "interaction",
+ prototype: "selectMenu",
+ code: `$interactionUpdate[;{newEmbed:{title:Auto Reply}{description:
+     Having this option on will allow the bot to respond by just pinging, which will let you know on what prefix it currently uses for your server. Disable this If It's purposefully used for spamming.
+Option Type: \`toggle\`
+
+
+}};{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{selectMenuOptions:Auto Reply:autoreply:Automatically reply to pings.:false}{selectMenuOptions:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Toggle:1:autoreply:false}}]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {options:{ephemeral: true}}
+    {extraOptions:{interaction: true}}
+    ]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
+
+$onlyIf[$interactionData[values[0]]==autoreply;]
+
+`
+},{
+ type: "interaction",
+ prototype: "selectMenu",
+ code: `$interactionUpdate[;{newEmbed:{title:Include Bots}{description:
+     This option let's you decide whether or not bots should be included in logs feature such as message delete logs. By default, this is enabled but you can choose to disable it for whatever reason.
+Option Type: \`toggle\`
+
+
+}};{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{selectMenuOptions:Auto Reply:autoreply:Automatically reply to pings.:false}{selectMenuOptions:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Toggle:1:includebots:false}}]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {options:{ephemeral: true}}
+    {extraOptions:{interaction: true}}
+    ]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
+
+$onlyIf[$interactionData[values[0]]==includebots;]
+
 `
 },{
     name: "autoreply",
