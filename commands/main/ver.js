@@ -9,6 +9,8 @@ module.exports = {
   * **Date of build**: <t:$truncate[$divide[1700308893444;1000]]:f>
   
   Check changes of the version by using the buttons below.
+
+  **For Testing purposes only**.
   ]
   $color[Blurple]
   $addButton[1;Full Changelog;5;https://github.com/DodoGames7/Dodo-Bot/releases;false]
