@@ -23,7 +23,7 @@ module.exports = [{
     $onlyIf[$interactionData[values[0]]==servermenu;]
     $let[betaserver;$replaceText[$replaceText[$getGuildVar[betaserver];true;Enabled];false;Disabled]]
     `
-    }{
+    },{
         type: "interaction",
         prototype: "selectMenu",
         code: `$interactionUpdate[;{newEmbed:{title:Beta access}{description:
