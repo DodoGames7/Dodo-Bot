@@ -4,10 +4,10 @@ prototype: "selectMenu",
 code: `$interactionReply[;{newEmbed:{title:Dodo Bot Settings}{description: What do you want to customise?
 
 **What is each option about?**
-**Auto Reply**#COLON# having this Option on will allow the bot to respond by just pinging it, Which will let you know on what prefix it currently uses for your server. Disable this If It's used purposefully for spamming.
+**Auto Reply**#COLON# Having this option on will allow the bot to respond by just pinging, which will let you know on what prefix it currently uses for your server. Disable this If It's used purposefully for spamming.
 Option Type: \`toggle\`
 
-**Include Bots**#COLON# this option let's you decide whether or not bots should be included in logs feature such as message deletion logs. By default, this is enabled but you can choose to disable it for whatever reason.
+**Include Bots**#COLON# This option let's you decide whether or not bots should be included in logs feature such as message deletion logs. By default, this is enabled but you can choose to disable it for whatever reason.
 Option Type: \`toggle\`
 
 

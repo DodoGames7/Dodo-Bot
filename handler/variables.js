@@ -26,6 +26,7 @@ module.exports = {
   banneduserschannel: "none",
   unbanneduserschannel: "none",
   betacommands: "false",
-  betaserver: "false"
+  betaserver: "false",
+  botgreeting: "true"
   
 }

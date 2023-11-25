@@ -23,7 +23,8 @@ prototype: "modal",
 code: `$setGuildVar[leavechannel;$textInputValue[leaveidInput]]
 $interactionReply[Successfully set <#$textInputValue[leaveidInput]> as the leave channel!;;;;all;true]
 
-$onlyIf[$hasPermsInChannel[$textInputValue[leaveidInput];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$textInputValue[leaveidInput]>:
+$onlyIf[$hasPermsInChannel[$textInputValue[leaveidInput];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$textInputValue[leaveidInput]>:
+\`ViewChannel\`
 \`SendMessages\`
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
@@ -71,7 +72,8 @@ $endif
 
 $let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];undefined;Goodbye $username! We now have $membersCount members left!];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:d>]]
 
-$onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
+$onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
+\`ViewChannel\`
 \`SendMessages\`
 {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}

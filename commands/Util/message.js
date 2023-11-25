@@ -5,7 +5,8 @@ usage: "set-logdelete channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
 Successfully set <#$findChannel[$message]> as the message deletion log channel.
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>
+$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
+\`ViewChannel\`
 \`SendMessages\`
 ]
 $onlyIf[$findChannel[$message]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message deletion logs. Please mention a different one instead.]
@@ -41,7 +42,8 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]
 Successfully set <#$findChannel[$message]> as the message edit log channel.
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>
+$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
+\`ViewChannel\`
 \`SendMessages\`
 ]
 

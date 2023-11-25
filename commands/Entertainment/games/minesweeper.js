@@ -15,7 +15,7 @@ const Game = new Minesweeper({
   mines: 5,
   timeoutTime: 60000,
   winMessage: 'You won the Game! You successfully avoided all the mines.',
-  loseMessage: 'You lost the Game! Beaware of the mines next time.',
+  loseMessage: 'You lost the Game! Be aware of the mines next time.',
   playerOnlyMessage: 'Only {player} can use these buttons.'
 });
 

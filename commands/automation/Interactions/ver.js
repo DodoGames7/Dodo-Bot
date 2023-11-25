@@ -2,11 +2,10 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `
-* Support for aoi.js 6.5.6
-* Neat command handler setup
-* Update Author-only system to use a much better code compared to the previous one from older versions
-* Update ban logs to use modern intents for handling banned users
-* Show the server owner name (with their id) in \`serverinfo\` command
+* Renamed \`Enable\` to \`Toggle\` button in both of \`welcomer\` and \`leave\` (backported from 2.0.1)
+* Added \`gitbuilds\` (backported from 2.0.1)
+* Dodo-Bot will now welcome new servers by default whenever it gets added (backported from 2.0.1)
+* Add developer settings for bot-owners (backported from 2.0.1). Only one option for now
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:true}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -20,7 +19,10 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[;{newEmbed:{title:Bug Fixes}{description:
-* Console no longer shows all of the commands that were loaded thus resulting in a clean console of the bot. This is disabled due to the huge amount of commands that are included in the console
+* Fixed view channel permissions not generally being enforced at all (backported from 2.0.1)
+* Fixed wrong spelling of "reset" as "resetted" (backported from 2.0.1)
+* Backported bug fixes from dev builds of 2.0.1 to the bot such as lack of spacing in minesweeper game-over message
+* Fixed the weird use of grammar capitalization in certain commands (backported from 2.0.1)
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -33,8 +35,7 @@ module.exports = [{
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[;{newEmbed:{title:Other}{description:
-* Removed the v2 beta warning message that appears after the bot starts
-* \`Welcome\` -> \`Welcomer\` (applies to the command name as well)
+* Default prefix for the source code is now \`d!\` to fit with the bot's name and it's purposes as well!
  }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
