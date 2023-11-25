@@ -23,6 +23,7 @@ module.exports = [{
 * Fixed wrong spelling of "reset" as "resetted" (backported from 2.0.1)
 * Backported bug fixes from dev builds of 2.0.1 to the bot such as lack of spacing in minesweeper game-over message
 * Fixed the weird use of grammar capitalization in certain commands (backported from 2.0.1)
+* Fixed \`fact\` being broken by aoi.js's latest changes (backported from 2.0.1)
     }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}};;all;true]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
