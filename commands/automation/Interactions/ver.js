@@ -2,6 +2,7 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `
+    $interactionUpdate[;{newEmbed:{title:Changes}{description:
 * Renamed \`Enable\` to \`Toggle\` button in both of \`welcomer\` and \`leave\` (backported from 2.0.1)
 * Added \`gitbuilds\` (backported from 2.0.1)
 * Dodo-Bot will now welcome new servers by default whenever it gets added (backported from 2.0.1)
