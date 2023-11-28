@@ -5,7 +5,6 @@ code: `$interactionReply[;{newEmbed:{title:Dodo Bot Settings}{description:
 
 Select the options which you want to customise?
 
-
 **Current Settings**
 **Auto Reply**#COLON# \`$get[autoreply]\`
 **Include Bots (Logs)**#COLON# \`$get[includebots]\`

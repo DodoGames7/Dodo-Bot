@@ -9,5 +9,6 @@ module.exports = {
 $color[Blurple]
 $cooldown[2s; Slow down! Don't spam the command!
     Time left: \`%time%\`]
+    $addButton[1;Packages used;1;packagesused_$authorID;false]
 `
 }
