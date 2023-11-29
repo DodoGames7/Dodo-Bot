@@ -5,6 +5,7 @@ module.exports = {
     ]
     $addField[General;
     * \`--embed\` - Enables embeds for \`say\` command
+    * \`--no-preview\` - Disables color preview in \`randomhex\` cmd
     ]
     $addField[Example(s);
     * \`(prefix)commandname --flag\`

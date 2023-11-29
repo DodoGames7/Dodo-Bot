@@ -18,14 +18,14 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   prototype: "button",
   code: `$interactionReply[;{newEmbed:{title:Trivia Settings}{description:This settings contains all the available options for the game Trivia!
   
-  **type**#COLON# Changes the type of Trivia (multiple/single answers)
-  **difficulty**#COLON# Changes the difficulty of Trivia
+  **Type**#COLON# Changes the type of Trivia (multiple/single answers)
+  **Difficulty**#COLON# Changes the difficulty of Trivia
   
   **Current Settings**
   Trivia Type#COLON# \`$getGuildVar[trivia_type]\`
   Trivia Difficulty#COLON# \`$getGuildVar[trivia_difficulty]\`
   
-  }{color:Blurple}};{actionRow:{button:type:1:triviatype:false}{button:difficulty:1:triviamode:false}};;all;true]
+  }{color:Blurple}};{actionRow:{button:Type:1:triviatype:false}{button:Difficulty:1:triviamode:false}};;all;true]
 
 
 `
@@ -50,11 +50,11 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   prototype: "button",
   code: `$interactionReply[;{newEmbed:{title:Flood Settings}{description:this settings contains all the available options for the game Flood!
 
-  **difficulty**#COLON# Changes the difficulty of Flood
+  **Difficulty**#COLON# Changes the difficulty of Flood
 
   **Current Settings**
-  difficulty#COLON# $get[type]
-    }};{actionRow:{button:difficulty:1:floodmode:false}};;all;true]
+  Difficulty#COLON# $get[type]
+    }};{actionRow:{button:Difficulty:1:floodmode:false}};;all;true]
 
   $let[type;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;\`Hard\`];13;\`Normal\`];8;\`Easy\`]]
   `
@@ -62,7 +62,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   name: "floodmode",
   type: "interaction",
   prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use.
+  code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty mode do you prefer to use.
 
   **Easy**#COLON# Starts with Less blocks
   **Normal**#COLON# Starts with Medium sized blocks
