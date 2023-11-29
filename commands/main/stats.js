@@ -3,7 +3,7 @@ name: "stats",
 executeAt: "guild",
 aliases: "botinfo",
 code: `$title[$username[$clientID] stats]
-$addField[Dodo-Bot;2.0.1-dev;true]
+$addField[Dodo-Bot;$getVar[botversion];true]
 $addField[Node.js version;\`$nodeVersion\`;true]
 $addField[Servers;$guildCount;true]
 $addField[Aoi.js version;\`$packageVersion\`;true]
