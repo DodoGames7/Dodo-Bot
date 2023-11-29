@@ -28,6 +28,8 @@ module.exports = {
   betacommands: "false",
   betaserver: "false",
   botgreeting: "true",
-  isinmaintenance: "true"
+  isinmaintenance: "true",
+  // bot stuff for things
+  botversion: "2.0.1-dev"
   
 }
