@@ -10,7 +10,7 @@ module.exports = {
   
   Check changes of the version by using the buttons below.
 
-  **For Testing purposes only**.
+⚠️ **For Testing purposes only** ⚠️
   ]
   $color[Blurple]
   $addButton[1;Full Changelog;5;https://github.com/DodoGames7/Dodo-Bot/releases;false]
