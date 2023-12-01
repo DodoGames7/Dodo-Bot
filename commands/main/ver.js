@@ -6,7 +6,7 @@ module.exports = {
   $description[
   * **Version**: $filterMessage[$getVar[botversion];-dev]
   * **Release type**: Dev (see \`$getGuildVar[prefix]gitbuilds\` for more information)
-  * **Date of build**: <t:$truncate[$divide[1700836962559;1000]]:f>
+  * **Date of build**: <t:$truncate[$divide[1701463715821;1000]]:f>
   
   Check changes of the version by using the buttons below.
 
