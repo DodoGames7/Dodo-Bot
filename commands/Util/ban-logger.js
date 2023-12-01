@@ -1,20 +1,19 @@
 module.exports = [{
 name: "set-banlog",
-usage: "set-banlog channel-name/channel ID or <#channel ID>",
-code: `$setGuildVar[banneduserschannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Ban logs channel.
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
-\`ViewChannel\`
-\`SendMessages\`
-]
-$onlyIf[$findChannel[$message]!=$getGuildVar[banneduserschannel]; You already have set this channel for Ban logs. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+usage: "set-banlog > open menu > select the channel",
+code: `
+$title[Select an channel]
+$description[Open the select menu to choose an channel to set for ban logging!
+
+Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
+
+NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
+$color[Blurple]
+$addSelectMenu[1;channel;banlogmenu_$authorID;Open The menu.;1;1;false]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 $cooldown[5s; Slow down! Don't spam the command!
 Time left: \`%time%\`]
-$onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-banlog;usage]]\`]
-$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
+
 `
 },{
 name: "reset-banlog",
@@ -25,21 +24,21 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
 `
 },{
     name: "set-unbanlog",
-    usage: "set-unbanlog channel-name/channel ID or <#channel ID>",
-    code: `$setGuildVar[unbanneduserschannel;$findChannel[$message]]
-    Successfully set <#$findChannel[$message]> as the un-ban logs channel.
-    $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
-    \`ViewChannel\`
-    \`SendMessages\`
-    ]
-    $onlyIf[$findChannel[$message]!=$getGuildVar[unbanneduserschannel]; You already have set this channel for un-ban logs. Please mention a different one instead.]
-    $onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-    $onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
-    $cooldown[5s; Slow down! Don't spam the command!
-    Time left: \`%time%\`]
-    $onlyIf[$message!=;Please set an channel.
-    Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-unbanlog;usage]]\`]
-    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
+    usage: "set-unbanlog > open menu > select the channel",
+    code: `
+
+    $title[Select an channel]
+$description[Open the select menu to choose an channel to set for unban logging!
+
+Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
+
+NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
+$color[Blurple]
+$addSelectMenu[1;channel;unbanlogmenu_$authorID;Open The menu.;1;1;false]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
+$cooldown[5s; Slow down! Don't spam the command!
+Time left: \`%time%\`]
+    `
     },{
     name: "reset-unbanlog",
     code: `$setGuildVar[unbanneduserschannel;none]
