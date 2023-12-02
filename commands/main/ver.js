@@ -6,7 +6,7 @@ module.exports = {
   $description[
   * **Version**: 2.0.0-ES.1
   * **Release type**: Extended Support
-  * **Date of build**: <t:$truncate[$divide[1700891655528;1000]]:f>
+  * **Date of build**: <t:$truncate[$divide[1701548018135;1000]]:f>
   
   Check changes of the version by using the buttons below.
   ]
