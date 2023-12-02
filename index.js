@@ -4,7 +4,7 @@ const config = require("./handler/config.json");
 
 const bot = new AoiClient({
   token: process.env.TOKEN, // token is private by using env method
-  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default used prefix: n!)
+  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default used prefix: d!)
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration"], // discord.js intents (v14)
   events: ["onMessage", "onInteractionCreate", "onJoin", "onMessageDelete", "onMessageUpdate", "onLeave", "onBanAdd", "onBanRemove"], // mostly for making the bot interactions work
   aoiLogs: false, // don't show aoi.js default console message
