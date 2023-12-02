@@ -7,8 +7,8 @@ module.exports = {
     $username[431749535656837130] - inspiration to improve some commands
 ]
 $color[Blurple]
+$addButton[1;Packages used;1;packagesused_$authorID;false]
 $cooldown[2s; Slow down! Don't spam the command!
     Time left: \`%time%\`]
-    $addButton[1;Packages used;1;packagesused_$authorID;false]
 `
 }
