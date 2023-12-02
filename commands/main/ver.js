@@ -4,7 +4,7 @@ module.exports = {
   aliases: "ver",
   code: `$title[Dodo-Bot version]
   $description[
-  * **Version**: 2.0.0-ES
+  * **Version**: 2.0.0-ES.1
   * **Release type**: Extended Support
   * **Date of build**: <t:$truncate[$divide[1700891655528;1000]]:f>
   

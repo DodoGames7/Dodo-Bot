@@ -11,6 +11,7 @@ $username[632607624742961153] - developer of the bot
 $username[1128164873554112513] - previous help in the bot
 ]
 $color[Blurple]
+$addButton[1;Packages used;1;packagesused_$authorID;false]
 $cooldown[2s; Slow down! Don't spam the command!
     Time left: \`%time%\`]
 `
