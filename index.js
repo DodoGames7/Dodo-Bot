@@ -4,20 +4,18 @@ const config = require("./handler/config.json");
 
 const bot = new AoiClient({
   token: process.env.TOKEN || config.BotToken, // Token with either env or config
-  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default used prefix: n!)
+  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default used prefix: d!)
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration"], // discord.js intents (v14)
-  events: ["onMessage", "onInteractionCreate", "onJoin", "onMessageDelete", "onMessageUpdate", "onLeave", "onBanAdd", "onBanRemove", "onGuildJoin"], // mostly for making the bot interactions work
-  aoiLogs: false, // don't show aoi.js default console message
-  aoiWarning: false, // disable aoi.js update warning
-  database: { // use aoi.db as the database for storing data
-     type: "aoi.db",
-     db: require("@akarui/aoi.db"),
-     tables: ["main"],
-     path: "./database/",
-     extraOptions: {
-         dbType: "KeyValue"
-     },
- },
+  events: ["onMessage", "onInteractionCreate", "onJoin", "onMessageDelete", "onMessageUpdate", "onLeave", "onBanAdd", "onBanRemove", "onGuildJoin"], // Mostly for making the bot interactions work
+  aoiLogs: false, // Don't show aoi.js default console message
+  aoiWarning: false, // Disable aoi.js update warning
+     database: { // Use aoi.db as the database for storing data
+        type: "aoi.db",
+        db: require("@akarui/aoi.db"),
+        dbType: "KeyValue",
+        tables: ["main"],
+        securityKey: config.securityKey || process.env.securityKey,
+    },
  disableFunctions: ["$clientToken"],
  suppressAllErrors: config.disableErrors
 });

@@ -1,5 +1,6 @@
 {
     "BotToken": "TOKEN HERE",
     "prefix": "d!",
+    "securityKey": "32 characters of strings here",
     "disableErrors": false
 }
