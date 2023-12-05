@@ -8,7 +8,7 @@ module.exports = [{
 
     **Currently is**#COLON# $get[botgreetconfig]
 
-    }};{actionRow:{button:Toggle:1:botgreettoggle:false}};;all;true]
+    }};{actionRow:{button:Toggle:1:botgreettoggle_$authorID:false}};;all;true]
 
     $let[botgreetconfig;$replaceText[$replaceText[$getVar[botgreeting];true;Enabled];false;Disabled]]
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {options:{ephemeral:true}}
@@ -16,7 +16,6 @@ module.exports = [{
     $onlyIf[$interactionData[values[0]]==botwelcome;]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]`
     },{
-        name: "botgreettoggle",
         $if: "old",
         type: "interaction",
         prototype: "button",
@@ -28,6 +27,10 @@ module.exports = [{
         $setVar[botgreeting;true]
         $endelseif
         $endif
+
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {options:{ephemeral:true}}
+        {extraOptions:{interaction:true}}]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==botgreettoggle;]
         `
     },{
         type: "interaction",
@@ -39,11 +42,28 @@ module.exports = [{
 
             **Currently is**#COLON# $get[maintenancemodeconfig]
 
-            }};{actionRow:{button:Toggle:1:maintenancetoggle:false}};;all;true]
+            }};{actionRow:{button:Toggle:1:maintenancetoggle_$authorID:false}};;all;true]
 
             $let[maintenancemodeconfig;$replaceText[$replaceText[$getVar[isinmaintenance];true;Enabled];false;Disabled]]
             $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {options:{ephemeral:true}}
                 {extraOptions:{interaction:true}}]
             $onlyIf[$interactionData[values[0]]==maintenancemode;]
                 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]`
+    },{
+        $if: "old",
+        type: "interaction",
+        prototype: "button",
+        code: `$if[$getVar[isinmaintenance]==true]
+        $interactionReply[Disabled Maintenance mode. Enable it again to disable functionality of Dodo-Bot.;;;;all;true]
+        $setVar[isinmaintenance;false]
+        $elseif[$getVar[isinmaintenance]==false]
+        $interactionReply[Enabled Maintenance mode. Disable it again to enable functionality of Dodo-Bot.;;;;all;true]
+        $setVar[isinmaintenance;true]
+        $endelseif
+        $endif
+
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {options:{ephemeral:true}}
+        {extraOptions:{interaction:true}}]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==maintenancetoggle;]
+        `
     }]
