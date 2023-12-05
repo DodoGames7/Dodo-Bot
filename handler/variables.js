@@ -30,6 +30,6 @@ module.exports = {
   botgreeting: "true",
   isinmaintenance: "true",
   // bot stuff for things
-  botversion: "2.0.1-dev"
+  botversion: "2.0.1-beta"
   
 }

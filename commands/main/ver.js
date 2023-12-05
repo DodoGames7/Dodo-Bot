@@ -4,7 +4,7 @@ module.exports = {
   aliases: "ver",
   code: `$title[Dodo-Bot version]
   $description[
-  * **Version**: $filterMessage[$getVar[botversion];-dev]
+  * **Version**: $filterMessage[$getVar[botversion];-dev;-beta]
   * **Release type**: Dev (see \`$getGuildVar[prefix]gitbuilds\` for more information)
   * **Date of build**: <t:$truncate[$divide[1701463715821;1000]]:f>
   

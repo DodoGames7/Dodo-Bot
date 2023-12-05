@@ -2,7 +2,7 @@ module.exports = {
 name: "randomhex",
 $if: "old",
 code: `$title[Random Hex Code]
-$if[$stringStartswith[$message[1];--no-preview]==true]
+$if[$stringStartswith[$message[1];--nocolor-preview]==true]
 $addField[hex Code;#$getObjectProperty[api;hex]]
 $addField[Color name:;$replaceText[$getObjectProperty[api;name];undefined;No name has been found]]
 $else

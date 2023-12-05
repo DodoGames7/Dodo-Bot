@@ -62,7 +62,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   name: "floodmode",
   type: "interaction",
   prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty mode do you prefer to use.
+  code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty mode do you prefer to use?
 
   **Easy**#COLON# Starts with Less blocks
   **Normal**#COLON# Starts with Medium sized blocks
@@ -114,7 +114,7 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   name: "triviamode",
   type: "interaction",
   prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Trivia difficulty}{description:Which Difficulty do you prefer to use.
+  code: `$interactionReply[;{newEmbed:{title:Trivia difficulty}{description:Which difficulty do you prefer to use?
 
   **Easy**#COLON# Gives you easy questions to answer!
   **Medium**#COLON# Gives you normal questions that requires some of your iq to answer!

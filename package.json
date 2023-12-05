@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.0.1-dev",
+  "version": "2.0.1-beta",
   "description": "an new beginning of Dodo-Bot with more fun!",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "dodo",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "github:AkaruiDevelopment/aoi.js#1512650",
+    "aoi.js": "^6.6.1",
     "@akarui/aoi.parser": "^1.0.1",
     "discord-gamecord": "^4.4.1",
     "@nottca/weky": "^4.0.5"
@@ -20,7 +20,7 @@
   "devDependencies": {
     "typescript": "^4.9.5",
     "cheerio": "^1.0.0-rc.12",
-    "@akarui/aoi.db": "^1.0.0",
+    "@akarui/aoi.db": "^2.0.0",
     "aoi.js-library": "^2.0.2"
   }
 }
