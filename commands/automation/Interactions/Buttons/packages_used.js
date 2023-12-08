@@ -10,7 +10,7 @@ module.exports = {
 * **discord-gamecord**#COLON#  - Mostly used in certain game commands such as \`minesweeper\`, \`snake\`, etc.
 * **@nottca/weky**#COLON# - A package that caused some of the commands here to appear such as \`calculator\`.
 * **aoi.js-library**#COLON# - For enabling extra features such as base64 encoding funcs.
-    }};;;all;true]
+    }{color:Blurple}};;;all;true]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
   {options:{ephemeral: true}}
