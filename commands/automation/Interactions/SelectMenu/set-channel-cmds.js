@@ -32,6 +32,37 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==suggestmenu;]
 },{
 type: "interaction",
 prototype: "selectMenu",
+code: `$setGuildVar[pollchannel;$interactionData[values[0]]]
+$interactionReply[$interactionData[values[0]] is now the poll channel!;;;;all;true]
+
+$onlyIf[$interactionData[values[0]]!=$getGuildVar[pollchannel];
+This channel is already used! Please use a different channel instead.
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+$onlyIf[$hasPermsInChannel[$interactionData[values[0]];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following for the channel <#$interactionData[values[0]]>:
+\`ViewChannel\`
+\`SendMessages\`
+\`AddReactions\`
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+
+$onlyIf[$channelType[$interactionData[values[0]]]==text;
+We only support text channels for now.
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+{options:{ephemeral: true}}
+{extraOptions:{interaction: true}}
+]
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==pollmenu;]
+`
+},{
+type: "interaction",
+prototype: "selectMenu",
 code: `$setGuildVar[msglogdeletedchannel;$interactionData[values[0]]]
 $interactionReply[$interactionData[values[0]] is now the message delete logging channel!;;;;all;true]
 

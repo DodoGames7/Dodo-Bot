@@ -4,9 +4,9 @@ module.exports = {
   aliases: ["ver","changelog","updates"],
   code: `$title[Dodo-Bot version]
   $description[
-  * **Version**: $filterMessage[$getVar[botversion];-dev;-beta]
-  * **Release type**: Pre-beta (see \`$getGuildVar[prefix]gitbuilds\` for more information)
-  * **Date of build**: <t:$truncate[$divide[1701463715821;1000]]:f>
+* **Version**: $filterMessage[$getVar[botversion];-dev;-beta]
+* **Release type**: Pre-beta (see \`$getGuildVar[prefix]gitbuilds\` for more information)
+* **Date of build**: <t:$truncate[$divide[1702048784089;1000]]:f>
   
   Check changes of the version by using the buttons below.
 

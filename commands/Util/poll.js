@@ -1,21 +1,17 @@
 module.exports = [{
 name: "poll-set",
 code: `
-$setGuildVar[pollchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Poll channel.
+$title[Select an channel]
+    $description[Open the select menu to choose an channel to set for poll!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
-\`ViewChannel\`
-\`SendMessages\`
-\`AddReactions\`
-]
-$onlyIf[$findChannel[$message]!=$getGuildVar[pollchannel]; You already have set this channel for Polls. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Poll channel to use Polls feature.]
+    Keep in mind that the bot will only display the channels it has access to, so if there's no channel shown there you would like to select, please give the bot access to the channels so it can then display them in the menu.
 
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;
-Channel exists but outside of this server. Please try mentioning an channel inside this server.
-]
-$onlyIf[$message!=;Mention an channel or enter the channel id.]
+    NOTE: this is currently experimental so it may not work "perfect". As a result, the old permission system check is still being used.]
+    $color[Blurple]
+    $addSelectMenu[1;channel;pollmenu_$authorID;Open The menu.;1;1;false]
+    $cooldown[5s; Slow down! Don't spam the command!
+    Time left: \`%time%\`]
+    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
     name: "poll",
@@ -30,7 +26,7 @@ $color[Blurple]
 $addClientReactions[🔽;🔼]
 $sendMessage[Successfully sent your Poll to <#$getGuildVar[pollchannel]>!]
 $useChannel[$getGuildVar[pollchannel]]
-$onlyIf[$hasPermsInChannel[$getGuildVar[pollchannel];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have the right permissions there.  For server staff members, please ensure that i have the following for the channel <#$getGuildVar[pollchannel]>:
+$onlyIf[$hasPermsInChannel[$getGuildVar[pollchannel];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have the right permissions there. For server staff members, please ensure that i have the following for the channel <#$getGuildVar[pollchannel]>:
 \`ViewChannel\`
 \`SendMessages\`
 \`AddReactions\`

@@ -18,19 +18,51 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   prototype: "button",
   code: `$interactionReply[;{newEmbed:{title:Trivia Settings}{description:This settings contains all the available options for the game Trivia!
   
-  **Type**#COLON# Changes the type of Trivia (multiple/single answers)
-  **Difficulty**#COLON# Changes the difficulty of Trivia
+  Select the options which you want to customise?
   
   **Current Settings**
   Trivia Type#COLON# \`$getGuildVar[trivia_type]\`
   Trivia Difficulty#COLON# \`$getGuildVar[trivia_difficulty]\`
   
-  }{color:Blurple}};{actionRow:{button:Type:1:triviatype:false}{button:Difficulty:1:triviamode:false}};;all;true]
+  }{color:Blurple}};{actionRow:{selectMenu:triviasettings:Select an option to view information about.:1:1:false:{selectMenuOptions:Trivia type:triviatype:How should the game start questions?:false}{selectMenuOptions:Difficulty:triviamode:How easy the game can be?:false}}};;all;true]
 
 
 `
-},
-{
+},{
+  name: "triviasettings",
+  type: "interaction",
+  prototype: "selectMenu",
+  code: `$interactionUpdate[;{newEmbed:{title:Trivia type}{description:
+    This is the type of questions the game starts with. There're two types#COLON#
+    **single**
+    **multiple**
+
+    Choosing single will cause the game to start with only answer for each question otherwise, multiple will start the game with multiple answers selection for each question.
+
+  }{color:Blurple}};{actionRow:{selectMenu:triviasettings:Select an option to view information about.:1:1:false:{selectMenuOptions:Trivia type:triviatype:How should the game start questions?:false}{selectMenuOptions:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Toggle:1:triviatype:false}}]
+
+$onlyIf[$interactionData[values[0]]==triviatype;]
+
+`
+},{
+  name: "triviasettings",
+  type: "interaction",
+  prototype: "selectMenu",
+  code: `$interactionUpdate[;{newEmbed:{title:Trivia Difficulty}{description:
+    This option is dedicated to how hard/easy should the game be. There're 3 options#COLON#
+
+  **Easy**
+  **Medium**
+  **Hard**
+
+  Easy starts the game with questions easy to answer, Medium will start the game with somewhat normal but Medium knowledge about questions you know otherwise, Hard will start the game in questions that're hard to answer.
+
+  }{color:Blurple}};{actionRow:{selectMenu:triviasettings:Select an option to view information about.:1:1:false:{selectMenuOptions:Trivia type:triviatype:How should the game start questions?:false}{selectMenuOptions:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Toggle:1:triviatype:false}}{actionRow:{button:Easy:1:triviaopteasy:false}{button:Medium:1:triviaoptmedium:false}{button:Hard:1:triviaopthard:false}}]
+
+$onlyIf[$interactionData[values[0]]==triviamode;]
+
+`
+},{
   name: "triviatype",
   type: "interaction",
   $if: "old",
@@ -50,25 +82,25 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   prototype: "button",
   code: `$interactionReply[;{newEmbed:{title:Flood Settings}{description:this settings contains all the available options for the game Flood!
 
-  **Difficulty**#COLON# Changes the difficulty of Flood
+  Select the options which you want to customise?
 
   **Current Settings**
   Difficulty#COLON# $get[type]
-    }};{actionRow:{button:Difficulty:1:floodmode:false}};;all;true]
+    }};{actionRow:{actionRow:{selectMenu:floodsettings:Select an option to view information about.:1:1:false:{selectMenuOptions:Difficulty:floodmode:How easy the game can be?:false}}}{button:Difficulty:1:floodmode:false}};;all;true]
 
   $let[type;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;\`Hard\`];13;\`Normal\`];8;\`Easy\`]]
   `
 },{
-  name: "floodmode",
+  name: "floodsettings",
   type: "interaction",
   prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Flood difficulty}{description:Which difficulty mode do you prefer to use?
+  code: `$interactionUpdate[;{newEmbed:{title:Flood difficulty}{description:Which difficulty mode do you prefer to use?
 
   **Easy**#COLON# Starts with Less blocks
   **Normal**#COLON# Starts with Medium sized blocks
   **Hard**#COLON# Starts with Large amount of blocks
 
-    }};{actionRow:{button:Easy:1:floodopteasy:false}{button:Normal:1:floodoptnormal:false}{button:Hard:1:floodopthard:false}};;all;true]
+    }};{actionRow:{actionRow:{selectMenu:floodsettings:Select an option to view information about.:1:1:false:{selectMenuOptions:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Easy:1:floodopteasy:false}{button:Normal:1:floodoptnormal:false}{button:Hard:1:floodopthard:false}}]
   
   `
 },{
@@ -109,19 +141,6 @@ $onlyIf[$interactionData[values[0]]==gamesmenu;]`
   {options:{ephemeral: true}}
 {extraOptions:{interaction: true}}
 ]
-  `
-},{
-  name: "triviamode",
-  type: "interaction",
-  prototype: "button",
-  code: `$interactionReply[;{newEmbed:{title:Trivia difficulty}{description:Which difficulty do you prefer to use?
-
-  **Easy**#COLON# Gives you easy questions to answer!
-  **Medium**#COLON# Gives you normal questions that requires some of your iq to answer!
-  **Hard**#COLON# Gives you hard questions to answer! (for people with high iq at least)
-
-    }};{actionRow:{button:Easy:1:triviaopteasy:false}{button:Medium:1:triviaoptmedium:false}{button:Hard:1:triviaopthard:false}};;all;true]
-  
   `
 },{
   name: "triviaopteasy",
