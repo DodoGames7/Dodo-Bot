@@ -39,6 +39,7 @@ module.exports = [{
     code: `$interactionUpdate[;{newEmbed:{title:Other}{description:
 * Switch to \`beta\` tag
 * Add optional security key at setup-options of Dodo-Bot
+* Added \`changelog\` and \`updates\` aliases to \`version\` cmd
  }{color:Blurple}};{actionRow:{button:Changes:1:versionchanges_$authorID:false}{button:Bug Fixes:3:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}{button:Full Changelog:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
