@@ -6,7 +6,6 @@ module.exports = {
 
 **Links you might want to check out**
 [Dodo-Bot is no longer multi-purpose](https://github.com/DodoGames7/Dodo-Bot/tree/v2#its-no-longer-multi-purpose)
-[Askers](https://discord.ly/askers)
 ]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]
   $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles]];false]

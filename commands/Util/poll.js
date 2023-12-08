@@ -16,6 +16,7 @@ $onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;
 Channel exists but outside of this server. Please try mentioning an channel inside this server.
 ]
 $onlyIf[$message!=;Mention an channel or enter the channel id.]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
     name: "poll",
@@ -30,7 +31,7 @@ $color[Blurple]
 $addClientReactions[🔽;🔼]
 $sendMessage[Successfully sent your Poll to <#$getGuildVar[pollchannel]>!]
 $useChannel[$getGuildVar[pollchannel]]
-$onlyIf[$hasPermsInChannel[$getGuildVar[pollchannel];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have the right permissions there.  For server staff members, please ensure that i have the following for the channel <#$getGuildVar[pollchannel]>:
+$onlyIf[$hasPermsInChannel[$getGuildVar[pollchannel];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have the right permissions there. For server staff members, please ensure that i have the following for the channel <#$getGuildVar[pollchannel]>:
 \`ViewChannel\`
 \`SendMessages\`
 \`AddReactions\`
