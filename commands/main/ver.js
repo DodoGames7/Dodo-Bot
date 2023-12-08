@@ -1,7 +1,7 @@
 module.exports = {
   name: "version",
   executeAt: "both",
-  aliases: "ver",
+  aliases: ["ver", "changelog", "updates"],
   code: `$title[Dodo-Bot version]
   $description[
   * **Version**: 2.0.0-ES.2
