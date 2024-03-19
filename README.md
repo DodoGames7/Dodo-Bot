@@ -8,8 +8,8 @@ As time went on, I began to lose my interest at maintaining the bot, since I was
 
 One of the main reasons of downfall of v1 is that, too many features were planned at the time, i did not know on how to create them in the right way which resulted in the first version of the bot for aoi getting buggier and buggier with each new update eventually giving up on maintaining it. This also includes creating commands using apis without figuring out on how to handle some errors as well alongside with many other reasons.
 
-# The story
-v2 was supposed to be discord.js-based bot, but due to some issues, it has been made to use aoi.js v6. Even though, almost every release of Dodo-Bot were bugged having a lot of bugs (including early releases of v1 tbh). This release aims to make everything as much as simple as it was before. 
+# History of v2
+v2 was supposed to be discord.js-based bot, but due to some issues, it has been made to use aoi.js v6. Even though, almost every release of Dodo-Bot were bugged having a lot of bugs (including early versions of v1). This version aims to make everything as much simple as it was before. 
 
 This version of the bot is likely made for you to learn as well as enjoy it, it's probably the first aoi.js v6 bot to be open sourced here. Note that i'm trying my best to make this a stable release as much as possible but, at least, you get to try the new stuff v2 has in store for you!
 
