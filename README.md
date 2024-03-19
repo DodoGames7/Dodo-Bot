@@ -20,7 +20,7 @@ This version of the bot is likely made for you to learn as well as enjoy it, it'
 * **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Experimental version made to try out aoi.js v7. Currently on pause.
 # Important Requirements
 You can host Dodo-Bot on any Host as long as you meet the following Requirements:
-* At least Node.js v20. Older versions are not supported
+* Node.js v20 is required as older versions are not supported
 * A host ready to handle Bot's Features (Obviously)
 
 
