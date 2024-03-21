@@ -1,7 +1,7 @@
 module.exports = [{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Advanced Settings}{description:These settings let you manage any feature or settings of an certain system, for example managing on how trivia should start.}}{actionRow:{selectMenu:settingsmenu_$authorID:Select an option.:1:1:false:{stringInput:Games:gamesmenu:Manage settings related to games.:false}{stringInput:Bot itself:botmenu:Customise on how Dodo Bot should Behave.:false}{stringInput:Server:servermenu:Manage settings related to the server.}}}]
+    code: `$interactionUpdate[{newEmbed:{title:Settings}{description:Welcome to settings! Here, you can change things the bot usually operates. To change any setting, use the select menu to view each one accordingly.}}{actionRow:{selectMenu:settingsmenu_$authorID:Select an option.:1:1:false:{stringInput:Games:gamesmenu:Manage settings related to games.:false}{stringInput:Bot itself:botmenu:Customise on how Dodo Bot should Behave.:false}{stringInput:Server:servermenu:Manage settings related to the server.}}}]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
    {ephemeral}
