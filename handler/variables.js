@@ -29,7 +29,7 @@ module.exports = {
   leavechannel: "none",
   leavesystem: "off",
   leavetype: "text",
-  leavemessage: "Goodbye <username>! We now have <server.count> members left!",
+  leavemessage: "Goodbye <username>! We now have <server.totalMembers> members left!",
   msglogdeletedchannel: "none",
   msglogeditchannel: "none",
   banneduserschannel: "none",
