@@ -11,7 +11,7 @@ module.exports = [{
     type: "awaited",
     code: `
 
-    $setVar[release_type;Beta 1]
+    $setVar[release_type;Pre-release]
     $onlyIf[$checkContains[$getVar[release_type];Pre-release]==false]`
 },
 {
