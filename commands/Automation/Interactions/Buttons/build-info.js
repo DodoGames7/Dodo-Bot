@@ -8,7 +8,7 @@ module.exports = [{
 * **Branch of the build**#COLON# Refresh
 * **Build number**#COLON# $getVar[buildNumber]:true}
 {field:Progress:
-* **Status**#COLON# Incomplete
+* **Status**#COLON# Complete
 * **Type**#COLON# $getVar[buildType]
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
