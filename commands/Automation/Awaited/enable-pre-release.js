@@ -19,6 +19,6 @@ module.exports = [{
     type: "awaited",
     code: `
 
-    $setVar[release_type;Pre-Stable]
-    $onlyIf[$checkContains[$getVar[release_type];Pre-Stable]==false]`
+    $setVar[release_type;Stable]
+    $onlyIf[$checkContains[$getVar[release_type];Stable]==false]`
 }]
