@@ -34,8 +34,8 @@ const Game = new RockPaperScissors({
 
 Game.startGame()
 ]
-$onlyIf[$isBot[$mentioned[1;true]]==false;you cannot play with bots!]
-$onlyIf[$mentioned[1;true]!=$authorID; mention an user to play with]
+$onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
+$onlyIf[$mentioned[1;true]!=$authorID;Please mention a opponent to play with!]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;rock-paper-scissors;$authorID];$dateStamp];1000]]:R>]
 `
