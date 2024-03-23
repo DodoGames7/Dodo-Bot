@@ -3,7 +3,7 @@ name: "set-msgdeletelog",
 aliases: ["set-logdelete", "set-messagedeletelog"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message deletion log channel.
+Successfully set <#$findChannel[$message]> as the message delete logging channel!
 
 $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
 \`ViewChannel\`
@@ -46,7 +46,7 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     aliases: ["set-logedit", "set-messageeditlog"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
     code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message edit log channel.
+Successfully set <#$findChannel[$message]> as the message edit logging channel!
 
 $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
 \`ViewChannel\`
