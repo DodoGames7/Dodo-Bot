@@ -36,6 +36,10 @@ module.exports = {
   unbanneduserschannel: "none",
   betacommands: "off",
   betaserver: "off",
+  levelsystem: "off",
+  level: "1",
+  xp: "0",
+  xpLimit: "100",
   // developer variables
   errorchannel: "none",
   errorsystem: "off",
