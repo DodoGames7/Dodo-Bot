@@ -2,7 +2,7 @@ module.exports = [{
 name: "set-banlog",
 usage: "set-banlog channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[banneduserschannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Ban logs channel.
+Successfully set <#$findChannel[$message]> as the Ban logs channel!
 $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
 \`ViewChannel\`
 \`SendMessages\`
@@ -29,7 +29,7 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     name: "set-unbanlog",
     usage: "set-unbanlog channel-name/channel ID or <#channel ID>",
     code: `$setGuildVar[unbanneduserschannel;$findChannel[$message]]
-    Successfully set <#$findChannel[$message]> as the un-ban logs channel.
+    Successfully set <#$findChannel[$message]> as the un-ban logs channel!
     $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
     \`ViewChannel\`
     \`SendMessages\`
