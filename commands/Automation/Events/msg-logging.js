@@ -7,7 +7,6 @@ code: `$author[Message Deleted!;$authorAvatar]
 $description[
 **Member:** <@$authorID>
 **Channel:** <#$channelUsed>
-
 $message
 ]
 $addTimestamp
