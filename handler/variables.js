@@ -18,7 +18,7 @@ module.exports = {
   buildRevision: "2",
   embedcolor: "#2A3759",
   buildNumber: "2059",
-  release_type: "Beta 1",
+  release_type: "Beta 1 (Rev 2)",
   botgreeting: "on",
   // Feature variables
   suggestionchannel: "none",
