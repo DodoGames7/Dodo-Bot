@@ -7,7 +7,7 @@ $editMessage[$get[messageID];
 The game has been ended due to inactivity.
 {newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}
 
-{actionRow:{button:Heads:2:headsbutton:false}{button:Tails:2:tailsbutton:true}};$channelID]
+{actionRow:{button:Heads:2:headsbutton:true}{button:Tails:2:tailsbutton:true}};$channelID]
 
 
 $let[embeddescription;$getEmbed[$channelID;$get[messageID];1;description]]
