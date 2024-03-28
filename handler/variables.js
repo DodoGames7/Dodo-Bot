@@ -15,6 +15,7 @@ module.exports = {
   version: "2.1.0",
   buildDate: "1711026317645",
   buildType: "Pre-Beta 2",
+  buildRevision: "0",
   embedcolor: "#2A3759",
   buildNumber: "2064",
   release_type: "Pre-release",

@@ -6,6 +6,7 @@ module.exports = [{
 * **Dodo-Bot**#COLON# v$getVar[version]
 * **Codename**#COLON# Tower Valley
 * **Branch of the build**#COLON# Beta 2
+* **Revision**#COLON## $getVar[buildRevision]
 * **Build number**#COLON# $getVar[buildNumber]:true}
 {field:Progress:
 * **Status**#COLON# Incomplete
