@@ -21,7 +21,7 @@ module.exports = [{
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:In this command, you can do take certain actions on what should the bot do behind the scenes.
 
-    At the moment, this only contains 2 options but more may be added later on.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false}}}]
+    At the moment, this only contains 2 options but more may be added later on.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}}}]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
