@@ -17,10 +17,10 @@ Server owner's id: $guildOwnerID
 ]
   $addField[Channels;
 Total: $channelCount[$guildID;all]
-Text Channels: $channelCount[$guildID;Text]
-Voice Channels: $channelCount[$guildID;Voice]
-Announcement Channels: $channelCount[$guildID;Announcement]
-Forum Channels: $channelCount[$guildID;Forum]
+Text: $channelCount[$guildID;Text]
+Voice: $channelCount[$guildID;Voice]
+Announcement: $channelCount[$guildID;Announcement]
+Forum: $channelCount[$guildID;Forum]
 Categories: $channelCount[$guildID;Category]
 ]
   $addField[Members;
