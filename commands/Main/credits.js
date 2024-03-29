@@ -4,6 +4,7 @@ module.exports = {
     $description[
     $username[632607624742961153] - Developer of the bot
     $username[431749535656837130] - Inspiration to improve some commands
+    $username[738856854892839022] - For Leveling setup
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Use of source code;2;useofsource_$authorID;false]
