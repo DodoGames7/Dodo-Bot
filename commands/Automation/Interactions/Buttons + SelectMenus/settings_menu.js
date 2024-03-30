@@ -32,8 +32,8 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
 $onlyIf[$getSelectMenuValues[all]==botmenu;]
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
-$let[autoreply;$replaceText[$replaceText[$getGuildVar[autopingreply];true;Enabled];false;Disabled]]
-$let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];true;Enabled];false;Disabled]]
+ $let[autoreply;$replaceText[$replaceText[$getGuildVar[autopingreply];on;Enabled];off;Disabled]]
+ $let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];on;Enabled];off;Disabled]]
 `
 },{
  type: "interaction",
