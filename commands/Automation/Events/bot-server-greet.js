@@ -3,7 +3,7 @@ module.exports = {
     channel: "$randomChannelID[$guildID;all]",
     code: `
     $channelSendMessage[$get[channelselector];Hi!
-    {newEmbed:{title:Thanks for adding me in the server!}{description:Dodo-Bot is a personal project aiming to be an entertainment bot while at the same time providing a couple of useful features (e.g welcomer system)!
+    {newEmbed:{title:Thanks for adding me here!}{description:Dodo-Bot is a personal project aiming to be an entertainment bot while at the same time providing a couple of useful features (e.g welcomer system)!
 
     By default, my prefix is \`$getGuildVar[prefix]\`, however you can change it using \`prefix\` command.
 
