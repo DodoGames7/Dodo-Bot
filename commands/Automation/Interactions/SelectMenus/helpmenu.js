@@ -38,4 +38,19 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==helpmenu;]
 $onlyIf[$getSelectMenuValues[all]==util;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==helpmenu;]
 `
+},{
+  type: "interaction",
+  prototype: "selectMenu",
+  code: `
+
+
+$interactionUpdate[{newEmbed:{title:Leveling}{field:**Commands**: \`leveling\`, \`rank\`, \`leaderboard\`}}{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{stringInput:Main:general:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}}}]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+{ephemeral}
+{interaction}
+]
+$onlyIf[$getSelectMenuValues[all]==leveling;]
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==helpmenu;]
+`
 }]
