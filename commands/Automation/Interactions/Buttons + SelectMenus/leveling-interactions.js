@@ -49,7 +49,7 @@ module.exports = [{
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
-    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Test Message:2:levelingtestmessage_$authorID:false}}]
+    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}}]
     
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -66,8 +66,13 @@ module.exports = [{
     
     Press the "Toggle" button to enable/disable the Level up Message or use the other options alternatively to manage level up message settings.
     
-    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Test Message:2:levelingtestmessage_$authorID:false}}]
+    **Current Settings**
+    **Level up channel#COLON#** $get[levelupchannel]
+    **Level up message#COLON#** \`$get[levelupmessage]\`
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
+    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -75,6 +80,34 @@ module.exports = [{
     ]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingsettingmessage;]
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[$get[resultmessage];true]
+    $interactionUpdate[{newEmbed:{title:Level up Message}{description:This option is dedicated to changing current options for level up message. Choose an option to change.
+    
+    Press the "Toggle" button to enable/disable the Level up Message or use the other options alternatively to manage level up message settings.
+    
+    **Current Settings**
+    **Level up channel#COLON#** $get[levelupchannel]
+    **Level up message#COLON#** \`$get[levelupmessage]\`
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
+    
+    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
+    
+    
+    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;From now on, Level up messages will be sent by the bot!];false;From now on, Level up messages will no longer be sent by the bot]]
+    $setGuildVar[levelmessagefeature;$get[newtoggledsetting]]
+    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;off];false;on]]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==enablelevelingmessage;]
     `
     },{
         type: "interaction",
