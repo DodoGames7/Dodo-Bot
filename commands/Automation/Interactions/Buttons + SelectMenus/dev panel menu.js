@@ -1,9 +1,9 @@
 module.exports = [{
-        type: "interaction",
-        prototype: "button",
-        code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:In this command, you can do take certain actions on what should the bot do behind the scenes.
+    type: "interaction",
+    prototype: "button",
+    code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:In this command, you can do take certain actions on what should the bot do behind the scenes.
 
-    At the moment, this only contains 4 options but more may be added later on.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}}}]
+At the moment, this only contains 4 options but more may be added later on.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
 
 $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
 {ephemeral}
@@ -12,33 +12,26 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
-        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==developermainpage;]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==developermainpage;]
 `
-    },{
-        type: "interaction",
-        prototype: "selectMenu",
-        code: `$interactionUpdate[{newEmbed:{title:Welcome new servers!}{description:
-    When Dodo-Bot gets added to a new server, it will greet members there with it's features including telling them it's default prefix. When this is disabled, the bot won't say anything when it gets added to new servers.
+},{
+    type: "interaction",
+    prototype: "button",
+    code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
+\`eval\`, \`exec\`, \`setcustomstatus\`, \`update\`
+}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}]
 
-    By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
-
-**Current settings**
-**Bot Greeting**#COLON# $get[botgreetconfig]
-
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false}}]
-
-    $let[botgreetconfig;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting]==on];true;Enabled];false;Disabled]]
 
 $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
 {ephemeral}
 {interaction}
 ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
 {interaction}]
-    $onlyIf[$getSelectMenuValues[all]==botwelcome;]
-        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]`
-    },{
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devcommandsbutton;]
+`
+},{
         type: "interaction",
         prototype: "button",
         code: `
