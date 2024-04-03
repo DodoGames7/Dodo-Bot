@@ -114,7 +114,7 @@ module.exports = [{
         prototype: "button",
         code: `$interactionModal[Set Message;levelingsetmsgresult;
     {actionRow:
-        {textInput:Message to use:2:textInput:true:<username> has Leveled up!:0:200}
+        {textInput:Message to use:2:textInput:true:<username> has Leveled up!:0:200:$getGuildVar[levelmessage]}
       }]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
