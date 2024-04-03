@@ -69,7 +69,7 @@ module.exports = [{
     **Current Settings**
     **Level up channel#COLON#** $get[levelupchannel]
     **Level up message#COLON#** \`$get[levelupmessage]\`
-    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
     $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
@@ -92,7 +92,7 @@ module.exports = [{
     **Current Settings**
     **Level up channel#COLON#** $get[levelupchannel]
     **Level up message#COLON#** \`$get[levelupmessage]\`
-    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
     $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
@@ -108,6 +108,28 @@ module.exports = [{
     ]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==enablelevelingmessage;]
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionModal[Set Message;levelingsetmsgresult;
+    {actionRow:
+        {textInput:Message to use:2:textInput:true:<username> has Leveled up!:0:200}
+      }]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingsetmsgmodal;]
+    `
+    },{
+        name: "levelingsetmsgresult",
+        type: "interaction",
+        prototype: "modal",
+        code: `$setGuildVar[levelmessage;$textInputValue[textInput]]
+    $interactionReply[Successfully set the Level up message!;all;true]
     `
     },{
         type: "interaction",

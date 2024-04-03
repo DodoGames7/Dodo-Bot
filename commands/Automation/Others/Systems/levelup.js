@@ -12,7 +12,9 @@ $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewch
     $setUserVar[level;$sum[$getUserVar[level;$authorID;$guildID];1];$authorID;$guildID]
     $onlyIf[$isBot==false;]
     $onlyIf[$getUserVar[xp]==$getUserVar[xpLimit];]
-    $onlyIf[$getGuildVar[levelsystem]==on;]`
+    $onlyIf[$getGuildVar[levelsystem]==on;]
+    $disableMentionType[roles]
+$disableMentionType[everyone]`
 },{
     name: "$alwaysExecute",
     code: `
