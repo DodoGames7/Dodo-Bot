@@ -13,7 +13,7 @@ module.exports = {
   autopingreply: "off",
   includebots: "on",
   version: "2.1.0",
-  buildDate: "1712179876672",
+  buildDate: "1712182415838",
   buildType: "Pre-Beta 2",
   buildRevision: "0",
   embedcolor: "#2A3759",
