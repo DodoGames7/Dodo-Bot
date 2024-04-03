@@ -15,7 +15,7 @@ $onlyIf[$getGuildVar[betaserver]==on&&$getGlobalUserVar[betacommands]==on;
 This command is currently unavailable. Possible reasons are being:
 
 * You don't have Beta commands enabled. Run \`beta\` command to enable it first
-* The server has disabled Beta commands
+* The server has Beta commands disabled
 ]
 `
 }
