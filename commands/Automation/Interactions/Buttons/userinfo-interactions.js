@@ -21,7 +21,7 @@ $let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$
 
 
 $onlyIf[$memberExists[$get[user];$guildID]==true;
-The user appears to have left the server. The ablity to view their server information stuff in this server has been temporarily disabled until they re-join again
+The user appears to have left the server. The ablity to view their server information in this server has been temporarily disabled until they re-join again
 {ephemeral}
 {interaction}
 ]
