@@ -14,7 +14,7 @@ type: "interaction",
 prototype: "selectMenu",
 code: `$interactionUpdate[{newEmbed:{title:Dodo-Bot Settings}{description:
 
-Select the options which you want to customise.
+Select the options you want to customise.
 
 **Current Settings**
 **Auto Reply**#COLON# \`$get[autoreply]\`
