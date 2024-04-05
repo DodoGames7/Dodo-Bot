@@ -49,7 +49,7 @@ module.exports = [{
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
-    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}}]
+    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholder_$authorID:false}}]
     
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -58,6 +58,24 @@ module.exports = [{
     ]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingsetting;]
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Level up message unique. Use the current ones available in this list!}{field:Member-related:
+    \`<username>\` - Returns the member's username
+    \`<mention>\` - Pings the member
+    }{field:Leveling-related:
+    \`<level>\` - Returns the new level of the member
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}}]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingmsgplaceholder;]
+    
     `
     },{
         type: "interaction",
@@ -203,4 +221,51 @@ module.exports = [{
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingchannelmenusetup;]
     
     `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `
+    $interactionReply[Successfully sent the message to the Level up channel for testing!;all;true]
+    $channelSendMessage[$getGuildVar[levelingmessagechannel];
+    **This is a test Level up message! Please, ignore this!**
+    $nonEscape[$get[content]]
+    ]
+    
+    $let[content;$replaceText[$replaceText[$replaceText[$getGuildVar[levelmessage];<level>;$getUserVar[level]];<mention>;<@$authorID>];<username>;$username]]
+    
+    $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
+    \`ViewChannel\`
+    \`SendMessages\`
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;The channel used for the Level up channel seems to be deleted.
+    Cancelled sending the message as a result. Please set a new channel to fix this.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$getGuildVar[levelingmessagechannel]!=none;There is no channel set to test the Level up message.
+    Please set a new channel first.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$getGuildVar[levelmessagefeature]==on;Cannot test when the Leveling feature is disabled. Please, enable it first before you can proceed.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $disableMentionType[roles]
+    $disableMentionType[everyone]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingtestmessage;]
+    `
     }]
+    
