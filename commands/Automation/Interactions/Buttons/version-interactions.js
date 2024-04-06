@@ -5,7 +5,7 @@ module.exports = [{
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * \`howgamer\` command now starts from 0 to 100 percent rather than 1 to 100 percent
 * Added \`Commands\` button for developer panel
-* Added two new image commands, those are \`gun\` and \`clown\`
+* Added 3 new image commands, those are \`gun\`, \`clown\` and \`nokia\`
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
