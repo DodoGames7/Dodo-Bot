@@ -9,6 +9,7 @@ The project has existed since late 2021 and to this day, it continues to be deve
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Source Code;5;https://github.com/DodoGames7/Dodo-Bot;false]
+$addButton[1;Tower Valley;2;towervalleybutton_$authorID;false]
 $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/dodo-bot-logo.png]
     $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;about;$authorID];$dateStamp];1000]]:R>]`
