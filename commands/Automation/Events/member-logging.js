@@ -9,7 +9,7 @@ $description[
 $get[content]
 ]
 $thumbnail[$authorAvatar]
-$color[Green]
+$color[$getGuildVar[welcomemessageembedcolor]]
 $else
 $get[content]
 $endif
