@@ -26,6 +26,7 @@ module.exports = {
   welcomemessage: "Welcome to the server <username>!",
   welcomechannel: "none",
   welcometype: "text",
+  welcomemessageembedcolor: "#1F8B4C",
   welcomesystem: "off",
   leavechannel: "none",
   leavesystem: "off",
