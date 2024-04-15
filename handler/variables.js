@@ -17,7 +17,7 @@ module.exports = {
   buildType: "Pre-Beta 2",
   buildRevision: "0",
   embedcolor: "#2A3759",
-  buildNumber: "2066",
+  buildNumber: "2070",
   release_type: "Pre-release",
   botgreeting: "on",
   // Feature variables
