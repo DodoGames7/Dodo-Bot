@@ -35,7 +35,7 @@ module.exports = [{
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * Added a button labeled \`Tower Valley\` to \`about\` command
 * \`say\` command's embed option has been changed to be a placeholder
-* Welcomer msg embedcolor now uses purple rather than bright green in earlier builds
+* Welcomer msg embedcolor now uses dark green rather than bright green in earlier builds
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
