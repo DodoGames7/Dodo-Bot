@@ -9,9 +9,12 @@ module.exports = [{
 * **Revision**#COLON# $getVar[buildRevision]
 * **Build number**#COLON# $getVar[buildNumber]:true}
 {field:Progress:
+* **GitBuilds build**#COLON# $get[pre-release]
 * **Status**#COLON# Incomplete
 * **Type**#COLON# $getVar[buildType]
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
+    
+    $let[pre-release;$advancedReplaceText[$getVar[pre_release_mode];on;Yes;off;No]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
   {ephemeral}
