@@ -91,7 +91,7 @@ $channelSendMessage[$getGuildVar[welcomechannel];
 ]
 $else
 $channelSendMessage[$getGuildVar[welcomechannel];
-$nonEscape[**This is a test welcome message! Please,  ignore this.**
+$nonEscape[**This is a test welcome message! Please, ignore this.**
 
 $get[content]]
 ]
