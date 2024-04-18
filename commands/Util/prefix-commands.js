@@ -17,7 +17,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$autho
 },{
     name: "prefix-reset",
     aliases: "reset-prefix",
-    code: ` $setGuildVar[prefix;]
+    code: ` $setGuildVar[prefix;$getGuildVar[originalprefix]]
 The prefix has been successfully reset. <3
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix-reset;$authorID];$dateStamp];1000]]:R>]
