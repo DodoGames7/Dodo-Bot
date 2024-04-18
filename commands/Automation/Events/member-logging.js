@@ -1,22 +1,13 @@
 module.exports = [{
-name: "welcomer message",
+name: "Welcomer message",
 type: "join",
 channel: "$getGuildVar[welcomechannel]",
-$if: "old",
-code: `$if[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[welcometype]==embed]
-$author[New member Joined;$authorAvatar]
-$description[
-$get[content]
-]
-$thumbnail[$authorAvatar]
-$color[$getGuildVar[welcomemessageembedcolor]]
-$else
-$get[content]
-$endif
+code: `$ifAwaited[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[welcometype]==embed;{execute:welcomerembedmode};{execute:welcomertextmode}]
 $onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;viewchannel;sendmessages]==true;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[welcomechannel]]==true;]
 $onlyIf[$getGuildVar[welcomechannel]!=none;]
-$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[welcomemessage];<server.totalMembers>;$membersCount];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]];<position>;$memberJoinPosition]]
+$let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$guildIcon];true;$userAvatar[$clientID]]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$memberJoinPosition]]
 $onlyIf[$getGuildVar[welcomesystem]==on;]
 $disableMentionType[roles]
 $disableMentionType[everyone]
