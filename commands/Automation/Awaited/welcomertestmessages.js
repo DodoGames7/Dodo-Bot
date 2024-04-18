@@ -4,7 +4,10 @@ module.exports = [{
     code: `**This is a test welcome message! Please, ignore this.**
     $get[content]
     
-    $useChannel[$getGuildVar[welcomechannel]]`
+    
+    $useChannel[$getGuildVar[welcomechannel]]
+    $disableMentionType[roles]
+    $disableMentionType[everyone]`
     },{
     name: "welcomerembedmodetest",
     type: "awaited",
@@ -17,6 +20,9 @@ module.exports = [{
     $color[$getGuildVar[welcomemessageembedcolor]]
     
     $let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$guildIcon];true;$userAvatar[$clientID]]]
+    
     $useChannel[$getGuildVar[welcomechannel]]
+    $disableMentionType[roles]
+    $disableMentionType[everyone]
     `
     }]
