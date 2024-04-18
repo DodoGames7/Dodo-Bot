@@ -25,4 +25,31 @@ module.exports = [{
     $disableMentionType[roles]
     $disableMentionType[everyone]
     `
+    },{
+    name: "welcomertextmode",
+    type: "awaited",
+    code: `
+    $get[content]
+    
+    
+    $useChannel[$getGuildVar[welcomechannel]]
+    $disableMentionType[roles]
+    $disableMentionType[everyone]`
+    },{
+    name: "welcomerembedmode",
+    type: "awaited",
+    code: `
+    $author[New member Joined;$get[serverimage]]
+    $description[
+    $get[content]
+    ]
+    $thumbnail[$authorAvatar]
+    $color[$getGuildVar[welcomemessageembedcolor]]
+    
+    $let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$guildIcon];true;$userAvatar[$clientID]]]
+    
+    $useChannel[$getGuildVar[welcomechannel]]
+    $disableMentionType[roles]
+    $disableMentionType[everyone]
+    `
     }]
