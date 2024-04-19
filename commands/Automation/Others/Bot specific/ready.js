@@ -10,7 +10,7 @@ $log[Dodo Bot is ready to be used on the client $userTag[$clientID]!
 
 Invite Your bot using this link: $getClientInvite[sendmessages;viewchannel;addreactions;attachfiles]
 ]
-$wait[3s]
+$wait[2s]
 $ifAwaited[$getVar[pre_release_mode]==on;{execute:senddevwarning}]`
 },{
     name: "senddevwarning",
