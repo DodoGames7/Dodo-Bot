@@ -48,7 +48,6 @@ module.exports = {
   // developer variables
   errorchannel: "none",
   errorsystem: "off",
-  // smth
   pre_release_mode: "on"
   
 }
