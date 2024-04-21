@@ -48,6 +48,7 @@ module.exports = {
   // developer variables
   errorchannel: "none",
   errorsystem: "off",
+  startupchannel: "none",
   pre_release_mode: "on"
   
 }
