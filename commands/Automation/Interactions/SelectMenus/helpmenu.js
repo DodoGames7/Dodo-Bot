@@ -14,7 +14,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==helpmenu;]`
 },{
   type: "interaction",
   prototype: "selectMenu",
-  code: `$interactionUpdate[{newEmbed:{title:Entertainment}{field:**Games**:\`ftf\`, \`rps\`, \`snake\`, \`matchpairs\`, \`2048\`, \`flood\`, \`minesweeper\`, \`slots\`, \`trivia\`, \`c4\`, \`findemoji\`, \`coinflip\`, \`gtp\`, \`dice\` }{field:**General Entertainment**:\`say\`, \`howgamer\`, \`fact\`, \`yesorno\`, \`whoasked\`, \`randomtopic\`}{field:**Images**:\`car\`, \`comment\`, \`clown\`, \`gun\`, \`nokia\`, \`whereiseveryone\`}}{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{stringInput:Main:general:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}}}]
+  code: `$interactionUpdate[{newEmbed:{title:Entertainment}{field:**Games**:\`ftf\`, \`rps\`, \`snake\`, \`matchpairs\`, \`2048\`, \`flood\`, \`minesweeper\`, \`slots\`, \`trivia\`, \`c4\`, \`findemoji\`, \`coinflip\`, \`gtp\`, \`dice\` }{field:**General Entertainment**:\`say\`, \`howgamer\`, \`fact\`, \`yesorno\`, \`whoasked\`, \`randomtopic\`}{field:**Images**:\`car\`, \`comment\`, \`clown\`, \`gun\`, \`nokia\`, \`jail\` \`whereiseveryone\`}}{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{stringInput:Main:general:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}}}]
 
 
   
