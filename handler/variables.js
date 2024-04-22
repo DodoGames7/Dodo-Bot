@@ -31,6 +31,7 @@ module.exports = {
   leavechannel: "none",
   leavesystem: "off",
   leavetype: "text",
+  leavemessageembedcolor: "#ED4245",
   leavemessage: "Goodbye <username>! We now have <server.totalMembers> members left!",
   msglogdeletedchannel: "none",
   msglogeditchannel: "none",
