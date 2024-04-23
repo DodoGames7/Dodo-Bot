@@ -93,31 +93,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
         prototype: "button",
         code: `
 
-$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Error messages to be sent in. Use the select menu below for the channel to use!
-    
-    **Current Settings**
-    **Channel#COLON#** $get[errorchannel]
-    
-    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
-    
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
-    
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
-
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
-{interaction}]
-        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorlogsetupchannel;]
-`
-    },{
-        type: "interaction",
-        prototype: "button",
-        code: `
-
 $interactionFollowUp[$get[resultmessage];true]
 $interactionUpdate[;{newEmbed:{title:Error Logging}{description:
     Often, you get frustrated not knowing whether or not, your bot has errors. This setting is dedicated to send errors caused by a broken command to a specific channel depending on your choice. There's also an option to enable it.
@@ -146,6 +121,31 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorlogtoggle;]
 
         `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `
+
+$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Error messages to be sent in. Use the select menu below for the channel to use!
+    
+    **Current Settings**
+    **Channel#COLON#** $get[errorchannel]
+    
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+    
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
+    
+    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+
+$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+{ephemeral}
+{interaction}
+]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+{interaction}]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorlogsetupchannel;]
+`
     },{
         type: "interaction",
         prototype: "selectMenu",
