@@ -126,11 +126,11 @@ When an error occurs, information such as the server name, it's id, alongside wi
 
    **Current Settings**
     **Error log**#COLON# $get[errorsystem]
-    **Error Channel**#COLON# $get[errorchannel] (\`$getVar[errorchannel]\`)
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}{actionRow:{button:Set channel:2:errorlogsetupchannel_$authorID:false}{button:Toggle:2:errorlogtoggle_$authorID:false}}]
+    **Error Channel**#COLON# $get[errorchannel] 
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
     $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]>]]
+    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Error logs will now be logged!];false;Error logs will now no longer be logged!]]
   $setVar[errorsystem;$get[newtoggledsetting]]
 $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;off];false;on]]
