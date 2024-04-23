@@ -215,7 +215,7 @@ When an error occurs, information such as the server name, it's id, alongside wi
    **Current Settings**
     **Error log**#COLON# $get[errorsystem]
     **Error Channel**#COLON# $get[errorchannel] 
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set channel:2:errorlogsetupchannel_$authorID:false}{button:Toggle:2:errorlogtoggle_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
     $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
     $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
