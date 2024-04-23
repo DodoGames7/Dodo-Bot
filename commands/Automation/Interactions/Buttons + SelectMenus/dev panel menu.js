@@ -93,10 +93,16 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
         prototype: "button",
         code: `
 
-$interactionModal[Channel to set;errorsetchannelresult;
-{actionRow:
-    {textInput:Channel id to use:1:idInput:true:channel id here:0:200}
-  }]
+$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Error messages to be sent in. Use the select menu below for the channel to use!
+    
+    **Current Settings**
+    **Channel#COLON#** $get[errorchannel]
+    
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+    
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
+    
+    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
 {ephemeral}
@@ -141,12 +147,66 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
 
         `
     },{
-        name: "errorsetchannelresult",
         type: "interaction",
-        prototype: "modal",
+        prototype: "selectMenu",
         code: `
 
-$interactionFollowUp[Successfully set <#$textInputValue[idInput]> as the error log channel!;true]
+$interactionFollowUp[Successfully set <#$getSelectMenuValues[all]> as the error log channel!;true]
+$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Error messages to be sent in. Use the select menu below for the channel to use!
+    
+    **Current Settings**
+    **Channel#COLON#** $get[errorchannel]
+    
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+    
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
+    
+    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+
+$setVar[errorchannel;$getSelectMenuValues[all]]
+
+$onlyIf[$hasPermsInChannel[$getSelectMenuValues[all];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getSelectMenuValues[all]>:
+    \`ViewChannel\`
+    \`SendMessages\`
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$getSelectMenuValues[all]!=$getVar[errorchannel];
+    This channel is already used for Error messages. Please, set a different channel instead.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
+    Make sure to set an Text channel instead.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$guildChannelExists[$guildID;$getSelectMenuValues[all]]==true;The channel you chose no longer exists in this server.
+    Please set a valid channel which exists inside this server.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    
+$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+{ephemeral}
+{interaction}
+]
+
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorlogchannelmenusetup;]
+`
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `
+
 $interactionUpdate[{newEmbed:{title:Error Logging}{description:
     Often, you get frustrated not knowing whether or not, your bot has errors. This setting is dedicated to send errors caused by a broken command to a specific channel depending on your choice. There's also an option to enable it.
 
@@ -155,43 +215,20 @@ When an error occurs, information such as the server name, it's id, alongside wi
    **Current Settings**
     **Error log**#COLON# $get[errorsystem]
     **Error Channel**#COLON# $get[errorchannel] (\`$getVar[errorchannel]\`)
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}{actionRow:{button:Set channel:2:errorlogsetupchannel_$authorID:false}{button:Toggle:2:errorlogtoggle_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set channel:2:errorlogsetupchannel_$authorID:false}{button:Toggle:2:errorlogtoggle_$authorID:false}}]
 
     $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
     $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]>]]
 
-$setVar[errorchannel;$textInputValue[idInput]]
-
-$onlyIf[$hasPermsInChannel[$textInputValue[idInput];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$textInputValue[idInput]>:
-\`ViewChannel\`
-\`SendMessages\`
-{ephemeral}
-{interaction}
-]
-
-$onlyIf[$textInputValue[idInput]!=$getVar[errorchannel];
-This channel is already used for logging errors. Please set a different channel id instead
-{ephemeral}
-{interaction}
-]
-
-$onlyIf[$channelType[$textInputValue[idInput]]==text;We only support text Channels for now.
-Make sure to set an text channel instead.
-{ephemeral}
-{interaction}
-]
-
-$onlyIf[$guildChannelExists[$guildID;$textInputValue[idInput]]==true;Either the channel id you provided is invalid or does not exist inside this server.
-Please set a valid channel which exists inside this server.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
 {ephemeral}
 {interaction}
 ]
 
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+{interaction}]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorlogpage;]
 `
     },{
         type: "interaction",
