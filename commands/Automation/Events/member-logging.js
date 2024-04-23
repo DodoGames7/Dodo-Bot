@@ -6,7 +6,6 @@ code: `$ifAwaited[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[w
 $onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;viewchannel;sendmessages]==true;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[welcomechannel]]==true;]
 $onlyIf[$getGuildVar[welcomechannel]!=none;]
-$let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$guildIcon];true;$userAvatar[$clientID]]]
 $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$memberJoinPosition]]
 $onlyIf[$getGuildVar[welcomesystem]==on;]
 $disableMentionType[roles]
