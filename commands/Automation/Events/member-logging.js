@@ -13,24 +13,14 @@ $disableMentionType[roles]
 $disableMentionType[everyone]
 $onlyIf[$guildID==$guildID;]`
 },{
-    name: "leave message",
+    name: "Leave message",
     type: "leave",
-    $if: "old",
     channel: "$getGuildVar[leavechannel]",
-    code: `$if[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed]
-$author[Member left;$authorAvatar]
-$description[
-$get[content]
-]
-$thumbnail[$authorAvatar]
-$color[Red]
-$else
-$get[content]
-$endif
+    code: `$ifAwaited[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed;{execute:leaveembedmode};{execute:leavetextmode}]
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;viewchannel;sendmessages]==true;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[leavechannel]]==true;]
 $onlyIf[$getGuildVar[leavechannel]!=none;]
-$let[content;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$getGuildVar[leavemessage];<server.totalMembers>;$membersCount];<username>;$username];<mention>;<@$authorID>];<id>;$authorID];<owner.username>;$username[$guildOwnerID]];<server.name>;$guildName];<owner.id>;$guildOwnerID];<server.id>;$guildID];<creationdate>;$creationDate[$authorID;date]];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[leavemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$memberJoinPosition;<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>]]
 $onlyIf[$getGuildVar[leavesystem]==on;]
 $disableMentionType[roles]
 $disableMentionType[everyone]
