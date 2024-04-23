@@ -56,7 +56,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
 
 **Current Settings**
 **Channel#COLON#** $get[welcomerchannel]
-**Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
+**Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false:🏠}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
 
 $let[welcomerchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None];false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
