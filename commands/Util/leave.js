@@ -8,8 +8,8 @@ To get started, click on the "Toggle" button! To manage the settings regarding t
 $get[leavesystem]
 ]
 $color[$getVar[embedcolor]]
-$addButton[1;Settings;4;leavesetting_$authorID;false]
-$addButton[1;Toggle;2;enableleave_$authorID;false;🔄]
+$addButton[1;Settings;4;leavesettings_$authorID;false]
+$addButton[1;Toggle;2;toggleleave_$authorID;false;🔄]
 $let[leavesystem;$replaceText[$replaceText[$getGuildVar[leavesystem];off;*Leave is currently disabled*];on;*Leave is currently enabled*]]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 $cooldown[5s; Slow down! Don't spam the command!
