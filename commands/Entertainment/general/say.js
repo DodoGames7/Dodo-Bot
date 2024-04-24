@@ -2,7 +2,7 @@ module.exports = {
   name: "say",
   $if: "old",
   code: `$if[$stringStartsWith[$tolowercase[$message[1]];<embed>]==true||$charCount[$message[1]]>=2000]
-$author[$get[usernamechecker];$userAvatar]
+$author[$get[usernamechecker];$userAvatar;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
   $title[Say Cmd!;$get[botlink]]
   $description[$messageSlice[1]]
   $color[Random]
