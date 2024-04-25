@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-*There're no changes in this category currently.*
+* Updated the build used to 6.8.0 to latest
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
