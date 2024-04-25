@@ -12,7 +12,7 @@ module.exports = [{
     name: "welcomerembedmodetest",
     type: "awaited",
     code: `**This is a test welcome message! Please, ignore this.**
-    $author[New member Joined;$get[serverimage]]
+    $author[Member joined;$get[serverimage]]
     $description[
     $get[content]
     ]
@@ -39,7 +39,7 @@ module.exports = [{
     name: "welcomerembedmode",
     type: "awaited",
     code: `
-    $author[New member Joined;$get[serverimage]]
+    $author[Member joined;$get[serverimage]]
     $description[
     $get[content]
     ]
