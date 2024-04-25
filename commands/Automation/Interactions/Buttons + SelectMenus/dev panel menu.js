@@ -18,7 +18,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
-\`eval\`, \`exec\`, \`setcustomstatus\`, \`update\`
+\`eval\`, \`jseval\`, \`exec\`, \`setcustomstatus\`, \`update\`
 }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}]
 
 
