@@ -21,6 +21,7 @@ module.exports = [{
 * The message the bot sends into the servers it gets added into should now be functional
 * Fixed a bug where servers could have invisible prefix just by resetting
 * Fixed missing comma between \`flood\` and \`minesweeper\` in help command
+* Fixed error logging settings looking off
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
