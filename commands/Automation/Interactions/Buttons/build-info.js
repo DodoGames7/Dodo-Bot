@@ -14,7 +14,7 @@ module.exports = [{
 * **Type**#COLON# $getVar[buildType]
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
-    $let[pre-release;$advancedReplaceText[$getVar[pre_release_mode];on;Yes;off;No]]
+    $let[pre-release;$advancedReplaceText[$getVar[gitbuildscheck];on;Yes;off;No]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
   {ephemeral}

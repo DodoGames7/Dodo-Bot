@@ -51,6 +51,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on"
+  pre_release_mode: "on",
+  gitbuildscheck: "on"
   
 }
