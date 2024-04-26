@@ -1,6 +1,6 @@
 module.exports = {
   name: "serverinfo",
-  aliases: "server",
+  aliases: ["server", "si"],
   code: `$title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
