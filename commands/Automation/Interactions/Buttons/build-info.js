@@ -15,6 +15,11 @@ module.exports = [{
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
     $let[pre-release;$advancedReplaceText[$getVar[gitbuildscheck];on;Yes;off;No]]
+
+    $onlyIf[$getVar[pre_release_mode]==on;This information is only available when the current build is not a development build.
+    {ephemeral}
+{interaction}
+  ]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
   {ephemeral}
