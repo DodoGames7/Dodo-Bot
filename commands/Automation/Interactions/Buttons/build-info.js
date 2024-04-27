@@ -9,12 +9,12 @@ module.exports = [{
 * **Revision**#COLON# $getVar[buildRevision]
 * **Build number**#COLON# $getVar[buildNumber]:true}
 {field:Progress:
-* **GitBuilds build**#COLON# $get[pre-release]
+* **GitBuilds build**#COLON# $get[gitbuilds-check]
 * **Status**#COLON# Incomplete
 * **Type**#COLON# $getVar[buildType]
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
-    $let[pre-release;$advancedReplaceText[$getVar[gitbuildscheck];on;Yes;off;No]]
+    $let[gitbuilds-check;$advancedReplaceText[$getVar[gitbuildscheck];on;Yes;off;No]]
 
     $onlyIf[$getVar[pre_release_mode]==on;This information is only available when the current build is not a development build.
     {ephemeral}
