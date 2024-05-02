@@ -1,6 +1,7 @@
 module.exports = {
   name: "version",
   aliases: ["ver", "changelog", "updates"],
+  $if: "old",
   code: `$title[Dodo-Bot version]
   $description[
   * **Version**: $getVar[version]
@@ -10,6 +11,9 @@ module.exports = {
   Check changes of the version by using the buttons below.
   ]
   $color[$getVar[embedcolor]]
+  $if[$getVar[pre_release_mode]==on]
+  $footer[For testing purposes only.;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/mingcute--warning-fill.png]
+  $endif
   $addButton[2;Version history;5;https://github.com/DodoGames7/Dodo-Bot/releases;false;🔎]
   $addButton[1;Other;2;versionother_$authorID;false]
   $addButton[1;Bug Fixes;2;versionbugfixes_$authorID;false]
