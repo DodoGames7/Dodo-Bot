@@ -4,11 +4,9 @@ module.exports = {
   $if: "old",
   code: `$title[Dodo-Bot version]
   $description[
-  * **Version**: $getVar[version]
-  * **Release type**: $getVar[release_type]
-  * **Build created on**: <t:$truncate[$divide[$getVar[buildDate];1000]]:f>
-  
-  Check changes of the version by using the buttons below.
+* **Version**: $getVar[version]
+* **Release type**: $getVar[release_type]
+* **Build created on**: <t:$truncate[$divide[$getVar[buildDate];1000]]:f>
   ]
   $color[$getVar[embedcolor]]
   $if[$getVar[pre_release_mode]==on]
