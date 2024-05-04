@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "npm install",
     "start": "node index.js",
-    "startWithoutErrors": "node index.js -- --no-deprecation"
+    "startWithoutWarnings": "node index.js -- --no-deprecation"
   },
   "engines": {
     "node": ">=20.x"
