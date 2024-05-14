@@ -1,5 +1,6 @@
 module.exports ={
     name: "rank",
+    aliases: "level",
     code: `
     $title[$username[$get[user]]'s Rank]
     $description[
