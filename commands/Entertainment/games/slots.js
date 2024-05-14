@@ -1,5 +1,6 @@
 module.exports = {
   name: "slots",
+  aliases: "slot",
   code: `$djsEval[const { Slots } = require('discord-gamecord');
 
 const Game = new Slots({
