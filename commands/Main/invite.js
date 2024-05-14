@@ -8,7 +8,7 @@ module.exports = {
 [Project CupcakeX](https://github.com/DodoGames7/CupcakeX)
 ]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]
-  $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles]];false]
+  $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]];false]
   $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;invite;$authorID];$dateStamp];1000]]:R>]
   `
