@@ -4,14 +4,18 @@ type: "banAdd",
 channel: "$getGuildVar[banneduserschannel]",
 code: `
 $author[Member banned!;$userAvatar;$userAvatar]
-$description[$username has been banned from the server!
-**Information**
-Account age: $creationDate[$authorID;date]
-
+$description[
+**Offender:** $username <@$authorID>
+**Moderator:** $get[moderatorchecker]
+**Reason:** $get[reason]
 ]
 $footer[Banned $get[botchecker] ID: $authorID]
 $addTimeStamp
 $color[Red]
+$let[botchecker;$replaceText[$replaceText[$checkCondition[$isBot==true];true;bot];false;member]]
+$let[moderatorchecker;$replaceText[$replaceText[$checkCondition[$hasPerms[$guildID;$clientID;viewauditlog]==true];true;$username[$get[staff]] <@$get[staff]>];false;Unknown]]
+$let[reason;$replaceText[$replaceText[$checkCondition[$getAuditLogs[$guildID;;1;22;{reason}]==null||$hasPerms[$guildID;$clientID;viewauditlog]==false];true;None.];false;$getAuditLogs[$guildID;;1;22;{reason}]]]
+$let[staff;$getAuditLogs[$guildID;;1;22;{executor.id}]]
 $let[botchecker;$replaceText[$replaceText[$checkCondition[$isBot==true];true;bot];false;member]]
 $onlyIf[$hasPermsInChannel[$getGuildVar[banneduserschannel];$clientID;viewchannel;sendmessages]==true;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banneduserschannel]]==true;]
