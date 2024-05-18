@@ -4,6 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * Updated 6.8.0 to latest (again)
+* Added a option to prevent moderator names from being revealed under the name \`anonymous\`
 * Added alias \`level\`, \`slot\` for \`rank\` and \`slots\`
 * \`ViewAuditLog\` permission is now required in this build
 * Ban logs has been updated to show ban reason and the moderator who took the action
