@@ -16,6 +16,7 @@ $onlyIf[$guildID==$guildID;]`
     type: "leave",
     channel: "$getGuildVar[leavechannel]",
     code: `$ifAwaited[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed;{execute:leaveembedmode};{execute:leavetextmode}]
+$ifAwaited[$getGuildVar[levelleaveonreset]==on;{execute:resetonleave}]
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;viewchannel;sendmessages]==true;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[leavechannel]]==true;]
 $onlyIf[$getGuildVar[leavechannel]!=none;]
