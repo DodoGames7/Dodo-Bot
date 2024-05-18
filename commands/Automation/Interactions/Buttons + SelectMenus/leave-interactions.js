@@ -263,7 +263,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleavemessagety
 $ifAwaited[$charCount[$getGuildVar[leavemessage]]>=2000||$getGuildVar[leavetype]==embed;{execute:leaveembedmodetest};{execute:leavetextmodetest}]
 
 
-$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[leavemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$memberJoinPosition;<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[leavemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<leave.time>;<t:$truncate[$divide[$datestamp;1000]]:f>]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[leavechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[leavechannel]>:
 \`ViewChannel\`
