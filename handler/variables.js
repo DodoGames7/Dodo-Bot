@@ -47,6 +47,7 @@ module.exports = {
   levelmessage: "<username> has Leveled UP! Their New Level is now <level>!",
   levelingmessagechannel: "none",
   levelmessagefeature: "off",
+  levelleaveonreset: "off",
   // developer variables
   errorchannel: "none",
   errorsystem: "off",
