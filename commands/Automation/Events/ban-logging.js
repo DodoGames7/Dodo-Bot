@@ -12,7 +12,7 @@ module.exports = [{
     $footer[ID: $authorID]
     $addTimeStamp
     $color[Red]
-    $let[moderatorchecker;$replaceText[$replaceText[$checkCondition[$isBot==false&&$getGuildVar[anonymous]==off];true;$username[$get[staff]] <@$get[staff]>];false;Unknown]]
+    $let[moderatorchecker;$replaceText[$replaceText[$checkCondition[$isBot[$get[staff]]==false&&$getGuildVar[anonymous]==off];true;$username[$get[staff]] <@$get[staff]>];false;Unknown]]
     $let[reason;$replaceText[$replaceText[$checkCondition[$getAuditLogs[$guildID;;1;22;{reason}]==null];true;None.];false;$getAuditLogs[$guildID;;1;22;{reason}]]]
     $let[staff;$getAuditLogs[$guildID;;1;22;{executor.id}]]
     $let[botchecker;$replaceText[$replaceText[$checkCondition[$isBot==true];true;bot];false;user]]
