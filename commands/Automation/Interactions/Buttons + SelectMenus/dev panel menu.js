@@ -352,4 +352,161 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
 {interaction}]
 
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglebotdevmode;]
-        `}]
+        `},{
+            type: "interaction",
+            prototype: "selectMenu",
+            code: `$interactionUpdate[{newEmbed:{title:Startup}{description:
+       This option let's you set a channel for the bot to inform users that it became online to use.
+    
+       **Current Settings**
+    **Startup**#COLON# \`$get[startupfeature]\`
+    **Startup channel**#COLON# $get[startupchannel]
+        }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
+    
+    
+    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
+        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    
+    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+    {ephemeral}
+    {interaction}
+    ]
+    
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+    {interaction}]
+        $onlyIf[$getSelectMenuValues[all]==botstartup;]
+            $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]
+            `},{
+            type: "interaction",
+            prototype: "button",
+            code: `$interactionFollowUp[$get[resultmessage];true]
+    $interactionUpdate[{newEmbed:{title:Startup}{description:
+       This option let's you set a channel for the bot to inform users that it became online to use.
+    
+       **Current Settings**
+    **Startup**#COLON# \`$get[startupfeature]\`
+    **Startup channel**#COLON# $get[startupchannel]
+        }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
+    
+    
+    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
+        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    
+    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Startup has been enabled!];false;Startup has been disabled!]]
+      $setVar[startupchannelsystem;$get[newtoggledsetting]]
+    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;off];false;on]]
+    
+    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+    {ephemeral}
+    {interaction}
+    ]
+    
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+    {interaction}]
+            $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==botstartuptoggle;]
+            `},{
+            type: "interaction",
+            prototype: "button",
+            code: `
+    
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Startup messages to be sent in. Use the select menu below for the channel to use!
+        
+        **Current Settings**
+        **Channel#COLON#** $get[startupchannel]
+        
+        **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+        
+        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
+        
+        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    
+    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+    {interaction}]
+            $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setbotstartupchannel;]
+    `
+        },{
+            type: "interaction",
+            prototype: "selectMenu",
+            code: `
+    
+    $interactionFollowUp[Successfully set <#$getSelectMenuValues[all]> as the startup channel!;true]
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Startup messages to be sent in. Use the select menu below for the channel to use!
+        
+        **Current Settings**
+        **Channel#COLON#** $get[startupchannel]
+        
+        **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+        
+        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
+        
+        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    
+    $setVar[startupchannel;$getSelectMenuValues[all]]
+    
+    $onlyIf[$hasPermsInChannel[$getSelectMenuValues[all];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getSelectMenuValues[all]>:
+        \`ViewChannel\`
+        \`SendMessages\`
+        {ephemeral}
+        {interaction}
+        ]
+        
+        $onlyIf[$getSelectMenuValues[all]!=$getVar[startupchannel];
+        This channel is already used for Error messages. Please, set a different channel instead.
+        {ephemeral}
+        {interaction}
+        ]
+        
+        $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
+        Make sure to set an Text channel instead.
+        {ephemeral}
+        {interaction}
+        ]
+        
+        $onlyIf[$guildChannelExists[$guildID;$getSelectMenuValues[all]]==true;The channel you chose no longer exists in this server.
+        Please set a valid channel which exists inside this server.
+        {ephemeral}
+        {interaction}
+        ]
+        
+        
+    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+    {ephemeral}
+    {interaction}
+    ]
+    
+      $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+        {ephemeral}
+        {interaction}
+        ]
+     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==botstartupchannelmenusetup;]
+    `
+        },{
+            type: "interaction",
+            prototype: "button",
+            code: `$interactionUpdate[{newEmbed:{title:Startup}{description:
+       This option let's you set a channel for the bot to inform users that it became online to use.
+    
+       **Current Settings**
+    **Startup**#COLON# \`$get[startupfeature]\`
+    **Startup channel**#COLON# $get[startupchannel]
+        }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
+    
+    
+    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
+        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    
+    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
+    {ephemeral}
+    {interaction}
+    ]
+    
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+    {interaction}]
+            $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==startupbotpage;]
+            `}]
+    
