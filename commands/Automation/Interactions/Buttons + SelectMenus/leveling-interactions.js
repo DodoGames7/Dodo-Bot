@@ -49,7 +49,7 @@ module.exports = [{
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
-    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholder_$authorID:false}}]
+    }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholder_$authorID:false}{button:Reset on leave:2:levelingrestonleave_$authorID:false}}]
     
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -267,5 +267,48 @@ module.exports = [{
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingtestmessage;]
     `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionUpdate[{newEmbed:{title:Reset on Leave}{description:This option let's you reset User's current level whenever they leave the server. 
+    
+    By default, this is disabled but you can choose to enable it if you want to do so.
+    
+    **Current Settings**
+    **Reset on Leave#COLON#** \`$get[levelreset]\`
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:togglelevelingreset_$authorID:false:🔄}}]
+    
+    $let[levelreset;$advancedReplaceText[$getGuildVar[levelleaveonreset];on;Enabled;off;Disabled]]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingrestonleave;]`
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[$get[resultmessage];true]
+    $interactionUpdate[{newEmbed:{title:Reset on Leave}{description:This option let's you reset User's current level whenever they leave the server. 
+    
+    By default, this is disabled but you can choose to enable it if you want to do so.
+    
+    **Current Settings**
+    **Reset on Leave#COLON#** \`$get[levelreset]\`
+    }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:togglelevelingreset_$authorID:false:🔄}}]
+    
+    $let[levelreset;$advancedReplaceText[$getGuildVar[levelleaveonreset];on;Enabled;off;Disabled]]
+    
+    
+    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;User's levels will now reset whenever they leave!];false;User's levels will no longer reset whenever they leave!]]
+    $setGuildVar[levelleaveonreset;$get[newtoggledsetting]]
+    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;off];false;on]]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglelevelingreset;]`
     }]
     
