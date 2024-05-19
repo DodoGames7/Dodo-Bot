@@ -208,7 +208,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavetext;]
     code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Leave message unique. Use the current ones available in this list!}{field:Member-related functions:
 \`<username>\` - Returns the member's username
 \`<mention>\` - Pings the member
-\`<id>\` - Returns the new member's id
+\`<id>\` - Returns the member's id
 \`<creationdate>\` - Returns the date when the member joined Discord
 \`<position>\` - Returns the join position of the member
 }{field:Server functions:
