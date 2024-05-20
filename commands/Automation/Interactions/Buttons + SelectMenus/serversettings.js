@@ -75,9 +75,9 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
       type: "interaction",
       prototype: "selectMenu",
       code: `$interactionUpdate[{newEmbed:{title:Anonymous}{description:
-          This option allows moderator names to not be revealed in moderation logs such as Ban logs for example!
+        This option allows moderator names to not be revealed in Ban logs for example!
 
-For security reasons, this option will NOT apply to bots by default.
+        For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
 
 **Current Settings**
 **Anonymous**#COLON# \`$get[anonymous]\`
@@ -98,9 +98,9 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
       code: `
 $interactionFollowUp[$get[resultmessage];true]
 $interactionUpdate[{newEmbed:{title:Anonymous}{description:
-          This option allows moderator names to not be revealed in moderation logs such as Ban logs for example!
+  This option allows moderator names to not be revealed in Ban logs for example!
 
-For security reasons, this option will NOT apply to bots by default.
+  For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
 
 **Current Settings**
 **Anonymous**#COLON# \`$get[anonymous]\`
