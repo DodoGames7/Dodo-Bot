@@ -17,17 +17,11 @@
   "license": "Apache-2.0",
   "dependencies": {
     "aoi.js": "github:aoijs/aoi.js#6c7bff4",
-    "@akarui/aoi.db": "^2.2.7",
+    "@akarui/aoi.db": "^2.3.2",
     "discord-gamecord": "^4.4.2"
   },
   "devDependencies": {
     "chalk": "^4.1.2"
-  },
-  "overrides": {
-    "aoi.js": {
-      "@akarui/aoi.db": "2.2.7"
-    },
-   "@akarui/aoi.db": "^2.2.7"
   }
 }
 

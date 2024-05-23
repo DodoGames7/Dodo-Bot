@@ -22,7 +22,10 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-*There're no changes in this category currently*
+* Fixed the possibility of the bot crashing (hopefully)
+* Fixed Package sub path error appearing in console (when hosting the bot's source code)
+* Strange errors on console should be fixed now (hopefully)
+* Leveling's leaderboard now position ranks correctly thanks to aoi.db 2.3.2
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
