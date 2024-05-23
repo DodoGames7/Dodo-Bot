@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Updated 6.8.0 to latest (again)
+* Updated to the final version of 6.8.0
 * Added a option to reset User's current level whenever they leave the server
 * Added a option to prevent moderator names from being revealed under the name \`anonymous\`
 * Added alias \`level\`, \`slot\` for \`rank\` and \`slots\`
