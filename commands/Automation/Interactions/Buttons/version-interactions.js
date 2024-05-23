@@ -42,6 +42,7 @@ module.exports = [{
 * \`@akarui/aoi.db\` is no longer a part of dev Dependencies
 * The embed color now applies to all help command's module pages
 * \`<position>\` has been updated to use ordinal formatting
+* New logging commands look by aoi.js is now in use in this build
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
