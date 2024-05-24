@@ -16,7 +16,7 @@
   "author": "dodo",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "github:aoijs/aoi.js#a440ddd",
+    "aoi.js": "github:aoijs/aoi.js#10fc0da",
     "@akarui/aoi.db": "^2.3.2",
     "discord-gamecord": "^4.4.2"
   },
