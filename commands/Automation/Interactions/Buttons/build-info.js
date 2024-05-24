@@ -10,7 +10,7 @@ module.exports = [{
 * **Build number**#COLON# $getVar[buildNumber]:true}
 {field:Progress:
 * **GitBuilds build**#COLON# $get[gitbuilds-check]
-* **Status**#COLON# Incomplete
+* **Status**#COLON# Complete
 * **Type**#COLON# $getVar[buildType]
 :true}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
