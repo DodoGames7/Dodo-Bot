@@ -13,11 +13,11 @@ module.exports = {
   autopingreply: "off",
   includebots: "on",
   version: "2.1.0",
-  buildDate: "1716549476680",
+  buildDate: "1716589985794",
   buildType: "Pre-Beta 2",
   buildRevision: "0",
   embedcolor: "#2A3759",
-  buildNumber: "2074",
+  buildNumber: "2076",
   release_type: "Pre-release",
   botgreeting: "on",
   // Feature variables
