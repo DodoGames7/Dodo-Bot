@@ -39,7 +39,7 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * Developers can now set a channel for the bot to send messages to whenever it becomes online
-* \`@akarui/aoi.db\` is no longer a part of dev Dependencies
+* \`@akarui/aoi.db\` is no longer a part of dev Dependencies and has been bumped to version 2.3.2
 * The embed color now applies to all help command's module pages
 * \`<position>\` has been updated to use ordinal formatting
 * New logging commands look by aoi.js is now in use in this build
