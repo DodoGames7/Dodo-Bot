@@ -35,7 +35,7 @@ module.exports = [{
     $addTimeStamp
     $color[DarkGreen]
     $let[moderator;$username[$get[staff]] <@$get[staff]>]
-    $let[staff;$getAuditLogs[$guildID;;1;22;{executor.id}]]
+    $let[staff;$getAuditLogs[$guildID;;1;23;{executor.id}]]
     $let[botchecker;$replaceText[$replaceText[$checkCondition[$isBot==true];true;bot];false;member]]
     $onlyIf[$hasPerms[$guildID;$clientID;viewauditlog]==true;In order to have ban logs work, i must have \`ViewAuditLog\` permission!]
     $onlyIf[$hasPermsInChannel[$getGuildVar[unbanneduserschannel];$clientID;viewchannel;sendmessages]==true;]
