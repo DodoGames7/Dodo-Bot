@@ -1,5 +1,9 @@
 module.exports = {
 name: "comment",
+info: {
+    description: "Generates a parody image of YouTube comment with your username and profile picture.",
+    perms: ["`SendMessages`", "`AttachFiles`"]
+},
 code: `$attachment[$get[apilink];comment.png;URL]
 $onlyIf[$IsValidImageLink[$get[apilink]]==true;It looks like there're issues with processing the image. Please, try again later if possible.]
 $onlyIf[$charCount[$message]<=56;Your comment can't be longer than 56 characters!]

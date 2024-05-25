@@ -1,5 +1,9 @@
 module.exports = {
     name: "nokia",
+    info: {
+        description: "Puts your/user's profile picture on a nokia phone.",
+        perms: ["`SendMessages`", "`AttachFiles`"]
+    },
     code: `$attachment[$get[apilink];nokia.png;URL]
     $onlyIf[$IsValidImageLink[$get[apilink]]==true;It looks like there're issues with processing the image. Please, try again later if possible.]
     $onlyIf[$hasPermsInChannel[$channelID;$clientID;attachfiles]==true||$hasPerms[$guildID;$clientID;attachfiles]==true;I must have \`AttachFiles\` permission in order to proceed. Please, grant me the permission and try again.]

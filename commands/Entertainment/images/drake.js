@@ -1,5 +1,9 @@
 module.exports = {
 name: "drake",
+info: {
+    description: "Generates a Drake meme with your own inputs.",
+    perms: ["`SendMessages`", "`AttachFiles`"]
+},
 code: `
 $attachment[https://api.popcat.xyz/drake?text1=$splitText[1]&text2=$splitText[2];drake.png;URL]
 $onlyIf[$IsValidImageLink[https://api.popcat.xyz/drake?text1=$splitText[1]&text2=$splitText[2]]==true;It looks like there're issues with processing the image. Please, try again later if possible.]
