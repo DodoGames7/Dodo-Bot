@@ -1,6 +1,10 @@
 module.exports = [{
   name:"findtheflag",
-  aliases:"ftf",
+  info: {
+    description: "Starts a random game of Find the flag.",
+    perms: ["`SendMessages`"]
+  },
+aliases:"ftf",
 code:`
 $awaitComponents[$channelID;$get[messageID];$authorID;ftf1,ftf2,ftf3;ftfresults1,ftfresults2,ftfresults3;ftftimeout;1;30s]
 

@@ -1,5 +1,9 @@
 module.exports = {
 name: "connect4",
+info: {
+  description: "Start a connect4 match with your opponent.",
+  perms: ["`SendMessages`"]
+},
 aliases: ["c4", "connectfour"],
 code: `$djsEval[const { Connect4 } = require('discord-gamecord');
 

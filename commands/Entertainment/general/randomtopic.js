@@ -1,5 +1,9 @@
 module.exports = {
 name: "randomtopic",
+info: {
+    description: "Start a random topic in this server.",
+    perms: ["`SendMessages`"]
+},
 aliases: ["newtopic", "topic"],
 code: `$title[Random topic]
 $description[$nonEscape[$get[topics]]]

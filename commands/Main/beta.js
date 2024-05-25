@@ -1,5 +1,9 @@
 module.exports = [{
     name: "beta",
+    info: {
+        description: "Allows you to test experimental commands of Dodo-Bot (unless the server does not have them enabled).",
+        perms: ["`SendMessages`"]
+    },
     code: `$title[Beta Commands]
     $description[Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     

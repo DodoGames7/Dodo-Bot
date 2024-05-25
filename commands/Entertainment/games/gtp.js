@@ -1,5 +1,9 @@
 module.exports = {
     name: "guess-the-pokemon",
+    info: {
+      description: "Starts a random game of guessing a Pokemon character.",
+      perms: ["`SendMessages`"]
+    },
     aliases: "gtp",
     code: `$djsEval[const { GuessThePokemon } = require('discord-gamecord');
     

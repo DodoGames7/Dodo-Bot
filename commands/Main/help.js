@@ -1,5 +1,9 @@
 module.exports = {
   name: "help",
+  info: {
+    description: "Allows you to check all available commands of the bot.",
+    perms: ["`SendMessages`"]
+},
   code: `$title[Help Menu]
   $description[To view commands, select one of the modules!]
   $footer[Made with ❤️ by $username[632607624742961153]]

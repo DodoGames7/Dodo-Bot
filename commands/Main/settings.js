@@ -1,5 +1,9 @@
 module.exports = {
   name: "settings",
+  info: {
+    description: "Let's you manage some settings of Dodo-Bot.",
+    perms: ["`SendMessages`", "`ManageMessages`"]
+},
   aliases: "panel",
   code: `$title[Settings]
   $description[Welcome to settings! Here, you can change things the bot usually operates. To change any setting, use the select menu to view each one accordingly]

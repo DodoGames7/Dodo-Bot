@@ -1,5 +1,9 @@
 module.exports = {
 name: "tictactoe",
+info: {
+  description: "Start a tictactoe match with your opponent.",
+  perms: ["`SendMessages`"]
+},
 aliases: "ttt",
 code: `$djsEval[const { TicTacToe } = require('discord-gamecord');
 

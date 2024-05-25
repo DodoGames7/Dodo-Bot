@@ -1,5 +1,9 @@
 module.exports = [{
 name: "set-msgdeletelog",
+info: {
+    description: "Setup Message delete logs.",
+    perms: ["`SendMessages`", "`ManageMessages`"]
+},
 aliases: ["set-logdelete", "set-messagedeletelog"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
@@ -23,6 +27,10 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
 
 },{
     name: "reset-msgdeletelog",
+    info: {
+        description: "Reset current channel used for Message delete logs.",
+        perms: ["`SendMessages`", "`ManageMessages`"]
+    },
     aliases: ["reset-logdelete", "reset-messagedeletelog"],
     code: `$setGuildVar[msglogdeletedchannel;none]
 Successfully reset the message delete log channel!
@@ -33,6 +41,10 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
 `
 },{
     name: "reset-msgeditlog",
+    info: {
+        description: "Reset current channel used for Message edit logs.",
+        perms: ["`SendMessages`", "`ManageMessages`"]
+    },
     aliases: ["reset-logedit", "reset-messageeditlog"],
     code: `$setGuildVar[msglogeditchannel;none]
 Successfully reset the message edit log channel!
@@ -43,6 +55,10 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
 `
 },{
     name: "set-msgeditlog",
+    info: {
+        description: "Setup Message edit logs.",
+        perms: ["`SendMessages`", "`ManageMessages`"]
+    },
     aliases: ["set-logedit", "set-messageeditlog"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
     code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]

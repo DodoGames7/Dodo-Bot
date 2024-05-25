@@ -1,5 +1,9 @@
 module.exports ={
     name: "rank",
+    info: {
+        description: "View your/someone's current level.",
+        perms: ["`SendMessages`"]
+    },
     aliases: "level",
     code: `
     $title[$username[$get[user]]'s Rank]

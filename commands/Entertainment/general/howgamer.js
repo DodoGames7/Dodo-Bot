@@ -1,5 +1,9 @@
 module.exports = {
 name: "howgamer",
+info: {
+    description: "Check on how gamer you're or the user mentioned.",
+    perms: ["`SendMessages`"]
+},
 code: `$title[HowGamer machine]
 $description[$get[target] $random[0;100]% Gamer]
 $color[Random]

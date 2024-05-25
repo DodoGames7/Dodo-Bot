@@ -1,5 +1,9 @@
 module.exports = {
 name: "randomcolor",
+info: {
+    description: "Returns a random color that you can use.",
+    perms: ["`SendMessages`"]
+},
 aliases: ["randomhex"],
 code: `$title[Random Color]
 $addField[**hex Code**;#$getObjectProperty[api;hex]]

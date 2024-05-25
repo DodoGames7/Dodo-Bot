@@ -1,5 +1,9 @@
 module.exports = {
 name: "rock-paper-scissors",
+info: {
+  description: "Start a rps match with your opponent.",
+  perms: ["`SendMessages`"]
+},
 aliases: "rps",
 code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord');
 

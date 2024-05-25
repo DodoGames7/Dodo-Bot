@@ -1,5 +1,9 @@
 module.exports = {
 name: "would-you-rather",
+info: {
+    description: "Start a wyr game of two options to choose from.",
+    perms: ["`SendMessages`"]
+},
 aliases: "wyr",
 code: `$title[Would you rather...]
 $addField[**Option 2**;$getObjectProperty[api;ops2]]

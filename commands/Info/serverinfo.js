@@ -1,5 +1,9 @@
 module.exports = {
   name: "serverinfo",
+  info: {
+    description: "Returns this server's information.",
+    perms: ["`SendMessages`"]
+},
   aliases: ["server", "si", "guild"],
   code: `$title[Server Info]
   $addField[Verification Level;$get[verifylevel]]

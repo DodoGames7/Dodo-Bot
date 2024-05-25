@@ -1,5 +1,9 @@
 module.exports = [{
   name: "prefix",
+  info: {
+    description: "View/Change current prefix of the bot.",
+    perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"]
+},
   code: `
   $setGuildVar[prefix;$message]
   Changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`.
@@ -16,6 +20,10 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$autho
   `
 },{
     name: "prefix-reset",
+    info: {
+      description: "Resets the prefix to it's default state in this server.",
+      perms: ["`SendMessages`", "`ManageGuild`"]
+  },
     aliases: "reset-prefix",
     code: ` $setGuildVar[prefix;$getGuildVar[originalprefix]]
 The prefix has been successfully reset. <3

@@ -1,5 +1,9 @@
 module.exports = [{
 name: "about",
+info: {
+    description: "Returns information about Dodo-Bot.",
+    perms: ["`SendMessages`"]
+},
 aliases: "info",
 code: `
 $title[About Dodo-Bot]

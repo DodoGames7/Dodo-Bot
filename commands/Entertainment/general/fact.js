@@ -1,5 +1,9 @@
 module.exports = {
   name: "fact",
+  info: {
+    description: "Returns random facts.",
+    perms: ["`SendMessages`"]
+},
   code: `$sendMessage[$nonEscape[$getobjectproperty[api;fact]];false]
   $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for fact. Please, try again later.]

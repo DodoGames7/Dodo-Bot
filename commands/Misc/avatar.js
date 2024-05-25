@@ -1,5 +1,9 @@
 module.exports = {
   name: "avatar",
+  info: {
+    description: "Returns your/users profile picture.",
+    perms: ["`SendMessages`"]
+},
   aliases: ["av","userav"],
   code: `$title[$get[usernamechecker]'s Avatar]
   $image[$userAvatar[$findUser[$message;true]]

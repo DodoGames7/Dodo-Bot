@@ -1,5 +1,9 @@
 module.exports = {
   name: "say",
+  info: {
+    description: "Makes the bot say whatever you want (alongside with optional embed mode).",
+    perms: ["`SendMessages`"]
+},
   $if: "old",
   code: `$if[$stringStartsWith[$tolowercase[$message[1]];—embed;--embed]==true||$charCount[$message[1]]>=2000]
 $author[$get[usernamechecker];$userAvatar;https://www.youtube.com/watch?v=dQw4w9WgXcQ]

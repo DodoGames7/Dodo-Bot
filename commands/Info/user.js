@@ -1,5 +1,9 @@
 module.exports = {
 name: "user",
+info: {
+    description: "Returns your/user's information.",
+    perms: ["`SendMessages`"]
+},
 $if: "old",
 aliases: ["userinfo", "user-info"],
 code: `$title[Information for $get[username]]

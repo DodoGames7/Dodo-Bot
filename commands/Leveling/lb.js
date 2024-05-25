@@ -1,5 +1,9 @@
 module.exports ={
     name: "level-leaderboard",
+    info: {
+        description: "Returns Leveling's current leaderboard for this server (if enabled).",
+        perms: ["`SendMessages`"]
+    },
     aliases: ["lb", "leveling-lb", "leaderboard"],
     code: `
     $title[Leveling Leaderboard]

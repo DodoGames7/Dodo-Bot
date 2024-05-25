@@ -1,5 +1,9 @@
 module.exports = {
   name: "invite",
+  info: {
+    description: "Returns a link to invite the bot (alongside with optional links).",
+    perms: ["`SendMessages`"]
+},
   code: `$title[invite Dodo Bot]
   $description[To invite the bot into a server, click on the "Invite" button below.
 

@@ -1,5 +1,9 @@
 module.exports = {
 name: "leveling",
+info: {
+    description: "Setup and manage Leveling features.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 code: `
 $title[Leveling]
 $description[Leveling is a feature that let's members of the server have their levels and xp based on how much they have been active in the server.

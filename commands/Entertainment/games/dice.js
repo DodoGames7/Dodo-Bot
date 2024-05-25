@@ -1,5 +1,9 @@
 module.exports = {
     name: "dice",
+    info: {
+        description: "Starts a random dices (with a button to replay).",
+        perms: ["`SendMessages`"]
+      },
     code: `
 
     $editMessage[$get[messageid];{newEmbed:{title:There you go!!}{description:You got a $random[1;6] out of 6!}{color:Red}}{actionRow:{button:Try Again:2:dicetryagain_$authorID:false:🎲}}]

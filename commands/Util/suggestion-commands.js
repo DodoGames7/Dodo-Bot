@@ -1,5 +1,9 @@
 module.exports = [{
 name: "suggest-set",
+info: {
+    description: "Setup suggestions.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 aliases: "suggestion-set",
 usage: "suggest-set channel-name/channel ID or <#channel ID>",
 code: `
@@ -21,6 +25,10 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
 `
 },{
     name: "suggest-reset",
+    info: {
+        description: "Reset current channel used for suggestions.",
+        perms: ["`SendMessages`", "`ManageChannels`"]
+    },
     code: `$setGuildVar[suggestionchannel;none]
 Successfully reset suggestion Channel! Run \`suggest-set\` to set a channel again.
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
@@ -29,6 +37,10 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest-reset
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
 },{
     name: "suggest",
+    info: {
+        description: "Start a suggestion in this server if suggestions are setup.",
+        perms: ["`SendMessages`"]
+    },
     code: `
 $author[Suggestion by $get[usernamechecker];$userAvatar]
 $title[$splitText[1]]

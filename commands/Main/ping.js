@@ -1,5 +1,9 @@
 module.exports = {
 name: "ping",
+info: {
+    description: "Returns the api Latency of the bot.",
+    perms: ["`SendMessages`"]
+},
 code: `
 Pong! 🏓
 $editIn[3s;Api Latency: $pingms

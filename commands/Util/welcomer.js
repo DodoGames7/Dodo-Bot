@@ -1,5 +1,9 @@
 module.exports = {
 name: "welcomer",
+info: {
+    description: "Setup and manage Welcomer features.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 aliases: "welcome",
 code: `$title[Welcomer]
 $description[Welcomer is an way to greet new members of your server with your own choice of the message you're going to use it for the server!

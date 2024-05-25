@@ -1,7 +1,7 @@
 module.exports = [{
   type: "interaction",
   prototype: "selectMenu",
-  code: `$interactionUpdate[{newEmbed:{title:General}{field:**Main commands**:\`ping\`, \`settings\`, \`beta\`}{field:**Bot related**:\`stats\`, \`ver\`, \`invite\`, \`credits\`, \`about\`, \`report\`, \`gitbuilds\`}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{stringInput:Main:general:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}}}]
+  code: `$interactionUpdate[{newEmbed:{title:General}{field:**Main commands**:\`ping\`, \`commandinfo\`, \`settings\`, \`beta\`}{field:**Bot related**:\`stats\`, \`ver\`, \`invite\`, \`credits\`, \`about\`, \`report\`, \`gitbuilds\`}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:helpmenu_$authorID:Select an Module:1:1:false:{stringInput:Main:general:Explore commands from Main module:false}{stringInput:Entertainment:entertainment:Explore commands from Entertainment module:false}{stringInput:Leveling:leveling:Explore commands from Leveling module:false}{stringInput:Util:util:Explore commands from Util module:false}}}]
 
 
   

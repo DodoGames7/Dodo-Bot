@@ -1,5 +1,9 @@
 module.exports = {
 name: "leave",
+info: {
+    description: "Setup and manage Leave features.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 code: `$title[Leave]
 $description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
 
