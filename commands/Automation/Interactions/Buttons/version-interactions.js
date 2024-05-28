@@ -3,8 +3,8 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
+* \`say\` command has been rewritten to now properly work
 * Added a new command called \`mock\`
-* The command \`channel\` has been removed from the bot
 * You can now check information about all of Dodo-Bot commands using the command \`commandinfo\`
 * Perms for reset-channel commands such as unban logs has been changed to require \`ManageChannels\` permission as well
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
@@ -33,6 +33,7 @@ module.exports = [{
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
+* The command \`channel\` has been removed from the bot
 * The category "General Entertainment" seen in help command's Entertainment module has been renamed to simply "Text"
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
