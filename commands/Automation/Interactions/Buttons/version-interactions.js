@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* \`say\` command has been rewritten to now properly work
+* \`say\` command has been rewritten to now properly work. Embed mode can also now be used anywhere in the message as well!
 * Added a new command called \`mock\`
 * You can now check information about all of Dodo-Bot commands using the command \`commandinfo\`
 * Perms for reset-channel commands such as unban logs has been changed to require \`ManageChannels\` permission as well
