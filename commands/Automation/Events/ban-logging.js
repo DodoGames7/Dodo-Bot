@@ -5,9 +5,9 @@ module.exports = [{
     code: `
     $author[Member banned!;$userAvatar;$userAvatar]
     $description[
-    **$toLocaleUpperCase[$get[botchecker]]:** $username <@$authorID>
-    **Moderator:** $get[moderatorchecker]
-    **Reason:** $get[reason]
+**$toLocaleUpperCase[$get[botchecker]]:** $username <@$authorID>
+**Moderator:** $get[moderatorchecker]
+**Reason:** $get[reason]
     ]
     $footer[ID: $authorID]
     $addTimeStamp
@@ -28,8 +28,8 @@ module.exports = [{
         channel: "$getGuildVar[unbanneduserschannel]",
         code: `$author[Member unbanned!;$userAvatar;$userAvatar]
     $description[
-    **$toLocaleUpperCase[$get[botchecker]]:** $username <@$authorID>
-    **Moderator:** $get[moderator]
+**$toLocaleUpperCase[$get[botchecker]]:** $username <@$authorID>
+**Moderator:** $get[moderator]
     ]
     $footer[ID: $authorID]
     $addTimeStamp
