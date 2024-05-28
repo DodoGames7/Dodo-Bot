@@ -1,5 +1,5 @@
 module.exports = [{
-  name: "Startup Message",
+  name: "Startup Message (Console)",
   type: "ready",
   channel: "",
   code: `$djsEval[const chalk = require('chalk')

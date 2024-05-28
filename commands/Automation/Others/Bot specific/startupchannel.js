@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Startup Channel",
+    name: "Startup Message (Channel)",
     type: "ready",
     channel: "",
     code: `$title[Ready!]
