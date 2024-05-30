@@ -1,7 +1,7 @@
 module.exports = {
     name: "report",
     info: {
-        description: "Returns a link to report issues of Dodo-Bot's GitHub repo.",
+        description: "Returns a link to report issues of Dodo-Bot on it's GitHub repo.",
         perms: ["`SendMessages`"]
     },
     aliases: "bugreport",

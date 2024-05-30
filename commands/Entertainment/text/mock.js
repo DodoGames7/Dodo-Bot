@@ -11,6 +11,6 @@ module.exports = {
     $let[jsonresponse;$jsonRequest[https://api.popcat.xyz/mock?text=$uri[$message;encode]]]
     $onlyIf[$message!=;Please enter a text.]
     $cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;fact;$authorID];$dateStamp];1000]]:R>]
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;mock;$authorID];$dateStamp];1000]]:R>]
     $disableMentionType[all]`
     }

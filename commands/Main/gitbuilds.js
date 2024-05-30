@@ -1,7 +1,7 @@
 module.exports = {
     name: "gitbuilds",
     info: {
-        description: "Returns information about dev builds (with a link to trying them as well).",
+        description: "Returns information about dev builds (with a link to try them as well).",
         perms: ["`SendMessages`"]
     },
     code: `$title[About GitBuilds]

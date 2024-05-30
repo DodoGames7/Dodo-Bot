@@ -2,7 +2,7 @@ module.exports = [{
 name: "set-msgdeletelog",
 info: {
     description: "Setup Message delete logs.",
-    perms: ["`SendMessages`", "`ManageMessages`"]
+    perms: ["`SendMessages`", "`ManageChannels`"]
 },
 aliases: ["set-logdelete", "set-messagedeletelog"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
@@ -22,14 +22,14 @@ $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logdelete;usage]]\`]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-msgdeletelog;$authorID];$dateStamp];1000]]:R>]
-$onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 
 },{
     name: "reset-msgdeletelog",
     info: {
         description: "Reset current channel used for Message delete logs.",
-        perms: ["`SendMessages`", "`ManageMessages`"]
+        perms: ["`SendMessages`", "`ManageChannels`"]
     },
     aliases: ["reset-logdelete", "reset-messagedeletelog"],
     code: `$setGuildVar[msglogdeletedchannel;none]
@@ -37,13 +37,13 @@ Successfully reset the message delete log channel!
 $onlyIf[$getGuildVar[msglogdeletedchannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;reset-msgdeletelog;$authorID];$dateStamp];1000]]:R>]
-$onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this!]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this!]
 `
 },{
     name: "reset-msgeditlog",
     info: {
         description: "Reset current channel used for Message edit logs.",
-        perms: ["`SendMessages`", "`ManageMessages`"]
+        perms: ["`SendMessages`", "`ManageChannels`"]
     },
     aliases: ["reset-logedit", "reset-messageeditlog"],
     code: `$setGuildVar[msglogeditchannel;none]
@@ -51,13 +51,13 @@ Successfully reset the message edit log channel!
 $onlyIf[$getGuildVar[msglogeditchannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;reset-msgeditlog;$authorID];$dateStamp];1000]]:R>]
-$onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
     name: "set-msgeditlog",
     info: {
         description: "Setup Message edit logs.",
-        perms: ["`SendMessages`", "`ManageMessages`"]
+        perms: ["`SendMessages`", "`ManageChannels`"]
     },
     aliases: ["set-logedit", "set-messageeditlog"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
@@ -79,7 +79,7 @@ $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logedit;usage]]\`]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-msgeditlog;$authorID];$dateStamp];1000]]:R>]
-$onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 
 }]

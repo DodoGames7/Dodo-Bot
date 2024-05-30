@@ -2,7 +2,8 @@ module.exports = {
 name: "drake",
 info: {
     description: "Generates a Drake meme with your own inputs.",
-    perms: ["`SendMessages`", "`AttachFiles`"]
+    perms: ["`SendMessages`", "`AttachFiles`"],
+    beta: "true"
 },
 code: `
 $attachment[https://api.popcat.xyz/drake?text1=$splitText[1]&text2=$splitText[2];drake.png;URL]
