@@ -12,7 +12,7 @@ module.exports = {
     $addField[Permissions needed;$commandInfo[$get[cmdname];info.perms]]
     $addField[Description;$commandInfo[$get[cmdname];info.description]]
     $color[$getVar[embedcolor]]
-    $if[$commandInfo[$get[cmdname];info.beta]==true]
+    $if[$commandInfo[$toLowerCase[$message];info.beta]==true]
     $footer[Experimental command.;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/mingcute--warning-fill.png]
   $endif
     $let[aliases;$advancedReplaceText[$checkCondition[$commandInfo[$get[cmdname];aliases]==];true;*This command does not have any aliases.*;false;$commandInfo[$get[cmdname];aliases]]]
