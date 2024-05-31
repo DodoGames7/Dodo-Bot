@@ -3,5 +3,6 @@
     "BotToken": "",
     "MobileStatus": false,
     "DBsecurityKey": "a-32-characters-long-string-here",
+    "DebugClient": false,
     "LogCommands": false
 }

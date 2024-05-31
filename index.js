@@ -17,7 +17,10 @@ const client = new AoiClient({
     securityKey: config.DBsecurityKey,
   },
  disableFunctions: ["$clientToken"],
- mobilePlatform: config.MobileStatus
+ mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
+ debugs: { // Whether or not to enable aoi.js debug mode
+ interpreter: config.DebugClient
+}
 });
 
 // Handlers
