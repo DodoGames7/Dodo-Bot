@@ -5,10 +5,6 @@ module.exports = [{
     
         To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -21,11 +17,6 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 \`eval\`, \`jseval\`, \`exec\`, \`setcustomstatus\`, \`update\`
 }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}]
 
-
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
 {interaction}]
@@ -53,10 +44,6 @@ $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting
 $setVar[botgreeting;$get[newtoggledsetting]]
 $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting]==on];true;off];false;on]]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -79,10 +66,6 @@ When an error occurs, information such as the server name, it's id, alongside wi
     $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
     $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -110,11 +93,6 @@ $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem
   $setVar[errorsystem;$get[newtoggledsetting]]
 $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;off];false;on]]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
-
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -137,10 +115,6 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -190,11 +164,6 @@ $onlyIf[$hasPermsInChannel[$getSelectMenuValues[all];$clientID;sendmessages;view
     {interaction}
     ]
     
-    
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -221,10 +190,6 @@ When an error occurs, information such as the server name, it's id, alongside wi
     $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -241,11 +206,6 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}}]
 
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
-
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
     $onlyIf[$getSelectMenuValues[all]==botembedcolor;]
@@ -260,10 +220,6 @@ $interactionModal[Set Color;embedcolorsetresult;
     {textInput:Hex code:1:hexInput:true:e.g #57F287:0:7:$getVar[embedcolor]}
   }]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -295,10 +251,6 @@ $onlyIf[$stringStartsWith[$textInputValue[hexInput];#]==true;
 Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 {interaction}]
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 `
     },{
         type: "interaction",
@@ -313,10 +265,6 @@ Disabling this will cause the build to identify itself as a "Stable" build with 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:togglebotdevmode_$authorID:false}}]
 
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
 $let[pre-release;$replaceText[$replaceText[$getVar[pre_release_mode];on;Enabled];off;Disabled]]
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -344,10 +292,6 @@ $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[pre_release
 $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_release_mode]==on];true;off];false;on]]
 
 
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-{ephemeral}
-{interaction}
-]
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
 
@@ -367,10 +311,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
     $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
         $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-    {ephemeral}
-    {interaction}
-    ]
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
@@ -396,11 +336,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
       $setVar[startupchannelsystem;$get[newtoggledsetting]]
     $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;off];false;on]]
     
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-    {ephemeral}
-    {interaction}
-    ]
-    
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
             $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==botstartuptoggle;]
@@ -420,10 +355,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
         
         $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-    {ephemeral}
-    {interaction}
-    ]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
@@ -473,11 +404,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
         {interaction}
         ]
         
-        
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-    {ephemeral}
-    {interaction}
-    ]
     
       $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
         {ephemeral}
@@ -499,11 +425,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make chang
     
     $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
         $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
-    
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;You cannot make changes as you're not a developer anymore.
-    {ephemeral}
-    {interaction}
-    ]
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
