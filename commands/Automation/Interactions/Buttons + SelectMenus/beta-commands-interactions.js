@@ -13,12 +13,12 @@ module.exports = [{
 **NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
-$let[betastatus;$replaceText[$replaceText[$getGlobalUserVar[betacommands];on;Enabled];off;Disabled]]
+$let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
 
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGlobalUserVar[betacommands]==on];true;You're now a beta tester to access beta commands! Click the button "Commands" to try out the latest commands in this feature!];false;You're no longer a beta tester now! As a result, you won't be able to use beta commands now!]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGlobalUserVar[betacommands]==on];true;You're now a beta tester to access beta commands! Click the button "Commands" to try out the latest commands in this feature!;false;You're no longer a beta tester now! As a result, you won't be able to use beta commands now!]]
 
     $setGlobalUserVar[betacommands;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGlobalUserVar[betacommands]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[betacommands]==on];true;off;false;on]]
 
   
     
@@ -56,7 +56,7 @@ $interactionUpdate[{newEmbed:{title:Beta Commands}{description:
 **NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
-$let[betastatus;$replaceText[$replaceText[$getGlobalUserVar[betacommands];on;Enabled];off;Disabled]]
+$let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
 {interaction}]

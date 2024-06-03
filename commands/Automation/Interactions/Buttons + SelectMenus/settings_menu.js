@@ -32,8 +32,8 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
 $onlyIf[$getSelectMenuValues[all]==botmenu;]
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
- $let[autoreply;$replaceText[$replaceText[$getGuildVar[autopingreply];on;Enabled];off;Disabled]]
- $let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];on;Enabled];off;Disabled]]
+ $let[autoreply;$advancedReplaceText[$getGuildVar[autopingreply];on;Enabled;off;Disabled]]
+ $let[includebots;$advancedReplaceText[$getGuildVar[includebots];on;Enabled;off;Disabled]]
 `
 },{
  type: "interaction",
@@ -52,7 +52,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction}
     ]
    
-$let[autopingreply;$replaceText[$replaceText[$getGuildVar[autopingreply];on;Enabled];off;Disabled]]
+$let[autopingreply;$advancedReplaceText[$getGuildVar[autopingreply];on;Enabled;off;Disabled]]
 $onlyIf[$getSelectMenuValues[all]==autoreply;]
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
 `
@@ -73,7 +73,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction}
     ]
     
-$let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];on;Enabled];off;Disabled]]
+$let[includebots;$advancedReplaceText[$getGuildVar[includebots];on;Enabled;off;Disabled]]
 $onlyIf[$getSelectMenuValues[all]==includebots;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
 `
@@ -93,10 +93,10 @@ Disable this If It's purposefully used for spamming.
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
 
-  $let[autopingreply;$replaceText[$replaceText[$getGuildVar[autopingreply];on;Enabled];off;Disabled]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[autopingreply]==on];true;From now on, I will reply by pings!];false;From now on, I will no longer reply by pings!]]
+  $let[autopingreply;$advancedReplaceText[$getGuildVar[autopingreply];on;Enabled;off;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[autopingreply]==on];true;From now on, I will reply by pings!;false;From now on, I will no longer reply by pings!]]
 $setGuildVar[autopingreply;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[autopingreply]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[autopingreply]==on];true;off;false;on]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
    {ephemeral}
@@ -121,10 +121,10 @@ By default, this is enabled but you can choose to disable it for whatever reason
 
 
 
-  $let[includebots;$replaceText[$replaceText[$getGuildVar[includebots];on;Enabled];off;Disabled]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[includebots]==on];true;From now on, Bots will be included in logs!];false;From now on, Bots will no longer be included in logs!]]
+  $let[includebots;$advancedReplaceText[$getGuildVar[includebots];on;Enabled;off;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[includebots]==on];true;From now on, Bots will be included in logs!;false;From now on, Bots will no longer be included in logs!]]
 $setGuildVar[includebots;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[includebots]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[includebots]==on];true;off;false;on]]
 
 
 

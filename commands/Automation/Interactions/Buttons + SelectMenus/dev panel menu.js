@@ -39,10 +39,10 @@ $interactionUpdate[{newEmbed:{title:Welcome new servers!}{description:
     }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false}}]
 
 
-$let[botgreetconfig;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting]==on];true;Enabled];false;Disabled]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting]==on];true;Dodo-Bot will now welcome new servers!];false;Dodo-Bot will no longer welcome new servers!]]
+$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botgreeting]==on];true;Enabled;false;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[botgreeting]==on];true;Dodo-Bot will now welcome new servers!;false;Dodo-Bot will no longer welcome new servers!]]
 $setVar[botgreeting;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[botgreeting]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[botgreeting]==on];true;off;false;on]]
 
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -63,8 +63,8 @@ When an error occurs, information such as the server name, it's id, alongside wi
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
-    $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -87,11 +87,11 @@ When an error occurs, information such as the server name, it's id, alongside wi
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
-    $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Error logs will now be logged!];false;Error logs will now no longer be logged!]]
+    $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Error logs will now be logged!;false;Error logs will now no longer be logged!]]
   $setVar[errorsystem;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;off;false;on]]
 
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -113,7 +113,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
     
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -135,7 +135,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
     
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 $setVar[errorchannel;$getSelectMenuValues[all]]
 
@@ -186,8 +186,8 @@ When an error occurs, information such as the server name, it's id, alongside wi
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
-    $let[errorsystem;$replaceText[$replaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled];false;Disabled]]
-    $let[errorchannel;$replaceText[$replaceText[$checkCondition[$getVar[errorchannel]==none];true;None];false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
 
@@ -265,7 +265,7 @@ Disabling this will cause the build to identify itself as a "Stable" build with 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:togglebotdevmode_$authorID:false}}]
 
 
-$let[pre-release;$replaceText[$replaceText[$getVar[pre_release_mode];on;Enabled];off;Disabled]]
+$let[pre-release;$advancedReplaceText[$getVar[pre_release_mode];on;Enabled;off;Disabled]]
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
     $onlyIf[$getSelectMenuValues[all]==botdevmode;]
@@ -285,11 +285,11 @@ Disabling this will cause the build to identify itself as a "Stable" build with 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:togglebotdevmode_$authorID:false}}]
 
 
-$let[pre-release;$replaceText[$replaceText[$getVar[pre_release_mode];on;Enabled];off;Disabled]]
+$let[pre-release;$advancedReplaceText[$getVar[pre_release_mode];on;Enabled;off;Disabled]]
 
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[pre_release_mode]==on];true;Pre-release mode will now be enabled!];false;Pre-release mode will now no longer be enabled!]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[pre_release_mode]==on];true;Pre-release mode will now be enabled!;false;Pre-release mode will now no longer be enabled!]]
   $setVar[pre_release_mode;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_release_mode]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_mode]==on];true;off;false;on]]
 
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -308,8 +308,8 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_rel
         }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
     
     
-    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
-        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -329,12 +329,12 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_rel
         }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
     
     
-    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
-        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
-    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Startup has been enabled!];false;Startup has been disabled!]]
+    $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Startup has been enabled!;false;Startup has been disabled!]]
       $setVar[startupchannelsystem;$get[newtoggledsetting]]
-    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;off];false;on]]
+    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;off;false;on]]
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
@@ -353,7 +353,7 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_rel
         
         }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
         
-        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -375,7 +375,7 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_rel
         
         }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
         
-        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     $setVar[startupchannel;$getSelectMenuValues[all]]
     
@@ -423,8 +423,8 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getVar[pre_rel
         }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botstartuptoggle_$authorID:false:🔄}{button:Set Channel:2:setbotstartupchannel_$authorID:false}}]
     
     
-    $let[startupfeature;$replaceText[$replaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled];false;Disabled]]
-        $let[startupchannel;$replaceText[$replaceText[$checkCondition[$getVar[startupchannel]==none];true;None];false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+    $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]

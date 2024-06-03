@@ -99,9 +99,9 @@ $interactionUpdate[{newEmbed:{title:Trivia type}{description:
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:triviatypetoggle_$authorID:false}}]
 
 
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[trivia_type]==single];true;From now on, Trivia will start with only one answer for each question!];false;From now on, Trivia will start with multiple answers for each question!]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[trivia_type]==single];true;From now on, Trivia will start with only one answer for each question!;false;From now on, Trivia will start with multiple answers for each question!]]
 $setGuildVar[trivia_type;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[trivia_type]==single];true;multiple];false;single]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[trivia_type]==single];true;multiple;false;single]]
 
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -130,7 +130,7 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[tr
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==floodbutton;]
 
 
-  $let[type;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;\`Hard\`];13;\`Normal\`];8;\`Easy\`]]
+  $let[type;$advancedReplaceText[$getGuildVar[flood_difficulty];18;\`Hard\`;13;\`Normal\`;8;\`Easy\`]]
   `
 },{
   type: "interaction",
@@ -145,7 +145,7 @@ $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[tr
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
-$let[floodmode;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
+$let[floodmode;$advancedReplaceText[$getGuildVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
   {ephemeral}
@@ -170,7 +170,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
-$let[floodmode;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
+$let[floodmode;$advancedReplaceText[$getGuildVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
   $setGuildVar[flood_difficulty;8]
 
   $onlyIf[$getGuildVar[flood_difficulty]!=8;
@@ -202,7 +202,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
-$let[floodmode;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
+$let[floodmode;$advancedReplaceText[$getGuildVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
   $setGuildVar[flood_difficulty;13]
 
   $onlyIf[$getGuildVar[flood_difficulty]!=13;
@@ -233,7 +233,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
-$let[floodmode;$replaceText[$replaceText[$replaceText[$getGuildVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
+$let[floodmode;$advancedReplaceText[$getGuildVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
   $setGuildVar[flood_difficulty;18]
 
   $onlyIf[$getGuildVar[flood_difficulty]!=18;

@@ -14,10 +14,10 @@ Lowest Role#COLON# $get[lowestrole]
 
 
 
-$let[username;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]]];false;$userTag[$get[user]]]]
-$let[lowestrole;$replaceText[$replaceText[$checkCondition[$userLowestRole[$get[user];$guildID]==$guildID];true;None];false;$roleName[$userLowestRole[$get[user];$guildID]]]]
-$let[highestrole;$replaceText[$replaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None];false;$userHighestRole[$get[user];$guildID;name]]]
-$let[serverimage;$replaceText[$replaceText[$checkCondition[$guildIcon==];false;$guildIcon];true;$userAvatar[$clientID]]]
+$let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
+$let[lowestrole;$advancedReplaceText[$checkCondition[$userLowestRole[$get[user];$guildID]==$guildID];true;None;false;$roleName[$userLowestRole[$get[user];$guildID]]]]
+$let[highestrole;$advancedReplaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None;false;$userHighestRole[$get[user];$guildID;name]]]
+$let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
 
 
 $onlyIf[$memberExists[$get[user];$guildID]==true;
@@ -52,8 +52,8 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
  {ephemeral}
 {interaction} 
   ]
-$let[username;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]]];false;$userTag[$get[user]]]]
-$let[userdms;$replaceText[$replaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
+$let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
+$let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 $let[user;$advancedTextSplit[$interactionData[customId];_;3]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==mainmeminfo;]
   

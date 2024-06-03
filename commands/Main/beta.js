@@ -18,6 +18,6 @@ module.exports = [{
     $addSelectMenu[1;string;betacommandsselectmenu_$authorID;About beta commands.;1;1;false;What are they?:What is beta commands?:whatisbetacmds:false;Why do they exist?:See on why beta commands do exist!:betacmdsexistreason:false]
     $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;beta;$authorID];$dateStamp];1000]]:R>]
-$let[betastatus;$replaceText[$replaceText[$getGlobalUserVar[betacommands];on;Enabled];off;Disabled]]
+$let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
     `
     }]

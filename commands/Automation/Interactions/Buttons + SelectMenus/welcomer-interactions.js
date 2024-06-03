@@ -14,7 +14,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {ephemeral}
 {interaction}
 ]
-$let[welcomersystem;$replaceText[$replaceText[$getGuildVar[welcomesystem];off;*Welcomer is currently disabled*];on;*Welcomer is currently enabled*]]
+$let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;*Welcomer is currently disabled*;on;*Welcomer is currently enabled*]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomerhomebutton;]
 `
 },{
@@ -39,10 +39,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction}
 ]
 
-$let[welcomersystem;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomesystem]==on];false;*Welcomer is currently disabled*];true;*Welcomer is currently enabled*]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomesystem]==on];true;Successfully enabled Welcomer!];false;Successfully disabled Welcomer!]]
+$let[welcomersystem;$advancedReplaceText[$checkCondition[$getGuildVar[welcomesystem]==on];false;*Welcomer is currently disabled*;true;*Welcomer is currently enabled*]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[welcomesystem]==on];true;Successfully enabled Welcomer!;false;Successfully disabled Welcomer!]]
 $setGuildVar[welcomesystem;$get[newtoggledsetting];$guildID]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomesystem]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[welcomesystem]==on];true;off;false;on]]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
@@ -58,7 +58,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
 **Channel#COLON#** $get[welcomerchannel]
 **Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false:🏠}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
 
-$let[welcomerchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None];false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
+$let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -80,7 +80,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
     
-    $let[welcomerchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None];false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
+    $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -103,7 +103,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
     
-    $let[welcomerchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None];false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
+    $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
     $setGuildVar[welcomechannel;$getSelectMenuValues[all]]
     
@@ -244,9 +244,9 @@ $interactionUpdate[{newEmbed:{title:Message type}{description:In Welcomer, there
 **Current Settings**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
 
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcometype]==embed];true;Welcomer message will now be in embeds!];false;Welcomer message will now be in \`Text\` mode!]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[welcometype]==embed];true;Welcomer message will now be in embeds!;false;Welcomer message will now be in \`Text\` mode!]]
 $setGuildVar[welcometype;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[welcometype]==text];true;embed];false;text]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[welcometype]==text];true;embed;false;text]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}

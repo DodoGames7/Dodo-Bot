@@ -15,7 +15,7 @@ Server name: \`$guildName\`
 $color[Yellow]
 $footer[Date since it occurred]
 $addTimestamp
-$let[commandname;$replaceText[$replaceText[$checkCondition[$handleError[command]==];true;undefined];false;$handleError[command]]]
+$let[commandname;$advancedReplaceText[$checkCondition[$handleError[command]==];true;undefined;false;$handleError[command]]]
  $onlyIf[$hasPermsInChannel[$getVar[errorchannel];$clientID;sendmessages;viewchannel]==true;]
  $onlyIf[$getVar[errorchannel]!=none;]
  $onlyIf[$getVar[errorsystem]==on;]

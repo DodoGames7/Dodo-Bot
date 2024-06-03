@@ -14,7 +14,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {ephemeral}
 {interaction}
 ]
-$let[leavesystem;$replaceText[$replaceText[$getGuildVar[leavesystem];off;*Leave is currently disabled*];on;*Leave is currently enabled*]]
+$let[leavesystem;$advancedReplaceText[$getGuildVar[leavesystem];off;*Leave is currently disabled*;on;*Leave is currently enabled*]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavehomebutton;]
 `
 },{
@@ -39,10 +39,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction}
 ]
 
-$let[leavesystem;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavesystem]==on];false;*Leave is currently disabled*];true;*Leave is currently enabled*]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!];false;Successfully disabled Leave!]]
+$let[leavesystem;$advancedReplaceText[$checkCondition[$getGuildVar[leavesystem]==on];false;*Leave is currently disabled*;true;*Leave is currently enabled*]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!;false;Successfully disabled Leave!]]
 $setGuildVar[leavesystem;$get[newtoggledsetting];$guildID]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavesystem]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[leavesystem]==on];true;off;false;on]]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
@@ -80,7 +80,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}}]
     
-    $let[leavechannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None];false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -103,7 +103,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}}]
     
-    $let[leavechannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None];false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
     $setGuildVar[leavechannel;$getSelectMenuValues[all]]
     
@@ -244,9 +244,9 @@ $interactionUpdate[{newEmbed:{title:Message type}{description:In Leave, there're
 **Current Settings**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}}{actionRow:{button:Go back:2:leavemessagebutton_$authorID:false:↩️}{button:Toggle:2:toggleleavemessagetype_$authorID:false:🔄}}]
 
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavetype]==embed];true;Leave message will now be in embeds!];false;Leave message will now be in \`Text\` mode!]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[leavetype]==embed];true;Leave message will now be in embeds!;false;Leave message will now be in \`Text\` mode!]]
 $setGuildVar[leavetype;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavetype]==text];true;embed];false;text]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[leavetype]==text];true;embed;false;text]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}

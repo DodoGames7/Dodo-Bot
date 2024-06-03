@@ -16,8 +16,8 @@ module.exports = [{
 {interaction}
   ]
 
-$let[betaserver;$replaceText[$replaceText[$getGuildVar[betaserver];on;Enabled];off;Disabled]]
-$let[anonymous;$replaceText[$replaceText[$getGuildVar[anonymous];on;Enabled];off;Disabled]]
+$let[betaserver;$advancedReplaceText[$getGuildVar[betaserver];on;Enabled;off;Disabled]]
+$let[anonymous;$advancedReplaceText[$getGuildVar[anonymous];on;Enabled];off;Disabled]]
   $onlyIf[$getSelectMenuValues[all]==servermenu;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
   `
@@ -38,7 +38,7 @@ This is not recommended for public servers as Beta commands are not fully stable
 {interaction}
   ]
 
-$let[betaserver;$replaceText[$replaceText[$getGuildVar[betaserver];on;Enabled];off;Disabled]]
+  $let[betaserver;$advancedReplaceText[$getGuildVar[betaserver];on;Enabled;off;Disabled]]
   $onlyIf[$getSelectMenuValues[all]==serverbeta;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
   `
@@ -58,10 +58,10 @@ This is not recommended for public servers as Beta commands are not fully stable
 
 
 
-$let[betaserver;$replaceText[$replaceText[$getGuildVar[betaserver];on;Enabled];off;Disabled]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[betaserver]==on];true;Beta Access has been enabled!];false;Beta Access has been disabled!]]
+$let[betaserver;$advancedReplaceText[$getGuildVar[betaserver];on;Enabled;off;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[betaserver]==on];true;Beta Access has been enabled!;false;Beta Access has been disabled!]]
 $setGuildVar[betaserver;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[betaserver]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[betaserver]==on];true;off;false;on]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -88,7 +88,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction}
   ]
 
-$let[anonymous;$replaceText[$replaceText[$getGuildVar[anonymous];on;Enabled];off;Disabled]]
+$let[anonymous;$advancedReplaceText[$getGuildVar[anonymous];on;Enabled;off;Disabled]]
   $onlyIf[$getSelectMenuValues[all]==anonymous;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
   `
@@ -108,10 +108,10 @@ $interactionUpdate[{newEmbed:{title:Anonymous}{description:
 
 
 
-$let[anonymous;$replaceText[$replaceText[$getGuildVar[anonymous];on;Enabled];off;Disabled]]
-$let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[anonymous]==on];true;Anonymous has been enabled!];false;Anonymous has been disabled!]]
+$let[anonymous;$advancedReplaceText[$getGuildVar[anonymous];on;Enabled;off;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[anonymous]==on];true;Anonymous has been enabled!;false;Anonymous has been disabled!]]
 $setGuildVar[anonymous;$get[newtoggledsetting]]
-$let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[anonymous]==on];true;off];false;on]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[anonymous]==on];true;off;false;on]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}

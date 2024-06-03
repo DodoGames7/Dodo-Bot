@@ -10,7 +10,7 @@ module.exports = [{
     $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}}]
     
     
-    $let[levelingsystem;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*];true;*Leveling is currently enabled*]]
+    $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -32,10 +32,10 @@ module.exports = [{
     $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}}]
     
     
-    $let[levelingsystem;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*];true;*Leveling is currently enabled*]]
-    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelsystem]==on];true;Successfully enabled Leveling!];false;Successfully disabled Leveling!]]
+    $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
+    $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];true;Successfully enabled Leveling!;false;Successfully disabled Leveling!]]
     $setGuildVar[levelsystem;$get[newtoggledsetting];$guildID]
-    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelsystem]==on];true;off];false;on]]
+    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];true;off;false;on]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -89,8 +89,8 @@ module.exports = [{
     **Level up message#COLON#** \`$get[levelupmessage]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
-    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
-    $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -112,13 +112,13 @@ module.exports = [{
     **Level up message#COLON#** \`$get[levelupmessage]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
     
-    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
-    $let[levelupmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled];false;Disabled]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
     
     
-    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;From now on, Level up messages will be sent by the bot!];false;From now on, Level up messages will no longer be sent by the bot]]
+    $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;From now on, Level up messages will be sent by the bot!;false;From now on, Level up messages will no longer be sent by the bot]]
     $setGuildVar[levelmessagefeature;$get[newtoggledsetting]]
-    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;off];false;on]]
+    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;off;false;on]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -161,7 +161,7 @@ module.exports = [{
     
     }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}}]
     
-    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
@@ -184,7 +184,7 @@ module.exports = [{
     
     }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}}]
     
-    $let[levelupchannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None];false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
     $setGuildVar[levelingmessagechannel;$getSelectMenuValues[all]]
     
@@ -231,7 +231,7 @@ module.exports = [{
     $nonEscape[$get[content]]
     ]
     
-    $let[content;$replaceText[$replaceText[$replaceText[$getGuildVar[levelmessage];<level>;$getUserVar[level]];<mention>;<@$authorID>];<username>;$username]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`
@@ -300,9 +300,9 @@ module.exports = [{
     $let[levelreset;$advancedReplaceText[$getGuildVar[levelleaveonreset];on;Enabled;off;Disabled]]
     
     
-    $let[resultmessage;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;User's levels will now reset whenever they leave!];false;User's levels will no longer reset whenever they leave!]]
+    $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;User's levels will now reset whenever they leave!;false;User's levels will no longer reset whenever they leave!]]
     $setGuildVar[levelleaveonreset;$get[newtoggledsetting]]
-    $let[newtoggledsetting;$replaceText[$replaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;off];false;on]]
+    $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[levelleaveonreset]==on];true;off;false;on]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}

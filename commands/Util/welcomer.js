@@ -15,7 +15,7 @@ $get[welcomersystem]
 $color[$getVar[embedcolor]]
 $addButton[1;Settings;4;welsettings_$authorID;false]
 $addButton[1;Toggle;2;togglewel_$authorID;false;🔄]
-$let[welcomersystem;$replaceText[$replaceText[$getGuildVar[welcomesystem];off;*Welcomer is currently disabled*];on;*Welcomer is currently enabled*]]
+$let[welcomersystem;$advancedReplaceText[$getGuildVar[welcomesystem];off;*Welcomer is currently disabled*;on;*Welcomer is currently enabled*]]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;welcomer;$authorID];$dateStamp];1000]]:R>]

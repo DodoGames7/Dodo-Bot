@@ -28,7 +28,7 @@ $message
 $endif
 $disableMentionType[all]
 $let[botlink;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]]]
-$let[usernamechecker;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username];false;$userTag]]
+$let[usernamechecker;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username;false;$userTag]]
 
 `
 }]
