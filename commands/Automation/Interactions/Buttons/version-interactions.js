@@ -37,6 +37,7 @@ module.exports = [{
 * Support for enabling aoi.js debug mode through setup options (for bot's src) has been added
 * Removed strict dev checks in \`dev-panel\` interactions for bot-owners (for personal reasons)
 * The section "Uptime Bot" in command \`stats\` has been shortened to simply "Uptime"
+* Added support for environment variables when local hosting the bot
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

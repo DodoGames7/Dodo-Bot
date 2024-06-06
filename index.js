@@ -1,5 +1,6 @@
 const { AoiClient } = require("aoi.js");
 const config = require("./config.json");
+require('dotenv').config()
 
 // Client Setup
 const client = new AoiClient({
