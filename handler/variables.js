@@ -1,15 +1,12 @@
 const config = require("../config.json");
 module.exports = {
-  // games variables
+  // Games variables
   trivia_type: "multiple",
   trivia_difficulty: "medium",
   flood_difficulty: 13,
   wyr1_votes: 0,
   wyr2_votes: 0,
-  // server variables
-  prefix: config.prefix,
-  originalprefix: config.prefix,
-  // bot variables (do not touch)
+  // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
   version: "2.1.0",
@@ -20,6 +17,8 @@ module.exports = {
   embedcolor: "#2A3759",
   buildNumber: "2079",
   release_type: "Pre-release",
+  prefix: config.prefix,
+  originalprefix: config.prefix,
   botgreeting: "on",
   // Feature variables
   suggestionchannel: "none",
@@ -49,7 +48,7 @@ module.exports = {
   levelingmessagechannel: "none",
   levelmessagefeature: "off",
   levelleaveonreset: "off",
-  // developer variables
+  // Developer variables
   errorchannel: "none",
   errorsystem: "off",
   startupchannel: "none",
