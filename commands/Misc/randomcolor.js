@@ -6,7 +6,7 @@ info: {
 },
 aliases: ["randomhex"],
 code: `$title[Random Color]
-$addField[**hex Code**;#$getObjectProperty[api;hex]]
+$addField[**Hex Code**;#$getObjectProperty[api;hex]]
 $addField[**Color name**;$getObjectProperty[api;name]]
 $thumbnail[$getObjectProperty[api;image]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]

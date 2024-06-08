@@ -8,7 +8,7 @@ module.exports = {
   code: `$title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
-Server Created since: $creationDate[$guildID;date]
+Created on: $creationDate[$guildID;date]
 Content Filter: $get[content]
 Server ID: $guildID
 ]

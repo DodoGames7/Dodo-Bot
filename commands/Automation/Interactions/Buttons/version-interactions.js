@@ -4,6 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * Use the npm version of 6.8.0
+* Leveling's main settings page now shows all current settings set
 * Beta commands has been updated to feature 2 commands, \`reverse\` has been re-added and \`lulcat\` has also been added
 * Added one new topic to the command \`randomtopic\`
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
@@ -37,6 +38,7 @@ module.exports = [{
 * Support for enabling aoi.js debug mode through setup options (for bot's src) has been added
 * Removed strict dev checks in \`dev-panel\` interactions for bot-owners (for personal reasons)
 * The section "Uptime Bot" in command \`stats\` has been shortened to simply "Uptime"
+* "Server created since" has been renamed to "Created on" in command \`serverinfo\`
 * Added support for environment variables when local hosting the bot
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 

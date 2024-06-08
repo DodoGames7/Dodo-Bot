@@ -49,8 +49,17 @@ module.exports = [{
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
+**Current Settings**
+**Level up channel#COLON#** $get[levelupchannel]
+**Level up message#COLON** \`$get[levelupmessage]\`
+
     }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholder_$authorID:false}{button:Reset on leave:2:levelingrestonleave_$authorID:false}}]
     
+    
+
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+    $let[levelupmessage;$advancedReplaceText[$checkCondition[$getGuildVar[levelmessagefeature]==on];true;Enabled;false;Disabled]]
+
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
     {ephemeral}
