@@ -51,7 +51,7 @@ module.exports = [{
     
 **Current Settings**
 **Level up channel#COLON#** $get[levelupchannel]
-**Level up message#COLON** \`$get[levelupmessage]\`
+**Level up message#COLON#** \`$get[levelupmessage]\`
 
     }}{actionRow:{button:Home:2:levelinghomepage_$authorID:false:🏠}{button:Message:2:levelingsettingmessage_$authorID:false}{button:Placeholders:2:levelingmsgplaceholder_$authorID:false}{button:Reset on leave:2:levelingrestonleave_$authorID:false}}]
     
