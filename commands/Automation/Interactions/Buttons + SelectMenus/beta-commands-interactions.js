@@ -32,7 +32,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available in this feature#COLON#
 
-\`drake\`, \`reverse\`, \`lulcat\`
+\`reverse\`, \`lulcat\`
 }}{actionRow:{button:Home:2:betacmdshome_$authorID:false:🏠}}]
 
 

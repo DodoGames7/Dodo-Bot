@@ -42,7 +42,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         perms: ["`SendMessages`"]
     },
     code: `
-$author[Suggestion by $get[usernamechecker];$userAvatar]
+$author[Suggestion by $username;$userAvatar]
 $title[$splitText[1]]
 $description[$splitText[2]]
 $footer[Suggestion created since]
@@ -67,6 +67,5 @@ A example of usage should be \`$getGuildVar[prefix]suggest Title/Description\`.]
  $textSplit[$message;/]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest;$authorID];$dateStamp];1000]]:R>]
-$let[usernamechecker;$replaceText[$replaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username];false;$userTag]]
 `
 }]

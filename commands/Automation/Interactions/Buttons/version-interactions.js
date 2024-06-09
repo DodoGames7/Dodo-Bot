@@ -6,7 +6,8 @@ module.exports = [{
 * Use the npm version of 6.8.0
 * Leveling's main settings page now shows all current settings set
 * Beta commands has been updated to feature 2 commands, \`reverse\` has been re-added and \`lulcat\` has also been added
-* Added one new topic to the command \`randomtopic\`
+* The beta command \`drake\` has been removed
+* Added one new topic to the command \`randomtopic\` and removed old user tag support in command \`suggestion\`
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
