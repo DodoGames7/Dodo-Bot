@@ -8,7 +8,7 @@ module.exports ={
     code: `
     $title[Leveling Leaderboard]
     $description[$get[leaderboard]]
-    $onlyIf[$get[leaderboard]!=;Leaderboard is not currently available due to members not having level 2 or higher. Please wait first for someone to Level up then try again.]
+    $onlyIf[$get[leaderboard]!=;Leaderboard is currently not available due to members not having level 2 or higher. Please wait first for someone to Level up then try again.]
 $let[leaderboard;$advancedReplaceText[$userLeaderBoard[$guildID;level;desc;&{top} - {username} - Level {value};10;1;main];&1 -;🥇 1 -;&2 -;🥈 2 -;&3 -;🥉 3 -;&;]]
     $color[1;$getVar[embedcolor]]
     $onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
