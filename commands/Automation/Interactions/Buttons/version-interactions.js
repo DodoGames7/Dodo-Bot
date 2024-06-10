@@ -3,11 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Use the npm version of 6.8.0
-* Leveling's main settings page now shows all current settings set
-* Beta commands has been updated to feature 2 commands, \`reverse\` has been re-added and \`lulcat\` has also been added
-* The beta command \`drake\` has been removed
-* Added one new topic to the command \`randomtopic\` and removed old user tag support in command \`suggest\`
+* Internal changes to \`would-you-rather\` was added for votes implementation
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -21,9 +17,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed experimental command notice being broken in \`commandinfo\`
-* Fixed \`Toggle\` button in cmd \`beta\` not having emoji applied when the cmd is being executed
-* Fixed a inconsistency in the source code regarding replace texts
+*There're no changes in this category currently*
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -36,11 +30,7 @@ module.exports = [{
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Support for enabling aoi.js debug mode through setup options (for bot's src) has been added
-* Removed strict dev checks in \`dev-panel\` interactions for bot-owners (for personal reasons)
-* The section "Uptime Bot" in command \`stats\` has been shortened to simply "Uptime"
-* "Server created since" has been renamed to "Created on" in command \`serverinfo\`
-* Added support for environment variables when local hosting the bot
+* Bumped \`@akarui/aoi.db\` to version 2.3.3
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
