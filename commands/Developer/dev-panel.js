@@ -1,5 +1,8 @@
 module.exports = [{
   name: "dev-panel",
+  info: {
+    dev: "true"
+  },
   aliases: ["developer-panel", "dev-settings"],
   code: `$title[Developer panel]
   $description[This panel allows you to change some things the bot operates behind the scenes. 

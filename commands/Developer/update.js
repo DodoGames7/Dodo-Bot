@@ -1,5 +1,8 @@
 module.exports = {
 name: "update",
+info: {
+    dev: "true"
+  },
 aliases: ["restartcmds", "reloadcmds"],
 code: `$author[Commands has been reloaded!;$userAvatar[$clientID]]
 $addField[Commands;

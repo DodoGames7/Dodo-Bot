@@ -1,5 +1,8 @@
 module.exports = {
     name: "setcustomstatus",
+    info: {
+      dev: "true"
+    },
     $if: "old",
     code: `
     $if[$stringStartswith[$tolowercase[$message];--reset]==true]

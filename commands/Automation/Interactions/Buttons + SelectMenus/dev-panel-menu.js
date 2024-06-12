@@ -23,6 +23,27 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devcommandsbutton;]
 `
 },{
+    type: "interaction",
+    prototype: "selectMenu",
+    code: `$interactionUpdate[{newEmbed:{title:Welcome new servers!}{description:
+    When Dodo-Bot gets added to a new server, it will greet members there with it's features including telling them it's default prefix. When this is disabled, the bot won't say anything when it gets added to new servers.
+
+    By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
+
+**Current settings**
+**Bot Greeting**#COLON# \`$get[botgreetconfig]\`
+
+    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
+
+
+$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botgreeting]==on];true;Enabled;false;Disabled]]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+{interaction}]
+    $onlyIf[$getSelectMenuValues[all]==botwelcome;]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]
+`
+},{
         type: "interaction",
         prototype: "button",
         code: `
@@ -34,9 +55,9 @@ $interactionUpdate[{newEmbed:{title:Welcome new servers!}{description:
     By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
 
 **Current settings**
-**Bot Greeting**#COLON# $get[botgreetconfig]
+**Bot Greeting**#COLON# \`$get[botgreetconfig]\`
 
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false}}]
+    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
 
 $let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botgreeting]==on];true;Enabled;false;Disabled]]
@@ -83,7 +104,7 @@ $interactionUpdate[;{newEmbed:{title:Error Logging}{description:
 When an error occurs, information such as the server name, it's id, alongside with the command name and the error will be included in logs to help the bot owners with some useful information regarding where does the error come from.
 
    **Current Settings**
-    **Error log**#COLON# $get[errorsystem]
+    **Error log**#COLON# \`$get[errorsystem]\`
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
@@ -182,7 +203,7 @@ $interactionUpdate[{newEmbed:{title:Error Logging}{description:
 When an error occurs, information such as the server name, it's id, alongside with the command name and the error will be included in logs to help the bot owners with some useful information regarding where does the error come from.
 
    **Current Settings**
-    **Error log**#COLON# $get[errorsystem]
+    **Error log**#COLON# \`$get[errorsystem]\`
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 

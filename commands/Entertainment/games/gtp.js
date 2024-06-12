@@ -23,6 +23,7 @@ module.exports = {
     
     Game.startGame()
     ]
+    $sendMessage[Please wait... {deleteIn:2s}]
     $cooldown[5s; Slow down! Don't spam the command!
     Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;guess-the-pokemon;$authorID];$dateStamp];1000]]:R>]
     `
