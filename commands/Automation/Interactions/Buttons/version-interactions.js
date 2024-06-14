@@ -3,7 +3,8 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Added Loading message to the command \`guess-the-pokemon\`
+* The command \`guess-the-pokemon\` has received a internal rewrite (and now has a loading message)
+* Credits found in command \`credits\` has been updated
 * Leveling's leaderboard error message has been slightly updated
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
@@ -19,7 +20,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
 * Default level up message should now be less weird
-* Fixed \`Welome new servers!\` option being broken in command \`dev-panel\`
+* Fixed \`Welcome new servers!\` option being broken in command \`dev-panel\`
 * Add a check to prevent attempting to view dev cmds from causing errors in command \`commandinfo\` 
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
@@ -34,7 +35,7 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
 * Internal changes to \`would-you-rather\` was added for votes implementation
-* Bumped \`@akarui/aoi.db\` to version 2.3.3
+* Bumped \`@akarui/aoi.db\` to version 2.3.3 (source code related)
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
