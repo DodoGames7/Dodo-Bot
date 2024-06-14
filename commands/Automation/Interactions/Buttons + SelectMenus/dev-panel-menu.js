@@ -80,7 +80,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[botgreeting]
 When an error occurs, information such as the server name, it's id, alongside with the command name and the error will be included in logs to help the bot owners with some useful information regarding where does the error come from.
 
    **Current Settings**
-    **Error log**#COLON# $get[errorsystem]
+    **Error log**#COLON# \`$get[errorsystem]\`
     **Error Channel**#COLON# $get[errorchannel] 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
