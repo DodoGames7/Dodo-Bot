@@ -16,7 +16,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;say;$authorID
     $if: "old",
     type: "awaited",
     code: `$if[$checkContains[$message;--embed;—embed]==true||$charCount[$message]>=2000]
-$author[$get[usernamechecker];$userAvatar;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
+$author[$username;$userAvatar;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
   $title[Say Cmd!;$get[botlink]]
   $description[$filterMessage[$message;--embed;—embed]]
   $color[Random]
@@ -28,7 +28,5 @@ $message
 $endif
 $disableMentionType[all]
 $let[botlink;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]]]
-$let[usernamechecker;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$authorID]]==1];true;$username;false;$userTag]]
-
 `
 }]
