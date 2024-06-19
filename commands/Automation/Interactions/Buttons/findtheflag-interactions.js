@@ -8,7 +8,7 @@ $if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true
 $interactionFollowUp[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 1! 🏳️}{color:DarkGreen}}]
 
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::3:ftf1:true:1️⃣}{button::2:ftf2:true:2️⃣}{button::2:ftf3:true:3️⃣}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::3:ftf1:true:🏳️}{button::2:ftf2:true:2️⃣}{button::2:ftf3:true:3️⃣}}]
 
 $else
 $interactionFollowUp[{newEmbed:{title:Aww.. miss!}{description:Wrong guess... the flag was on zone $randomText[2;3]. 🏴}{color:Red}}]
@@ -32,7 +32,7 @@ $if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 2! 🏳️}{color:DarkGreen}}]
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::2:ftf1:true:1️⃣}{button::3:ftf2:true:2️⃣}{button::2:ftf3:true:3️⃣}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::2:ftf1:true:1️⃣}{button::3:ftf2:true:🏳️}{button::2:ftf3:true:3️⃣}}]
 
 $else
 
@@ -56,7 +56,7 @@ $if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 3! 🏳️}{color:DarkGreen}}]
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::2:ftf1:true:1️⃣}{button::2:ftf2:true:2️⃣}{button::3:ftf3:true:3️⃣}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button::2:ftf1:true:1️⃣}{button::2:ftf2:true:2️⃣}{button::3:ftf3:true:🏳️}}]
 
 $else
 

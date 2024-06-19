@@ -1,7 +1,7 @@
 module.exports = {
   name: "coinflip",
   info: {
-    description: "Starts a random game of Coin Flip.",
+    description: "Starts a game of Coin Flip.",
     perms: ["`SendMessages`"]
   },
   code: `

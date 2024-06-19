@@ -1,7 +1,7 @@
 module.exports = {
     name: "credits",
     info: {
-        description: "Returns all credits for things that were introduced into Dodo-Bot.",
+        description: "Returns a list of credits for things that were introduced into Dodo-Bot.",
         perms: ["`SendMessages`"]
     },
     code: `$title[Dodo-Bot Credits]

@@ -1,7 +1,7 @@
 module.exports = {
   name: "snake",
   info: {
-    description: "Starts a random snake game.",
+    description: "Starts a snake game.",
     perms: ["`SendMessages`"]
   },
   aliases: "snek",

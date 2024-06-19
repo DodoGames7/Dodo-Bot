@@ -1,7 +1,7 @@
 module.exports = {
 name: "findemoji",
 info: {
-  description: "Starts a random game of Find Emoji.",
+  description: "Starts a game of Find Emoji.",
   perms: ["`SendMessages`"]
 },
 aliases: "find-emoji",

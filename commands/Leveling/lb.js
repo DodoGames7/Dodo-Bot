@@ -1,12 +1,13 @@
 module.exports ={
     name: "level-leaderboard",
     info: {
-        description: "Returns Leveling's current leaderboard for this server (if enabled).",
+        description: "Returns Leveling's leaderboard for this server (if enabled).",
         perms: ["`SendMessages`"]
     },
     aliases: ["lb", "leveling-lb", "leaderboard"],
     code: `
-    $title[Leveling Leaderboard]
+    $author[Leveling;$userAvatar[$clientID]]
+    $title[Leaderboard]
     $description[$get[leaderboard]]
     $onlyIf[$get[leaderboard]!=;Leaderboard is currently not available due to members not having level 2 or higher. Please wait for someone to level up first then try again.]
 $let[leaderboard;$advancedReplaceText[$userLeaderBoard[$guildID;level;desc;&{top} - {username} - Level {value};10;1;main];&1 -;🥇 1 -;&2 -;🥈 2 -;&3 -;🥉 3 -;&;]]

@@ -1,7 +1,7 @@
 module.exports = {
   name: "flood",
   info: {
-    description: "Starts a random game of Flood.",
+    description: "Starts a game of Flood.",
     perms: ["`SendMessages`"]
   },
   code: `$djsEval[const { Flood } = require('discord-gamecord');

@@ -10,15 +10,14 @@ module.exports = {
   includebots: "on",
   version: "2.1.0",
   buildStatus: "Incomplete",
-  buildDate: "1718388442592",
-  buildType: "Pre-Beta 2",
+  buildDate: "1718819730325",
+  buildType: "Beta 2",
   buildRevision: "0",
   embedcolor: "#2A3759",
   buildNumber: "2082",
-  release_type: "Pre-release",
+  release_type: "Beta 2",
   prefix: config.prefix,
   originalprefix: config.prefix,
-  botgreeting: "on",
   // Feature variables
   suggestionchannel: "none",
   pollchannel: "none",
@@ -53,6 +52,7 @@ module.exports = {
   startupchannel: "none",
   startupchannelsystem: "off",
   pre_release_mode: "on",
-  gitbuildscheck: "on"
+  gitbuildscheck: "on",
+  botgreeting: "on",
   
 }

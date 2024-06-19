@@ -1,7 +1,7 @@
 module.exports = {
 name: "would-you-rather",
 info: {
-    description: "Start a wyr game of two options to choose from.",
+    description: "Starts a wyr game of two options to choose from.",
     perms: ["`SendMessages`"]
 },
 aliases: "wyr",

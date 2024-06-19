@@ -1,7 +1,7 @@
 module.exports = [{
   name:"findtheflag",
   info: {
-    description: "Starts a random game of Find the flag.",
+    description: "Starts a game of Find the flag.",
     perms: ["`SendMessages`"]
   },
 aliases:"ftf",

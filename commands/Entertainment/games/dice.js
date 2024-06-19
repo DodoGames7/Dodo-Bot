@@ -1,7 +1,7 @@
 module.exports = {
     name: "dice",
     info: {
-        description: "Starts a random dices (with a button to replay).",
+        description: "Returns dice from 1 to 6 (with a button to replay).",
         perms: ["`SendMessages`"]
       },
     code: `
