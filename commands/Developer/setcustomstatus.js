@@ -3,6 +3,7 @@ module.exports = {
     info: {
       dev: "true"
     },
+    aliases: ["scs", "customstatus"],
     $if: "old",
     code: `
     $if[$stringStartswith[$tolowercase[$message];--reset]==true]
