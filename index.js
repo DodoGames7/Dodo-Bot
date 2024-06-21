@@ -15,9 +15,9 @@ const client = new AoiClient({
     db: require("@akarui/aoi.db"),
     dbType: "KeyValue",
     tables: ["main"],
-    securityKey: config.DBsecurityKey,
+    securityKey: process.env.DBsecurityKey || config.DBsecurityKey
   },
- disableFunctions: ["$clientToken"],
+ disableFunctions: ["$clientToken"], // For safety reasons
  mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
  debugs: { // Whether or not to enable aoi.js debug mode
  interpreter: config.DebugClient
