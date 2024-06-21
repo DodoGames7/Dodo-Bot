@@ -36,7 +36,7 @@ module.exports = [{
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Internal changes to \`would-you-rather\` was added for votes implementation
+* Internal changes to \`would-you-rather\` was added for votes implementation. It has also been updated with new options!
 * Bumped \`@akarui/aoi.db\` to version 2.3.3 (source code related)
 * Changed the release type to \`Beta 2\`
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
