@@ -46,6 +46,7 @@ module.exports = {
   levelingmessagechannel: "none",
   levelmessagefeature: "off",
   levelleaveonreset: "off",
+  islevelingreset: "no",
   // Developer variables
   errorchannel: "none",
   errorsystem: "off",
