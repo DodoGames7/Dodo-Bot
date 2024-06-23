@@ -11,6 +11,7 @@ module.exports = {
 [Dodo-Bot is no longer multi-purpose](https://github.com/DodoGames7/Dodo-Bot/tree/v2#its-no-longer-multi-purpose)
 [Project CupcakeX](https://github.com/DodoGames7/CupcakeX)
 ]
+  $color[$getVar[embedcolor]]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]
   $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]];false]
   $cooldown[2s; Slow down! Don't spam the command!
