@@ -41,7 +41,7 @@ code: `
 $interactionUpdate[{newEmbed:{title:Information for $get[username]}{field:**General**:
 **Joined Discord on#COLON#** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
 **Bot account#COLON#** $get[botchecker]
-**User ID#COLON#** $get[user]
+**ID#COLON#** $get[user]
 :true}{field:**Other**:
 **Avatar#COLON#** [link]($userAvatar[$get[user]])
 **DMs#COLON#** $get[userdms] 

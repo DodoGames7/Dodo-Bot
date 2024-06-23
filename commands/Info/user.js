@@ -14,7 +14,7 @@ $addField[**Other**;
 $addField[**General**;
 **Joined Discord on:** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
 **Bot account:** $get[botchecker]
-**User ID:** $get[user]
+**ID:** $get[user]
 ;true]
 $color[$getVar[embedcolor]]
 $if[$memberExists[$findUser[$message[1;true]];$guildID]==true]
