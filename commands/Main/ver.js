@@ -14,7 +14,7 @@ module.exports = {
   ]
   $color[$getVar[embedcolor]]
   $if[$getVar[pre_release_mode]==on]
-  $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/blurplewarning.png]
+  $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
   $endif
   $addButton[2;Version history;5;https://github.com/DodoGames7/Dodo-Bot/releases;false;🔎]
   $addButton[1;Other;2;versionother_$authorID;false]
