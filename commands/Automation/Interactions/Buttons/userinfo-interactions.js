@@ -18,7 +18,7 @@ $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$ge
 $let[lowestrole;$advancedReplaceText[$checkCondition[$userLowestRole[$get[user];$guildID]==$guildID];true;None;false;$roleName[$userLowestRole[$get[user];$guildID]]]]
 $let[highestrole;$advancedReplaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None;false;$userHighestRole[$get[user];$guildID;name]]]
 $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
-$let[boosterchecker;$advancedReplaceText[$checkCondition[$isBoosting[$get[user];$guildID]]==true;true;Yes;false;No]]
+$let[boosterchecker;$advancedReplaceText[$checkCondition[$isBoosting[$get[user];$guildID]==true];true;Yes;false;No]]
 
 $onlyIf[$memberExists[$get[user];$guildID]==true;
 The user appears to have left the server. The ablity to view their server information in this server has been temporarily disabled until they re-join again
