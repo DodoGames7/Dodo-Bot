@@ -40,7 +40,7 @@ prototype: "button",
 code: `
 $interactionUpdate[{newEmbed:{title:Information for $get[username]}{field:**General**:
 Joined Discord on#COLON# $creationDate[$get[user];date]
-Bot account#COLON# $isBot[$get[user]]
+Bot account#COLON# $get[botchecker]
 User ID#COLON# $get[user]
 :true}{field:**Other**:
 Avatar#COLON# [link]($userAvatar[$get[user]])
@@ -53,6 +53,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {interaction} 
   ]
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
+$let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
 $let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 $let[user;$advancedTextSplit[$interactionData[customId];_;3]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==mainmeminfo;]

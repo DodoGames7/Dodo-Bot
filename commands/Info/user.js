@@ -13,7 +13,7 @@ DMs: $get[userdms]
 ;true]
 $addField[**General**;
 Joined Discord on: $creationDate[$get[user];date]
-Bot account: $isBot[$get[user]]
+Bot account: $get[botchecker]
 User ID: $get[user]
 ;true]
 $if[$memberExists[$findUser[$message[1;true]];$guildID]==true]
@@ -22,6 +22,7 @@ $addButton[1;General info;2;mainmeminfo_$authorID_$get[user];true]
 $endif
 $thumbnail[$userAvatar[$get[user]]]
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
+$let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
 $let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 $let[user;$findUser[$message[1];true]]
 $cooldown[5s; Slow down! Don't spam the command!
