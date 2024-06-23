@@ -23,7 +23,7 @@ module.exports = [{
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
 * Default level up message should now be less weird
 * Fixed spelling mistake in help command's selectmenu placeholder
-* Fixed a possible chance of causing strange spacing in command \`say\` (for the embed mode trigger)
+* Fixed a possible chance of causing weird spacing in command \`say\` (for the embed mode trigger)
 * Add a check to prevent attempting to view dev cmds from causing errors in command \`commandinfo\` 
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
