@@ -4,7 +4,7 @@ module.exports = {
     description: "Returns random facts.",
     perms: ["`SendMessages`"]
 },
-  code: `$sendMessage[$nonEscape[$getobjectproperty[api;fact]];false]
+  code: `$getObjectProperty[api;fact]
   $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for fact. Please, try again later.]
 $let[jsonresponse;$jsonRequest[https://api.popcat.xyz/fact]]
