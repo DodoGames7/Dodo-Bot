@@ -10,7 +10,7 @@ module.exports = {
   includebots: "on",
   version: "2.1.0",
   buildStatus: "Incomplete",
-  buildDate: "1719078070237",
+  buildDate: "1719117931354",
   buildType: "Beta 2",
   buildRevision: "0",
   embedcolor: "#2A3759",

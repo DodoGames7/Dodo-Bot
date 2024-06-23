@@ -18,7 +18,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;say;$authorID
     code: `$if[$checkContains[$message;--embed;—embed]==true||$charCount[$message]>=2000]
 $author[$username;$userAvatar;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
   $title[Say Cmd!;$get[botlink]]
-  $description[$filterMessage[$message;--embed;—embed]]
+  $description[$removeContains[$message;--embed;—embed]]
   $color[Random]
   $addTimeStamp
 $else

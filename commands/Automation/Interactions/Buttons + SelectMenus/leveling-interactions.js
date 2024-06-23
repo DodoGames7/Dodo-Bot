@@ -47,6 +47,44 @@ module.exports = [{
     },{
         type: "interaction",
         prototype: "button",
+        code: `$interactionReply[{newEmbed:{title:Reset Leveling?}{description:Are you sure you want to reset Leveling in this server? All members (including the ones who left the server) will lose their progress.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{button:Yes:2:levelingresetconfirm:false}{button:No:2:levelingresetdeny:false}};all;true]
+
+$onlyIf[$getGuildVar[levelsystem]==on;
+Leveling must be enabled first.
+{ephemeral}
+{interaction}
+    ]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+{ephemeral}
+{interaction}
+    ]
+    
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingreset;]
+`
+    },{
+        name: "levelingresetconfirm",
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionUpdate[Leveling has been reset!]
+$awaitExecute[resetleveling]
+
+$onlyIf[$getGuildVar[islevelingreset]==no;Leveling is already reset in this server.
+{ephemeral}
+{interaction}
+    ]
+`
+    },{
+        name: "levelingresetdeny",
+        type: "interaction",
+        prototype: "button",
+        code: `
+$interactionUpdate[The current progress for all members will remain then.]
+
+`
+    },{
+        type: "interaction",
+        prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
 **Current Settings**

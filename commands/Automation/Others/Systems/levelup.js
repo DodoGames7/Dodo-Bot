@@ -19,6 +19,7 @@ $disableMentionType[everyone]`
     name: "$alwaysExecute",
     code: `
     $setUserVar[xp;$sum[$getUserVar[xp];1];$authorID;$guildID]
+    $setGuildVar[islevelingreset;no]
 $cooldown[2s;]
     $onlyIf[$isBot==false;]
     $onlyIf[$getGuildVar[levelsystem]==on;]`
