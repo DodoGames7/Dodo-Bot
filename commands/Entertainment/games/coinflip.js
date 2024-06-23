@@ -1,5 +1,9 @@
 module.exports = {
   name: "coinflip",
+  info: {
+    description: "Starts a game of Coin Flip.",
+    perms: ["`SendMessages`"]
+  },
   code: `
 $awaitComponents[$channelID;$get[messageID];$authorID;headsbutton,tailsbutton;headsinteraction,tailsinteraction;coinfliptimeout;1;30s]
 

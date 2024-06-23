@@ -1,5 +1,9 @@
 module.exports = {
 name: "car",
+info: {
+    description: "Returns a random image of cars from Reddit (with info about them).",
+    perms: ["`SendMessages`"]
+},
 code: `
 $author[From Reddit;$userAvatar[$clientID];$getObjectProperty[api;image]]
 $title[Here's a random car]

@@ -16,9 +16,9 @@ This version of the bot is likely made for you to learn as well as enjoy it, it'
 # Versions
 * **[V1](https://github.com/DodoGames7/Dodo-Bot/tree/v1)**: The discontinued version of Dodo-Bot. It had a bad start with bunch of bugs due to me being newbie in aoi.js at the time.
 * **[V2 (main)](https://github.com/DodoGames7/Dodo-Bot/tree/v2)**: The current version of the bot, maintained with lot of bug fixes and has alright features.
-* **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Not serious version made to try out ForgeScript.
+* **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Not serious version made to try out ForgeScript. Mostly made as a rebase backup.
 * **[gitbuilds](https://github.com/DodoGames7/Dodo-Bot/tree/gitbuilds)**: Development builds of v2. Not recommended for public use. More information can be found [here](https://dodogames7.github.io/dodo-bot-site/advanced/gitbuilds/).
-# Important Requirements
+# Requirements
 You can host Dodo-Bot on any Host as long as you meet the following Requirements:
 * Node.js v20 is required as older versions are not supported
 * A host ready to handle Bot's Features (Obviously)
@@ -28,4 +28,4 @@ You can host Dodo-Bot on any Host as long as you meet the following Requirements
 Dodo-Bot allows you to change some options before turning it on. To do this, check out the `config.json` file present in the source code itself which contains available options to change from!
 
 # Credits
-Most of code belongs to me. You can also credit me using my discord username: "dodogames". In case of using my code for development purposes, you may agree to not claim that you made the bot otherwise i may ask you for credit.
+Most of code belongs to me (besides the ones credited in credits command). You can also credit me using my discord username: "dodogames". In case of using my code for development purposes, you may agree to not claim that you made the bot otherwise i may ask you for credit. Further information about the use of source code is explained in credits command.

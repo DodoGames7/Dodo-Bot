@@ -1,5 +1,9 @@
 module.exports = {
   name: "trivia",
+  info: {
+    description: "Starts a random trivia game.",
+    perms: ["`SendMessages`"]
+  },
   aliases: "triv",
   code: `$djsEval[const { Trivia } = require('discord-gamecord');
 

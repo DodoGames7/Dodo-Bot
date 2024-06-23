@@ -1,5 +1,9 @@
 module.exports = {
 name: "connect4",
+info: {
+  description: "Start a connect4 match with your opponent.",
+  perms: ["`SendMessages`"]
+},
 aliases: ["c4", "connectfour"],
 code: `$djsEval[const { Connect4 } = require('discord-gamecord');
 
@@ -29,7 +33,7 @@ const Game = new Connect4({
 Game.startGame();
 ]
 $onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
-$onlyIf[$mentioned[1;true]!=$authorID;Mention someone to play with!]
+$onlyIf[$mentioned[1;true]!=$authorID;Please mention a opponent to play with!]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;connect4;$authorID];$dateStamp];1000]]:R>]
 `

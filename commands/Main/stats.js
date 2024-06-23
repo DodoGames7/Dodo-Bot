@@ -1,5 +1,9 @@
 module.exports = {
 name: "stats",
+info: {
+    description: "Returns the stats of the bot while it's running.",
+    perms: "`SendMessages`"
+},
 $if: "old",
 aliases: "botstats",
 code: `$title[$username[$clientID] stats]
@@ -7,7 +11,7 @@ $addField[**Dodo-Bot**;\`v$getVar[version]\`;true]
 $addField[**Node.js**;\`$nodeVersion\`;true]
 $addField[**Servers**;$guildCount;true]
 $addField[**Aoi.js**;\`v$packageVersion\`;true]
-$addField[**Uptime Bot**;$uptime[humanize];true]
+$addField[**Uptime**;$uptime[humanize];true]
 $addField[**Ping**;$pingms;true]
 $addField[**CPU Usage**;$cpu;true]
 $addField[**RAM Usage**;$round[$ram]MB;true]

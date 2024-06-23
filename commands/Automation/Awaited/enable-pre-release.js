@@ -11,14 +11,14 @@ module.exports = [{
     type: "awaited",
     code: `
 
-    $setVar[release_type;Beta 1 (Rev 3)]
-    $onlyIf[$checkContains[$getVar[release_type];Pre-release]==false]`
+    $setVar[release_type;Beta 2]
+    $onlyIf[$checkContains[$getVar[release_type];Beta 2]==false]`
 },
 {
     name: "Disable",
     type: "awaited",
     code: `
 
-    $setVar[release_type;Pre-Stable]
-    $onlyIf[$checkContains[$getVar[release_type];Pre-Stable]==false]`
+    $setVar[release_type;Stable]
+    $onlyIf[$checkContains[$getVar[release_type];Stable]==false]`
 }]

@@ -1,5 +1,9 @@
 module.exports = {
   name: "match-pairs",
+  info: {
+    description: "Starts a random matchpairs game.",
+    perms: ["`SendMessages`"]
+  },
   aliases: "matchpairs",
   code: `$djsEval[const { MatchPairs } = require('discord-gamecord');
 

@@ -1,12 +1,13 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.1.0-build.2059",
+  "version": "2.1.0-build.2082",
   "description": "A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "npm install",
-    "start": "node index.js -- --no-deprecation"
+    "start": "node index.js",
+    "startWithoutWarnings": "node index.js -- --no-deprecation"
   },
   "engines": {
     "node": ">=20.x"
@@ -15,11 +16,13 @@
   "author": "dodo",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "github:aoijs/aoi.js#5eb399b",
-    "discord-gamecord": "^4.4.1"
+    "aoi.js": "^6.8.0",
+    "@akarui/aoi.db": "^2.3.3",
+    "discord-gamecord": "^4.4.2",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "@akarui/aoi.db": "^2.2.7",
     "chalk": "^4.1.2"
   }
 }
+

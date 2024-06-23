@@ -1,5 +1,9 @@
 module.exports = [{
 name: "poll-set",
+info: {
+    description: "Setup polls.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 code: `
 $setGuildVar[pollchannel;$findChannel[$message]]
 Successfully set <#$findChannel[$message]> as the Poll channel!
@@ -23,6 +27,10 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
 `
 },{
     name: "poll",
+    info: {
+        description: "Start a poll in this server (if setup).",
+        perms: ["`SendMessages`", "`ManageMessages`"]
+    },
     code: `
 
 

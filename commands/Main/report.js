@@ -1,5 +1,9 @@
 module.exports = {
     name: "report",
+    info: {
+        description: "Returns a link to report issues of Dodo-Bot on it's GitHub repo.",
+        perms: ["`SendMessages`"]
+    },
     aliases: "bugreport",
     code: `$title[Help Shape Dodo-Bot Future]
     $description[Thanks for trying out 2.1.0! I appreciate whoever tries it's Pre-release builds for the first time. However, it is worth noting that it may contain bugs and as such, it is advised to report bugs through the Github repo.

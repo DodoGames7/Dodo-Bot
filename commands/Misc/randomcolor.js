@@ -1,9 +1,13 @@
 module.exports = {
 name: "randomcolor",
+info: {
+    description: "Returns a random color that you can use.",
+    perms: ["`SendMessages`"]
+},
 aliases: ["randomhex"],
 code: `$title[Random Color]
-$addField[**hex Code**;#$getObjectProperty[api;hex]]
-$addField[**Color name**:;$replaceText[$getObjectProperty[api;name];undefined;No name has been found]]
+$addField[**Hex Code**;#$getObjectProperty[api;hex]]
+$addField[**Color name**;$getObjectProperty[api;name]]
 $thumbnail[$getObjectProperty[api;image]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for randomcolor. Please, try again later.]

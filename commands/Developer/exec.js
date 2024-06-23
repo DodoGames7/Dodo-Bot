@@ -1,5 +1,8 @@
 module.exports = {
   name: "execute",
+  info: {
+    dev: "true"
+  },
   $if: "old",
   aliases: "exec",
   code: `$if[$charCount[$exec[$message]]>=2000]

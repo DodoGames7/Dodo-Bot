@@ -1,5 +1,10 @@
 module.exports = {
   name: "slots",
+  info: {
+    description: "Starts a random slots game.",
+    perms: ["`SendMessages`"]
+  },
+  aliases: "slot",
   code: `$djsEval[const { Slots } = require('discord-gamecord');
 
 const Game = new Slots({

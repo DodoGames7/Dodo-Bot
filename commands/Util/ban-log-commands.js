@@ -1,8 +1,12 @@
 module.exports = [{
 name: "set-banlog",
-usage: "set-banlog channel-name/channel ID or <#channel ID>",
+info: {
+    description: "Setup Ban logs.",
+    perms: ["`SendMessages`", "`ManageChannels`"],
+    usage: "set-banlog channel-name/channel ID or <#channel ID>"
+},
 code: `$setGuildVar[banneduserschannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Ban logs channel.
+Successfully set <#$findChannel[$message]> as the Ban logs channel!
 $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
 \`ViewChannel\`
 \`SendMessages\`
@@ -13,23 +17,31 @@ $onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you ha
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-banlog;$authorID];$dateStamp];1000]]:R>]
 $onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-banlog;usage]]\`]
+Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-banlog;info.usage]]\`]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
 name: "reset-banlog",
+info: {
+    description: "Reset current channel used for Ban logs.",
+    perms: ["`SendMessages`", "`ManageChannels`"]
+},
 code: `$setGuildVar[banneduserschannel;none]
 Successfully reset the ban log channel!
 $onlyIf[$getGuildVar[banneduserschannel]!=none;There is no channel to reset currently.]
 $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;reset-banlog;$authorID];$dateStamp];1000]]:R>]
-$onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
     name: "set-unbanlog",
-    usage: "set-unbanlog channel-name/channel ID or <#channel ID>",
+    info: {
+        description: "Setup un-ban logs.",
+        perms: ["`SendMessages`", "`ManageChannels`"],
+        usage: "set-unbanlog channel-name/channel ID or <#channel ID>",
+    },
     code: `$setGuildVar[unbanneduserschannel;$findChannel[$message]]
-    Successfully set <#$findChannel[$message]> as the un-ban logs channel.
+    Successfully set <#$findChannel[$message]> as the un-ban logs channel!
     $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
     \`ViewChannel\`
     \`SendMessages\`
@@ -40,14 +52,18 @@ $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use t
     $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-unbanlog;$authorID];$dateStamp];1000]]:R>]
     $onlyIf[$message!=;Please set an channel.
-    Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-unbanlog;usage]]\`]
+    Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-unbanlog;info.usage]]\`]
     $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
     },{
     name: "reset-unbanlog",
+    info: {
+        description: "Reset current channel used for un-ban logs.",
+        perms: ["`SendMessages`", "`ManageChannels`"]
+    },
     code: `$setGuildVar[unbanneduserschannel;none]
     Successfully reset the un-ban log channel!
     $onlyIf[$getGuildVar[unbanneduserschannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;reset-unbanlog;$authorID];$dateStamp];1000]]:R>]
-    $onlyPerms[managemessages;You do not have \`ManageMessages\` permission to use this.]`
+    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
     }]
