@@ -8,14 +8,15 @@ $if: "old",
 aliases: ["userinfo", "user-info"],
 code: `$title[Information for $get[username]]
 $addField[**Other**;
-Avatar: [link]($userAvatar[$get[user]])
-DMs: $get[userdms]
+**Avatar:** [link]($userAvatar[$get[user]])
+**DMs:** $get[userdms]
 ;true]
 $addField[**General**;
-Joined Discord on: $creationDate[$get[user];date]
-Bot account: $get[botchecker]
-User ID: $get[user]
+**Joined Discord on:** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
+**Bot account:** $get[botchecker]
+**User ID:** $get[user]
 ;true]
+$color[$getVar[embedcolor]]
 $if[$memberExists[$findUser[$message[1;true]];$guildID]==true]
 $addButton[1;Member's Server info;2;memberservinfo_$authorID_$get[user];false]
 $addButton[1;General info;2;mainmeminfo_$authorID_$get[user];true]

@@ -3,14 +3,14 @@ type: "interaction",
 prototype: "button",
 code: `
 $interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverimage]]}{title:Information for $get[username]}{field:**General**:
-Joined the server on#COLON# <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID];1000]]:f>
-Server Booster#COLON# $isBoosting[$get[user];$guildID]
-Activity: $userStatus[$guildID;$get[user]]
+**Joined the server on#COLON#** <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID];1000]]:f>
+**Booster#COLON#** $isBoosting[$get[user];$guildID]
+**Activity#COLON#** $userStatus[$guildID;$get[user]]
 :true}{field:**Roles**:
-Total amount of roles#COLON# $userRolesCount[$get[user];$guildID]
-Highest Role#COLON# $get[highestrole]
-Lowest Role#COLON# $get[lowestrole]
-:true}{thumbnail:$userAvatar[$get[user]]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:false}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:true}}]
+**Total amount of roles#COLON#** $userRolesCount[$get[user];$guildID]
+**Highest Role#COLON#** $get[highestrole]
+**Lowest Role#COLON#** $get[lowestrole]
+:true}{thumbnail:$userAvatar[$get[user]]}{color:$getVar[embedcolor]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:false}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:true}}]
 
 
 
@@ -39,13 +39,13 @@ type: "interaction",
 prototype: "button",
 code: `
 $interactionUpdate[{newEmbed:{title:Information for $get[username]}{field:**General**:
-Joined Discord on#COLON# $creationDate[$get[user];date]
-Bot account#COLON# $get[botchecker]
-User ID#COLON# $get[user]
+**Joined Discord on#COLON#** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
+**Bot account#COLON#** $get[botchecker]
+**User ID#COLON#** $get[user]
 :true}{field:**Other**:
-Avatar#COLON# [link]($userAvatar[$get[user]])
-DMs#COLON# $get[userdms] 
-:true}{thumbnail:$userAvatar[$get[user]]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:true}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:false}}]
+**Avatar#COLON#** [link]($userAvatar[$get[user]])
+**DMs#COLON#** $get[userdms] 
+:true}{thumbnail:$userAvatar[$get[user]]}{color:$getVar[embedcolor]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:true}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
