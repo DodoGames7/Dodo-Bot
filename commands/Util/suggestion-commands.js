@@ -38,7 +38,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
 },{
     name: "suggest",
     info: {
-        description: "Start a suggestion in this server if suggestions are setup.",
+        description: "Start a suggestion in this server (if setup).",
         perms: ["`SendMessages`"]
     },
     code: `
