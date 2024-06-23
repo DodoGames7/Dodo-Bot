@@ -4,7 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * The command \`guess-the-pokemon\` has received a internal rewrite (and now has a loading message)
-* the design of command \`user\` has been finalized
+* the design of command \`user\` has been finalized (including \`serverinfo\` command as well)
 * Added a option to reset Leveling
 * Updated descriptions for some commands
 * Leveling's leaderboard error message has been slightly updated (the lb has also received slight design change)
