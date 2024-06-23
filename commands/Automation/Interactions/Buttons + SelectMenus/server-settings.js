@@ -17,7 +17,7 @@ module.exports = [{
   ]
 
 $let[betaserver;$advancedReplaceText[$getGuildVar[betaserver];on;Enabled;off;Disabled]]
-$let[anonymous;$advancedReplaceText[$getGuildVar[anonymous];on;Enabled];off;Disabled]]
+$let[anonymous;$advancedReplaceText[$getGuildVar[anonymous];on;Enabled;off;Disabled]]
   $onlyIf[$getSelectMenuValues[all]==servermenu;]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
   `
