@@ -7,7 +7,7 @@ module.exports = [{
 
     `
 },{
-    name: "Enable",
+    name: "Enable Pre-release trigger",
     type: "awaited",
     code: `
 
@@ -15,7 +15,7 @@ module.exports = [{
     $onlyIf[$checkContains[$getVar[release_type];Pre-release]==false]`
 },
 {
-    name: "Disable",
+    name: "Disable Pre-release trigger",
     type: "awaited",
     code: `
 
