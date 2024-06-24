@@ -63,7 +63,7 @@ For staff server, please run \`suggest-set\` to set a channel.
 $onlyIf[$charCount[$splitText[1]]<=160||$charCount[$splitText[2]]<=3950;You can only add up to 160 characters for a title and 3950 characters for a description of the suggestion.]
 $onlyIf[$splitText[1]!=||$splitText[2]!=;Hey there! Your usage seems to be wrong. Make sure it's correct
 
-A example of usage should be \`$getGuildVar[prefix]suggest Title/Description\`.]
+A example of usage should be \`$getGuildVar[prefix]suggest title/description\`.]
  $textSplit[$message;/]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest;$authorID];$dateStamp];1000]]:R>]

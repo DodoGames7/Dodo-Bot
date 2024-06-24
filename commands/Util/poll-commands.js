@@ -59,7 +59,7 @@ For staff server, please run \`poll-set\` to set a channel.
 $onlyIf[$charCount[$splitText[1]]<=3570||$charCount[$splitText[2]]<=200||$charCount[$splitText[3]]<=200;Your Poll content cannot be longer than 3570 characters. Choice 1 and Choice 2 cannot also be longer than 200 characters]
 $onlyIf[$splitText[1]!=||$splitText[2]!=||$splitText[3]!=;Hey there! Your usage seems to be incorrect.
 
-A example of a usage should be \`$getGuildVar[prefix]poll Content/Choice 1/Choice 2\`]
+A example of a usage should be \`$getGuildVar[prefix]poll content/choice 1/choice 2\`]
 $textSplit[$message;/]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;poll;$authorID];$dateStamp];1000]]:R>]

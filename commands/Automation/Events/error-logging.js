@@ -1,5 +1,5 @@
 module.exports = {
-name: "Log Errors",
+name: "Error logger",
 type: "functionError",
 channel: "$getVar[errorchannel]",
 code: `$author[Error detected!;$userAvatar[$clientID]]
