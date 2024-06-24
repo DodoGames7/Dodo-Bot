@@ -8,6 +8,7 @@ aliases: ["randomhex"],
 code: `$title[Random Color]
 $addField[**Hex Code**;#$getObjectProperty[api;hex]]
 $addField[**Color name**;$getObjectProperty[api;name]]
+$color[$getObjectProperty[api;hex]]
 $thumbnail[$getObjectProperty[api;image]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for randomcolor. Please, try again later.]

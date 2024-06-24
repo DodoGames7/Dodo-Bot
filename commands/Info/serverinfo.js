@@ -4,7 +4,7 @@ module.exports = {
     description: "Returns information about this server.",
     perms: ["`SendMessages`"]
 },
-  aliases: ["server", "si", "guild"],
+  aliases: ["server", "si", "guild", "guildinfo"],
   code: `$title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
@@ -36,7 +36,7 @@ module.exports = {
   $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;serverinfo;$authorID];$dateStamp];1000]]:R>]
   
-  $let[verifylevel;$advancedReplaceText[$GuildVerificationLevel;1;Low;2;Medium;3;High;4;Very High;0;None]]
+  $let[verifylevel;$advancedReplaceText[$GuildVerificationLevel;1;Low;2;Medium;3;High;4;Highest;0;None]]
   $let[content;$advancedReplaceText[$guildContentFilter[$guildID];0;Disabled;1;Medium;2;High]]
   $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
 `
