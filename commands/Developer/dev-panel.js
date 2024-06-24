@@ -1,6 +1,7 @@
 module.exports = [{
   name: "dev-panel",
   info: {
+    description: "Special settings dedicated to devs. Allows the user to change stuff!",
     dev: "true"
   },
   aliases: ["developer-panel", "dev-settings"],

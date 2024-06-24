@@ -1,6 +1,7 @@
 module.exports = {
     name: "setcustomstatus",
     info: {
+      description: "Sets a custom status for the bot",
       dev: "true"
     },
     aliases: ["scs", "customstatus"],

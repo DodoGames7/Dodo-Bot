@@ -1,6 +1,7 @@
 module.exports = {
 name: "update",
 info: {
+    description: "Restarts commands to latest code-edits",
     dev: "true"
   },
 aliases: ["restartcmds", "reloadcmds"],

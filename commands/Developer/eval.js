@@ -1,6 +1,7 @@
 module.exports = {
   name: "eval",
   info: {
+    description: "Executes codes for testing (in aoi.js only)",
     dev: "true"
   },
   aliases: "e",

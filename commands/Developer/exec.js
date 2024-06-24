@@ -1,6 +1,7 @@
 module.exports = {
   name: "execute",
   info: {
+    description: "Runs terminal commands directly in Discord",
     dev: "true"
   },
   $if: "old",
