@@ -114,6 +114,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
     \`<level>\` - Returns the new level of the member
+    \`<previouslevel>\` - Returns the previous level the member once had
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
