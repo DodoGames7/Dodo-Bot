@@ -4,7 +4,7 @@ module.exports = [{
     prototype: "button",
     $if: "old",
     code:`
-$if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true]==true]
+$if[$random[1;100]>=38&&$random[1;100]<89]
 $interactionFollowUp[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 1! 🏳️}{color:DarkGreen}}]
 
 
@@ -28,7 +28,7 @@ $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
     prototype: "button",
     $if: "old",
     code:`
-$if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true]==true]
+$if[$random[1;100]>=38&&$random[1;100]<89]
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 2! 🏳️}{color:DarkGreen}}]
 
@@ -52,7 +52,7 @@ $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
     prototype: "button",
     $if: "old",
     code:`
-$if[$checkContains[$randomText[true;true;true;true;false;false;false;false];true]==true]
+$if[$random[1;100]>=38&&$random[1;100]<89]
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:Nice guess, the flag was on zone 3! 🏳️}{color:DarkGreen}}]
 

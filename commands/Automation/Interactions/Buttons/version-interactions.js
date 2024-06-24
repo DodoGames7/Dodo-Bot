@@ -3,6 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
+* Newer version of luck system has been added in \`findtheflag\` command
 * Changed release type back to \`Pre-release\`
 * Welcomer and leave message now supports up to 3750 characters
 * Added placeholder \`<previouslevel>\` for Leveling
@@ -33,6 +34,7 @@ module.exports = [{
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
+* The "Total" section in command \`update\` is now a button once again
 * The section for optional links in command \`invite\` has been removed
  }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
