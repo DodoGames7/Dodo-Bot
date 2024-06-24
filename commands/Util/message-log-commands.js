@@ -32,7 +32,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
     aliases: ["reset-logdelete", "reset-messagedeletelog"],
-    code: `$setGuildVar[msglogdeletedchannel;none]
+    code: `$deleteVar[msglogdeletedchannel;$guildID;main]
 Successfully reset the message delete log channel!
 $onlyIf[$getGuildVar[msglogdeletedchannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!
@@ -46,7 +46,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
     aliases: ["reset-logedit", "reset-messageeditlog"],
-    code: `$setGuildVar[msglogeditchannel;none]
+    code: `$deleteVar[msglogeditchannel;$guildID;main]
 Successfully reset the message edit log channel!
 $onlyIf[$getGuildVar[msglogeditchannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!

@@ -26,7 +26,7 @@ info: {
     description: "Reset current channel used for Ban logs.",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
-code: `$setGuildVar[banneduserschannel;none]
+code: `$deleteVar[banneduserschannel;$guildID;main]
 Successfully reset the ban log channel!
 $onlyIf[$getGuildVar[banneduserschannel]!=none;There is no channel to reset currently.]
 $cooldown[2s;Slow down! Don't spam the command!
@@ -60,7 +60,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-unbanlog;
         description: "Reset current channel used for un-ban logs.",
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
-    code: `$setGuildVar[unbanneduserschannel;none]
+    code: `$deleteVar[unbanneduserschannel;$guildID;main]
     Successfully reset the un-ban log channel!
     $onlyIf[$getGuildVar[unbanneduserschannel]!=none;There is no channel to reset currently.]
 $cooldown[2s; Slow down! Don't spam the command!

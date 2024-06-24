@@ -29,7 +29,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         description: "Reset current channel used for suggestions.",
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
-    code: `$setGuildVar[suggestionchannel;none]
+    code: `$deleteVar[suggestionchannel;$guildID;main]
 Successfully reset suggestion Channel! Run \`suggest-set\` to set a channel again.
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
 $cooldown[5s; Slow down! Don't spam the command!
