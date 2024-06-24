@@ -161,7 +161,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomermessagebutto
     code: `$if[$getGuildVar[welcometype]==embed]
 $interactionModal[Message to use;welcomerembedmodal;
 {actionRow:
-    {textInput:Custom message to use:2:textInput:true:Welcome <username>:0:3000:$getGuildVar[welcomemessage]}
+    {textInput:Custom message to use:2:textInput:true:Welcome <username>:0:3750:$getGuildVar[welcomemessage]}
   }
 {actionRow:
     {textInput:Embed color to use:1:hexInput:true:#9B59B6:0:7:$getGuildVar[welcomemessageembedcolor]}
@@ -169,7 +169,7 @@ $interactionModal[Message to use;welcomerembedmodal;
 $else
 $interactionModal[Message to use;welcomertextmodal;
 {actionRow:
-    {textInput:Custom message to use:2:textInput:true:Welcome <username>:0:3000:$getGuildVar[welcomemessage]}
+    {textInput:Custom message to use:2:textInput:true:Welcome <username>:0:3750:$getGuildVar[welcomemessage]}
   }]
 $endif
 

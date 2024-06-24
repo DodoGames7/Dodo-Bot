@@ -275,10 +275,10 @@ $interactionUpdate[The current progress for all members will remain then.]
     $interactionReply[Successfully sent the message to the Level up channel for testing!;all;true]
     $channelSendMessage[$getGuildVar[levelingmessagechannel];
     **This is a test Level up message! Please, ignore this!**
-    $nonEscape[$get[content]]
+    $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

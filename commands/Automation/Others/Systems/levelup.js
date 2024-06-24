@@ -1,8 +1,8 @@
 module.exports =[{
     name: "$alwaysExecute",
     code: `
-    $nonEscape[$get[content]]
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username]]
+    $get[content]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
 $useChannel[$getGuildVar[levelingmessagechannel]]
 $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewchannel;sendmessages]==true;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;]
@@ -10,6 +10,7 @@ $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewch
     $onlyIf[$getGuildVar[levelmessagefeature]==on;]
     $setUserVar[xpLimit;$sum[$getUserVar[xpLimit;$authorID;$guildID];20];$authorID;$guildID]
     $setUserVar[level;$sum[$getUserVar[level;$authorID;$guildID];1];$authorID;$guildID]
+    $setUserVar[previouslevel;$sum[$getUserVar[previouslevel;$authorID;$guildID];1];$authorID;$guildID]
     $onlyIf[$isBot==false;]
     $onlyIf[$getUserVar[xp]==$getUserVar[xpLimit];]
     $onlyIf[$getGuildVar[levelsystem]==on;]
