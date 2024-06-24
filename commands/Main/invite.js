@@ -5,12 +5,7 @@ module.exports = {
     perms: ["`SendMessages`"]
 },
   code: `$title[invite Dodo Bot]
-  $description[To invite the bot into a server, click on the "Invite" button below.
-
-**Optional links to check out.**
-[Dodo-Bot is no longer multi-purpose](https://github.com/DodoGames7/Dodo-Bot/tree/v2#its-no-longer-multi-purpose)
-[Project CupcakeX](https://github.com/DodoGames7/CupcakeX)
-]
+  $description[To invite the bot into a server, click on the "Invite" button below.]
   $color[$getVar[embedcolor]]
   $addButton[1;Official server;5;https://discord.gg/pFwKjAaZvj;false]
   $addButton[1;Invite;5;$nonEscape[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]];false]
