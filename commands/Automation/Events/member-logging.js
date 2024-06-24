@@ -23,6 +23,5 @@ $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[leavemessage]];<server
 $onlyIf[$getGuildVar[leavesystem]==on;]
 $disableMentionType[roles]
 $disableMentionType[everyone]
-$ifAwaited[$getGuildVar[levelleaveonreset]==on;{execute:resetonleave}]
 $onlyIf[$guildID==$guildID;]`
 }]
