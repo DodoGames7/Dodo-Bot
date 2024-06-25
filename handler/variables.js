@@ -9,6 +9,7 @@ module.exports = {
   autopingreply: "off",
   includebots: "on",
   version: "2.1.0",
+  versionCodename: "Tower Valley",
   buildStatus: "Incomplete",
   buildDate: "1719261974742",
   buildType: "Pre-Stable",

@@ -4,7 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Build Info}{field:General:
 * **Dodo-Bot**#COLON# v$getVar[version]
-* **Codename**#COLON# Tower Valley
+* **Codename**#COLON# $getVar[versionCodename]
 * **Branch of the build**#COLON# $getVar[buildBranch]
 * **Revision**#COLON# $getVar[buildRevision]
 * **Build number**#COLON# $getVar[buildNumber]:true}
