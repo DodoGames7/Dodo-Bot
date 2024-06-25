@@ -23,7 +23,7 @@ module.exports = [{
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
 * Fixed Server settings returning \`#LEFT#\`
 * Leveling's reset on leave no longer executes if Leveling itself is disabled
-* Added a permission check to prevent errors for bot's greeting message for new servers it gets added into'
+* Added a permission check to prevent errors for bot's greeting message for new servers it gets added into
     }{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
