@@ -12,6 +12,7 @@ module.exports = {
   buildStatus: "Incomplete",
   buildDate: "1719261974742",
   buildType: "Pre-Stable",
+  buildBranch: "earlystable",
   buildRevision: "0",
   embedcolor: "#2A3759",
   buildNumber: "2084",
