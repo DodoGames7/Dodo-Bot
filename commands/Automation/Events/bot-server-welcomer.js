@@ -1,0 +1,17 @@
+module.exports = {
+    name: "Bot server Welcomer"
+    type: "guildJoin",
+    channel: "$randomChannelID[$guildID;all]",
+    code: `
+    $title[Welcome to Dodo-Bot!]
+    $description[Dodo-Bot is a personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.]
+    $addField[Need information?;If you need information about some commands in the bot then use the command \`$getGuildVar[prefix]commandinfo <cmdname>\` to do so!]
+    $addField[Where to get started?;To explore the bot, use the command \`$getGuildVar[prefix]help\`. This let's you view all of the commands of the bot in a selectmenu as modules!]
+    $color[$getVar[embedcolor]]
+    $addButton[1;Source code;5;https://github.com/DodoGames7/Dodo-Bot;false]
+    $useChannel[$get[channelselector]]
+    $onlyIf[$hasPermsInChannel[$get[channelselector];$clientID;sendmessages;viewchannel]==true;]
+    $let[channelselector;$advancedReplaceText[$checkCondition[$guildSystemChannelID[$guildID]==];true;$randomChannelID[$guildID;Text];false;$guildSystemChannelID[$guildID]]]
+    $onlyIf[$getVar[botgreeting]==on;]
+    `
+    }
