@@ -42,12 +42,12 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Use of source code}{description:
-        Using the source code for development purposes, you must credit the original work done on the bot itself which can be by including the username \`dodogames\` in the code.
+        Using the source code for development purposes, you must credit the original work done on the bot itself which can be by including the username \`dodogames\`in your project.
 
 **For public bots**
 It is not recommended to claim that you fully made the bot yourself and even advertise it to the public. It is fine if you used the source code but then made it slightly different that doesn't result in being too smiliar to the original bot.
 
-A modified instance of Dodo-Bot should be normally allowed as long as the credit for the original work is given (or when permission is given to do so).
+A modified instance of Dodo-Bot should be normally allowed as long as the credit for the original work is included (or when permission is given to do so).
 
 **For private bots**
 The rule of using the source code is not strict in this case. If it's used to try the bot then you do not need to do anything. You may give credit if the said private bot was designed for a server in case of modifying it.

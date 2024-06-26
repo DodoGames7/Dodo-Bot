@@ -11,6 +11,7 @@ module.exports = {
     $footer[Made with ❤️ by $username[632607624742961153]!]
     $color[$getVar[embedcolor]]
     $addButton[1;Source code;5;https://github.com/DodoGames7/Dodo-Bot;false]
+
     $useChannel[$get[channelselector]]
     $onlyIf[$hasPermsInChannel[$get[channelselector];$clientID;sendmessages;viewchannel]==true;]
     $let[channelselector;$advancedReplaceText[$checkCondition[$guildSystemChannelID[$guildID]==];true;$randomChannelID[$guildID;Text];false;$guildSystemChannelID[$guildID]]]

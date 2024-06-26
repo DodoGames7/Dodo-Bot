@@ -3,7 +3,7 @@ module.exports = [{
   type: "interaction",
   $if: "old",
   prototype: "button",
-  code: `$if[$checkContains[$randomText[heads;heads;heads;heads;tails;tails;tails;tails];heads]==true]
+  code: `$if[$random[1;100]>=38&&$random[1;100]<89]
   
   $interactionFollowUp[GG, **$username**! The coin landed on **Heads**!]
   
@@ -25,7 +25,7 @@ $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
   type: "interaction",
   $if: "old",
   prototype: "button",
-  code: `$if[$checkContains[$randomText[heads;heads;heads;heads;tails;tails;tails;tails];tails]==true]
+  code: `$if[$random[1;100]>=38&&$random[1;100]<89]
   
   $interactionFollowUp[GG, **$username**! The coin landed on **Tails**!]
   

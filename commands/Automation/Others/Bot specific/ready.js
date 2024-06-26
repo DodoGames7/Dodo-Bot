@@ -2,14 +2,16 @@ module.exports = [{
   name: "Startup Message (Console)",
   type: "ready",
   channel: "",
-  code: `$djsEval[const chalk = require('chalk')
+  code: `
+$djsEval[const chalk = require('chalk')
+
+console.log(chalk.blue("Invite Your bot using this link: $getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]"))
+]
+$djsEval[const chalk = require('chalk')
 
 console.log(chalk.yellow("Tip: Found an issue? Report it here: https://github.com/DodoGames7/Dodo-Bot/issues/new"))
 ]
-$log[Dodo Bot is ready to be used on the client $userTag[$clientID]! 
-
-Invite Your bot using this link: $getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog]
-]
+$log[Dodo Bot is ready to be used on the client $userTag[$clientID]!]
 $wait[2s]
 $ifAwaited[$getVar[pre_release_mode]==on;{execute:senddevwarning}]`
 },{
