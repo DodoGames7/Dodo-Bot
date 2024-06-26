@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Reset on Leave trigger",
+    name: "(Leveling) Reset on Leave trigger",
     type: "leave",
     channel: "$randomChannelID[$guildID;all]",
     code: `$ifAwaited[$getGuildVar[levelleaveonreset]==on;{execute:resetonleave}]
