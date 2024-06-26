@@ -3,6 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
+* Added "Last Restart" section in command \`ping\`
 * Bot server welcomer message has been redesigned
 * The emoji in retry button from \`dice\` has been changed to resemble a joystick
 * Added a settings icon as a thumbnail to command \`settings\` embed
@@ -36,6 +37,7 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
+* The \`Towery Valley\` button seen in command \`about\` has been removed
 * The \`Util\` module from command \`help\` no longer has a description
 * Development warning is now enforced into the main 3 buttons of this command
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
