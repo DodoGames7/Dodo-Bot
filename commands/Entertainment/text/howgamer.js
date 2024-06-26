@@ -1,7 +1,7 @@
 module.exports = {
 name: "howgamer",
 info: {
-    description: "Check on how gamer you're or the user mentioned.",
+    description: "Check on how much gamer you're or the user mentioned.",
     perms: ["`SendMessages`"]
 },
 code: `$title[HowGamer machine]
