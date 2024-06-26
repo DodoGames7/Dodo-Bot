@@ -294,7 +294,7 @@ $let[pre-release;$advancedReplaceText[$getVar[pre_release_mode];on;Enabled;off;D
         `},{
         type: "interaction",
         prototype: "button",
-        code: `$ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable};{execute:Disable}]
+        code: `$ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable-pre-release};{execute:Disable-pre-release}]
 $interactionFollowUp[$get[resultmessage];true]
 $interactionUpdate[{newEmbed:{title:Pre-release}{description:
    This option allows you on whether or not the current build used should be marked as development build. By default, it is commonly enabled for development builds as expected.
