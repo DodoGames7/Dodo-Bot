@@ -6,7 +6,7 @@ module.exports = {
     },
     aliases: "bugreport",
     code: `$title[Help Shape Dodo-Bot Future]
-    $description[Thanks for trying out 2.1.0! I appreciate whoever tries it's Pre-release builds for the first time. However, it is worth noting that it may contain bugs and as such, it is advised to report bugs through the Github repo.
+    $description[Even though the bot may not appear to be buggy, however, it is worth noting that it may contain bugs and as such, it is advised to report bugs through the Github repo.
 
 To get started, be sure to have a Github account first then press the button "Report a Bug" to open a new issue.
 ]

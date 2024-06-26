@@ -3,10 +3,8 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Added "Last Restart" section in command \`ping\`
-* Bot server welcomer message has been redesigned
-* The emoji in retry button from \`dice\` has been changed to resemble a joystick
-* Added a settings icon as a thumbnail to command \`settings\` embed
+* \`report\` command has been updated to remove Pre-release references
+* Comma separation now works properly in \`commandinfo\` command
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
 $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
