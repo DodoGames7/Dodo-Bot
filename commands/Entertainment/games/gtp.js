@@ -7,7 +7,7 @@ module.exports = [{
     aliases: "gtp",
     code: `$awaitMessages[$channelID;$authorID;60s;everything;gtpawaited;{execute:gtptimeout}]
 $editMessage[$get[id];{attachment:question-image.png:$getObjectProperty[api;data.questionImage]}
-{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://question-image.png}}]
+{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://question-image.png}{color:$getVar[embedcolor]}}]
 
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $let[id;$sendMessage[Please wait...;true]]
