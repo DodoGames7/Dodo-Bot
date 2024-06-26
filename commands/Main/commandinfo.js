@@ -16,7 +16,6 @@ module.exports = {
     $footer[Experimental command.;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
   $endif
 $let[aliases;$advancedReplaceText[$checkCondition[$arrayJoin[aliases;, ]==];true;*This command does not have any aliases.*;false;$arrayJoin[aliases;, ]]]
-$arrayJoin[aliases;, ]
 $createArray[aliases;$nonEscape[$get[aliaseschecker]]]
 $let[aliaseschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];aliases]];,;#SEMI#]]
 
