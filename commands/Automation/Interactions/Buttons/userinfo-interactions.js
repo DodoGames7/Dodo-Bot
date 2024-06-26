@@ -5,7 +5,7 @@ code: `
 $interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverimage]]}{title:Information for $get[username]}{field:**General**:
 **Joined the server on#COLON#** <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID];1000]]:f>
 **Booster#COLON#** $get[boosterchecker]
-**Activity#COLON#** $userStatus[$guildID;$get[user]]
+**Status#COLON#** $userStatus[$guildID;$get[user]]
 :true}{field:**Roles**:
 **Total amount of roles#COLON#** $userRolesCount[$get[user];$guildID]
 **Highest Role#COLON#** $get[highestrole]
