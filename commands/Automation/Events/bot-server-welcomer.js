@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Bot server Welcomer"
+    name: "Bot server Welcomer",
     type: "guildJoin",
     channel: "$randomChannelID[$guildID;all]",
     code: `

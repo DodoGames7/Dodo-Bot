@@ -4,7 +4,7 @@ info: {
     description: "Setup Message delete logs.",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
-aliases: ["set-logdelete", "set-messagedeletelog"],
+aliases: ["set-logdelete", "set-messagedeletelog", "set-msgdeletelogs", "set-messagedeletelogs"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
 Successfully set <#$findChannel[$message]> as the message delete logging channel!
@@ -31,7 +31,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         description: "Reset current channel used for Message delete logs.",
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
-    aliases: ["reset-logdelete", "reset-messagedeletelog"],
+    aliases: ["reset-logdelete", "reset-messagedeletelog", "reset-msgdeletelogs", "reset-messagedeletelogs"],
     code: `$deleteVar[msglogdeletedchannel;$guildID;main]
 Successfully reset the message delete log channel!
 $onlyIf[$getGuildVar[msglogdeletedchannel]!=none;There is no channel to reset currently.]
@@ -45,7 +45,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         description: "Reset current channel used for Message edit logs.",
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
-    aliases: ["reset-logedit", "reset-messageeditlog"],
+    aliases: ["reset-logedit", "reset-messageeditlog", "reset-msgeditlogs", "reset-messageeditlogs"],
     code: `$deleteVar[msglogeditchannel;$guildID;main]
 Successfully reset the message edit log channel!
 $onlyIf[$getGuildVar[msglogeditchannel]!=none;There is no channel to reset currently.]
@@ -59,7 +59,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         description: "Setup Message edit logs.",
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
-    aliases: ["set-logedit", "set-messageeditlog"],
+    aliases: ["set-logedit", "set-messageeditlog", "set-msgeditlogs", "set-messageeditlogs"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
     code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]
 Successfully set <#$findChannel[$message]> as the message edit logging channel!
