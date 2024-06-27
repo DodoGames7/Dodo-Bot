@@ -1,6 +1,8 @@
 module.exports = {
   name: "execute",
   info: {
+    description: "Runs terminal commands directly in Discord",
+    perms: ["`SendMessages`"],
     dev: "true"
   },
   $if: "old",

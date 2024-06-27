@@ -1,10 +1,10 @@
 module.exports ={
-    name: "level-leaderboard",
+    name: "leaderboard",
     info: {
         description: "Returns Leveling's leaderboard for this server (if enabled).",
         perms: ["`SendMessages`"]
     },
-    aliases: ["lb", "leveling-lb", "leaderboard"],
+    aliases: ["lb", "leveling-lb", "level-leaderboard"],
     code: `
     $author[$guildName;$get[serverimage]]
     $title[Leaderboard]
@@ -15,6 +15,6 @@ $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guild
     $color[1;$getVar[embedcolor]]
     $onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
     $cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;level-leaderboard;$authorID];$dateStamp];1000]]:R>]
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;leaderboard;$authorID];$dateStamp];1000]]:R>]
 `
 }

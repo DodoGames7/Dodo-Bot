@@ -22,6 +22,7 @@ $addButton[1;Member's Server info;2;memberservinfo_$authorID_$get[user];false]
 $addButton[1;General info;2;mainmeminfo_$authorID_$get[user];true]
 $endif
 $thumbnail[$userAvatar[$get[user]]]
+
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
 $let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
 $let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]

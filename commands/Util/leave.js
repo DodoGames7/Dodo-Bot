@@ -1,7 +1,7 @@
 module.exports = {
 name: "leave",
 info: {
-    description: "Setup and manage Leave features.",
+    description: "Setup and manage Leave feature.",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
 code: `$title[Leave]

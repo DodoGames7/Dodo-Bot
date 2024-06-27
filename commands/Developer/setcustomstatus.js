@@ -1,6 +1,8 @@
 module.exports = {
     name: "setcustomstatus",
     info: {
+      description: "Sets a custom status for the bot",
+      perms: ["`SendMessages`"],
       dev: "true"
     },
     aliases: ["scs", "customstatus"],

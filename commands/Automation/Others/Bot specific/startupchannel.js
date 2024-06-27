@@ -8,6 +8,8 @@ module.exports = {
     $useChannel[$getVar[startupchannel]]
     
     $onlyIf[$hasPermsInChannel[$getVar[startupchannel];$clientID;sendmessages;viewchannel]==true;]
+    $onlyIf[$channelExists[$getVar[startupchannel]]==true;]
+    $onlyIf[$getVar[startupchannel]!=none;]
     $onlyIf[$getVar[startupchannelsystem]==on;]
-    $onlyIf[$getVar[startupchannel]!=none;]`
+    `
     }

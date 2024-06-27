@@ -14,7 +14,7 @@ module.exports = [{
     $onlyPerms[manageguild;You need to have \`ManageServer\` permission to proceed.]
   $onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
   $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix]\` 
-Usage to change prefix: \`$getGuildVar[prefix]prefix <new prefix here> \`]
+Usage to change prefix: \`$getGuildVar[prefix]prefix <new prefix>\`]
  $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$authorID];$dateStamp];1000]]:R>]
   `
@@ -25,7 +25,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$autho
       perms: ["`SendMessages`", "`ManageGuild`"]
   },
     aliases: "reset-prefix",
-    code: ` $setGuildVar[prefix;$getGuildVar[originalprefix]]
+    code: `$deleteVar[prefix;$guildID;main]
 The prefix has been successfully reset. <3
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix-reset;$authorID];$dateStamp];1000]]:R>]

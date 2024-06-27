@@ -1,7 +1,7 @@
 module.exports = {
 name: "welcomer",
 info: {
-    description: "Setup and manage Welcomer features.",
+    description: "Setup and manage Welcomer feature.",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
 aliases: "welcome",

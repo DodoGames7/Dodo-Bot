@@ -2,20 +2,20 @@ module.exports = [{
     name: "Set Pre-release mode",
     type: "ready",
     code: `
-    $ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable};{execute:Disable}]
+    $ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable-pre-release};{execute:Disable-pre-release}]
 
 
     `
 },{
-    name: "Enable",
+    name: "Enable-pre-release",
     type: "awaited",
     code: `
 
-    $setVar[release_type;Beta 2]
-    $onlyIf[$checkContains[$getVar[release_type];Beta 2]==false]`
+    $setVar[release_type;Pre-release]
+    $onlyIf[$checkContains[$getVar[release_type];Pre-release]==false]`
 },
 {
-    name: "Disable",
+    name: "Disable-pre-release",
     type: "awaited",
     code: `
 
