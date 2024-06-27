@@ -31,7 +31,7 @@ $if: "old",
 code: `
 $if[$message[1]==$getObjectProperty[api;data.name]]
 $editMessage[$get[id];You guessed it right! It was a $getObjectProperty[api;data.name]. {attachment:answer-image.png:$getObjectProperty[api;data.answerImage]}
-{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://answer-image.png}}]
+{newEmbed:{author:$username:$authorAvatar}{title: Who's the Pokemon?}{field:Types:$djsEval[$getObjectProperty[api;data.types].join(", ");true]:true}{field:Abilities:$djsEval[$getObjectProperty[api;data.abilities].join(", ");true]:true}{image:attachment://answer-image.png}{color:$getVar[embedcolor]}}]
 $else
 $editMessage[$get[id];Better luck next time! It was a $getObjectProperty[api;data.name].]
 $endif
