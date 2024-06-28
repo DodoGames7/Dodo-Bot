@@ -4,6 +4,7 @@ module.exports = {
         description: "Returns information about dev builds (with a link to try them as well).",
         perms: ["`SendMessages`"]
     },
+    aliases: "devbuilds",
     code: `$title[About GitBuilds]
     $description[GitBuilds are development versions of the bot available on Github that isn't ready to be considered as "stable" release. While usually new features or changes are introduced, there may be also bugs considering that they're unfinished builds which is why it's not recommended for public use as they're only meant for testing.
 
