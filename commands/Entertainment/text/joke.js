@@ -1,0 +1,28 @@
+module.exports = [{
+  name: "joke",
+  info: {
+    description: "Returns random jokes.",
+    perms: ["`SendMessages`"]
+},
+  aliases: "jokes",
+  code: `$ifAwaited[$getObjectProperty[api;joke]==;{execute:twopart};{execute:onepart}]
+  $createObject[api;$nonEscape[$get[jsonresponse]]]
+$onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for jokes. Please, try again later.]
+$let[jsonresponse;$jsonRequest[https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&safe-mode;;Error]]
+  $cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;joke;$authorID];$dateStamp];1000]]:R>]`
+},{
+name: "twopart",
+type: "awaited",
+code: `
+Setup: $getObjectProperty[api;setup]
+Delivery: $getObjectProperty[api;delivery]
+`
+},
+{
+name: "onepart",
+type: "awaited",
+code: `
+$getObjectProperty[api;joke]
+`
+}]
