@@ -27,7 +27,7 @@ module.exports = [{
     $username[632607624742961153] - Developer of the bot
     $username[431749535656837130] - Inspiration to improve some commands
     $username[738856854892839022] - For Leveling setup
-    $username[769525910164471821] - For \`guess-the-pokemon\` code
+    $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
 }{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:true}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:false}}]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

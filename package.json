@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.1.0-build.2100",
+  "version": "2.1.2-build.2103",
   "description": "A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "scripts": {
