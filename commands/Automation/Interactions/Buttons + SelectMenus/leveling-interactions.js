@@ -113,7 +113,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     \`<username>\` - Returns the member's username
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
-    \`<level>\` - Returns the new level of the member
+    \`<newlevel>\` - Returns the new level of the member
     \`<previouslevel>\` - Returns the previous level the member once had
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}}]
     
@@ -279,7 +279,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

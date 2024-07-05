@@ -2,7 +2,7 @@ module.exports =[{
     name: "$alwaysExecute",
     code: `
     $get[content]
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<level>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
 $useChannel[$getGuildVar[levelingmessagechannel]]
 $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;viewchannel;sendmessages]==true;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;]
