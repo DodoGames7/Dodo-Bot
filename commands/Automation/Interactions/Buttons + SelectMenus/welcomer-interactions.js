@@ -263,7 +263,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewelcomermessag
 $ifAwaited[$charCount[$getGuildVar[welcomemessage]]>=2000||$getGuildVar[welcometype]==embed;{execute:welcomerembedmodetest};{execute:welcomertextmodetest}]
 
 
-$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition]]]
+$let[content;$advancedReplaceText[$nonEscape[$getGuildVar[welcomemessage]];<server.totalMembers>;$membersCount;<username>;$username;<mention>;<@$authorID>;<id>;$authorID;<owner.username>;$username[$guildOwnerID];<server.name>;$guildName;<owner.id>;$guildOwnerID;<server.id>;$guildID;<creationdate>;$creationDate[$authorID;date];<position>;$ordinal[$memberJoinPosition];<Displayname>;$userDisplayName]]
 
 $onlyIf[$hasPermsInChannel[$getGuildVar[welcomechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[welcomechannel]>:
 \`ViewChannel\`
@@ -305,6 +305,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomertestmessageb
     code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Welcomer message unique. Use the current ones available in this list!}{field:Member-related:
 \`<username>\` - Returns the member's username
 \`<mention>\` - Pings the new member
+\`<Displayname>\` - Returns the member's displayname
 \`<id>\` - Returns the new member's id
 \`<creationdate>\` - Returns the date when the member joined Discord
 \`<position>\` - Returns the join position of the member

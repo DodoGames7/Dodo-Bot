@@ -10,7 +10,7 @@ module.exports = {
     
     $createObject[api;$nonEscape[$get[jsonresponse]]]
     $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to generate the output. Please, try again later.]
-    $let[jsonresponse;$jsonRequest[https://api.popcat.xyz/lulcat?text=$uri[$message;encode]]]
+    $let[jsonresponse;$jsonRequest[https://api.popcat.xyz/lulcat?text=$uri[$message;encode];;Error]]
     $onlyIf[$message!=;Please enter a text.]
 $onlyIf[$getGuildVar[betaserver]==on&&$getGlobalUserVar[betacommands]==on;
 This command is currently unavailable. Possible reasons are being:
