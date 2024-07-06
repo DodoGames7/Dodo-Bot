@@ -6,6 +6,7 @@ module.exports = [{
 * **aoi.js** - The entire bot basically. Dodo-Bot is made using aoi.js!
 * **discord-gamecord** - Mostly used in game commands such as \`minesweeper\`, \`snake\`, etc.
 * **chalk** - For colored texts on console especially the bot's custom message}
+* **dotenv** - Better environment variables support in local hosting
 {field:No longer used:
 * **@akarui/aoi.parser** - For making interactions less complicated...
 * **@nottca/weky** - A package that caused some of the commands here to appear.
