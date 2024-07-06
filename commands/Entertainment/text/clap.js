@@ -12,13 +12,13 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;clap;$authorI
 name: "spaceclap",
 type: "awaited",
 code: `
-$replaceText[$noMentionMessage; ; 👏 ;-1]
+$replaceText[$noMentionMessage; ; 👏 ]
 `
 },
 {
 name: "nonspaceclap",
 type: "awaited",
 code: `
-$replaceText[$noMentionMessage;; 👏 ;-1]
+$replaceText[$noMentionMessage;; 👏 ]
 `
 }]
