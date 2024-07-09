@@ -12,6 +12,7 @@ module.exports ={
     XP: \`$getUserVar[xp;$get[user]]\`/\`$getUserVar[xpLimit;$get[user]]\`]
     $thumbnail[$userAvatar[$get[user]]]
     $color[$getVar[embedcolor]]
+    $onlyIf[$isBot[$get[user]]==false;Bots do not have Levels.]
 $let[user;$findMember[$message;true]]
     $onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
 $cooldown[2s;Slow down! Don't spam the command!
