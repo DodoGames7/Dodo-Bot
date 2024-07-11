@@ -10,6 +10,6 @@ $editIn[3s;Api Latency: $pingms
 Message Ping: $messagePingms
 Last Restart: <t:$truncate[$divide[$readyTimestamp;1000]]:f>
 ]
-$cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;ping;$authorID];$dateStamp];1000]]:R>]`
+$cooldown[3s;Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;ping;$authorID];$dateStamp];1000]]:R>]`
 }

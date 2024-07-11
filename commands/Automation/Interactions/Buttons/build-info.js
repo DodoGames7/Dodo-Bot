@@ -13,7 +13,7 @@ module.exports = [{
 * **Type**#COLON# $getVar[buildType]
 :true}{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:statshome_$authorID:false:🏠}}]
     
-    $onlyIf[$getVar[pre_release_mode]==on;This information is only available when the current build is not a development build.
+    $onlyIf[$getVar[pre_release_mode]==on;This information is only available when the current build is not a pre-release build.
     {ephemeral}
 {interaction}
   ]
