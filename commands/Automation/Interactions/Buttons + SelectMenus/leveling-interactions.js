@@ -279,7 +279,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

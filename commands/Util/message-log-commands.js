@@ -6,18 +6,19 @@ info: {
 },
 aliases: ["set-logdelete", "set-messagedeletelog", "set-msgdeletelogs", "set-messagedeletelogs"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
-code: `$setGuildVar[msglogdeletedchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message delete logging channel!
+code: `$setGuildVar[msglogdeletedchannel;$get[channeltarget]]
+Successfully set <#$get[channeltarget]> as the message delete logging channel!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
+$onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$get[channeltarget]>:
 \`ViewChannel\`
 \`SendMessages\`
 ]
-$onlyIf[$findChannel[$message]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message deletion logs. Please mention a different one instead.]
-$onlyIf[$channelType[$findChannel[$message]]==text;We only support Text channels for now for the message log deletion feature.
+$onlyIf[$get[channeltarget]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message deletion logs. Please mention a different one instead.]
+$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message log deletion feature.
 Please set an text channel instead.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+$onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
+$let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logdelete;usage]]\`]
 $cooldown[5s; Slow down! Don't spam the command!
@@ -61,20 +62,21 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     },
     aliases: ["set-logedit", "set-messageeditlog", "set-msgeditlogs", "set-messageeditlogs"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
-    code: `$setGuildVar[msglogeditchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the message edit logging channel!
+    code: `$setGuildVar[msglogeditchannel;$get[channeltarget]]
+Successfully set <#$get[channeltarget]> as the message edit logging channel!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$findChannel[$message]>:
+$onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$get[channeltarget]>:
 \`ViewChannel\`
 \`SendMessages\`
 ]
 
-$onlyIf[$findChannel[$message]!=$getGuildVar[msglogeditchannel]; You already have set this channel for message edit logs. Please mention a different one instead.]
-$onlyIf[$channelType[$findChannel[$message]]==text;We only support Text channels for now for the message log deletion feature.
+$onlyIf[$get[channeltarget]!=$getGuildVar[msglogeditchannel]; You already have set this channel for message edit logs. Please mention a different one instead.]
+$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message log deletion feature.
 Please set an text channel instead.]
 
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+$onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
+$let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logedit;usage]]\`]
 $cooldown[5s; Slow down! Don't spam the command!

@@ -5,21 +5,22 @@ info: {
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
 code: `
-$setGuildVar[pollchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Poll channel!
+$setGuildVar[pollchannel;$get[channeltarget]]
+Successfully set <#$get[channeltarget]> as the Poll channel!
 
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
+$onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
 \`ViewChannel\`
 \`SendMessages\`
 \`AddReactions\`
 ]
-$onlyIf[$findChannel[$message]!=$getGuildVar[pollchannel]; You already have set this channel for Polls. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Poll channel to use Polls feature.]
+$onlyIf[$get[channeltarget]!=$getGuildVar[pollchannel]; You already have set this channel for Polls. Please mention a different one instead.]
+$onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Poll channel to use Polls feature.]
 
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;
+$onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;
 Channel exists but outside of this server. Please try mentioning an channel inside this server.
 ]
 
+$let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Mention an channel or enter the channel id.]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;poll-set;$authorID];$dateStamp];1000]]:R>]

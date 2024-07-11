@@ -10,14 +10,14 @@ module.exports = {
   includebots: "on",
   version: "2.1.2",
   versionCodename: "Cupcakes",
-  buildStatus: "Complete",
-  buildDate: "1720524836404",
+  buildStatus: "Pending Review",
+  buildDate: "1720715397902",
   buildType: "Pre-release",
   buildBranch: "main",
   buildRevision: "0",
   embedcolor: "#2A3759",
-  buildNumber: "2106",
-  release_type: "Beta",
+  buildNumber: "2109",
+  release_type: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -55,8 +55,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on",
-  gitbuildscheck: "on",
+  pre_release_mode: "off",
   botgreeting: "on",
   
 }
