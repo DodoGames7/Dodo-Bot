@@ -7,7 +7,7 @@ module.exports = [{
     
     To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
     
-    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}}]
+    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
@@ -29,7 +29,7 @@ module.exports = [{
     
     To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
     
-    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}}]
+    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
@@ -279,7 +279,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel]]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

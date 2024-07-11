@@ -7,16 +7,18 @@ info: {
 aliases: "suggestion-set",
 usage: "suggest-set channel-name/channel ID or <#channel ID>",
 code: `
-$setGuildVar[suggestionchannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the suggestion channel!
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
+$setGuildVar[suggestionchannel;$get[channeltarget]]
+Successfully set <#$get[channeltarget]> as the suggestion channel!
+$onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel;addreactions]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
 \`ViewChannel\`
 \`SendMessages\`
 \`AddReactions\`
 ]
-$onlyIf[$findChannel[$message]!=$getGuildVar[suggestionchannel]; You already have set this channel for Suggestions. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+$onlyIf[$get[channeltarget]!=$getGuildVar[suggestionchannel]; You already have set this channel for Suggestions. Please mention a different one instead.]
+$onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
+$onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+
+$let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;usage]]\`]
 $cooldown[5s; Slow down! Don't spam the command!

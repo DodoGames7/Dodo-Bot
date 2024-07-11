@@ -4,7 +4,7 @@ require('dotenv').config() // Enable env support in local hosting
 
 // Client Setup
 const client = new AoiClient({
-  token: process.env.TOKEN || config.BotToken, // Token with either env or config
+  token: process.env.BotToken || config.BotToken, // Token with either env or config
   prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default prefix used: d!)
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration", "GuildEmojisAndStickers"], // Discord.js intents (v14)
   events: ["onMessage", "onInteractionCreate", "onJoin", "onMessageDelete", "onMessageUpdate", "onLeave", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
@@ -18,14 +18,14 @@ const client = new AoiClient({
     securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config
   },
  disableFunctions: ["$clientToken"], // For safety reasons
- mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
+ mobilePlatform: config.MobileStatus || process.env.MobileStatus, // Whether or not to enable mobile status
  debugs: {
- interpreter: config.DebugClient // Whether or not to enable aoi.js debug mode
+ interpreter: config.DebugClient || process.env.DebugClient // Whether or not to enable aoi.js debug mode
 }
 });
 
 // Handlers
-client.loadCommands("./commands/", config.LogCommands);
+client.loadCommands("./commands/", config.LogCommands || process.env.LogCommands);
 client.variables(require("./handler/variables.js"));
 
 

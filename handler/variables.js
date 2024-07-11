@@ -8,15 +8,15 @@ module.exports = {
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.1",
-  versionCodename: "Scorpion",
+  version: "2.1.2",
+  versionCodename: "Cupcakes",
   buildStatus: "Complete",
-  buildDate: "1720145724803",
+  buildDate: "1720721180262",
   buildType: "Official Stable",
   buildBranch: "main",
   buildRevision: "0",
   embedcolor: "#2A3759",
-  buildNumber: "2101",
+  buildNumber: "2109",
   release_type: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
@@ -56,7 +56,6 @@ module.exports = {
   startupchannel: "none",
   startupchannelsystem: "off",
   pre_release_mode: "off",
-  gitbuildscheck: "on",
   botgreeting: "on",
   
 }

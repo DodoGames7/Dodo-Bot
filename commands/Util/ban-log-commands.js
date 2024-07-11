@@ -6,20 +6,22 @@ info: {
     usage: "set-banlog channel-name/channel ID or <#channel ID>"
 },
 aliases: "set-banlogs",
-code: `$setGuildVar[banneduserschannel;$findChannel[$message]]
-Successfully set <#$findChannel[$message]> as the Ban logs channel!
-$onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
+code: `$setGuildVar[banneduserschannel;$get[channeltarget]]
+Successfully set <#$get[channeltarget]> as the Ban logs channel!
+$onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
 \`ViewChannel\`
 \`SendMessages\`
 ]
-$onlyIf[$findChannel[$message]!=$getGuildVar[banneduserschannel]; You already have set this channel for Ban logs. Please mention a different one instead.]
-$onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-$onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-banlog;$authorID];$dateStamp];1000]]:R>]
+$onlyIf[$get[channeltarget]!=$getGuildVar[banneduserschannel]; You already have set this channel for Ban logs. Please mention a different one instead.]
+$onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
+$onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+
+$let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-banlog;info.usage]]\`]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;set-banlog;$authorID];$dateStamp];1000]]:R>]
 `
 },{
 name: "reset-banlog",
@@ -43,20 +45,22 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         usage: "set-unbanlog channel-name/channel ID or <#channel ID>",
     },
     aliases: "set-unbanlogs",
-    code: `$setGuildVar[unbanneduserschannel;$findChannel[$message]]
-    Successfully set <#$findChannel[$message]> as the un-ban logs channel!
-    $onlyIf[$hasPermsInChannel[$findChannel[$message];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
+    code: `$setGuildVar[unbanneduserschannel;$get[channeltarget]]
+    Successfully set <#$get[channeltarget]> as the un-ban logs channel!
+    $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have permissions there, please ensure that i have the following for this channel:
     \`ViewChannel\`
     \`SendMessages\`
     ]
-    $onlyIf[$findChannel[$message]!=$getGuildVar[unbanneduserschannel]; You already have set this channel for un-ban logs. Please mention a different one instead.]
-    $onlyIf[$checkContains[$channelType[$findChannel[$message]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
-    $onlyIf[$guildChannelExists[$guildID;$findChannel[$message]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
-    $cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-unbanlog;$authorID];$dateStamp];1000]]:R>]
+    $onlyIf[$get[channeltarget]!=$getGuildVar[unbanneduserschannel]; You already have set this channel for un-ban logs. Please mention a different one instead.]
+    $onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
+    $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
+
+    $let[channeltarget;$findGuildChannel[$message;false]]
     $onlyIf[$message!=;Please set an channel.
     Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-unbanlog;info.usage]]\`]
-    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
+    $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
+    $cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;set-unbanlog;$authorID];$dateStamp];1000]]:R>]`
     },{
     name: "reset-unbanlog",
     info: {

@@ -7,7 +7,7 @@ info: {
 code: `$title[Leave]
 $description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
 
-To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the \`Settings\` button.
+To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
 
 $get[leavesystem]
 ]

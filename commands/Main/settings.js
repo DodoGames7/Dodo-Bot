@@ -2,7 +2,7 @@ module.exports = {
   name: "settings",
   info: {
     description: "Let's you manage some settings of Dodo-Bot.",
-    perms: ["`SendMessages`", "`ManageMessages`"]
+    perms: ["`SendMessages`", "`ManageGuild`"]
 },
   aliases: "panel",
   code: `$title[Settings]
@@ -12,5 +12,5 @@ module.exports = {
   $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/whitesettings.png]
   $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;settings;$authorID];$dateStamp];1000]]:R>]
-  $onlyPerms[managemessages;You need \`ManageMessages\` permission to access this panel.]`
+  $onlyPerms[manageguild;You need \`ManageGuild\` permission to access this panel.]`
 }

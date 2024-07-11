@@ -1,15 +1,15 @@
 module.exports = {
     name: "credits",
     info: {
-        description: "Returns a list of credits for things that were introduced into Dodo-Bot.",
+        description: "Returns a list of credits for things that were introduced in Dodo-Bot.",
         perms: ["`SendMessages`"]
     },
     code: `$title[Dodo-Bot Credits]
     $description[
-    $username[632607624742961153] - Developer of the bot
-    $username[431749535656837130] - Inspiration to improve some commands
-    $username[738856854892839022] - For Leveling setup
-    $username[769525910164471821] - For \`guess-the-pokemon\` code
+* $username[632607624742961153] - Developer of the bot
+* $username[431749535656837130] - Inspiration to improve some commands
+* $username[738856854892839022] - For Leveling setup
+* $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Use of source code;2;useofsource_$authorID;false]

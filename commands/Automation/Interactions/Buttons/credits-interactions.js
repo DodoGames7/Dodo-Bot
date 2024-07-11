@@ -6,6 +6,7 @@ module.exports = [{
 * **aoi.js** - The entire bot basically. Dodo-Bot is made using aoi.js!
 * **discord-gamecord** - Mostly used in game commands such as \`minesweeper\`, \`snake\`, etc.
 * **chalk** - For colored texts on console especially the bot's custom message}
+* **dotenv** - Better environment variables support in local hosting
 {field:No longer used:
 * **@akarui/aoi.parser** - For making interactions less complicated...
 * **@nottca/weky** - A package that caused some of the commands here to appear.
@@ -24,10 +25,10 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Dodo-Bot Credits}{description:
-    $username[632607624742961153] - Developer of the bot
-    $username[431749535656837130] - Inspiration to improve some commands
-    $username[738856854892839022] - For Leveling setup
-    $username[769525910164471821] - For \`guess-the-pokemon\` code
+* $username[632607624742961153] - Developer of the bot
+* $username[431749535656837130] - Inspiration to improve some commands
+* $username[738856854892839022] - For Leveling setup
+* $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
 }{color:$getVar[embedcolor]}}{actionRow:{button:Main Credits:2:maincredits_$authorID:true}{button:Packages used:2:packagesused_$authorID:false}{button:Use of source code:2:useofsource_$authorID:false}}]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
