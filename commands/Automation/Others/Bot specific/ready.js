@@ -11,7 +11,7 @@ $djsEval[const chalk = require('chalk')
 
 console.log(chalk.yellow("Tip: Found an issue? Report it here: https://github.com/DodoGames7/Dodo-Bot/issues/new"))
 ]
-$log[Dodo Bot v$getVar[version] $if[$getVar[pre_release_mode]==on;(build $getVar[buildNumber])] is ready to be used on the client $userTag[$clientID]!]
+$log[Dodo Bot v$getVar[version]$if[$getVar[pre_release_mode]==on; (build $getVar[buildNumber])] is ready to be used on the client $userTag[$clientID]!]
 $wait[2s]
 $ifAwaited[$getVar[pre_release_mode]==on;{execute:senddevwarning}]`
 },{
