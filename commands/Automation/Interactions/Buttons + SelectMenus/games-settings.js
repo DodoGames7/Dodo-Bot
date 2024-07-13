@@ -20,7 +20,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]`
 
   Select the options which you want to customise.
 
-  **Current Settings**
+  **Current Setting(s)**
   Trivia Type#COLON# \`$getGuildVar[trivia_type]\`
   Trivia Difficulty#COLON# \`$getGuildVar[trivia_difficulty]\`
 
@@ -44,7 +44,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]`
 
     Choosing single will cause the game to start with only answer for each question, otherwise, multiple will start the game with multiple answers selection for each question.
 
-**Current Settings**
+**Current Setting(s)**
 **Trivia type#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_type]]\`
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:triviatypetoggle_$authorID:false}}]
 
@@ -69,7 +69,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==triviasettings;]
 
   Easy starts the game with questions easy to answer, Medium will start the game with somewhat normal but with medium knowledge required, Hard will start the game in questions that're hard to answer (unless you're smart).
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_difficulty]]\` 
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:triviaopteasy_$authorID:false}{button:Medium:2:triviaoptmedium_$authorID:false}{button:Hard:2:triviaopthard_$authorID:false}}]
 
@@ -94,7 +94,7 @@ $interactionUpdate[{newEmbed:{title:Trivia type}{description:
 
     Choosing single will cause the game to start with only answer for each question, otherwise, multiple will start the game with multiple answers selection for each question.
 
-**Current Settings**
+**Current Setting(s)**
 **Trivia type#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_type]]\`
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:triviatypetoggle_$authorID:false}}]
 
@@ -119,7 +119,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[trivia_
 
   Select the options which you want to customise.
 
-  **Current Settings**
+  **Current Setting(s)**
   **Difficulty#COLON#** \`$get[type]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}};;all;true]
 
@@ -141,7 +141,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[trivia_
 * **Normal**#COLON# Starts with Medium sized blocks
 * **Hard**#COLON# Starts with Large amount of blocks
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
@@ -166,7 +166,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 * **Normal**#COLON# Starts with Medium sized blocks
 * **Hard**#COLON# Starts with Large amount of blocks
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
@@ -198,7 +198,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 * **Normal**#COLON# Starts with Medium sized blocks
 * **Hard**#COLON# Starts with Large amount of blocks
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
@@ -229,7 +229,7 @@ $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficul
 * **Normal**#COLON# Starts with Medium sized blocks
 * **Hard**#COLON# Starts with Large amount of blocks
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:floodsettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Difficulty:floodmode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:floodopteasy_$authorID:false}{button:Normal:2:floodoptnormal_$authorID:false}{button:Hard:2:floodopthard_$authorID:false}}]
 
@@ -263,7 +263,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 
   Easy starts the game with questions easy to answer, Medium will start the game with somewhat normal but with medium knowledge required, Hard will start the game in questions that're hard to answer (unless you're smart).
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_difficulty]]\` 
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:triviaopteasy_$authorID:false}{button:Medium:2:triviaoptmedium_$authorID:false}{button:Hard:2:triviaopthard_$authorID:false}}]
   $setGuildVar[trivia_difficulty;easy]
@@ -295,7 +295,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 
   Easy starts the game with questions easy to answer, Medium will start the game with somewhat normal but with medium knowledge required, Hard will start the game in questions that're hard to answer (unless you're smart).
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_difficulty]]\` 
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:triviaopteasy_$authorID:false}{button:Medium:2:triviaoptmedium_$authorID:false}{button:Hard:2:triviaopthard_$authorID:false}}]
   $setGuildVar[trivia_difficulty;medium]
@@ -328,7 +328,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 
   Easy starts the game with questions easy to answer, Medium will start the game with somewhat normal but with medium knowledge required, Hard will start the game in questions that're hard to answer (unless you're smart).
 
-**Current Settings**
+**Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGuildVar[trivia_difficulty]]\` 
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select an option to view information about.:1:1:false:{stringInput:Trivia type:triviatype:How should the game start questions?:false}{stringInput:Difficulty:triviamode:How easy the game can be?:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Easy:2:triviaopteasy_$authorID:false}{button:Medium:2:triviaoptmedium_$authorID:false}{button:Hard:2:triviaopthard_$authorID:false}}]
   $setGuildVar[trivia_difficulty;hard]

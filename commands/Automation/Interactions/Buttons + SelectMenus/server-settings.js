@@ -4,7 +4,7 @@ module.exports = [{
   code: `$interactionUpdate[{newEmbed:{title:Server Settings}{description:
       Select an option which you want to change.
 
-  **Current Settings**
+  **Current Setting(s)**
   **Beta access**#COLON# \`$get[betaserver]\`
   **Anonymous**#COLON# \`$get[anonymous]\`
 
@@ -29,7 +29,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
 
 This is not recommended for public servers as Beta commands are not fully stable to be always used! Enable this at your own risk!
 
-**Current Settings**
+**Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
       }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
 
@@ -52,7 +52,7 @@ $interactionUpdate[{newEmbed:{title:Beta Access}{description:
 
 This is not recommended for public servers as Beta commands are not fully stable to be always used! Enable this at your own risk!
 
-**Current Settings**
+**Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
       }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
 
@@ -79,7 +79,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
         For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
 
-**Current Settings**
+**Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
       }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
 
@@ -102,7 +102,7 @@ $interactionUpdate[{newEmbed:{title:Anonymous}{description:
 
   For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
 
-**Current Settings**
+**Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
       }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
 

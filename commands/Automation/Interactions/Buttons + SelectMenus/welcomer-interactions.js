@@ -54,7 +54,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Welcomer Settings}{description: Welcome to Welcomer settings! Select an option to change.
 
-**Current Settings**
+**Current Setting(s)**
 **Channel#COLON#** $get[welcomerchannel]
 **Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false:🏠}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
 
@@ -73,7 +73,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[welcomerchannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
@@ -96,7 +96,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[welcomerchannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!

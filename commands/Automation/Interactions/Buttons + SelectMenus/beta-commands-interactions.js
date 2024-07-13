@@ -7,7 +7,7 @@ module.exports = [{
 	$interactionUpdate[{newEmbed:{title:Beta Commands}{description:
  Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     
-**Current Settings**
+**Current Setting(s)**
 **Beta commands**#COLON# \`$get[betastatus]\`
 
 **NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.
@@ -50,7 +50,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
 $interactionUpdate[{newEmbed:{title:Beta Commands}{description:
  Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     
-**Current Settings**
+**Current Setting(s)**
 **Beta commands**#COLON# \`$get[betastatus]\`
 
 **NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.

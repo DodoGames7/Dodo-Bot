@@ -54,7 +54,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Leave Settings}{description: Welcome to Leave settings! Select an option to change.
 
-**Current Settings**
+**Current Setting(s)**
 **Channel#COLON#** $get[leavechannel]
 **Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}}{actionRow:{button:Home:2:leavehomebutton_$authorID:false:🏠}{button:Channel:2:leavechannelbutton_$authorID:false}{button:Message:2:leavemessagebutton_$authorID:false}{button:Placeholders:2:leaveplaceholders_$authorID:false}}]
 
@@ -73,7 +73,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[leavechannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
@@ -96,7 +96,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[leavechannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
@@ -219,7 +219,7 @@ Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 
 \`Text\` is the default type used for Leave messages. \`Embed\` will cause the Leave messages to use embeds. It's worth noting that if the Leave message is over 2000 characters then the \`Embed\` mode will be enforced as a result due to Discord's character limits for general messages!
 
-**Current Settings**
+**Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}}{actionRow:{button:Go back:2:leavemessagebutton_$authorID:false:↩️}{button:Toggle:2:toggleleavemessagetype_$authorID:false:🔄}}]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -241,7 +241,7 @@ $interactionUpdate[{newEmbed:{title:Message type}{description:In Leave, there're
 
 \`Text\` is the default type used for Leave messages. \`Embed\` will cause the Leave messages to use embeds. It's worth noting that if the Leave message is over 2000 characters then the \`Embed\` mode will be enforced as a result due to Discord's character limits for general messages!
 
-**Current Settings**
+**Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}}{actionRow:{button:Go back:2:leavemessagebutton_$authorID:false:↩️}{button:Toggle:2:toggleleavemessagetype_$authorID:false:🔄}}]
 
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[leavetype]==embed];true;Leave message will now be in embeds!;false;Leave message will now be in \`Text\` mode!]]

@@ -16,7 +16,7 @@ code: `$interactionUpdate[{newEmbed:{title:Dodo-Bot Settings}{description:
 
 Select the options you want to customise.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autoreply]\`
 **Include Bots (Logs)**#COLON# \`$get[includebots]\`
 
@@ -43,7 +43,7 @@ $onlyIf[$getSelectMenuValues[all]==botmenu;]
 
 Disable this If It's purposefully used for spamming.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autopingreply]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
@@ -64,7 +64,7 @@ $onlyIf[$getSelectMenuValues[all]==autoreply;]
 
 By default, this is enabled but you can choose to disable it for whatever reason.
 
-**Current Settings**
+**Current Setting(s)**
 **Include Bots**#COLON# \`$get[includebots]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
 
@@ -88,7 +88,7 @@ $interactionUpdate[{newEmbed:{title:Auto Reply}{description:
 
 Disable this If It's purposefully used for spamming.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autopingreply]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
@@ -115,7 +115,7 @@ $interactionUpdate[{newEmbed:{title:Include Bots}{description:
 
 By default, this is enabled but you can choose to disable it for whatever reason.
 
-**Current Settings**
+**Current Setting(s)**
 **Include Bots**#COLON# \`$get[includebots]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
 

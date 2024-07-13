@@ -4,6 +4,7 @@ module.exports = [{
     code: `$interactionUpdate[{newEmbed:{title:Packages used}{description:
         Some stuff in Dodo-Bot were made possible using certain packages. This page aims to credit all of the packages to respect their owners.}{field:Packages:
 * **aoi.js** - The entire bot basically. Dodo-Bot is made using aoi.js!
+* **@aoijs/aoi.db** - Database used in the bot
 * **discord-gamecord** - Mostly used in game commands such as \`minesweeper\`, \`snake\`, etc.
 * **chalk** - For colored texts on console especially the bot's custom message}
 * **dotenv** - Better environment variables support in local hosting
