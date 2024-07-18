@@ -14,7 +14,7 @@ $let[leaderboard;$advancedReplaceText[$userLeaderBoard[$guildID;level;desc;&{top
 $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
     $color[$getVar[embedcolor]]
     $onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
-    $cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;leaderboard;$authorID];$dateStamp];1000]]:R>]
+    $cooldown[3s;Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;leaderboard;$authorID];$dateStamp];1000]]:R>]
 `
 }

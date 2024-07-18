@@ -12,7 +12,7 @@ $awaitComponents[$channelID;$get[messageID];$authorID;headsbutton,tailsbutton;he
 $let[messageID;$sendMessage[{newEmbed:{title:🪙 | Coin Flip}{description:The coin is in the air, choose Heads or Tails below.}{color:$getVar[embedcolor]}}
 
 {actionRow:{button:Heads:2:headsbutton:false}{button:Tails:2:tailsbutton:false}};true]]
- $cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;coinflip;$authorID];$dateStamp];1000]]:R>]
+ $cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;coinflip;$authorID];$dateStamp];1000]]:R>]
   `
 }
