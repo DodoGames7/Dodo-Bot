@@ -22,7 +22,7 @@ const Game = new Flood({
     title: 'Flood',
     color: '$getVar[embedcolor]',
   },
-  difficulty: $getGuildVar[flood_difficulty],
+  difficulty: $getGlobalUserVar[flood_difficulty],
   timeoutTime: 60000,
   buttonStyle: 'SECONDARY',
   emojis: ['🟥', '🟦', '🟧', '🟪', '🟩'],

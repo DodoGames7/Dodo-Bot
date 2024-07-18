@@ -16,7 +16,7 @@ module.exports = {
   buildType: "Pre-release",
   buildBranch: "main",
   buildRevision: "0",
-  buildNumber: "2115",
+  buildNumber: "2116",
   embedcolor: "#2A3759",
   release_type: "Pre-release",
   prefix: config.prefix,
