@@ -9,8 +9,8 @@ aliases: ["talk","repeat"],
 What do you want me to say?
 
 **Tip:** To use embed mode, make sure your message contains the flag \`--embed\` to do so.
- $cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;say;$authorID];$dateStamp];1000]]:R>]
+ $cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;say;$authorID];$dateStamp];1000]]:R>]
   `
 },{
     name: "awaitedsay",

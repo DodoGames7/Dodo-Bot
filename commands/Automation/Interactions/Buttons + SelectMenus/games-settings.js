@@ -6,7 +6,7 @@ module.exports = [{
 * **Single**
 * **Multiple**
 
-    Choosing single will cause the game to start with only "True" or "False" answer for each question, otherwise, multiple will start the game with multiple answers selection for each question.
+**Single** will start the game with only "True" or "False" answer for each question. **Multiple** will start the game with multiple answers for each question.
 
 **Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_type]]\`
@@ -30,7 +30,7 @@ $interactionUpdate[{newEmbed:{title:Trivia type}{description:
 * **Single**
 * **Multiple**
 
-    Choosing single will cause the game to start with only "True" or "False" answer for each question, otherwise, multiple will start the game with multiple answers selection for each question.
+**Single** will start the game with only "True" or "False" answer for each question. **Multiple** will start the game with multiple answers for each question.
 
 **Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_type]]\`
@@ -60,7 +60,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[tr
 * **Medium**
 * **Hard**
 
-  Easy starts the game with questions easy to answer. Medium will start the game with normal but with medium knowledge required-type questions. Hard will start the game in questions that're hard to answer (unless you're smart)!
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_difficulty]]\`
@@ -87,7 +87,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 * **Medium**
 * **Hard**
 
-  Easy starts the game with questions easy to answer. Medium will start the game with normal but with medium knowledge required-type questions. Hard will start the game in questions that're hard to answer (unless you're smart)!
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_difficulty]]\`
@@ -95,7 +95,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
   $setGlobalUserVar[trivia_difficulty;easy]
 
   $onlyIf[$getGlobalUserVar[trivia_difficulty]!=easy;
-  You have already selected easy mode!
+This difficulty option is already used!
  {ephemeral}
 {interaction}
 ]
@@ -119,7 +119,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 * **Medium**
 * **Hard**
 
-  Easy starts the game with questions easy to answer. Medium will start the game with normal but with medium knowledge required-type questions. Hard will start the game in questions that're hard to answer (unless you're smart)!
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_difficulty]]\`
@@ -127,7 +127,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
   $setGlobalUserVar[trivia_difficulty;medium]
 
   $onlyIf[$getGlobalUserVar[trivia_difficulty]!=medium;
-  You have already selected medium mode!
+This difficulty option is already used!
  {ephemeral}
 {interaction}
 ]
@@ -152,7 +152,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
 * **Medium**
 * **Hard**
 
-  Easy starts the game with questions easy to answer. Medium will start the game with normal but with medium knowledge required-type questions. Hard will start the game in questions that're hard to answer (unless you're smart)!
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_difficulty]]\`
@@ -160,7 +160,7 @@ $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
   $setGlobalUserVar[trivia_difficulty;hard]
 
   $onlyIf[$getGlobalUserVar[trivia_difficulty]!=hard;
-  You have already selected hard mode!
+This difficulty option is already used!
 {ephemeral}
 {interaction}
 ]
@@ -178,9 +178,11 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
   prototype: "selectMenu",
   code: `$interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use?
 
-* **Easy**#COLON# Starts with Less blocks
-* **Normal**#COLON# Starts with Medium sized blocks
-* **Hard**#COLON# Starts with Large amount of blocks
+* **Easy**#COLON# Starts with blocks at small size
+* **Normal**#COLON# Starts with blocks at medium size
+* **Hard**#COLON# Starts with blocks at large size
+
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
@@ -203,9 +205,11 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==floodsettings;]
   code: `$interactionFollowUp[Set Flood's difficulty to \`Easy\`!;true]
 $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use?
 
-* **Easy**#COLON# Starts with Less blocks
-* **Normal**#COLON# Starts with Medium sized blocks
-* **Hard**#COLON# Starts with Large amount of blocks
+* **Easy**#COLON# Starts with blocks at small size
+* **Normal**#COLON# Starts with blocks at medium size
+* **Hard**#COLON# Starts with blocks at large size
+
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
@@ -215,7 +219,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   $setGlobalUserVar[flood_difficulty;8]
 
   $onlyIf[$getGlobalUserVar[flood_difficulty]!=8;
-  You have already selected easy mode!
+  This difficulty option is already used!
   {ephemeral}
 {interaction}
 ]
@@ -235,9 +239,11 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   code: `$interactionFollowUp[Set Flood's difficulty to \`Normal\`!;true]
 $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use?
 
-* **Easy**#COLON# Starts with Less blocks
-* **Normal**#COLON# Starts with Medium sized blocks
-* **Hard**#COLON# Starts with Large amount of blocks
+* **Easy**#COLON# Starts with blocks at small size
+* **Normal**#COLON# Starts with blocks at medium size
+* **Hard**#COLON# Starts with blocks at large size
+
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
@@ -247,7 +253,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   $setGlobalUserVar[flood_difficulty;13]
 
   $onlyIf[$getGlobalUserVar[flood_difficulty]!=13;
-  You have already selected normal mode!
+  This difficulty option is already used!
   {ephemeral}
 {interaction}
 ]
@@ -266,9 +272,11 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   code: `$interactionFollowUp[Set Flood's difficulty to \`Hard\`!;true]
 $interactionUpdate[{newEmbed:{title:Flood difficulty}{description:Which difficulty do you prefer to use?
 
-* **Easy**#COLON# Starts with Less blocks
-* **Normal**#COLON# Starts with Medium sized blocks
-* **Hard**#COLON# Starts with Large amount of blocks
+* **Easy**#COLON# Starts with blocks at small size
+* **Normal**#COLON# Starts with blocks at medium size
+* **Hard**#COLON# Starts with blocks at large size
+
+To change difficulty to any of the options above, use the buttons below to do so!
 
 **Current Setting(s)**
 **Difficulty#COLON#** \`$get[floodmode]\`
@@ -278,7 +286,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   $setGlobalUserVar[flood_difficulty;18]
 
   $onlyIf[$getGlobalUserVar[flood_difficulty]!=18;
-  You have already selected hard mode!
+  This difficulty option is already used!
   {ephemeral}
 {interaction}
 ]
