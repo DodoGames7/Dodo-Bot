@@ -12,13 +12,13 @@ module.exports = {
   versionCodename: "Crystal",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1721476171547",
-  buildType: "Official Beta",
+  buildDate: "1721609549008",
+  buildType: "Official Stable",
   buildBranch: "main",
   buildRevision: "0",
-  buildNumber: "2117",
+  buildNumber: "2119",
   embedcolor: "#2A3759",
-  release_type: "Beta",
+  release_type: "Stable",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -57,7 +57,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on",
+  pre_release_mode: "off",
   botgreeting: "on",
   
 }

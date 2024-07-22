@@ -54,7 +54,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[tr
   type: "interaction",
   prototype: "selectMenu",
   code: `$interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
-    This option is dedicated to how hard/easy should the game be. There're 3 options#COLON#
+    This option is dedicated to how hard the game will be. There're 3 options#COLON#
 
 * **Easy**
 * **Medium**
@@ -81,7 +81,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==triviasettings;]
   prototype: "button",
   code: `$interactionFollowUp[Set Trivia's difficulty to \`Easy\`!;true]
 $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
-    This option is dedicated to how hard/easy should the game be. There're 3 options#COLON#
+    This option is dedicated to how hard the game will be. There're 3 options#COLON#
 
 * **Easy**
 * **Medium**
@@ -113,7 +113,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
   prototype: "button",
   code: `$interactionFollowUp[Set Trivia's difficulty to \`Medium\`!;true]
 $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
-    This option is dedicated to how hard/easy should the game be. There're 3 options#COLON#
+    This option is dedicated to how hard the game will be. There're 3 options#COLON#
 
 * **Easy**
 * **Medium**
@@ -146,7 +146,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
   prototype: "button",
   code: `$interactionFollowUp[Set Trivia's difficulty to \`Hard\`!;true]
 $interactionUpdate[{newEmbed:{title:Trivia Difficulty}{description:
-    This option is dedicated to how hard/easy should the game be. There're 3 options#COLON#
+    This option is dedicated to how hard the game will be. There're 3 options#COLON#
 
 * **Easy**
 * **Medium**
