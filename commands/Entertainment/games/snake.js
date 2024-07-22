@@ -33,6 +33,6 @@ const Game = new Snake({
 
 Game.startGame();
 ]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;snake;$authorID];$dateStamp];1000]]:R>]`
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;snake;$authorID];$dateStamp];1000]]:R>]`
 }

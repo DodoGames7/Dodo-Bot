@@ -5,7 +5,7 @@ module.exports = {
     perms: ["`SendMessages`"]
 },
   code: `$title[Help Menu]
-  $description[To view commands, select one of the modules!]
+  $description[To view commands, select one of the modules from the dropdown menu below!]
   $footer[Made with ❤️ by $username[632607624742961153]]
   $color[$getVar[embedcolor]]
   $addSelectMenu[1;string;helpmenu_$authorID;Select a Module;1;1;false;Main:Explore commands from Main module:general:false;Entertainment:Explore commands from Entertainment module:entertainment:false;Leveling:Explore commands from Leveling module:leveling:false;Util:Explore commands from Util module:util:false]

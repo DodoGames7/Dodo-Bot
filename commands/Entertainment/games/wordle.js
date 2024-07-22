@@ -24,8 +24,8 @@ const Game = new Wordle({
 Game.startGame();
 
 ]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;wordle;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;wordle;$authorID];$dateStamp];1000]]:R>]
 
 `
 }

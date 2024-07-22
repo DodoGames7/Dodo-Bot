@@ -1,10 +1,19 @@
-module.exports = {
+module.exports = [{
   name: "flood",
   info: {
-    description: "Starts a game of Flood.",
+    description: "Starts a game of Flood (pass the flag \`--settings\` to open up the settings).",
     perms: ["`SendMessages`"]
   },
-  code: `$djsEval[const { Flood } = require('discord-gamecord');
+  code: `$ifAwaited[$checkContains[$message;--settings;—settings]==true;{execute:floodsettings};{execute:floodstart}]
+
+
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;flood;$authorID];$dateStamp];1000]]:R>]`
+},{
+  name: "floodstart",
+  type: "awaited",
+  code: `
+  $djsEval[const { Flood } = require('discord-gamecord');
 
 const Game = new Flood({
   message: message,
@@ -13,7 +22,7 @@ const Game = new Flood({
     title: 'Flood',
     color: '$getVar[embedcolor]',
   },
-  difficulty: $getGuildVar[flood_difficulty],
+  difficulty: $getGlobalUserVar[flood_difficulty],
   timeoutTime: 60000,
   buttonStyle: 'SECONDARY',
   emojis: ['🟥', '🟦', '🟧', '🟪', '🟩'],
@@ -24,6 +33,18 @@ const Game = new Flood({
 
 Game.startGame();
 ]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;flood;$authorID];$dateStamp];1000]]:R>]`
-}
+`
+},{
+  name: "floodsettings",
+  type: "awaited",
+  code: `$title[Flood Settings]
+  $description[Welcome to Flood settings! To select a option to change, use the dropdown menu below!
+
+  **Current Setting(s)**
+  **Difficulty#COLON#** \`$get[type]\`
+  ]
+  $color[$getVar[embedcolor]]
+  $addSelectMenu[1;string;floodsettings_$authorID;Select a option;1;1;false;Difficulty:How hard the game will be?:flooddifficulty:false]
+  $let[type;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;\`Hard\`;13;\`Normal\`;8;\`Easy\`]]
+  `
+}]

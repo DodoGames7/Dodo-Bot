@@ -1,7 +1,7 @@
 module.exports = [{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Settings}{description:Welcome to settings! Here, you can change things the bot usually operates. To change any setting, use the select menu to view each one accordingly.}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/whitesettings.png}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:settingsmenu_$authorID:Select an option.:1:1:false:{stringInput:Games:gamesmenu:Manage settings related to games.:false}{stringInput:Bot itself:botmenu:Customise on how Dodo Bot should Behave.:false}{stringInput:Server:servermenu:Manage settings related to the server.}}}]
+    code: `$interactionUpdate[{newEmbed:{title:Settings}{description:Welcome to settings! Here, you can change things the bot usually operates. To change any setting, use the select menu to view each one accordingly.}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/whitesettings.png}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:settingsmenu_$authorID:Select an option.:1:1:false:{stringInput:Bot itself:botmenu:Customise on how Dodo Bot should Behave.:false}{stringInput:Server:servermenu:Manage settings related to the server.}}}]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
    {ephemeral}
@@ -16,7 +16,7 @@ code: `$interactionUpdate[{newEmbed:{title:Dodo-Bot Settings}{description:
 
 Select the options you want to customise.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autoreply]\`
 **Include Bots (Logs)**#COLON# \`$get[includebots]\`
 
@@ -43,7 +43,7 @@ $onlyIf[$getSelectMenuValues[all]==botmenu;]
 
 Disable this If It's purposefully used for spamming.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autopingreply]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
@@ -64,7 +64,7 @@ $onlyIf[$getSelectMenuValues[all]==autoreply;]
 
 By default, this is enabled but you can choose to disable it for whatever reason.
 
-**Current Settings**
+**Current Setting(s)**
 **Include Bots**#COLON# \`$get[includebots]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
 
@@ -88,7 +88,7 @@ $interactionUpdate[{newEmbed:{title:Auto Reply}{description:
 
 Disable this If It's purposefully used for spamming.
 
-**Current Settings**
+**Current Setting(s)**
 **Auto Reply**#COLON# \`$get[autopingreply]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
@@ -115,7 +115,7 @@ $interactionUpdate[{newEmbed:{title:Include Bots}{description:
 
 By default, this is enabled but you can choose to disable it for whatever reason.
 
-**Current Settings**
+**Current Setting(s)**
 **Include Bots**#COLON# \`$get[includebots]\`
 }}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
 

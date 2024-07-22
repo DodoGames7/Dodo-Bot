@@ -87,7 +87,7 @@ $interactionUpdate[The current progress for all members will remain then.]
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
     
-**Current Settings**
+**Current Setting(s)**
 **Level up channel#COLON#** $get[levelupchannel]
 **Level up message#COLON#** \`$get[levelupmessage]\`
 
@@ -111,6 +111,7 @@ $interactionUpdate[The current progress for all members will remain then.]
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Placeholders}{description:Placeholders allows you to make your custom Level up message unique. Use the current ones available in this list!}{field:Member-related:
     \`<username>\` - Returns the member's username
+    \`<Displayname>\` - Returns the member's displayname
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
     \`<newlevel>\` - Returns the new level of the member
@@ -132,7 +133,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     Press the "Toggle" button to enable/disable the Level up Message or use the other options alternatively to manage level up message settings.
     
-    **Current Settings**
+    **Current Setting(s)**
     **Level up channel#COLON#** $get[levelupchannel]
     **Level up message#COLON#** \`$get[levelupmessage]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
@@ -155,7 +156,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     Press the "Toggle" button to enable/disable the Level up Message or use the other options alternatively to manage level up message settings.
     
-    **Current Settings**
+    **Current Setting(s)**
     **Level up channel#COLON#** $get[levelupchannel]
     **Level up message#COLON#** \`$get[levelupmessage]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:enablelevelingmessage_$authorID:false:🔄}{button:Set Channel:2:levelingchannelsetup_$authorID:false}{button:Set Message:2:levelingsetmsgmodal_$authorID:false}}{actionRow:{button:Test Message:2:levelingtestmessage_$authorID:false}}]
@@ -202,7 +203,7 @@ $interactionUpdate[The current progress for all members will remain then.]
         prototype: "button",
         code: `$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Level up messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[levelupchannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
@@ -225,7 +226,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Level up messages to be sent in. Use the select menu below for the channel to use!
     
-    **Current Settings**
+    **Current Setting(s)**
     **Channel#COLON#** $get[levelupchannel]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
@@ -322,7 +323,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     By default, this is disabled but you can choose to enable it if you want to do so.
     
-    **Current Settings**
+    **Current Setting(s)**
     **Reset on Leave#COLON#** \`$get[levelreset]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:togglelevelingreset_$authorID:false:🔄}}]
     
@@ -341,7 +342,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     By default, this is disabled but you can choose to enable it if you want to do so.
     
-    **Current Settings**
+    **Current Setting(s)**
     **Reset on Leave#COLON#** \`$get[levelreset]\`
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}{button:Toggle:2:togglelevelingreset_$authorID:false:🔄}}]
     

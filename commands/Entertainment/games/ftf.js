@@ -12,6 +12,6 @@ $let[messageID;$sendMessage[{newEmbed:{title:🚩 | Find the flag!}{description:
 
 {actionRow:{button::2:ftf1:false:1️⃣}{button::2:ftf2:false:2️⃣}{button::2:ftf3:false:3️⃣}}
 ;true]]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;findtheflag;$authorID];$dateStamp];1000]]:R>]`
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;findtheflag;$authorID];$dateStamp];1000]]:R>]`
 }]

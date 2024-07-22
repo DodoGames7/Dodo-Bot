@@ -12,7 +12,7 @@ const client = new AoiClient({
   aoiWarning: false, // Disable aoi.js update warning
   database: { // Use aoi.db as the default database for storing data
     type: "aoi.db",
-    db: require("@akarui/aoi.db"),
+    db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
     tables: ["main"],
     securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config

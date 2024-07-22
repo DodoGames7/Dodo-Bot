@@ -7,10 +7,10 @@ module.exports = [{
 	$interactionUpdate[{newEmbed:{title:Beta Commands}{description:
  Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     
-**Current Settings**
-**Beta commands**#COLON# \`$get[betastatus]\`
+**Current Setting(s)**
+**Beta Commands**#COLON# \`$get[betastatus]\`
 
-**NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.
+**NOTE**: Commands in this feature will only work if you and the server have Beta Commands enabled due to safety reasons.
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 $let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
@@ -30,9 +30,8 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
     },{
         type: "interaction",
         prototype: "button",
-        code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available in this feature#COLON#
-
-\`lulcat\`
+        code: `$interactionUpdate[{newEmbed:{title:Commands}{description:
+*There're no commands currently available to test*
 }}{actionRow:{button:Home:2:betacmdshome_$authorID:false:🏠}}]
 
 
@@ -50,7 +49,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
 $interactionUpdate[{newEmbed:{title:Beta Commands}{description:
  Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     
-**Current Settings**
+**Current Setting(s)**
 **Beta commands**#COLON# \`$get[betastatus]\`
 
 **NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.

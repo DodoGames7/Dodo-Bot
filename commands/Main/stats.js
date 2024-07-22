@@ -10,7 +10,7 @@ code: `$title[$username[$clientID] stats]
 $addField[**Dodo-Bot**;\`v$getVar[version]\`;true]
 $addField[**Node.js**;\`$nodeVersion\`;true]
 $addField[**Servers**;$guildCount;true]
-$addField[**Aoi.js**;\`v$packageVersion\`;true]
+$addField[**Aoi.js**;$get[aoijsversion];true]
 $addField[**Uptime**;$uptime[humanize];true]
 $addField[**Ping**;$pingms;true]
 $addField[**CPU Usage**;$cpu;true]
@@ -21,6 +21,7 @@ $color[$getVar[embedcolor]]
 $if[$getVar[pre_release_mode]==on]
 $addButton[1;Build Info;2;buildinfo_$authorID;false]
 $endif
+$let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$packageVersion\` (Dev);false;\`v$packageVersion\`]]
 $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;stats;$authorID];$dateStamp];1000]]:R>]
 `

@@ -28,7 +28,7 @@ const Game = new FindEmoji({
 
 Game.startGame();
 ]
-$cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;findemoji;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s;Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;findemoji;$authorID];$dateStamp];1000]]:R>]
 `
 }
