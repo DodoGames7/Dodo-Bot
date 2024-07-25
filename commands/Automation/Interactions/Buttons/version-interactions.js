@@ -7,7 +7,8 @@ code: `$onlyIf[$customID==changes_$authorID;]
 $interactionUpdate[
 $title[Changes]
 $description[
-* Changed Embed color to \`#7851A9\`
+* Changed Embed color to \`#745446\`
+* Add the alias \`ci\` for \`commandinfo\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]

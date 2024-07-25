@@ -4,7 +4,7 @@ info: {
         description: "The command says it all. What else do you expect?",
         perms: "`SendMessages`"
     },
-aliases: ["cmdinfo"],
+aliases: ["cmdinfo", "ci"],
 type: "messageCreate",
 code: `$userCooldown[cmdinfolookercmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[cmdinfolookercmd]];1000]]:R>]
