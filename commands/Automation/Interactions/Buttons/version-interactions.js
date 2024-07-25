@@ -7,10 +7,7 @@ code: `$onlyIf[$customID==changes_$authorID;]
 $interactionUpdate[
 $title[Changes]
 $description[
-* First release, nothing much
-* You can now reset channel across all feature's settings
-* You can now actually preview messages of Welcomer, Leave and Leveling without first enabling them
-* Embed color is now dark aqua and more...
+* Changed Embed color to \`#7851A9\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
@@ -56,7 +53,7 @@ $onlyIf[$customID==other_$authorID;]
 $interactionUpdate[
 $title[Other]
 $description[
-* Sync some changes from Dodo-Bot v2
+*There're no changes in this category currently.*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
