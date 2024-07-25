@@ -8,17 +8,18 @@ module.exports = {
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.3",
-  versionCodename: "Crystal",
+  version: "2.1.4",
+  versionCodename: "Mars",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1721609549008",
-  buildType: "Official Stable",
+  buildDate: "1721875252280",
+  buildType: "Pre-release",
   buildBranch: "main",
   buildRevision: "0",
-  buildNumber: "2119",
+  exposebuildinfo: "on",
+  buildNumber: "2123",
   embedcolor: "#2A3759",
-  release_type: "Stable",
+  release_type: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -57,7 +58,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "off",
+  pre_release_mode: "on",
   botgreeting: "on",
   
 }

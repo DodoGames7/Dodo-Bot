@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:This panel allows you to change some things the bot operates behind the scenes. 
     
-        To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
+        To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Welome new servers!:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}{stringInput:Expose build information:exposebuildinfo:Whether or not to enable "Build Info" button in stats cmd:false:🛠️}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -450,5 +450,54 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]
             $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==startupbotpage;]
-            `}]
+            `},{
+    type: "interaction",
+    prototype: "selectMenu",
+    code: `$interactionUpdate[{newEmbed:{title:Expose build information!}{description:
+    This option allows you to either enable or disable "Build Info" button seen in \`stats\` command.
+
+    By default, it is commonly enabled by default for Pre-release builds besides Beta ones.
+
+**Current setting(s)**
+**Expose build information**#COLON# \`$get[exposebuildinfo]\`
+
+    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
+
+
+$let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+{interaction}]
+    $onlyIf[$getSelectMenuValues[all]==exposebuildinfo;]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==devmenu;]
+`
+},{
+        type: "interaction",
+        prototype: "button",
+        code: `
+$interactionFollowUp[$get[resultmessage];true]
+
+$interactionUpdate[{newEmbed:{title:Expose build information!}{description:
+    This option allows you to either enable or disable "Build Info" button seen in \`stats\` command.
+
+    By default, it is commonly enabled by default for Pre-release builds besides Beta ones.
+
+**Current setting(s)**
+**Expose build information**#COLON# \`$get[exposebuildinfo]\`
+
+    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
+
+
+$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]
+$let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Build information will be now be shown;false;Build information will no longer be shown!]]
+$setVar[exposebuildinfo;$get[newtoggledsetting]]
+$let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;off;false;on]]
+
+
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
+{interaction}]
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==exposebuildinfotoggle;]
+
+        `
+    }]
     
