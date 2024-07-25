@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@tryforge/forge.db": "^2.0.4",
-    "@tryforge/forgescript": "github:tryforge/ForgeScript#ed434d2",
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#511dbe8",
     "discord-gamecord": "^4.4.2",
     "dotenv": "^16.4.5",
     "fsgames": "github:user-lezi/fsgames#9228931",
