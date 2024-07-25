@@ -49,6 +49,6 @@ const games = new FSGames({ // setup fsgames
 ForgeDB.variables(require("./handler/variables.js"));
 functions.forEach((func) => client.functions.add(func));
 // Your bot token
-   client.login(process.env.TOKEN || config.BotToken);
+   client.login(process.env.BotToken || config.BotToken);
 
  
