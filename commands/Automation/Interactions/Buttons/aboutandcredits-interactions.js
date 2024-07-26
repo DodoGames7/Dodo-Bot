@@ -58,6 +58,7 @@ allowedInteractionTypes: ["button"],
 code: `$onlyIf[$customID==info_$authorID;]
 
 $let[quotes;$callFunction[quotes]]
+$attachment[./handler/assets/dodo-bot-logo.png;dodobot-logo.png]
 
 $interactionUpdate[
 $title[About Dodo-Bot]
@@ -68,7 +69,7 @@ Dodo-Bot is a personal project aiming to be an entertainment bot while at the sa
 The project has existed since late 2021 and to this day, it continues to be developed with new improvements along with other type of updates as well!
 ]
     $color[$getGlobalVar[embedcolor]]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/dodo-bot-logo.png]
+$thumbnail[attachment://dodobot-logo.png]
 $addActionRow
 $addButton[dodobotrebase_$authorID;Rebase;Secondary;;false]
 $addButton[https://github.com/DodoGames7/Dodo-Bot;Source code;Link]
@@ -78,13 +79,14 @@ type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `$onlyIf[$customID==dodobotrebase_$authorID;]
 
+$attachment[./handler/assets/dodo-bot-logo.png;dodobot-logo.png]
 
 $interactionUpdate[$title[About rebase]
 $description[Rebase is a special version of Dodo-Bot acting as a backup. It is based on $hyperlink[CupcakeX;https://github.com/dodoGames7/CupcakeX] codebase albeit being improved and having additions compared to the current build of it featuring new techniques and stuff.
 
 As the name implies, it mostly acts as a emergency build in case if aoi.js suddenly died one day. It's also used for learning new stuff.]
 $color[$getGlobalVar[embedcolor]]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/dodo-bot-logo.png]
+$thumbnail[attachment://dodobot-logo.png]
 $addActionRow
 $addButton[info_$authorID;Home;Secondary;🏠]
 ]

@@ -7,9 +7,11 @@ info: {
 },
 type: "messageCreate",
 code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+$attachment[./handler/assets/warningsign.png;warningsign.png]
+
 $title[Shutting down]
 $description[Do you really want to shutdown the bot? This will simply stop your bot from responding. To turn on the bot, you need to go through your host to start it once again.]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png]
+$thumbnail[attachment://warningsign.png]
 $color[Red]
 $addActionRow
 $addButton[shutdownconfirm_$authorID;Yes;Secondary]

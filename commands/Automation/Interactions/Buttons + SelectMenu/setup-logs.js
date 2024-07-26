@@ -28,6 +28,7 @@ $description[To setup the logs for Message delete, use the select menu below to 
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -74,6 +75,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -110,6 +112,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -137,6 +140,7 @@ $description[To setup the logs for Message Edit, use the select menu below to ch
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -183,6 +187,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -219,6 +224,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -246,6 +252,7 @@ $description[To setup the logs for Ban logs, use the select menu below to choose
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -292,6 +299,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -328,6 +336,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -355,6 +364,7 @@ $description[To setup the logs for Un-Ban logs, use the select menu below to cho
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -401,6 +411,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -437,6 +448,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]

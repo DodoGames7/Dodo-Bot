@@ -3,15 +3,17 @@ type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `$onlyIf[$customID==changes_$authorID;]
 
+$attachment[./handler/assets/redwarning.png;redwarning.png]
 
 $interactionUpdate[
 $title[Changes]
 $description[
 * Changed Embed color to \`#745446\`
 * Add the alias \`ci\` for \`commandinfo\`
+* Image links have been replaced in favour of local images
 ]
 $if[$getGlobalVar[pre_release]==on;
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+$footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -28,13 +30,16 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     code: `
 $onlyIf[$customID==fixes_$authorID;]
 
+$attachment[./handler/assets/redwarning.png;redwarning.png]
+
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*There're no changes in this category currently.*
+* Fixed Embed color missing in \`setup-logs\` options
+* (Source Code) Fixed incorrect file name for \`ad\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+$footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -51,13 +56,15 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     code: `
 $onlyIf[$customID==other_$authorID;]
 
+$attachment[./handler/assets/redwarning.png;redwarning.png]
+
 $interactionUpdate[
 $title[Other]
 $description[
 *There're no changes in this category currently.*
 ]
 $if[$getGlobalVar[pre_release]==on;
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+$footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -74,6 +81,8 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     code: `
 $onlyIf[$customID==return_$authorID;]
 
+$attachment[./handler/assets/redwarning.png;redwarning.png]
+
 $interactionUpdate[
 $title[Dodo-Bot Version]
     $description[
@@ -82,7 +91,7 @@ $title[Dodo-Bot Version]
 * **Build created on**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+$footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow

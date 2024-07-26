@@ -2,13 +2,14 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `$onlyIf[$customID==devmenuhomebutton_$authorID;]
+$attachment[./handler/assets/gear.png;gear.png]
 
 $interactionUpdate[$title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/geartwo.png]
+$thumbnail[attachment://gear.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
 $addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]
