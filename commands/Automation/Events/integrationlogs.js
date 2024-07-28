@@ -20,6 +20,6 @@ module.exports = [{
 * **Verified:** $get[verified]
 * **Created on:** <t:$trunc[$divide[$userCreatedAt[$authorID];1000]]:f>
     ]
-    $color[DarkGreen]
+    $color[Blue]
     ]`
 }]
