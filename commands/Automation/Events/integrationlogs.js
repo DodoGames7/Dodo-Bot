@@ -7,7 +7,7 @@ module.exports = [{
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[integrationchannel]]==true;]
     $onlyIf[$channelHasPerms[$getGuildVar[integrationchannel];$botID;ViewChannel;SendMessages]==true;]
     $onlyIf[$hasPerms[$guildID;$botID;ViewAuditLog]==true;]
-    $let[staffdetails;$username[$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]]  <@$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]>]
+    $let[staffdetails;$username[$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]] <@$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]>]
     $let[verified;$replace[$replace[$checkCondition[$isBotVerified[$authorID]==true];true;Yes];false;No]]
     $let[timestamp;$fetchAuditLog[$guildID;IntegrationCreate;timestamp;0]]
     $sendMessage[$getGuildVar[integrationchannel];
