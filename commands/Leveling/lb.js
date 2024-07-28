@@ -18,8 +18,8 @@ $let[leaderboard;$advancedReplaceText[$userLeaderBoard[$guildID;level;desc;&{top
 $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
 $onlyIf[$get[page]>=1;You can't go less than page 1.]
 $onlyIf[$get[page]<=10;You can only switch up to page 10.]
-$onlyIf[$djsEval[Number.isInteger($get[page]);true]==true;A invalid page has been entered. Please specify a existing page.]
-$let[page;$advancedReplaceText[$checkCondition[$message==];true;1;false;$removeContains[$message;+;-]]]
+$onlyIf[$djsEval[Number.isInteger($get[page]);true]==true&&$isNumber[$get[page]]==true;A invalid page has been entered. Please specify a existing page.]
+$let[page;$advancedReplaceText[$checkCondition[$message==];true;1;false;$removeContains[$message;+;-;/]]]
     $color[$getVar[embedcolor]]
     $onlyIf[$getGuildVar[levelsystem]==on;Leveling is not enabled currently.]
     $cooldown[3s;Slow down! Don't spam the command!
