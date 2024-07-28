@@ -488,7 +488,7 @@ $interactionUpdate[{newEmbed:{title:Expose build information!}{description:
     }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
 
 
-$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]
+$let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Build information will be now be shown;false;Build information will no longer be shown!]]
 $setVar[exposebuildinfo;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;off;false;on]]
