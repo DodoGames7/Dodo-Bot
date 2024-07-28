@@ -12,6 +12,7 @@ $addOption[Message Delete;Log deleted messages by users!;msgdeletelog;;false]
 $addOption[Message Edit;Log Edited messages by users!;msgeditlog;;false]
 $addOption[Ban logs;Log banned users!;memberbanlogs;;false]
 $addOption[Un-ban logs;Log users that got unbanned!;memberunbanlogs;;false]
+$addOption[Integration logs;Log bots that got added to this server!;integrationlogs;;false]
 ]
 `
 },{
@@ -455,6 +456,118 @@ $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to u
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Channel has been reset!
+$ephemeral
+]
+
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==integrationlogs]==true;]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+
+$interactionUpdate[
+$author[Integration logs;$userAvatar[$botID]]
+$title[Channel setup]
+$description[To setup the logs for Integration logs, use the select menu below to choose a channel to do so.
+
+**Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
+$addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
+]
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `$onlyIf[$customID==integrationlogchannelsetup_$authorID;]
+
+$onlyIf[$channelType[$selectMenuValues]==GuildText;
+$interactionReply[Channel must be a Text channel.
+$ephemeral
+]]
+
+$onlyIf[$getGuildVar[integrationchannel;$guildID]!=$selectMenuValues;
+$interactionReply[This channel is already used for Integration logs. Select a different one instead.
+$ephemeral
+]
+]
+
+$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Integration logs, i must have the following permissions for the selected channel:
+\`SendMessages\`
+\`ViewChannel\`
+$ephemeral
+]
+]
+
+$setGuildVar[integrationchannel;$selectMenuValues;$guildID]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+
+$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$author[$get[author];$userAvatar[$botID]]
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[<#$selectMenuValues> will now be used for logging newly added bots!
+$ephemeral
+]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `$onlyIf[$customID==integrationlogreset_$authorID;]
+
+$onlyIf[$getGuildVar[integrationchannel;$guildID]!=;$interactionReply[
+There's no channel set currently to reset.
+$ephemeral]]
+
+$deleteGuildVar[integrationchannel;$guildID]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+
+
+$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$author[$get[author];$userAvatar[$botID]]
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!

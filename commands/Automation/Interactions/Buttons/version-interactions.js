@@ -8,9 +8,11 @@ $attachment[./handler/assets/redwarning.png;redwarning.png]
 $interactionUpdate[
 $title[Changes]
 $description[
-* Changed Embed color to \`#745446\`
+* Changed Embed color to \`#745446\` and re-added \`gitbuilds\` command
 * Add the alias \`ci\` for \`commandinfo\`
 * Image links have been replaced in favour of local images
+* Added new log type for newly added bots
+* Backported Leaderboard page support from v2
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;attachment://redwarning.png]

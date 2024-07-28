@@ -7,7 +7,7 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
     $interactionUpdate[
     $title[Main]
     $addField[**Main commands**;
-\`about\`, \`settings\`, \`commandinfo\`
+\`about\`, \`gitbuilds\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
         \`ping\`, \`version\`, \`stats\`, \`credits\`, \`invite\`

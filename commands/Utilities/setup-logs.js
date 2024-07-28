@@ -21,5 +21,6 @@ $addOption[Message Delete;Log deleted messages by users!;msgdeletelog;;false]
 $addOption[Message Edit;Log Edited messages by users!;msgeditlog;;false]
 $addOption[Ban logs;Log banned users!;memberbanlogs;;false]
 $addOption[Un-ban logs;Log users that got unbanned!;memberunbanlogs;;false]
+$addOption[Integration logs;Log bots that got added to this server!;integrationlogs;;false]
 `
 }
