@@ -36,7 +36,7 @@ msglogdeletechannel: "",
 msglogeditchannel: "",
 banlogschannel: "",
 unbanlogschannel: "",
-integrationchannel: ""
+integrationchannel: "",
 welcomermessage: "Welcome to the server <member.username>!",
 welcomerchannel: "",
 welcomertype: "text",
