@@ -54,10 +54,10 @@ $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayNam
     $return[$get[result]]
     `
   },{
-    name: "levelingpagefilter",
+    name: "nospecialcharmessage",
     params: ["content"],
     code: `
-$let[message;$replace[$replace[$replace[$env[content];+;];-;];/;]]
+$let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&];$;];#;];^;];(;];);];*;]]
 
     $return[$get[message]]
     `
