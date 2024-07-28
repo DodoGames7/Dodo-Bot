@@ -14,6 +14,7 @@ module.exports ={
 * Members do not have level 2 or higher. Please wait for someone to level up first then try again.
 * The specified Leaderboard page still didn't register members. Wait for a couple of members to level up then try again
     ]
+$onlyIf[$get[page]>=1;You can't go less than page 1.]
 $onlyIf[$get[page]<=10;You can only switch up to page 10.]
     $onlyIf[$isNumber[$get[page]]==true;A invalid page has been entered. Please specify a existing page.]
 $let[leaderboard;$advancedReplaceText[$userLeaderBoard[$guildID;level;desc;&{top} - {username} - Level {value};10;$get[page];main];&1 -;🥇 1 -;&2 -;🥈 2 -;&3 -;🥉 3 -;&;]]
