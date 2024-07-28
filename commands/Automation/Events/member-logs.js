@@ -1,7 +1,7 @@
 module.exports = [{
     type: "guildMemberAdd",
     allowBots: true,
-    code: `$onlyIf[$guildID==$guildID;]
+    code: `
 $disableEveryoneMention
 $disableRoleMentions
     $onlyIf[$getGuildVar[welcomersystem]==on;]
@@ -23,7 +23,7 @@ $disableRoleMentions
 },{
     type: "guildMemberRemove",
     allowBots: true,
-    code: `$onlyIf[$guildID==$guildID;]
+    code: `
 $disableEveryoneMention
 $disableRoleMentions
     $onlyIf[$getGuildVar[leavesystem]==on;]
