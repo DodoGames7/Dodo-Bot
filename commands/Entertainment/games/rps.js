@@ -1,11 +1,36 @@
-module.exports = {
+module.exports = [{
 name: "rock-paper-scissors",
 info: {
-  description: "Start a rps match with your opponent.",
+  description: "Start a rps match with your opponent (or play against yourself optionally).",
   perms: ["`SendMessages`"]
 },
 aliases: "rps",
-code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord');
+code: `$ifAwaited[$mentioned[1;false]==$authorID;{execute:rpsoneplayer};{execute:rpstwoplayer}]
+
+
+$onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
+$onlyIf[$mentioned[1;false]!=undefined;Please mention a opponent to play with!
+
+**Tip:** Want to play against yourself? Mention yourself to do so!
+]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;rock-paper-scissors;$authorID];$dateStamp];1000]]:R>]
+`
+},{
+  name: "rpsoneplayer",
+  type: "awaited",
+  code: `
+$awaitComponents[$channelID;$get[messageID];$authorID;rpsrockbutton,rpspaperbutton,rpsscissorsbutton;rpsgameresults1,rpsgameresults2,rpsgameresults3;rpstimeout;1;30s]
+
+$let[messageID;$sendMessage[{newEmbed:{title:Rock Paper Scissors}{description:The game has started!, What will you choose?}{color:$getVar[embedcolor]}}
+
+{actionRow:{button:Rock:2:rpsrockbutton:false:🌑}{button:Paper:2:rpspaperbutton:false:📰}{button:Scissors:2:rpsscissorsbutton:false:✂️}}
+;true]]
+`
+},{
+  name: "rpstwoplayer",
+  type: "awaited",
+  code: `$djsEval[const { RockPaperScissors } = require('discord-gamecord');
 
 const Game = new RockPaperScissors({
   message: message,
@@ -37,10 +62,5 @@ const Game = new RockPaperScissors({
 });
 
 Game.startGame()
-]
-$onlyIf[$isBot[$mentioned[1;true]]==false;You cannot play with bots!]
-$onlyIf[$mentioned[1;true]!=$authorID;Please mention a opponent to play with!]
-$cooldown[3s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;rock-paper-scissors;$authorID];$dateStamp];1000]]:R>]
-`
-}
+]`
+}]
