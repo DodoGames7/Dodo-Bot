@@ -1,7 +1,11 @@
 module.exports = [{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==setuploghomebutton_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==setuploghomebutton;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Setup Logs]
 $description[Welcome to Setup Logs! Choose the type of logging you want to set!]
@@ -18,7 +22,11 @@ $addOption[Integration logs;Log bots that got added to this server!;integrationl
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==msgdeletelog]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==msgdeletelog]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`)];false;No channel set]]
 
@@ -41,7 +49,11 @@ $addButton[msgdeletelogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==msglogdeletechannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msglogdeletechannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -92,7 +104,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==msgdeletelogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msgdeletelogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[msglogdeletechannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -130,7 +146,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==msgeditlog]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==msgeditlog]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`)];false;No channel set]]
 
@@ -153,7 +173,11 @@ $addButton[msgeditlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==msglogeditchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msglogeditchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -204,7 +228,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==msgeditlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msgeditlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[msglogeditchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -242,7 +270,12 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==memberbanlogs]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==memberbanlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`)];false;No channel set]]
 
@@ -265,7 +298,11 @@ $addButton[memberbanlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==memberbanlogchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberbanlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -316,7 +353,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==memberbanlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberbanlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[banlogschannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -354,7 +395,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==memberunbanlogs]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==memberunbanlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`)];false;No channel set]]
 
@@ -377,7 +422,11 @@ $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==memberunbanlogchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberunbanlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -428,7 +477,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==memberunbanlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberunbanlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[unbanlogschannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -466,7 +519,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==integrationlogs]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==integrationlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
 
@@ -489,7 +546,11 @@ $addButton[integrationlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==integrationlogchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==integrationlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -540,7 +601,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==integrationlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==integrationlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[integrationchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.

@@ -29,8 +29,8 @@ $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]
 $if[$memberExists[$guildID;$get[user]]==true;
 $addActionRow
-$addButton[generalmeminfo_$get[user];General info;Secondary;;true]
-$addButton[memberservinfo_$get[user];Member's Server info;Secondary]
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
 ]
 `
 }

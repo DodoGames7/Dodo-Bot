@@ -2,7 +2,10 @@ module.exports = [{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==main]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
     $interactionUpdate[
     $title[Main]
@@ -27,7 +30,10 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==fun]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==fun]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
     $interactionUpdate[
     $title[Entertainment]
@@ -55,7 +61,10 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==fun]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==leveling]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==leveling]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[
@@ -76,7 +85,10 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==leveling]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==util]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==util]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[
@@ -103,7 +115,10 @@ $addField[**Miscellaneous**;
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==dev]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==dev]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[

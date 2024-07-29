@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==packages_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==packages;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Packages]
 $description[
@@ -20,7 +24,11 @@ $addButton[credits_$authorID;Home;Secondary;🏠]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==useofsourcecode_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==useofsourcecode;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[
 $title[Use of Source code]
@@ -38,7 +46,12 @@ $addButton[credits_$authorID;Home;Secondary;🏠]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==credits_$authorID;]
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==credits;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $interactionUpdate[$title[Dodo-Bot Credits]
 $description[
@@ -55,7 +68,11 @@ $addButton[useofsourcecode_$authorID;Use of Source Code;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==info_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==info;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[quotes;$callFunction[quotes]]
 $attachment[./handler/assets/dodo-bot-logo.png;dodobot-logo.png]
@@ -77,7 +94,11 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot;Source code;Link]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==dodobotrebase_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==dodobotrebase;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $attachment[./handler/assets/dodo-bot-logo.png;dodobot-logo.png]
 

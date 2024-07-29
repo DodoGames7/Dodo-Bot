@@ -1,7 +1,12 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==shutdownconfirm_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==shutdownconfirm;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 $interactionUpdate[$title[Please wait..]
 $description[Dodo-Bot is shutting down...]
 ]
@@ -12,7 +17,11 @@ $botDestroy
 `},{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==shutdowndeny_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==shutdowndeny;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]

@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==suggestionchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==suggestionchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -50,7 +54,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==suggestresetbutton_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==suggestresetbutton;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[suggestionchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.

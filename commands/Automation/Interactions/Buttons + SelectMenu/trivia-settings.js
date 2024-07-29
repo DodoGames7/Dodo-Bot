@@ -1,8 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==triviasettings_$authorID;$selectMenuValues==triviatypeoption]==true;]
-
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==triviasettings;$selectMenuValues==triviatypeoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $interactionUpdate[
@@ -21,7 +24,11 @@ $addButton[triviatypetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==triviatypetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==triviatypetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -53,7 +60,11 @@ $ephemeral]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==triviasettings_$authorID;$selectMenuValues==triviadifficultyoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==triviasettings;$selectMenuValues==triviadifficultyoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $interactionUpdate[
@@ -74,7 +85,11 @@ $addButton[triviahardoption_$authorID;Hard;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==triviaeasyoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==triviaeasyoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getUserVar[trivia_difficulty]!=easy;
 $interactionReply[This Difficulty-set is already used 
@@ -111,7 +126,12 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==triviamediumoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==triviamediumoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $onlyIf[$getUserVar[trivia_difficulty]!=medium;
 $interactionReply[This Difficulty-set is already used 
@@ -148,7 +168,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==triviahardoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==triviahardoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getUserVar[trivia_difficulty]!=hard;
 $interactionReply[This Difficulty-set is already used 

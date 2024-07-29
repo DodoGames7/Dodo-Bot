@@ -57,7 +57,7 @@ $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayNam
     name: "nospecialcharmessage",
     params: ["content"],
     code: `
-$let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&];$;];#;];^;];(;];);];*;]]
+$let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&];$;];#;];^;];(;];);];*;];!;];?;]]
 
     $return[$get[message]]
     `

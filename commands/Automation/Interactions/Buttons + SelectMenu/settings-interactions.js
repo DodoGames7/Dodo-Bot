@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==autoreplypingoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==autoreplypingoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[autoreplyping;$replace[$replace[$getGuildVar[autoreplyping];off;Disabled];on;Enabled]]
 
@@ -25,7 +29,11 @@ $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==autoreplypingtoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==autoreplypingtoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -61,7 +69,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==includemessagedeleteroption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==includemessagedeleteroption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[includemessagedeleter;$replace[$replace[$getGuildVar[includemessagedeleter];off;Disabled];on;Enabled]]
 
@@ -85,7 +97,11 @@ $addButton[includemessagedeletertoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==includemessagedeletertoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==includemessagedeletertoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -121,7 +137,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==anonymousoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==anonymousoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[anonymous;$replace[$replace[$getGuildVar[anonymous];off;Disabled];on;Enabled]]
 
@@ -145,7 +165,11 @@ $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==anonymoustoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==anonymoustoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -181,7 +205,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==includebotsoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==includebotsoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[includebots;$replace[$replace[$getGuildVar[includebots];off;Disabled];on;Enabled]]
 
@@ -205,7 +233,11 @@ $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==includebotstoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==includebotstoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]

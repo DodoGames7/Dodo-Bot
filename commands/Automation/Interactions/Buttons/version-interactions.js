@@ -1,14 +1,17 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==changes_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==changes;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $attachment[./handler/assets/redwarning.png;redwarning.png]
 
 $interactionUpdate[
 $title[Changes]
 $description[
-* Changed Embed color to \`#745446\` and re-added \`gitbuilds\` command
 * Add the alias \`ci\` for \`commandinfo\`
 * Image links have been replaced in favour of local images
 * Added new log type for newly added bots
@@ -30,7 +33,10 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     type:"interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$customID==fixes_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==fixes;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $attachment[./handler/assets/redwarning.png;redwarning.png]
 
@@ -56,14 +62,18 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     type:"interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$customID==other_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==other;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $attachment[./handler/assets/redwarning.png;redwarning.png]
 
 $interactionUpdate[
 $title[Other]
 $description[
-*There're no changes in this category currently.*
+* Author-only errors are back
+* Changed Embed color to \`#745446\` and re-added \`gitbuilds\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;attachment://redwarning.png]
@@ -81,7 +91,10 @@ $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;
     type:"interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$customID==return_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==return;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $attachment[./handler/assets/redwarning.png;redwarning.png]
 

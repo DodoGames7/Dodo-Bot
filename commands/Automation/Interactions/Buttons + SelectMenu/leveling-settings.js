@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==levelinghome_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelinghome;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[levelingsystem;$replace[$replace[$getGuildVar[levelingsystem];off;Disabled];on;Enabled]]
 
@@ -20,7 +24,11 @@ $addButton[levelingsettings_$authorID;Settings;Danger]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==levelingtoggle_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingtoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -50,7 +58,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingsettings_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingsettings;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
 $let[levelingmessagefeature;$replace[$replace[$getGuildVar[levelingmessagefeature];off;Disabled];on;Enabled]]
@@ -77,7 +89,11 @@ $addButton[levelingresetonleave_$authorID;Reset on Leave;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingchannelsetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
 
@@ -97,7 +113,11 @@ $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
-    code: `$onlyIf[$customID==levelingchannelselectmenusetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingchannelselectmenusetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -146,7 +166,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingmsgchannelreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingmsgchannelreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[levelingmessagechannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -182,7 +206,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingmessagecategory_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingmessagecategory;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[levelingmessagefeature;$replace[$replace[$getGuildVar[levelingmessagefeature];off;Disabled];on;Enabled]]
 
@@ -202,7 +230,11 @@ $addButton[levelingmessagepreview_$authorID;Preview Message;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingmessagefeaturetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingmessagefeaturetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -236,7 +268,12 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingmessagesetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingmessagesetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 $showModal
 $modal[levelingmessagemodalsetup;Set Message]
 $addTextInput[messageInput;Message to use;Paragraph;true;<username> has leveled UP! Their new level is now <newlevel>!;$getGuildVar[levelingmessage];0;200]
@@ -252,7 +289,11 @@ $ephemeral]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingmessagepreview_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingmessagepreview;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<previouslevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
@@ -265,7 +306,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingresetonleave_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingresetonleave;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[levelingresetonleave;$replace[$replace[$getGuildVar[levelingresetonleave];off;Disabled];on;Enabled]]
 
@@ -284,7 +329,11 @@ $addButton[levelingresetonleavetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingresetonleavetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingresetonleavetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -316,7 +365,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==levelingplaceholderlist_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingplaceholderlist;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Placeholders]
 $description[Placeholders are a way to make Welcomer messages unique! Choose a one available from this list.]
