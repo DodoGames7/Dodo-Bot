@@ -5,7 +5,7 @@ module.exports = [{
     code:`
 $interactionFollowUp[{newEmbed:{title:Results!}{description:You choose Rock 🌑! I choose $get[botselection]}{color:Yellow}}]
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:false:🌑}{button:Paper:2:rpspaperbutton:false:📰}{button:Scissors:2:rpsscissorsbutton:false:✂️}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:true:🌑}{button:Paper:2:rpspaperbutton:true:📰}{button:Scissors:2:rpsscissorsbutton:true:✂️}}]
 
 
 $let[botselection;$randomText[Rock 🌑;Paper 📰;Scissors ✂️]]
@@ -21,7 +21,7 @@ $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:You choose Paper 📰! I choose $get[botselection]}{color:Yellow}}]
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:false:🌑}{button:Paper:2:rpspaperbutton:false:📰}{button:Scissors:2:rpsscissorsbutton:false:✂️}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:true:🌑}{button:Paper:2:rpspaperbutton:true:📰}{button:Scissors:2:rpsscissorsbutton:true:✂️}}]
 
 
 $let[botselection;$randomText[Rock 🌑;Paper 📰;Scissors ✂️]]
@@ -36,7 +36,7 @@ $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
 
 $interactionFollowup[{newEmbed:{title:You found the flag!}{description:You choose Scissors ✂️! I choose $get[botselection]}{color:Yellow}}]
 
-$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:false:🌑}{button:Paper:2:rpspaperbutton:false:📰}{button:Scissors:2:rpsscissorsbutton:false:✂️}}]
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:$getVar[embedcolor]}}{actionRow:{button:Rock:2:rpsrockbutton:true:🌑}{button:Paper:2:rpspaperbutton:true:📰}{button:Scissors:2:rpsscissorsbutton:true:✂️}}]
 
 
 $let[botselection;$randomText[Rock 🌑;Paper 📰;Scissors ✂️]]
