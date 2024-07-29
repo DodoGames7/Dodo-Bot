@@ -41,7 +41,7 @@ $ephemeral
 
 $let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
 $let[fsversion;$replace[$replace[$checkCondition[$getGlobalVar[libraryversiondevcheck]==on];true;\`v$version\` (Dev)];false;\`v$version\`]]
-$let[dodobotversion;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Testing)];false;\`v$getGlobalVar[version]\`]]
+$let[dodobotversion;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev)];false;\`v$getGlobalVar[version]\`]]
 
 $interactionUpdate[
 $title[$username[$botID] Stats]
