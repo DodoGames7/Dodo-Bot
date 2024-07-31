@@ -13,6 +13,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Add the alias \`ci\` for \`commandinfo\`
+* Added a new command called \`8ball\`
 * Image links have been replaced in favour of local images
 * Added new log type for newly added bots
 * Backported Leaderboard page support from v2
@@ -72,8 +73,9 @@ $attachment[./handler/assets/redwarning.png;redwarning.png]
 $interactionUpdate[
 $title[Other]
 $description[
+* "Rebase" button from about command is now it's own command instead
 * Author-only errors are back
-* Changed Embed color to \`#745446\` and re-added \`gitbuilds\` command
+* Changed Embed color to \`#433b6b\` and re-added \`gitbuilds\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $footer[Testing is recommended;attachment://redwarning.png]

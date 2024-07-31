@@ -13,7 +13,7 @@ $ephemeral
 \`about\`, \`gitbuilds\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
-        \`ping\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
+        \`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
     ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
@@ -41,7 +41,7 @@ $ephemeral
 \`rps\`, \`ttt\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
  ]
    $addField[**Text**;
-\`howgamer\`, \`whoasked\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
+\`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
 ]
     $addField[**Images**;
 \`gun\`, \`jail\`, \`nokia\`, \`ad\`, \`wanted\`, \`comment\`, \`whereiseveryone\`, \`clown\`

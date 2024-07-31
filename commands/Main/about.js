@@ -21,7 +21,6 @@ The project has existed since late 2021 and to this day, it continues to be deve
     $color[$getGlobalVar[embedcolor]]
 $thumbnail[attachment://dodobot-logo.png]
 $addActionRow
-$addButton[dodobotrebase_$authorID;Rebase;Secondary;;false]
 $addButton[https://github.com/DodoGames7/Dodo-Bot;Source code;Link]
     `
 }
