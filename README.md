@@ -18,6 +18,7 @@ This version of the bot is likely made for you to learn as well as enjoy it, it'
 * **[V2 (main)](https://github.com/DodoGames7/Dodo-Bot/tree/v2)**: The current version of the bot, maintained with lot of bug fixes and has alright features.
 * **[V3](https://github.com/DodoGames7/Dodo-Bot/tree/v3)**: Not serious version made to try out ForgeScript. It is mostly made as a rebase backup.
 * **[gitbuilds](https://github.com/DodoGames7/Dodo-Bot/tree/gitbuilds)**: Development builds of v2. Not recommended for public use. More information can be found [here](https://dodogames7.github.io/dodo-bot-site/advanced/gitbuilds/).
+* **[rebase](https://github.com/DodoGames7/Dodo-Bot/tree/rebase)**: ForgeScript version of the bot. It's mostly made as a emergency build.
 # Requirements
 You can host Dodo-Bot on any Host as long as you meet the following Requirements:
 * Node.js v20 is required as older versions are not supported
