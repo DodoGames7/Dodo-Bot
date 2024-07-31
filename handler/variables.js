@@ -16,7 +16,7 @@ module.exports = {
   buildType: "Official Beta",
   buildBranch: "main",
   buildRevision: "0",
-  exposebuildinfo: "on",
+  exposebuildinfo: "off",
   buildNumber: "2125",
   embedcolor: "#2A3759",
   release_type: "Beta",
