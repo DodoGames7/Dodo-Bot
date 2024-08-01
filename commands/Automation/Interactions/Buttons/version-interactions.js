@@ -10,11 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Add the alias \`ci\` for \`commandinfo\`
-* Removed the option "Display Message Deleter"
-* Added a new command called \`8ball\`
-* Added new log type for newly added bots
-* Backported Leaderboard page support from v2
+* Added the specified user's URL in \`userinfo\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -41,10 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Fixed Embed color missing in \`setup-logs\` options
-* Fixed Developer panel's pre-release mode not working properly
-* Fixed a bug where say cmd message can be empty with embed mode
-* (Source Code) Fixed incorrect file name for \`ad\` command
+*There're no changes in this category currently*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -71,10 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* "Rebase" button from about command is now it's own command instead
-* Image links have been replaced in favour of local images
-* Author-only errors are back
-* Changed Embed color to \`#433b6b\` and re-added \`gitbuilds\` command
+*There're no changes in this category currently*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
