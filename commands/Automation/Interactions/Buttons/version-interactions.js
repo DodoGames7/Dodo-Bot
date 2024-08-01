@@ -7,18 +7,17 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$attachment[./handler/assets/redwarning.png;redwarning.png]
-
 $interactionUpdate[
 $title[Changes]
 $description[
 * Add the alias \`ci\` for \`commandinfo\`
+* Removed the option "Display Message Deleter"
 * Added a new command called \`8ball\`
-* Image links have been replaced in favour of local images
 * Added new log type for newly added bots
 * Backported Leaderboard page support from v2
 ]
 $if[$getGlobalVar[pre_release]==on;
+$attachment[./handler/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -39,15 +38,16 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$attachment[./handler/assets/redwarning.png;redwarning.png]
-
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Fixed Embed color missing in \`setup-logs\` options
+* Fixed Developer panel's pre-release mode not working properly
+* Fixed a bug where say cmd message can be empty with embed mode
 * (Source Code) Fixed incorrect file name for \`ad\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
+$attachment[./handler/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -68,16 +68,16 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$attachment[./handler/assets/redwarning.png;redwarning.png]
-
 $interactionUpdate[
 $title[Other]
 $description[
 * "Rebase" button from about command is now it's own command instead
+* Image links have been replaced in favour of local images
 * Author-only errors are back
 * Changed Embed color to \`#433b6b\` and re-added \`gitbuilds\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
+$attachment[./handler/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -98,8 +98,6 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$attachment[./handler/assets/redwarning.png;redwarning.png]
-
 $interactionUpdate[
 $title[Dodo-Bot Version]
     $description[
@@ -108,6 +106,7 @@ $title[Dodo-Bot Version]
 * **Build created on**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
+$attachment[./handler/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]

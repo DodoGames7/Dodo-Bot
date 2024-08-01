@@ -21,7 +21,6 @@ $addActionRow
 $addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 `
 }
