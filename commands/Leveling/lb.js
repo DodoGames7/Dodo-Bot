@@ -1,7 +1,7 @@
-module.exports ={
+module.exports = {
     name: "leaderboard",
     info: {
-        description: "Returns Leveling's leaderboard for this server (if enabled). Enter a number to change current page into.",
+        description: "Returns Leveling's leaderboard for this server (if enabled).",
         perms: ["`SendMessages`"]
     },
     aliases: ["lb", "leveling-lb", "level-leaderboard"],

@@ -12,14 +12,14 @@ module.exports = {
   versionCodename: "Mars",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1722393894110",
-  buildType: "Official Beta",
+  buildDate: "1722625623755",
+  buildType: "Official Stable",
   buildBranch: "main",
   buildRevision: "0",
   exposebuildinfo: "off",
-  buildNumber: "2125",
+  buildNumber: "2127",
   embedcolor: "#2A3759",
-  release_type: "Beta",
+  release_type: "Stable",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -58,7 +58,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on",
+  pre_release_mode: "off",
   botgreeting: "on",
   
 }
