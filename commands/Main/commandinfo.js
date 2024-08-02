@@ -5,7 +5,7 @@ module.exports = {
             perms: "`SendMessages`"
         },
     $if: "old",
-    aliases: "cmdinfo",
+    aliases: ["cmdinfo", "ci"],
     code: `$author[Command info looker;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/fluent-books.png]
     $title[$commandInfo[$get[cmdname];name]]
     $addField[Aliases;$get[aliases]]

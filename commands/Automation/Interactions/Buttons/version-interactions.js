@@ -3,11 +3,9 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Bumped aoi.js to version 6.8.5
-* Trivia and Flood can now be freely customized per-user rather than per-server only (as well as updated their settings descriptions)!
-* Beta Commands will now be unavailable if there're no commands to test (alongside with small wording changes)
-* \`lulcat\` has been taken out of Beta Commands
-* \`car\` has been replaced by \`ad\`
+* Added single player support to rps game
+* Added alias \`ci\` for \`commandinfo\`
+* Added page support to Leveling's leaderboard
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
 $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -23,10 +21,9 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed cooldown timer for \`yesorno\` and \`whoasked\` command
-* Fixed a exploit in \`yesorno\` command
-* Fixed ridiculous cooldowns for game commands
-* Fixed \`<Diplayname>\` placeholder not being listed in Leveling settings
+* (Source code) Fixed \`LogCommands\` setup option being broken
+* Fixed spelling in \`beta\` command's error message
+* Fixed a bug where \`say\` cmd message can be empty with embed mode
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
     $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -41,11 +38,9 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Report if the current aoi.js version used is a dev version in \`stats\` command
-* Replaced \`@akarui/aoi.db\` with \`@aoijs/aoi.db\` (now being included in Credit's Packages used)
-* More cooldown changes
-* The section "Current settings" has been changed to "Current setting(s)" across all settings
-* The Auto Reply message has been slightly changed
+* Backported "Expose build Info" rebase's feature to this build
+* \`stats\` command now reports if current Dodo-Bot version is Pre-release
+* Custom status command's reset option now supports mobile
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
   $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]

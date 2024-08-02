@@ -8,7 +8,7 @@ module.exports = {
     aliases: ["scs", "customstatus"],
     $if: "old",
     code: `
-    $if[$stringStartswith[$tolowercase[$message];--reset]==true]
+    $if[$stringStartswith[$tolowercase[$message];--reset;—reset]==true]
     $setStatus[;custom;online]
     Status has been reset! You can set a status again if you would like to do so.
     $onlyIf[$userCustomStatus[$guildID;$clientID]!=none;There is no status to reset.]

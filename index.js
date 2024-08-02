@@ -25,7 +25,7 @@ const client = new AoiClient({
 });
 
 // Handlers
-client.loadCommands("./commands/", config.LogCommands || process.env.LogCommands);
+client.loadCommands("./commands/", config.LogCommands);
 client.variables(require("./handler/variables.js"));
 
 
