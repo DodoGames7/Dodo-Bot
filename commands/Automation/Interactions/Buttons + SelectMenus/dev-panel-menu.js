@@ -132,7 +132,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
@@ -154,7 +154,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
@@ -195,6 +195,37 @@ $onlyIf[$hasPermsInChannel[$getSelectMenuValues[all];$clientID;sendmessages;view
     },{
         type: "interaction",
         prototype: "button",
+        code: `$interactionFollowUp[Channel has been reset!;true]
+$interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Error messages to be sent in. Use the select menu below for the channel to use!
+
+    **Current Setting(s)**
+    **Channel#COLON#** $get[errorchannel]
+
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+
+    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
+
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+
+    $deleteVar[errorchannel;;main]
+
+    $onlyIf[$getVar[errorchannel]!=none;
+    There's no channel to reset.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==errorresetchannel;]
+
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
         code: `
 
 $interactionUpdate[{newEmbed:{title:Error Logging}{description:
@@ -224,7 +255,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
    **Current Setting(s)**
 **Hex code**#COLON# \`$getVar[embedcolor]\`
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
 
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -256,7 +287,7 @@ $interactionUpdate[{newEmbed:{title:Embed color}{description:
 
    **Current Setting(s)**
 **Hex code**#COLON# \`$getVar[embedcolor]\`
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
 
 $setVar[embedcolor;$textInputValue[hexInput]]
 
@@ -273,6 +304,33 @@ Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 {interaction}]
 
 `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[Embed color has been reset!;true]
+$interactionUpdate[{newEmbed:{title:Embed color}{description:
+   This option allows you to change the current embed color used across commands of Dodo-Bot. To change the current used embed color, you will need to have a valid hex code of a color in order to proceed.
+
+   **Current Setting(s)**
+**Hex code**#COLON# \`$getVar[embedcolor]\`
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
+
+    $deleteVar[embedcolor;;main]
+
+    $onlyIf[$getVar[embedcolor]!=$getVar[originalembedcolor];
+    The embed color is already at it's default setting.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==resetembedcolor;]
+
+    `
     },{
         type: "interaction",
         prototype: "selectMenu",
@@ -372,7 +430,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
         
-        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
+        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
         $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
@@ -394,7 +452,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
         
-        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}}]
+        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
         $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
@@ -433,6 +491,37 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
      $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==botstartupchannelmenusetup;]
     `
         },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[Channel has been reset!;true]
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Startup messages to be sent in. Use the select menu below for the channel to use!
+
+        **Current Setting(s)**
+        **Channel#COLON#** $get[startupchannel]
+
+        **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+
+        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
+
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+
+    $deleteVar[startupchannel;;main]
+
+    $onlyIf[$getVar[startupchannel]!=none;
+    There's no channel to reset.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==startupresetchannel;]
+
+    `
+    },{
             type: "interaction",
             prototype: "button",
             code: `$interactionUpdate[{newEmbed:{title:Startup}{description:

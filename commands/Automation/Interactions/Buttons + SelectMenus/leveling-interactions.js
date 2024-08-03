@@ -208,7 +208,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
     $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
@@ -231,7 +231,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
     $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
@@ -269,6 +269,38 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingchannelmenusetup;]
     
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[Channel has been reset!;true]
+
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Level up messages to be sent in. Use the select menu below for the channel to use!
+
+    **Current Setting(s)**
+    **Channel#COLON#** $get[levelupchannel]
+
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
+
+    $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
+
+    $deleteVar[levelingmessagechannel;$guildID;main]
+
+    $onlyIf[$getGuildVar[levelingmessagechannel]!=none;
+    There's no channel to reset.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==levelingresetchannel;]
+
     `
     },{
         type: "interaction",
