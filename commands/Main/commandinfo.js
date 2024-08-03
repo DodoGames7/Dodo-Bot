@@ -11,10 +11,7 @@ Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[cmdinf
 
 $onlyIf[$message!=;Please type a command name to look for it's information.]
 $let[command;$commandInfo[messageCreate;$toLowerCase[$message];info]]
-$onlyIf[$isJSON[$get[command]]==true;Could not get information about the command you're searching for. Possible reasons are being:
-* The command does not exist
-* The command does not have any information currently
-]
+$onlyIf[$isJSON[$get[command]]==true;his command does not exist in the bot. Try entering a command that exists within the bot itself.]
 $jsonLoad[cmdinfo;$get[command]]
 $let[aliases;$replace[$replace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*This command does not have any aliases.*];false;$callFunction[commandaliases;$toLowerCase[$message]]]]
 $let[actualname;$jsonLoad[actualname;$commandInfo[messageCreate;$toLowerCase[$message];name]]]

@@ -8,7 +8,8 @@ $ephemeral
 ]]
 
 $interactionUpdate[$title[Please wait..]
-$description[Dodo-Bot is shutting down...]
+$description[$username[$botID] is shutting down...]
+$color[Yellow]
 ]
 $wait[5000]
 $interactionFollowUp[Done!]

@@ -8,7 +8,6 @@ info: {
 code: ` $userCooldown[rebasecmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rebasecmd]];1000]]:R>]
 
-
 $title[About rebase]
 $description[Rebase is a special version of Dodo-Bot acting as a backup. It is based on $hyperlink[CupcakeX;https://github.com/dodoGames7/CupcakeX] codebase albeit being improved and having additions compared to the current build of it featuring new techniques and stuff.
 

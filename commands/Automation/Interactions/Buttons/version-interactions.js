@@ -37,7 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*There're no changes in this category currently*
+* Fixed wrong cooldown for \`rank\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -64,7 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*There're no changes in this category currently*
+* The shutdown command's "Yes" message's design has been slightly updated
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
