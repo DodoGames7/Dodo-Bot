@@ -1,7 +1,7 @@
 module.exports = [{
 type: "guildCreate",
 code: `$onlyIf[$getGlobalVar[botinvitationmessage]==on;]
-$let[channelselector;$replace[$replace[$checkCondition[$guildSystemChannelID[$newGuild[id]==]];true;$randomGuildChannelID[$newGuild[id];GuildText]];false;$guildSystemChannelID[$newGuild[id]]]]
+$let[channelselector;$replace[$replace[$checkCondition[$guildSystemChannelID[$newGuild[id]]==];true;$randomGuildChannelID[$newGuild[id];GuildText]];false;$guildSystemChannelID[$newGuild[id]]]]
 $onlyIf[$channelHasPerms[$get[channelselector];$botID;ViewChannel;SendMessages]==true;]
 
 $sendMessage[$get[channelselector];

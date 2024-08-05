@@ -38,6 +38,7 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Fixed wrong cooldown for \`rank\` command
+* Fixed Bot Invitation Message being broken
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
