@@ -61,6 +61,6 @@ module.exports = {
   startupchannel: "none",
   startupchannelsystem: "off",
   pre_release_mode: "on",
-  botgreeting: "on",
+  botinvitationmessage: "on",
   
 }
