@@ -75,4 +75,25 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
    code: `$let[link;https://discord.com/users/$env[userID]]
 
    $return[$get[link]]`
-  }]
+  },{
+    name: 'isImageLink',
+    params: ['url', 'method'],
+    code: `
+        $djsEval[
+            const { fetch } = require("undici");
+            (async () => {
+                const res = await fetch("$env[url]", {
+                    ...ctx.http,
+                    method: "$env[method]",
+                    body: ctx.http.body ?? ctx.http.form
+                });
+                const headers = res.headers;
+                const header = headers.get("Content-Type").split(/;/g).at(0);
+
+                ctx.setEnvironmentKey("gotHeader", header);
+            })();
+        ]
+
+        $return[$env[gotHeader]]
+    `
+}]
