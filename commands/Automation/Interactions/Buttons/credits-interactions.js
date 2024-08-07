@@ -9,12 +9,12 @@ $ephemeral
 
 $interactionUpdate[$title[Packages]
 $description[
-* **@tryforge/forgescript:** The entire project basically! Dodo-Bot is made in fs!
-* **@tryforge/forge.db:** For enabling variables in fs.
-* **fsgames:** For the new \`tictactoe\` design!
-* **discord-gamecord:** Most of the game commands were made using this package
-* **sqlite3:** Database used in the bot.
-* **dotenv:** For enabling environment variables support in local hosting
+* **@tryforge/forgescript** - The entire project basically! Dodo-Bot is made in fs!
+* **@tryforge/forge.db** - For enabling variables in fs.
+* **fsgames** - For the new \`tictactoe\` design!
+* **discord-gamecord** - Most of the game commands were made using this package
+* **sqlite3** - Database used in the bot.
+* **dotenv** - For enabling environment variables support in local hosting
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
