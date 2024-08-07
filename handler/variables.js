@@ -21,7 +21,7 @@ module.exports = {
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Pre-release",
-  DevVersionTypeToset: "Pre-release",
+  DevReleaseTypeToSet: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
