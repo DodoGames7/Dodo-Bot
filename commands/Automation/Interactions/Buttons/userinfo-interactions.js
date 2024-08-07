@@ -2,7 +2,7 @@ module.exports = [{
 type: "interaction",
 prototype: "button",
 code: `
-$interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverimage]]}{title:Information for $get[username]}{field:**General**:
+$interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverimage]]}{title:Information for $get[username]}{url:$nonEscape[$get[userURL]]}{field:**General**:
 **Joined the server on#COLON#** <t:$truncate[$divide[$memberJoinDate[$get[user];$guildID];1000]]:f>
 **Booster#COLON#** $get[boosterchecker]
 **Status#COLON#** $userStatus[$guildID;$get[user]]
@@ -19,6 +19,7 @@ $let[lowestrole;$advancedReplaceText[$checkCondition[$userLowestRole[$get[user];
 $let[highestrole;$advancedReplaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None;false;$userHighestRole[$get[user];$guildID;name]]]
 $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
 $let[boosterchecker;$advancedReplaceText[$checkCondition[$isBoosting[$get[user];$guildID]==true];true;Yes;false;No]]
+$let[userURL;https://discord.com/users/$get[user]]
 
 $onlyIf[$memberExists[$get[user];$guildID]==true;
 The user appears to have left the server. The ablity to view their server information in this server has been temporarily disabled until they re-join again
@@ -38,7 +39,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==memberservinfo;]
 type: "interaction",
 prototype: "button",
 code: `
-$interactionUpdate[{newEmbed:{title:Information for $get[username]}{field:**General**:
+$interactionUpdate[{newEmbed:{title:Information for $get[username]}{url:$nonEscape[$get[userURL]]}{field:**General**:
 **Joined Discord on#COLON#** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
 **Bot account#COLON#** $get[botchecker]
 **ID#COLON#** $get[user]
@@ -55,6 +56,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
 $let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
 $let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
+$let[userURL;https://discord.com/users/$get[user]]
 $let[user;$advancedTextSplit[$interactionData[customId];_;3]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==mainmeminfo;]
   

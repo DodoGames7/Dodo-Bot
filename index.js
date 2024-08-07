@@ -1,7 +1,7 @@
 const { AoiClient } = require("aoi.js");
 const config = require("./config.json"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
-const functions = require("./handler/functions.js");
+// const functions = require("./handler/functions.js");
 
 // Client Setup
 const client = new AoiClient({
@@ -28,7 +28,7 @@ const client = new AoiClient({
 // Handlers
 client.loadCommands("./commands/", config.LogCommands);
 client.variables(require("./handler/variables.js"));
-functions.forEach((func) => client.functionManager.createFunction(func));
+// functions.forEach((func) => client.functionManager.createFunction(func));
 
 
  

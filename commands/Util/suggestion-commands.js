@@ -44,7 +44,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         perms: ["`SendMessages`", "`AddReactions`"]
     },
     code: `
-$author[Suggestion by $username;$userAvatar]
+$author[Suggestion by $username;$userAvatar;$nonEscape[$get[userURL]]]
 $title[$splitText[1]]
 $description[$splitText[2]]
 $footer[Suggestion created since]
@@ -67,6 +67,7 @@ $onlyIf[$splitText[1]!=||$splitText[2]!=;Hey there! Your usage seems to be wrong
 
 A example of usage should be \`$getGuildVar[prefix]suggest title/description\`.]
  $textSplit[$message;/]
+$let[userURL;https://discord.com/users/$authorID]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest;$authorID];$dateStamp];1000]]:R>]
 `
