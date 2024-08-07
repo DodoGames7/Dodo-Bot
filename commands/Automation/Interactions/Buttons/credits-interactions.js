@@ -1,4 +1,27 @@
 module.exports = [{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+    $onlyIf[$advancedTextSplit[$customID;_;0]==credits;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+
+$interactionUpdate[$title[Dodo-Bot Credits]
+$description[
+* $username[632607624742961153] - Developer of the bot
+* $username[431749535656837130] - Inspiration to improve some commands
+* $username[769525910164471821] - For some ideas
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[credits_$authorID;Main Credits;Secondary;;true]
+$addButton[packages_$authorID;Packages;Secondary]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary]
+]
+`
+},{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
@@ -18,7 +41,9 @@ $description[
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[credits_$authorID;Home;Secondary;🏠]
+$addButton[credits_$authorID;Main Credits;Secondary;;false]
+$addButton[packages_$authorID;Packages;Secondary;;true]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary;;false]
 ]`
 
 },{
@@ -40,29 +65,9 @@ $addField[For private bots;If you're going to host Dodo-Bot (or have a modified 
 You may still give credit in cases where you claim it's your work.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[credits_$authorID;Home;Secondary;🏠]
-]
-`
-},{
-    type: "interactionCreate",
-    allowedInteractionTypes: ["button"],
-    code: `
-    $onlyIf[$advancedTextSplit[$customID;_;0]==credits;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-
-$interactionUpdate[$title[Dodo-Bot Credits]
-$description[
-* $username[632607624742961153] - Developer of the bot
-* $username[431749535656837130] - Inspiration to improve some commands
-* $username[769525910164471821] - For some ideas
-]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addButton[packages_$authorID;Packages;Secondary]
-$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary]
+$addButton[credits_$authorID;Main Credits;Secondary;;false]
+$addButton[packages_$authorID;Packages;Secondary;;false]
+$addButton[useofsourcecode_$authorID;Use of Source Code;Secondary;;true]
 ]
 `
 }]

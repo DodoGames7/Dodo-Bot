@@ -11,9 +11,9 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * Re-added \`coinflip\` (albeit with different implementation)
+* \`credits\` design is now the same as in v2 (non-Rebase version)
 * Added a new command called \`perms\`
 * Added the user's URL in \`userinfo\` and \`say\` command
-* Include \`AddReactions\` as required perm in \`suggest\` cmd's info
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -68,6 +68,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
+* Include \`AddReactions\` as required perm in \`suggest\` cmd's info
 * The shutdown command's "Yes" message's design has been slightly updated
 * \`shutdown\` command's embed title is now simply "Shutdown"
 ]
