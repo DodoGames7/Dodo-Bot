@@ -96,4 +96,12 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
 
         $return[$env[gotHeader]]
     `
-}]
+},{
+   name: "fallbackAttachment",
+   params: ["url", "fallbacktoUse"],
+   code: `
+$let[result;$replace[$replace[$checkCondition[$isImageLink[$env[url];get]==true];true;$env[url]];false;$env[fallbacktoUse]]]
+
+   $return[$get[result]]
+`
+  }]

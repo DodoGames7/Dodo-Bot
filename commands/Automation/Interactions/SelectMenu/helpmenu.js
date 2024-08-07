@@ -10,7 +10,7 @@ $ephemeral
     $interactionUpdate[
     $title[Main]
     $addField[**Main commands**;
-\`about\`, \`gitbuilds\`, \`settings\`, \`commandinfo\`
+\`about\`, \`gitbuilds\`, \`perms\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
         \`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
@@ -38,7 +38,7 @@ $ephemeral
     $interactionUpdate[
     $title[Entertainment]
     $addField[**Mini Games**;
-\`rps\`, \`ttt\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
+\`rps\`, \`ttt\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
  ]
    $addField[**Text**;
 \`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`

@@ -33,7 +33,7 @@ $addButton[suggestresetbutton_$authorID;Reset;Secondary]
     name: "suggest",
     info: {
         description: "Starts a suggestion in this server (if the feature is setup).",
-        perms: ["`SendMessages`"]
+        perms: ["`SendMessages`", "`AddReactions`"]
 },
     type: "messageCreate",
     code: `$userCooldown[suggestcmd;4s;Cooldown has been triggered! Please, wait!

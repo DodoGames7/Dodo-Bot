@@ -9,8 +9,8 @@ type: "messageCreate",
 code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $attachment[./handler/assets/warningsign.png;warningsign.png]
 
-$title[Shutting down]
-$description[Do you really want to shutdown the bot? This will simply stop your bot from responding. To turn on the bot, you need to go through your host to start it once again.]
+$title[Shutdown]
+$description[Do you really want to shutdown the bot? This will simply stop your bot from running. To turn on the bot, you need to go through your host to start it again.]
 $thumbnail[attachment://warningsign.png]
 $color[Red]
 $addActionRow

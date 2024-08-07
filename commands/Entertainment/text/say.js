@@ -16,13 +16,13 @@ $let[clearembedmodewords;$replace[$replace[$checkCondition[$checkContains[$messa
 $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without specifying a text first.]
 
 $if[$or[$checkContains[$message;--embed;—embed]==true;$charCount[$message]>=2000];
-$author[$username;$userAvatar]
+$author[$username;$userAvatar;$userURL[$authorID]]
 $title[Say cmd;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
 $description[$get[clearembedmodewords]]
 $color[Random]
 ;$get[clearembedmodewords]
 
- From \`$username\`]
+ From \`$hyperlink[$username;<$userURL[$authorID]>]\`]
 
 `
 }
