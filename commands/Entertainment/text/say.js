@@ -18,7 +18,7 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;say;$authorID
     type: "awaited",
     code: `$if[$checkContains[$message;--embed;—embed]==true||$charCount[$message]>=2000]
 $author[$username;$userAvatar;$nonEscape[$get[userURL]]]
-  $title[Say Cmd!;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
+  $title[Say Cmd!;$nonEscape[$get[links]]]
   $description[$get[content]]
   $color[Random]
   $addTimeStamp
@@ -30,6 +30,7 @@ $endif
 $disableMentionType[all]
 $onlyIf[$get[content]!=;You cannot activate embed mode without specifying a text first.]
 $let[content;$removeContains[$message;--embed;—embed]]
+$let[links;$randomText[$getClientInvite[sendmessages;viewchannel;addreactions;attachfiles;viewauditlog];https://www.youtube.com/watch?v=dQw4w9WgXcQ]]
 $let[userURL;https://discord.com/users/$authorID]
 `
 }]
