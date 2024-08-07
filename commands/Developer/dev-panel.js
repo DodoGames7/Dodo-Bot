@@ -8,12 +8,12 @@ info: {
 aliases: ["devpanel", "developer-panel", "dev-settings"],
 type: "messageCreate",
 code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
-$attachment[./handler/assets/gear.png;gear.png]
 $title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
+$attachment[./handler/assets/gear.png;gear.png]
 $thumbnail[attachment://gear.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
