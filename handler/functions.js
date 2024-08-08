@@ -45,6 +45,12 @@ $let[userInput;{userID}]
    $let[userInput;{userID}]
    `
   },{
+   name: "$hyperLink",
+   type: "aoi.js",
+   params: ["text", "link"],
+   code: `[{text}]({link})
+   `
+  },{
     name: "$fallbackAttachment",
     type: "aoi.js",
     params: ["url", "fallbacktoUse"],
