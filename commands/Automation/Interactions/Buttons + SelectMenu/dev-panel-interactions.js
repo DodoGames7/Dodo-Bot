@@ -403,7 +403,7 @@ $let[pre_release;$replace[$replace[$getGlobalVar[pre_release];off;Disabled];on;E
 $If[$getGlobalVar[pre_release]==off;
 $setGlobalVar[releaseType;Stable]
 ;
-$setGlobalVar[releaseType;$getGlobalVar[DevVersionTypeToset]]
+$setGlobalVar[releaseType;$getGlobalVar[DevReleaseTypeToSet]]
 ]
 
 $let[statements;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Pre-release mode's stuff will now appear!];false;Pre-release mode's stuff will now be absent!]]

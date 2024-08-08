@@ -10,11 +10,13 @@ module.exports = {
 $userCooldown[versioncmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[versioncmd]];1000]]:R>]
 
+$let[releasedatetype;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Build created on];false;Released on]]
+
 $title[Dodo-Bot Version]
     $description[
 * **Version**: $getGlobalVar[version]
 * **Release type**: $getGlobalVar[releaseType]
-* **Build created on**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
+* **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]

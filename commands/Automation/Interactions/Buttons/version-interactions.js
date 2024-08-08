@@ -13,7 +13,7 @@ $description[
 * Re-added \`coinflip\` (albeit with different implementation)
 * \`credits\` design is now the same as in v2 (non-Rebase version)
 * Added a new command called \`perms\`
-* Added the user's URL in \`userinfo\` and \`say\` command
+* Added the user's URL in \`userinfo\`, \`suggest\` and \`say\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -68,6 +68,8 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
+* (Source Code) Added a setup option called \`Embedcolor\`
+* The final build mention will no longer show up if Pre-release mode is disabled
 * Include \`AddReactions\` as required perm in \`suggest\` cmd's info
 * The shutdown command's "Yes" message's design has been slightly updated
 * \`shutdown\` command's embed title is now simply "Shutdown"
@@ -94,12 +96,14 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
+$let[releasedatetype;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Build created on];false;Released on]]
+
 $interactionUpdate[
 $title[Dodo-Bot Version]
     $description[
 * **Version**: $getGlobalVar[version]
 * **Release type**: $getGlobalVar[releaseType]
-* **Build created on**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
+* **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
