@@ -95,7 +95,7 @@ $interactionUpdate[
 $title[Dodo-Bot Version]
     $description[
 * **Version**: $getGlobalVar[version]
-* **Release type**: $getGlobalVar[releaseType]
+* **Release type**: $getGlobalVar[release_type]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;

@@ -15,7 +15,7 @@ $let[releasedatetype;$replace[$replace[$checkCondition[$getGlobalVar[pre_release
 $title[Dodo-Bot Version]
     $description[
 * **Version**: $getGlobalVar[version]
-* **Release type**: $getGlobalVar[releaseType]
+* **Release type**: $getGlobalVar[release_type]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;

@@ -99,7 +99,8 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
    name: "fallbackAttachment",
    params: ["url", "fallbacktoUse"],
    code: `
-$let[result;$replace[$replace[$checkCondition[$isImageLink[$env[url];get]==image/jpeg];true;$env[url]];false;$env[fallbacktoUse]]]
+$let[condition;$or[$isImageLink[$env[url];get]==image/jpeg;$isImageLink[$env[url];get]==image/png;$isImageLink[$env[url];get]==image/webp]]
+$let[result;$replace[$replace[$checkCondition[$get[condition]==true];true;$env[url]];false;$env[fallbacktoUse]]]
 
    $return[$get[result]]
 `

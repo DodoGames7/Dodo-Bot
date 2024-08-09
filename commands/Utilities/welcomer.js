@@ -20,7 +20,7 @@ $description[Welcomer is a way to greet new members of your server with your own
 To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
 
 ]
-$addField[Current setting;$get[welcomersystem]
+$addField[Current setting(s);$get[welcomersystem]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

@@ -401,9 +401,9 @@ $setGlobalVar[pre_release;$get[settingdecide]]
 $let[pre_release;$replace[$replace[$getGlobalVar[pre_release];off;Disabled];on;Enabled]]
 
 $If[$getGlobalVar[pre_release]==off;
-$setGlobalVar[releaseType;Stable]
+$setGlobalVar[release_type;Stable]
 ;
-$setGlobalVar[releaseType;$getGlobalVar[DevReleaseTypeToSet]]
+$setGlobalVar[release_type;$getGlobalVar[DevReleaseTypeToSet]]
 ]
 
 $let[statements;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Pre-release mode's stuff will now appear!];false;Pre-release mode's stuff will now be absent!]]
