@@ -10,7 +10,7 @@ code: `$userCooldown[leveling-lbcmd;2s;Cooldown has been triggered! Please, wait
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[leveling-lbcmd]];1000]]:R>]
 $onlyIf[$getGuildVar[levelingsystem]==on;Leveling is not enabled currently.]
 
-$let[page;$replace[$replace[$checkCondition[$message==];true;1];false;$callFunction[nospecialcharmessage;$message]]]
+$let[page;$replace[$replace[$checkCondition[$message==];true;1];false;$callFunction[excludespecialchars;$message]]]
 $onlyIf[$isNumber[$get[page]]==true;Please, be sure to enter a actual number.]
 $onlyIf[$isInteger[$get[page]]==true;A invalid page has been entered. Please specify a existing page.]
 $onlyIf[$get[page]>=1;You can't go less than page 1.]

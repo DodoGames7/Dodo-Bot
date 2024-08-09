@@ -24,6 +24,7 @@ $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
+$addChannelType[GuildAnnouncement]
 $addChannelSelectMenu[suggestionchannelsetup_$authorID;Select a channel to setup.;1;1;false]
 $addActionRow 
 $addButton[suggestresetbutton_$authorID;Reset;Secondary]
@@ -45,7 +46,7 @@ $let[message;$arrayAt[message;1]]
 $onlyIf[$or[$get[title]==;$get[message]==]==false;You need to type something to send a suggestion in this server.
 
 Here's the usage:
-\`$getGuildVar[prefix]suggest suggestion title/description\`
+\`$getGuildVar[prefix]suggest title/description\`
 ]
 
 $onlyIf[$getGuildVar[suggestionchannel]!=;
@@ -81,7 +82,7 @@ Alright, your suggestion has been sent to <#$getGuildVar[suggestionchannel]>
 ]
 
 $let[messageID;$sendMessage[$getGuildVar[suggestionchannel];
-$author[Suggestion from $username;$userAvatar;$userURL[$authorID]]
+$author[Suggestion from $username;$userAvatar;$callFunction[userURL;$authorID]]
 $title[$get[title]]
 $description[$get[message]]
 $color[$getGlobalVar[embedcolor]]

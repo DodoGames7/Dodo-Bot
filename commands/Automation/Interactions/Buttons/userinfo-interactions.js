@@ -20,7 +20,7 @@ $ephemeral
 
 $interactionUpdate[
 $author[Server information;$get[servericon]]
-$title[$get[username]'s information;$userURL[$get[user]]]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined the server on:** <t:$trunc[$divide[$memberJoinedAt[$guildID;$get[user]];1000]]:f>
 **Amount of roles:** $arrayLength[amountofroles]
@@ -51,7 +51,7 @@ $let[accounttype;$replace[$replace[$checkCondition[$isBot[$get[user]]==true];tru
 $let[dmsstatus;$replace[$replace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
 
 $interactionUpdate[
-$title[$get[username]'s information;$userURL[$get[user]]]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
 **Account type:** $get[accounttype]

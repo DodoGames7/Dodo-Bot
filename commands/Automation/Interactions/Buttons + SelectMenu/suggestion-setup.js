@@ -41,6 +41,7 @@ $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
+$addChannelType[GuildAnnouncement]
 $addChannelSelectMenu[suggestionchannelsetup_$authorID;Select a channel to setup.;1;1;false]
 $addActionRow 
 $addButton[suggestresetbutton_$authorID;Reset;Secondary]

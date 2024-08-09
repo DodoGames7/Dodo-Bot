@@ -1,4 +1,4 @@
-odule.exports = {
+module.exports = {
 name: "perms",
 info: {
         description: "Returns the permissions the bot needs.",
@@ -20,4 +20,5 @@ $attachment[./handler/assets/redwarning.png;redwarning.png]
 $footer[For safety reasons, do not give the bot administrator permission at all;attachment://redwarning.png]
 
 `
+}
 

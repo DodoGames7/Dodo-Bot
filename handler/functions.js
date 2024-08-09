@@ -54,7 +54,7 @@ $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayNam
     $return[$get[result]]
     `
   },{
-    name: "nospecialcharmessage",
+    name: "excludespecialchars",
     params: ["content"],
     code: `
 $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&;];$;];#;];^;];(;];);];*;];!;];?;]]
@@ -72,9 +72,8 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
   {
    name: "userURL",
    params: ["userID"],
-   code: `$let[link;https://discord.com/users/$env[userID]]
-
-   $return[$get[link]]`
+   code: `
+   $return[https://discord.com/users/$env[userID]]`
   },{
     name: 'isImageLink',
     params: ['url', 'method'],
@@ -100,7 +99,7 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
    name: "fallbackAttachment",
    params: ["url", "fallbacktoUse"],
    code: `
-$let[result;$replace[$replace[$checkCondition[$isImageLink[$env[url];get]==true];true;$env[url]];false;$env[fallbacktoUse]]]
+$let[result;$replace[$replace[$checkCondition[$isImageLink[$env[url];get]==image/jpeg];true;$env[url]];false;$env[fallbacktoUse]]]
 
    $return[$get[result]]
 `

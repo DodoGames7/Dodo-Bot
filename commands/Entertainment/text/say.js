@@ -22,7 +22,7 @@ $description[$get[clearembedmodewords]]
 $color[Random]
 ;$get[clearembedmodewords]
 
- From \`$hyperlink[$username;<$userURL[$authorID]>]\`]
+ From **$hyperlink[$username;<$userURL[$authorID]>]**]
 
 `
 }

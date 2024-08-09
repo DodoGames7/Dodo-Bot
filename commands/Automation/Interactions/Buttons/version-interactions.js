@@ -10,10 +10,8 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Re-added \`coinflip\` (albeit with different implementation)
-* \`credits\` design is now the same as in v2 (non-Rebase version)
-* Added a new command called \`perms\`
-* Added the user's URL in \`userinfo\`, \`suggest\` and \`say\` command
+* \`tictactoe\` has been reverted back to the old design from non-Rebase version
+* \`suggest-setup\` now supports announcement channels
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -40,8 +38,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Fixed wrong cooldown for \`rank\` command
-* Fixed Bot Invitation Message being broken
+* Fixed bugs that rendered the previous build unusable
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -68,11 +65,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* (Source Code) Added a setup option called \`Embedcolor\`
-* The final build mention will no longer show up if Pre-release mode is disabled
-* Include \`AddReactions\` as required perm in \`suggest\` cmd's info
-* The shutdown command's "Yes" message's design has been slightly updated
-* \`shutdown\` command's embed title is now simply "Shutdown"
+* Section "Mini Games" has been shortened to "Games" from help cmd's Entertainment module
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
