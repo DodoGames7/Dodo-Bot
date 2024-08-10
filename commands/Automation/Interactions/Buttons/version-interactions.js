@@ -11,6 +11,7 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * \`tictactoe\` has been reverted back to the old design from non-Rebase version
+* Re-added \`findtheflag\`
 * \`suggest-setup\` now supports announcement channels
 ]
 $if[$getGlobalVar[pre_release]==on;
