@@ -21,7 +21,7 @@ const client = new AoiClient({
  disableFunctions: ["$clientToken"], // For safety reasons
  mobilePlatform: config.MobileStatus || process.env.MobileStatus, // Whether or not to enable mobile status
  debugs: {
- interpreter: config.DebugClient || process.env.DebugClient // Whether or not to enable aoi.js debug mode
+ interpreter: config.EnableDebugMode || process.env.EnableDebugMode // Whether or not to enable aoi.js debug mode
 }
 });
 

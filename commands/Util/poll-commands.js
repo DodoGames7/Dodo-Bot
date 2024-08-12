@@ -30,7 +30,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     name: "poll",
     info: {
         description: "Start a poll in this server (if setup).",
-        perms: ["`SendMessages`", "`ManageMessages`"]
+        perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"]
     },
     code: `
 

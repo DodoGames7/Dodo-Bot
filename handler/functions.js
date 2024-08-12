@@ -60,4 +60,22 @@ $let[FallbackInput;{fallbacktoUse}]
 $let[Input;{url}]
 
     `
-  }]
+  },{
+  name: "$createProgressBar",
+  type: "djs",
+  code: async d => {
+    const data = d.util.aoiFunc(d);
+    const [value, max, barLength = 15] = data.inside.splits;
+
+    function createBar(value, max, barLength) {
+      const progress = Math.round((value / max) * barLength);
+      const progressText = "=".repeat(progress) + "-".repeat(barLength- progress);
+      return progressText;
+    }
+
+    data.result = createBar(Number(value), Number(max), Number(barLength));
+    return {
+      code: d.util.setCode(data)
+    }
+  }
+}]

@@ -25,7 +25,7 @@ $author[$username;$userAvatar;$nonEscape[$get[userURL]]]
 $else
 $message
 
-- From \`[$username](<$get[userURL]>)\`
+- From [\`$username\`](<$get[userURL]>)
 $endif
 $disableMentionType[all]
 $onlyIf[$get[content]!=;You cannot activate embed mode without specifying a text first.]
