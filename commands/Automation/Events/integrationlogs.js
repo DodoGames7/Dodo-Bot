@@ -3,14 +3,14 @@ module.exports = [{
     allowBots: true,
     code: `
     $onlyIf[$isBot==true;]
-    $onlyIf[$getGuildVar[integrationchannel]!=;]
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[integrationchannel]]==true;]
-    $onlyIf[$channelHasPerms[$getGuildVar[integrationchannel];$botID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$getGuildVar[integrationlogchannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[integrationlogchannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[integrationlogchannel];$botID;ViewChannel;SendMessages]==true;]
     $onlyIf[$hasPerms[$guildID;$botID;ViewAuditLog]==true;]
     $let[staffdetails;$username[$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]] <@$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]>]
     $let[verified;$replace[$replace[$checkCondition[$isBotVerified[$authorID]==true];true;Yes];false;No]]
     $let[timestamp;$fetchAuditLog[$guildID;IntegrationCreate;timestamp;0]]
-    $sendMessage[$getGuildVar[integrationchannel];
+    $sendMessage[$getGuildVar[integrationlogchannel];
     $author[New bot has been added!;$userAvatar[$botID]]
     $description[
 * **Name:** $username <@$authorID>

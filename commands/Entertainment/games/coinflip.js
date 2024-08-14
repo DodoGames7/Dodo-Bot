@@ -13,13 +13,15 @@ Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[coinfl
 $let[number;$and[$randomNumber[1;100;false]>=38;$randomNumber[1;100;false]<89]]
 $let[result;$replace[$replace[$checkCondition[$get[number]==true];true;Heads];false;Tails]]
 
-$let[messageID;$sendMessage[$channelID;$title[The coin is landing...]
+$let[messageID;$sendMessage[$channelID;$title[🪙 Flipping Coin...]
 $color[$getGlobalVar[embedcolor]]
 ;true]]
 $wait[5000]
 $!editMessage[$channelID;$get[messageID];$title[You got...]
 $description[**$get[result]**!]
 $color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[coinflipretrybutton_$authorID;Retry;Secondary;🕹️]
 ]
 
 `

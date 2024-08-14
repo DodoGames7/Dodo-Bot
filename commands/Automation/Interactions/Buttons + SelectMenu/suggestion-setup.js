@@ -7,8 +7,8 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
+$onlyIf[$checkContains[$channelType[$selectMenuValues];GuildText;GuildAnnouncement]==true;
+$interactionReply[Channel must be either a Text or Announcement channel.
 $ephemeral
 ]]
 

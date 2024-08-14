@@ -1,6 +1,6 @@
 module.exports = {
 type: "ready",
-code: `$onlyIf[$getGlobalVar[startup]==on;]
+code: `$onlyIf[$getGlobalVar[startupsystem]==on;]
 $onlyIf[$getGlobalVar[startupchannel]!=;]
 $onlyIf[$channelExists[$getGlobalVar[startupchannel]]==true;]
 $onlyIf[$channelHasPerms[$getGlobalVar[startupchannel];$botID;ViewChannel;SendMessages]==true;]

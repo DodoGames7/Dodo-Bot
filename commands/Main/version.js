@@ -24,9 +24,9 @@ $footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
-    $addButton[changes_$authorID;Changes;Secondary]
-    $addButton[fixes_$authorID;Bug Fixes;Secondary]
-    $addButton[other_$authorID;Other;Secondary]
+    $addButton[versionchanges_$authorID;Changes;Secondary]
+    $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
+    $addButton[versionother_$authorID;Other;Secondary]
     $addActionRow
     $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
 `

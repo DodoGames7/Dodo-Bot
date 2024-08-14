@@ -525,7 +525,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
 
 $interactionUpdate[
 $author[Integration logs;$userAvatar[$botID]]
@@ -557,7 +557,7 @@ $interactionReply[Channel must be a Text channel.
 $ephemeral
 ]]
 
-$onlyIf[$getGuildVar[integrationchannel;$guildID]!=$selectMenuValues;
+$onlyIf[$getGuildVar[integrationlogchannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Integration logs. Select a different one instead.
 $ephemeral
 ]
@@ -571,9 +571,9 @@ $ephemeral
 ]
 ]
 
-$setGuildVar[integrationchannel;$selectMenuValues;$guildID]
+$setGuildVar[integrationlogchannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -607,13 +607,13 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$getGuildVar[integrationchannel;$guildID]!=;$interactionReply[
+$onlyIf[$getGuildVar[integrationlogchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
 $ephemeral]]
 
-$deleteGuildVar[integrationchannel;$guildID]
+$deleteGuildVar[integrationlogchannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationchannel;$guildID]!=];true;<#$getGuildVar[integrationchannel;$guildID]> (\`$getGuildVar[integrationchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]

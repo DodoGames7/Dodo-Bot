@@ -12,7 +12,7 @@ $onlyIf[$mentioned[0]!=;Please mention a opponent to play with.]
 $onlyIf[$isBot[$mentioned[0]]==false;You cannot play with bots!]
 $onlyIf[$mentioned[0]!=$authorID;You cannot play with yourself.]
 
-$djsEval[const { TicTacToe } = require('discord-gamecord');
+$!djsEval[const { TicTacToe } = require('discord-gamecord');
 
 const Game = new TicTacToe({
   message: ctx.message,

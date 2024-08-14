@@ -434,7 +434,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $interactionUpdate[
@@ -467,9 +467,9 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[startup]==on];true;off];false;on]]
-$setGlobalVar[startup;$get[settingdecide]]
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[startupsystem]==on];true;off];false;on]]
+$setGlobalVar[startupsystem;$get[settingdecide]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $let[statements;$replace[$replace[$checkCondition[$getGlobalVar[startup]==on];true;Startup messages will now be sent!];false;Startup messages will no longer be sent!]]
@@ -533,7 +533,7 @@ $ephemeral
 
 $setGlobalVar[startupchannel;$selectMenuValues]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $interactionUpdate[
@@ -574,7 +574,7 @@ $ephemeral]]
 
 $deleteGlobalVar[startupchannel]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 

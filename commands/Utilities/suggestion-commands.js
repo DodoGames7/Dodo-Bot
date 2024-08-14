@@ -86,6 +86,7 @@ $author[Suggestion from $username;$userAvatar;$callFunction[userURL;$authorID]]
 $title[$get[title]]
 $description[$get[message]]
 $color[$getGlobalVar[embedcolor]]
+$footer[Created on]
 $timestamp
 ;true]]
 

@@ -12,11 +12,13 @@ Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rankcm
 $let[user;$mentioned[0;true]]
 $onlyIf[$isBot[$get[user]]==false;Bots don't have Levels.]
 $title[$username[$get[user]]'s Rank]
-$description[
+$addField[Progress;
 * **Level:** \`$getMemberVar[level;$get[user]]\`
-* **XP:** \`$getMemberVar[xp;$get[user]]\`/\`$getMemberVar[xpLimit;$get[user]]\`
+* **Experience:** \`$getMemberVar[xp;$get[user]]\`/\`$getMemberVar[xpLimit;$get[user]]\`
+\`($bar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];20;=;-])\`
 ]
 $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]
 `
 }
+

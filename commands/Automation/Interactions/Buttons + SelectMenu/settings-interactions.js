@@ -2,7 +2,7 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `
-$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==autoreplypingoption]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==autoreplypingoption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
@@ -17,7 +17,7 @@ It is recommended to disable this if it's used for spamming.]
 $addField[Current setting(s);$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
@@ -50,7 +50,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
@@ -68,7 +68,7 @@ $ephemeral
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `
-$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==anonymousoption]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==anonymousoption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
@@ -83,7 +83,7 @@ Due to security reasons, this option is only exclusive to Ban logs and will NOT 
 $addField[Current setting(s);$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
@@ -116,7 +116,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
@@ -134,7 +134,7 @@ $ephemeral
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `
-$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsselectlist;$selectMenuValues==includebotsoption]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==includebotsoption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
@@ -149,7 +149,7 @@ Note that disabling this will cause "Display Message Deleter" to be ignored for 
 $addField[Current setting(s);$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
@@ -182,7 +182,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]

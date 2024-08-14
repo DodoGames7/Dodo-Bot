@@ -21,5 +21,8 @@
     "discord-gamecord": "^4.4.2",
     "dotenv": "^16.4.5",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }

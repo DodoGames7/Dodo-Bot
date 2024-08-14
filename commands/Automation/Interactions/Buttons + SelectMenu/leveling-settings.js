@@ -282,7 +282,7 @@ $addTextInput[messageInput;Message to use;Paragraph;true;<username> has leveled 
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["modal"],
-    code: `$onlyIf[$customID==levelingtextmodalsetup;]
+    code: `$onlyIf[$customID==levelingmessagemodalsetup;]
 $setGuildVar[levelingmessage;$input[messageInput]]
 $interactionReply[Successfully set the Leveling message!
 $ephemeral]`
@@ -296,7 +296,7 @@ $ephemeral
 ]]
 
 
-$let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<previouslevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
+$let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<oldlevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
 
 $interactionReply[
  $get[content]
@@ -380,7 +380,7 @@ $addField[Member-related;
 ]
 $addField[Leveling-related;
 \`<newlevel>\` - Returns the member's new level
-\`<previouslevel>\` - Returns the level the member once had
+\`<oldlevel>\` - Returns the level the member once had
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
