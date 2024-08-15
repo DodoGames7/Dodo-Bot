@@ -6,7 +6,7 @@ info: {
 },
 $if: "old",
 aliases: ["userinfo", "user-info"],
-code: `$title[Information for $get[username]]
+code: `$title[Information for $get[username];$nonEscape[$get[userURL]]]
 $addField[**Other**;
 **Avatar:** [link]($userAvatar[$get[user]])
 **DMs:** $get[userdms]
@@ -26,6 +26,7 @@ $thumbnail[$userAvatar[$get[user]]]
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
 $let[botchecker;$advancedReplaceText[$checkCondition[$isBot[$get[user]]==true];true;Yes;false;No]]
 $let[userdms;$advancedReplaceText[$checkCondition[$isUserDmEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
+$let[userURL;https://discord.com/users/$get[user]]
 $let[user;$findUser[$message[1];true]]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;user;$authorID];$dateStamp];1000]]:R>]

@@ -4,6 +4,7 @@ info: {
     description: "Setup polls.",
     perms: ["`SendMessages`", "`ManageChannels`"]
 },
+aliases: ["set-poll", "setpoll", "pollset"],
 code: `
 $setGuildVar[pollchannel;$get[channeltarget]]
 Successfully set <#$get[channeltarget]> as the Poll channel!
@@ -17,8 +18,7 @@ $onlyIf[$get[channeltarget]!=$getGuildVar[pollchannel]; You already have set thi
 $onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Poll channel to use Polls feature.]
 
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;
-Channel exists but outside of this server. Please try mentioning an channel inside this server.
-]
+Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Mention an channel or enter the channel id.]
@@ -30,12 +30,12 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     name: "poll",
     info: {
         description: "Start a poll in this server (if setup).",
-        perms: ["`SendMessages`", "`ManageMessages`"]
+        perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"]
     },
     code: `
 
 
-$author[Poll by $username;$userAvatar]
+$author[Poll by $username;$userAvatar;$nonEscape[$get[userURL]]]
 $description[$splitText[1]
 
 1️⃣: **$splitText[2]**
@@ -62,6 +62,7 @@ $onlyIf[$splitText[1]!=||$splitText[2]!=||$splitText[3]!=;Hey there! Your usage 
 
 A example of a usage should be \`$getGuildVar[prefix]poll content/choice 1/choice 2\`]
 $textSplit[$message;/]
+$let[userURL;https://discord.com/users/$authorID]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;poll;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managemessages;You need to have \`ManageMessages\` permission to proceed.]

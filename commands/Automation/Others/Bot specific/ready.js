@@ -13,9 +13,9 @@ console.log(chalk.yellow("Tip: Found an issue? Report it here: https://github.co
 ]
 $log[Dodo Bot v$getVar[version]$if[$getVar[pre_release_mode]==on; (build $getVar[buildNumber])] is ready to be used on the client $userTag[$clientID]!]
 $wait[2s]
-$ifAwaited[$getVar[pre_release_mode]==on;{execute:senddevwarning}]`
+$ifAwaited[$getVar[pre_release_mode]==on;{execute:showdevwarning}]`
 },{
-    name: "senddevwarning",
+    name: "showdevwarning",
     type: "awaited",
     code: `$djsEval[const chalk = require('chalk')
 

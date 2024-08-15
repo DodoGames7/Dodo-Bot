@@ -1,6 +1,7 @@
 const { AoiClient } = require("aoi.js");
 const config = require("./config.json"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
+// const functions = require("./handler/functions.js");
 
 // Client Setup
 const client = new AoiClient({
@@ -20,13 +21,14 @@ const client = new AoiClient({
  disableFunctions: ["$clientToken"], // For safety reasons
  mobilePlatform: config.MobileStatus || process.env.MobileStatus, // Whether or not to enable mobile status
  debugs: {
- interpreter: config.DebugClient || process.env.DebugClient // Whether or not to enable aoi.js debug mode
+ interpreter: config.EnableDebugMode || process.env.EnableDebugMode // Whether or not to enable aoi.js debug mode
 }
 });
 
 // Handlers
 client.loadCommands("./commands/", config.LogCommands);
 client.variables(require("./handler/variables.js"));
+// functions.forEach((func) => client.functionManager.createFunction(func));
 
 
  

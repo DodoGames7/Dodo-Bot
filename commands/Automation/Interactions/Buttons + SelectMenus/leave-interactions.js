@@ -78,7 +78,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
@@ -139,6 +139,38 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavechannelmenusetup;]
     
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[Channel has been reset!;true]
+
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
+
+    **Current Setting(s)**
+    **Channel#COLON#** $get[leavechannel]
+
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+
+    }}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
+
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+
+    $deleteVar[leavechannel;$guildID;main]
+
+    $onlyIf[$getGuildVar[leavechannel]!=none;
+    There's no channel to reset.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leaveresetchannel;]
+
     `
     },{
     type: "interaction",

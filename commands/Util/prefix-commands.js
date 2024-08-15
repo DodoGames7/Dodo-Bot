@@ -7,10 +7,11 @@ module.exports = [{
   code: `
   $setGuildVar[prefix;$message]
   Changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`.
-  $onlyIf[$getGuildVar[prefix]!=$message; This prefix is already in use.]
+  $onlyIf[$getGuildVar[prefix]!=$message;This prefix is already in use.]
   $onlyIf[$charCount[$message]<=5;Prefix can't be longer than 5 characters.]
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
+
     $onlyPerms[manageguild;You need to have \`ManageServer\` permission to proceed.]
   $onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
   $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix]\` 

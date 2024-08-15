@@ -78,7 +78,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
+    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -139,6 +139,38 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomerchannelmenusetup;]
     
+    `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionFollowUp[Channel has been reset!;true]
+
+    $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
+
+    **Current Setting(s)**
+    **Channel#COLON#** $get[welcomerchannel]
+
+    **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
+
+    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+
+    $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
+
+    $deleteVar[welcomechannel;$guildID;main]
+
+    $onlyIf[$getGuildVar[welcomechannel]!=none;
+    There's no channel to reset.
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomerresetchannel;]
+
     `
     },{
     type: "interaction",

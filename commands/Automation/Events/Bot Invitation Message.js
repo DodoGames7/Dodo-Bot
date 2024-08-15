@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Bot server Welcomer",
+    name: "Bot Invitation Message",
     type: "guildJoin",
     channel: "$randomChannelID[$guildID;all]",
     code: `
@@ -15,6 +15,6 @@ module.exports = {
     $useChannel[$get[channelselector]]
     $onlyIf[$hasPermsInChannel[$get[channelselector];$clientID;sendmessages;viewchannel]==true;]
     $let[channelselector;$advancedReplaceText[$checkCondition[$guildSystemChannelID[$guildID]==];true;$randomChannelID[$guildID;Text];false;$guildSystemChannelID[$guildID]]]
-    $onlyIf[$getVar[botgreeting]==on;]
+    $onlyIf[$getVar[botinvitationmessage]==on;]
     `
     }
