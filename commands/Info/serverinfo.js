@@ -5,7 +5,9 @@ module.exports = {
     perms: ["`SendMessages`"]
 },
   aliases: ["server", "si", "guild", "guildinfo"],
-  code: `$title[Server Info]
+  code: `
+  $author[$guildName;$guildIcon;$guildIcon]
+  $title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
 **Created on:** <t:$truncate[$divide[$creationDate[$guildID;ms];1000]]:f>

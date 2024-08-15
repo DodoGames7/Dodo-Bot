@@ -45,10 +45,10 @@ $let[userInput;{userID}]
    $let[userInput;{userID}]
    `
   },{
-   name: "$hyperLink",
+   name: "$commandExists",
    type: "aoi.js",
-   params: ["text", "link"],
-   code: `[{text}]({link})
+   params: ["name"],
+   code: `$checkCondition[$commandInfo[{name};name]!=]
    `
   },{
     name: "$fallbackAttachment",
