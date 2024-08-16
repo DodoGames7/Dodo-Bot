@@ -4,6 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * Include \`AddReactions\` as required perm in \`suggest\` and \`poll\` cmd's info
+* Bot's pfp is no longer used in favor of discord's default avatars (for icon-less servers) (Revision 1)
 * Added 2 new commands called \`perms\` and \`8ball\`
 * Added the user's URL in \`suggest\`, \`user\`, \`say\` and \`poll\` command
 * You can now reset channels of Welcomer, Leave and Leveling
@@ -24,6 +25,7 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
 * Very small code changes to \`version\` home button to avoid potential issues
+* Fixed server icon implementation for icon-less servers (Revision 1)
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
     $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]

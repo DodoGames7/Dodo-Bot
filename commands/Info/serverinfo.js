@@ -6,7 +6,7 @@ module.exports = {
 },
   aliases: ["server", "si", "guild", "guildinfo"],
   code: `
-  $author[$guildName;$guildIcon;$guildIcon]
+  $author[$guildName;$nonEscape[$get[serverimage]];$nonEscape[$get[serverimage]]]
   $title[Server Info]
   $addField[Verification Level;$get[verifylevel]]
   $addField[Other;
@@ -40,6 +40,6 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;serverinfo;$a
   
   $let[verifylevel;$advancedReplaceText[$GuildVerificationLevel;1;Low;2;Medium;3;High;4;Highest;0;None]]
   $let[content;$advancedReplaceText[$guildContentFilter[$guildID];0;Disabled;1;Medium;2;High]]
-  $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
+  $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userDefaultAvatar[$clientID]]]
 `
 }

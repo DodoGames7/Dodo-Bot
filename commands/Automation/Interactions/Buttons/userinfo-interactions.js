@@ -17,7 +17,7 @@ $interactionUpdate[{newEmbed:{author:Server information:$nonEscape[$get[serverim
 $let[username;$advancedReplaceText[$checkCondition[$charCount[$discriminator[$get[user]]]==1];true;$username[$get[user]];false;$userTag[$get[user]]]]
 $let[lowestrole;$advancedReplaceText[$checkCondition[$userLowestRole[$get[user];$guildID]==$guildID];true;None;false;$roleName[$userLowestRole[$get[user];$guildID]]]]
 $let[highestrole;$advancedReplaceText[$checkCondition[$userHighestRole[$get[user];$guildID;id]==$guildID];true;None;false;$userHighestRole[$get[user];$guildID;name]]]
-$let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
+$let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userDefaultAvatar[$clientID]]]
 $let[boosterchecker;$advancedReplaceText[$checkCondition[$isBoosting[$get[user];$guildID]==true];true;Yes;false;No]]
 $let[userURL;https://discord.com/users/$get[user]]
 
