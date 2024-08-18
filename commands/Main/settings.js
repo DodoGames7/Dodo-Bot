@@ -15,7 +15,9 @@ This command requires you to have \`ManageGuild\` permission!
 
 
 $title[Settings]
-$description[Welcome to Settings! Select a option to change!]
+$description[Welcome to Settings! Select a option to change using the menu below!]
+$attachment[./handler/assets/gear.png;gear.png]
+$thumbnail[attachment://gear.png]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]

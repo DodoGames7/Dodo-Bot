@@ -10,10 +10,10 @@ $ephemeral
     $interactionUpdate[
     $title[Main]
     $addField[**Main commands**;
-\`about\`, \`gitbuilds\`, \`perms\`, \`settings\`, \`commandinfo\`
+\`about\`, \`gitbuilds\`, \`report\`, \`perms\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
-        \`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
+\`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
     ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
@@ -21,7 +21,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-   $if[$checkContains[$botOwnerID;$authorID]==true;
+   $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -52,7 +52,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -76,7 +76,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -106,7 +106,7 @@ $addField[**Miscellaneous**;
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -134,7 +134,7 @@ $addField[**Bot Management**;
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]

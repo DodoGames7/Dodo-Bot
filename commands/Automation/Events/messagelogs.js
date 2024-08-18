@@ -3,7 +3,6 @@ module.exports = [{
     allowBots: true,
     code: `
     $onlyIf[$oldMessage[content]!=;]
-    $onlyIf[$hasEmbeds[$oldMessage[channelID];$oldMessage[id]]==false;]
     $onlyIf[$getGuildVar[msglogdeletechannel]!=;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogdeletechannel]]==true;]
     $onlyIf[$channelHasPerms[$getGuildVar[msglogdeletechannel];$botID;ViewChannel;SendMessages]==true;]

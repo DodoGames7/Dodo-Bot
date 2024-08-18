@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["devpanel", "developer-panel", "dev-settings"],
 type: "messageCreate",
-code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 

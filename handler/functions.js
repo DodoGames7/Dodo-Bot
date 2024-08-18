@@ -1,11 +1,4 @@
 module.exports = [{
-    name: "quotes",
-    params: [],
-    code: `
-$let[quotes;$randomText[*It was always created what it was for. And that is just entertainment personally.*;*Don't let haters stop you. Keep working on your projects with your goals.*;*Destroying is easy. Creating is difficult.*;*Why should i care if my bot is unpopular? I just love my work.*]]
-    $return[$get[quotes]]
-    `
-  },{
     name: "randomtopic",
     params: [],
     code: `
@@ -68,8 +61,45 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
 
     $return[$get[Answers]]
 `
-  },
-  {
+  },{
+    name: "autoListroles",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $return[* <@&$trim[$env[element]]>]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
+    name: "autoListchannels",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $return[* <#$trim[$env[element]]>]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
    name: "userURL",
    params: ["userID"],
    code: `

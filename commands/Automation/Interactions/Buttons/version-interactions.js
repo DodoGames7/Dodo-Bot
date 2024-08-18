@@ -10,11 +10,11 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added "Retry" button to \`coinflip\` command
-* Placeholder \`<previouslevel>\` has been renamed to \`<oldlevel>\`
-* \`rank\` design has been slightly updated as well as new progress bar
-* Re-added \`findtheflag\`
-* \`suggest-setup\` now supports announcement channels
+* Progress bar has been decreased in size in \`rank\` command
+* Lots of changes for the final version
+* You can now exclude certain roles/channels from xp in Leveling
+* "Reset on Leave" option in \`leveling\` command has been moved to a select menu
+* Bot permissions can now be viewed in Integration logs
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]
@@ -42,6 +42,9 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Fixed bugs that rendered the previous build unusable
+* Fixed Message Delete Logs breaking
+* Fixed spelling one of the errors in \`commandinfo\` command
+* Anonymous no longer hides bots who took action
 * Fixed Leveling message setting being unusable
 ]
 $if[$getGlobalVar[pre_release]==on;
@@ -69,9 +72,9 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* \`tictactoe\` has been reverted back to the old design from non-Rebase version
-* Added "Created on" footer to \`suggest\` command's embed
-* Section "Mini Games" has been shortened to "Games" from help cmd's Entertainment module
+* Updated the search icon in \`commandinfo\` command
+* Server name can now be clicked in \`serverinfo\` command
+* Version has been reset to \`1.2.0\` to avoid confusion from the non-Rebase version
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handler/assets/redwarning.png;redwarning.png]

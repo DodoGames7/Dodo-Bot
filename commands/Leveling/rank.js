@@ -15,7 +15,7 @@ $title[$username[$get[user]]'s Rank]
 $addField[Progress;
 * **Level:** \`$getMemberVar[level;$get[user]]\`
 * **Experience:** \`$getMemberVar[xp;$get[user]]\`/\`$getMemberVar[xpLimit;$get[user]]\`
-\`($bar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];20;=;-])\`
+\`($bar[$getMemberVar[xp;$get[user]];$getMemberVar[xpLimit;$get[user]];15;=;-])\`
 ]
 $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]

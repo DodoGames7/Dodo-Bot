@@ -11,7 +11,7 @@ module.exports = [{
     $let[verified;$replace[$replace[$checkCondition[$isBotVerified[$authorID]==true];true;Yes];false;No]]
     $let[timestamp;$fetchAuditLog[$guildID;IntegrationCreate;timestamp;0]]
     $sendMessage[$getGuildVar[integrationlogchannel];
-    $author[New bot has been added!;$userAvatar[$botID]]
+    $author[New bot has been added!;$userAvatar]
     $description[
 * **Name:** $username <@$authorID>
 * **Tag:** $userTag
@@ -21,5 +21,7 @@ module.exports = [{
 * **Created on:** <t:$trunc[$divide[$userCreatedAt[$authorID];1000]]:f>
     ]
     $color[Blue]
+    $addActionRow
+    $addButton[viewbotperms_$authorID;View Permissions;Secondary]
     ]`
 }]

@@ -3,6 +3,8 @@ type: "messageCreate",
 code: `
 $onlyIf[$isBot==false;]
 $onlyIf[$getGuildVar[levelingsystem]==on;]
+$onlyIf[$checkContains[$getGuildVar[levelingexcludedchannels];$channelID]==false;]
+$onlyIf[$checkContains[$memberRoles;$getGuildVar[levelingexcludedroles]]==false;]
 $memberCooldown[autoxpgain;2s]
 $setMemberVar[xp;$sum[$getMemberVar[xp;$authorID];1];$authorID]
 

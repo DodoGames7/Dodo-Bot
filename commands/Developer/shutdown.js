@@ -6,7 +6,7 @@ info: {
     dev: "true"
 },
 type: "messageCreate",
-code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $attachment[./handler/assets/warningsign.png;warningsign.png]
 
 $title[Shutdown]

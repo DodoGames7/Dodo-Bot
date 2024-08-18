@@ -79,11 +79,14 @@ $addField[Current setting(s);
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
+$addStringSelectMenu[levelingextraoptionsmenu_$authorID;More options;false;1;1]
+$addOption[Exclusions;Manage on what to exclude from gaining xp;exclusionsoption;;false]
+$addOption[Reset on Leave;Whether or not to reset user's level upon leaving the server;resetonleaveoption;;false]
+$addActionRow
 $addButton[levelinghome_$authorID;Home;Secondary;🏠]
 $addButton[levelingchannelsetup_$authorID;Channel;Secondary]
 $addButton[levelingmessagecategory_$authorID;Message;Secondary]
 $addButton[levelingplaceholderlist_$authorID;Placeholders;Secondary]
-$addButton[levelingresetonleave_$authorID;Reset on Leave;Secondary]
 ]
 `
 },{
@@ -181,7 +184,6 @@ $deleteGuildVar[levelingmessagechannel;$guildID]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
 
 
-$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
@@ -305,9 +307,9 @@ $ephemeral
 `
 },{
     type: "interactionCreate",
-    allowedInteractionTypes: ["button"],
+    allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==levelingresetonleave;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==levelingextraoptionsmenu;$selectMenuValues==resetonleaveoption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
@@ -361,6 +363,215 @@ $interactionFollowUp[
 $get[statements]
 $ephemeral
 ]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["selectMenu", "button"],
+    code: `
+$if[$selectMenuValues==;
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingexclusioncategory;]
+;
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==levelingextraoptionsmenu;$selectMenuValues==exclusionsoption]==true;]
+]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+
+$interactionUpdate[
+$title[Exclusions]
+$description[In this category, you can choose on what channels/roles should be excluded from allowing members to gain xp by default. To manage a specific setting, click on one of the buttons below dedicated to this category such as "Roles" for example.]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingexclusionroles_$authorID;Roles;Secondary]
+$addButton[levelingexclusionchannels_$authorID;Channels;Secondary]
+]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingexclusionroles;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$interactionUpdate[$title[Exclude Roles]
+$description[Use the menu below to select Roles to exclude from xp. You can select up to 10 Roles within the menu.]
+$addField[Current Role(s);
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addRoleSelectMenu[levelingexcluderolesetupmenu_$authorID;Select roles to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedroles_$authorID;Reset;Secondary]
+]`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["selectMenu"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingexcluderolesetupmenu;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+$setGuildVar[levelingexcludedroles;$selectMenuValues]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addRoleSelectMenu[levelingexcluderolesetupmenu_$authorID;Select roles to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedroles_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Successfully Saved changes!
+$ephemeral
+]
+
+`},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingresetexcludedroles;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$onlyIf[$getGuildVar[levelingexcludedroles;$guildID]!=none;$interactionReply[
+There's nothing to reset.
+$ephemeral]]
+
+$deleteGuildVar[levelingexcludedroles;$guildID]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addRoleSelectMenu[levelingexcluderolesetupmenu_$authorID;Select roles to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedroles_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Current configuration has been reset!
+$ephemeral
+]
+
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingexclusionchannels;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$interactionUpdate[$title[Exclude Channels]
+$description[Use the menu below to select Channels to exclude from xp. You can select up to 10 Channels within the menu.]
+$addField[Current Channel(s);
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]
+]`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["selectMenu"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingexcludechannelsetupmenu;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$arrayLoad[channels;, ;$selectMenuValues]
+$onlyIf[$arrayEvery[channels;channel;$checkCondition[$channelType[$env[channel]]==GuildText]]==true;$interactionReply[
+Channels selected must be a Text channel.
+$ephemeral
+]]
+
+$setGuildVar[levelingexcludedchannels;$selectMenuValues]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Successfully Saved changes!
+$ephemeral
+]
+
+`},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==levelingresetexcludedchannels;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$onlyIf[$getGuildVar[levelingexcludedchannels;$guildID]!=none;$interactionReply[
+There's nothing to reset.
+$ephemeral]]
+
+$deleteGuildVar[levelingexcludedchannels;$guildID]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$addActionRow
+$addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Current configuration has been reset!
+$ephemeral
+]
+
 `
 },{
     type: "interactionCreate",

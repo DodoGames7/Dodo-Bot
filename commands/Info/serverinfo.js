@@ -14,7 +14,7 @@ $let[totalmembers;$sum[$guildMemberCount;$guildBotCount]]
 $arrayLoad[totalchannels;/;$guildChannelIDs[$guildID;/]]
 $let[serververified;$replace[$replace[$checkCondition[$guildVerified==true];true;Yes];false;No]]
 
-$author[$guildName;$get[servericon]]
+$author[$guildName;$get[servericon];$get[servericon]]
 $title[Server info]
 $addField[Members;
 **Total:** $get[totalmembers]

@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.3.0-build.2334",
+  "version": "1.2.0-build.2337",
   "description": "A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "scripts": {
