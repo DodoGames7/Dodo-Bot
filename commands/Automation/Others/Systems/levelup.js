@@ -3,6 +3,8 @@ type: "messageCreate",
 code: `
 $onlyIf[$isBot==false;]
 $onlyIf[$getGuildVar[levelingsystem]==on;]
+$onlyIf[$checkContains[$getGuildVar[levelingexcludedchannels];$channelID]==false;]
+$onlyIf[$checkContains[$memberRoles;$getGuildVar[levelingexcludedroles]]==false;]
 $memberCooldown[autoxpgain;2s]
 $setMemberVar[xp;$sum[$getMemberVar[xp;$authorID];1];$authorID]
 
@@ -25,7 +27,7 @@ $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true
 $onlyIf[$channelHasPerms[$getGuildVar[levelingmessagechannel];$botID;ViewChannel;SendMessages]==true;]
 
 
-$let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<previouslevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
+$let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<oldlevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
 
 $sendMessage[$getGuildVar[levelingmessagechannel];
 $get[content]

@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==leavehome_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavehome;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];off;Disabled];on;Enabled]]
 
@@ -22,7 +26,11 @@ $addButton[leavesettings_$authorID;Settings;Danger]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==leavetoggle_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -52,7 +60,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavesettings_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavesettings;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
 
@@ -75,7 +87,11 @@ $addButton[leaveplaceholderlist_$authorID;Placeholders;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavechannelsetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
 
@@ -95,7 +111,11 @@ $addButton[leavechannelreset_$authorID;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
-    code: `$onlyIf[$customID==leavechannelselectmenusetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelselectmenusetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -144,7 +164,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavechannelreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -180,7 +204,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavemessagecategory_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagecategory;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[
 $title[Message]
@@ -197,7 +225,12 @@ $addButton[leavemessagetypesetting_$authorID;Message Type;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavemessagesetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagesetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 $showModal
 $if[$getGuildVar[leavetype]==embed;
 $modal[leaveembedmodalsetup;Set Message]
@@ -235,7 +268,11 @@ $ephemeral]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavemessagepreview_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagepreview;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
@@ -256,7 +293,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavemessagetypesetting_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagetypesetting;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[
 $title[Message Type]
@@ -275,7 +316,11 @@ $addButton[leavemessagetypetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leavemessagetypetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagetypetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -305,7 +350,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==leaveplaceholderlist_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==leaveplaceholderlist;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Placeholders]
 $description[Placeholders are a way to make Leave messages unique! Choose a one available from this list.]

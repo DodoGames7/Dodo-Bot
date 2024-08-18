@@ -1,10 +1,10 @@
 module.exports = {
 type: "ready",
 code: `$if[$getGlobalVar[pre_release]==on;
-$onlyIf[$getGlobalVar[releaseType]!=Preview;]
-$setGlobalVar[releaseType;Preview]
+$onlyIf[$getGlobalVar[release_type]!=$getGlobalVar[DevReleaseTypeToSet];]
+$setGlobalVar[release_type;$getGlobalVar[DevReleaseTypeToSet]]
 ;
-$onlyIf[$getGlobalVar[releaseType]!=Stable;]
-$setGlobalVar[releaseType;Stable]
+$onlyIf[$getGlobalVar[release_type]!=Stable;]
+$setGlobalVar[release_type;Stable]
 ]`
 }

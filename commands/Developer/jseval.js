@@ -7,7 +7,7 @@ info: {
 },
 aliases: ["djseval"],
 type: "messageCreate",
-code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $onlyIf[$message!=;Please eval a code.]
 $!djsEval[$message]`
 }

@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==welcomerhome_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerhome;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];off;Disabled];on;Enabled]]
 
@@ -22,7 +26,11 @@ $addButton[welcomersettings_$authorID;Settings;Danger]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==welcomertoggle_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomertoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -52,7 +60,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomersettings_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomersettings;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
 
@@ -75,7 +87,11 @@ $addButton[welcomerplaceholderlist_$authorID;Placeholders;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomerchannelsetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
 
@@ -95,7 +111,11 @@ $addButton[welcomerchannelreset;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
-    code: `$onlyIf[$customID==welcomerchannelselectmenusetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelselectmenusetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -144,7 +164,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomerchannelreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[welcomerchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -180,7 +204,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomermessagecategory_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagecategory;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[
 $title[Message]
@@ -197,7 +225,12 @@ $addButton[welcomermessagetypesetting_$authorID;Message Type;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomermessagesetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagesetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 $showModal
 $if[$getGuildVar[welcomertype]==embed;
 $modal[welcomerembedmodalsetup;Set Message]
@@ -235,7 +268,11 @@ $ephemeral]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomermessagepreview_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagepreview;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
@@ -255,7 +292,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomermessagetypesetting_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagetypesetting;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[
 $title[Message Type]
@@ -274,7 +315,11 @@ $addButton[welcomermessagetypetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomermessagetypetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagetypetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -304,7 +349,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==welcomerplaceholderlist_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerplaceholderlist;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Placeholders]
 $description[Placeholders are a way to make Welcomer messages unique! Choose a one available from this list.]

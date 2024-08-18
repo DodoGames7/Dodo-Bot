@@ -7,12 +7,12 @@ info: {
 },
 aliases: ["restartcmds", "reloadcmds"],
 type: "messageCreate",
-code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $updateCommands
 $title[Reloaded!]
 $addField[**Commands**;
 * **Prefix**: $commandCount[messageCreate]
-* **Interaction**: $commandCount[interactionCreate]
+* **Interactions**: $commandCount[interactionCreate]
 ]
 $color[$getGlobalVar[embedcolor]]
 $let[total;$sum[$commandCount[messageCreate];$commandCount[interactionCreate]]]

@@ -2,7 +2,11 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `$onlyIf[$advancedTextSplit[$customID;_;0]==memberservinfo;]
-$let[user;$advancedTextSplit[$customID;_;1]]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[user;$advancedTextSplit[$customID;_;2]]
 $let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
 $let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]]];false;$username[$get[user]]]]
 $let[nickname;$replace[$replace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none];false;$nickname[$guildID;$get[user]]]]
@@ -16,7 +20,7 @@ $ephemeral
 
 $interactionUpdate[
 $author[Server information;$get[servericon]]
-$title[$get[username]'s information]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined the server on:** <t:$trunc[$divide[$memberJoinedAt[$guildID;$get[user]];1000]]:f>
 **Amount of roles:** $arrayLength[amountofroles]
@@ -29,21 +33,25 @@ $addField[**Other**;
 $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[generalmeminfo_$get[user];General info;Secondary]
-$addButton[memberservinfo_$get[user];Member's Server info;Secondary;;true]
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary;;true]
 ]
 `
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `$onlyIf[$advancedTextSplit[$customID;_;0]==generalmeminfo;]
-$let[user;$advancedTextSplit[$customID;_;1]]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[user;$advancedTextSplit[$customID;_;2]]
 $let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]]];false;$username[$get[user]]]]
 $let[accounttype;$replace[$replace[$checkCondition[$isBot[$get[user]]==true];true;Bot];false;Human]]
 $let[dmsstatus;$replace[$replace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
 
 $interactionUpdate[
-$title[$get[username]'s information]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
 **Account type:** $get[accounttype]
@@ -56,8 +64,8 @@ $addField[**Other**;
 $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[generalmeminfo_$get[user];General info;Secondary;;true]
-$addButton[memberservinfo_$get[user];Member's Server info;Secondary]
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
 ]
 `
 }]

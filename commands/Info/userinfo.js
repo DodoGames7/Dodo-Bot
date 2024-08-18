@@ -15,7 +15,7 @@ $let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[us
 $let[accounttype;$replace[$replace[$checkCondition[$isBot[$get[user]]==true];true;Bot];false;Human]]
 $let[dmsstatus;$replace[$replace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
 
-$title[$get[username]'s information]
+$title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined Discord on:** <t:$trunc[$divide[$userCreatedAt[$get[user]];1000]]:f>
 **Account type:** $get[accounttype]
@@ -29,8 +29,8 @@ $thumbnail[$userAvatar[$get[user]]]
 $color[$getGlobalVar[embedcolor]]
 $if[$memberExists[$guildID;$get[user]]==true;
 $addActionRow
-$addButton[generalmeminfo_$get[user];General info;Secondary;;true]
-$addButton[memberservinfo_$get[user];Member's Server info;Secondary]
+$addButton[generalmeminfo_$authorID_$get[user];General info;Secondary;;true]
+$addButton[memberservinfo_$authorID_$get[user];Member's Server info;Secondary]
 ]
 `
 }

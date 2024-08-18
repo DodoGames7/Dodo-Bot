@@ -18,7 +18,7 @@ $title[Leveling]
 $description[Leveling is a feature that let's members of the server have their levels and xp based on how much they have been active in the server.
 
 To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.]
-$addField[Current setting;$get[levelingsystem]
+$addField[Current setting(s);$get[levelingsystem]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

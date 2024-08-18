@@ -1,7 +1,11 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==autoreplypingoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==autoreplypingoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[autoreplyping;$replace[$replace[$getGuildVar[autoreplyping];off;Disabled];on;Enabled]]
 
@@ -13,10 +17,9 @@ It is recommended to disable this if it's used for spamming.]
 $addField[Current setting(s);$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
@@ -25,7 +28,11 @@ $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==autoreplypingtoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==autoreplypingtoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -43,10 +50,9 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[autoreplyping]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[autoreplypingtoggle_$authorID;Toggle;Secondary;🔄]
@@ -61,67 +67,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==includemessagedeleteroption]==true;]
-
-$let[includemessagedeleter;$replace[$replace[$getGuildVar[includemessagedeleter];off;Disabled];on;Enabled]]
-
-$interactionUpdate[
-$title[Display Message Deleter]
-$description[This option let's you show the user who deleted a msg in Message Delete logs. By default, it is disabled but you can choose to enable it!
-
-This option requires \`ViewAuditLog\` permission in order to show the message deleter.]
-$addField[Current setting(s);$get[includemessagedeleter]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
-$addActionRow
-$addButton[includemessagedeletertoggle_$authorID;Toggle;Secondary;🔄]
-]
-`
-},{
-    type: "interactionCreate",
-    allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==includemessagedeletertoggle_$authorID;]
-
-$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
-$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
-$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
-
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[includemessagedeleter]==on];true;off];false;on]]
-$setGuildVar[includemessagedeleter;$get[settingdecide];$guildID]
-$let[includemessagedeleter;$replace[$replace[$getGuildVar[includemessagedeleter];off;Disabled];on;Enabled]]
-
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[includemessagedeleter]==on];true;Message Deleter will now be shown!];false;Message Deleter will no longer be shown!]]
-
-$interactionUpdate[
-$title[$get[title]]
-$description[$get[description]]
-$addField[$get[fieldname];$get[includemessagedeleter]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
-$addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
-$addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
-$addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
-$addActionRow
-$addButton[includemessagedeletertoggle_$authorID;Toggle;Secondary;🔄]
-]
-
-$interactionFollowUp[
-$get[statements]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==anonymousoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
-]
-
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==anonymousoption]==true;]
+]]
 
 $let[anonymous;$replace[$replace[$getGuildVar[anonymous];off;Disabled];on;Enabled]]
 
@@ -133,10 +83,9 @@ Due to security reasons, this option is only exclusive to Ban logs and will NOT 
 $addField[Current setting(s);$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
@@ -145,7 +94,11 @@ $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==anonymoustoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==anonymoustoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -163,10 +116,9 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[anonymoustoggle_$authorID;Toggle;Secondary;🔄]
@@ -181,7 +133,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==settingsselectlist_$authorID;$selectMenuValues==includebotsoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==settingsmenu;$selectMenuValues==includebotsoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[includebots;$replace[$replace[$getGuildVar[includebots];off;Disabled];on;Enabled]]
 
@@ -193,10 +149,9 @@ Note that disabling this will cause "Display Message Deleter" to be ignored for 
 $addField[Current setting(s);$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]
@@ -205,7 +160,11 @@ $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==includebotstoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==includebotstoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -223,10 +182,9 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 $addActionRow
 $addButton[includebotstoggle_$authorID;Toggle;Secondary;🔄]

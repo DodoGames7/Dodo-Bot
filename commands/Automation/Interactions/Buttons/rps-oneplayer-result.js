@@ -2,7 +2,10 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$customID==rock_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==rock;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Results..]
 $description[You choose Rock 🌑! I choose $randomText[Rock 🌑;Paper 📰;Scissors ✂️]]
@@ -16,7 +19,10 @@ $addButton[scissors_$authorID;Scissors;Secondary;✂️;true]
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$customID==paper_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==paper;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Results..]
 $description[You choose Paper 📰! I choose $randomText[Rock 🌑;Paper 📰;Scissors ✂️]]
@@ -30,7 +36,10 @@ $addButton[scissors_$authorID;Scissors;Secondary;✂️;true]
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$customID==scissors_$authorID;]
+$onlyIf[$advancedTextSplit[$customID;_;0]==scissors;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Results..]
 $description[You choose Scissors ✂️! I choose $randomText[Rock 🌑;Paper 📰;Scissors ✂️]]

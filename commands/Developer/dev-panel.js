@@ -7,13 +7,14 @@ info: {
 },
 aliases: ["devpanel", "developer-panel", "dev-settings"],
 type: "messageCreate",
-code: `$onlyIf[$checkContains[$botOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
+code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;]
 $title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/geartwo.png]
+$attachment[./handler/assets/gear.png;gear.png]
+$thumbnail[attachment://gear.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
 $addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]

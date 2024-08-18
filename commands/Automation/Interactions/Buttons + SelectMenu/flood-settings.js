@@ -1,7 +1,12 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==floodsettings_$authorID;$selectMenuValues==flooddifficultyoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==floodsettings;$selectMenuValues==flooddifficultyoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $let[difficulty;$replace[$replace[$replace[$getUserVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
 
@@ -22,7 +27,11 @@ $addButton[floodhardoption_$authorID;Hard;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==floodeasyoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==floodeasyoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getUserVar[flood_difficulty]!=8;
 $interactionReply[This Difficulty-set is already used 
@@ -60,7 +69,12 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==floodmediumoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==floodmediumoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $onlyIf[$getUserVar[flood_difficulty]!=13;
 $interactionReply[This Difficulty-set is already used 
@@ -98,7 +112,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==floodhardoption_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==floodhardoption;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getUserVar[flood_difficulty]!=18;
 $interactionReply[This Difficulty-set is already used 

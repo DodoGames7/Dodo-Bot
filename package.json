@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.3.0-build.2324",
+  "version": "1.2.0-build.2337",
   "description": "A personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,12 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@tryforge/forge.db": "^2.0.4",
-    "@tryforge/forgescript": "github:tryforge/ForgeScript#ed434d2",
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#fca71ec",
     "discord-gamecord": "^4.4.2",
     "dotenv": "^16.4.5",
-    "fsgames": "github:user-lezi/fsgames#9228931",
     "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
   }
 }

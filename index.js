@@ -3,12 +3,8 @@ const functions = require("./handler/functions.js");
 
 const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
-const { FSGames } = require("fsgames");
 require('dotenv').config() // Enable env support in local hosting
 
-const games = new FSGames({ // setup fsgames
-  events: ["gameStart", "gameEnd", "gameUpdate"] 
-});
 
 
 // Client initialization
@@ -38,8 +34,7 @@ const games = new FSGames({ // setup fsgames
         "guildCreate"
     ],
     "extensions": [ // Load extensions
-        new ForgeDB({database: "./database/forge.db"}),
-        games
+        new ForgeDB({database: "./database/forge.db"})
     ],
    mobile: config.MobileStatus
 })
@@ -49,6 +44,6 @@ const games = new FSGames({ // setup fsgames
 ForgeDB.variables(require("./handler/variables.js"));
 functions.forEach((func) => client.functions.add(func));
 // Your bot token
-   client.login(process.env.TOKEN || config.BotToken);
+   client.login(process.env.BotToken || config.BotToken);
 
  

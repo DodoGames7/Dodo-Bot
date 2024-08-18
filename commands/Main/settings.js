@@ -15,13 +15,14 @@ This command requires you to have \`ManageGuild\` permission!
 
 
 $title[Settings]
-$description[Welcome to Settings! Select a option to change!]
+$description[Welcome to Settings! Select a option to change using the menu below!]
+$attachment[./handler/assets/gear.png;gear.png]
+$thumbnail[attachment://gear.png]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addStringSelectMenu[settingsselectlist_$authorID;Select a category;false;1;1]
+$addStringSelectMenu[settingsmenu_$authorID;Select a category;false;1;1]
 $addOption[AutoReply ping;Automatically respond to ping!;autoreplypingoption;;false]
 $addOption[Include Bots;Whether or not to include bots in Message Logs;includebotsoption;;false]
-$addOption[Display Message Deleter;Show who deleted a msg in Message Delete logs!;includemessagedeleteroption;;false]
 $addOption[Anonymous;Hide moderator name in Ban logs;anonymousoption;;false]
 `
 }

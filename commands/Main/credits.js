@@ -15,6 +15,7 @@ $description[
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
+$addButton[credits_$authorID;Main Credits;Secondary;;true]
 $addButton[packages_$authorID;Packages;Secondary]
 $addButton[useofsourcecode_$authorID;Use of Source Code;Secondary]
 `

@@ -2,15 +2,18 @@ module.exports = [{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==main]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
     $interactionUpdate[
     $title[Main]
     $addField[**Main commands**;
-\`about\`, \`settings\`, \`commandinfo\`
+\`about\`, \`gitbuilds\`, \`report\`, \`perms\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
-        \`ping\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
+\`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`
     ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
@@ -18,7 +21,7 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-   $if[$checkContains[$botOwnerID;$authorID]==true;
+   $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -27,15 +30,18 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==main]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==fun]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==fun]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
     $interactionUpdate[
     $title[Entertainment]
-    $addField[**Mini Games**;
-\`rps\`, \`ttt\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
+    $addField[**Games**;
+\`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
  ]
    $addField[**Text**;
-\`howgamer\`, \`whoasked\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
+\`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
 ]
     $addField[**Images**;
 \`gun\`, \`jail\`, \`nokia\`, \`ad\`, \`wanted\`, \`comment\`, \`whereiseveryone\`, \`clown\`
@@ -46,7 +52,7 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==fun]==true;]
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -55,7 +61,10 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==fun]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==leveling]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==leveling]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[
@@ -67,7 +76,7 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==leveling]==true;]
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -76,7 +85,10 @@ $onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==leveling]==true;]
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==util]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==util]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[
@@ -94,7 +106,7 @@ $addField[**Miscellaneous**;
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -103,7 +115,10 @@ $addField[**Miscellaneous**;
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$and[$customID==helpmenu_$authorID;$selectMenuValues==dev]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==helpmenu;$selectMenuValues==dev]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
     $interactionUpdate[
@@ -119,7 +134,7 @@ $addField[**Bot Management**;
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID;$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]

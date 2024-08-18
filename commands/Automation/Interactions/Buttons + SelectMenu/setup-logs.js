@@ -1,7 +1,11 @@
 module.exports = [{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==setuploghomebutton_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==setuploghomebutton;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $interactionUpdate[$title[Setup Logs]
 $description[Welcome to Setup Logs! Choose the type of logging you want to set!]
@@ -12,12 +16,17 @@ $addOption[Message Delete;Log deleted messages by users!;msgdeletelog;;false]
 $addOption[Message Edit;Log Edited messages by users!;msgeditlog;;false]
 $addOption[Ban logs;Log banned users!;memberbanlogs;;false]
 $addOption[Un-ban logs;Log users that got unbanned!;memberunbanlogs;;false]
+$addOption[Integration logs;Log bots that got added to this server!;integrationlogs;;false]
 ]
 `
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==msgdeletelog]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==msgdeletelog]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`)];false;No channel set]]
 
@@ -28,6 +37,7 @@ $description[To setup the logs for Message delete, use the select menu below to 
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -39,7 +49,11 @@ $addButton[msgdeletelogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==msglogdeletechannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msglogdeletechannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -74,6 +88,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -89,7 +104,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==msgdeletelogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msgdeletelogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[msglogdeletechannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -110,6 +129,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -126,7 +146,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==msgeditlog]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==msgeditlog]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`)];false;No channel set]]
 
@@ -137,6 +161,7 @@ $description[To setup the logs for Message Edit, use the select menu below to ch
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -148,7 +173,11 @@ $addButton[msgeditlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==msglogeditchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msglogeditchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -183,6 +212,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -198,7 +228,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==msgeditlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==msgeditlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[msglogeditchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -219,6 +253,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -235,7 +270,12 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==memberbanlogs]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==memberbanlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`)];false;No channel set]]
 
@@ -246,6 +286,7 @@ $description[To setup the logs for Ban logs, use the select menu below to choose
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -257,7 +298,11 @@ $addButton[memberbanlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==memberbanlogchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberbanlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -292,6 +337,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -307,7 +353,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==memberbanlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberbanlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[banlogschannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -328,6 +378,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -344,7 +395,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==setuplogtypes_$authorID;$selectMenuValues==memberunbanlogs]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==memberunbanlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`)];false;No channel set]]
 
@@ -355,6 +410,7 @@ $description[To setup the logs for Un-Ban logs, use the select menu below to cho
 
 **Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
 $addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -366,7 +422,11 @@ $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$customID==memberunbanlogchannelsetup_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberunbanlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$channelType[$selectMenuValues]==GuildText;
 $interactionReply[Channel must be a Text channel.
@@ -401,6 +461,7 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
@@ -416,7 +477,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==memberunbanlogreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==memberunbanlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGuildVar[unbanlogschannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -437,12 +502,137 @@ $author[$get[author];$userAvatar[$botID]]
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[Channel has been reset!
+$ephemeral
+]
+
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==setuplogtypes;$selectMenuValues==integrationlogs]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+
+$interactionUpdate[
+$author[Integration logs;$userAvatar[$botID]]
+$title[Channel setup]
+$description[To setup the logs for Integration logs, use the select menu below to choose a channel to do so.
+
+**Tip**: Couldn't find the channel you're looking for? Try typing the channel name right into the menu.]
+$addField[Current channel;$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
+]
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==integrationlogchannelsetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$onlyIf[$channelType[$selectMenuValues]==GuildText;
+$interactionReply[Channel must be a Text channel.
+$ephemeral
+]]
+
+$onlyIf[$getGuildVar[integrationlogchannel;$guildID]!=$selectMenuValues;
+$interactionReply[This channel is already used for Integration logs. Select a different one instead.
+$ephemeral
+]
+]
+
+$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Integration logs, i must have the following permissions for the selected channel:
+\`SendMessages\`
+\`ViewChannel\`
+$ephemeral
+]
+]
+
+$setGuildVar[integrationlogchannel;$selectMenuValues;$guildID]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+
+$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$author[$get[author];$userAvatar[$botID]]
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
+]
+
+$interactionFollowUp[<#$selectMenuValues> will now be used for logging newly added bots!
+$ephemeral
+]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==integrationlogreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$onlyIf[$getGuildVar[integrationlogchannel;$guildID]!=;$interactionReply[
+There's no channel set currently to reset.
+$ephemeral]]
+
+$deleteGuildVar[integrationlogchannel;$guildID]
+
+$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+
+
+$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$author[$get[author];$userAvatar[$botID]]
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$get[currentchannel]]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelType[GuildText]
+$addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
+$addButton[integrationlogreset_$authorID;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!

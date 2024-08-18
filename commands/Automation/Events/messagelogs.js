@@ -3,23 +3,17 @@ module.exports = [{
     allowBots: true,
     code: `
     $onlyIf[$oldMessage[content]!=;]
-    $onlyIf[$hasEmbeds[$oldMessage[channelID];$oldMessage[id]]==false;]
     $onlyIf[$getGuildVar[msglogdeletechannel]!=;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogdeletechannel]]==true;]
     $onlyIf[$channelHasPerms[$getGuildVar[msglogdeletechannel];$botID;ViewChannel;SendMessages]==true;]
     $if[$getGuildVar[includebots]==off;
 $onlyIf[$isBot[$oldMessage[authorID]]==false;]
 ]
-    $if[$getGuildVar[includemessagedeleter]==on;
-$onlyIf[$hasPerms[$guildID;$botID;ViewAuditLog]==true;]
-$let[messagedeleterid;$fetchAuditLog[$guildID;MessageDelete;executorID;0]]
-]
     $sendMessage[$getGuildVar[msglogdeletechannel];
 $author[Message deleted!;$userAvatar[$oldMessage[authorID]]]
     $description[
 **Member:** <@$oldMessage[authorID]>
-**Channel:** <#$oldMessage[channelID]> $if[$and[$getGuildVar[includemessagedeleter]==on;$oldMessage[authorID]!=$get[messagedeleterid]]==true;
-**Deleted by:** <@$get[messagedeleterid]>]
+**Channel:** <#$oldMessage[channelID]>
     $oldMessage[content]
     ]
    $color[Yellow]

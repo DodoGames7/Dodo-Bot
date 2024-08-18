@@ -13,15 +13,18 @@ $onlyIf[$message!=;Please say whatever you want.
 $disableAllMentions
 
 $let[clearembedmodewords;$replace[$replace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[sayembedmodefilter;$message]];false;$message]]
+$let[links;https://www.youtube.com/watch?v=dQw4w9WgXcQ;$botInvite[36032]]
+$onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without specifying a text first.]
 
 $if[$or[$checkContains[$message;--embed;—embed]==true;$charCount[$message]>=2000];
-$author[$username;$userAvatar]
-$title[Say cmd;https://www.youtube.com/watch?v=dQw4w9WgXcQ]
+$author[$username;$userAvatar;$userURL[$authorID]]
+$title[Say cmd;$get[links]]
 $description[$get[clearembedmodewords]]
 $color[Random]
 ;$get[clearembedmodewords]
 
- From \`$username\`]
+ From $hyperlink[\`$username\`;<$userURL[$authorID]>]
+]
 
 `
 }

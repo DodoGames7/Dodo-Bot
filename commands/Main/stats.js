@@ -11,7 +11,7 @@ $userCooldown[statscmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[statscmd]];1000]]:R>]
 $let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
 $let[fsversion;$replace[$replace[$checkCondition[$getGlobalVar[libraryversiondevcheck]==on];true;\`v$version\` (Dev)];false;\`v$version\`]]
-$let[dodobotversion;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Testing)];false;\`v$getGlobalVar[version]\`]]
+$let[dodobotversion;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev)];false;\`v$getGlobalVar[version]\`]]
 
 $title[$username[$botID] Stats]
 $thumbnail[$userAvatar[$botID]]

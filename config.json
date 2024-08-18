@@ -1,6 +1,7 @@
 {
     "prefix": "d!",
     "BotToken": "",
+    "Embedcolor": "#433b6b",
     "MobileStatus": false,
     "EnableConsoleErrors": true,
     "AllowBotMembers": false

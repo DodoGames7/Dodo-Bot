@@ -11,14 +11,14 @@ $title[Help Menu]
 $description[To view commands, select one of the modules from the dropdown menu below!]
 $footer[Made with ❤️ by $username[632607624742961153]]
 $color[$getGlobalVar[embedcolor]]
-    $addActionRow
-    $addStringSelectMenu[helpmenu_$authorID;Select a module;false;1;1]
-    $addOption[Main;Main module;main;;false]
-    $addOption[Entertainment;Entertainment module;fun;;false]
-    $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$botOwnerID;$authorID]==true;
-    $addOption[Developer;Developer module;dev;;false]
+$addActionRow
+$addStringSelectMenu[helpmenu_$authorID;Select a module;false;1;1]
+$addOption[Main;Main module;main;;false]
+$addOption[Entertainment;Entertainment module;fun;;false]
+$addOption[Leveling;Leveling module;leveling;;false]
+$if[$checkContains[$clientOwnerID;$authorID]==true;
+$addOption[Developer;Developer module;dev;;false]
 ]
-    $addOption[Utility;Utility module;util;;false]
-    `
+$addOption[Utility;Utility module;util;;false]
+`
 }

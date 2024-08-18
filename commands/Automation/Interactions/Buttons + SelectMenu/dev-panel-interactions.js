@@ -1,14 +1,20 @@
 module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
-code: `$onlyIf[$customID==devmenuhomebutton_$authorID;]
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==devmenuhomebutton;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $interactionUpdate[$title[Developer panel]
 $description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/geartwo.png]
+$attachment[./handler/assets/gear.png;gear.png]
+$thumbnail[attachment://gear.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
 $addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]
@@ -21,7 +27,11 @@ $addOption[Expose build info;Whether or not to enable "Build Info" button in sta
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==botinvitationmessageoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==botinvitationmessageoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[botinvitationmessage;$replace[$replace[$getGlobalVar[botinvitationmessage];off;Disabled];on;Enabled]]
 
@@ -38,7 +48,11 @@ $addButton[botinvitationmessagetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==botinvitationmessagetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==botinvitationmessagetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -69,7 +83,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==errorloggingoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==errorloggingoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[errorlogging;$replace[$replace[$getGlobalVar[errorlogging];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`)];false;No channel set]]
@@ -94,7 +112,11 @@ $addButton[errorloggingchannelreset_$authorID;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==errorloggingtoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingtoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -135,7 +157,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
-    code: `$onlyIf[$customID==errorloggingchannelselectmenusetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingchannelselectmenusetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -191,7 +217,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==errorloggingchannelreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingchannelreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGlobalVar[errorchannel]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -233,7 +263,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==embedcoloroption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==embedcoloroption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 
 $interactionUpdate[
@@ -250,7 +284,12 @@ $addButton[resetcurrentembedcolor_$authorID;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==setnewembedcolor_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==setnewembedcolor;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 $showModal
 $modal[setembedcolormodalsetup;Set Color]
 $addTextInput[embedcolorInput;Embed color to use;Short;true;#1F8B4C;$getGlobalVar[embedcolor];0;7]
@@ -291,7 +330,11 @@ $ephemeral]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==resetcurrentembedcolor_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==resetcurrentembedcolor;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGlobalVar[embedcolor]!=$getGlobalVar[originalembedcolor];$interactionReply[
 There's no current embed color set to reset.
@@ -343,7 +386,11 @@ $addButton[prereleasetoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==prereleasetoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==prereleasetoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -354,9 +401,9 @@ $setGlobalVar[pre_release;$get[settingdecide]]
 $let[pre_release;$replace[$replace[$getGlobalVar[pre_release];off;Disabled];on;Enabled]]
 
 $If[$getGlobalVar[pre_release]==off;
-$setGlobalVar[releaseType;Stable]
+$setGlobalVar[release_type;Stable]
 ;
-$setGlobalVar[releaseType;Preview]
+$setGlobalVar[release_type;$getGlobalVar[DevReleaseTypeToSet]]
 ]
 
 $let[statements;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Pre-release mode's stuff will now appear!];false;Pre-release mode's stuff will now be absent!]]
@@ -381,9 +428,13 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==startupoption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==startupoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $interactionUpdate[
@@ -406,15 +457,19 @@ $addButton[startupchannelreset_$authorID;Reset;Secondary]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==startuptoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==startuptoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[startup]==on];true;off];false;on]]
-$setGlobalVar[startup;$get[settingdecide]]
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[startupsystem]==on];true;off];false;on]]
+$setGlobalVar[startupsystem;$get[settingdecide]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $let[statements;$replace[$replace[$checkCondition[$getGlobalVar[startup]==on];true;Startup messages will now be sent!];false;Startup messages will no longer be sent!]]
@@ -446,7 +501,12 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
-    code: `$onlyIf[$customID==startupchannelselectmenusetup_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==startupchannelselectmenusetup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -473,7 +533,7 @@ $ephemeral
 
 $setGlobalVar[startupchannel;$selectMenuValues]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 $interactionUpdate[
@@ -502,7 +562,11 @@ $ephemeral
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==startupchannelreset_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==startupchannelreset;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $onlyIf[$getGlobalVar[startupchannel]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -510,7 +574,7 @@ $ephemeral]]
 
 $deleteGlobalVar[startupchannel]
 
-$let[startup;$replace[$replace[$getGlobalVar[startup];off;Disabled];on;Enabled]]
+$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
 $let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
 
 
@@ -544,7 +608,11 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==exposebuildinfooption]==true;]
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==exposebuildinfooption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[exposebuildinfo;$replace[$replace[$getGlobalVar[exposebuildinfo];off;Disabled];on;Enabled]]
 
@@ -563,7 +631,11 @@ $addButton[exposebuildinfotoggle_$authorID;Toggle;Secondary;🔄]
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
-    code: `$onlyIf[$customID==exposebuildinfotoggle_$authorID;]
+    code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==exposebuildinfotoggle;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]

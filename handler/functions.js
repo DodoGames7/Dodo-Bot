@@ -1,11 +1,4 @@
 module.exports = [{
-    name: "quotes",
-    params: [],
-    code: `
-$let[quotes;$randomText[*It was always created what it was for. And that is just entertainment personally.*;*Don't let haters stop you. Keep working on your projects with your goals.*;*Destroying is easy. Creating is difficult.*;*Why should i care if my bot is unpopular? I just love my work.*]]
-    $return[$get[quotes]]
-    `
-  },{
     name: "randomtopic",
     params: [],
     code: `
@@ -53,4 +46,92 @@ $let[result;$checkCondition[$nickname[$env[guildID];$get[user]]!=$userDisplayNam
 
     $return[$get[result]]
     `
+  },{
+    name: "excludespecialchars",
+    params: ["content"],
+    code: `
+$let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$env[content];+;];-;];/;];%;];&;];$;];#;];^;];(;];);];*;];!;];?;]]
+
+    $return[$get[message]]
+    `
+  },{
+    name: "8ballanswers",
+    params: [],
+    code: `$let[Answers;$randomText[Yes;No;Yes definitely;You may rely on it;Without a doubt;It is decidedly so;Ask again later;Better not tell you now;Cannot predict now;Concentrate and ask again;My reply is no;My sources say no;Outlook not so good;Very doubtful;Most likely;As I see it, yes;Signs point to yes;Reply hazy, try again;Don’t count on it]]
+
+    $return[$get[Answers]]
+`
+  },{
+    name: "autoListroles",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $return[* <@&$trim[$env[element]]>]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
+    name: "autoListchannels",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $return[* <#$trim[$env[element]]>]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
+   name: "userURL",
+   params: ["userID"],
+   code: `
+   $return[https://discord.com/users/$env[userID]]`
+  },{
+    name: 'isImageLink',
+    params: ['url', 'method'],
+    code: `
+        $djsEval[
+            const { fetch } = require("undici");
+            (async () => {
+                const res = await fetch("$env[url]", {
+                    ...ctx.http,
+                    method: "$env[method]",
+                    body: ctx.http.body ?? ctx.http.form
+                });
+                const headers = res.headers;
+                const header = headers.get("Content-Type").split(/;/g).at(0);
+
+                ctx.setEnvironmentKey("gotHeader", header);
+            })();
+        ]
+
+        $return[$env[gotHeader]]
+    `
+},{
+   name: "fallbackAttachment",
+   params: ["url", "fallbacktoUse"],
+   code: `
+$let[condition;$or[$isImageLink[$env[url];get]==image/jpeg;$isImageLink[$env[url];get]==image/png;$isImageLink[$env[url];get]==image/webp]]
+$let[result;$replace[$replace[$checkCondition[$get[condition]==true];true;$env[url]];false;$env[fallbacktoUse]]]
+
+   $return[$get[result]]
+`
   }]

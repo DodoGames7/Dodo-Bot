@@ -8,12 +8,13 @@ perms: "`SendMessages`"
 aliases: ["guild", "guildinfo", "server", "si"],
 code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[serverinfocmd]];1000]]:R>]
+
 $let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
 $let[totalmembers;$sum[$guildMemberCount;$guildBotCount]]
 $arrayLoad[totalchannels;/;$guildChannelIDs[$guildID;/]]
 $let[serververified;$replace[$replace[$checkCondition[$guildVerified==true];true;Yes];false;No]]
 
-$author[$guildName;$get[servericon]]
+$author[$guildName;$get[servericon];$get[servericon]]
 $title[Server info]
 $addField[Members;
 **Total:** $get[totalmembers]
@@ -22,7 +23,7 @@ $addField[Members;
 ]
 $addField[General;
 **Created on:** <t:$trunc[$divide[$guildCreatedAt;1000]]:f>
-**Server Owner:** $username[$guildOwnerID] ($guildOwnerID)
+**Server Owner:** $username[$guildOwnerID] (\`$guildOwnerID\`)
 **Roles:** $guildRoleCount
 **Boosts:** $guildBoostCount
 **Emojis:** $guildEmojiCount

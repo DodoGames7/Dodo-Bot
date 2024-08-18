@@ -9,20 +9,24 @@ module.exports = {
     code: `
 $userCooldown[versioncmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[versioncmd]];1000]]:R>]
+
+$let[releasedatetype;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Build created on];false;Released on]]
+
 $title[Dodo-Bot Version]
     $description[
 * **Version**: $getGlobalVar[version]
-* **Release type**: $getGlobalVar[releaseType]
-* **Build created on**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
+* **Release type**: $getGlobalVar[release_type]
+* **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+$attachment[./handler/assets/redwarning.png;redwarning.png]
+$footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
-    $addButton[changes_$authorID;Changes;Secondary]
-    $addButton[fixes_$authorID;Bug Fixes;Secondary]
-    $addButton[other_$authorID;Other;Secondary]
+    $addButton[versionchanges_$authorID;Changes;Secondary]
+    $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
+    $addButton[versionother_$authorID;Other;Secondary]
     $addActionRow
     $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
 `
