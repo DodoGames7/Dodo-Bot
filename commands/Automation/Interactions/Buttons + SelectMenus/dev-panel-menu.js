@@ -31,7 +31,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
 
 **Current setting(s)**
-**Bot Greeting**#COLON# \`$get[botgreetconfig]\`
+**Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
 
     }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
@@ -55,7 +55,7 @@ $interactionUpdate[{newEmbed:{title:Welcome new servers!}{description:
     By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
 
 **Current setting(s)**
-**Bot Greeting**#COLON# \`$get[botgreetconfig]\`
+**Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
 
     }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 

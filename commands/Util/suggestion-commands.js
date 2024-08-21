@@ -21,8 +21,8 @@ $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;usage]]\`]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest-set;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-set;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
@@ -34,8 +34,8 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     code: `$deleteVar[suggestionchannel;$guildID;main]
 Successfully reset suggestion Channel! Run \`suggest-set\` to set a channel again.
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest-reset;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-reset;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
 },{
     name: "suggest",
@@ -68,7 +68,7 @@ $onlyIf[$splitText[1]!=||$splitText[2]!=;Hey there! Your usage seems to be wrong
 A example of usage should be \`$getGuildVar[prefix]suggest title/description\`.]
  $textSplit[$message;/]
 $let[userURL;https://discord.com/users/$authorID]
-$cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest;$authorID];$dateStamp];1000]]:R>]
+$cooldown[4s;Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;suggest;$authorID];$dateStamp];1000]]:R>]
 `
 }]

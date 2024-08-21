@@ -40,7 +40,7 @@ type: "interaction",
 prototype: "button",
 code: `
 $interactionUpdate[{newEmbed:{title:Information for $get[username]}{url:$nonEscape[$get[userURL]]}{field:**General**:
-**Joined Discord on#COLON#** <t:$truncate[$divide[$creationDate[$get[user];ms];1000]]:f>
+**Joined Discord on#COLON#** <t#COLON#$truncate[$divide[$creationDate[$get[user];ms];1000]]#COLON#f>
 **Bot account#COLON#** $get[botchecker]
 **ID#COLON#** $get[user]
 :true}{field:**Other**:
