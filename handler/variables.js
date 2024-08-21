@@ -1,4 +1,5 @@
 const config = require("../config.json");
+
 module.exports = {
   // Games variables
   trivia_type: "multiple",
@@ -13,14 +14,14 @@ module.exports = {
   versionCodename: "Chocolate Cake",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1724233875862",
+  buildDate: "1724252225861",
   buildType: "Pre-release",
   buildBranch: "gitbuilds",
-  buildRevision: "0",
+  buildRevision: "1",
   exposebuildinfo: "on",
   buildNumber: "2137",
-  embedcolor: ${config.Embedcolor ?? "#2A3759"},
-  originalembedcolor: ${config.Embedcolor ?? "#2A3759"},
+  embedcolor: config.Embedcolor,
+  originalembedcolor: config.Embedcolor,
   release_type: "Stable",
   DevReleaseTypeToSet: "Pre-release",
   prefix: config.prefix,
