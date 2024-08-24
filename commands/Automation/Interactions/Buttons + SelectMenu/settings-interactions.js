@@ -7,7 +7,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[autoreplyping;$replace[$replace[$getGuildVar[autoreplyping];off;Disabled];on;Enabled]]
+$let[autoreplyping;$advancedReplace[$getGuildVar[autoreplyping];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[AutoReply ping]
@@ -38,11 +38,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[autoreplyping]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[autoreplyping]==on];true;off;false;on]]
 $setGuildVar[autoreplyping;$get[settingdecide];$guildID]
-$let[autoreplyping;$replace[$replace[$getGuildVar[autoreplyping];off;Disabled];on;Enabled]]
+$let[autoreplyping;$advancedReplace[$getGuildVar[autoreplyping];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[autoreplyping]==on];true;Successfully enabled AutoReply ping!];false;Successfully disabled AutoReply ping!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[autoreplyping]==on];true;Successfully enabled AutoReply ping!;false;Successfully disabled AutoReply ping!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -73,7 +73,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[anonymous;$replace[$replace[$getGuildVar[anonymous];off;Disabled];on;Enabled]]
+$let[anonymous;$advancedReplace[$getGuildVar[anonymous];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Anonymous]
@@ -104,11 +104,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[anonymous]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[anonymous]==on];true;off;false;on]]
 $setGuildVar[anonymous;$get[settingdecide];$guildID]
-$let[anonymous;$replace[$replace[$getGuildVar[anonymous];off;Disabled];on;Enabled]]
+$let[anonymous;$advancedReplace[$getGuildVar[anonymous];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[anonymous]==on];true;Moderator names will now be hidden!];false;Moderator names will no longer be shown!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[anonymous]==on];true;Moderator names will now be hidden!;false;Moderator names will no longer be shown!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -139,7 +139,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[includebots;$replace[$replace[$getGuildVar[includebots];off;Disabled];on;Enabled]]
+$let[includebots;$advancedReplace[$getGuildVar[includebots];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Include Bots]
@@ -170,11 +170,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[includebots]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[includebots]==on];true;off;false;on]]
 $setGuildVar[includebots;$get[settingdecide];$guildID]
-$let[includebots;$replace[$replace[$getGuildVar[includebots];off;Disabled];on;Enabled]]
+$let[includebots;$advancedReplace[$getGuildVar[includebots];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[includebots]==on];true;Bots will now be included in Message Logs!];false;Bots will no longer be included in Message Logs!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[includebots]==on];true;Bots will now be included in Message Logs!;false;Bots will no longer be included in Message Logs!]]
 
 $interactionUpdate[
 $title[$get[title]]

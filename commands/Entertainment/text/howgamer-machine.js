@@ -7,7 +7,7 @@ info: {
 type: "messageCreate",
 code: `$userCooldown[howgamercmd;3s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[howgamercmd]];1000]]:R>]
-$let[user;$replace[$replace[$checkCondition[$findUser[$message;true]==$authorID];true;You're];false;$username[$findUser[$message;true]] is]]
+$let[user;$advancedReplace[$checkCondition[$findUser[$message;true]==$authorID];true;You're;false;$username[$findUser[$message;true]] is]]
 $title[HowGamer machine]
 $description[$get[user] $randomNumber[0;100]% Gamer! ]
 $color[Random]`

@@ -8,7 +8,7 @@ module.exports = [{
     $onlyIf[$channelHasPerms[$getGuildVar[integrationlogchannel];$botID;ViewChannel;SendMessages]==true;]
     $onlyIf[$hasPerms[$guildID;$botID;ViewAuditLog]==true;]
     $let[staffdetails;$username[$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]] <@$fetchAuditLog[$guildID;IntegrationCreate;executorID;0]>]
-    $let[verified;$replace[$replace[$checkCondition[$isBotVerified[$authorID]==true];true;Yes];false;No]]
+    $let[verified;$advancedReplace[$checkCondition[$isBotVerified[$authorID]==true];true;Yes;false;No]]
     $let[timestamp;$fetchAuditLog[$guildID;IntegrationCreate;timestamp;0]]
     $sendMessage[$getGuildVar[integrationlogchannel];
     $author[New bot has been added!;$userAvatar]

@@ -8,7 +8,7 @@ info: {
 aliases: ["leaver"],
 code: `$userCooldown[leavecmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[leavecmd]];1000]]:R>]
-$let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];on;Enabled];off;Disabled]]
+$let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];on;Enabled;off;Disabled]]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageChannels]==true;
 This command requires you to have \`ManageChannels\` permission!

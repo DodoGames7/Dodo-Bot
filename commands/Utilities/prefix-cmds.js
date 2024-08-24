@@ -9,6 +9,7 @@ info: {
 type: "messageCreate",
 code: `$userCooldown[prefixcmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[prefixcmd]];1000]]:R>]
+
 $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix;$guildID]\`
 To change the prefix: \`$getGuildVar[prefix;$guildID]prefix <new prefix>\`
 ]
@@ -17,6 +18,7 @@ $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;
 This command requires you to have \`ManageGuild\` permission!
 ]
 
+$onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
 $onlyIf[$charCount[$message]<=5;Prefix cannot be longer than 5 characters.]
 
 $let[newprefix;$message]
@@ -34,6 +36,7 @@ aliases: ["prefix-reset"],
     type: "messageCreate",
     code: `$userCooldown[reset-prefixcmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[reset-prefixcmd]];1000]]:R>]
+
 $onlyIf[$hasPerms[$guildID;$authorID;ManageGuild]==true;
 This command requires you to have \`ManageGuild\` permission!
 ]

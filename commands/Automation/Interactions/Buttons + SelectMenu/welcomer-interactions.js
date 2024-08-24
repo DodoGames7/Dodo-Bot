@@ -7,7 +7,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];off;Disabled];on;Enabled]]
+$let[welcomersystem;$advancedReplace[$getGuildVar[welcomersystem];off;Disabled;on;Enabled]]
 
 $interactionUpdate[$title[Welcomer]
 $description[Welcomer is a way to greet new members of your server with your own choice of the message you're going to use it for the server!
@@ -36,11 +36,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[welcomersystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[welcomersystem]==on];true;off;false;on]]
 $setGuildVar[welcomersystem;$get[settingdecide];$guildID]
-$let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];off;Disabled];on;Enabled]]
+$let[welcomersystem;$advancedReplace[$getGuildVar[welcomersystem];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[welcomersystem]==on];true;Successfully enabled Welcomer!];false;Successfully disabled Welcomer!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[welcomersystem]==on];true;Successfully enabled Welcomer!;false;Successfully disabled Welcomer!]]
 
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]
@@ -66,7 +66,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[Welcomer Settings]
@@ -93,7 +93,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
 $description[Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
@@ -102,8 +102,8 @@ $description[Choose a channel for Welcomer messages to be sent in. Use the selec
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]
@@ -117,10 +117,6 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGuildVar[welcomerchannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Welcomer messages. Select a different one instead.
@@ -138,7 +134,7 @@ $ephemeral
 
 $setGuildVar[welcomerchannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -150,8 +146,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset_$authorID;Reset;Secondary]
@@ -176,7 +172,7 @@ $ephemeral]]
 
 $deleteGuildVar[welcomerchannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -189,8 +185,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset_$authorID;Reset;Secondary]
@@ -275,8 +271,8 @@ $ephemeral
 ]]
 
 
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
-$let[content;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$getGuildVar[welcomermessage];<member.username>;$username];<member.mention>;<@$authorID>];<member.id>;$authorID];<owner.username>;$guildOwnerID];<owner.id>;$guildOwnerID];<server.name>;$serverName];<server.id>;$guildID];<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>];<server.totalMembers>;$guildMemberCount];<member.position>;$ordinal[$guildMemberCount]];<member.Displayname>;$userDisplayname]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$botID];false;$serverIcon]]
+$let[content;$advancedReplace[$getGuildVar[welcomermessage];<member.username>;$username;<member.mention>;<@$authorID>;<member.id>;$authorID;<owner.username>;$guildOwnerID;<owner.id>;$guildOwnerID;<server.name>;$serverName;<server.id>;$guildID;<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>;<server.totalMembers>;$guildMemberCount;<member.position>;$ordinal[$guildMemberCount];<member.Displayname>;$userDisplayname]]
 
 
 
@@ -325,10 +321,10 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[welcomertype]==text];true;embed];false;text]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[welcomertype]==text];true;embed;false;text]]
 $setGuildVar[welcomertype;$get[settingdecide];$guildID]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[welcomertype]==embed];true;Successfully enabled embed mode!];false;Successfully enabled text mode!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[welcomertype]==embed];true;Successfully enabled embed mode!;false;Successfully enabled text mode!]]
 
 $interactionUpdate[
 $title[$get[title]]

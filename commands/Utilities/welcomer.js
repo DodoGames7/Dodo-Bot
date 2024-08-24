@@ -8,7 +8,7 @@ info: {
 aliases: ["welcome"],
 code: `$userCooldown[welcomercmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[welcomercmd]];1000]]:R>]
-$let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];on;Enabled];off;Disabled]]
+$let[welcomersystem;$advancedReplace[$getGuildVar[welcomersystem];on;Enabled;off;Disabled]]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageChannels]==true;
 This command requires you to have \`ManageChannels\` permission!

@@ -7,7 +7,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];off;Disabled];on;Enabled]]
+$let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 
 $interactionUpdate[$title[Leave]
 $description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
@@ -36,11 +36,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[leavesystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[leavesystem]==on];true;off;false;on]]
 $setGuildVar[leavesystem;$get[settingdecide];$guildID]
-$let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];off;Disabled];on;Enabled]]
+$let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!];false;Successfully disabled Leave!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!;false;Successfully disabled Leave!]]
 
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]
@@ -66,7 +66,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[Leave Settings]
@@ -93,7 +93,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
 $description[Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
@@ -102,8 +102,8 @@ $description[Choose a channel for Leave messages to be sent in. Use the select m
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
 $addButton[leavechannelreset_$authorID;Reset;Secondary]
@@ -117,10 +117,6 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Leave messages. Select a different one instead.
@@ -138,7 +134,7 @@ $ephemeral
 
 $setGuildVar[leavechannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -150,8 +146,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
 $addButton[leavechannelreset_$authorID;Reset;Secondary]
@@ -176,7 +172,7 @@ $ephemeral]]
 
 $deleteGuildVar[leavechannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -189,8 +185,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
 $addButton[leavechannelreset_$authorID;Reset;Secondary]
@@ -275,9 +271,9 @@ $ephemeral
 ]]
 
 
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$botID];false;$serverIcon]]
 
-$let[content;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$getGuildVar[leavemessage];<member.username>;$username];<member.mention>;<@$authorID>];<member.id>;$authorID];<owner.username>;$guildOwnerID];<owner.id>;$guildOwnerID];<server.name>;$serverName];<server.id>;$guildID];<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>];<server.totalMembers>;$guildMemberCount];<member.Displayname>;$userDisplayname]]
+$let[content;$advancedReplace[$getGuildVar[leavemessage];<member.username>;$username;<member.mention>;<@$authorID>;<member.id>;$authorID;<owner.username>;$guildOwnerID;<owner.id>;$guildOwnerID;<server.name>;$serverName;<server.id>;$guildID;<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>;<server.totalMembers>;$guildMemberCount;<member.Displayname>;$userDisplayname]]
 
 
 
@@ -326,10 +322,10 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[leavetype]==text];true;embed];false;text]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[leavetype]==text];true;embed;false;text]]
 $setGuildVar[leavetype;$get[settingdecide];$guildID]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[leavetype]==embed];true;Successfully enabled embed mode!];false;Successfully enabled text mode!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[leavetype]==embed];true;Successfully enabled embed mode!;false;Successfully enabled text mode!]]
 
 $interactionUpdate[
 $title[$get[title]]

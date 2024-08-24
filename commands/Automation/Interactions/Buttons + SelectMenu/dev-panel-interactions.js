@@ -33,7 +33,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[botinvitationmessage;$replace[$replace[$getGlobalVar[botinvitationmessage];off;Disabled];on;Enabled]]
+$let[botinvitationmessage;$advancedReplace[$getGlobalVar[botinvitationmessage];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Bot Invitation Message]
@@ -58,11 +58,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[botinvitationmessage]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[botinvitationmessage]==on];true;off;false;on]]
 $setGlobalVar[botinvitationmessage;$get[settingdecide]]
-$let[botinvitationmessage;$replace[$replace[$getGlobalVar[botinvitationmessage];off;Disabled];on;Enabled]]
+$let[botinvitationmessage;$advancedReplace[$getGlobalVar[botinvitationmessage];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGlobalVar[botinvitationmessage]==on];true;Bot will now welcome the new servers!];false;Bot will no longer welcome the new servers!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[botinvitationmessage]==on];true;Bot will now welcome the new servers!;false;Bot will no longer welcome the new servers!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -89,8 +89,8 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[errorlogging;$replace[$replace[$getGlobalVar[errorlogging];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`)];false;No channel set]]
+$let[errorlogging;$advancedReplace[$getGlobalVar[errorlogging];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[Error Logging]
@@ -101,7 +101,7 @@ $addField[Current setting(s);
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -122,12 +122,12 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[errorlogging]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[errorlogging]==on];true;off;false;on]]
 $setGlobalVar[errorlogging;$get[settingdecide]]
-$let[errorlogging;$replace[$replace[$getGlobalVar[errorlogging];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`)];false;No channel set]]
+$let[errorlogging;$advancedReplace[$getGlobalVar[errorlogging];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`);false;No channel set]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGlobalVar[errorlogging]==on];true;Errors will now be logged!];false;Errors will no longer be logged!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[errorlogging]==on];true;Errors will now be logged!;false;Errors will no longer be logged!]]
 
 
 $interactionUpdate[
@@ -139,7 +139,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -167,10 +167,6 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGlobalVar[errorchannel]!=$selectMenuValues;
 $interactionReply[This channel is already used for Error messages. Select a different one instead.
@@ -188,8 +184,8 @@ $ephemeral
 
 $setGlobalVar[errorchannel;$selectMenuValues]
 
-$let[errorlogging;$replace[$replace[$getGlobalVar[errorlogging];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`)];false;No channel set]]
+$let[errorlogging;$advancedReplace[$getGlobalVar[errorlogging];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -200,7 +196,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -229,8 +225,8 @@ $ephemeral]]
 
 $deleteGlobalVar[errorchannel]
 
-$let[errorlogging;$replace[$replace[$getGlobalVar[errorlogging];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`)];false;No channel set]]
+$let[errorlogging;$advancedReplace[$getGlobalVar[errorlogging];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -247,7 +243,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -369,7 +365,7 @@ type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==prereleaseoption]==true;]
 
-$let[pre_release;$replace[$replace[$getGlobalVar[pre_release];off;Disabled];on;Enabled]]
+$let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Pre-release]
@@ -396,9 +392,9 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;off;false;on]]
 $setGlobalVar[pre_release;$get[settingdecide]]
-$let[pre_release;$replace[$replace[$getGlobalVar[pre_release];off;Disabled];on;Enabled]]
+$let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Enabled]]
 
 $If[$getGlobalVar[pre_release]==off;
 $setGlobalVar[release_type;Stable]
@@ -406,7 +402,7 @@ $setGlobalVar[release_type;Stable]
 $setGlobalVar[release_type;$getGlobalVar[DevReleaseTypeToSet]]
 ]
 
-$let[statements;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Pre-release mode's stuff will now appear!];false;Pre-release mode's stuff will now be absent!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;Pre-release mode's stuff will now appear!;false;Pre-release mode's stuff will now be absent!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -434,8 +430,8 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
+$let[startup;$advancedReplace[$getGlobalVar[startupsystem];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[Startup]
@@ -446,7 +442,7 @@ $addField[Current setting(s);
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -467,12 +463,12 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[startupsystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[startupsystem]==on];true;off;false;on]]
 $setGlobalVar[startupsystem;$get[settingdecide]]
-$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
+$let[startup;$advancedReplace[$getGlobalVar[startupsystem];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`);false;No channel set]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGlobalVar[startup]==on];true;Startup messages will now be sent!];false;Startup messages will no longer be sent!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[startup]==on];true;Startup messages will now be sent!;false;Startup messages will no longer be sent!]]
 
 
 $interactionUpdate[
@@ -484,7 +480,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -512,11 +508,6 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
-
 $onlyIf[$getGlobalVar[startupchannel]!=$selectMenuValues;
 $interactionReply[This channel is already used for Startup messages. Select a different one instead.
 $ephemeral
@@ -533,8 +524,8 @@ $ephemeral
 
 $setGlobalVar[startupchannel;$selectMenuValues]
 
-$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
+$let[startup;$advancedReplace[$getGlobalVar[startupsystem];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`);false;No channel set]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -545,7 +536,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -574,8 +565,8 @@ $ephemeral]]
 
 $deleteGlobalVar[startupchannel]
 
-$let[startup;$replace[$replace[$getGlobalVar[startupsystem];off;Disabled];on;Enabled]]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`)];false;No channel set]]
+$let[startup;$advancedReplace[$getGlobalVar[startupsystem];off;Disabled;on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -592,7 +583,7 @@ $addField[$get[fieldname];
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
+$setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
 $addActionRow 
 $addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
@@ -614,7 +605,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[exposebuildinfo;$replace[$replace[$getGlobalVar[exposebuildinfo];off;Disabled];on;Enabled]]
+$let[exposebuildinfo;$advancedReplace[$getGlobalVar[exposebuildinfo];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Expose build info]
@@ -641,11 +632,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;off;false;on]]
 $setGlobalVar[exposebuildinfo;$get[settingdecide]]
-$let[exposebuildinfo;$replace[$replace[$getGlobalVar[exposebuildinfo];off;Disabled];on;Enabled]]
+$let[exposebuildinfo;$advancedReplace[$getGlobalVar[exposebuildinfo];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;Build information will now be exposed!];false;Build information will no longer be exposed!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;Build information will now be exposed!;false;Build information will no longer be exposed!]]
 
 $interactionUpdate[
 $title[$get[title]]

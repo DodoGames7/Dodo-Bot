@@ -10,14 +10,14 @@ $let[topics;$randomText[Did you go out today?;What did you eat today?;What are y
     name: "commandperms",
     params: ["name"],
     code: `$jsonLoad[perms;$commandInfo[messageCreate;$env[name];info;perms]]
-$let[check;$replace[$replace[$checkCondition[$arrayJoin[perms;, ]==];true;$commandInfo[messageCreate;$env[name];info;perms]];false;$arrayJoin[perms;, ]]]
+$let[check;$advancedReplace[$checkCondition[$arrayJoin[perms;, ]==];true;$commandInfo[messageCreate;$env[name];info;perms];false;$arrayJoin[perms;, ]]]
     $return[$get[check]]
     `
   },{
     name: "commandaliases",
     params: ["name"],
     code: `$jsonLoad[aliases;$commandInfo[messageCreate;$env[name];aliases]]
-$let[check;$replace[$replace[$checkCondition[$arrayJoin[aliases;, ]==];true;$commandInfo[messageCreate;$env[name];aliases]];false;$arrayJoin[aliases;, ]]]
+$let[check;$advancedReplace[$checkCondition[$arrayJoin[aliases;, ]==];true;$commandInfo[messageCreate;$env[name];aliases];false;$arrayJoin[aliases;, ]]]
     $return[$get[check]]
     `
   },{

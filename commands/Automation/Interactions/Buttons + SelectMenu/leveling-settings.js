@@ -7,7 +7,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[levelingsystem;$replace[$replace[$getGuildVar[levelingsystem];off;Disabled];on;Enabled]]
+$let[levelingsystem;$advancedReplace[$getGuildVar[levelingsystem];off;Disabled;on;Enabled]]
 
 $interactionUpdate[$title[Leveling]
 $description[Leveling is a feature that let's members of the server have their levels and xp based on how much they have been active in the server.
@@ -34,11 +34,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[levelingsystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[levelingsystem]==on];true;off;false;on]]
 $setGuildVar[levelingsystem;$get[settingdecide];$guildID]
-$let[levelingsystem;$replace[$replace[$getGuildVar[levelingsystem];off;Disabled];on;Enabled]]
+$let[levelingsystem;$advancedReplace[$getGuildVar[levelingsystem];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[levelingsystem]==on];true;Successfully enabled Leveling!];false;Successfully disabled Leveling!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[levelingsystem]==on];true;Successfully enabled Leveling!;false;Successfully disabled Leveling!]]
 
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]
@@ -64,9 +64,9 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
-$let[levelingmessagefeature;$replace[$replace[$getGuildVar[levelingmessagefeature];off;Disabled];on;Enabled]]
-$let[levelingresetonleave;$replace[$replace[$getGuildVar[levelingresetonleave];off;Disabled];on;Enabled]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
+$let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
+$let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Leveling Settings]
@@ -98,7 +98,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
 $description[Choose a channel for Level up messages to be sent in. Use the select menu below for the channel to use!
@@ -107,8 +107,8 @@ $description[Choose a channel for Level up messages to be sent in. Use the selec
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
@@ -122,10 +122,6 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGuildVar[levelingmessagechannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Level up messages. Select a different one instead.
@@ -143,7 +139,7 @@ $ephemeral
 
 $setGuildVar[levelingmessagechannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -155,8 +151,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
@@ -181,7 +177,7 @@ $ephemeral]]
 
 $deleteGuildVar[levelingmessagechannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
 
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -193,8 +189,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
@@ -214,7 +210,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[levelingmessagefeature;$replace[$replace[$getGuildVar[levelingmessagefeature];off;Disabled];on;Enabled]]
+$let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Message]
@@ -243,11 +239,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;off;false;on]]
 $setGuildVar[levelingmessagefeature;$get[settingdecide];$guildID]
-$let[levelingmessagefeature;$replace[$replace[$getGuildVar[levelingmessagefeature];off;Disabled];on;Enabled]]
+$let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;Successfully enabled Level up message!];false;Successfully disabled Level up message!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagefeature]==on];true;Successfully enabled Level up message!;false;Successfully disabled Level up message!]]
 
 
 $interactionUpdate[
@@ -298,7 +294,7 @@ $ephemeral
 ]]
 
 
-$let[content;$replace[$replace[$replace[$replace[$replace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>];<member.username>;$username];<oldlevel>;$getMemberVar[previouslevel]];<newlevel>;$getMemberVar[level]];<member.Displayname>;$userDisplayname]]
+$let[content;$advancedReplace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>;<member.username>;$username;<oldlevel>;$getMemberVar[previouslevel];<newlevel>;$getMemberVar[level];<member.Displayname>;$userDisplayname]]
 
 $interactionReply[
  $get[content]
@@ -314,7 +310,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[levelingresetonleave;$replace[$replace[$getGuildVar[levelingresetonleave];off;Disabled];on;Enabled]]
+$let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];off;Disabled;on;Enabled]]
 
 $interactionUpdate[
 $title[Reset on Leave]
@@ -341,11 +337,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[levelingresetonleave]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[levelingresetonleave]==on];true;off;false;on]]
 $setGuildVar[levelingresetonleave;$get[settingdecide];$guildID]
-$let[levelingsystem;$replace[$replace[$getGuildVar[levelingresetonleave];off;Disabled];on;Enabled]]
+$let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[levelingresetonleave]==on];true;Members who leave will now have their level reset!];false;Members who leave will no longer have their level reset!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[levelingresetonleave]==on];true;Members who leave will now have their level reset!;false;Members who leave will no longer have their level reset!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -380,7 +376,9 @@ $ephemeral
 
 $interactionUpdate[
 $title[Exclusions]
-$description[In this category, you can choose on what channels/roles should be excluded from allowing members to gain xp by default. To manage a specific setting, click on one of the buttons below dedicated to this category such as "Roles" for example.]
+$description[In this category, you can choose on what channels/roles should be excluded from allowing members to gain xp by default.
+
+To manage a specific setting, click on one of the buttons below dedicated to this category such as "Roles" for example.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
@@ -494,6 +492,7 @@ $callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]
@@ -511,11 +510,6 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$arrayLoad[channels;, ;$selectMenuValues]
-$onlyIf[$arrayEvery[channels;channel;$checkCondition[$channelType[$env[channel]]==GuildText]]==true;$interactionReply[
-Channels selected must be a Text channel.
-$ephemeral
-]]
 
 $setGuildVar[levelingexcludedchannels;$selectMenuValues]
 
@@ -527,6 +521,7 @@ $callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]
@@ -563,6 +558,7 @@ $callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu_$authorID;Select channels to exclude;1;10;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[levelingexclusioncategory_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels_$authorID;Reset;Secondary]

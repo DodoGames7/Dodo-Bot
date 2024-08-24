@@ -34,9 +34,13 @@ require('dotenv').config() // Enable env support in local hosting
         "guildCreate"
     ],
     "extensions": [ // Load extensions
-        new ForgeDB({database: "./database/forge.db"})
+        new ForgeDB({
+    type: "sqlite",
+    database: "./database/forge.db"
+    })
     ],
-   mobile: config.MobileStatus
+   mobile: config.MobileStatus,
+   disableConsoleErrors: config.EnableConsoleErrors
 })
 
 // Handlers

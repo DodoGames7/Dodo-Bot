@@ -13,7 +13,7 @@ $onlyIf[$message!=;Please type a command name to look for it's information.]
 $let[command;$commandInfo[messageCreate;$toLowerCase[$message];info]]
 $onlyIf[$isJSON[$get[command]]==true;This command does not exist in the bot. Try typing a command that exists within the bot itself.]
 $jsonLoad[cmdinfo;$get[command]]
-$let[aliases;$replace[$replace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*This command does not have any aliases.*];false;$callFunction[commandaliases;$toLowerCase[$message]]]]
+$let[aliases;$advancedReplace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*This command does not have any aliases.*;false;$callFunction[commandaliases;$toLowerCase[$message]]]]
 $let[actualname;$jsonLoad[actualname;$commandInfo[messageCreate;$toLowerCase[$message];name]]]
 $onlyIf[$commandInfo[messageCreate;$toLowerCase[$message];info;dev]==;Viewing developer commands is unsupported.]
 

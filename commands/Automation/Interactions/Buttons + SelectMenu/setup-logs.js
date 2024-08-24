@@ -28,7 +28,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $author[Message delete;$userAvatar[$botID]]
@@ -39,8 +39,8 @@ $description[To setup the logs for Message delete, use the select menu below to 
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgdeletelogreset_$authorID;Reset;Secondary]
@@ -55,10 +55,6 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGuildVar[msglogdeletechannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Message delete. Select a different one instead.
@@ -76,7 +72,7 @@ $ephemeral
 
 $setGuildVar[msglogdeletechannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`);false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -90,8 +86,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgdeletelogreset_$authorID;Reset;Secondary]
@@ -116,7 +112,7 @@ $ephemeral]]
 
 $deleteGuildVar[msglogdeletechannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogdeletechannel;$guildID]!=];true;<#$getGuildVar[msglogdeletechannel;$guildID]> (\`$getGuildVar[msglogdeletechannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -131,8 +127,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogdeletechannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgdeletelogreset_$authorID;Reset;Secondary]
@@ -152,7 +148,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $author[Message Edit;$userAvatar[$botID]]
@@ -163,8 +159,8 @@ $description[To setup the logs for Message Edit, use the select menu below to ch
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgeditlogreset_$authorID;Reset;Secondary]
@@ -200,7 +196,7 @@ $ephemeral
 
 $setGuildVar[msglogeditchannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`);false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -214,8 +210,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgeditlogreset_$authorID;Reset;Secondary]
@@ -240,7 +236,7 @@ $ephemeral]]
 
 $deleteGuildVar[msglogeditchannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[msglogeditchannel;$guildID]!=];true;<#$getGuildVar[msglogeditchannel;$guildID]> (\`$getGuildVar[msglogeditchannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -255,8 +251,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[msglogeditchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[msgeditlogreset_$authorID;Reset;Secondary]
@@ -277,7 +273,7 @@ $ephemeral
 ]]
 
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $author[Ban logs;$userAvatar[$botID]]
@@ -288,8 +284,8 @@ $description[To setup the logs for Ban logs, use the select menu below to choose
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberbanlogreset_$authorID;Reset;Secondary]
@@ -325,7 +321,7 @@ $ephemeral
 
 $setGuildVar[banlogschannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`);false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -339,8 +335,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberbanlogreset_$authorID;Reset;Secondary]
@@ -365,7 +361,7 @@ $ephemeral]]
 
 $deleteGuildVar[banlogschannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[banlogschannel;$guildID]!=];true;<#$getGuildVar[banlogschannel;$guildID]> (\`$getGuildVar[banlogschannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -380,8 +376,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberbanlogreset_$authorID;Reset;Secondary]
@@ -401,7 +397,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $author[Un-Ban logs;$userAvatar[$botID]]
@@ -412,8 +408,8 @@ $description[To setup the logs for Un-Ban logs, use the select menu below to cho
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
@@ -449,7 +445,7 @@ $ephemeral
 
 $setGuildVar[unbanlogschannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`);false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -463,8 +459,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
@@ -489,7 +485,7 @@ $ephemeral]]
 
 $deleteGuildVar[unbanlogschannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[unbanlogschannel;$guildID]!=];true;<#$getGuildVar[unbanlogschannel;$guildID]> (\`$getGuildVar[unbanlogschannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -504,8 +500,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[memberunbanlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow 
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[memberunbanlogreset_$authorID;Reset;Secondary]
@@ -525,7 +521,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[
 $author[Integration logs;$userAvatar[$botID]]
@@ -536,8 +532,8 @@ $description[To setup the logs for Integration logs, use the select menu below t
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[integrationlogreset_$authorID;Reset;Secondary]
@@ -573,7 +569,7 @@ $ephemeral
 
 $setGuildVar[integrationlogchannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`);false;No channel set]]
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -587,8 +583,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[integrationlogreset_$authorID;Reset;Secondary]
@@ -613,7 +609,7 @@ $ephemeral]]
 
 $deleteGuildVar[integrationlogchannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[integrationlogchannel;$guildID]!=];true;<#$getGuildVar[integrationlogchannel;$guildID]> (\`$getGuildVar[integrationlogchannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -628,8 +624,8 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
 $addChannelSelectMenu[integrationlogchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
 $addButton[setuploghomebutton_$authorID;Home;Secondary;🏠]
 $addButton[integrationlogreset_$authorID;Reset;Secondary]

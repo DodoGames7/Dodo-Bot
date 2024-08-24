@@ -8,7 +8,7 @@ $ephemeral
 ]]
 
 $let[number;$and[$randomNumber[1;100;false]>=38;$randomNumber[1;100;false]<89]]
-$let[result;$replace[$replace[$checkCondition[$get[number]==true];true;Heads];false;Tails]]
+$let[result;$advancedReplace[$checkCondition[$get[number]==true];true;Heads;false;Tails]]
 
 $interactionUpdate[$title[🪙 Flipping Coin...]
 $color[$getGlobalVar[embedcolor]]
