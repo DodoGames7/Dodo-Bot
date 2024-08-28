@@ -108,7 +108,7 @@ $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
@@ -152,7 +152,7 @@ $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]
@@ -190,7 +190,7 @@ $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[levelingsettings_$authorID;Go Back;Secondary;↩️]
 $addButton[levelingmsgchannelreset_$authorID;Reset;Secondary]

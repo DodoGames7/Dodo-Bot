@@ -1,5 +1,5 @@
 const config = require("./config.json");
-const functions = require("./handler/functions.js");
+const functions = require("./handlers/functions.js");
 
 const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
@@ -45,7 +45,7 @@ require('dotenv').config() // Enable env support in local hosting
 
 // Handlers
    client.commands.load("commands")
-ForgeDB.variables(require("./handler/variables.js"));
+ForgeDB.variables(require("./handlers/variables.js"));
 functions.forEach((func) => client.functions.add(func));
 // Your bot token
    client.login(process.env.BotToken || config.BotToken);

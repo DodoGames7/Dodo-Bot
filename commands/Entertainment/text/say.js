@@ -2,7 +2,8 @@ module.exports = {
 name: "say",
 info: {
         description: "Makes the bot say whatever you want.",
-        perms: "`SendMessages`"
+        perms: "`SendMessages`",
+        flags: "`--embed`"
 },
 type: "messageCreate",
 code: `$userCooldown[saycmd;3s;Cooldown has been triggered! Please, wait!

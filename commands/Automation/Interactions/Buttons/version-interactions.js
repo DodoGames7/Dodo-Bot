@@ -10,10 +10,12 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
+* Added command dedicated to viewing flags for cmds in \`flag\` command
 * Cpu Usage in \`stats\` has been improved to be actual percentage and no longer goes crazy
+* Announcement channels are now supported in Level up messages
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -41,7 +43,7 @@ $description[
 * Fixed embed mode not being usable in \`say\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -66,10 +68,12 @@ $interactionUpdate[
 $title[Other]
 $description[
 * Internal changes to shorten implementation of Settings of Games
+* The command descriptions are now actually moved into embed description in \`commandinfo\`
+* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.5
 * (Source Code) outputs checkers are now simpler just like in non Rebase version
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -100,7 +104,7 @@ $title[Dodo-Bot Version]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]

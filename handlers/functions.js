@@ -21,6 +21,13 @@ $let[check;$advancedReplace[$checkCondition[$arrayJoin[aliases;, ]==];true;$comm
     $return[$get[check]]
     `
   },{
+    name: "commandflags",
+    params: ["name"],
+    code: `$jsonLoad[flags;$commandInfo[messageCreate;$env[name];info;flags]]
+$let[check;$advancedReplace[$checkCondition[$arrayJoin[flags;, ]==];true;$commandInfo[messageCreate;$env[name];info;flags];false;$arrayJoin[flags;, ]]]
+    $return[$get[check]]
+    `
+  },{
     name: "sayembedmodefilter",
     params: ["content"],
     code: `

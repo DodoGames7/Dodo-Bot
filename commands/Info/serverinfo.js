@@ -23,7 +23,7 @@ $addField[Members;
 ]
 $addField[General;
 **Created on:** <t:$trunc[$divide[$guildCreatedAt;1000]]:f>
-**Server Owner:** $username[$guildOwnerID] (\`$guildOwnerID\`)
+**Server Owner:** $hyperLink[**$username[$guildOwnerID]**;$callFunction[userURL;$guildOwnerID]] (\`$guildOwnerID\`)
 **Roles:** $guildRoleCount
 **Boosts:** $guildBoostCount
 **Emojis:** $guildEmojiCount

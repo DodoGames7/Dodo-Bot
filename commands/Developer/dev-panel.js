@@ -13,7 +13,7 @@ $description[Welcome to Developer panel! This panel allows you to change some st
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$attachment[./handler/assets/gear.png;gear.png]
+$attachment[./handlers/assets/gear.png;gear.png]
 $thumbnail[attachment://gear.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]

@@ -15,7 +15,7 @@ $onlyIf[$charCount[$message]<=200;Your question can't be longer than 200 charact
 $title[8ball]
 $addField[Your question;$message]
 $addField[Answer;$callFunction[8ballanswers]]
-$attachment[./handler/assets/8ball.png;8ball.png]
+$attachment[./handlers/assets/8ball.png;8ball.png]
 $thumbnail[attachment://8ball.png]
 $color[$getGlobalVar[embedcolor]]
 $footer[Feel free to ask me more questions!]

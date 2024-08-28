@@ -2,7 +2,8 @@ module.exports = {
 name: "trivia",
 info: {
         description: "Starts a game of Trivia (pass the flag `--settings` to open the settings).",
-        perms: "`SendMessages`"
+        perms: "`SendMessages`",
+        flags: "`--settings`"
 },
 aliases: ["triv"],
 type: "messageCreate",

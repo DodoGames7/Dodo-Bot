@@ -2,7 +2,8 @@ module.exports = {
 name: "flood",
 info: {
         description: "Starts a game of Flood (pass the flag `--settings` to open the settings).",
-        perms: "`SendMessages`"
+        perms: "`SendMessages`",
+        flags: "`--settings`"
 },
 type: "messageCreate",
 code: `$userCooldown[floodcmd;3s;Cooldown has been triggered! Please, wait!
