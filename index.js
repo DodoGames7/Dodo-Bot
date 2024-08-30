@@ -1,14 +1,14 @@
-const { AoiClient } = require("aoi.js");
+const { AoiClient } = require("aoi.js"); // Define aoi.js client creator
 const config = require("./config.json"); // Load the setup options from config
 require('dotenv').config() // Enable env support in local hosting
-// const functions = require("./handler/functions.js");
+// const functions = require("./handlers/functions.js");
 
 // Client Setup
 const client = new AoiClient({
   token: process.env.BotToken || config.BotToken, // Token with either env or config
-  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system. (default prefix used: d!)
+  prefix: "$getGuildVar[prefix]", // By default, it uses custom prefix system (default prefix used: d!).
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildMembers", "GuildPresences", "GuildModeration", "GuildEmojisAndStickers"], // Discord.js intents (v14)
-  events: ["onMessage", "onInteractionCreate", "onJoin", "onMessageDelete", "onMessageUpdate", "onLeave", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
+  events: ["onMessage", "onInteractionCreate", "onJoin", "onLeave", "onMessageDelete", "onMessageUpdate", "onBanAdd", "onBanRemove", "onGuildJoin", "onFunctionError"], // Setup aoi.js events
   aoiLogs: false, // Don't show aoi.js default console message
   aoiWarning: false, // Disable aoi.js update warning
   database: { // Use aoi.db as the default database for storing data
@@ -27,7 +27,7 @@ const client = new AoiClient({
 
 // Handlers
 client.loadCommands("./commands/", config.LogCommands);
-client.variables(require("./handler/variables.js"));
+client.variables(require("./handlers/variables.js"));
 // functions.forEach((func) => client.functionManager.createFunction(func));
 
 

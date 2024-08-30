@@ -71,7 +71,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 $interactionUpdate[{newEmbed:{title:What is Beta commands?}{description:
  Beta commands are experimental commands that are unstable and are subject to have bugs in it. While at times, they may look like finished commands by the looks of it, however, they do have bugs if you dig deeper into them. 
 
-Please, be aware that, commands in this feature may either be removed or taken out of the beta depending on the choice of the developer once it's stabilized enough. It is not recommended to use them always as they're meant for testing and as such, it requires caution when using them.
+Please, be aware that, commands in this feature may either be removed or taken out of the beta depending on the choice of the developer once it's stabilized enough. It is not recommended to always use them as they're meant for testing and as such, it requires caution when using them.
 
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
@@ -93,7 +93,7 @@ $interactionUpdate[{newEmbed:{title:Why do they exist?}{description:
 
 As a result, Beta commands feature was introduced around beta 4 of v2 as a way to separate between experimental and finished commands to ensure that everything is in control.
 
-Despite the name, the feature is available for anyone to join as part of it and use the commands included with it. This is so to allow the public to test and report the bugs found in the experimental commands through the [Github repo's issues page](https#COLON#//github.com/dodoGames7/Dodo-Bot/issues).
+Despite the name, the feature is available for anyone to join and use the commands included with it. This is so to allow the public to test and report the bugs found in the experimental commands through the [Github repo's issues page](https#COLON#//github.com/dodoGames7/Dodo-Bot/issues).
 
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 

@@ -3,6 +3,7 @@ module.exports = {
     info: {
       description: "Sets a custom status for the bot",
       perms: ["`SendMessages`"],
+      flags: ["`--reset`"],
       dev: "true"
     },
     aliases: ["scs", "customstatus"],

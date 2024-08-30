@@ -115,7 +115,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     \`<mention>\` - Pings the member
     }{field:Leveling-related:
     \`<newlevel>\` - Returns the new level of the member
-    \`<previouslevel>\` - Returns the previous level the member once had
+    \`<oldlevel>\` - Returns the previous level the member once had
     }}{actionRow:{button:Go back:2:levelingsetting_$authorID:false:↩️}}]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -208,7 +208,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
     $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
@@ -231,7 +231,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
     
     $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
     
@@ -246,12 +246,6 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[levelingmessagechannel];
     This channel is already used for Level up messages. Please, set a different channel instead.
-    {ephemeral}
-    {interaction}
-    ]
-    
-    $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
-    Make sure to set an Text channel instead.
     {ephemeral}
     {interaction}
     ]
@@ -282,7 +276,7 @@ $interactionUpdate[The current progress for all members will remain then.]
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
+    }}{actionRow:{selectMenu:levelingchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:levelingsettingmessage_$authorID:false:↩️}{button:Reset:2:levelingresetchannel_$authorID:false}}]
 
     $let[levelupchannel;$advancedReplaceText[$checkCondition[$getGuildVar[levelingmessagechannel]==none];true;None;false;<#$getGuildVar[levelingmessagechannel]> (\`$getGuildVar[levelingmessagechannel]\`)]]
 
@@ -312,7 +306,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     $get[content]
     ]
     
-    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<previouslevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName]]
+    $let[content;$advancedReplaceText[$nonEscape[$getGuildVar[levelmessage]];<newlevel>;$getUserVar[level];<mention>;<@$authorID>;<username>;$username;<oldlevel>;$getUserVar[previouslevel];<Displayname>;$userDisplayName]]
     
     $onlyIf[$hasPermsInChannel[$getGuildVar[levelingmessagechannel];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$getGuildVar[levelingmessagechannel]>:
     \`ViewChannel\`

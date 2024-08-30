@@ -63,13 +63,13 @@ $let[Input;{url}]
   },{
     name: "$autoList",
     type: "aoi.js",
-    params: ["variable", "separator"],
+    params: ["variable", "separator", "type"],
     code: `
         $comment[Let's return the result.]
         $arrayJoin[result;\n]
 
         $comment[Loop to map between each array element.]
-        $loop[10;{};autoListIterator]
+        $loop[10;{};{type}]
 
         $comment[Number that controls the current iteration element.]
         $let[i;0]

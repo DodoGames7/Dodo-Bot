@@ -57,27 +57,6 @@ $onlyIf[$getSelectMenuValues[all]==autoreply;]
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
 `
 },{
- type: "interaction",
- prototype: "selectMenu",
- code: `$interactionUpdate[{newEmbed:{title:Include Bots}{description:
-     This option let's you decide whether or not bots should be included in logs feature such as message delete logs. 
-
-By default, this is enabled but you can choose to disable it for whatever reason.
-
-**Current Setting(s)**
-**Include Bots**#COLON# \`$get[includebots]\`
-}}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
-   {ephemeral}
-{interaction}
-    ]
-    
-$let[includebots;$advancedReplaceText[$getGuildVar[includebots];on;Enabled;off;Disabled]]
-$onlyIf[$getSelectMenuValues[all]==includebots;]
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
-`
-},{
     type: "interaction",
     prototype: "button",
     code: `
@@ -104,6 +83,27 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     ]
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==autoreplytoggle;]
 
+`
+},{
+ type: "interaction",
+ prototype: "selectMenu",
+ code: `$interactionUpdate[{newEmbed:{title:Include Bots}{description:
+     This option let's you decide whether or not bots should be included in logs feature such as message delete logs. 
+
+By default, this is enabled but you can choose to disable it for whatever reason.
+
+**Current Setting(s)**
+**Include Bots**#COLON# \`$get[includebots]\`
+}}{actionRow:{selectMenu:dodobotmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in logging features.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebots_$authorID:false}}]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+   {ephemeral}
+{interaction}
+    ]
+    
+$let[includebots;$advancedReplaceText[$getGuildVar[includebots];on;Enabled;off;Disabled]]
+$onlyIf[$getSelectMenuValues[all]==includebots;]
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==dodobotmenu;]
 `
 },{
     type: "interaction",

@@ -2,7 +2,8 @@ module.exports = [{
   name: "say",
   info: {
     description: "Makes the bot say whatever you want (alongside with optional embed mode).",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`"],
+    flags: ["`--embed`"]
 },
 aliases: ["talk","repeat"],
   code: `$awaitMessages[$channelID;$authorID;30s;everything;awaitedsay;Time ran out! You didn't make me say anything!]

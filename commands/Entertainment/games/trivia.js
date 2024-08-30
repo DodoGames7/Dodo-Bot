@@ -2,7 +2,8 @@ module.exports = [{
   name: "trivia",
   info: {
     description: "Starts a random Trivia game (pass the flag \`--settings\` to open up the settings).",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`"],
+    flags: ["`--settings`"]
   },
   aliases: "triv",
   code: `$ifAwaited[$checkContains[$message;--settings;—settings]==true;{execute:triviasettings};{execute:triviastart}]

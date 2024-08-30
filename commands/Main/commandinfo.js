@@ -8,13 +8,17 @@ module.exports = {
     aliases: ["cmdinfo", "ci"],
     code: `$author[Command info looker;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/fluent-books.png]
     $title[$commandInfo[$get[cmdname];name]]
+    $description[$commandInfo[$get[cmdname];info.description]]
     $addField[Aliases;$get[aliases]]
     $addField[Permissions needed;$arrayJoin[perms;, ]]
-    $addField[Description;$commandInfo[$get[cmdname];info.description]]
     $color[$getVar[embedcolor]]
     $if[$commandInfo[$toLowerCase[$message];info.beta]==true]
     $footer[Experimental command.;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
   $endif
+  $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
+    $addButton[1;Flags;2;viewcommandflags_$authorID_$get[cmdname];false]
+  $endif
+
 $let[aliases;$advancedReplaceText[$checkCondition[$arrayJoin[aliases;, ]==];true;*This command does not have any aliases.*;false;$arrayJoin[aliases;, ]]]
 $createArray[aliases;$nonEscape[$get[aliaseschecker]]]
 $let[aliaseschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];aliases]];,;#SEMI#]]

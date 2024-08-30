@@ -303,8 +303,8 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
   type: "interaction",
   prototype: "selectMenu",
   code: `$interactionFollowUp[Set Hangman's theme to \`$toLocaleUpperCase[$getSelectMenuValues[all]]\`!;true]
-$interactionUpdate[{newEmbed:{title:Hangman Settings}{description:
-Welcome to Hangman settings! To select a theme to use, use the dropdown menu below!
+$interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:
+Welcome to Hangman Settings! To select a theme to use, use the dropdown menu below!
 
 **Current Setting(s)**
 **Theme#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[hangman_theme]]\`
@@ -323,6 +323,7 @@ Welcome to Hangman settings! To select a theme to use, use the dropdown menu bel
   {ephemeral}
 {interaction}
   ]
+$let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
 $onlyIf[$checkContains[$getSelectMenuValues[all];nature;sport;color;camp;fruit;discord;winter;pokemon]==true;]
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==hangmansettings;]
 

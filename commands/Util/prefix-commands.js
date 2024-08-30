@@ -2,20 +2,20 @@ module.exports = [{
   name: "prefix",
   info: {
     description: "View or change current prefix of the bot in this server.",
-    perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"]
+    perms: ["`SendMessages`", "`ManageGuild` (when changing prefix)"],
+    usage: "prefix <new prefix>"
 },
   code: `
-  $setGuildVar[prefix;$message]
+  $setGuildVar[prefix;$nonEscape[$get[newprefix]]]
   Changed prefix from \`$get[oldprefix]\` to \`$get[newprefix]\`.
-  $onlyIf[$getGuildVar[prefix]!=$message;This prefix is already in use.]
-  $onlyIf[$charCount[$message]<=5;Prefix can't be longer than 5 characters.]
+  $onlyIf[$getGuildVar[prefix]!=$nonEscape[$get[newprefix]];This prefix is already in use.]
+  $onlyIf[$charCount[$nonEscape[$get[newprefix]]]<=5;Prefix can't be longer than 5 characters.]
   $let[newprefix;$message]
   $let[oldprefix;$getGuildVar[prefix]]
-
     $onlyPerms[manageguild;You need to have \`ManageServer\` permission to proceed.]
   $onlyIf[$checkContains[$message;<@;<@!;<@&;<#;@;<#!]==false;Why would i do that? I don't want to disturb people! o(TヘTo)]
   $onlyIf[$message!=;Prefix: \`$getGuildVar[prefix]\` 
-Usage to change prefix: \`$getGuildVar[prefix]prefix <new prefix>\`]
+Usage to change prefix: \`$getGuildVar[prefix]$nonEscape[$commandInfo[prefix;info.usage]]\`]
  $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;prefix;$authorID];$dateStamp];1000]]:R>]
   `

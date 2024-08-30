@@ -2,10 +2,11 @@ module.exports = [{
 name: "hangman",
 info: {
     description: "Starts a hangman game (pass the flag \`--settings\` to open up the settings).",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`"],
+    flags: ["`--settings`", "`--themes`"]
   },
 aliases: "hm",
-code: `$ifAwaited[$checkContains[$message;--settings;—settings]==true;{execute:hangmansettings};{execute:hangmanstart}]
+code: `$ifAwaited[$checkContains[$message;--settings;—settings;--themes;—themes]==true;{execute:hangmansettings};{execute:hangmanstart}]
 
 $cooldown[4s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;hangman;$authorID];$dateStamp];1000]]:R>]
@@ -38,7 +39,7 @@ Game.startGame();
   name: "hangmansettings",
   type: "awaited",
   code: `$title[Hangman Settings]
-  $description[Welcome to Hangman settings! To select a theme to use, use the dropdown menu below!
+  $description[Welcome to Hangman Settings! To select a theme to use, use the dropdown menu below!
 
 **Current Setting(s)**
 **Theme#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[hangman_theme]]\`

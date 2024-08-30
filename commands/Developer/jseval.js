@@ -3,6 +3,7 @@ module.exports = {
     info: {
       description: "Executes codes for testing (in discord.js only)",
       perms: ["`SendMessages`"],
+      flags: ["`--return`"],
       dev: "true"
     },
     aliases: ["jse", "djseval", "djse"],
