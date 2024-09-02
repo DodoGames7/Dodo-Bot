@@ -34,7 +34,7 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getUserVar[trivia_type]==single];true;multiple];false;single]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getUserVar[trivia_type]==single];true;multiple;false;single]]
 $setUserVar[trivia_type;$get[settingdecide]]
 
 
@@ -86,17 +86,19 @@ $addButton[triviahardoption_$authorID;Hard;Secondary]
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==triviaeasyoption;]
+$onlyIf[$checkContains[$advancedTextSplit[$customID;_;0];triviaeasyoption;triviamediumoption;triviahardoption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
 
-$onlyIf[$getUserVar[trivia_difficulty]!=easy;
+$let[difficultychooser;$advancedReplace[$advancedTextSplit[$customID;_;0];triviaeasyoption;easy;triviamediumoption;medium;triviahardoption;hard]]
+
+$onlyIf[$get[difficultychooser]!=$getUserVar[trivia_difficulty];
 $interactionReply[This Difficulty-set is already used 
 $ephemeral
 ]]
 
-$setUserVar[trivia_difficulty;easy]
+$setUserVar[trivia_difficulty;$get[difficultychooser]]
 
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
@@ -119,90 +121,7 @@ $addButton[triviahardoption_$authorID;Hard;Secondary]
 ]
 
 $interactionFollowUp[
-Difficulty has been set to Easy!
-$ephemeral
-]
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==triviamediumoption;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-
-$onlyIf[$getUserVar[trivia_difficulty]!=medium;
-$interactionReply[This Difficulty-set is already used 
-$ephemeral
-]]
-
-$setUserVar[trivia_difficulty;medium]
-
-
-$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
-$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
-$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
-
-$interactionUpdate[
-$title[$get[title]]
-$description[$get[description]]
-$addField[$get[fieldname];$toTitleCase[$getUserVar[trivia_difficulty]]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
-$addOption[Type;How the Game should start?;triviatypeoption;;false]
-$addOption[Difficulty;How hard the Game should be?;triviadifficultyoption;;false]
-$addActionRow
-$addButton[triviaeasyoption_$authorID;Easy;Secondary]
-$addButton[triviamediumoption_$authorID;Medium;Secondary]
-$addButton[triviahardoption_$authorID;Hard;Secondary]
-]
-
-$interactionFollowUp[
-Difficulty has been set to Medium!
-$ephemeral
-]
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==triviahardoption;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-$onlyIf[$getUserVar[trivia_difficulty]!=hard;
-$interactionReply[This Difficulty-set is already used 
-$ephemeral
-]]
-
-$setUserVar[trivia_difficulty;hard]
-
-
-$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
-$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
-$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
-
-$interactionUpdate[
-$title[$get[title]]
-$description[$get[description]]
-$addField[$get[fieldname];$toTitleCase[$getUserVar[trivia_difficulty]]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addStringSelectMenu[triviasettings_$authorID;Select a option;false;1;1]
-$addOption[Type;How the Game should start?;triviatypeoption;;false]
-$addOption[Difficulty;How hard the Game should be?;triviadifficultyoption;;false]
-$addActionRow
-$addButton[triviaeasyoption_$authorID;Easy;Secondary]
-$addButton[triviamediumoption_$authorID;Medium;Secondary]
-$addButton[triviahardoption_$authorID;Hard;Secondary]
-]
-
-$interactionFollowUp[
-Difficulty has been set to Hard!
+Difficulty has been set to $toTitleCase[$get[difficultychooser]]!
 $ephemeral
 ]
 `

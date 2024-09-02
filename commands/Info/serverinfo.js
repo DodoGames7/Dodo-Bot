@@ -9,10 +9,10 @@ aliases: ["guild", "guildinfo", "server", "si"],
 code: `$userCooldown[serverinfocmd;3s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[serverinfocmd]];1000]]:R>]
 
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 $let[totalmembers;$sum[$guildMemberCount;$guildBotCount]]
 $arrayLoad[totalchannels;/;$guildChannelIDs[$guildID;/]]
-$let[serververified;$replace[$replace[$checkCondition[$guildVerified==true];true;Yes];false;No]]
+$let[serververified;$advancedReplace[$checkCondition[$guildVerified==true];true;Yes;false;No]]
 
 $author[$guildName;$get[servericon];$get[servericon]]
 $title[Server info]
@@ -23,7 +23,7 @@ $addField[Members;
 ]
 $addField[General;
 **Created on:** <t:$trunc[$divide[$guildCreatedAt;1000]]:f>
-**Server Owner:** $username[$guildOwnerID] (\`$guildOwnerID\`)
+**Server Owner:** $hyperLink[**$username[$guildOwnerID]**;$callFunction[userURL;$guildOwnerID]] (\`$guildOwnerID\`)
 **Roles:** $guildRoleCount
 **Boosts:** $guildBoostCount
 **Emojis:** $guildEmojiCount

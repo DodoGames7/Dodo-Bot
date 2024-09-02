@@ -2,7 +2,8 @@ module.exports = {
 name: "say",
 info: {
         description: "Makes the bot say whatever you want.",
-        perms: "`SendMessages`"
+        perms: "`SendMessages`",
+        flags: ["`--embed`"]
 },
 type: "messageCreate",
 code: `$userCooldown[saycmd;3s;Cooldown has been triggered! Please, wait!
@@ -12,18 +13,18 @@ $onlyIf[$message!=;Please say whatever you want.
 **Tip:** To use embed mode, make sure your message contains the flag \`--embed\` to do so.]
 $disableAllMentions
 
-$let[clearembedmodewords;$replace[$replace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[sayembedmodefilter;$message]];false;$message]]
-$let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$botInvite[36032]]]
+$let[clearembedmodewords;$advancedReplace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[sayembedmodefilter;$message];false;$message]]
+$let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$clientInvite[36032]]]
 $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without specifying a text first.]
 
 $if[$or[$checkContains[$message;--embed;—embed]==true;$charCount[$message]>=2000];
-$author[$username;$userAvatar;$userURL[$authorID]]
+$author[$username;$userAvatar;$callFunction[userURL;$authorID]]
 $title[Say cmd;$get[links]]
 $description[$get[clearembedmodewords]]
 $color[Random]
 ;$get[clearembedmodewords]
 
- From $hyperlink[\`$username\`;<$userURL[$authorID]>]
+ From $hyperlink[\`$username\`;<$callFunction[userURL;$authorID]>]
 ]
 
 `

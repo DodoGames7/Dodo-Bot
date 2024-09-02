@@ -2,13 +2,14 @@ module.exports = {
 name: "flood",
 info: {
         description: "Starts a game of Flood (pass the flag `--settings` to open the settings).",
-        perms: "`SendMessages`"
+        perms: "`SendMessages`",
+        flags: "`--settings`"
 },
 type: "messageCreate",
 code: `$userCooldown[floodcmd;3s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[floodcmd]];1000]]:R>]
 
-$let[difficulty;$replace[$replace[$replace[$getUserVar[flood_difficulty];18;Hard];13;Normal];8;Easy]]
+$let[difficulty;$advancedReplace[$getUserVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
 $if[$checkContains[$message;--settings;—settings]==true;
 $title[Flood settings]
 $description[Welcome to Flood's settings! Select a option to change!]

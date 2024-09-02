@@ -2,7 +2,7 @@ module.exports = {
 name: "would-you-rather",
 info: {
         description: "Starts a game of two options to choose from.",
-        perms: "`SendMessages`"
+        perms: ["`SendMessages`"]
 },
 aliases: ["wyr"],
 type: "messageCreate",
@@ -19,6 +19,7 @@ $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[wyr-ops1;0;Secondary;1️⃣]
 $addButton[wyr-ops2;0;Secondary;2️⃣]
+
 
 `
 }

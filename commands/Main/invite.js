@@ -11,6 +11,6 @@ $title[Invite Dodo-Bot]
 $description[To invite the bot to a server, press the "Invite" button below.]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[$botInvite[36032];Invite;Link]
+$addButton[$clientInvite[36032];Invite;Link]
 `
 }

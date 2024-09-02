@@ -1,11 +1,9 @@
 const config = require("./config.json");
-const functions = require("./handler/functions.js");
+const functions = require("./handlers/functions.js");
 
 const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
 require('dotenv').config() // Enable env support in local hosting
-
-
 
 // Client initialization
    const client = new ForgeClient({
@@ -34,14 +32,18 @@ require('dotenv').config() // Enable env support in local hosting
         "guildCreate"
     ],
     "extensions": [ // Load extensions
-        new ForgeDB({database: "./database/forge.db"})
+        new ForgeDB({
+    type: "sqlite",
+    database: "./database/forge.db"
+    })
     ],
-   mobile: config.MobileStatus
+   mobile: config.MobileStatus,
+   disableConsoleErrors: config.disableConsoleErrors
 })
 
 // Handlers
    client.commands.load("commands")
-ForgeDB.variables(require("./handler/variables.js"));
+ForgeDB.variables(require("./handlers/variables.js"));
 functions.forEach((func) => client.functions.add(func));
 // Your bot token
    client.login(process.env.BotToken || config.BotToken);

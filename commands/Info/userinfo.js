@@ -11,9 +11,9 @@ code: `$userCooldown[userinfocmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[userinfocmd]];1000]]:R>]
 
 $let[user;$findUser[$message;true]]
-$let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]]];false;$username[$get[user]]]]
-$let[accounttype;$replace[$replace[$checkCondition[$isBot[$get[user]]==true];true;Bot];false;Human]]
-$let[dmsstatus;$replace[$replace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot[$get[user]]==true];true;Bot;false;Human]]
+$let[dmsstatus;$advancedReplace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 
 $title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;

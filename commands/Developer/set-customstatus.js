@@ -12,7 +12,7 @@ $onlyIf[$message!=;Please enter a text to be used for the status!
 
 To reset the status, run \`$getGuildVar[prefix]set-customstatus --reset\` to do so.]
 $onlyIf[$charCount[$message]<=128;You can only have up to 128 characters for each custom status you set.]
-$if[$checkContains[$message;--reset;—reset]==true;
+$if[$startsWith[$message;--reset;—reset]==true;
 $setStatus[online;Custom;]
 Status has been reset!
 ;

@@ -9,7 +9,7 @@ aliases: ["suggest-set", "set-suggest"],
 code: `
 $userCooldown[suggest-setupcmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[suggest-setupcmd]];1000]]:R>]
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[suggestionchannel;$guildID;None]!=None];true;<#$getGuildVar[suggestionchannel;$guildID]> (\`$getGuildVar[suggestionchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[suggestionchannel;$guildID;None]!=None];true;<#$getGuildVar[suggestionchannel;$guildID]> (\`$getGuildVar[suggestionchannel;$guildID]\`);false;No channel set]]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageChannels]==true;
 This command requires you to have \`ManageChannels\` permission!
@@ -23,9 +23,8 @@ To set a channel for suggestions, please use the select menu below.
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelType[GuildAnnouncement]
-$addChannelSelectMenu[suggestionchannelsetup_$authorID;Select a channel to setup.;1;1;false]
+$addChannelSelectMenu[suggestionchannelsetup_$authorID;Select a channel to use;1;1;false]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow 
 $addButton[suggestresetbutton_$authorID;Reset;Secondary]
 
@@ -61,7 +60,7 @@ The channel used for suggestions doesn't seem to exist anymore.
 Until then, the server staff must set a new channel for suggestions to work once again.
 ]
 
-$onlyIf[$channelHasPerms[$getGuildVar[suggestionchannel];$botID;SendMessages;ViewChannel;AddReactions]==true;
+$onlyIf[$channelHasPerms[$getGuildVar[suggestionchannel];$clientID;SendMessages;ViewChannel;AddReactions]==true;
 I do not have permissions to either send messages or view the suggestion channel.
 
 In order to send your suggestion there, the server staff must give me the following:

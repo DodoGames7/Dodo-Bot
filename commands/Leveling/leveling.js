@@ -8,7 +8,7 @@ info: {
 code: `
 $userCooldown[levelingcmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[levelingcmd]];1000]]:R>]
-$let[levelingsystem;$replace[$replace[$getGuildVar[levelingsystem];on;Enabled];off;Disabled]]
+$let[levelingsystem;$advancedReplace[$getGuildVar[levelingsystem];on;Enabled;off;Disabled]]
 
 $onlyIf[$hasPerms[$guildID;$authorID;ManageChannels]==true;
 This command requires you to have \`ManageChannels\` permission!

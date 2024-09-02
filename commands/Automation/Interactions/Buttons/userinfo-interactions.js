@@ -7,9 +7,9 @@ $ephemeral
 ]]
 
 $let[user;$advancedTextSplit[$customID;_;2]]
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
-$let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]]];false;$username[$get[user]]]]
-$let[nickname;$replace[$replace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none];false;$nickname[$guildID;$get[user]]]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[nickname;$advancedReplace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none;false;$nickname[$guildID;$get[user]]]]
 $arrayLoad[amountofroles;/;$memberRoles[$guildID;$get[user];/]]
 
 $onlyIf[$memberExists[$guildID;$get[user]]==true;
@@ -46,9 +46,9 @@ $ephemeral
 ]]
 
 $let[user;$advancedTextSplit[$customID;_;2]]
-$let[username;$replace[$replace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]]];false;$username[$get[user]]]]
-$let[accounttype;$replace[$replace[$checkCondition[$isBot[$get[user]]==true];true;Bot];false;Human]]
-$let[dmsstatus;$replace[$replace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled];false;Disabled]]
+$let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
+$let[accounttype;$advancedReplace[$checkCondition[$isBot[$get[user]]==true];true;Bot;false;Human]]
+$let[dmsstatus;$advancedReplace[$checkCondition[$isUserDMEnabled[$get[user]]==true];true;Enabled;false;Disabled]]
 
 $interactionUpdate[
 $title[$get[username]'s information;$callFunction[userURL;$get[user]]]

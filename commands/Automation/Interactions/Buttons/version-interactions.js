@@ -10,14 +10,14 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Progress bar has been decreased in size in \`rank\` command
-* Lots of changes for the final version
-* You can now exclude certain roles/channels from xp in Leveling
-* "Reset on Leave" option in \`leveling\` command has been moved to a select menu
-* Bot permissions can now be viewed in Integration logs
+* Added a button to view flags for cmds in \`commandinfo\` command
+* Re-added \`<member.position>\` for Leave messages
+* Migrate to ephemeral interactions for \`setup-logs\` and other commands like \`welcomer\`
+* Cpu Usage in \`stats\` has been improved to be actual percentage and no longer goes crazy
+* Announcement channels are now supported in Level up messages
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -41,14 +41,12 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Fixed bugs that rendered the previous build unusable
-* Fixed Message Delete Logs breaking
-* Fixed spelling one of the errors in \`commandinfo\` command
-* Anonymous no longer hides bots who took action
-* Fixed Leveling message setting being unusable
+* Reduced the possibility of interactions failing
+* Mentions can no longer be used as prefix
+* Fixed embed mode not being usable in \`say\` command
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -72,12 +70,14 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* Updated the search icon in \`commandinfo\` command
-* Server name can now be clicked in \`serverinfo\` command
-* Version has been reset to \`1.2.0\` to avoid confusion from the non-Rebase version
+* Internal changes to shorten implementation of Settings of Games
+* The command descriptions are now actually moved into embed description in \`commandinfo\`
+* (Source Code) Setup option \`EnableConsoleErrors\` is now \`disableConsoleErrors\`
+* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.5
+* (Source Code) output checkers are now simpler just like in non Rebase version
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
@@ -98,7 +98,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$let[releasedatetype;$replace[$replace[$checkCondition[$getGlobalVar[pre_release]==on];true;Build created on];false;Released on]]
+$let[releasedatetype;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;Build created on;false;Released on]]
 
 $interactionUpdate[
 $title[Dodo-Bot Version]
@@ -108,7 +108,7 @@ $title[Dodo-Bot Version]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handler/assets/redwarning.png;redwarning.png]
+$attachment[./handlers/assets/redwarning.png;redwarning.png]
 $footer[Testing is recommended;attachment://redwarning.png]
 ]
     $color[$getGlobalVar[embedcolor]]

@@ -13,7 +13,7 @@ $description[Rebase is a special version of Dodo-Bot acting as a backup. It is b
 
 As the name implies, it mostly acts as a emergency build in case if aoi.js suddenly died one day. It's also used for learning new stuff.]
 $color[$getGlobalVar[embedcolor]]
-$attachment[./handler/assets/dodo-bot-logo.png;dodobot-logo.png]
+$attachment[./handlers/assets/dodo-bot-logo.png;dodobot-logo.png]
 $thumbnail[attachment://dodobot-logo.png]
 
 `

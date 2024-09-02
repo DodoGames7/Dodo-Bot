@@ -2,31 +2,6 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavehome;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-$let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];off;Disabled];on;Enabled]]
-
-$interactionUpdate[$title[Leave]
-$description[Leave just like Welcomer is a way to setup an channel where the bot says goodbye to members leaving your server!
-
-To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
-
-]
-$addField[Current setting(s);$get[leavesystem]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addButton[leavetoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[leavesettings_$authorID;Settings;Danger]
-]
-
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
 $onlyIf[$advancedTextSplit[$customID;_;0]==leavetoggle;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
@@ -36,11 +11,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[leavesystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[leavesystem]==on];true;off;false;on]]
 $setGuildVar[leavesystem;$get[settingdecide];$guildID]
-$let[leavesystem;$replace[$replace[$getGuildVar[leavesystem];off;Disabled];on;Enabled]]
+$let[leavesystem;$advancedReplace[$getGuildVar[leavesystem];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!];false;Successfully disabled Leave!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[leavesystem]==on];true;Successfully enabled Leave!;false;Successfully disabled Leave!]]
 
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]
@@ -61,14 +36,18 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
+$if[$advancedTextSplit[$customID;_;1]==;
+$onlyIf[$customID==leavesettingshome;]
+;
 $onlyIf[$advancedTextSplit[$customID;_;0]==leavesettings;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
+]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Leave Settings]
 $description[Welcome to Leave settings! Select a option to change.
 ]
@@ -78,22 +57,20 @@ $addField[Current setting(s);
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[leavehome_$authorID;Home;Secondary;🏠]
-$addButton[leavechannelsetup_$authorID;Channel;Secondary]
-$addButton[leavemessagecategory_$authorID;Message;Secondary]
-$addButton[leaveplaceholderlist_$authorID;Placeholders;Secondary]
+$addButton[leavechannelsetup;Channel;Secondary]
+$addButton[leavemessagecategory;Message;Secondary]
+$addButton[leaveplaceholderlist;Placeholders;Secondary]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelsetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavechannelsetup;]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
 $description[Choose a channel for Leave messages to be sent in. Use the select menu below for the channel to use!
@@ -102,25 +79,18 @@ $description[Choose a channel for Leave messages to be sent in. Use the select m
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[leavechannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
-$addButton[leavechannelreset_$authorID;Reset;Secondary]
+$addButton[leavesettingshome;Go Back;Secondary;↩️]
+$addButton[leavechannelreset;Reset;Secondary]
 ]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelselectmenusetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavechannelselectmenusetup;]
 
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Leave messages. Select a different one instead.
@@ -128,7 +98,7 @@ $ephemeral
 ]
 ]
 
-$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
 $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Leave, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
@@ -138,7 +108,7 @@ $ephemeral
 
 $setGuildVar[leavechannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -150,11 +120,11 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[leavechannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
-$addButton[leavechannelreset_$authorID;Reset;Secondary]
+$addButton[leavesettingshome;Go Back;Secondary;↩️]
+$addButton[leavechannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[<#$selectMenuValues> will now be used for Leave messages!
@@ -165,10 +135,8 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavechannelreset;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavechannelreset;]
+
 
 $onlyIf[$getGuildVar[leavechannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -176,7 +144,7 @@ $ephemeral]]
 
 $deleteGuildVar[leavechannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -189,11 +157,11 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[leavechannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[leavechannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
-$addButton[leavechannelreset_$authorID;Reset;Secondary]
+$addButton[leavesettingshome;Go Back;Secondary;↩️]
+$addButton[leavechannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!
@@ -205,20 +173,17 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagecategory;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavemessagecategory;]
 
 $interactionUpdate[
 $title[Message]
 $description[Welcome to options under the \`Message\` category! Select any option to modify]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
-$addButton[leavemessagesetup_$authorID;Set Message;Secondary]
-$addButton[leavemessagepreview_$authorID;Preview Message;Secondary]
-$addButton[leavemessagetypesetting_$authorID;Message Type;Secondary]
+$addButton[leavesettingshome;Go Back;Secondary;↩️]
+$addButton[leavemessagesetup;Set Message;Secondary]
+$addButton[leavemessagepreview;Preview Message;Secondary]
+$addButton[leavemessagetypesetting;Message Type;Secondary]
 
 ]
 `
@@ -226,10 +191,8 @@ $addButton[leavemessagetypesetting_$authorID;Message Type;Secondary]
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagesetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavemessagesetup;]
+
 
 $showModal
 $if[$getGuildVar[leavetype]==embed;
@@ -269,15 +232,12 @@ $ephemeral]`
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagepreview;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavemessagepreview;]
 
 
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 
-$let[content;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$getGuildVar[leavemessage];<member.username>;$username];<member.mention>;<@$authorID>];<member.id>;$authorID];<owner.username>;$guildOwnerID];<owner.id>;$guildOwnerID];<server.name>;$serverName];<server.id>;$guildID];<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>];<server.totalMembers>;$guildMemberCount];<member.Displayname>;$userDisplayname]]
+$let[content;$advancedReplace[$getGuildVar[leavemessage];<member.username>;$username;<member.mention>;<@$authorID>;<member.id>;$authorID;<owner.username>;$guildOwnerID;<owner.id>;$guildOwnerID;<server.name>;$serverName;<server.id>;$guildID;<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>;<server.totalMembers>;$guildMemberCount;<member.position>;$ordinal[$memberJoinPosition];<member.Displayname>;$userDisplayname]]
 
 
 
@@ -294,10 +254,8 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagetypesetting;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavemessagetypesetting;]
+
 
 $interactionUpdate[
 $title[Message Type]
@@ -308,8 +266,8 @@ $addField[Current type;
 \`$toTitleCase[$getGuildVar[leavetype]]\`]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[leavemessagecategory_$authorID;Go Back;Secondary;↩️]
-$addButton[leavemessagetypetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[leavemessagecategory;Go Back;Secondary;↩️]
+$addButton[leavemessagetypetoggle;Toggle;Secondary;🔄]
 ]
 
 `
@@ -317,19 +275,17 @@ $addButton[leavemessagetypetoggle_$authorID;Toggle;Secondary;🔄]
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leavemessagetypetoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leavemessagetypetoggle;]
+
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[leavetype]==text];true;embed];false;text]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[leavetype]==text];true;embed;false;text]]
 $setGuildVar[leavetype;$get[settingdecide];$guildID]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[leavetype]==embed];true;Successfully enabled embed mode!];false;Successfully enabled text mode!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[leavetype]==embed];true;Successfully enabled embed mode!;false;Successfully enabled text mode!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -338,8 +294,8 @@ $addField[$get[fieldname];
 \`$toTitleCase[$getGuildVar[leavetype]]\`]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[leavemessagecategory_$authorID;Go Back;Secondary;↩️]
-$addButton[leavemessagetypetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[leavemessagecategory;Go Back;Secondary;↩️]
+$addButton[leavemessagetypetoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[
@@ -351,10 +307,8 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==leaveplaceholderlist;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==leaveplaceholderlist;]
+
 
 $interactionUpdate[$title[Placeholders]
 $description[Placeholders are a way to make Leave messages unique! Choose a one available from this list.]
@@ -362,6 +316,7 @@ $addField[Member-related;
 \`<member.username>\` - Returns the member's username
 \`<member.mention>\` - Pings the member
 \`<member.id>\` - Returns the member's id
+\`<member.position>\` - Returns the position number of the member
 \`<member.DisplayName>\` - Returns the member's Display name
 ]
 $addField[Server-related;
@@ -374,6 +329,6 @@ $addField[Server-related;
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[leavesettings_$authorID;Go Back;Secondary;↩️]
+$addButton[leavesettingshome;Go Back;Secondary;↩️]
 ]`
 }]

@@ -2,31 +2,6 @@ module.exports = [{
 type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerhome;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-$let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];off;Disabled];on;Enabled]]
-
-$interactionUpdate[$title[Welcomer]
-$description[Welcomer is a way to greet new members of your server with your own choice of the message you're going to use it for the server!
-
-To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
-
-]
-$addField[Current setting(s);$get[welcomersystem]]
-$color[$getGlobalVar[embedcolor]]
-$addActionRow
-$addButton[welcomertoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[welcomersettings_$authorID;Settings;Danger]
-]
-
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
 $onlyIf[$advancedTextSplit[$customID;_;0]==welcomertoggle;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
@@ -36,11 +11,11 @@ $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[welcomersystem]==on];true;off];false;on]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[welcomersystem]==on];true;off;false;on]]
 $setGuildVar[welcomersystem;$get[settingdecide];$guildID]
-$let[welcomersystem;$replace[$replace[$getGuildVar[welcomersystem];off;Disabled];on;Enabled]]
+$let[welcomersystem;$advancedReplace[$getGuildVar[welcomersystem];off;Disabled;on;Enabled]]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[welcomersystem]==on];true;Successfully enabled Welcomer!];false;Successfully disabled Welcomer!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[welcomersystem]==on];true;Successfully enabled Welcomer!;false;Successfully disabled Welcomer!]]
 
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]
@@ -61,14 +36,18 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
+$if[$advancedTextSplit[$customID;_;1]==;
+$onlyIf[$customID==welcomersettingshome;]
+;
 $onlyIf[$advancedTextSplit[$customID;_;0]==welcomersettings;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
+]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Welcomer Settings]
 $description[Welcome to Welcomer settings! Select a option to change.
 ]
@@ -78,22 +57,19 @@ $addField[Current setting(s);
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[welcomerhome_$authorID;Home;Secondary;🏠]
-$addButton[welcomerchannelsetup_$authorID;Channel;Secondary]
-$addButton[welcomermessagecategory_$authorID;Message;Secondary]
-$addButton[welcomerplaceholderlist_$authorID;Placeholders;Secondary]
+$addButton[welcomerchannelsetup;Channel;Secondary]
+$addButton[welcomermessagecategory;Message;Secondary]
+$addButton[welcomerplaceholderlist;Placeholders;Secondary]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelsetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomerchannelsetup;]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $interactionUpdate[$title[Channel Setup]
 $description[Choose a channel for Welcomer messages to be sent in. Use the select menu below for the channel to use!
@@ -102,25 +78,17 @@ $description[Choose a channel for Welcomer messages to be sent in. Use the selec
 $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
+$addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]
 ]`
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelselectmenusetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-$onlyIf[$channelType[$selectMenuValues]==GuildText;
-$interactionReply[Channel must be a Text channel.
-$ephemeral
-]]
+$onlyIf[$customID==welcomerchannelselectmenusetup;]
 
 $onlyIf[$getGuildVar[welcomerchannel;$guildID]!=$selectMenuValues;
 $interactionReply[This channel is already used for Welcomer messages. Select a different one instead.
@@ -128,7 +96,7 @@ $ephemeral
 ]
 ]
 
-$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
 $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Welcomer, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
@@ -138,7 +106,7 @@ $ephemeral
 
 $setGuildVar[welcomerchannel;$selectMenuValues;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -150,11 +118,11 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
-$addButton[welcomerchannelreset_$authorID;Reset;Secondary]
+$addButton[welcomersettingshome;Go Back;Secondary;↩️]
+$addButton[welcomerchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[<#$selectMenuValues> will now be used for Welcomer messages!
@@ -165,10 +133,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerchannelreset;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomerchannelreset;]
 
 $onlyIf[$getGuildVar[welcomerchannel;$guildID]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -176,7 +141,7 @@ $ephemeral]]
 
 $deleteGuildVar[welcomerchannel;$guildID]
 
-$let[currentchannel;$replace[$replace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`)];false;No channel set]]
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
 
 $let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
@@ -189,11 +154,11 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addChannelType[GuildText]
-$addChannelSelectMenu[welcomerchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
+$setChannelType[GuildText]
 $addActionRow
-$addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
-$addButton[welcomerchannelreset_$authorID;Reset;Secondary]
+$addButton[welcomersettingshome;Go Back;Secondary;↩️]
+$addButton[welcomerchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!
@@ -205,20 +170,17 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagecategory;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomermessagecategory;]
 
 $interactionUpdate[
 $title[Message]
 $description[Welcome to options under the \`Message\` category! Select any option to modify]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
-$addButton[welcomermessagesetup_$authorID;Set Message;Secondary]
-$addButton[welcomermessagepreview_$authorID;Preview Message;Secondary]
-$addButton[welcomermessagetypesetting_$authorID;Message Type;Secondary]
+$addButton[welcomersettingshome;Go Back;Secondary;↩️]
+$addButton[welcomermessagesetup;Set Message;Secondary]
+$addButton[welcomermessagepreview;Preview Message;Secondary]
+$addButton[welcomermessagetypesetting;Message Type;Secondary]
 
 ]
 `
@@ -226,10 +188,7 @@ $addButton[welcomermessagetypesetting_$authorID;Message Type;Secondary]
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagesetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomermessagesetup;]
 
 $showModal
 $if[$getGuildVar[welcomertype]==embed;
@@ -269,14 +228,11 @@ $ephemeral]`
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagepreview;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomermessagepreview;]
 
 
-$let[servericon;$replace[$replace[$checkCondition[$guildIcon==];true;$userAvatar[$botID]];false;$serverIcon]]
-$let[content;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$replace[$getGuildVar[welcomermessage];<member.username>;$username];<member.mention>;<@$authorID>];<member.id>;$authorID];<owner.username>;$guildOwnerID];<owner.id>;$guildOwnerID];<server.name>;$serverName];<server.id>;$guildID];<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>];<server.totalMembers>;$guildMemberCount];<member.position>;$ordinal[$guildMemberCount]];<member.Displayname>;$userDisplayname]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
+$let[content;$advancedReplace[$getGuildVar[welcomermessage];<member.username>;$username;<member.mention>;<@$authorID>;<member.id>;$authorID;<owner.username>;$guildOwnerID;<owner.id>;$guildOwnerID;<server.name>;$serverName;<server.id>;$guildID;<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>;<server.totalMembers>;$guildMemberCount;<member.position>;$ordinal[$memberJoinPosition];<member.Displayname>;$userDisplayname]]
 
 
 
@@ -293,10 +249,8 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagetypesetting;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomermessagetypesetting;]
+
 
 $interactionUpdate[
 $title[Message Type]
@@ -307,8 +261,8 @@ $addField[Current type;
 \`$toTitleCase[$getGuildVar[welcomertype]]\`]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[welcomermessagecategory_$authorID;Go Back;Secondary;↩️]
-$addButton[welcomermessagetypetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[welcomermessagecategory;Go Back;Secondary;↩️]
+$addButton[welcomermessagetypetoggle;Toggle;Secondary;🔄]
 ]
 
 `
@@ -316,19 +270,16 @@ $addButton[welcomermessagetypetoggle_$authorID;Toggle;Secondary;🔄]
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomermessagetypetoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomermessagetypetoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$replace[$replace[$checkCondition[$getGuildVar[welcomertype]==text];true;embed];false;text]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGuildVar[welcomertype]==text];true;embed;false;text]]
 $setGuildVar[welcomertype;$get[settingdecide];$guildID]
 
-$let[statements;$replace[$replace[$checkCondition[$getGuildVar[welcomertype]==embed];true;Successfully enabled embed mode!];false;Successfully enabled text mode!]]
+$let[statements;$advancedReplace[$checkCondition[$getGuildVar[welcomertype]==embed];true;Successfully enabled embed mode!;false;Successfully enabled text mode!]]
 
 $interactionUpdate[
 $title[$get[title]]
@@ -337,8 +288,8 @@ $addField[$get[fieldname];
 \`$toTitleCase[$getGuildVar[welcomertype]]\`]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[welcomermessagecategory_$authorID;Go Back;Secondary;↩️]
-$addButton[welcomermessagetypetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[welcomermessagecategory;Go Back;Secondary;↩️]
+$addButton[welcomermessagetypetoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[
@@ -350,10 +301,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==welcomerplaceholderlist;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==welcomerplaceholderlist;]
 
 $interactionUpdate[$title[Placeholders]
 $description[Placeholders are a way to make Welcomer messages unique! Choose a one available from this list.]
@@ -374,6 +322,6 @@ $addField[Server-related;
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[welcomersettings_$authorID;Go Back;Secondary;↩️]
+$addButton[welcomersettingshome;Go Back;Secondary;↩️]
 ]`
 }]
