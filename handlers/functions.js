@@ -61,6 +61,26 @@ $let[Input;{url}]
 
     `
   },{
+    name: "$autoList",
+    type: "aoi.js",
+    params: ["variable", "separator", "type"],
+    code: `
+        $comment[Let's return the result.]
+        $arrayJoin[result;\n]
+
+        $comment[Loop to map between each array element.]
+        $loop[10;{};{type}]
+
+        $comment[Number that controls the current iteration element.]
+        $let[i;0]
+
+        $comment[Creating the array that holds the result.]
+        $createArray[result;]
+
+        $comment[Creating the array to split the given elements.]
+        $createArray[totalList;$nonEscape[$djsEval["$get[{variable}]".split("{separator}").join(";");true]]]
+    `.trim(),
+},{
   name: "$createProgressBar",
   type: "djs",
   code: async d => {

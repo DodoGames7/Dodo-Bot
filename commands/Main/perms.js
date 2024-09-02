@@ -10,7 +10,7 @@ $description[Confused on what perms the bot should have? This list should help y
 
 For safety reasons, do not give the bot administrator permission under any circumstances.
 ]
-$addField[\`ViewAuditLog\`;Required for moderation logs.]
+$addField[\`ViewAuditLog\`;Required for logs such as moderation and Integration.]
 $addField[\`AttachFiles\`;Required for image commands such as \`gun\`.]
 $addField[\`AddReactions\`;Required for \`suggest\` and \`poll\` command.]
 $addField[\`SendMessages\`;The most basic permission.]

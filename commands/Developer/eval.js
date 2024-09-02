@@ -6,7 +6,8 @@ module.exports = {
     dev: "true"
   },
   aliases: "e",
-  code: `$eval[$message]
+  code: `
+  $eval[$message]
   $onlyIf[$message!=;You need to evaluate something.]
   $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
   `

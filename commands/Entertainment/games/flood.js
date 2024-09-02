@@ -2,7 +2,8 @@ module.exports = [{
   name: "flood",
   info: {
     description: "Starts a game of Flood (pass the flag \`--settings\` to open up the settings).",
-    perms: ["`SendMessages`"]
+    perms: ["`SendMessages`"],
+    flags: ["`--settings`"]
   },
   code: `$ifAwaited[$checkContains[$message;--settings;—settings]==true;{execute:floodsettings};{execute:floodstart}]
 

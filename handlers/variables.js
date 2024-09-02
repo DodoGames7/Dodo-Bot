@@ -1,23 +1,25 @@
 const config = require("../config.json");
+
 module.exports = {
   // Games variables
   trivia_type: "multiple",
   trivia_difficulty: "medium",
   flood_difficulty: 13,
   wyr: {upvotes: 0, downvotes: 0},
+  hangman_theme: "nature",
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.5",
-  versionCodename: "Dyanmic",
+  version: "2.1.6",
+  versionCodename: "Chocolate Cake",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1723776590904",
+  buildDate: "1725227113640",
   buildType: "Official Stable",
   buildBranch: "v2",
-  buildRevision: "1",
+  buildRevision: "0",
   exposebuildinfo: "off",
-  buildNumber: "2133",
+  buildNumber: "2142",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
@@ -41,6 +43,7 @@ module.exports = {
   msglogeditchannel: "none",
   banneduserschannel: "none",
   unbanneduserschannel: "none",
+  Integrationchannel: "none",
   anonymous: "off",
   betacommands: "off",
   betaserver: "off",

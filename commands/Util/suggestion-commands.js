@@ -2,10 +2,10 @@ module.exports = [{
 name: "suggest-set",
 info: {
     description: "Setup suggestions.",
-    perms: ["`SendMessages`", "`ManageChannels`"]
+    perms: ["`SendMessages`", "`ManageChannels`"],
+    usage: "suggest-set channel-name/channel ID or <#channel ID>",
 },
 aliases: "suggestion-set",
-usage: "suggest-set channel-name/channel ID or <#channel ID>",
 code: `
 $setGuildVar[suggestionchannel;$get[channeltarget]]
 Successfully set <#$get[channeltarget]> as the suggestion channel!
@@ -14,15 +14,15 @@ $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchanne
 \`SendMessages\`
 \`AddReactions\`
 ]
-$onlyIf[$get[channeltarget]!=$getGuildVar[suggestionchannel]; You already have set this channel for Suggestions. Please mention a different one instead.]
+$onlyIf[$get[channeltarget]!=$getGuildVar[suggestionchannel];You already have set this channel for Suggestions. Please mention a different one instead.]
 $onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
-Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;usage]]\`]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest-set;$authorID];$dateStamp];1000]]:R>]
+Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[suggestion-set;info.usage]]\`]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-set;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
@@ -34,8 +34,8 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     code: `$deleteVar[suggestionchannel;$guildID;main]
 Successfully reset suggestion Channel! Run \`suggest-set\` to set a channel again.
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest-reset;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-reset;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]`
 },{
     name: "suggest",
@@ -63,12 +63,12 @@ $onlyIf[$getGuildVar[suggestionchannel]!=none;Hmm. There is no channel used to s
 For staff server, please run \`suggest-set\` to set a channel.
 ]
 $onlyIf[$charCount[$splitText[1]]<=160||$charCount[$splitText[2]]<=3950;You can only add up to 160 characters for a title and 3950 characters for a description of the suggestion.]
-$onlyIf[$splitText[1]!=||$splitText[2]!=;Hey there! Your usage seems to be wrong. Make sure it's correct
+$onlyIf[$or[$splitText[1]==;$splitText[2]==]==false;Hey there! Your usage seems to be wrong. Make sure it's correct
 
 A example of usage should be \`$getGuildVar[prefix]suggest title/description\`.]
  $textSplit[$message;/]
 $let[userURL;https://discord.com/users/$authorID]
-$cooldown[5s;Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;suggest;$authorID];$dateStamp];1000]]:R>]
+$cooldown[4s;Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;suggest;$authorID];$dateStamp];1000]]:R>]
 `
 }]

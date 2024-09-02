@@ -7,22 +7,22 @@ info: {
 aliases: ["set-logdelete", "set-messagedeletelog", "set-msgdeletelogs", "set-messagedeletelogs"],
 usage: "set-msgdeletelog channel-name/channel ID or <#channel ID>",
 code: `$setGuildVar[msglogdeletedchannel;$get[channeltarget]]
-Successfully set <#$get[channeltarget]> as the message delete logging channel!
+Successfully set <#$get[channeltarget]> as the message delete log channel!
 
 $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$get[channeltarget]>:
 \`ViewChannel\`
 \`SendMessages\`
 ]
-$onlyIf[$get[channeltarget]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message deletion logs. Please mention a different one instead.]
-$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message log deletion feature.
+$onlyIf[$get[channeltarget]!=$getGuildVar[msglogdeletedchannel]; You already have set this channel for message logs. Please mention a different one instead.]
+$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message logs feature.
 Please set an text channel instead.]
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logdelete;usage]]\`]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-msgdeletelog;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;set-msgdeletelog;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 
@@ -63,7 +63,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     aliases: ["set-logedit", "set-messageeditlog", "set-msgeditlogs", "set-messageeditlogs"],
     usage: "set-msgeditlog channel-name/channel ID or <#channel ID>",
     code: `$setGuildVar[msglogeditchannel;$get[channeltarget]]
-Successfully set <#$get[channeltarget]> as the message edit logging channel!
+Successfully set <#$get[channeltarget]> as the message edit log channel!
 
 $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchannel]==true;Hmm. Seems like i don't have the right permissions there. Please ensure that i have the following permissions for the channel <#$get[channeltarget]>:
 \`ViewChannel\`
@@ -71,7 +71,7 @@ $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchanne
 ]
 
 $onlyIf[$get[channeltarget]!=$getGuildVar[msglogeditchannel]; You already have set this channel for message edit logs. Please mention a different one instead.]
-$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message log deletion feature.
+$onlyIf[$channelType[$get[channeltarget]]==text;We only support Text channels for now for the message edit logs feature.
 Please set an text channel instead.]
 
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
@@ -79,8 +79,8 @@ $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have 
 $let[channeltarget;$findGuildChannel[$message;false]]
 $onlyIf[$message!=;Please set an channel.
 Usage: \`$getGuildVar[prefix]$nonEscape[$commandInfo[set-logedit;usage]]\`]
-$cooldown[5s; Slow down! Don't spam the command!
-Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;set-msgeditlog;$authorID];$dateStamp];1000]]:R>]
+$cooldown[3s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;set-msgeditlog;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 
