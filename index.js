@@ -5,8 +5,6 @@ const { ForgeClient } = require("@tryforge/forgescript")
 const { ForgeDB } = require("@tryforge/forge.db")
 require('dotenv').config() // Enable env support in local hosting
 
-
-
 // Client initialization
    const client = new ForgeClient({
     "intents": [ // intents
@@ -40,7 +38,7 @@ require('dotenv').config() // Enable env support in local hosting
     })
     ],
    mobile: config.MobileStatus,
-   disableConsoleErrors: config.EnableConsoleErrors
+   disableConsoleErrors: config.disableConsoleErrors
 })
 
 // Handlers

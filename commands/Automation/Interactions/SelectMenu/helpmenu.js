@@ -10,7 +10,7 @@ $ephemeral
     $interactionUpdate[
     $title[Main]
     $addField[**Main commands**;
-\`about\`, \`gitbuilds\`, \`report\`, \`perms\`, \`settings\`, \`flags\`, \`commandinfo\`
+\`about\`, \`gitbuilds\`, \`report\`, \`perms\`, \`settings\`, \`commandinfo\`
 ]
     $addField[**About the bot**;
 \`ping\`, \`rebase\`, \`version\`, \`stats\`, \`credits\`, \`invite\`

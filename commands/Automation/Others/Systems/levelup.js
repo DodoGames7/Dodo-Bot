@@ -24,7 +24,7 @@ $setMemberVar[previouslevel;$sum[$getMemberVar[previouslevel;$authorID];1];$auth
 $onlyIf[$getGuildVar[levelingmessagefeature]==on;]
 $onlyIf[$getGuildVar[levelingmessagechannel]!=;]
 $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;]
-$onlyIf[$channelHasPerms[$getGuildVar[levelingmessagechannel];$botID;ViewChannel;SendMessages]==true;]
+$onlyIf[$channelHasPerms[$getGuildVar[levelingmessagechannel];$clientID;ViewChannel;SendMessages]==true;]
 
 
 $let[content;$advancedReplace[$getGuildVar[levelingmessage];<member.mention>;<@$authorID>;<member.username>;$username;<oldlevel>;$getMemberVar[previouslevel];<newlevel>;$getMemberVar[level];<member.Displayname>;$userDisplayname]]

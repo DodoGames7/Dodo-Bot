@@ -17,16 +17,19 @@ $jsonLoad[cmdinfo;$get[command]]
 
 $let[aliases;$advancedReplace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*This command does not have any aliases.*;false;$callFunction[commandaliases;$toLowerCase[$message]]]]
 
-$let[actualname;$jsonLoad[actualname;$commandInfo[messageCreate;$toLowerCase[$message];name]]]
+$let[actualname;$commandInfo[messageCreate;$toLowerCase[$message];name]]
 $onlyIf[$commandInfo[messageCreate;$toLowerCase[$message];info;dev]==;Viewing developer commands is unsupported.]
 
 $attachment[./handlers/assets/magnifying-glass-tilted-left.png;magnifying-glass.png]
 $author[Command info looker;attachment://magnifying-glass.png]
-$title[$env[actualname;$get[actualname]]]
+$title[$get[actualname]]
 $description[$env[cmdinfo;description]]
-$addField[Permissions needed;$callFunction[commandperms;$toLowerCase[$message]]]
+$addField[Permissions required;$callFunction[commandperms;$toLowerCase[$message]]]
 $addField[Aliases;$get[aliases]]
 $color[$getGlobalVar[embedcolor]]
-
+$if[$callFunction[commandflags;$toLowerCase[$message]]!=;
+$addActionRow
+$addButton[viewcmdflags_$authorID_$get[actualname];Flags;Secondary]
+]
 `
 }

@@ -44,8 +44,8 @@ $let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevc
 $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
 $interactionUpdate[
-$title[$username[$botID] Stats]
-$thumbnail[$userAvatar[$botID]]
+$title[$username[$clientID] Stats]
+$thumbnail[$userAvatar[$clientID]]
 $addField[**Users**;$userCount;true]
 $addField[**Servers**;$guildCount;true]
 $addField[**RAM Usage**;$round[$ram]MB;true]

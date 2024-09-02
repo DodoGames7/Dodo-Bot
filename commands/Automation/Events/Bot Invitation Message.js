@@ -2,7 +2,7 @@ module.exports = [{
 type: "guildCreate",
 code: `$onlyIf[$getGlobalVar[botinvitationmessage]==on;]
 $let[channelselector;$advancedReplace[$checkCondition[$guildSystemChannelID[$newGuild[id]]==];true;$randomGuildChannelID[$newGuild[id];GuildText];false;$guildSystemChannelID[$newGuild[id]]]]
-$onlyIf[$channelHasPerms[$get[channelselector];$botID;ViewChannel;SendMessages]==true;]
+$onlyIf[$channelHasPerms[$get[channelselector];$clientID;ViewChannel;SendMessages]==true;]
 
 $sendMessage[$get[channelselector];
 $title[Welcome to Dodo-Bot!]

@@ -1,31 +1,5 @@
 module.exports = [{
 type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==devmenuhomebutton;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
-
-$interactionUpdate[$title[Developer panel]
-$description[Welcome to Developer panel! This panel allows you to change some stuff in the bot!
-
-To change something such as Embed color, use the select menu below.]  
-$color[Yellow]
-$attachment[./handlers/assets/gear.png;gear.png]
-$thumbnail[attachment://gear.png]
-$addActionRow
-$addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
-$addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]
-$addOption[Error logging;Log errors to specific channel;errorloggingoption;📢;false]
-$addOption[Embed color;Change the current embed color used in all cmds;embedcoloroption;🎨;false]
-$addOption[Pre-release;Whether or not to mark the current build as Pre-release;prereleaseoption;⚠️;false]
-$addOption[Startup;Send messages that the bot is ready to specific channel;startupoption;🚦;false]
-$addOption[Expose build info;Whether or not to enable "Build Info" button in stats cmd;exposebuildinfooption;🛠️;false]
-]`
-},{
-type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `
 $onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==botinvitationmessageoption]==true;]
@@ -35,24 +9,21 @@ $ephemeral
 
 $let[botinvitationmessage;$advancedReplace[$getGlobalVar[botinvitationmessage];off;Disabled;on;Enabled]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Bot Invitation Message]
 $description[When enabled, The bot will welcome the new servers it gets added to. By default, this is enabled in order to help the members know what's the bot's prefix is]
 $addField[Current setting(s);$get[botinvitationmessage]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[botinvitationmessagetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[botinvitationmessagetoggle;Toggle;Secondary;🔄]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==botinvitationmessagetoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==botinvitationmessagetoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -70,8 +41,7 @@ $description[$get[description]]
 $addField[$get[fieldname];$get[botinvitationmessage]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[botinvitationmessagetoggle_$authorID;Toggle;Secondary;🔄]
+$addButton[botinvitationmessagetoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[
@@ -92,7 +62,7 @@ $ephemeral
 $let[errorlogging;$advancedReplace[$getGlobalVar[errorlogging];off;Disabled;on;Enabled]]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[errorchannel]!=];true;<#$getGlobalVar[errorchannel]> (\`$getGlobalVar[errorchannel]\`);false;No channel set]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Error Logging]
 $description[This option is dedicated to logging errors to the channel specified in case something went wrong on the bot!]
 $addField[Current setting(s);
@@ -102,21 +72,18 @@ $addField[Current setting(s);
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
+$addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
 $addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[errorloggingtoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[errorloggingchannelreset_$authorID;Reset;Secondary]
+$addButton[errorloggingtoggle;Toggle;Secondary;🔄]
+$addButton[errorloggingchannelreset;Reset;Secondary]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingtoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==errorloggingtoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -140,11 +107,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[errorloggingtoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[errorloggingchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[errorloggingtoggle;Toggle;Secondary;🔄]
+$addButton[errorloggingchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[
@@ -158,10 +124,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingchannelselectmenusetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==errorloggingchannelselectmenusetup;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -174,7 +137,7 @@ $ephemeral
 ]
 ]
 
-$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
 $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Error Logging, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
@@ -197,11 +160,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[errorloggingtoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[errorloggingchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[errorloggingtoggle;Toggle;Secondary;🔄]
+$addButton[errorloggingchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[<#$selectMenuValues> will now be used for Error messages!
@@ -214,10 +176,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==errorloggingchannelreset;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==errorloggingchannelreset;]
 
 $onlyIf[$getGlobalVar[errorchannel]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -244,11 +203,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[errorloggingchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[errorloggingtoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[errorloggingchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[errorloggingtoggle;Toggle;Secondary;🔄]
+$addButton[errorloggingchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!
@@ -266,25 +224,22 @@ $ephemeral
 ]]
 
 
-$interactionUpdate[
+$interactionReply[
 $title[Embed color]
 $description[This option allows you to change the current Embed color used across all the commands of the bot!]
 $addField[Current setting(s);$getGlobalVar[embedcolor]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[setnewembedcolor_$authorID;Set Color;Secondary]
-$addButton[resetcurrentembedcolor_$authorID;Reset;Secondary]
+$addActionRow
+$addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[resetcurrentembedcolor;Reset;Secondary]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==setnewembedcolor;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==setnewembedcolor;]
 
 $showModal
 $modal[setembedcolormodalsetup;Set Color]
@@ -315,10 +270,9 @@ $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$getGlobalVar[embedcolor]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[setnewembedcolor_$authorID;Set Color;Secondary]
-$addButton[resetcurrentembedcolor_$authorID;Reset;Secondary]
+$addActionRow
+$addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[resetcurrentembedcolor;Reset;Secondary]
 ]
 
 $interactionFollowUp[Successfully set the Embed color!
@@ -327,10 +281,7 @@ $ephemeral]`
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==resetcurrentembedcolor;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==resetcurrentembedcolor;]
 
 $onlyIf[$getGlobalVar[embedcolor]!=$getGlobalVar[originalembedcolor];$interactionReply[
 There's no current embed color set to reset.
@@ -349,10 +300,9 @@ $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$getGlobalVar[embedcolor]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[setnewembedcolor_$authorID;Set Color;Secondary]
-$addButton[resetcurrentembedcolor_$authorID;Reset;Secondary]
+$addActionRow
+$addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[resetcurrentembedcolor;Reset;Secondary]
 ]
 
 $interactionFollowUp[Embed color has been reset!
@@ -363,30 +313,30 @@ $ephemeral
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
-code: `$onlyIf[$and[$customID==devmenu_$authorID;$selectMenuValues==prereleaseoption]==true;]
+code: `$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==prereleaseoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
 
 $let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Enabled]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Pre-release]
 $description[This option let's you decide on whether or not the current build should be marked as pre-release build. By default, it is commonly enabled for development builds.
 
 Disabling this option will cause all sorts of pre-release stuff to be absent such as the development warning on the console!]
 $addField[Current setting(s);$get[pre_release]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[prereleasetoggle_$authorID;Toggle;Secondary;🔄]
+$addActionRow
+$addButton[prereleasetoggle;Toggle;Secondary;🔄]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==prereleasetoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==prereleasetoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -409,9 +359,8 @@ $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[pre_release]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[prereleasetoggle_$authorID;Toggle;Secondary;🔄]
+$addActionRow
+$addButton[prereleasetoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[
@@ -433,7 +382,7 @@ $ephemeral
 $let[startup;$advancedReplace[$getGlobalVar[startupsystem];off;Disabled;on;Enabled]]
 $let[currentchannel;$advancedReplace[$checkCondition[$getGlobalVar[startupchannel]!=];true;<#$getGlobalVar[startupchannel]> (\`$getGlobalVar[startupchannel]\`);false;No channel set]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Startup]
 $description[This option is dedicated to sending messages that the bot is ready to the channel specified!]
 $addField[Current setting(s);
@@ -443,21 +392,18 @@ $addField[Current setting(s);
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[startuptoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[startupchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[startuptoggle;Toggle;Secondary;🔄]
+$addButton[startupchannelreset;Reset;Secondary]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==startuptoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==startuptoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -481,11 +427,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[startuptoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[startupchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[startuptoggle;Toggle;Secondary;🔄]
+$addButton[startupchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[
@@ -498,11 +443,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["selectMenu"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==startupchannelselectmenusetup;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
-
+$onlyIf[$customID==startupchannelselectmenusetup;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -514,7 +455,7 @@ $ephemeral
 ]
 ]
 
-$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages]==true;
+$onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages]==true;
 $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for Startup, i must have the following permissions for the selected channel:
 \`SendMessages\`
 \`ViewChannel\`
@@ -537,11 +478,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[startuptoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[startupchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[startuptoggle;Toggle;Secondary;🔄]
+$addButton[startupchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[<#$selectMenuValues> will now be used for Startup messages!
@@ -554,10 +494,7 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==startupchannelreset;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==startupchannelreset;]
 
 $onlyIf[$getGlobalVar[startupchannel]!=;$interactionReply[
 There's no channel set currently to reset.
@@ -584,11 +521,10 @@ $addField[$get[fieldname];
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $setChannelType[GuildText]
-$addChannelSelectMenu[startupchannelselectmenusetup_$authorID;Select a channel to use;1;1;false]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[startuptoggle_$authorID;Toggle;Secondary;🔄]
-$addButton[startupchannelreset_$authorID;Reset;Secondary]
+$addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
+$addActionRow
+$addButton[startuptoggle;Toggle;Secondary;🔄]
+$addButton[startupchannelreset;Reset;Secondary]
 ]
 
 $interactionFollowUp[Channel has been reset!
@@ -607,26 +543,23 @@ $ephemeral
 
 $let[exposebuildinfo;$advancedReplace[$getGlobalVar[exposebuildinfo];off;Disabled;on;Enabled]]
 
-$interactionUpdate[
+$interactionReply[
 $title[Expose build info]
 $description[When enabled, a button labeled "Build Info" will show up in \`stats\` command. By default, this is enabled for Pre-release builds besides Beta ones.
 
 If you think this is sensitive information then press the "Toggle" button to disable it (if it was enabled by default).]
 $addField[Current setting(s);$get[exposebuildinfo]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[exposebuildinfotoggle_$authorID;Toggle;Secondary;🔄]
+$addActionRow
+$addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
+$ephemeral
 ]
 `
 },{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==exposebuildinfotoggle;]
-$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
-$ephemeral
-]]
+$onlyIf[$customID==exposebuildinfotoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
@@ -643,9 +576,8 @@ $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[exposebuildinfo]]
 $color[$getGlobalVar[embedcolor]]
-$addActionRow 
-$addButton[devmenuhomebutton_$authorID;Home;Secondary;🏠]
-$addButton[exposebuildinfotoggle_$authorID;Toggle;Secondary;🔄]
+$addActionRow
+$addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[

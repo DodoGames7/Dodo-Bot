@@ -7,7 +7,7 @@ $ephemeral
 ]]
 
 $let[user;$advancedTextSplit[$customID;_;2]]
-$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$botID];false;$serverIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 $let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[user]]==true];true;$userTag[$get[user]];false;$username[$get[user]]]]
 $let[nickname;$advancedReplace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none;false;$nickname[$guildID;$get[user]]]]
 $arrayLoad[amountofroles;/;$memberRoles[$guildID;$get[user];/]]

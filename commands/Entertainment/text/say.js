@@ -3,7 +3,7 @@ name: "say",
 info: {
         description: "Makes the bot say whatever you want.",
         perms: "`SendMessages`",
-        flags: "`--embed`"
+        flags: ["`--embed`"]
 },
 type: "messageCreate",
 code: `$userCooldown[saycmd;3s;Cooldown has been triggered! Please, wait!
@@ -14,7 +14,7 @@ $onlyIf[$message!=;Please say whatever you want.
 $disableAllMentions
 
 $let[clearembedmodewords;$advancedReplace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[sayembedmodefilter;$message];false;$message]]
-$let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$botInvite[36032]]]
+$let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$clientInvite[36032]]]
 $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without specifying a text first.]
 
 $if[$or[$checkContains[$message;--embed;—embed]==true;$charCount[$message]>=2000];

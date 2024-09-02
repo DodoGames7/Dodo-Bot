@@ -5,7 +5,7 @@ module.exports = [{
     $onlyIf[$oldMessage[content]!=;]
     $onlyIf[$getGuildVar[msglogdeletechannel]!=;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogdeletechannel]]==true;]
-    $onlyIf[$channelHasPerms[$getGuildVar[msglogdeletechannel];$botID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[msglogdeletechannel];$clientID;ViewChannel;SendMessages]==true;]
     $if[$getGuildVar[includebots]==off;
 $onlyIf[$isBot[$oldMessage[authorID]]==false;]
 ]
@@ -27,7 +27,7 @@ $author[Message deleted!;$userAvatar[$oldMessage[authorID]]]
     $onlyIf[$and[$hasEmbeds[$oldMessage[channelID];$oldMessage[id]]==false;$hasEmbeds[$newMessage[channelID];$newMessage[id]]==false]==true;]
     $onlyIf[$getGuildVar[msglogeditchannel]!=;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogeditchannel]]==true;]
-    $onlyIf[$channelHasPerms[$getGuildVar[msglogeditchannel];$botID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[msglogeditchannel];$clientID;ViewChannel;SendMessages]==true;]
 $if[$getGuildVar[includebots]==off;
 $onlyIf[$isBot[$authorID]==false;]
 ]

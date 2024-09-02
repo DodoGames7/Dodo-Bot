@@ -60,7 +60,7 @@ The channel used for suggestions doesn't seem to exist anymore.
 Until then, the server staff must set a new channel for suggestions to work once again.
 ]
 
-$onlyIf[$channelHasPerms[$getGuildVar[suggestionchannel];$botID;SendMessages;ViewChannel;AddReactions]==true;
+$onlyIf[$channelHasPerms[$getGuildVar[suggestionchannel];$clientID;SendMessages;ViewChannel;AddReactions]==true;
 I do not have permissions to either send messages or view the suggestion channel.
 
 In order to send your suggestion there, the server staff must give me the following:

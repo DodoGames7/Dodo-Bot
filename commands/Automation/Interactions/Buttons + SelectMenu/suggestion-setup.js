@@ -14,7 +14,7 @@ $ephemeral
 ]
 ]
 
-$onlyIf[$channelHasPerms[$selectMenuValues;$botID;ViewChannel;SendMessages;AddReactions]==true;
+$onlyIf[$channelHasPerms[$selectMenuValues;$clientID;ViewChannel;SendMessages;AddReactions]==true;
 $interactionReply[You selected a channel that i do not have the required permissions for. To set a channel for suggestions, i must have the following permissions for the selected channel:
 \`AddReactions\`
 \`SendMessages\`

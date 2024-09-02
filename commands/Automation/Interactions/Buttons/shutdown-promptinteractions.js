@@ -8,13 +8,13 @@ $ephemeral
 ]]
 
 $interactionUpdate[$title[Please wait..]
-$description[$username[$botID] is shutting down...]
+$description[$username[$clientID] is shutting down...]
 $color[Yellow]
 ]
 $wait[5000]
 $interactionFollowUp[Done!]
 $wait[4000]
-$botDestroy
+$clientDestroy
 `},{
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],

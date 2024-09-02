@@ -3,6 +3,6 @@
     "BotToken": "",
     "Embedcolor": "#433b6b",
     "MobileStatus": false,
-    "EnableConsoleErrors": true,
+    "disableConsoleErrors": false,
     "AllowBotMembers": false
 }
