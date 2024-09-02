@@ -44,6 +44,7 @@ $description[
 * Reduced the possibility of interactions failing
 * Mentions can no longer be used as prefix
 * Fixed embed mode not being usable in \`say\` command
+* Fixed strange behavior in some settings like \`welcomer\` (Revision 1)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]

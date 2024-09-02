@@ -36,14 +36,11 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$if[$advancedTextSplit[$customID;_;1]==;
-$onlyIf[$customID==welcomersettingshome;]
-;
 $onlyIf[$advancedTextSplit[$customID;_;0]==welcomersettings;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
-]
+
 
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
 
@@ -61,6 +58,29 @@ $addButton[welcomerchannelsetup;Channel;Secondary]
 $addButton[welcomermessagecategory;Message;Secondary]
 $addButton[welcomerplaceholderlist;Placeholders;Secondary]
 $ephemeral
+]
+`
+},{ // for "Return to main settings page" functionality
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==welcomersettingshome;]
+
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[welcomerchannel;$guildID]!=];true;<#$getGuildVar[welcomerchannel;$guildID]> (\`$getGuildVar[welcomerchannel;$guildID]\`);false;No channel set]]
+
+$interactionUpdate[
+$title[Welcomer Settings]
+$description[Welcome to Welcomer settings! Select a option to change.
+]
+$addField[Current setting(s);
+* **Welcomer channel:** $get[currentchannel]
+* **Message type:** \`$toTitleCase[$getGuildVar[welcomertype]]\`
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[welcomerchannelsetup;Channel;Secondary]
+$addButton[welcomermessagecategory;Message;Secondary]
+$addButton[welcomerplaceholderlist;Placeholders;Secondary]
 ]
 `
 },{
