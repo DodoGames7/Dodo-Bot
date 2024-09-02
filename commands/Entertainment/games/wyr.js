@@ -1,7 +1,7 @@
 module.exports = {
 name: "would-you-rather",
 info: {
-    description: "Starts a wyr game of two options to choose from. Include \`--usereactions\` to enable Reactions.",
+    description: "Starts a wyr game of two options to choose from.",
     perms: ["`SendMessages`", "`AddReactions` (if using `--usereactions` flag)"],
     flags: ["`--usereactions`"]
 },

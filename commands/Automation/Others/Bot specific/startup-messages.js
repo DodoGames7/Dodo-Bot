@@ -15,9 +15,24 @@ $log[Dodo Bot v$getVar[version]$if[$getVar[pre_release_mode]==on; (build $getVar
 $wait[2s]
 $ifAwaited[$getVar[pre_release_mode]==on;{execute:showdevwarning}]`
 },{
-    name: "showdevwarning",
-    type: "awaited",
-    code: `$djsEval[const chalk = require('chalk')
+ name: "Startup Message (Channel)",
+ type: "ready",
+ channel: "",
+ code: `
+$title[Ready!]
+$description[$username[$clientID] is now running!]
+$color[DarkGreen]
+$useChannel[$getVar[startupchannel]]
+
+$onlyIf[$hasPermsInChannel[$getVar[startupchannel];$clientID;sendmessages;viewchannel]==true;]
+$onlyIf[$channelExists[$getVar[startupchannel]]==true;]
+$onlyIf[$getVar[startupchannel]!=none;]
+$onlyIf[$getVar[startupchannelsystem]==on;]
+    `
+},{
+  name: "showdevwarning",
+  type: "awaited",
+  code: `$djsEval[const chalk = require('chalk')
 
 console.log(chalk.red("Development build has been detected!\\nUsing Development builds are not recommended for public usage as they may contain bugs and as such, it is advised to try them for testing purposes only!"))]`
 }]

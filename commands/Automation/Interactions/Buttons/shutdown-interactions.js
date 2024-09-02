@@ -20,7 +20,7 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionFollowUp[The bot will continue to operate then.]
-    $interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{color:Red}}{actionRow:{button:Yes:2:shutdownconfirm_$authorID:true}{button:No:2:shutdowndeny$authorID:true}}]
+    $interactionUpdate[{newEmbed:{title:$get[embedtitle]}{description:$get[embeddescription]}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}{color:Red}}{actionRow:{button:Yes:2:shutdownconfirm_$authorID:true}{button:No:2:shutdowndeny$authorID:true}}]
 
 
 
@@ -28,6 +28,7 @@ module.exports = [{
   {ephemeral}
 {interaction}
   ]
+
 $let[embeddescription;$getEmbed[$channelID;$interactionData[message.id];1;description]]
 $let[embedtitle;$getEmbed[$channelID;$interactionData[message.id];1;title]]
 

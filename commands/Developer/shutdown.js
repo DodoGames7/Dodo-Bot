@@ -23,6 +23,6 @@ $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
 $description[Do you really want to shutdown the bot? This will simply stop your bot from running. To turn on the bot, you need to go through your host to start it again.]
 $color[Red]
 $thumbnail[https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png]
-$addButton[1;Yes;2;shutdownconfirm_$authorID;false]
-$addButton[1;No;2;shutdowndeny_$authorID;false]`
+$addButton[1;No;2;shutdowndeny_$authorID;false]
+$addButton[1;Yes;2;shutdownconfirm_$authorID;false]`
 }]

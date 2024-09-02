@@ -3,7 +3,7 @@ name: "hangman",
 info: {
     description: "Starts a hangman game (pass the flag \`--settings\` to open up the settings).",
     perms: ["`SendMessages`"],
-    flags: ["`--settings`", "`--themes`"]
+    flags: ["`--settings`", "`--themes` (alias)"]
   },
 aliases: "hm",
 code: `$ifAwaited[$checkContains[$message;--settings;—settings;--themes;—themes]==true;{execute:hangmansettings};{execute:hangmanstart}]

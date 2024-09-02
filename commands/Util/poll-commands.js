@@ -14,7 +14,7 @@ $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchanne
 \`SendMessages\`
 \`AddReactions\`
 ]
-$onlyIf[$get[channeltarget]!=$getGuildVar[pollchannel]; You already have set this channel for Polls. Please mention a different one instead.]
+$onlyIf[$get[channeltarget]!=$getGuildVar[pollchannel];You already have set this channel for Polls. Please mention a different one instead.]
 $onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Poll channel to use Polls feature.]
 
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;
@@ -30,10 +30,10 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     name: "poll",
     info: {
         description: "Start a poll in this server (if setup).",
-        perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"]
+        perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"],
+        usage: "poll content/choice 1/choice 2"
     },
     code: `
-
 
 $author[Poll by $username;$userAvatar;$nonEscape[$get[userURL]]]
 $description[$splitText[1]
@@ -60,7 +60,7 @@ For staff server, please run \`poll-set\` to set a channel.
 $onlyIf[$charCount[$splitText[1]]<=3570||$charCount[$splitText[2]]<=200||$charCount[$splitText[3]]<=200;Your Poll content cannot be longer than 3570 characters. Choice 1 and Choice 2 cannot also be longer than 200 characters]
 $onlyIf[$or[$splitText[1]==;$splitText[2]==;$splitText[3]==]==false;Hey there! Your usage seems to be incorrect.
 
-A example of a usage should be \`$getGuildVar[prefix]poll content/choice 1/choice 2\`]
+A example of a usage should be \`$getGuildVar[prefix]$nonEscape[$commandInfo[poll;info.usage]]\`]
 $textSplit[$message;/]
 $let[userURL;https://discord.com/users/$authorID]
 $cooldown[5s; Slow down! Don't spam the command!

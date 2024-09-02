@@ -14,7 +14,7 @@ $onlyIf[$hasPermsInChannel[$get[channeltarget];$clientID;sendmessages;viewchanne
 \`SendMessages\`
 \`AddReactions\`
 ]
-$onlyIf[$get[channeltarget]!=$getGuildVar[suggestionchannel]; You already have set this channel for Suggestions. Please mention a different one instead.]
+$onlyIf[$get[channeltarget]!=$getGuildVar[suggestionchannel];You already have set this channel for Suggestions. Please mention a different one instead.]
 $onlyIf[$checkContains[$channelType[$get[channeltarget]];text;announcement]==true;You must set either Text or Announcement channel as a Suggestion channel to use Suggestions feature.]
 $onlyIf[$guildChannelExists[$guildID;$get[channeltarget]]==true;Either you have not specified an channel or channel exists but outside of this server. Please mention an valid channel.]
 
