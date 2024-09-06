@@ -35,6 +35,7 @@ module.exports = {
 ]
   $thumbnail[$get[serverimage]]
   $color[$getVar[embedcolor]]
+  $addButton[1;Description;2;viewserverdescription_$authorID;false]
   $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;serverinfo;$authorID];$dateStamp];1000]]:R>]
   

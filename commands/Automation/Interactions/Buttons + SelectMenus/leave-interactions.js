@@ -58,7 +58,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
 **Channel#COLON#** $get[leavechannel]
 **Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}}{actionRow:{button:Home:2:leavehomebutton_$authorID:false:🏠}{button:Channel:2:leavechannelbutton_$authorID:false}{button:Message:2:leavemessagebutton_$authorID:false}{button:Placeholders:2:leaveplaceholders_$authorID:false}}]
 
-$let[leavechannel;$replaceText[$replaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None];false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+$let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
