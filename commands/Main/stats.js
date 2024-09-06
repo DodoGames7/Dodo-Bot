@@ -13,7 +13,7 @@ $let[uptime;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
 $let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevcheck]==on];true;\`v$version\` (Dev);false;\`v$version\`]]
 $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
-$title[$username[$clientID] Stats]
+$title[$username[$clientID]'s Statistics]
 $thumbnail[$userAvatar[$clientID]]
 $addField[**Users**;$userCount;true]
 $addField[**Servers**;$guildCount;true]

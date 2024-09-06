@@ -36,14 +36,10 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$if[$advancedTextSplit[$customID;_;1]==;
-$onlyIf[$customID==levelingsettingshome;]
-;
 $onlyIf[$advancedTextSplit[$customID;_;0]==levelingsettings;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
-]
 
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
 $let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
@@ -68,6 +64,36 @@ $addButton[levelingchannelsetup;Channel;Secondary]
 $addButton[levelingmessagecategory;Message;Secondary]
 $addButton[levelingplaceholderlist;Placeholders;Secondary]
 $ephemeral
+]
+`
+},{ // for "Return to main settings page" functionality
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==levelingsettingshome;]
+
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[levelingmessagechannel;$guildID]!=];true;<#$getGuildVar[levelingmessagechannel;$guildID]> (\`$getGuildVar[levelingmessagechannel;$guildID]\`);false;No channel set]]
+$let[levelingmessagefeature;$advancedReplace[$getGuildVar[levelingmessagefeature];off;Disabled;on;Enabled]]
+$let[levelingresetonleave;$advancedReplace[$getGuildVar[levelingresetonleave];off;Disabled;on;Enabled]]
+
+$interactionUpdate[
+$title[Leveling Settings]
+$description[Welcome to Leveling settings! Select a option to change.
+]
+$addField[Current setting(s);
+* **Level up channel:** $get[currentchannel]
+* **Level up message:** $get[levelingmessagefeature]
+* **Reset on Leave:** $get[levelingresetonleave]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addStringSelectMenu[levelingextraoptionsmenu;More options;false;1;1]
+$addOption[Exclusions;Manage on what to exclude from gaining xp;exclusionsoption;;false]
+$addOption[Reset on Leave;Whether or not to reset user's level upon leaving the server;resetonleaveoption;;false]
+$addActionRow
+$addButton[levelingchannelsetup;Channel;Secondary]
+$addButton[levelingmessagecategory;Message;Secondary]
+$addButton[levelingplaceholderlist;Placeholders;Secondary]
 ]
 `
 },{

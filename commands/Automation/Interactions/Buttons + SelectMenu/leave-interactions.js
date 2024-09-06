@@ -36,14 +36,10 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$if[$advancedTextSplit[$customID;_;1]==;
-$onlyIf[$customID==leavesettingshome;]
-;
 $onlyIf[$advancedTextSplit[$customID;_;0]==leavesettings;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
-]
 
 $let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
 
@@ -61,6 +57,29 @@ $addButton[leavechannelsetup;Channel;Secondary]
 $addButton[leavemessagecategory;Message;Secondary]
 $addButton[leaveplaceholderlist;Placeholders;Secondary]
 $ephemeral
+]
+`
+},{ // for "Return to main settings page" functionality
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==leavesettingshome;]
+
+$let[currentchannel;$advancedReplace[$checkCondition[$getGuildVar[leavechannel;$guildID]!=];true;<#$getGuildVar[leavechannel;$guildID]> (\`$getGuildVar[leavechannel;$guildID]\`);false;No channel set]]
+
+$interactionUpdate[
+$title[Leave Settings]
+$description[Welcome to Leave settings! Select a option to change.
+]
+$addField[Current setting(s);
+* **Leave channel:** $get[currentchannel]
+* **Message type:** \`$toTitleCase[$getGuildVar[leavetype]]\`
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[leavechannelsetup;Channel;Secondary]
+$addButton[leavemessagecategory;Message;Secondary]
+$addButton[leaveplaceholderlist;Placeholders;Secondary]
 ]
 `
 },{

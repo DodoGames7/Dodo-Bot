@@ -2,7 +2,7 @@ module.exports = {
 name: "leaderboard",
 type: "messageCreate",
 info: {
-    description: "Returns Leveling's leaderboard for this server (if enabled). Enter a number to change current page into.",
+    description: "Returns Leveling's leaderboard for this server (if enabled).",
     perms: ["`SendMessages`"]
     },
 aliases: ["lb", "leveling-lb", "leveling-leaderboard"],

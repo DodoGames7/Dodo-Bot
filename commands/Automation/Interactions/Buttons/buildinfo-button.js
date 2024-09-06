@@ -44,7 +44,7 @@ $let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevc
 $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
 $interactionUpdate[
-$title[$username[$clientID] Stats]
+$title[$username[$clientID]'s Statistics]
 $thumbnail[$userAvatar[$clientID]]
 $addField[**Users**;$userCount;true]
 $addField[**Servers**;$guildCount;true]

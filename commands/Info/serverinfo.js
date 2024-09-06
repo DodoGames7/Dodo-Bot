@@ -43,5 +43,7 @@ $addField[Other;
 ]
 $thumbnail[$get[servericon]]
 $color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addButton[viewserverdescription_$authorID;Description;Secondary]
 `
 }
