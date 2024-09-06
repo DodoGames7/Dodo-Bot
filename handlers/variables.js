@@ -12,7 +12,7 @@ module.exports = {
   includebots: "on",
   version: "2.1.7",
   versionCodename: "Dark",
-  libraryversiondevcheck: "on",
+  libraryversiondevcheck: "off",
   buildStatus: "Incomplete",
   buildDate: "1725583188254",
   buildType: "Pre-release",
