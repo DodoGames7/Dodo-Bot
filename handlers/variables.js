@@ -29,6 +29,7 @@ trivia_type: "multiple",
 trivia_difficulty: "medium",
 flood_difficulty: 13,
 wyr: {upvotes: 0, downvotes: 0},
+hangman_theme: "nature",
 // Feature variables
 suggestionchannel: "",
 msglogdeletechannel: "",
