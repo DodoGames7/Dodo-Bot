@@ -22,7 +22,7 @@ $if[$getVar[exposebuildinfo]==on]
 $addButton[1;Build Info;2;buildinfo_$authorID;false]
 $endif
 
-$let[uptime;<t:$truncate[$divide[$math[($datestamp-$uptime[ms])];1000]]:R>]
+$let[uptime;<t:$round[$divide[$sub[$datestamp;$uptime[ms]];1000]]:R>]
 $let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$packageVersion\` (Dev);false;\`v$packageVersion\`]]
 $let[dodobotversion;$advancedReplaceText[$checkCondition[$getVar[pre_release_mode]==on];true;\`v$getVar[version]\` (Dev);false;\`v$getVar[version]\`]]
 $cooldown[2s; Slow down! Don't spam the command!
