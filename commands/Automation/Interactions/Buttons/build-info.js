@@ -28,7 +28,7 @@ module.exports = [{
     type: "interaction",
     prototype: "button",
     code: `
-    $interactionUpdate[{newEmbed:{title:$username[$clientID]'s Statistics}{field:**Users**:$allMembersCount:true}{field:**RAM Usage**:$round[$ram]MB:true}{field:**CPU Usage**:$cpu:true}{field:**Ping**:$pingms:true}{field:**Uptime**:$nonEscape[$get[uptime]]:true}{field:**Aoi.js**:$get[aoijsversion]:true}{field:**Servers**:$guildCount:true}{field:**Node.js**:\`$nodeVersion\`:true}{field:**Dodo-Bot**:$get[dodobotversion]:true}{thumbnail:$userAvatar[$clientID]}{color:$getVar[embedcolor]}}{actionRow:{button:Build Info:2:buildinfo_$authorID:false}}]
+    $interactionUpdate[{newEmbed:{title:$username[$clientID]'s Stats}{field:**Users**:$allMembersCount:true}{field:**RAM Usage**:$round[$ram]MB:true}{field:**CPU Usage**:$cpu:true}{field:**Ping**:$pingms:true}{field:**Uptime**:$nonEscape[$get[uptime]]:true}{field:**Aoi.js**:$get[aoijsversion]:true}{field:**Servers**:$guildCount:true}{field:**Node.js**:\`$nodeVersion\`:true}{field:**Dodo-Bot**:$get[dodobotversion]:true}{thumbnail:$userAvatar[$clientID]}{color:$getVar[embedcolor]}}{actionRow:{button:Build Info:2:buildinfo_$authorID:false}}]
 
 $let[uptime;<t:$round[$divide[$sub[$datestamp;$uptime[ms]];1000]]:R>]
 $let[aoijsversion;$advancedReplaceText[$checkCondition[$getVar[libraryversiondevcheck]==on];true;\`v$packageVersion\` (Dev);false;\`v$packageVersion\`]]

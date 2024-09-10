@@ -19,6 +19,6 @@ module.exports = [{
     type: "awaited",
     code: `
 
-    $setVar[release_type;Stable]
+    $deleteVar[release_type;;main]
     $onlyIf[$checkContains[$getVar[release_type];Stable]==false]`
 }]

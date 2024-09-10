@@ -30,10 +30,9 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
     },{
         type: "interaction",
         prototype: "button",
-        code: `$interactionUpdate[{newEmbed:{title:Commands}{description:
+        code: `$interactionReply[{newEmbed:{title:Commands}{description:
 *There're no commands currently available to test*
-}}{actionRow:{button:Home:2:betacmdshome_$authorID:false:🏠}}]
-
+}};all;true]
 
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}

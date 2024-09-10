@@ -13,9 +13,9 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
+    code: `$interactionReply[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
 \`eval\`, \`jseval\`, \`shutdown\`, \`readfile\`, \`exec\`, \`setcustomstatus\`, \`update\`
-}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}]
+}};all;true]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}

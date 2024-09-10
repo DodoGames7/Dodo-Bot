@@ -6,7 +6,7 @@ info: {
 },
 $if: "old",
 aliases: "botstats",
-code: `$title[$username[$clientID]'s Statistics]
+code: `$title[$username[$clientID]'s Stats]
 $addField[**Dodo-Bot**;$get[dodobotversion];true]
 $addField[**Node.js**;\`$nodeVersion\`;true]
 $addField[**Servers**;$guildCount;true]
