@@ -23,7 +23,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogshomebutton;
 **Channel#COLON#** $get[msgdeletelogchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
 
 
 
@@ -47,7 +47,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
 **Channel#COLON#** $get[msgdeletelogchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
 
     $let[msgdeletelogchannel;$advancedReplaceText[$checkCondition[$getGuildVar[msglogdeletedchannel]==none];true;None;false;<#$getGuildVar[msglogdeletedchannel]> (\`$getGuildVar[msglogdeletedchannel]\`)]]
 
@@ -97,7 +97,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
 **Channel#COLON#** $get[msgdeletelogchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgdeletelogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgdeletelogresetchannel_$authorID:false}}]
 
     $let[msgdeletelogchannel;$advancedReplaceText[$checkCondition[$getGuildVar[msglogdeletedchannel]==none];true;None;false;<#$getGuildVar[msglogdeletedchannel]> (\`$getGuildVar[msglogdeletedchannel]\`)]]
 
@@ -126,7 +126,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
 **Channel#COLON#** $get[msglogeditchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
 
 
 
@@ -150,7 +150,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
 **Channel#COLON#** $get[msglogeditchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
 
     $let[msglogeditchannel;$advancedReplaceText[$checkCondition[$getGuildVar[msglogeditchannel]==none];true;None;false;<#$getGuildVar[msglogeditchannel]> (\`$getGuildVar[msglogeditchannel]\`)]]
 
@@ -200,7 +200,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
 **Channel#COLON#** $get[msglogeditchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:msgeditloglogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:msgeditlogresetchannel_$authorID:false}}]
 
     $let[msglogeditchannel;$advancedReplaceText[$checkCondition[$getGuildVar[msglogeditchannel]==none];true;None;false;<#$getGuildVar[msglogeditchannel]> (\`$getGuildVar[msglogeditchannel]\`)]]
 
@@ -229,7 +229,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
 **Channel#COLON#** $get[banneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
 
 
 
@@ -253,7 +253,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
 **Channel#COLON#** $get[banneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
 
     $let[banneduserschannel;$advancedReplaceText[$checkCondition[$getGuildVar[banneduserschannel]==none];true;None;false;<#$getGuildVar[banneduserschannel]> (\`$getGuildVar[banneduserschannel]\`)]]
 
@@ -303,7 +303,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
 **Channel#COLON#** $get[banneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:banlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:banlogresetchannel_$authorID:false}}]
 
     $let[banneduserschannel;$advancedReplaceText[$checkCondition[$getGuildVar[banneduserschannel]==none];true;None;false;<#$getGuildVar[banneduserschannel]> (\`$getGuildVar[banneduserschannel]\`)]]
 
@@ -332,7 +332,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
 **Channel#COLON#** $get[unbanneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
 
 
 
@@ -356,7 +356,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
 **Channel#COLON#** $get[unbanneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
 
     $let[unbanneduserschannel;$advancedReplaceText[$checkCondition[$getGuildVar[unbanneduserschannel]==none];true;None;false;<#$getGuildVar[unbanneduserschannel]> (\`$getGuildVar[unbanneduserschannel]\`)]]
 
@@ -406,7 +406,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
 **Channel#COLON#** $get[unbanneduserschannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:unbanlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:unbanlogresetchannel_$authorID:false}}]
 
     $let[unbanneduserschannel;$advancedReplaceText[$checkCondition[$getGuildVar[unbanneduserschannel]==none];true;None;false;<#$getGuildVar[unbanneduserschannel]> (\`$getGuildVar[unbanneduserschannel]\`)]]
 
@@ -435,7 +435,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
 **Channel#COLON#** $get[Integrationchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
 
 
 
@@ -459,7 +459,7 @@ $interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:C
 **Channel#COLON#** $get[Integrationchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
 
     $let[Integrationchannel;$advancedReplaceText[$checkCondition[$getGuildVar[Integrationchannel]==none];true;None;false;<#$getGuildVar[Integrationchannel]> (\`$getGuildVar[Integrationchannel]\`)]]
 
@@ -509,7 +509,7 @@ $interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:C
 **Channel#COLON#** $get[Integrationchannel]
 
  **Tip#COLON#** Can't find the channel you're looking for? Try typing the channel name into the menu instead.
-    }}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:Integrationlogchannelsetupmenu_$authorID:Select a channel to use:1:1:false:{channelInput:Text}}}{actionRow:{button:Home:2:setuplogshomebutton_$authorID:false:🏠}{button:Reset:2:Integrationlogresetchannel_$authorID:false}}]
 
     $let[Integrationchannel;$advancedReplaceText[$checkCondition[$getGuildVar[Integrationchannel]==none];true;None;false;<#$getGuildVar[Integrationchannel]> (\`$getGuildVar[Integrationchannel]\`)]]
 

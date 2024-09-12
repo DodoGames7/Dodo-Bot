@@ -11,11 +11,6 @@ module.exports = [{
     params: [],
     code: `$userAvatar[632607624742961153]`
 },{
-    name: "$clientAvatar",
-    type: "aoi.js",
-    params: [],
-    code: `$userAvatar[$clientID]`
-},{
     name: "$randomTopic",
     type: "aoi.js",
     params: [],
@@ -43,12 +38,6 @@ $let[userInput;{userID}]
    code: `https://discord.com/users/$get[userInput]
 
    $let[userInput;{userID}]
-   `
-  },{
-   name: "$commandExists",
-   type: "aoi.js",
-   params: ["name"],
-   code: `$checkCondition[$commandInfo[{name};name]!=]
    `
   },{
     name: "$fallbackAttachment",

@@ -5,7 +5,7 @@ module.exports = [{
     $ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable-pre-release};{execute:Disable-pre-release}]
 
 
-    `
+`
 },{
     name: "Enable-pre-release",
     type: "awaited",

@@ -5,6 +5,7 @@ module.exports = {
     perms: ["`SendMessages`"]
 },
   aliases: ["server", "si", "guild", "guildinfo"],
+  $if: "old",
   code: `
   $author[$guildName;$nonEscape[$get[serverimage]];$nonEscape[$get[serverimage]]]
   $title[Server Info]
@@ -35,7 +36,9 @@ module.exports = {
 ]
   $thumbnail[$get[serverimage]]
   $color[$getVar[embedcolor]]
+  $if[$guildDescription!=]
   $addButton[1;Description;2;viewserverdescription_$authorID;false]
+  $endif
   $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;serverinfo;$authorID];$dateStamp];1000]]:R>]
   

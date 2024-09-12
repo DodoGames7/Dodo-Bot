@@ -8,7 +8,7 @@ module.exports = [{
   **Beta access**#COLON# \`$get[betaserver]\`
   **Anonymous**#COLON# \`$get[anonymous]\`
 
-  }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
+  }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
 
 
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -31,7 +31,7 @@ This is not recommended for public servers as Beta commands are not fully stable
 
 **Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
-      }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
 
       $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -54,7 +54,7 @@ This is not recommended for public servers as Beta commands are not fully stable
 
 **Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
-      }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
 
 
 
@@ -81,7 +81,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
-      }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
 
       $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -104,7 +104,7 @@ $interactionUpdate[{newEmbed:{title:Anonymous}{description:
 
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
-      }}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
 
 
 
