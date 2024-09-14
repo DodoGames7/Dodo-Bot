@@ -12,6 +12,11 @@ $let[username;$advancedReplace[$checkCondition[$callFunction[hasusertag;$get[use
 $let[nickname;$advancedReplace[$checkCondition[$callFunction[hasnickname;$guildID;$get[user]]==false];true;none;false;$nickname[$guildID;$get[user]]]]
 $arrayLoad[amountofroles;/;$memberRoles[$guildID;$get[user];/]]
 
+$let[highestrole;$advancedReplace[$checkCondition[$memberHighestRoleID[$guildID;$get[user]]==$guildID];true;none;false;$roleName[$guildID;$memberHighestRoleID[$guildID;$get[user]]]]]
+$let[lowestrole;$advancedReplace[$checkCondition[$memberLowestRoleID[$guildID;$get[user]]==$guildID];true;none;false;$roleName[$guildID;$memberLowestRoleID[$guildID;$get[user]]]]]
+$let[booster;$advancedReplace[$checkContains[$guildBoosterIDs;$authorID];true;Yes;false;No]]
+
+
 $onlyIf[$memberExists[$guildID;$get[user]]==true;
 $interactionReply[
 This user appears to have left the server. As a result, their server information will no longer be displayed until they join this server again.
@@ -23,11 +28,14 @@ $author[Server information;$get[servericon]]
 $title[$get[username]'s information;$callFunction[userURL;$get[user]]]
 $addField[**General**;
 **Joined the server on:** <t:$trunc[$divide[$memberJoinedAt[$guildID;$get[user]];1000]]:f>
+**Booster:** $get[booster]
 **Amount of roles:** $arrayLength[amountofroles]
 **Nickname:** $get[nickname]
 ;true]
 $addField[**Other**;
 **Platforms:** $if[$memberPlatforms[$guildID;$get[user]]==;Unavailable;$toTitleCase[$memberPlatforms[$guildID;$get[user]]]]
+**Highest Role:** $get[highestrole]
+**Lowest Role:** $get[lowestrole]
 **Status:** $if[$status[$guildID;$get[user]]==;None;$status[$guildID;$get[user]]]
 ;true]
 $thumbnail[$userAvatar[$get[user]]]

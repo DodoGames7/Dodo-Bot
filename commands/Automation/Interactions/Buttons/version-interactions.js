@@ -10,7 +10,11 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Server descriptions can now be viewed using a button in \`commandinfo\` cmd
+* You can now exclude channel categories from xp in Leveling
+* Added hangman game from non-Rebase version
+* Add a check for if the member is booster in \`userinfo\` command
+* Added Lowest and Highest role info for a member in \`userinfo\` command
+* Server description can now be viewed using a button in \`commandinfo\` cmd (only appears if there any)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -37,7 +41,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*There's nothing in this category currently*
+* Reduced potential issues with Leveling Exclusions functionality
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -64,7 +68,12 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-*There's nothing in this category currently*
+* Changed default Embed color to \`#265999\`
+* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.6
+* Updated main credits seen in \`credits\` command
+* Updated icons for search, settings and 8ball for \`commandinfo\`, \`settings\` and \`8ball\` command
+* Slightly updated error message for empty leaderboards in \`leaderboard\` command
+* (Source Code) Changed database to \`better-sqlite3\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]

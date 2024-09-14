@@ -251,7 +251,7 @@ $ephemeral]`
 $onlyIf[$customID==welcomermessagepreview;]
 
 
-$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$clientID];false;$guildIcon]]
 $let[content;$advancedReplace[$getGuildVar[welcomermessage];<member.username>;$username;<member.mention>;<@$authorID>;<member.id>;$authorID;<owner.username>;$guildOwnerID;<owner.id>;$guildOwnerID;<server.name>;$serverName;<server.id>;$guildID;<server.createdAt>;<t:$trunc[$divide[$guildCreatedAt;1000]]:f>;<server.totalMembers>;$guildMemberCount;<member.position>;$ordinal[$memberJoinPosition];<member.Displayname>;$userDisplayname]]
 
 

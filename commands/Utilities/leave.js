@@ -20,8 +20,7 @@ $description[Leave just like Welcomer is a way to setup an channel where the bot
 To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
 
 ]
-$addField[Current setting(s);$get[leavesystem]
-]
+$addField[Current setting(s);$get[leavesystem]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[leavetoggle_$authorID;Toggle;Secondary;🔄]

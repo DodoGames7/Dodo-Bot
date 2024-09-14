@@ -12,10 +12,10 @@ Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[cmdinf
 $onlyIf[$message!=;Please type a command name to look for it's information.]
 
 $let[command;$commandInfo[messageCreate;$toLowerCase[$message];info]]
-$onlyIf[$isJSON[$get[command]]==true;This command does not exist in the bot. Try typing a command that exists within the bot itself.]
+$onlyIf[$isJSON[$get[command]]==true;The command specified does not appear to exist. Try entering a command that exists within the bot itself.]
 $jsonLoad[cmdinfo;$get[command]]
 
-$let[aliases;$advancedReplace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*This command does not have any aliases.*;false;$callFunction[commandaliases;$toLowerCase[$message]]]]
+$let[aliases;$advancedReplace[$checkCondition[$callFunction[commandaliases;$toLowerCase[$message]]==];true;*No aliases exists for this command.*;false;$callFunction[commandaliases;$toLowerCase[$message]]]]
 
 $let[actualname;$commandInfo[messageCreate;$toLowerCase[$message];name]]
 $onlyIf[$commandInfo[messageCreate;$toLowerCase[$message];info;dev]==;Viewing developer commands is unsupported.]

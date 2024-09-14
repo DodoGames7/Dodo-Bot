@@ -16,7 +16,7 @@ $addStringSelectMenu[helpmenu_$authorID;Select a module;false;1;1]
 $addOption[Main;Main module;main;;false]
 $addOption[Entertainment;Entertainment module;fun;;false]
 $addOption[Leveling;Leveling module;leveling;;false]
-$if[$checkContains[$clientOwnerID;$authorID]==true;
+$if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
 $addOption[Developer;Developer module;dev;;false]
 ]
 $addOption[Utility;Utility module;util;;false]

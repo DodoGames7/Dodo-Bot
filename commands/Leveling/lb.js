@@ -18,11 +18,11 @@ $onlyIf[$get[page]<=10;You can only switch up to page 10.]
 
 $let[leaderboard;$memberLeaderboard[level;$guildID;asc;10;$get[page];
 ;leaderboard;position;$return[$switch[$env[position];$case[1;🥇] $case[2;🥈] $case[3;🥉]] $env[position] - $username[$env[leaderboard;id]] - Level $env[leaderboard;value]]]]
-$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userAvatar[$clientID];false;$guildIcon]]
+$let[servericon;$advancedReplace[$checkCondition[$guildIcon==];true;$userDefaultAvatar[$clientID];false;$guildIcon]]
 
 $onlyIf[$get[leaderboard]!=;Leaderboard is currently not available. The following reasons are being:
 * Members do not have level 2 or higher. Please wait for someone to level up first then try again.
-* The specified Leaderboard page still didn't register members. Wait for a couple of members to level up then try again
+* The specified page still didn't register members. Wait for a couple of members to level up then try again
 ]
 
 $author[$guildName;$get[servericon]]

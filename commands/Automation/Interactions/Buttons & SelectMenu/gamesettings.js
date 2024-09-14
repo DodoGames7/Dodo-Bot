@@ -195,4 +195,52 @@ Difficulty has been set to $get[difficulty]!
 $ephemeral
 ]
 `
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==hangmansettings;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$onlyIf[$checkContains[$selectMenuValues;nature;sport;color;camp;fruit;discord;winter;pokemon]==true;]
+
+
+$onlyIf[$selectMenuValues!=$getUserVar[hangman_theme];
+$interactionReply[This theme is already used
+$ephemeral
+]]
+
+$setUserVar[hangman_theme;$selectMenuValues]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+**Theme:** $toTitleCase[$getUserVar[hangman_theme]]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addStringSelectMenu[hangmansettings_$authorID;Select a theme;false;1;1]
+$addOption[Nature;Set the theme to Nature-related;nature;;false]
+$addOption[Sport;Set the theme to Sport-related;sport;;false]
+$addOption[Color;Set the theme to Color-related;color;;false]
+$addOption[Camp;Set the theme to Camp-related;camp;;false]
+$addOption[Fruit;Set the theme to Fruit-related;fruit;;false]
+$addOption[Discord;Set the theme to Discord-related;discord;;false]
+$addOption[Winter;Set the theme to Winter-related;winter;;false]
+$addOption[Pokemon;Set the theme to Pokemon-related;pokemon;;false]
+
+]
+
+$interactionFollowUp[
+Theme has been set to $toTitleCase[$selectMenuValues]!
+$ephemeral
+]
+`
 }]

@@ -18,7 +18,7 @@ $title[Build info]
 $addField[About the build;
 * **Dodo-Bot**: v$getGlobalVar[version]
 * **Codename**: $getGlobalVar[versionCodename]
-* **Branch of the build**: $getGlobalVar[buildBranch]
+* **Build Branch**: $getGlobalVar[buildBranch]
 * **Build number**: $getGlobalVar[buildNumber]
 * **Revision**: $getGlobalVar[buildRevision]
 ;true]
@@ -44,7 +44,7 @@ $let[fsversion;$advancedReplace[$checkCondition[$getGlobalVar[libraryversiondevc
 $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]==on];true;\`v$getGlobalVar[version]\` (Dev);false;\`v$getGlobalVar[version]\`]]
 
 $interactionUpdate[
-$title[$username[$clientID]'s Statistics]
+$title[$username[$clientID]'s Stats]
 $thumbnail[$userAvatar[$clientID]]
 $addField[**Users**;$userCount;true]
 $addField[**Servers**;$guildCount;true]

@@ -107,38 +107,28 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
         $return[$arrayJoin[result;\n]]
     `
 },{
+    name: "autoListcategories",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $let[getcategories;$if[$guildChannelExists[$guildID;$env[element]];**$channelName[$trim[$env[element]]]**;\`Deleted Category\`]]
+                $return[* $get[getcategories]]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
    name: "userURL",
    params: ["userID"],
    code: `
    $return[https://discord.com/users/$env[userID]]`
-  },{
-    name: 'isImageLink',
-    params: ['url', 'method'],
-    code: `
-        $djsEval[
-            const { fetch } = require("undici");
-            (async () => {
-                const res = await fetch("$env[url]", {
-                    ...ctx.http,
-                    method: "$env[method]",
-                    body: ctx.http.body ?? ctx.http.form
-                });
-                const headers = res.headers;
-                const header = headers.get("Content-Type").split(/;/g).at(0);
-
-                ctx.setEnvironmentKey("gotHeader", header);
-            })();
-        ]
-
-        $return[$env[gotHeader]]
-    `
-},{
-   name: "fallbackAttachment",
-   params: ["url", "fallbacktoUse"],
-   code: `
-$let[condition;$or[$isImageLink[$env[url];get]==image/jpeg;$isImageLink[$env[url];get]==image/png;$isImageLink[$env[url];get]==image/webp]]
-$let[result;$replace[$replace[$checkCondition[$get[condition]==true];true;$env[url]];false;$env[fallbacktoUse]]]
-
-   $return[$get[result]]
-`
   }]
