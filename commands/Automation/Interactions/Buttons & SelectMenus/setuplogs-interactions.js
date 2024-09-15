@@ -39,7 +39,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
 },{
         type: "interaction",
         prototype: "selectMenu",
-        code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Delete!;true]
+        code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Delete logs!;true]
 
 $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
@@ -61,7 +61,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
     ]
 
     $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[msglogdeletedchannel];
-    This channel is already used for Message Delete. Please, set a different channel instead.
+    This channel is already used for Message Delete logs. Please, set a different channel instead.
     {ephemeral}
     {interaction}
     ]
@@ -142,7 +142,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
 },{
         type: "interaction",
         prototype: "selectMenu",
-        code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Edit!;true]
+        code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Edit logs!;true]
 
 $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
@@ -164,7 +164,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
     ]
 
     $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[msglogeditchannel];
-    This channel is already used for Message Edit. Please, set a different channel instead.
+    This channel is already used for Message Edit logs. Please, set a different channel instead.
     {ephemeral}
     {interaction}
     ]

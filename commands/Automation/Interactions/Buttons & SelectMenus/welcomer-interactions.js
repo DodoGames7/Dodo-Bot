@@ -52,7 +52,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
 },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Welcomer Settings}{description: Welcome to Welcomer settings! Select an option to change.
+    code: `$interactionUpdate[{newEmbed:{title:Welcomer Settings}{description: Welcome to Welcomer settings! Select a option to change.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[welcomerchannel]

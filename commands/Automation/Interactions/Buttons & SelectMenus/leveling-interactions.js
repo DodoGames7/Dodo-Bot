@@ -85,7 +85,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     },{
         type: "interaction",
         prototype: "button",
-        code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select an option to change.
+        code: `$interactionUpdate[{newEmbed:{title:Leveling settings}{description:Welcome to Leveling settings! Select a option to change.
     
 **Current Setting(s)**
 **Level up channel#COLON#** $get[levelupchannel]

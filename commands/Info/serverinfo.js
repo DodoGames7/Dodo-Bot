@@ -42,7 +42,7 @@ module.exports = {
   $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;serverinfo;$authorID];$dateStamp];1000]]:R>]
   
-  $let[verifylevel;$advancedReplaceText[$GuildVerificationLevel;1;Low;2;Medium;3;High;4;Highest;0;None]]
+  $let[verifylevel;$advancedReplaceText[$guildVerificationLevel;1;Low;2;Medium;3;High;4;Highest;0;None]]
   $let[content;$advancedReplaceText[$guildContentFilter[$guildID];0;Disabled;1;Medium;2;High]]
   $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userDefaultAvatar[$clientID]]]
 `

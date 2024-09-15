@@ -2,13 +2,13 @@ module.exports = [{
   type: "interaction",
   prototype: "selectMenu",
   code: `$interactionUpdate[{newEmbed:{title:Server Settings}{description:
-      Select an option which you want to change.
+      Select a option you want to manage.
 
   **Current Setting(s)**
   **Beta access**#COLON# \`$get[betaserver]\`
   **Anonymous**#COLON# \`$get[anonymous]\`
 
-  }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
+  }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
 
 
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -25,13 +25,13 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==settingsmenu;]
       type: "interaction",
       prototype: "selectMenu",
       code: `$interactionUpdate[{newEmbed:{title:Beta access}{description:
-          Allow anyone who has enabled Beta commands to use them in this server.
+          Allow anyone who have Beta commands enabled to use them in this server.
 
-This is not recommended for public servers as Beta commands are not fully stable to be always used! Enable this at your own risk!
+This is not recommended for public servers as Beta commands are not fully stable! Enable this at your own risk!
 
 **Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
-      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbetatoggle_$authorID:false}}]
 
       $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -48,13 +48,13 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
       code: `
 $interactionFollowUp[$get[resultmessage];true]
 $interactionUpdate[{newEmbed:{title:Beta Access}{description:
-          Allow anyone who has enabled Beta commands to use them in this server.
+          Allow anyone who have Beta commands enabled to use them in this server.
 
-This is not recommended for public servers as Beta commands are not fully stable to be always used! Enable this at your own risk!
+This is not recommended for public servers as Beta commands are not fully stable! Enable this at your own risk!
 
 **Current Setting(s)**
 **Beta Access**#COLON# \`$get[betaserver]\`
-      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbeta_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbetatoggle_$authorID:false}}]
 
 
 
@@ -67,7 +67,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {ephemeral}
 {interaction}
   ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serverbeta;]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serverbetatoggle;]
 
 
   `
@@ -75,13 +75,13 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
       type: "interaction",
       prototype: "selectMenu",
       code: `$interactionUpdate[{newEmbed:{title:Anonymous}{description:
-        This option allows moderator names to not be revealed in Ban logs for example!
+        This option allows moderator names to not be revealed in Ban logs!
 
-        For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
+        For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs!
 
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
-      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymoustoggle_$authorID:false}}]
 
       $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -98,13 +98,13 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==serversettingsmenu;]
       code: `
 $interactionFollowUp[$get[resultmessage];true]
 $interactionUpdate[{newEmbed:{title:Anonymous}{description:
-  This option allows moderator names to not be revealed in Ban logs for example!
+  This option allows moderator names to not be revealed in Ban logs!
 
-  For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs for other security reasons as well.
+  For security reasons, this option will NOT apply to bots by default and should be noted that this feature is only exclusive to Ban logs!
 
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
-      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to view information about.:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being revealed!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymous_$authorID:false}}]
+      }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select an option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymoustoggle_$authorID:false}}]
 
 
 
@@ -117,7 +117,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 {ephemeral}
 {interaction}
   ]
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==anonymous;]
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==anonymoustoggle;]
 
 
   `

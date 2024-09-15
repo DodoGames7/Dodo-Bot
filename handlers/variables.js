@@ -14,16 +14,16 @@ module.exports = {
   versionCodename: "Dark",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1726175376071",
-  buildType: "Official Beta",
-  buildBranch: "gitbuilds",
+  buildDate: "1726381990904",
+  buildType: "Official Stable",
+  buildBranch: "v2",
   buildRevision: "0",
   exposebuildinfo: "off",
-  buildNumber: "2146",
+  buildNumber: "2148",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
-  DevReleaseTypeToSet: "Beta",
+  DevReleaseTypeToSet: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -63,7 +63,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on",
+  pre_release_mode: "off",
   botinvitationmessage: "on"
   
 }

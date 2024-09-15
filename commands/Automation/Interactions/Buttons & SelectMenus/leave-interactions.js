@@ -52,7 +52,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
 },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Leave Settings}{description: Welcome to Leave settings! Select an option to change.
+    code: `$interactionUpdate[{newEmbed:{title:Leave Settings}{description: Welcome to Leave settings! Select a option to change.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[leavechannel]

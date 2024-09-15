@@ -41,28 +41,6 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
 `
     },{
         type: "interaction",
-        prototype: "button",
-        code: `
-
-
-$interactionUpdate[{newEmbed:{title:Beta commands}{description:
- Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
-    
-**Current Setting(s)**
-**Beta commands**#COLON# \`$get[betastatus]\`
-
-**NOTE**: Due to safety reasons, commands in this feature will only work if you and the server have Beta commands enabled.
-}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
-
-$let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
-{interaction}]
-        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==betacmdshome;]
-
-`
-    },{
-        type: "interaction",
         prototype: "selectMenu",
         code: `
 
