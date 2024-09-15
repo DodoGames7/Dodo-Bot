@@ -4,14 +4,14 @@ module.exports = [{
         code: `
 		$interactionFollowUp[$get[resultmessage];true]
     
-	$interactionUpdate[{newEmbed:{title:Beta Commands}{description:
+	$interactionUpdate[{newEmbed:{title:Beta commands}{description:
  Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
     
 **Current Setting(s)**
-**Beta Commands**#COLON# \`$get[betastatus]\`
+**Beta commands**#COLON# \`$get[betastatus]\`
 
-**NOTE**: Commands in this feature will only work if you and the server have Beta Commands enabled due to safety reasons.
-}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
+**NOTE**: Due to safety reasons, commands in this feature will only work if you and the server have Beta commands enabled.
+}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:Summary about Beta commands.:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 $let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
 
@@ -30,37 +30,14 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
     },{
         type: "interaction",
         prototype: "button",
-        code: `$interactionUpdate[{newEmbed:{title:Commands}{description:
+        code: `$interactionReply[{newEmbed:{title:Commands}{description:
 *There're no commands currently available to test*
-}}{actionRow:{button:Home:2:betacmdshome_$authorID:false:🏠}}]
-
+}{color:$getVar[embedcolor]}};all;true]
 
 
  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
  {interaction}]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==latestbetacmds;]
-`
-    },{
-        type: "interaction",
-        prototype: "button",
-        code: `
-
-
-$interactionUpdate[{newEmbed:{title:Beta Commands}{description:
- Feeling experimental? Feel free to choose on whether or not, you want to test new experimental commands!
-    
-**Current Setting(s)**
-**Beta commands**#COLON# \`$get[betastatus]\`
-
-**NOTE**: Commands in this feature will only work if you and the server have Beta commands enabled due to security reasons.
-}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
-
-$let[betastatus;$advancedReplaceText[$getGlobalUserVar[betacommands];on;Enabled;off;Disabled]]
-
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
-{interaction}]
-        $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==betacmdshome;]
-
 `
     },{
         type: "interaction",
@@ -73,7 +50,7 @@ $interactionUpdate[{newEmbed:{title:What is Beta commands?}{description:
 
 Please, be aware that, commands in this feature may either be removed or taken out of the beta depending on the choice of the developer once it's stabilized enough. It is not recommended to always use them as they're meant for testing and as such, it requires caution when using them.
 
-}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:Summary about Beta commands.:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
@@ -95,7 +72,7 @@ As a result, Beta commands feature was introduced around beta 4 of v2 as a way t
 
 Despite the name, the feature is available for anyone to join and use the commands included with it. This is so to allow the public to test and report the bugs found in the experimental commands through the [Github repo's issues page](https#COLON#//github.com/dodoGames7/Dodo-Bot/issues).
 
-}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:What is beta commands?:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
+}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:Summary about Beta commands.:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}

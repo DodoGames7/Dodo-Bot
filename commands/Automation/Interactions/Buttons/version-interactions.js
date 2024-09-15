@@ -3,12 +3,10 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* Announcement channels are now supported in Level up messages
-* Added a button to view the command's flag in \`commandinfo\` command
-* Added a new flag to use classic reactions in \`wyr\` command
-* Added new log type dedicated to newly added bots called Integration
-* Added a new game called \`hangman\` with variety of themes that can be selected
-* Placeholder \`<previouslevel>\` for Leveling has been renamed to \`<oldlevel>\`
+* All commands related to logs have merged into a one command called \`setup-logs\`
+* Server description can now be viewed using a button in \`serverinfo\` cmd (only appears if there any)
+* Poll channel can now be reset using \`poll-reset\` command
+* Added alias \`createpoll\` and \`startpoll\` for \`poll\`
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
 $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -24,10 +22,9 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Fixed a strange bug where \`#CHAR#\` was not allowed as custom prefix
-* Fixed wording in error messages of channel-set commands
-* Some Spelling fixes
-* Fixed a bug with \`suggest\` and \`poll\` command's arguments
+* Embed color is no longer missing in places like \`welcomer\` settings for example
+* Fixed a spelling in \`credit\` command's "Use of source code" page
+* Fixed \`suggest-reset\` not being listed in help command's Util module
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
     $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -42,10 +39,10 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* (Source Code) Slightly update dev warning text for pre-release builds on Console
-* Use discord's default avatars for icon-less servers in \`leaderboard\` command
-* The command descriptions are now actually moved into embed description in \`commandinfo\`
-* Added new Internal changes to the source code itself
+* Slightly updated error message for empty leaderboards in \`leaderboard\` command
+* Added a couple of wording changes in this version
+* The "Uptime" section in \`stats\` command is now a timestamp rather than static text
+* When Beta Commands are available, the button "Commands" now opens up as ephemeral reply
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
   $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -58,7 +55,6 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
 
 
       `
-      
     },{
       type: "interaction",
     prototype: "button",
@@ -79,5 +75,4 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
 
 
       `
-      
     }]

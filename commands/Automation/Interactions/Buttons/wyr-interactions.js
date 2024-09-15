@@ -3,7 +3,7 @@ module.exports = [{
     type: "interaction",
     $if: "old",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[wyr1-question]}{field:**Option 2**:$get[wyr2-question]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
+    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[question1]}{field:**Option 2**:$get[question2]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
     
     
     $setMessageVar[wyr;$getObject[wyrdata];$interactionData[message.id]]
@@ -18,8 +18,8 @@ module.exports = [{
     {ephemeral}
     ]
     
-    $let[wyr2-question;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
-    $let[wyr1-question;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
+    $let[question2;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
+    $let[question1;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
     $if[$isVariableExist[wyr-hasuservoted-$authorID;main]==false]
     $createTemporaryVar[main;wyr-hasuservoted-$authorID:false]
     $endif`
@@ -28,7 +28,7 @@ module.exports = [{
     type: "interaction",
     $if: "old",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[wyr1-question]}{field:**Option 2**:$get[wyr2-question]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
+    code: `$interactionUpdate[{newEmbed:{title:Would you rather...}{field:**Option 1**:$get[question1]}{field:**Option 2**:$get[question2]}{color:$getVar[embedcolor]}}{actionRow:{button:$getObjectProperty[wyrdata;upvotes]:2:wyr1-votebutton:false:1️⃣}{button:$getObjectProperty[wyrdata;downvotes]:2:wyr2-votebutton:false:2️⃣}}]
     
     
     $setMessageVar[wyr;$getObject[wyrdata];$interactionData[message.id]]
@@ -43,8 +43,8 @@ module.exports = [{
     {ephemeral}
     ]
     
-    $let[wyr2-question;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
-    $let[wyr1-question;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
+    $let[question2;$getEmbed[$channelID;$interactionData[message.id];1;field2.value]]
+    $let[question1;$getEmbed[$channelID;$interactionData[message.id];1;field1.value]]
     $if[$isVariableExist[wyr-hasuservoted-$authorID]==false]
     $createTemporaryVar[main;wyr-hasuservoted-$authorID:false]
     $endif`

@@ -52,11 +52,11 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
 },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Welcomer Settings}{description: Welcome to Welcomer settings! Select an option to change.
+    code: `$interactionUpdate[{newEmbed:{title:Welcomer Settings}{description: Welcome to Welcomer settings! Select a option to change.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[welcomerchannel]
-**Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false:🏠}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
+**Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:welcomerhomebutton_$authorID:false:🏠}{button:Channel:2:welcomerchannelbutton_$authorID:false}{button:Message:2:welcomermessagebutton_$authorID:false}{button:Placeholders:2:welcomerplaceholders_$authorID:false}}]
 
 $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
@@ -78,7 +78,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -152,7 +152,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
 
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
@@ -175,7 +175,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Message}{description:Welcome to options under the \`Message\` category! Select any option to modify!}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Set Message:2:welcomersetmsgbutton_$authorID:false}{button:Test Message:2:welcomertestmessagebutton_$authorID:false}{button:Type:2:welcomermessagetypebutton_$authorID:false}}]
+    code: `$interactionUpdate[{newEmbed:{title:Message}{description:Welcome to options under the \`Message\` category! Select any option to modify!}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Set Message:2:welcomersetmsgbutton_$authorID:false}{button:Test Message:2:welcomertestmessagebutton_$authorID:false}{button:Type:2:welcomermessagetypebutton_$authorID:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
@@ -252,7 +252,7 @@ Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 \`Text\` is the default type used for Welcomer messages. \`Embed\` will cause the Welcomer messages to use embeds. It's worth noting that if the Welcomer message is over 2000 characters then the \`Embed\` mode will be enforced as a result due to Discord's character limits for general messages!
 
 **Current Settings**
-**Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
+**Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
 {ephemeral}
@@ -274,7 +274,7 @@ $interactionUpdate[{newEmbed:{title:Message type}{description:In Welcomer, there
 \`Text\` is the default type used for Welcomer messages. \`Embed\` will cause the Welcomer messages to use embeds. It's worth noting that if the Welcomer message is over 2000 characters then the \`Embed\` mode will be enforced as a result due to Discord's character limits for general messages!
 
 **Current Settings**
-**Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
+**Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
 
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[welcometype]==embed];true;Welcomer message will now be in embeds!;false;Welcomer message will now be in \`Text\` mode!]]
 $setGuildVar[welcometype;$get[newtoggledsetting]]
@@ -348,7 +348,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomertestmessageb
 \`<server.totalMembers>\` - Returns the amount of members in the server
 \`<server.id>\` - Returns the server id
 
-}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
+}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}

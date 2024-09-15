@@ -27,12 +27,27 @@ Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;poll-set;$aut
 $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this.]
 `
 },{
+    name: "poll-reset",
+    info: {
+        description: "Reset current channel used for Polls.",
+        perms: ["`SendMessages`", "`ManageChannels`"]
+    },
+    aliases: ["reset-pollchannel", "resetpoll", "reset-poll", "pollreset"],
+    code: `$deleteVar[pollchannel;$guildID;main]
+Successfully reset Poll channel! Run \`suggest-set\` to set a channel again.
+$onlyIf[$getGuildVar[pollchannel]!=none;There is no channel to reset currently.]
+$cooldown[2s; Slow down! Don't spam the command!
+Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;poll-reset;$authorID];$dateStamp];1000]]:R>]
+$onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use this!]
+`
+},{
     name: "poll",
     info: {
         description: "Start a poll in this server (if setup).",
         perms: ["`SendMessages`", "`ManageMessages`", "`AddReactions`"],
         usage: "poll content/choice 1/choice 2"
     },
+    aliases: ["createpoll", "startpoll"],
     code: `
 
 $author[Poll by $username;$userAvatar;$nonEscape[$get[userURL]]]

@@ -6,7 +6,7 @@ module.exports = [{
 * **Single**
 * **Multiple**
 
-**Single** will start the game with only "True" or "False" answer for each question. **Multiple** will start the game with multiple answers for each question.
+**Single** starts the game with only "True" or "False" answer for each question. **Multiple** starts the game with multiple answers for each question.
 
 **Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_type]]\`
@@ -30,7 +30,7 @@ $interactionUpdate[{newEmbed:{title:Trivia type}{description:
 * **Single**
 * **Multiple**
 
-**Single** will start the game with only "True" or "False" answer for each question. **Multiple** will start the game with multiple answers for each question.
+**Single** starts the game with only "True" or "False" answer for each question. **Multiple** starts the game with multiple answers for each question.
 
 **Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_type]]\`

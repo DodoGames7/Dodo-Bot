@@ -20,8 +20,6 @@ module.exports = [{
   ]
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==packagesused;]
   `
-
-
 },{
     type: "interaction",
     prototype: "button",
@@ -38,13 +36,11 @@ module.exports = [{
   ]
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==maincredits;]
   `
-
-
 },{
     type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Use of source code}{description:
-        Using the source code for development purposes, you must credit the original work done on the bot itself which can be by including the username \`dodogames\`in your project.
+        When using the source code for development purposes, you must credit the original work done on the bot itself which can done be by including the username \`dodogames\` in your project.
 
 **For public bots**
 It is not recommended to claim that you fully made the bot yourself and even advertise it to the public. It is fine if you used the source code but then made it slightly different that doesn't result in being too smiliar to the original bot.
@@ -61,6 +57,4 @@ The rule of using the source code is not strict in this case. If it's used to tr
   ]
   $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==useofsource;]
   `
-
-
 }]

@@ -5,7 +5,7 @@ module.exports = [{
     $ifAwaited[$getVar[pre_release_mode]==on;{execute:Enable-pre-release};{execute:Disable-pre-release}]
 
 
-    `
+`
 },{
     name: "Enable-pre-release",
     type: "awaited",
@@ -19,6 +19,6 @@ module.exports = [{
     type: "awaited",
     code: `
 
-    $setVar[release_type;Stable]
+    $deleteVar[release_type;;main]
     $onlyIf[$checkContains[$getVar[release_type];Stable]==false]`
 }]

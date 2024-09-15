@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:This panel allows you to change some things the bot operates behind the scenes. 
     
-        To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select an option:1:1:false:{stringInput:Bot Invitation Message:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}{stringInput:Expose build information:exposebuildinfo:Whether or not to enable "Build Info" button in stats cmd:false:🛠️}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
+        To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png}}{actionRow:{selectMenu:devmenu_$authorID:Select a option:1:1:false:{stringInput:Bot Invitation Message:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}{stringInput:Expose build information:exposebuildinfo:Whether or not to enable "Build Info" button in stats cmd:false:🛠️}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -13,9 +13,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 },{
     type: "interaction",
     prototype: "button",
-    code: `$interactionUpdate[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
+    code: `$interactionReply[{newEmbed:{title:Commands}{description:The following commands are currently available for developers#COLON#
+
 \`eval\`, \`jseval\`, \`shutdown\`, \`readfile\`, \`exec\`, \`setcustomstatus\`, \`update\`
-}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}}]
+}{color:Red}};all;true]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
@@ -33,7 +34,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 **Current setting(s)**
 **Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
 
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
 
 $let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
@@ -57,7 +58,7 @@ $interactionUpdate[{newEmbed:{title:Bot Invitation Message}{description:
 **Current setting(s)**
 **Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
 
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
 
 $let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
@@ -132,7 +133,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
+    }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
@@ -154,7 +155,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
+    }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
@@ -203,7 +204,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
+    }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
 
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
@@ -255,7 +256,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 
    **Current Setting(s)**
 **Hex code**#COLON# \`$getVar[embedcolor]\`
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Preview:2:embedcolorpreview_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
 
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -287,7 +288,7 @@ $interactionUpdate[{newEmbed:{title:Embed color}{description:
 
    **Current Setting(s)**
 **Hex code**#COLON# \`$getVar[embedcolor]\`
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Preview:2:embedcolorpreview_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
 
 $setVar[embedcolor;$textInputValue[hexInput]]
 
@@ -313,7 +314,7 @@ $interactionUpdate[{newEmbed:{title:Embed color}{description:
 
    **Current Setting(s)**
 **Hex code**#COLON# \`$getVar[embedcolor]\`
-    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Set Color:2:setbotembedcolor_$authorID:false}{button:Preview:2:embedcolorpreview_$authorID:false}{button:Reset:2:resetembedcolor_$authorID:false}}]
 
     $deleteVar[embedcolor;;main]
 
@@ -331,6 +332,18 @@ $interactionUpdate[{newEmbed:{title:Embed color}{description:
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==resetembedcolor;]
 
     `
+    },{
+        type: "interaction",
+        prototype: "button",
+        code: `$interactionReply[{newEmbed:{title:Preview}{description:This is how the color will look on embeds!}{footer:Pretty cool right?}};all;true]
+
+
+        $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    {ephemeral}
+    {interaction}
+    ]
+
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==embedcolorpreview;]`
     },{
         type: "interaction",
         prototype: "selectMenu",
@@ -430,7 +443,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
         
-        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
+        }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
         $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
@@ -452,7 +465,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
         
-        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
+        }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
         $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
@@ -501,7 +514,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
 
         **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-        }}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
+        }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
 
         $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
 
@@ -550,7 +563,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
 **Current setting(s)**
 **Expose build information**#COLON# \`$get[exposebuildinfo]\`
 
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
 
 
 $let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]
@@ -574,7 +587,7 @@ $interactionUpdate[{newEmbed:{title:Expose build information!}{description:
 **Current setting(s)**
 **Expose build information**#COLON# \`$get[exposebuildinfo]\`
 
-    }}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
+    }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:exposebuildinfotoggle_$authorID:false:🔄}}]
 
 
 $let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[exposebuildinfo]==on];true;Enabled;false;Disabled]]

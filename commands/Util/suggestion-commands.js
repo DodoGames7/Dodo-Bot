@@ -32,7 +32,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
         perms: ["`SendMessages`", "`ManageChannels`"]
     },
     code: `$deleteVar[suggestionchannel;$guildID;main]
-Successfully reset suggestion Channel! Run \`suggest-set\` to set a channel again.
+Successfully reset suggestion channel! Run \`suggest-set\` to set a channel again.
 $onlyIf[$getGuildVar[suggestionchannel]!=none;There is no channel set to reset.]
 $cooldown[3s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;suggest-reset;$authorID];$dateStamp];1000]]:R>]

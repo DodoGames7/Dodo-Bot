@@ -10,16 +10,16 @@ module.exports = {
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.6",
-  versionCodename: "Chocolate Cake",
+  version: "2.1.7",
+  versionCodename: "Dark",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1725227113640",
+  buildDate: "1726381990904",
   buildType: "Official Stable",
   buildBranch: "v2",
   buildRevision: "0",
   exposebuildinfo: "off",
-  buildNumber: "2142",
+  buildNumber: "2148",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
@@ -64,6 +64,6 @@ module.exports = {
   startupchannel: "none",
   startupchannelsystem: "off",
   pre_release_mode: "off",
-  botinvitationmessage: "on",
+  botinvitationmessage: "on"
   
 }

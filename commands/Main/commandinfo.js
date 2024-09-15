@@ -13,21 +13,21 @@ module.exports = {
     $addField[Permissions needed;$arrayJoin[perms;, ]]
     $color[$getVar[embedcolor]]
     $if[$commandInfo[$toLowerCase[$message];info.beta]==true]
-    $footer[Experimental command.;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
+    $footer[Beta command.;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
   $endif
   $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
     $addButton[1;Flags;2;viewcommandflags_$authorID_$commandInfo[$nonEscape[$get[cmdname]];name];false]
   $endif
 
-$let[aliases;$advancedReplaceText[$checkCondition[$arrayJoin[aliases;, ]==];true;*This command does not have any aliases.*;false;$arrayJoin[aliases;, ]]]
+$let[aliases;$advancedReplaceText[$checkCondition[$arrayJoin[aliases;, ]==];true;*No aliases exists for this command.*;false;$arrayJoin[aliases;, ]]]
 $createArray[aliases;$nonEscape[$get[aliaseschecker]]]
 $let[aliaseschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];aliases]];,;#SEMI#]]
 
 $createArray[perms;$nonEscape[$get[permschecker]]]
 $let[permschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];info.perms]];,;#SEMI#]]
 
-    $onlyIf[$commandInfo[$get[cmdname];info.dev]==;Viewing Developer commands is not supported.]
-    $onlyIf[$commandInfo[$get[cmdname];name]!=;This command does not exist in the bot. Try entering a command that exists within the bot itself.]
+    $onlyIf[$commandInfo[$get[cmdname];info.dev]==;Viewing Developer commands is unsupported.]
+    $onlyIf[$commandInfo[$get[cmdname];name]!=;The command specified does not appear to exist. Try entering a command that exists within the bot itself.]
     $let[cmdname;$toLowerCase[$message]]
     $onlyIf[$message!=;Enter a command name to view it's information about.]
     $cooldown[2s;Slow down! Don't spam the command!
