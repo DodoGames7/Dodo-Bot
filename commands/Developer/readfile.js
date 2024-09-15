@@ -11,7 +11,7 @@ code: `$onlyIf[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$au
 $onlyIf[$message!=;Please enter the file path.]
 $onlyIf[$fileExists[$message]==true;You must specify a file that exists!]
 $if[$charCount[$readFile[$message]]>=2000;
-$attachment[$readFile[$message];output.txt;true]
+$attachment[$readFile[$message];output.js;true]
 ;
 $codeBlock[$readFile[$message];js]
 ]

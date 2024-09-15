@@ -21,7 +21,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-   $if[$checkContains[$clientOwnerID;$authorID]==true;
+   $if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -38,7 +38,7 @@ $ephemeral
     $interactionUpdate[
     $title[Entertainment]
     $addField[**Games**;
-\`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
+\`rps\`, \`tictactoe\`, \`findtheflag\`, \`matchpairs\`, \`findemoji\`, \`hangman\`, \`snake\`, \`c4\`, \`2048\`, \`minesweeper\`, \`trivia\`, \`coinflip\`, \`flood\`, \`wordle\`, \`gtp\`, \`wyr\`
  ]
    $addField[**Text**;
 \`howgamer\`, \`whoasked\`, \`8ball\`, \`say\`, \`reverse\`, \`randomtopic\`, \`joke\`, \`clap\`, \`mock\`, \`yesorno\`, \`lulcat\`, \`fact\`
@@ -52,7 +52,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$clientOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -76,7 +76,7 @@ $ephemeral
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$clientOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -106,7 +106,7 @@ $addField[**Miscellaneous**;
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$clientOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]
@@ -123,18 +123,18 @@ $ephemeral
 
     $interactionUpdate[
     $title[Developer]
-    $addField[**Dev stuff**;
-\`eval\`, \`exec\`, \`jseval\`, \`readfile\`
+    $addField[**Tools**;
+\`eval\`, \`exec\`, \`update\`, \`jseval\`, \`readfile\`
     ]
 $addField[**Bot Management**;
-\`shutdown\`, \`update\`, \`dev-panel\` \`set-customstatus\`]
+\`shutdown\`, \`dev-panel\` \`set-customstatus\`]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow
     $addStringSelectMenu[helpmenu_$authorID;Select a module;false;1;1]
     $addOption[Main;Main module;main;;false]
     $addOption[Entertainment;Entertainment module;fun;;false]
     $addOption[Leveling;Leveling module;leveling;;false]
-    $if[$checkContains[$clientOwnerID;$authorID]==true;
+    $if[$checkContains[$clientOwnerID[$getGlobalVar[AllowBotMembers]];$authorID]==true;
     $addOption[Developer;Developer module;dev;;false]
 ]
     $addOption[Utility;Utility module;util;;false]

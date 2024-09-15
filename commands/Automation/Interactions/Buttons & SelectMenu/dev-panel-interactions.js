@@ -13,7 +13,7 @@ $interactionReply[
 $title[Bot Invitation Message]
 $description[When enabled, The bot will welcome the new servers it gets added to. By default, this is enabled in order to help the members know what's the bot's prefix is]
 $addField[Current setting(s);$get[botinvitationmessage]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow 
 $addButton[botinvitationmessagetoggle;Toggle;Secondary;🔄]
 $ephemeral
@@ -39,7 +39,7 @@ $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[botinvitationmessage]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow 
 $addButton[botinvitationmessagetoggle;Toggle;Secondary;🔄]
 ]
@@ -69,7 +69,7 @@ $addField[Current setting(s);
 **Error logging:** $get[errorlogging]
 **Error logging channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -104,7 +104,7 @@ $addField[$get[fieldname];
 **Error logging:** $get[errorlogging]
 **Error logging channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -157,7 +157,7 @@ $addField[$get[fieldname];
 **Error logging:** $get[errorlogging]
 **Error logging channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -200,7 +200,7 @@ $addField[$get[fieldname];
 **Error logging:** $get[errorlogging]
 **Error logging channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[errorloggingchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -228,9 +228,10 @@ $interactionReply[
 $title[Embed color]
 $description[This option allows you to change the current Embed color used across all the commands of the bot!]
 $addField[Current setting(s);$getGlobalVar[embedcolor]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[previewembedcolor;Preview;Secondary]
 $addButton[resetcurrentembedcolor;Reset;Secondary]
 $ephemeral
 ]
@@ -269,9 +270,10 @@ $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$getGlobalVar[embedcolor]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[previewembedcolor;Preview;Secondary]
 $addButton[resetcurrentembedcolor;Reset;Secondary]
 ]
 
@@ -299,9 +301,10 @@ $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$getGlobalVar[embedcolor]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[setnewembedcolor;Set Color;Secondary]
+$addButton[previewembedcolor;Preview;Secondary]
 $addButton[resetcurrentembedcolor;Reset;Secondary]
 ]
 
@@ -310,6 +313,18 @@ $ephemeral
 ]
 
 `
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `$onlyIf[$customID==previewembedcolor;]
+
+    $interactionReply[
+        $title[Embed color Preview]
+        $description[This is how it will appear!]
+        $color[$getGlobalVar[embedcolor]]
+        $footer[Pretty cool right?]
+        $ephemeral
+    ]`
 },{
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
@@ -326,7 +341,7 @@ $description[This option let's you decide on whether or not the current build sh
 
 Disabling this option will cause all sorts of pre-release stuff to be absent such as the development warning on the console!]
 $addField[Current setting(s);$get[pre_release]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[prereleasetoggle;Toggle;Secondary;🔄]
 $ephemeral
@@ -347,7 +362,7 @@ $setGlobalVar[pre_release;$get[settingdecide]]
 $let[pre_release;$advancedReplace[$getGlobalVar[pre_release];off;Disabled;on;Enabled]]
 
 $If[$getGlobalVar[pre_release]==off;
-$setGlobalVar[release_type;Stable]
+$deleteGlobalVar[release_type]
 ;
 $setGlobalVar[release_type;$getGlobalVar[DevReleaseTypeToSet]]
 ]
@@ -358,7 +373,7 @@ $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[pre_release]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[prereleasetoggle;Toggle;Secondary;🔄]
 ]
@@ -389,7 +404,7 @@ $addField[Current setting(s);
 **Startup:** $get[startup]
 **Startup channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -424,7 +439,7 @@ $addField[$get[fieldname];
 **Startup:** $get[startup]
 **Startup channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -475,7 +490,7 @@ $addField[$get[fieldname];
 **Startup:** $get[startup]
 **Startup channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -518,7 +533,7 @@ $addField[$get[fieldname];
 **Startup:** $get[startup]
 **Startup channel:** $get[currentchannel]
 ]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $setChannelType[GuildText]
 $addChannelSelectMenu[startupchannelselectmenusetup;Select a channel to use;1;1;false]
@@ -549,7 +564,7 @@ $description[When enabled, a button labeled "Build Info" will show up in \`stats
 
 If you think this is sensitive information then press the "Toggle" button to disable it (if it was enabled by default).]
 $addField[Current setting(s);$get[exposebuildinfo]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
 $ephemeral
@@ -575,7 +590,7 @@ $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];$get[exposebuildinfo]]
-$color[$getGlobalVar[embedcolor]]
+$color[Yellow]
 $addActionRow
 $addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
 ]
@@ -586,4 +601,37 @@ $ephemeral
 ]
 
 `
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==generatedatabasebackup;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+$interactionReply[
+$title[Backup Database]
+$addField[Why Backups?;In general, it is recommended to create a backup of the database to always ensure that when something bad happens, you can use your previous copy of the database to restore all the lost data!
+]
+$addField[Getting started;make a quick backup, press the button "Create", a new duplicated file of your database will appear with random letters and numbers.
+]
+$addField[How to use it?;To use your backup, rename the file to \`forge.db\` and replace the one in \`database\` folder with the backup file! Reboot the bot and the data should be there!
+]
+$color[Yellow]
+$addActionRow
+$addButton[createdatabasebackupbutton;Create;Secondary]
+$ephemeral
+]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `$onlyIf[$customID==createdatabasebackupbutton;]
+
+    $copyFile[database/forge.db;backup-$randomString[6]-forge.db]
+    $interactionReply[Created a backup under your root directory!
+    $ephemeral
+    ]
+    `
 }]

@@ -2,17 +2,16 @@ module.exports = [{
     type: "guildBanAdd",
     allowBots: true,
     code: `
-$let[guild;$djsEval[ctx.states.ban.new.guild.id]]
-    $onlyIf[$getGuildVar[banlogschannel;$get[guild]]!=;]
-    $onlyIf[$guildChannelExists[$get[guild];$getGuildVar[banlogschannel;$get[guild]]]==true;]
-    $onlyIf[$channelHasPerms[$getGuildVar[banlogschannel;$get[guild]];$clientID;ViewChannel;SendMessages]==true;]
-    $onlyIf[$hasPerms[$get[guild];$clientID;ViewAuditLog]==true;]
-$let[reason;$advancedReplace[$checkCondition[$fetchAuditLog[$get[guild];MemberBanAdd;reason;0]==];true;none;false;$fetchAuditLog[$get[guild];MemberBanAdd;reason;0]]]
-$let[staffdetails;$username[$fetchAuditLog[$get[guild];MemberBanAdd;executorID;0]]  <@$fetchAuditLog[$get[guild];MemberBanAdd;executorID;0]>]
-$let[condition;$and[$getGuildVar[anonymous;$get[guild]]==on;$isBot[$fetchAuditLog[$get[guild];MemberBanAdd;executorID;0]]==false]]
+    $onlyIf[$getGuildVar[banlogschannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banlogschannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[banlogschannel];$clientID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$hasPerms[$guildID;$clientID;ViewAuditLog]==true;]
+$let[reason;$advancedReplace[$checkCondition[$fetchAuditLog[$guildID;MemberBanAdd;reason;0]==];true;none;false;$fetchAuditLog[$guildID;MemberBanAdd;reason;0]]]
+$let[staffdetails;$username[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]  <@$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]>]
+$let[condition;$and[$getGuildVar[anonymous]==on;$isBot[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]==false]]
 $let[getmoderatorname;$advancedReplace[$checkCondition[$get[condition]==true];true;Unknown;false;$get[staffdetails]]]
 $let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;false;Bot]]
-    $sendMessage[$getGuildVar[banlogschannel;$get[guild]];
+    $sendMessage[$getGuildVar[banlogschannel];
     $author[Member banned!;$userAvatar]
     $description[
 **$get[accounttype]:** $username <@$authorID>
@@ -26,15 +25,14 @@ $let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;fal
     type: "guildBanRemove",
     allowBots: true,
     code: `
-$let[guild;$djsEval[ctx.states.ban.new.guild.id]]
-    $onlyIf[$getGuildVar[unbanlogschannel;$get[guild]]!=;]
-    $onlyIf[$guildChannelExists[$get[guild];$getGuildVar[unbanlogschannel;$get[guild]]]==true;]
-    $onlyIf[$channelHasPerms[$getGuildVar[unbanlogschannel;$get[guild]];$clientID;ViewChannel;SendMessages]==true;]
-    $onlyIf[$hasPerms[$get[guild];$clientID;ViewAuditLog]==true;]
-$let[reason;$fetchAuditLog[$get[guild];MemberBanRemove;reason;0]]
-$let[moderator;$username[$fetchAuditLog[$get[guild];MemberBanRemove;executorID;0]] <@$fetchAuditLog[$get[guild];MemberBanRemove;executorID;0]>]
+    $onlyIf[$getGuildVar[unbanlogschannel]!=;]
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[unbanlogschannel]]==true;]
+    $onlyIf[$channelHasPerms[$getGuildVar[unbanlogschannel];$clientID;ViewChannel;SendMessages]==true;]
+    $onlyIf[$hasPerms[$guildID;$clientID;ViewAuditLog]==true;]
+$let[reason;$fetchAuditLog[$guildID;MemberBanRemove;reason;0]]
+$let[moderator;$username[$fetchAuditLog[$guildID;MemberBanRemove;executorID;0]] <@$fetchAuditLog[$guildID;MemberBanRemove;executorID;0]>]
 $let[accounttype;$advancedReplace[$checkCondition[$isBot==false];true;Member;false;Bot]]
-    $sendMessage[$getGuildVar[unbanlogschannel;$get[guild]];
+    $sendMessage[$getGuildVar[unbanlogschannel];
     $author[Member unbanned!;$userAvatar]
     $description[
 **$get[accounttype]:** $username <@$authorID>

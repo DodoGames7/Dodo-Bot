@@ -344,14 +344,14 @@ $ephemeral
     allowedInteractionTypes: ["selectMenu", "button"],
     code: `
 $if[$selectMenuValues==;
-$onlyIf[$customID==levelingexclusioncategory;]
+$onlyIf[$customID==levelingexclusionpage;]
 ;
 $onlyIf[$and[$customID==levelingextraoptionsmenu;$selectMenuValues==exclusionsoption]==true;]
 ]
 
 $interactionUpdate[
 $title[Exclusions]
-$description[In this category, you can choose on what channels/roles should be excluded from allowing members to gain xp by default.
+$description[In this category, you can choose on what should be excluded from allowing members to gain xp by default.
 
 To manage a specific setting, click on one of the buttons below dedicated to this category such as "Roles" for example.]
 $color[$getGlobalVar[embedcolor]]
@@ -359,6 +359,7 @@ $addActionRow
 $addButton[levelingsettingshome;Go Back;Secondary;↩️]
 $addButton[levelingexclusionroles;Roles;Secondary]
 $addButton[levelingexclusionchannels;Channels;Secondary]
+$addButton[levelingexclusionchannelcategories;Categories;Secondary]
 ]
 `
 },{
@@ -370,13 +371,13 @@ $onlyIf[$customID==levelingexclusionroles;]
 $interactionUpdate[$title[Exclude Roles]
 $description[Use the menu below to select Roles to exclude from xp. You can select up to 10 Roles within the menu.]
 $addField[Current Role(s);
-$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addRoleSelectMenu[levelingexcluderolesetupmenu;Select roles to exclude;1;10;false]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedroles;Reset;Secondary]
 ]`
 },{
@@ -393,13 +394,13 @@ $setGuildVar[levelingexcludedroles;$selectMenuValues]
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];
-$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addRoleSelectMenu[levelingexcluderolesetupmenu;Select roles to exclude;1;10;false]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedroles;Reset;Secondary]
 ]
 
@@ -426,13 +427,13 @@ $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];
-$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];,]
+$callFunction[autoListroles;$getGuildVar[levelingexcludedroles];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addRoleSelectMenu[levelingexcluderolesetupmenu;Select roles to exclude;1;10;false]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedroles;Reset;Secondary]
 ]
 
@@ -450,14 +451,14 @@ $onlyIf[$customID==levelingexclusionchannels;]
 $interactionUpdate[$title[Exclude Channels]
 $description[Use the menu below to select Channels to exclude from xp. You can select up to 10 Channels within the menu.]
 $addField[Current Channel(s);
-$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu;Select channels to exclude;1;10;false]
 $setChannelType[GuildText]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels;Reset;Secondary]
 ]`
 },{
@@ -476,14 +477,14 @@ $setGuildVar[levelingexcludedchannels;$selectMenuValues]
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];
-$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu;Select channels to exclude;1;10;false]
 $setChannelType[GuildText]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels;Reset;Secondary]
 ]
 
@@ -510,15 +511,100 @@ $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 $interactionUpdate[$title[$get[title]]
 $description[$get[description]]
 $addField[$get[fieldname];
-$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];,]
+$callFunction[autoListchannels;$getGuildVar[levelingexcludedchannels];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[levelingexcludechannelsetupmenu;Select channels to exclude;1;10;false]
 $setChannelType[GuildText]
 $addActionRow
-$addButton[levelingexclusioncategory;Go Back;Secondary;↩️]
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
 $addButton[levelingresetexcludedchannels;Reset;Secondary]
+]
+
+$interactionFollowUp[Current configuration has been reset!
+$ephemeral
+]
+
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==levelingexclusionchannelcategories;]
+
+$interactionUpdate[$title[Exclude Categories]
+$description[Use the menu below to select channel Categories to exclude from xp. You can select up to 10 Categories within the menu.]
+$addField[Current Categories;
+$callFunction[autoListcategories;$getGuildVar[levelingexcludedcategories];, ]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludecategoriessetupmenu;Select categories to exclude;1;10;false]
+$setChannelType[GuildCategory]
+$addActionRow
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedcategories;Reset;Secondary]
+]`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["selectMenu"],
+    code: `
+$onlyIf[$customID==levelingexcludecategoriessetupmenu;]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+
+$setGuildVar[levelingexcludedcategories;$selectMenuValues]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListcategories;$getGuildVar[levelingexcludedcategories];, ]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludecategoriessetupmenu;Select categories to exclude;1;10;false]
+$setChannelType[GuildCategory]
+$addActionRow
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedcategories;Reset;Secondary]
+]
+
+$interactionFollowUp[Successfully Saved changes!
+$ephemeral
+]
+
+`},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==levelingresetexcludedcategories;]
+
+$onlyIf[$getGuildVar[levelingexcludedcategories;$guildID]!=none;$interactionReply[
+There's nothing to reset.
+$ephemeral]]
+
+$deleteGuildVar[levelingexcludedcategories;$guildID]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];
+$callFunction[autoListcategories;$getGuildVar[levelingexcludedcategories];, ]
+]
+$color[$getGlobalVar[embedcolor]]
+$addActionRow
+$addChannelSelectMenu[levelingexcludecategoriessetupmenu;Select categories to exclude;1;10;false]
+$setChannelType[GuildCategory]
+$addActionRow
+$addButton[levelingexclusionpage;Go Back;Secondary;↩️]
+$addButton[levelingresetexcludedcategories;Reset;Secondary]
 ]
 
 $interactionFollowUp[Current configuration has been reset!

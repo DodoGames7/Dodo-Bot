@@ -6,10 +6,11 @@ module.exports = {
         perms: ["`SendMessages`"]
     },
     aliases: ["level", "lvl"],
+    disableConsoleErrors: true,
     code: `$userCooldown[rankcmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rankcmd]];1000]]:R>]
  $onlyIf[$getGuildVar[levelingsystem]==on;Leveling is not enabled currently.]
-$let[user;$mentioned[0;true]]
+$let[user;$findMember[$guildID;$message;true]]
 $onlyIf[$isBot[$get[user]]==false;Bots don't have Levels.]
 $title[$username[$get[user]]'s Rank]
 $addField[Progress;

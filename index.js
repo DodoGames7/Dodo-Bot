@@ -7,38 +7,17 @@ require('dotenv').config() // Enable env support in local hosting
 
 // Client initialization
    const client = new ForgeClient({
-    "intents": [ // intents
-        "Guilds",
-        "GuildMessages",
-        "GuildMembers",
-        "MessageContent",
-        "GuildPresences",
-        "GuildModeration"
-    ],
-    "prefixes": [ // Custom prefix system
-        "$getGuildVar[prefix]"
-    ],
-    "events": [ // Events used
-        "ready",
-        "error",
-        "interactionCreate",
-        "messageCreate",
-        "messageDelete",
-        "messageUpdate",
-        "guildMemberAdd",
-        "guildMemberRemove",
-        "guildBanAdd",
-        "guildBanRemove",
-        "guildCreate"
-    ],
+    "intents": ["Guilds", "GuildMessages", "GuildMembers", "MessageContent", "GuildPresences", "GuildModeration"], // Intents
+    "prefixes": ["$getGuildVar[prefix]"], // Custom prefix system
+    "events": ["ready", "error", "interactionCreate", "messageCreate", "messageDelete", "messageUpdate", "guildMemberAdd", "guildMemberRemove", "guildBanAdd", "guildBanRemove", "guildCreate"], // Setup ForgeScript events
     "extensions": [ // Load extensions
         new ForgeDB({
-    type: "sqlite",
+    type: "better-sqlite3",
     database: "./database/forge.db"
     })
     ],
-   mobile: config.MobileStatus,
-   disableConsoleErrors: config.disableConsoleErrors
+   mobile: config.MobileStatus, // Mobile status
+   disableConsoleErrors: config.disableConsoleErrors // Console errors option
 })
 
 // Handlers

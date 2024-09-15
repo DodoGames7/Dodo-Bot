@@ -1,6 +1,6 @@
 module.exports = {
 type: "messageCreate",
-code: `$onlyIf[$isBot==false;]
+code: `
 $onlyIf[$getGuildVar[autoreplyping]==on;]
 $onlyIf[$channelHasPerms[$channelID;$clientID;ViewChannel;SendMessages]==true;]
 $If[$startsWith[$message;<@$clientID>]==true;

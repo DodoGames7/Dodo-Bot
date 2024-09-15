@@ -43,5 +43,9 @@ $addField[Other;
 ]
 $thumbnail[$get[servericon]]
 $color[$getGlobalVar[embedcolor]]
+$if[$guildDescription!=;
+$addActionRow
+$addButton[viewserverdescription_$authorID;Description;Secondary]
+]
 `
 }

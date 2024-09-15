@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
     type: "ready",
     code: `$if[$getGlobalVar[pre_release]==on;
 $djsEval[const chalk = require('chalk')
@@ -16,4 +16,17 @@ $djsEval[const chalk = require('chalk')
 
 console.log(chalk.cyan("Invite your bot here: $clientInvite[36032]"))]
 `
-}
+},{
+type: "ready",
+code: `$onlyIf[$getGlobalVar[startupsystem]==on;]
+$onlyIf[$getGlobalVar[startupchannel]!=;]
+$onlyIf[$channelExists[$getGlobalVar[startupchannel]]==true;]
+$onlyIf[$channelHasPerms[$getGlobalVar[startupchannel];$clientID;ViewChannel;SendMessages]==true;]
+$sendMessage[$getGlobalVar[startupchannel];
+$title[Ready!]
+$description[$username[$clientID] is now online!]
+$color[DarkGreen]
+]
+
+`
+}]

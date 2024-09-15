@@ -13,8 +13,8 @@ $description[Welcome to Developer panel! This panel allows you to change some st
 
 To change something such as Embed color, use the select menu below.]  
 $color[Yellow]
-$attachment[./handlers/assets/gear.png;gear.png]
-$thumbnail[attachment://gear.png]
+$attachment[./handlers/assets/devsettings.png;settings.png]
+$thumbnail[attachment://settings.png]
 $addActionRow
 $addStringSelectMenu[devmenu_$authorID;Select a option;false;1;1]
 $addOption[Bot Invitation Message;Whether or not to greet servers the bot gets added to;botinvitationmessageoption;👋;false]
@@ -23,5 +23,7 @@ $addOption[Embed color;Change the current embed color used in all cmds;embedcolo
 $addOption[Pre-release;Whether or not to mark the current build as Pre-release;prereleaseoption;⚠️;false]
 $addOption[Startup;Send messages that the bot is ready to specific channel;startupoption;🚦;false]
 $addOption[Expose build info;Whether or not to enable "Build Info" button in stats cmd;exposebuildinfooption;🛠️;false]
+$addActionRow
+$addButton[generatedatabasebackup_$authorID;Create Backup;Secondary]
 `
 }

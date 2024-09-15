@@ -10,11 +10,11 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* Added a button to view flags for cmds in \`commandinfo\` command
-* Re-added \`<member.position>\` for Leave messages
-* Migrate to ephemeral interactions for \`setup-logs\` and other commands like \`welcomer\`
-* Cpu Usage in \`stats\` has been improved to be actual percentage and no longer goes crazy
-* Announcement channels are now supported in Level up messages
+* You can now exclude channel categories from xp in Leveling
+* Added hangman game from non-Rebase version
+* Add a check for if the member is booster in \`userinfo\` command
+* Added Lowest and Highest role info for a member in \`userinfo\` command
+* Server description can now be viewed using a button in \`commandinfo\` cmd (only appears if there any)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -41,10 +41,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Reduced the possibility of interactions failing
-* Mentions can no longer be used as prefix
-* Fixed embed mode not being usable in \`say\` command
-* Fixed strange behavior in some settings like \`welcomer\` (Revision 1)
+* Reduced potential issues with Leveling Exclusions functionality
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -71,11 +68,12 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* Internal changes to shorten implementation of Settings of Games
-* The command descriptions are now actually moved into embed description in \`commandinfo\`
-* (Source Code) Setup option \`EnableConsoleErrors\` is now \`disableConsoleErrors\`
-* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.5
-* (Source Code) output checkers are now simpler just like in non Rebase version
+* Changed default Embed color to \`#265999\`
+* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.6
+* Updated main credits seen in \`credits\` command
+* Updated icons for search, settings and 8ball for \`commandinfo\`, \`settings\` and \`8ball\` command
+* Slightly updated error message for empty leaderboards in \`leaderboard\` command
+* (Source Code) Changed database to \`better-sqlite3\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
