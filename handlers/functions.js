@@ -28,7 +28,7 @@ $let[check;$advancedReplace[$checkCondition[$arrayJoin[flags;, ]==];true;$comman
     $return[$get[check]]
     `
   },{
-    name: "sayembedmodefilter",
+    name: "filterembedflag",
     params: ["content"],
     code: `
 $let[message;$replace[$replace[$env[content];--embed;];—embed;]]

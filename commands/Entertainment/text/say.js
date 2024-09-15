@@ -13,7 +13,7 @@ $onlyIf[$message!=;Please say whatever you want.
 **Tip:** To use embed mode, make sure your message contains the flag \`--embed\` to do so.]
 $disableAllMentions
 
-$let[clearembedmodewords;$advancedReplace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[sayembedmodefilter;$message];false;$message]]
+$let[clearembedmodewords;$advancedReplace[$checkCondition[$checkContains[$message;--embed;—embed]==true];true;$callFunction[filterembedflag;$message];false;$message]]
 $let[links;$randomText[https://www.youtube.com/watch?v=dQw4w9WgXcQ;$clientInvite[36032]]]
 $onlyIf[$get[clearembedmodewords]!=;You cannot activate embed mode without specifying a text first.]
 

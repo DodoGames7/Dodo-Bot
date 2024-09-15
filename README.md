@@ -9,7 +9,7 @@ This version of the bot aka rebase is based on the CupcakeX codebase albeit with
 # Rebase
 Rebase is a special version of Dodo-Bot intended for disastrous situations such as aoi.js suddenly dying one day. In general, it is good to rebase your project for another library so that you always have anything prepared in place which is why this version of Dodo-Bot exists. It is similar to v2 but with using ForgeScript which is a mix between aoi and bdfd.
 
-During the earlier development, it was originally going to be Dodo-Bot v3 before it was decided that v3 would be repurposed for aoi.js v7 instead. As a result, you will find things that did not exist in v2 such as select menu channel-set command for example.
+During the earlier development, it was originally going to be Dodo-Bot v3 before it was decided that v3 would be repurposed for aoi.js v7 instead. As a result, you will find things that did not exist in v2 such as Leveling exclusion feature for example.
 
 It's also used to try new techniques before being ported to the non-Rebase version of the bot!
 
