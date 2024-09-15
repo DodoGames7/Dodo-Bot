@@ -14,7 +14,7 @@ $description[
 * Added hangman game from non-Rebase version
 * Add a check for if the member is booster in \`userinfo\` command
 * Added Lowest and Highest role info for a member in \`userinfo\` command
-* Server description can now be viewed using a button in \`commandinfo\` cmd (only appears if there any)
+* Server description can now be viewed using a button in \`serverinfo\` cmd (only appears if there any)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
