@@ -78,7 +78,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
@@ -116,12 +116,6 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     $onlyIf[$getSelectMenuValues[all]!=$getGuildVar[leavechannel];
     This channel is already used for Leave messages. Please, set a different channel instead.
-    {ephemeral}
-    {interaction}
-    ]
-    
-    $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
-    Make sure to set an Text channel instead.
     {ephemeral}
     {interaction}
     ]
@@ -152,7 +146,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
 
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
 

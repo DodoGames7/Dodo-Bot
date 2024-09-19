@@ -3,10 +3,8 @@ module.exports = [{
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
-* All commands related to logs have merged into a one command called \`setup-logs\`
-* Server description can now be viewed using a button in \`serverinfo\` cmd (only appears if there any)
-* Poll channel can now be reset using \`poll-reset\` command
-* Added alias \`createpoll\` and \`startpoll\` for \`poll\`
+* Announcement (and Rules) channels can now be set in \`welcomer\` and \`leave\`
+* Logs for unban now returns reason if there any
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:true}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
 $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -22,9 +20,9 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
     prototype: "button",
     code: `
     $interactionUpdate[{newEmbed:{title:Bug Fixes}{description:
-* Embed color is no longer missing in places like \`welcomer\` settings for example
-* Fixed a spelling in \`credit\` command's "Use of source code" page
-* Fixed \`suggest-reset\` not being listed in help command's Util module
+* Main module's title page in \`help\` now correctly states it's name itself instead of "General"
+* Fixed permission error in unban logs incorrectly mentioning ban logs instead
+* Removed unneeded hyperlink in message edit logs (text files mode)
     }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:true}{button:Other:2:versionother_$authorID:false}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
     $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]
@@ -39,10 +37,9 @@ $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:h
       type: "interaction",
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Other}{description:
-* Slightly updated error message for empty leaderboards in \`leaderboard\` command
-* Added a couple of wording changes in this version
-* The "Uptime" section in \`stats\` command is now a timestamp rather than static text
-* When Beta Commands are available, the button "Commands" now opens up as ephemeral reply
+* The settings icon found in \`settings\` command has been recolored to yellow
+* "Message Link" in message edit logs has been updated to be a section instead for embeds
+* Extra wording changes as with version 2.1.7 for \`settings\` command's pages
  }{color:$getVar[embedcolor]}$nonEscape[$get[devbuild]]}{actionRow:{button:Home:2:homebutton_$authorID:false:🏠}{button:Changes:2:versionchanges_$authorID:false}{button:Bug Fixes:2:versionbugfixes_$authorID:false}{button:Other:2:versionother_$authorID:true}}{actionRow:{button:Version history:5:https#COLON#//github.com/DodoGames7/Dodo-Bot/releases:false:🔎}}]
 
   $let[devbuild;$if[$getVar[pre_release_mode]==on;{footer:Testing is recommended:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png}]]

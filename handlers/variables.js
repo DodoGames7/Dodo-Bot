@@ -10,16 +10,16 @@ module.exports = {
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.7",
-  versionCodename: "Dark",
+  version: "2.1.8",
+  versionCodename: "Metal",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1726381990904",
-  buildType: "Official Stable",
-  buildBranch: "v2",
+  buildDate: "1726774419226",
+  buildType: "Pre-release",
+  buildBranch: "gitbuilds",
   buildRevision: "0",
-  exposebuildinfo: "off",
-  buildNumber: "2148",
+  exposebuildinfo: "on",
+  buildNumber: "2151",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
@@ -63,7 +63,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "off",
+  pre_release_mode: "on",
   botinvitationmessage: "on"
   
 }

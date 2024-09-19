@@ -78,7 +78,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -120,12 +120,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     {interaction}
     ]
     
-    $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
-    Make sure to set an Text channel instead.
-    {ephemeral}
-    {interaction}
-    ]
-    
+
     $onlyIf[$guildChannelExists[$guildID;$getSelectMenuValues[all]]==true;The channel you chose no longer exists in this server.
     Please set a valid channel which exists inside this server.
     {ephemeral}
@@ -152,7 +147,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
 
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 

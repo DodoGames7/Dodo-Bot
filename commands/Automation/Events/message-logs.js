@@ -31,7 +31,7 @@ code: `$author[Message Updated!;$authorAvatar]
 $description[
 **Member:** <@$authorID>
 **Channel:** <#$channelUsed>
-[Message link]($messageURL[$messageID;$channelUsed])
+**Message:** $messageURL[$messageID;$channelUsed] [(Jump)]($messageURL[$messageID;$channelUsed])
 
 **Before**
 $oldMessage
@@ -45,11 +45,11 @@ $footer[Message ID: $messageID
 $color[Blue]
 $addTimestamp
 $if[$charCount[$message]>=4096||$charCount[$oldMessage]>=4096]
-Text is too large to be included in the embed. Sending as a file instead.
+Text is too large to be included in embed. Sending as a file instead.
 $createFile[
 Member: <#$authorID>
 Channel: <#$channelUsed>
-[Message link]($messageURL[$messageID;$channelUsed])
+Message link: $messageURL[$messageID;$channelUsed]
 
 Before:
 $oldMessage

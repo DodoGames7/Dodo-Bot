@@ -335,7 +335,7 @@ $interactionUpdate[{newEmbed:{title:Embed color}{description:
     },{
         type: "interaction",
         prototype: "button",
-        code: `$interactionReply[{newEmbed:{title:Preview}{description:This is how the color will look on embeds!}{footer:Pretty cool right?}};all;true]
+        code: `$interactionReply[{newEmbed:{title:Preview}{description:This is how the color will look on embeds!}{footer:Pretty cool right?}{color:$getVar[embedcolor]}};all;true]
 
 
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
