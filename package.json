@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@tryforge/forge.db": "^2.0.6",
-    "@tryforge/forgescript": "github:tryforge/ForgeScript#5ec367b",
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#1425b82",
     "discord-gamecord": "^4.4.2",
     "dotenv": "^16.4.5",
     "better-sqlite3": "^9.6.0"
