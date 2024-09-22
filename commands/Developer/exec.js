@@ -13,7 +13,7 @@ $else
   \`\`\`$exec[$message]\`\`\`
 $endif
   $onlyIf[$message!=;Send me an terminal command to be executed.]
-  $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
+  $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
 
   `
 }

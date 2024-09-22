@@ -21,6 +21,6 @@ module.exports = {
       $onlyIf[$message!=;Please enter an text. You can also reset the current status by passing the flag \`--reset\` as first argument of the cmd.]
     $cooldown[2s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;setcustomstatus;$authorID];$dateStamp];1000]]:R>]
-      $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]`
+      $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]`
     
     }

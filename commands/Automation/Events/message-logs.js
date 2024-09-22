@@ -27,38 +27,9 @@ $onlyIf[$guildID==$guildID;]
     type: "messageUpdate",
     $if: "old",
 channel: "$getGuildVar[msglogeditchannel]",
-code: `$author[Message Updated!;$authorAvatar]
-$description[
-**Member:** <@$authorID>
-**Channel:** <#$channelUsed>
-**Message:** $messageURL[$messageID;$channelUsed] [(Jump)]($messageURL[$messageID;$channelUsed])
+code: `
+$ifAwaited[$charCount[$message]>=4096||$charCount[$oldMessage]>=4096;{execute:msgeditlogfilemode};{execute:msgeditlogembedmode}]
 
-**Before**
-$oldMessage
-$messageAttachment
-**After**
-$message
-$messageAttachment
-]
-$footer[Message ID: $messageID
-]
-$color[Blue]
-$addTimestamp
-$if[$charCount[$message]>=4096||$charCount[$oldMessage]>=4096]
-Text is too large to be included in embed. Sending as a file instead.
-$createFile[
-Member: <#$authorID>
-Channel: <#$channelUsed>
-Message link: $messageURL[$messageID;$channelUsed]
-
-Before:
-$oldMessage
-$messageAttachment
-After:
-$message
-$messageAttachment
-;message-edit-log.txt]
-$endif
 $if[$getGuildVar[includebots]==false]
 $onlyIf[$isBot==false;]
 $endif
