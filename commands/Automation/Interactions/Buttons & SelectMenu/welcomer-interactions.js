@@ -99,7 +99,7 @@ $addField[Current channel;$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]
@@ -139,7 +139,7 @@ $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]
@@ -175,7 +175,7 @@ $addField[$get[fieldname];$get[currentchannel]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addChannelSelectMenu[welcomerchannelselectmenusetup;Select a channel to use;1;1;false]
-$setChannelType[GuildText]
+$setChannelType[GuildText;GuildAnnouncement]
 $addActionRow
 $addButton[welcomersettingshome;Go Back;Secondary;↩️]
 $addButton[welcomerchannelreset;Reset;Secondary]

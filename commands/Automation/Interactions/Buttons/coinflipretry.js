@@ -15,7 +15,7 @@ $color[$getGlobalVar[embedcolor]]
 ]
 $wait[5000]
 $interactionReply[$title[You got...]
-$description[**$get[result]**!]
+$description[**$get[result]**]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[coinflipretrybutton_$authorID;Retry;Secondary;🕹️]

@@ -10,11 +10,9 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* You can now exclude channel categories from xp in Leveling
-* Added hangman game from non-Rebase version
-* Add a check for if the member is booster in \`userinfo\` command
-* Added Lowest and Highest role info for a member in \`userinfo\` command
-* Server description can now be viewed using a button in \`commandinfo\` cmd (only appears if there any)
+* When "Build Info" button is avaiable in \`stats\` command, it will now open as ephemeral reply
+* Support for viewing attachments from a message has been added to message edit logs
+* Added support for Announcement and Rules channel in \`welcomer\` and \`leave\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -41,7 +39,10 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* Reduced potential issues with Leveling Exclusions functionality
+* (Source Code) fixed a file name being misspelled
+* Fixed the outdated description of "Include Bots" option in \`settings\` command
+* Fixed a issue where a message unedited would be logged for no reason
+* Fixed wrong character limit for message edit logs (text files mode)
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]
@@ -68,12 +69,8 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* Changed default Embed color to \`#265999\`
-* (Source Code) Bumped \`@tryforge/forge.db\` to version 2.0.6
-* Updated main credits seen in \`credits\` command
-* Updated icons for search, settings and 8ball for \`commandinfo\`, \`settings\` and \`8ball\` command
-* Slightly updated error message for empty leaderboards in \`leaderboard\` command
-* (Source Code) Changed database to \`better-sqlite3\`
+* Channels/Roles selected for Leveling Exclusion will now be replaced by a text if they're deleted
+* "Message Link" in message edit logs has been updated to be a section instead for embeds
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/redwarning.png;redwarning.png]

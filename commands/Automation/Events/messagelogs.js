@@ -24,6 +24,7 @@ $author[Message deleted!;$userAvatar[$oldMessage[authorID]]]
     allowBots: true,
     code: `
     $onlyIf[$or[$oldMessage[content]==;$newMessage[content]==]==false;]
+    $onlyIf[$oldMessage[content]!=$newMessage[content];]
     $onlyIf[$and[$hasEmbeds[$oldMessage[channelID];$oldMessage[id]]==false;$hasEmbeds[$newMessage[channelID];$newMessage[id]]==false]==true;]
     $onlyIf[$getGuildVar[msglogeditchannel]!=;]
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[msglogeditchannel]]==true;]
@@ -31,27 +32,29 @@ $author[Message deleted!;$userAvatar[$oldMessage[authorID]]]
 $if[$getGuildVar[includebots]==off;
 $onlyIf[$isBot[$authorID]==false;]
 ]
-    $if[$and[$charCount[$newMessage[content]]>=2000;$charCount[$oldMessage[content]]>=2000];
+$if[$and[$charCount[$newMessage[content]]>=4096;$charCount[$oldMessage[content]]>=4096];
 $sendMessage[$getGuildVar[msglogeditchannel];
 $attachment[
 **Member:** <@$authorID>
 **Channel:** <#$channelID>
-Message Link: $messageLink[$channelID;$newMessage[id]]
+Message Link: $messageLink[$channelID;$newMessage[id]] $if[$messageAttachmentCount[$newMessage[channelID];$newMessage[id]]!=0;
+Attachments:
+$callFunction[autoListattachments;$messageAttachments[$channelID;$newMessage[id];, ];, ]
+]
 
 **Before**
 $oldMessage[content]
 **After**
 $newMessage[content]
-;message-edit-log.txt;true]
+;msgedit-logs.txt;true]
 ]
 ;
-
-    $sendMessage[$getGuildVar[msglogeditchannel];
-    $author[Message edited!;$userAvatar]
-    $description[
+$sendMessage[$getGuildVar[msglogeditchannel];
+$author[Message edited!;$userAvatar]
+$description[
 **Member:** <@$authorID>
 **Channel:** <#$channelID>
-$hyperlink[Message Link;$messageLink[$channelID;$newMessage[id]]]
+**Message:** $messageLink[$channelID;$newMessage[id]] ($hyperlink[Jump;$messageLink[$channelID;$newMessage[id]]])
 
 **Before**
 $oldMessage[content]
@@ -59,6 +62,10 @@ $oldMessage[content]
 $newMessage[content]
     ]
    $color[Blue]
+$if[$messageAttachmentCount[$newMessage[channelID];$newMessage[id]]!=0;
+$addActionRow
+$addButton[viewattachments_$newMessage[channelID]_$newMessage[id];View Attachments;Secondary]
+]
 ]
 ]
 `

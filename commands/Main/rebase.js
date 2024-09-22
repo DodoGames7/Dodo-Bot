@@ -3,7 +3,7 @@ name: "rebase",
 type: "messageCreate",
 info: {
         description: "Returns information about the Rebase version",
-        perms: ["`SendMessages"]
+        perms: ["`SendMessages`"]
 },
 code: ` $userCooldown[rebasecmd;2s;Cooldown has been triggered! Please, wait!
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[rebasecmd]];1000]]:R>]
