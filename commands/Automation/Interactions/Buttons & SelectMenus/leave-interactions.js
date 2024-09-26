@@ -10,7 +10,7 @@ $get[leavesystem]
 
 }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleave_$authorID:false:🔄}{button:Settings:4:leavesettings_$authorID:false}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -34,7 +34,7 @@ $get[leavesystem]
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -60,7 +60,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
 
 $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -82,7 +82,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -126,7 +126,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     {interaction}
     ]
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -158,7 +158,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -172,7 +172,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     code: `$interactionUpdate[{newEmbed:{title:Message}{description:Welcome to options under the \`Message\` category! Select any option to modify!}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Set Message:2:leavesetmsgbutton_$authorID:false}{button:Test Message:2:leavetestmessagebutton_$authorID:false}{button:Type:2:leavemessagetypebutton_$authorID:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -199,7 +199,7 @@ $interactionModal[Message to use;leavetextmodal;
   }]
 $endif
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -248,7 +248,7 @@ Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 **Current Setting(s)**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:leavemessagebutton_$authorID:false:↩️}{button:Toggle:2:toggleleavemessagetype_$authorID:false:🔄}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -274,7 +274,7 @@ $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[leavetype]=
 $setGuildVar[leavetype;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[leavetype]==text];true;embed;false;text]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -316,7 +316,7 @@ $onlyIf[$getGuildVar[leavesystem]==on;Cannot test when the Leave feature is disa
 ]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -346,7 +346,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavetestmessagebutt
 }{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]

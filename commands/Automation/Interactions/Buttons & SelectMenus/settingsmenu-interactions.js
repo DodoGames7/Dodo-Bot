@@ -5,7 +5,7 @@ module.exports = [{
 
         To change any setting, use the dropdown menu below to view each one accordingly.}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodogames.wants.solutions/yellowsettings.png}{color:$getVar[embedcolor]}}{actionRow:{selectMenu:settingsmenu_$authorID:Select a category:1:1:false:{stringInput:Bot itself:botmenu:Customise on how Dodo Bot should Behave.:false}{stringInput:Server:servermenu:Manage settings related to the server.}}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -26,7 +26,7 @@ Select a option you want to manage.
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:dodobotmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in message logs.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -49,7 +49,7 @@ Disable this If It's purposefully used for spamming.
 **Auto Reply**#COLON# \`$get[autopingreply]\`
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:dodobotmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in message logs.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:autoreplytoggle_$authorID:false}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -79,7 +79,7 @@ $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[autopingrep
 $setGuildVar[autopingreply;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[autopingreply]==on];true;off;false;on]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -98,7 +98,7 @@ By default, this is enabled but you can choose to disable it for whatever reason
 **Include Bots**#COLON# \`$get[includebots]\`
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:dodobotmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Auto Reply:autoreply:Automatically reply to pings.:false}{stringInput:Include Bots:includebots:Whether or not bots will be included in message logs.:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:includebotstoggle_$authorID:false}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -130,7 +130,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[include
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
    {ephemeral}
 {interaction}
     ]
@@ -151,7 +151,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}}]
 
 
-  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+  $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -173,7 +173,7 @@ This is not recommended for public servers as Beta commands are not fully stable
 **Beta Access**#COLON# \`$get[betaserver]\`
       }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:serverbetatoggle_$authorID:false}}]
 
-      $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+      $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
   ]
@@ -203,7 +203,7 @@ $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[betaserver]
 $setGuildVar[betaserver;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[betaserver]==on];true;off;false;on]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
   ]
@@ -222,10 +222,10 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
 
--# This option does not apply to bots by default
+-# This does not apply to bots by default
       }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymoustoggle_$authorID:false}}]
 
-      $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+      $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
   ]
@@ -247,7 +247,7 @@ $interactionUpdate[{newEmbed:{title:Anonymous}{description:
 **Current Setting(s)**
 **Anonymous**#COLON# \`$get[anonymous]\`
 
--# This option does not apply to bots by default
+-# This does not apply to bots by default
       }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:serversettingsmenu_$authorID:Select a option to manage:1:1:false:{stringInput:Beta access:serverbeta:Allow everyone to use beta commands!:false}{stringInput:Anonymous:anonymous:Prevent moderator names from being shown!:false}}}{actionRow:{button:Home:2:settingsmainpagecmd_$authorID:false:🏠}{button:Toggle:2:anonymoustoggle_$authorID:false}}]
 
 
@@ -257,7 +257,7 @@ $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[anonymous]=
 $setGuildVar[anonymous;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[anonymous]==on];true;off;false;on]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
   ]

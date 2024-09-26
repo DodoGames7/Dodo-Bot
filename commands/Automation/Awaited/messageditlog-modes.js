@@ -3,15 +3,29 @@ module.exports = [{
     type: "awaited",
     code: `$createFile[
 Member: <#$authorID>
-Channel: <#$channelUsed>
-Message link: $messageURL[$messageID;$channelUsed]
+Channel: <#$channelID>
+Message link: $messageURL[$messageID;$channelID]
 
 Before:
 $oldMessage
-$messageAttachment
+
 After:
 $message
-$messageAttachment
+
+Attachments:
+$if[$messageAttachment[1]!=;$messageAttachment[1];None] $if[$messageAttachment[2]!=;
+
+$messageAttachment[2]
+] $if[$messageAttachment[3]!=;
+
+$messageAttachment[3]
+] $if[$messageAttachment[4]!=;
+
+$messageAttachment[4]
+] $if[$messageAttachment[5]!=;
+
+$messageAttachment[5]
+]
 ;msgedit-logs.txt]
 
 $useChannel[$getGuildVar[msglogeditchannel]]`
@@ -21,15 +35,15 @@ $useChannel[$getGuildVar[msglogeditchannel]]`
     code: `$author[Message Updated!;$authorAvatar]
 $description[
 **Member:** <@$authorID>
-**Channel:** <#$channelUsed>
-**Message:** $messageURL[$messageID;$channelUsed] ([Jump]($messageURL[$messageID;$channelUsed]))
+**Channel:** <#$channelID>
+**Message:** $messageURL[$messageID;$channelID] ([Jump]($messageURL[$messageID;$channelID]))
 
 **Before**
 $oldMessage
-$messageAttachment
+$messageAttachment[1]
 **After**
 $message
-$messageAttachment
+$messageAttachment[1]
 ]
 $footer[Message ID: $messageID]
 $color[Blue]

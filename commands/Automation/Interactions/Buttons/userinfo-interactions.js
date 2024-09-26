@@ -27,7 +27,7 @@ The user appears to have left the server. The ablity to view their server inform
 {interaction}
 ]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
  {ephemeral}
 {interaction} 
   ]
@@ -49,7 +49,7 @@ $interactionUpdate[{newEmbed:{title:Information for $get[username]}{url:$nonEsca
 :true}{thumbnail:$userAvatar[$get[user]]}{color:$getVar[embedcolor]}}{actionRow:{button:General info:2:mainmeminfo_$authorID_$get[user]:true}{button:Member's Server info:2:memberservinfo_$authorID_$get[user]:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
  {ephemeral}
 {interaction} 
   ]
