@@ -5,6 +5,7 @@ module.exports = [{
 Member: <#$authorID>
 Channel: <#$channelID>
 Message link: $messageURL[$messageID;$channelID]
+Message ID: $messageID
 
 Before:
 $oldMessage

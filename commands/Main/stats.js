@@ -1,7 +1,7 @@
 module.exports = {
 name: "stats",
 info: {
-    description: "Returns the stats of the bot while it's running.",
+    description: "Returns the statistics of the bot while it's running.",
     perms: "`SendMessages`"
 },
 $if: "old",

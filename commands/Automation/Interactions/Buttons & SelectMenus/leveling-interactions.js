@@ -7,7 +7,7 @@ module.exports = [{
     
     To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
     
-    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
+    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
@@ -29,7 +29,7 @@ module.exports = [{
     
     To get started, click on the "Toggle" button! To manage the settings regarding the said feature, press the "Settings" button.
     
-    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:enableleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
+    $get[levelingsystem]}{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:toggleleveling_$authorID:false:🔄}{button:Settings:4:levelingsetting_$authorID:false}{button:Reset:2:levelingreset_$authorID:false:⚠️}}]
     
     
     $let[levelingsystem;$advancedReplaceText[$checkCondition[$getGuildVar[levelsystem]==on];false;*Leveling is currently disabled*;true;*Leveling is currently enabled*]]
@@ -42,7 +42,7 @@ module.exports = [{
     {interaction}
     ]
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==enableleveling;]
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleveling;]
     `
     },{
         type: "interaction",
@@ -295,7 +295,7 @@ $interactionUpdate[The current progress for all members will remain then.]
     {interaction}
     ]
     
-    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;The channel used for the Level up channel seems to be deleted.
+    $onlyIf[$guildChannelExists[$guildID;$getGuildVar[levelingmessagechannel]]==true;The channel used for Level up message seems to be deleted.
     Cancelled sending the message as a result. Please set a new channel to fix this.
     {ephemeral}
     {interaction}
@@ -303,11 +303,6 @@ $interactionUpdate[The current progress for all members will remain then.]
     
     $onlyIf[$getGuildVar[levelingmessagechannel]!=none;There is no channel set to test the Level up message.
     Please set a new channel first.
-    {ephemeral}
-    {interaction}
-    ]
-    
-    $onlyIf[$getGuildVar[levelmessagefeature]==on;Cannot test when the Leveling feature is disabled. Please, enable it first before you can proceed.
     {ephemeral}
     {interaction}
     ]

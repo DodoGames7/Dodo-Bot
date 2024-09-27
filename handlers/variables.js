@@ -14,16 +14,16 @@ module.exports = {
   versionCodename: "Metal",
   libraryversiondevcheck: "off",
   buildStatus: "Complete",
-  buildDate: "1727362440010",
-  buildType: "Official Beta",
-  buildBranch: "gitbuilds",
+  buildDate: "1727459941184",
+  buildType: "Official Stable",
+  buildBranch: "v2",
   buildRevision: "0",
   showbuildinfo: "off",
-  buildNumber: "2154",
+  buildNumber: "2156",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
-  DevReleaseTypeToSet: "Beta",
+  DevReleaseTypeToSet: "Pre-release",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -63,7 +63,7 @@ module.exports = {
   errorsystem: "off",
   startupchannel: "none",
   startupchannelsystem: "off",
-  pre_release_mode: "on",
+  pre_release_mode: "off",
   botinvitationmessage: "on"
   
 }

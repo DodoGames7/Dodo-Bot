@@ -48,6 +48,12 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==viewserverdescriptio
     \`\`\`$toLocaleUpperCase[$userPerms[$get[botID];, ;$guildID]]\`\`\`
     }{color:$getVar[embedcolor]}};all;true]
 
+$onlyIf[$userPerms[$get[botID];, ;$guildID]!=;
+This bot does not seem to have any permissions added to it.
+{ephemeral}
+{interaction}
+]
+
 $onlyIf[$memberExists[$get[botID];$guildID]==true;
 This bot is no longer in this server.
 {ephemeral}

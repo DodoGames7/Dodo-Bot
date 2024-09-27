@@ -37,7 +37,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
 
-$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
+$let[botinvitationconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -56,12 +56,12 @@ $interactionUpdate[{newEmbed:{title:Bot Invitation Message}{description:
     By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
 
 **Current setting(s)**
-**Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
+**Bot Invitation Message**#COLON# \`$get[botinvitationconfig]\`
 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
 
-$let[botgreetconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
+$let[botinvitationconfig;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Enabled;false;Disabled]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;Dodo-Bot will now welcome new servers!;false;Dodo-Bot will no longer welcome new servers!]]
 $setVar[botinvitationmessage;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[botinvitationmessage]==on];true;off;false;on]]
@@ -561,12 +561,12 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
     By default, it is commonly enabled by default for Pre-release builds besides Beta ones.
 
 **Current setting(s)**
-**Show build information**#COLON# \`$get[exposebuildinfo]\`
+**Show build information**#COLON# \`$get[showbuildinfo]\`
 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:showbuildinfotoggle_$authorID:false:🔄}}]
 
 
-$let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Enabled;false;Disabled]]
+$let[showbuildinfo;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Enabled;false;Disabled]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]
@@ -585,14 +585,14 @@ $interactionUpdate[{newEmbed:{title:Show build information!}{description:
     By default, it is commonly enabled by default for Pre-release builds besides Beta ones.
 
 **Current setting(s)**
-**Show build information**#COLON# \`$get[exposebuildinfo]\`
+**Show build information**#COLON# \`$get[showbuildinfo]\`
 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:showbuildinfotoggle_$authorID:false:🔄}}]
 
 
-$let[exposebuildinfo;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Enabled;false;Disabled]]
+$let[showbuildinfo;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Enabled;false;Disabled]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;Build information will be now be shown;false;Build information will no longer be shown!]]
-$setVar[exposebuildinfo;$get[newtoggledsetting]]
+$setVar[showbuildinfo;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[showbuildinfo]==on];true;off;false;on]]
 
 
