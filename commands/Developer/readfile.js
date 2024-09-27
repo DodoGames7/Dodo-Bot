@@ -14,6 +14,6 @@ module.exports = {
     $endif
     $onlyIf[$fileExists[$message]==true;This file doesn't seem to exist.]
     $onlyIf[$message!=;You need to specify a path of the file to view.]
-    $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
+    $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
     `
   }

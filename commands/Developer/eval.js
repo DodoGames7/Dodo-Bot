@@ -9,6 +9,6 @@ module.exports = {
   code: `
   $eval[$message]
   $onlyIf[$message!=;You need to evaluate something.]
-  $onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
+  $onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
   `
 }

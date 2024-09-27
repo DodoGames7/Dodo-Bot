@@ -12,7 +12,7 @@ module.exports = [{
 **Type#COLON#** \`$toLocaleUpperCase[$getGlobalUserVar[trivia_type]]\`
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select a option:1:1:false:{stringInput:Trivia type:triviatype:How the game should start?:false}{stringInput:Difficulty:triviadifficulty:How hard the game will be?:false}}}{actionRow:{button:Toggle:2:triviatypetoggle_$authorID:false}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -42,7 +42,7 @@ $setGlobalUserVar[trivia_type;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[trivia_type]==single];true;multiple;false;single]]
 
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -67,7 +67,7 @@ To change difficulty to any of the options above, use the buttons below to do so
   }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:triviasettings_$authorID:Select a option:1:1:false:{stringInput:Trivia type:triviatype:How the game should start?:false}{stringInput:Difficulty:triviadifficulty:How hard the game will be?:false}}}{actionRow:{button:Easy:2:triviaopteasy_$authorID:false}{button:Medium:2:triviaoptmedium_$authorID:false}{button:Hard:2:triviaopthard_$authorID:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -101,7 +101,7 @@ This difficulty option is already used!
 ]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -133,7 +133,7 @@ This difficulty option is already used!
 ]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -165,7 +165,7 @@ This difficulty option is already used!
 {interaction}
 ]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -190,7 +190,7 @@ To change difficulty to any of the options above, use the buttons below to do so
 
 $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;13;Normal;8;Easy]]
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -224,7 +224,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
 {interaction}
 ]
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -259,7 +259,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
 ]
 
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -292,7 +292,7 @@ $let[floodmode;$advancedReplaceText[$getGlobalUserVar[flood_difficulty];18;Hard;
 ]
 
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]
@@ -319,7 +319,7 @@ Welcome to Hangman Settings! To select a theme to use, use the dropdown menu bel
 ]
 
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
   {ephemeral}
 {interaction}
   ]

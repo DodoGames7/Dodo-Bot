@@ -1,7 +1,7 @@
 module.exports = {
 name: "stats",
 info: {
-    description: "Returns the stats of the bot while it's running.",
+    description: "Returns the statistics of the bot while it's running.",
     perms: "`SendMessages`"
 },
 $if: "old",
@@ -18,7 +18,7 @@ $addField[**RAM Usage**;$round[$ram]MB;true]
 $addField[**Users**;$allMembersCount;true]
 $thumbnail[$userAvatar[$clientID]]
 $color[$getVar[embedcolor]]
-$if[$getVar[exposebuildinfo]==on]
+$if[$getVar[showbuildinfo]==on]
 $addButton[1;Build Info;2;buildinfo_$authorID;false]
 $endif
 

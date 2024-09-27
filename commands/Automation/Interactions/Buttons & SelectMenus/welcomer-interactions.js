@@ -10,7 +10,7 @@ $get[welcomersystem]
 
 }{color:$getVar[embedcolor]}}{actionRow:{button:Toggle:2:togglewel_$authorID:false:🔄}{button:Settings:4:welsettings_$authorID:false}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -34,7 +34,7 @@ $get[welcomersystem]
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -60,7 +60,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==togglewel;]
 
 $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -78,11 +78,11 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -101,7 +101,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
     
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
     
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
     
@@ -120,19 +120,14 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     {interaction}
     ]
     
-    $onlyIf[$channelType[$getSelectMenuValues[all]]==text;We only support Text Channels for now.
-    Make sure to set an Text channel instead.
-    {ephemeral}
-    {interaction}
-    ]
-    
+
     $onlyIf[$guildChannelExists[$guildID;$getSelectMenuValues[all]]==true;The channel you chose no longer exists in this server.
     Please set a valid channel which exists inside this server.
     {ephemeral}
     {interaction}
     ]
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -152,7 +147,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
 
     **Tip#COLON#** Unable to find the channel you're looking for? Try typing the channel name instead!
 
-    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
+    }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:welcomerchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Reset:2:welcomerresetchannel_$authorID:false}}]
 
     $let[welcomerchannel;$advancedReplaceText[$checkCondition[$getGuildVar[welcomechannel]==none];true;None;false;<#$getGuildVar[welcomechannel]> (\`$getGuildVar[welcomechannel]\`)]]
 
@@ -164,7 +159,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -178,7 +173,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welsettings;]
     code: `$interactionUpdate[{newEmbed:{title:Message}{description:Welcome to options under the \`Message\` category! Select any option to modify!}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}{button:Set Message:2:welcomersetmsgbutton_$authorID:false}{button:Test Message:2:welcomertestmessagebutton_$authorID:false}{button:Type:2:welcomermessagetypebutton_$authorID:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -205,7 +200,7 @@ $interactionModal[Message to use;welcomertextmodal;
   }]
 $endif
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -254,7 +249,7 @@ Your hex code must start with a \`#\`! Please, try again.{ephemeral}
 **Current Settings**
 **Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[welcometype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welcomermessagebutton_$authorID:false:↩️}{button:Toggle:2:togglewelcomermessagetype_$authorID:false:🔄}}]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -280,7 +275,7 @@ $let[resultmessage;$advancedReplaceText[$checkCondition[$getGuildVar[welcometype
 $setGuildVar[welcometype;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGuildVar[welcometype]==text];true;embed;false;text]]
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -322,7 +317,7 @@ $onlyIf[$getGuildVar[welcomesystem]==on;Cannot test when the Welcomer feature is
 ]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -351,7 +346,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==welcomertestmessageb
 }{color:$getVar[embedcolor]}}{actionRow:{button:Go back:2:welsettings_$authorID:false:↩️}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]

@@ -3,10 +3,10 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Setup Logs}{description:Select the log you want to setup using the dropdown menu below!}{color:$getVar[embedcolor]}}
 
-        {actionRow:{selectMenu:setuplogsmenu_$authorID:Select a log type:1:1:false:{stringInput:Message Delete:msgdeletelog:Setup Message Delete logs:false}{stringInput:Message Edit:msgeditlog:Setup Message Edit logs:false}{stringInput:Bans:banlogs:Setup Ban logs:false}{stringInput:Unban:unbanlogs:Setup Unban logs:false}{stringInput:Integration:integration:Setup Integration logs:false}}}
+        {actionRow:{selectMenu:setuplogsmenu_$authorID:Select a log type:1:1:false:{stringInput:Message Delete:msgdeletelog:Setup Message Delete logs:false}{stringInput:Message Edit:msgeditlog:Setup Message Edit logs:false}{stringInput:Ban:banlogs:Setup Ban logs:false}{stringInput:Unban:unbanlogs:Setup Unban logs:false}{stringInput:Integration:integration:Setup Integration logs:false}}}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -27,7 +27,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogshomebutton;
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -78,7 +78,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -109,7 +109,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -130,7 +130,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -181,7 +181,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -212,7 +212,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -223,7 +223,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
     },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -233,7 +233,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -247,7 +247,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Ban logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -284,7 +284,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -297,7 +297,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -315,7 +315,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -336,7 +336,7 @@ $interactionUpdate[{newEmbed:{author:Bans:$userAvatar[$clientID]}{title:Channel 
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -387,7 +387,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -418,7 +418,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -439,7 +439,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
 
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
 {interaction}
 ]
@@ -490,7 +490,7 @@ $interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:C
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]
@@ -521,7 +521,7 @@ $interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:C
     {interaction}
     ]
 
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
     {interaction}
     ]

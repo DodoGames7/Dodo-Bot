@@ -22,7 +22,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
 
   
     
-    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
+    $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you. {ephemeral}
         {interaction}]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==betacmdsbuttontoggle;]
 	
@@ -35,7 +35,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getGlobalUserVar[be
 }{color:$getVar[embedcolor]}};all;true]
 
 
- $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
+ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you. {ephemeral}
  {interaction}]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==latestbetacmds;]
 `
@@ -53,7 +53,7 @@ Please, be aware that, commands in this feature may either be removed or taken o
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:Summary about Beta commands.:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you. {ephemeral}
 {interaction}]
        $onlyIf[$getSelectMenuValues[all]==whatisbetacmds;]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==betacommandsselectmenu;]
@@ -75,7 +75,7 @@ Despite the name, the feature is available for anyone to join and use the comman
 }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:betacommandsselectmenu_$authorID:About beta commands.:1:1:false:{stringInput:What are they?:whatisbetacmds:Summary about Beta commands.:false}{stringInput:Why do they exist?:betacmdsexistreason:See on why beta commands do exist!}}}{actionRow:{button:Toggle:2:betacmdsbuttontoggle_$authorID:false:🔄}{button:Commands:2:latestbetacmds_$authorID:false}}]
 
 
-$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];{newEmbed:{title:Uh, Oh!}{description:You're not the author of this interaction.}{color:Red}} {ephemeral}
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you. {ephemeral}
 {interaction}]
        $onlyIf[$getSelectMenuValues[all]==betacmdsexistreason;]
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==betacommandsselectmenu;]

@@ -7,10 +7,9 @@ $description[**Error code**:
 $handleError[error]
 ]
 $addField[**Information**;
-The function: \`$handleError[function]\`
+Function name: \`$handleError[function]\`
 Command name: \`$get[commandname]\`
-Server id: \`$guildID\`
-Server name: \`$guildName\`
+Server: \`$guildName\` (\`$guildID\`)
 ]
 $color[Yellow]
 $footer[Date since it occurred]

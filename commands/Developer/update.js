@@ -20,6 +20,6 @@ $color[$getVar[embedcolor]]
 $updateCommands
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;update;$authorID];$dateStamp];1000]]:R>]
-$onlyIf[$checkContains[$clientOwnerIDs[,];$authorID]==true;]
+$onlyIf[$checkContains[$clientOwnerIDs[| ];$authorID]==true;]
 `
 }
