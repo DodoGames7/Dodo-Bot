@@ -10,7 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* When "Build Info" button is avaiable in \`stats\` command, it will now open up as ephemeral reply
+* When "Build Info" button is available in \`stats\` command, it will now open up as ephemeral reply
 * Support for attachments included within a message has been added to message edit logs
 * Added support for Announcement and Rules channel in \`welcomer\` and \`leave\`
 ]
