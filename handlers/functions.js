@@ -80,7 +80,8 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
             $c[Get the text based on the current array element.]
             $if[$env[element]==none;
                 $return[None];
-                $return[* <@&$trim[$env[element]]>]
+                $let[getroles;$if[$roleExists[$guildID;$env[element]];<@&$trim[$env[element]]>;\`Deleted Role\`]]
+                $return[* $get[getroles]]
             ]
 
         ;result]
@@ -99,7 +100,8 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
             $c[Get the text based on the current array element.]
             $if[$env[element]==none;
                 $return[None];
-                $return[* <#$trim[$env[element]]>]
+                $let[getchannels;$if[$guildChannelExists[$guildID;$env[element]];<#$trim[$env[element]]>;\`Deleted Channel\`]]
+                $return[* $get[getchannels]]
             ]
 
         ;result]
@@ -127,8 +129,26 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
         $return[$arrayJoin[result;\n]]
     `
 },{
+    name: "autoListText",
+    params: ["variable", "sep"],
+    code: `
+        $c[Let's create the array.]
+        $arrayLoad[totalList;$env[sep];$env[variable]]
+
+        $c[Let's map each element of the array.]
+        $arrayMap[totalList;element;
+            $c[Get the text based on the current array element.]
+            $if[$env[element]==none;
+                $return[None];
+                $return[* $trim[$env[element]]]
+            ]
+
+        ;result]
+
+        $return[$arrayJoin[result;\n]]
+    `
+},{
    name: "userURL",
    params: ["userID"],
-   code: `
-   $return[https://discord.com/users/$env[userID]]`
+   code: `$return[https://discord.com/users/$env[userID]]`
   }]

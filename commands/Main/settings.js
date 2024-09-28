@@ -2,7 +2,7 @@ module.exports = {
     name: "settings",
     info: {
         description: "Manage server settings in Dodo-Bot.",
-        perms: ["`SendMessages`", "ManageGuild"],
+        perms: ["`SendMessages`", "`ManageGuild`"],
     },
     aliases: ["panel", "serversettings", "guildsettings"],
     type: "messageCreate",

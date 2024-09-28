@@ -2,7 +2,7 @@ module.exports = {
     name: "report",
     type: "messageCreate",
     info: {
-        description: "Returns a link to report issues of Dodo-Bot on it's GitHub repo.",
+        description: "Returns a link to report issues on Dodo-Bot's GitHub repo.",
         perms: ["`SendMessages`"]
     },
     aliases: "bugreport",
@@ -10,7 +10,7 @@ module.exports = {
 Time remaining: <t:$trunc[$divide[$sum[$getTimestamp;$getUserCooldownTime[reportbugcmd]];1000]]:R>]
 
 $title[Help Shape Dodo-Bot Future]
-$description[Even though the bot may not appear to be buggy, however, it is worth noting that it may contain bugs and as such, it is advised to report bugs through the Github repo.
+$description[Even though the bot might not appear to be buggy however, it is worth noting that it may contain bugs and as such, it is recommended to report bugs through the Github repo.
 
 To get started, be sure to have a Github account first then press the button "Report a Bug" to open a new issue.
 ]

@@ -22,7 +22,7 @@ $addOption[Error logging;Log errors to specific channel;errorloggingoption;📢;
 $addOption[Embed color;Change the current embed color used in all cmds;embedcoloroption;🎨;false]
 $addOption[Pre-release;Whether or not to mark the current build as Pre-release;prereleaseoption;⚠️;false]
 $addOption[Startup;Send messages that the bot is ready to specific channel;startupoption;🚦;false]
-$addOption[Expose build info;Whether or not to enable "Build Info" button in stats cmd;exposebuildinfooption;🛠️;false]
+$addOption[Show build info;Whether or not to enable "Build Info" button in stats cmd;showbuildinfooption;🛠️;false]
 $addActionRow
 $addButton[generatedatabasebackup_$authorID;Create Backup;Secondary]
 `

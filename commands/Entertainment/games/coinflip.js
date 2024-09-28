@@ -18,7 +18,7 @@ $color[$getGlobalVar[embedcolor]]
 ;true]]
 $wait[5000]
 $!editMessage[$channelID;$get[messageID];$title[You got...]
-$description[**$get[result]**!]
+$description[**$get[result]**]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
 $addButton[coinflipretrybutton_$authorID;Retry;Secondary;🕹️]

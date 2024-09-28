@@ -551,22 +551,22 @@ $ephemeral
 type: "interactionCreate",
 allowedInteractionTypes: ["selectMenu"],
 code: `
-$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==exposebuildinfooption]==true;]
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==showbuildinfooption]==true;]
 $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
 $ephemeral
 ]]
 
-$let[exposebuildinfo;$advancedReplace[$getGlobalVar[exposebuildinfo];off;Disabled;on;Enabled]]
+$let[showbuildinfo;$advancedReplace[$getGlobalVar[showbuildinfo];off;Disabled;on;Enabled]]
 
 $interactionReply[
-$title[Expose build info]
+$title[Show build info]
 $description[When enabled, a button labeled "Build Info" will show up in \`stats\` command. By default, this is enabled for Pre-release builds besides Beta ones.
 
 If you think this is sensitive information then press the "Toggle" button to disable it (if it was enabled by default).]
-$addField[Current setting(s);$get[exposebuildinfo]]
+$addField[Current setting(s);$get[showbuildinfo]]
 $color[Yellow]
 $addActionRow
-$addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
+$addButton[showbuildinfotoggle;Toggle;Secondary;🔄]
 $ephemeral
 ]
 `
@@ -574,25 +574,25 @@ $ephemeral
     type: "interactionCreate",
     allowedInteractionTypes: ["button"],
     code: `
-$onlyIf[$customID==exposebuildinfotoggle;]
+$onlyIf[$customID==showbuildinfotoggle;]
 
 $let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
 $let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
 $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 
-$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;off;false;on]]
-$setGlobalVar[exposebuildinfo;$get[settingdecide]]
-$let[exposebuildinfo;$advancedReplace[$getGlobalVar[exposebuildinfo];off;Disabled;on;Enabled]]
+$let[settingdecide;$advancedReplace[$checkCondition[$getGlobalVar[showbuildinfo]==on];true;off;false;on]]
+$setGlobalVar[showbuildinfo;$get[settingdecide]]
+$let[showbuildinfo;$advancedReplace[$getGlobalVar[showbuildinfo];off;Disabled;on;Enabled]]
 
-$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[exposebuildinfo]==on];true;Build information will now be exposed!;false;Build information will no longer be exposed!]]
+$let[statements;$advancedReplace[$checkCondition[$getGlobalVar[showbuildinfo]==on];true;Build information will now be shown!;false;Build information will no longer be shown!]]
 
 $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
-$addField[$get[fieldname];$get[exposebuildinfo]]
+$addField[$get[fieldname];$get[showbuildinfo]]
 $color[Yellow]
 $addActionRow
-$addButton[exposebuildinfotoggle;Toggle;Secondary;🔄]
+$addButton[showbuildinfotoggle;Toggle;Secondary;🔄]
 ]
 
 $interactionFollowUp[

@@ -34,6 +34,11 @@ $interactionReply[This bot is no longer in this server.
 $ephemeral
 ]]
 
+$onlyIf[$memberPerms[$guildID;$get[botID];,]!=;
+$interactionReply[This bot does not seem to have any permissions added to it.
+$ephemeral
+]]
+
 $interactionReply[$title[Permissions of this bot]
 $description[**$username[$get[botID]]** has the following permissions:
 

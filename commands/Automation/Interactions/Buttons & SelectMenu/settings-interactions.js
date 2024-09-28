@@ -79,7 +79,7 @@ $interactionUpdate[
 $title[Anonymous]
 $description[This option allows you to hide the Moderator name in Ban logs! This can be useful to avoid harassment for server staff.
 
-Due to security reasons, this option is only exclusive to Ban logs and will NOT work in Un-Ban logs!]
+Due to security reasons, this option is only exclusive to Ban logs!]
 $addField[Current setting(s);$get[anonymous]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -145,7 +145,7 @@ $interactionUpdate[
 $title[Include Bots]
 $description[This option allows you to decide on whether or not bots will be included in Message Logs.
 
-Note that disabling this will cause "Display Message Deleter" to be ignored for bots.]
+Disabling this will cause bots to be ignored.]
 $addField[Current setting(s);$get[includebots]]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow

@@ -6,7 +6,7 @@ module.exports = [{
     $onlyIf[$guildChannelExists[$guildID;$getGuildVar[banlogschannel]]==true;]
     $onlyIf[$channelHasPerms[$getGuildVar[banlogschannel];$clientID;ViewChannel;SendMessages]==true;]
     $onlyIf[$hasPerms[$guildID;$clientID;ViewAuditLog]==true;]
-$let[reason;$advancedReplace[$checkCondition[$fetchAuditLog[$guildID;MemberBanAdd;reason;0]==];true;none;false;$fetchAuditLog[$guildID;MemberBanAdd;reason;0]]]
+$let[reason;$advancedReplace[$checkCondition[$fetchAuditLog[$guildID;MemberBanAdd;reason;0]==];true;None;false;$fetchAuditLog[$guildID;MemberBanAdd;reason;0]]]
 $let[staffdetails;$username[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]  <@$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]>]
 $let[condition;$and[$getGuildVar[anonymous]==on;$isBot[$fetchAuditLog[$guildID;MemberBanAdd;executorID;0]]==false]]
 $let[getmoderatorname;$advancedReplace[$checkCondition[$get[condition]==true];true;Unknown;false;$get[staffdetails]]]

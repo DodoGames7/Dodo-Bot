@@ -7,8 +7,8 @@ $onlyIf[$channelHasPerms[$get[channelselector];$clientID;ViewChannel;SendMessage
 $sendMessage[$get[channelselector];
 $title[Welcome to Dodo-Bot!]
 $description[Dodo-Bot is a personal bot project made in ForgeScript aiming to both entertain and provide users some features to use.]
-$addField[Where to get started?;To explore the bot, use the command \`$getGuildVar[prefix]help\`. This let's you view all of the commands of the bot in a selectmenu as modules!]
-$addField[Need information?;If you need information about some commands in the bot then use the command \`$getGuildVar[prefix]commandinfo <cmdname>\` to do so!]
+$addField[Getting started;To explore the bot, use the command \`$getGuildVar[prefix]help\`. This let's you view all of the commands of the bot in a selectmenu as modules!]
+$addField[Confused?;If you need information about some commands in the bot then use the command \`$getGuildVar[prefix]commandinfo <cmdname>\` to do so!]
 $attachment[./handlers/assets/dodo-bot-logo.png;dodobot-logo.png]
 $thumbnail[attachment://dodobot-logo.png]
 $footer[Made with ❤️ by $username[632607624742961153]!]
