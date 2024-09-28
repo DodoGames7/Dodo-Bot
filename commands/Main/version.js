@@ -19,8 +19,8 @@ $title[Dodo-Bot Version]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handlers/assets/redwarning.png;redwarning.png]
-$footer[Testing is recommended;attachment://redwarning.png]
+$attachment[./handlers/assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow

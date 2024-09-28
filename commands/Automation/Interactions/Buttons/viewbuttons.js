@@ -34,6 +34,11 @@ $interactionReply[This bot is no longer in this server.
 $ephemeral
 ]]
 
+$onlyIf[$memberPerms[$guildID;$get[botID];,]!=;
+$interactionReply[This bot does not seem to have any permissions added to it.
+$ephemeral
+]]
+
 $interactionReply[$title[Permissions of this bot]
 $description[**$username[$get[botID]]** has the following permissions:
 
@@ -64,41 +69,6 @@ $title[Description]
 $description[The server's description reads:
 
 $guildDescription
-]
-$color[$getGlobalVar[embedcolor]]
-$ephemeral
-]
-`
-},{
-type: "interactionCreate",
-allowedInteractionTypes: ["button"],
-code: `
-$onlyIf[$advancedTextSplit[$customID;_;0]==viewattachments;]
-
-$let[channelID;$advancedTextSplit[$customID;_;1]]
-$let[messageID;$advancedTextSplit[$customID;_;2]]
-
-$onlyIf[$guildChannelExists[$guildID;$get[channelID]]==true;
-$interactionReply[The channel where the message belongs to no longer exists.
-$ephemeral
-]]
-
-$onlyIf[$messageExists[$get[channelID];$get[messageID]]==true;
-$interactionReply[This message no longer exists.
-$ephemeral
-]]
-
-$onlyIf[$messageAttachmentCount[$get[channelID];$get[messageID]]!=0;
-$interactionReply[This message no longer has attachments included with it.
-$ephemeral
-]]
-
-
-$interactionReply[
-$title[Attachments of this message]
-$description[The message has the following attachments:
-
-$callFunction[autoListattachments;$messageAttachments[$get[channelID];$get[messageID];, ];, ]
 ]
 $color[$getGlobalVar[embedcolor]]
 $ephemeral

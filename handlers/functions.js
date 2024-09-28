@@ -129,7 +129,7 @@ $let[message;$replace[$replace[$replace[$replace[$replace[$replace[$replace[$rep
         $return[$arrayJoin[result;\n]]
     `
 },{
-    name: "autoListattachments",
+    name: "autoListText",
     params: ["variable", "sep"],
     code: `
         $c[Let's create the array.]

@@ -11,12 +11,12 @@ $interactionUpdate[
 $title[Changes]
 $description[
 * When "Build Info" button is avaiable in \`stats\` command, it will now open up as ephemeral reply
-* Support for viewing attachments from a message has been added to message edit logs
+* Support for attachments included within a message has been added to message edit logs
 * Added support for Announcement and Rules channel in \`welcomer\` and \`leave\`
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handlers/assets/redwarning.png;redwarning.png]
-$footer[Testing is recommended;attachment://redwarning.png]
+$attachment[./handlers/assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -40,13 +40,14 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * (Source Code) fixed a file name being misspelled
+* Fixed a potential problem of viewing empty permissions in Integration logs
 * Fixed the outdated description of "Include Bots" option in \`settings\` command
 * Fixed a issue where a message unedited would be logged for no reason
 * Fixed wrong character limit for message edit logs (text files mode)
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handlers/assets/redwarning.png;redwarning.png]
-$footer[Testing is recommended;attachment://redwarning.png]
+$attachment[./handlers/assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -70,11 +71,13 @@ $interactionUpdate[
 $title[Other]
 $description[
 * Channels/Roles selected for Leveling Exclusion will now be replaced by a text if they're deleted
+* (Pre-release only) Recolored the warning sign icon to be orange in \`version\` command
+* \`gitbuilds\` command has been redesigned to make it easier to understand
 * "Message Link" in message edit logs has been updated to be a section instead for embeds
 ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handlers/assets/redwarning.png;redwarning.png]
-$footer[Testing is recommended;attachment://redwarning.png]
+$attachment[./handlers/assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
@@ -104,8 +107,8 @@ $title[Dodo-Bot Version]
 * **$get[releasedatetype]**: <t:$trunc[$divide[$getGlobalVar[buildDate];1000]]:f>
     ]
 $if[$getGlobalVar[pre_release]==on;
-$attachment[./handlers/assets/redwarning.png;redwarning.png]
-$footer[Testing is recommended;attachment://redwarning.png]
+$attachment[./handlers/assets/warning.png;warning.png]
+$footer[Testing is recommended;attachment://warning.png]
 ]
     $color[$getGlobalVar[embedcolor]]
     $addActionRow

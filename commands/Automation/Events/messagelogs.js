@@ -37,9 +37,10 @@ $sendMessage[$getGuildVar[msglogeditchannel];
 $attachment[
 **Member:** <@$authorID>
 **Channel:** <#$channelID>
-Message Link: $messageLink[$channelID;$newMessage[id]] $if[$messageAttachmentCount[$newMessage[channelID];$newMessage[id]]!=0;
+Message Link: $messageLink[$channelID;$newMessage[id]]
+Message ID: $newMessage[id] $if[$messageAttachmentCount[$channelID;$newMessage[id]]!=0;
 Attachments:
-$callFunction[autoListattachments;$messageAttachments[$channelID;$newMessage[id];, ];, ]
+$callFunction[autoListText;$messageAttachments[$channelID;$newMessage[id];, ];, ]
 ]
 
 **Before**
@@ -54,7 +55,9 @@ $author[Message edited!;$userAvatar]
 $description[
 **Member:** <@$authorID>
 **Channel:** <#$channelID>
-**Message:** $messageLink[$channelID;$newMessage[id]] ($hyperlink[Jump;$messageLink[$channelID;$newMessage[id]]])
+**Message:** $messageLink[$channelID;$newMessage[id]] ($hyperlink[Jump;$messageLink[$channelID;$newMessage[id]]]) $if[$messageAttachmentCount[$channelID;$newMessage[id]]!=0;
+**Attachments:** $messageAttachments[$channelID;$newMessage[id];, ]
+]
 
 **Before**
 $oldMessage[content]
@@ -62,10 +65,6 @@ $oldMessage[content]
 $newMessage[content]
     ]
    $color[Blue]
-$if[$messageAttachmentCount[$newMessage[channelID];$newMessage[id]]!=0;
-$addActionRow
-$addButton[viewattachments_$newMessage[channelID]_$newMessage[id];View Attachments;Secondary]
-]
 ]
 ]
 `

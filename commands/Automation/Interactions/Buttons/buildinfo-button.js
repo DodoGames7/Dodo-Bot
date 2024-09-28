@@ -7,7 +7,7 @@ $onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're no
 $ephemeral
 ]]
 
-$onlyIf[$getGlobalVar[exposebuildinfo]==on;
+$onlyIf[$getGlobalVar[showbuildinfo]==on;
 $interactionReply[
 Viewing build information is currently unavailable.
 $ephemeral
