@@ -1,15 +1,15 @@
 module.exports = {
   name: "settings",
   info: {
-    description: "Let's you manage some settings of Dodo-Bot.",
+    description: "Let's you manage some options of Dodo-Bot.",
     perms: ["`SendMessages`", "`ManageGuild`"]
 },
-  aliases: "panel",
+  aliases: ["panel", "guildsettings", "serversettings", "botsettings"],
   code: `$title[Settings]
   $description[Welcome to settings! Here, you can change things the bot usually operates.
 
-  To change any setting, use the dropdown menu below to view each one accordingly.]
-  $addSelectMenu[1;string;settingsmenu_$authorID;Select a category;1;1;false;Bot itself:Customise on how Dodo Bot should Behave.:botmenu:false;Server:Manage settings related to the server.:servermenu:false]
+  To change any option, use the dropdown menu below to manage each one accordingly.]
+  $addSelectMenu[1;string;settingsmenu_$authorID;Select a option;1;1;false;Auto reply:Automatically reply to pings!:autoreply:false;Include bots:Whether or not to include bots in message logs.:includebots:false;Anonymous:Hide moderator names being revealed:anonymous:false]
   $color[$getVar[embedcolor]]
   $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/yellowsettings.png]
   $cooldown[2s; Slow down! Don't spam the command!

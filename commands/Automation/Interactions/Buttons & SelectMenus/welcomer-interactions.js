@@ -311,11 +311,6 @@ Please set a new channel first.
 {interaction}
 ]
 
-$onlyIf[$getGuildVar[welcomesystem]==on;Cannot test when the Welcomer feature is disabled. Please, enable it first before you can proceed.
-{ephemeral}
-{interaction}
-]
-
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}

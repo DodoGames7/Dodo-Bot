@@ -310,11 +310,6 @@ Please set a new channel first.
 {interaction}
 ]
 
-$onlyIf[$getGuildVar[leavesystem]==on;Cannot test when the Leave feature is disabled. Please, enable it first before you can proceed.
-{ephemeral}
-{interaction}
-]
-
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}

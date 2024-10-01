@@ -12,9 +12,6 @@ module.exports = {
     $addField[Aliases;$get[aliases]]
     $addField[Permissions needed;$arrayJoin[perms;, ]]
     $color[$getVar[embedcolor]]
-    $if[$commandInfo[$toLowerCase[$message];info.beta]==true]
-    $footer[Beta command.;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/redwarning.png]
-  $endif
   $if[$commandInfo[$toLowerCase[$message];info.flags]!=]
     $addButton[1;Flags;2;viewcommandflags_$authorID_$commandInfo[$nonEscape[$get[cmdname]];name];false]
   $endif
