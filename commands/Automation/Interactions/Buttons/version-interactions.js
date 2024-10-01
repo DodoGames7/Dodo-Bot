@@ -10,9 +10,7 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* When "Build Info" button is avaiable in \`stats\` command, it will now open up as ephemeral reply
-* Support for attachments included within a message has been added to message edit logs
-* Added support for Announcement and Rules channel in \`welcomer\` and \`leave\`
+*No changes has been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -39,11 +37,7 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* (Source Code) fixed a file name being misspelled
-* Fixed a potential problem of viewing empty permissions in Integration logs
-* Fixed the outdated description of "Include Bots" option in \`settings\` command
-* Fixed a issue where a message unedited would be logged for no reason
-* Fixed wrong character limit for message edit logs (text files mode)
+*No bug fixes has been added yet*
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -70,10 +64,7 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* Channels/Roles selected for Leveling Exclusion will now be replaced by a text if they're deleted
-* (Pre-release only) Recolored the warning sign icon to be orange in \`version\` command
-* \`gitbuilds\` command has been redesigned to make it easier to understand
-* "Message Link" in message edit logs has been updated to be a section instead for embeds
+* (Pre-release only) The warning icon in \`version\` command has been refreshed
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]

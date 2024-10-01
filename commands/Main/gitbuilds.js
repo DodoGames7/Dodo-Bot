@@ -1,7 +1,7 @@
 module.exports = {
     name: "gitbuilds",
     info: {
-        description: "Returns information about dev builds (with a link to try them as well).",
+        description: "Returns information about Pre-release builds and how to try them.",
         perms: "`SendMessages`"
     },
     aliases: ["devbuilds"],
