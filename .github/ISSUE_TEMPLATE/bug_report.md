@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: "[BUG]"
+title: "[BUG] Describe the bug's name here"
 labels: bug
 assignees: DodoGames7
 
@@ -21,7 +21,7 @@ If applicable, add attachments to help explain your problem (like screenshots).
 
 **Build information (please complete the following information):**
  - Build number: [e.g. 2162]
- - Release tyoe: [e.g. Stable, Pre-release]
+ - Release type: [e.g. Stable, Pre-release]
  - Version [e.g. 2.1.9]
 
 **Additional context**
