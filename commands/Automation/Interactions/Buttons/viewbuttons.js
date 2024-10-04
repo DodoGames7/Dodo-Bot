@@ -3,10 +3,9 @@ module.exports = [{
     prototype: "button",
     code: `$interactionReply[{newEmbed:{title:Flags of this command}{description:The following flags is available for this command#COLON#
 
-$get[flags]
+$arrayJoin[flags;, ]
     }{color:$getVar[embedcolor]}};all;true]
 
-$let[flags;$advancedReplaceText[$checkCondition[$arrayJoin[flags;, ]==];true;*No flags exist for this command.*;false;$arrayJoin[flags;, ]]]
 $createArray[flags;$nonEscape[$get[flagschecker]]]
 $let[flagschecker;$advancedReplaceText[$nonEscape[$commandInfo[$get[cmdname];info.flags]];,;#SEMI#]]
 

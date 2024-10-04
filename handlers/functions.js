@@ -6,6 +6,11 @@ HOWEVER, the functions will be broken because of aoi versions prior to 6.9.0 not
 */
 
 module.exports = [{
+    name: "$clientAvatar",
+    type: "aoi.js",
+    params: [],
+    code: `$userAvatar[$clientID]`
+},{
     name: "$dodoAvatar",
     type: "aoi.js",
     params: [],

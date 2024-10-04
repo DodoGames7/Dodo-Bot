@@ -9,7 +9,7 @@ module.exports = [{
   code: `$title[Developer panel]
   $description[This panel allows you to change some things the bot operates behind the scenes. 
     
-    To change a option, use the select menu below to do so.]  
+  To change a option, use the select menu below to do so.]
   $color[Red]
   $thumbnail[https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/warning.png]
   $addButton[2;Commands;2;devcommandsbutton_$authorID;false]
