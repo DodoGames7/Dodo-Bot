@@ -4,6 +4,7 @@ module.exports = [{
     code: `
     $interactionUpdate[{newEmbed:{title:Changes}{description:
 * Welcomer and Leave messages can now be tested without enabling them first
+* Removed Beta commands feature in favor of pre-release builds
 * \`settings\` command has been redesigned to directly include options instead of categories
 * Added alias \`guildsettings\` and \`serversettings\` for \`settings\`
 * Added 2 new image commands called \`uncover\` and \`invert\`
