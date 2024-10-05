@@ -58,7 +58,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==toggleleave;]
 **Channel#COLON#** $get[leavechannel]
 **Message Type#COLON#** \`$toLocaleUpperCase[$getGuildVar[leavetype]]\`}{color:$getVar[embedcolor]}}{actionRow:{button:Home:2:leavehomebutton_$authorID:false:🏠}{button:Channel:2:leavechannelbutton_$authorID:false}{button:Message:2:leavemessagebutton_$authorID:false}{button:Placeholders:2:leaveplaceholders_$authorID:false}}]
 
-$let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+$let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;none;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
 {ephemeral}
@@ -80,7 +80,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
-    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;none;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
     {ephemeral}
@@ -103,7 +103,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
     
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
     
-    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;none;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
     
     $setGuildVar[leavechannel;$getSelectMenuValues[all]]
     
@@ -148,7 +148,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavesettings;]
 
     }{color:$getVar[embedcolor]}}{actionRow:{selectMenu:leavechannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text:Announcement}}}{actionRow:{button:Go back:2:leavesettings_$authorID:false:↩️}{button:Reset:2:leaveresetchannel_$authorID:false}}]
 
-    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;None;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
+    $let[leavechannel;$advancedReplaceText[$checkCondition[$getGuildVar[leavechannel]==none];true;none;false;<#$getGuildVar[leavechannel]> (\`$getGuildVar[leavechannel]\`)]]
 
     $deleteVar[leavechannel;$guildID;main]
 

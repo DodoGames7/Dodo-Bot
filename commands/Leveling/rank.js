@@ -7,9 +7,11 @@ module.exports ={
     aliases: ["level", "lvl"],
     code: `
     $title[$username[$get[user]]'s Rank]
-    $description[
+    $addField[Progress;
     Level: \`$getUserVar[level;$get[user]]\`
-    XP: \`$getUserVar[xp;$get[user]]\`/\`$getUserVar[xpLimit;$get[user]]\`]
+    Experience: \`$getUserVar[xp;$get[user]]\`/\`$getUserVar[xpLimit;$get[user]]\`
+    \`($createProgressBar[$getUserVar[xp;$get[user]];$getUserVar[xpLimit;$get[user]]])\`
+    ]
     $thumbnail[$userAvatar[$get[user]]]
     $color[$getVar[embedcolor]]
     $onlyIf[$isBot[$get[user]]==false;Bots do not have Levels.]

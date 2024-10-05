@@ -57,10 +57,10 @@ $let[Input;{url}]
         $arrayJoin[result;\n]
 
         $comment[Loop to map between each array element.]
-        $loop[10;{};{type}]
+        $loop[10;{"index": "$get[indexer]"};{type}]
 
         $comment[Number that controls the current iteration element.]
-        $let[i;0]
+        $let[indexer;0]
 
         $comment[Creating the array that holds the result.]
         $createArray[result;]

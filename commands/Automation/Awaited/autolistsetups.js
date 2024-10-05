@@ -9,7 +9,8 @@ module.exports = [{
         $arrayPush[result;$if[$arrayAt[totalList;$sub[$get[i];1]]==;None;* $arrayAt[totalList;$sub[$get[i];1]]]]
 
         $comment[Let's increment the iteration index.]
-        $let[i;$sum[$get[i];1]]`
+        $let[i;$sum[$awaitData[index];1]]
+`
 },{
     name: "autoListIteratorForChannels",
     type: "awaited",
@@ -18,7 +19,8 @@ module.exports = [{
 
         $let[channels;$if[$guildChannelExists[$guildID;$arrayAt[totalList;$sub[$get[i];1]]]==true;* <#$arrayAt[totalList;$sub[$get[i];1]]>;\`Deleted Channel\`]]
         $comment[Let's increment the iteration index.]
-        $let[i;$sum[$get[i];1]]`
+        $let[i;$sum[$awaitData[index];1]]
+`
 },{
     name: "autoListIteratorForRoles",
     type: "awaited",
@@ -27,5 +29,6 @@ module.exports = [{
 
         $let[roles;$if[$roleExists[$arrayAt[totalList;$sub[$get[i];1]];$guildID]==true;* <@&$arrayAt[totalList;$sub[$get[i];1]]>;\`Deleted Role\`]]
         $comment[Let's increment the iteration index.]
-        $let[i;$sum[$get[i];1]]`
+        $let[i;$sum[$awaitData[index];1]]
+`
 }]

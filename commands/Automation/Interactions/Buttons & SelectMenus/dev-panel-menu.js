@@ -3,7 +3,7 @@ module.exports = [{
     prototype: "button",
     code: `$interactionUpdate[{newEmbed:{title:Developer Panel}{description:This panel allows you to change some things the bot operates behind the scenes. 
     
-To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/devsettings.png}}{actionRow:{selectMenu:devmenu_$authorID:Select a option:1:1:false:{stringInput:Bot Invitation Message:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}{stringInput:Show build info:showbuildinfo:Whether or not to enable "Build Info" button in stats cmd:false:🛠️}}}{actionRow:{button:Commands:2:devcommandsbutton_$authorID:false}}]
+To change a option, use the select menu below to do so.}{color:Red}{thumbnail:https#COLON#//us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/devsettings.png}}{actionRow:{selectMenu:devmenu_$authorID:Select a option:1:1:false:{stringInput:Bot Invitation Message:botwelcome:Whether or not the bot should greet new servers.:false:👋}{stringInput:Error Logging:errorlog:Send errors to specific channel.:false:📢}{stringInput:Embed color:botembedcolor:Change the current embed color used in all commands.:false:🎨}{stringInput:Pre-release:botdevmode:Whether or not to enable Pre-release mode.:false:🚧}{stringInput:Startup:botstartup:Choose a channel for bot's startup msgs to be sent:false:🚦}{stringInput:Show build info:showbuildinfo:Whether or not to enable "Build Info" button in stats cmd:false:🛠️}}}]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -32,7 +32,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[aut
     By default, this is enabled to let people know the prefix easily instead of just guessing randomly to figure out.
 
 **Current setting(s)**
-**Bot Invitation Message**#COLON# \`$get[botgreetconfig]\`
+**Bot Invitation Message**#COLON# \`$get[botinvitationconfig]\`
 
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:botgreettoggle_$authorID:false:🔄}}]
 
@@ -86,7 +86,7 @@ When an error occurs, information such as the server name, it's id, alongside wi
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
     $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -110,7 +110,7 @@ When an error occurs, information such as the server name, it's id, alongside wi
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
     $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Error logs will now be logged!;false;Error logs will now no longer be logged!]]
   $setVar[errorsystem;$get[newtoggledsetting]]
 $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;off;false;on]]
@@ -135,7 +135,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -157,7 +157,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
     
     }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
     
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 $setVar[errorchannel;$getSelectMenuValues[all]]
 
@@ -206,7 +206,7 @@ $interactionUpdate[{newEmbed:{title:Channel Setup}{description:Choose a channel 
 
     }{color:Red}}{actionRow:{selectMenu:errorlogchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:errorlogpage_$authorID:false:↩️}{button:Reset:2:errorresetchannel_$authorID:false}}]
 
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
     $deleteVar[errorchannel;;main]
 
@@ -240,7 +240,7 @@ When an error occurs, information such as the server name, it's id, alongside wi
     }{color:Red}}{actionRow:{button:Home:2:developermainpage_$authorID:false:🏠}{button:Toggle:2:errorlogtoggle_$authorID:false:🔄}{button:Set channel:2:errorlogsetupchannel_$authorID:false}}]
 
     $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
-    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;None;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
+    $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
 
 
