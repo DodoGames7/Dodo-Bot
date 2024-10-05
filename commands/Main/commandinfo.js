@@ -6,7 +6,7 @@ module.exports = {
         },
     $if: "old",
     aliases: ["cmdinfo", "ci"],
-    code: `$author[Command info looker;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/fluent-books.png]
+    code: `$author[Command info looker;https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/search.png]
 $title[$commandInfo[$get[cmdname];name]]
 $description[$commandInfo[$get[cmdname];info.description]]
 $addField[Aliases;$get[aliases]]

@@ -1,6 +1,7 @@
 const config = require("../config.json");
 
-module.exports = {
+module.exports = [{
+  "main": {
   // Games variables
   trivia_type: "multiple",
   trivia_difficulty: "medium",
@@ -10,16 +11,16 @@ module.exports = {
   // Bot variables (do not touch)
   autopingreply: "off",
   includebots: "on",
-  version: "2.1.9",
-  versionCodename: "Star Moon",
-  libraryversiondevcheck: "off",
-  buildStatus: "Complete",
-  buildDate: "1728156256412",
-  buildType: "Official Stable",
-  buildBranch: "v2",
+  version: "2.2.0",
+  versionCodename: "Iron",
+  libraryversiondevcheck: "on",
+  buildStatus: "Incomplete",
+  buildDate: "1728158112819",
+  buildType: "Pre-release",
+  buildBranch: "gitbuilds",
   buildRevision: "0",
-  showbuildinfo: "off",
-  buildNumber: "2164",
+  showbuildinfo: "on",
+  buildNumber: "2167",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
@@ -62,5 +63,5 @@ module.exports = {
   startupchannelsystem: "off",
   pre_release_mode: "on",
   botinvitationmessage: "on"
-  
-}
+  }
+}]

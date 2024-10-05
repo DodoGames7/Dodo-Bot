@@ -11,7 +11,7 @@ module.exports = {
   To change any option, use the dropdown menu below to manage each one accordingly.]
   $addSelectMenu[1;string;settingsmenu_$authorID;Select a option;1;1;false;Auto reply:Automatically reply to pings!:autoreply:false;Include bots:Whether or not to include bots in message logs.:includebots:false;Anonymous:Hide moderator names being revealed:anonymous:false]
   $color[$getVar[embedcolor]]
-  $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/yellowsettings.png]
+  $thumbnail[https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/yellowgear.png]
   $cooldown[2s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[2s;user;settings;$authorID];$dateStamp];1000]]:R>]
   $onlyPerms[manageguild;You need \`ManageGuild\` permission to access this panel.]`

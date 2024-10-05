@@ -1,6 +1,5 @@
 /*
-This is a unused file, which means you can delete it safely (until you uncomment custom function's handler setup in index.js and run it's dedicated func after that).
-It will be used in the future at one point once 6.9.0 is out
+This is mainly used for testing for now
 */
 
 module.exports = [{

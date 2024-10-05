@@ -10,6 +10,7 @@ module.exports = {
 * $username[431749535656837130] - Inspiration to improve some commands
 * $username[738856854892839022] - For Leveling setup
 * $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
+* aoi.js server - For a lot of help
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Use of source code;2;useofsource_$authorID;false]

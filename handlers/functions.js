@@ -1,9 +1,3 @@
-/*
-This is a unused file, which means you can delete it safely (until you uncomment it's handler setup in index.js).
-It will be certainly used in the future (no ETA).
-You can do some modifications to enable it if you want.
-HOWEVER, the functions will be broken because of aoi versions prior to 6.9.0 not having them fixed sadly.
-*/
 
 module.exports = [{
     name: "$clientAvatar",
