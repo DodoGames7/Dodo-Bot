@@ -51,22 +51,20 @@ $let[Input;{url}]
   },{
     name: "$autoList",
     type: "aoi.js",
-    params: ["variable", "separator", "type"],
+    params: ["variable", "separator"],
     code: `
-        $comment[Let's return the result.]
-        $arrayJoin[result;\n]
 
-        $comment[Loop to map between each array element.]
-        $loop[10;{"index": "$get[indexer]"};{type}]
+        $comment[Map between each array element.]
+        $arrayMap[totalList;autoListIterator;{separator}]
 
         $comment[Number that controls the current iteration element.]
-        $let[indexer;0]
+        $let[index;0]
 
         $comment[Creating the array that holds the result.]
         $createArray[result;]
 
         $comment[Creating the array to split the given elements.]
-        $createArray[totalList;$nonEscape[$djsEval["$get[{variable}]".split("{separator}").join(";");true]]]
+        $createArray[totalList;$nonEscape[$djsEval["{variable}".split("{separator}").join(";");true]]]
     `.trim(),
 },{
   name: "$createProgressBar",
