@@ -1,6 +1,6 @@
 const config = require("../config.json");
 
-module.exports = [{
+module.exports = {
   "main": {
   // Games variables
   trivia_type: "multiple",
@@ -64,4 +64,4 @@ module.exports = [{
   pre_release_mode: "on",
   botinvitationmessage: "on"
   }
-}]
+}
