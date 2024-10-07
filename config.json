@@ -4,6 +4,7 @@
     "MobileStatus": false,
     "Embedcolor": "#2A3759",
     "DBsecurityKey": "a-32-characters-long-string-here",
+    "respondOnEdit": true,
     "EnableDebugMode": false,
     "LogCommands": false
 }

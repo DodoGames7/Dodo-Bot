@@ -21,10 +21,14 @@ const client = new AoiClient({
     securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config
   },
  disableFunctions: ["$clientToken"], // For safety reasons
- mobilePlatform: config.MobileStatus || process.env.MobileStatus, // Whether or not to enable mobile status
+ mobilePlatform: config.MobileStatus, // Whether or not to enable mobile status
  debugs: {
- interpreter: config.EnableDebugMode || process.env.EnableDebugMode // Whether or not to enable aoi.js debug mode
-}
+ interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
+},
+respondOnEdit: {
+        commands: config.respondOnEdit,
+        time: 2000
+    }
 });
 
 // Handlers
