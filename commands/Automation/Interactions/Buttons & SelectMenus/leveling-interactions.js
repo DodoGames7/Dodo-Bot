@@ -161,7 +161,7 @@ $interactionUpdate[The current progress for all members will remain then.]
         prototype: "button",
         code: `$interactionModal[Set Message;levelingsetmsgresult;
     {actionRow:
-        {textInput:Message to use:2:textInput:true:<username> has Leveled up!:0:200:$getGuildVar[levelmessage]}
+        {textInput:Message to use:2:textInput:true:e.g, <username> has Leveled up!:0:200:$getGuildVar[levelmessage]}
       }]
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.

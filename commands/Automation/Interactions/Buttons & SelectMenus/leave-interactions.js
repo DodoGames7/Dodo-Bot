@@ -187,15 +187,15 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==leavemessagebutton;]
     code: `$if[$getGuildVar[leavetype]==embed]
 $interactionModal[Message to use;leaveembedmodal;
 {actionRow:
-    {textInput:Custom message to use:2:textInput:true:Goodbye <username>!:0:3750:$getGuildVar[leavemessage]}
+    {textInput:Custom message to use:2:textInput:true:e.g, Goodbye <username>!:0:3750:$getGuildVar[leavemessage]}
   }
 {actionRow:
-    {textInput:Embed color to use:1:hexInput:true:#9B59B6:0:7:$getGuildVar[leavemessageembedcolor]}
+    {textInput:Embed color to use:1:hexInput:true:e.g, #9B59B6:0:7:$getGuildVar[leavemessageembedcolor]}
   }]
 $else
 $interactionModal[Message to use;leavetextmodal;
 {actionRow:
-    {textInput:Custom message to use:2:textInput:true:Goodbye <username>!:0:3750:$getGuildVar[leavemessage]}
+    {textInput:Custom message to use:2:textInput:true:e.g, Goodbye <username>!:0:3750:$getGuildVar[leavemessage]}
   }]
 $endif
 

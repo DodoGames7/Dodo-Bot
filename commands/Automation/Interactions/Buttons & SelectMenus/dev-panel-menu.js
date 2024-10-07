@@ -401,7 +401,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
     
     
     $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -422,7 +422,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
     
     
     $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     $let[resultmessage;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Startup has been enabled!;false;Startup has been disabled!]]
       $setVar[startupchannelsystem;$get[newtoggledsetting]]
@@ -445,7 +445,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
@@ -467,7 +467,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
         
         }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
         
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
     $setVar[startupchannel;$getSelectMenuValues[all]]
     
@@ -516,7 +516,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
 
         }{color:Red}}{actionRow:{selectMenu:botstartupchannelmenusetup_$authorID:Select a channel to use.:1:1:false:{channelInput:Text}}}{actionRow:{button:Go back:2:startupbotpage_$authorID:false:↩️}{button:Reset:2:startupresetchannel_$authorID}}]
 
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
 
     $deleteVar[startupchannel;;main]
 
@@ -547,7 +547,7 @@ $let[newtoggledsetting;$advancedReplaceText[$checkCondition[$getVar[pre_release_
     
     
     $let[startupfeature;$advancedReplaceText[$checkCondition[$getVar[startupchannelsystem]==on];true;Enabled;false;Disabled]]
-        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;None;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
+        $let[startupchannel;$advancedReplaceText[$checkCondition[$getVar[startupchannel]==none];true;none;false;<#$getVar[startupchannel]> (\`$getVar[startupchannel]\`)]]
     
         $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
     {interaction}]

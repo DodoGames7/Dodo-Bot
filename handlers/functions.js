@@ -55,10 +55,7 @@ $let[Input;{url}]
     code: `
 
         $comment[Map between each array element.]
-        $arrayMap[totalList;autoListIterator;{separator}]
-
-        $comment[Number that controls the current iteration element.]
-        $let[index;0]
+        $arrayMap[totalList;autoListIterator;{separator};{"index": "0"}]
 
         $comment[Creating the array that holds the result.]
         $createArray[result;]

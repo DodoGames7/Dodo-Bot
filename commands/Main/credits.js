@@ -11,6 +11,7 @@ module.exports = {
 * $username[738856854892839022] - For Leveling setup
 * $username[769525910164471821] - For \`guess-the-pokemon\` code (and some ideas as well)
 * aoi.js server - For a lot of help
+* [discordicon.com](https://discordicon.com/icons-editor) - For most of the icons used in commands
 ]
 $color[$getVar[embedcolor]]
 $addButton[1;Use of source code;2;useofsource_$authorID;false]
