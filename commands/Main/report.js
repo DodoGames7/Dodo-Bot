@@ -16,6 +16,6 @@ To get started, be sure to have a Github account first then press the button "Re
 ]
 $color[$getGlobalVar[embedcolor]]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/issues/new/choose;Report a bug;Link]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D;Report a bug;Link]
 `
 }
