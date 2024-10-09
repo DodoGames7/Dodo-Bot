@@ -15,7 +15,7 @@ $let[dodobotversion;$advancedReplace[$checkCondition[$getGlobalVar[pre_release]=
 
 $title[$username[$clientID]'s Stats]
 $thumbnail[$userAvatar[$clientID]]
-$addField[**Users**;$userCount;true]
+$addField[**Users**;$separateNumber[$userCount;,];true]
 $addField[**Servers**;$guildCount;true]
 $addField[**RAM Usage**;$round[$ram]MB;true]
 $addField[**CPU Usage**;$round[$divide[$cpu;1000]]%;true]

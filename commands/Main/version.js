@@ -28,6 +28,6 @@ $footer[Testing is recommended;attachment://warning.png]
     $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
     $addButton[versionother_$authorID;Other;Secondary]
     $addActionRow
-    $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+    $addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 `
 }

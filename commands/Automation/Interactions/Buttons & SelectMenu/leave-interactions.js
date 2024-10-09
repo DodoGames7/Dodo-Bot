@@ -216,11 +216,11 @@ $onlyIf[$customID==leavemessagesetup;]
 $showModal
 $if[$getGuildVar[leavetype]==embed;
 $modal[leaveembedmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;Goodbye <member.username>!;$getGuildVar[leavemessage];0;3750]
-$addTextInput[embedcolorInput;Embed color to use;Short;true;#1F8B4C;$getGuildVar[leavemessageembedcolor];0;7]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Goodbye <member.username>!;$getGuildVar[leavemessage];0;3750]
+$addTextInput[embedcolorInput;Embed color to use;Short;true;e.g, #1F8B4C;$getGuildVar[leavemessageembedcolor];0;7]
 ;
 $modal[leavetextmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;Goodbye <member.username>!;$getGuildVar[leavemessage];0;3750]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Goodbye <member.username>!;$getGuildVar[leavemessage];0;3750]
 ]
 `
 },{

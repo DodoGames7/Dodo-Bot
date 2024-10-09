@@ -10,9 +10,9 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-* When "Build Info" button is available in \`stats\` command, it will now open up as ephemeral reply
-* Support for attachments included within a message has been added to message edit logs
-* Added support for Announcement and Rules channel in \`welcomer\` and \`leave\`
+* "Users" section in \`stats\` command has been updated to use separator for large numbers
+* Added a button in \`perms\` command dedicated to explaining why the command exists
+* Added 2 new image commands called \`invert\` and \`jokeoverhead\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -25,7 +25,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary;;true]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
 $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -39,11 +39,8 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-* (Source Code) fixed a file name being misspelled
-* Fixed a potential problem of viewing empty permissions in Integration logs
-* Fixed the outdated description of "Include Bots" option in \`settings\` command
-* Fixed a issue where a message unedited would be logged for no reason
-* Fixed wrong character limit for message edit logs (text files mode)
+* Spelling fixes to \`about\` command regarding first sentence
+* Fixed a non-existent placeholder being mentioned in \`leveling\` when setting message
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -56,7 +53,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary;;true]
 $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -70,10 +67,11 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
-* Channels/Roles selected for Leveling Exclusion will now be replaced by a text if they're deleted
-* (Pre-release only) Recolored the warning sign icon to be orange in \`version\` command
-* \`gitbuilds\` command has been redesigned to make it easier to understand
-* "Message Link" in message edit logs has been updated to be a section instead for embeds
+* "Latency" section for \`ping\` has been renamed to simply say "Ping"
+* Slight wording change to \`report\` command regarding first sentence
+* (Pre-release only) The warning icon in \`version\` command has been refreshed
+* Renamed \`report\` command's embed title to simply say "Reporting bugs"
+* "Version History" button in this command has been renamed to "Changelog History"
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -86,7 +84,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
 $addButton[versionother_$authorID;Other;Secondary;;true]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -116,6 +114,6 @@ $footer[Testing is recommended;attachment://warning.png]
     $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
     $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 }]

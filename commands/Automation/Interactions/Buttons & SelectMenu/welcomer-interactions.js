@@ -213,11 +213,11 @@ $onlyIf[$customID==welcomermessagesetup;]
 $showModal
 $if[$getGuildVar[welcomertype]==embed;
 $modal[welcomerembedmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;Welcome to the server <member.username>!;$getGuildVar[welcomermessage];0;3750]
-$addTextInput[embedcolorInput;Embed color to use;Short;true;#1F8B4C;$getGuildVar[welcomermessageembedcolor];0;7]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Welcome to the server <member.username>!;$getGuildVar[welcomermessage];0;3750]
+$addTextInput[embedcolorInput;Embed color to use;Short;true;e.g, #1F8B4C;$getGuildVar[welcomermessageembedcolor];0;7]
 ;
 $modal[welcomertextmodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;Welcome to the server <member.username>!;$getGuildVar[welcomermessage];0;3750]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g, Welcome to the server <member.username>!;$getGuildVar[welcomermessage];0;3750]
 ]
 `
 },{

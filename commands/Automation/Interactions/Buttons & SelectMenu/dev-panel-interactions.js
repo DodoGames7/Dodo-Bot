@@ -603,6 +603,106 @@ $ephemeral
 `
 },{
 type: "interactionCreate",
+allowedInteractionTypes: ["selectMenu"],
+code: `
+$onlyIf[$and[$advancedTextSplit[$customID;_;0]==devmenu;$selectMenuValues==memberrequirementoption]==true;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+
+$interactionReply[
+$title[Member requirement]
+$description[This option let's you configure how many members are needed for a server so that the bot can join there.
+
+When the requirement is not met, the bot will simply leave the server.
+]
+$addField[Current requirement;$getGlobalVar[embedcolor]]
+$color[Yellow]
+$addActionRow
+$addButton[setmemberrequirement;Set Requirement;Secondary]
+$addButton[resetmemberrequirement;Reset;Secondary]
+$ephemeral
+]
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==setmemberrequirement;]
+
+$showModal
+$modal[setmemberrequirementmodalsetup;Set Requirement]
+$addTextInput[numberInput;Minimum requirement to enforce;Short;true;e.g, 50;$getGlobalVar[servermemberrequirement];0;100]
+
+`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["modal"],
+    code: `$onlyIf[$customID==setmemberrequirementmodalsetup;]
+
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$onlyIf[$isInteger[$callFunction[excludespecialchars;$input[numberInput]]]==true;$interactionReply[Number must not be a Integer.
+$ephemeral]
+]
+
+$onlyIf[$isNumber[$callFunction[excludespecialchars;$input[numberInput]]]==true;$interactionReply[Please actually enter a number to proceed.
+$ephemeral]
+]
+
+
+$setGlobalVar[servermemberrequirement;$input[numberInput]]
+
+$interactionUpdate[
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$getGlobalVar[embedcolor]]
+$color[Yellow]
+$addActionRow
+$addButton[setmemberrequirement;Set Requirement;Secondary]
+$addButton[resetmemberrequirement;Reset;Secondary]
+]
+
+$interactionFollowUp[Successfully set the requirement!
+$ephemeral]`
+},{
+    type: "interactionCreate",
+    allowedInteractionTypes: ["button"],
+    code: `
+$onlyIf[$customID==resetmemberrequirement;]
+
+$onlyIf[$getGlobalVar[servermemberrequirement]!=0;$interactionReply[
+The requirement is already set to \`0\`
+$ephemeral]]
+
+$deleteGlobalVar[servermemberrequirement]
+
+
+$let[author;$getEmbeds[$channelID;$messageID;0;authorName;0]]
+$let[title;$getEmbeds[$channelID;$messageID;0;title;0]]
+$let[description;$getEmbeds[$channelID;$messageID;0;description;0]]
+$let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
+
+$interactionUpdate[
+$title[$get[title]]
+$description[$get[description]]
+$addField[$get[fieldname];$getGlobalVar[embedcolor]]
+$color[Yellow]
+$addActionRow
+$addButton[setmemberrequirement;Set Requirement;Secondary]
+$addButton[resetmemberrequirement;Reset;Secondary]
+]
+
+$interactionFollowUp[Requirement has been reset!
+$ephemeral
+]
+
+`
+},{
+type: "interactionCreate",
 allowedInteractionTypes: ["button"],
 code: `
 $onlyIf[$advancedTextSplit[$customID;_;0]==generatedatabasebackup;]
