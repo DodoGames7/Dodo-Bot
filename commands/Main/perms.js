@@ -14,11 +14,12 @@ $description[Confused on what perms the bot should have? This list should help y
 For safety reasons, do not give the bot administrator permission under any circumstances.
 ]
 $addField[\`ViewChannel\`;Required so the bot can read the user's messages executing it's command.]
-$addField[\`SendMessages\`;The most basic permission.]
+$addField[\`SendMessages\`;The most basic permission needed.]
 $addField[\`AttachFiles\`;Required for image commands such as \`gun\`.]
 $addField[\`AddReactions\`;Required for \`suggest\` command.]
 $addField[\`ViewAuditLog\`;Required for logs such as moderation and Integration.]
 $color[$getGlobalVar[embedcolor]]
+$addButton[whynoadminperm_$authorID;Why this exists?;Secondary;❓;false]
 
 `
 }

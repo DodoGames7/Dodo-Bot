@@ -9,13 +9,12 @@ $ephemeral
 
 $let[cmdname;$advancedTextSplit[$customID;_;2]]
 
-$let[flags;$advancedReplace[$checkCondition[$callFunction[commandflags;$get[cmdname]]==];true;None;false;$callFunction[commandflags;$get[cmdname]]]]
 
 $interactionReply[
 $title[Flags of this command]
 $description[The command has the following flags:
 
-$get[flags]
+$callFunction[commandflags;$get[cmdname]]
 ]
 $color[$getGlobalVar[embedcolor]]
 $ephemeral
@@ -69,6 +68,26 @@ $title[Description]
 $description[The server's description reads:
 
 $guildDescription
+]
+$color[$getGlobalVar[embedcolor]]
+$ephemeral
+]
+`
+},{
+type: "interactionCreate",
+allowedInteractionTypes: ["button"],
+code: `
+$onlyIf[$advancedTextSplit[$customID;_;0]==whynoadminperm;]
+$onlyIf[$advancedTextSplit[$customID;_;1]==$authorID;$interactionReply[You're not the author of this interaction.
+$ephemeral
+]]
+
+
+$interactionReply[
+$title[Why this exists?]
+$description[Administrator permission is generally dangerous and should only be given to people you trust. It is always a good idea to only select the required permissions which is why \`perms\` command exists to ensure that this does not happen.
+
+This is also to reduce the chances of raiding in case where the bot gets hacked by having less dangerous permissions.
 ]
 $color[$getGlobalVar[embedcolor]]
 $ephemeral

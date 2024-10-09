@@ -10,7 +10,9 @@ $ephemeral
 $interactionUpdate[
 $title[Changes]
 $description[
-*No changes has been added yet*
+* "Users" section in \`stats\` command has been updated to use separator for large numbers
+* Added a button in \`perms\` command dedicated to explaining why the command exists
+* Added 2 new image commands called \`invert\` and \`jokeoverhead\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -23,7 +25,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary;;true]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
 $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -37,7 +39,8 @@ $ephemeral
 $interactionUpdate[
 $title[Bug Fixes]
 $description[
-*No bug fixes has been added yet*
+* Spelling fixes to \`about\` command regarding first sentence
+* Fixed a non-existent placeholder being mentioned in \`leveling\` when setting message
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -50,7 +53,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary;;true]
 $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -64,7 +67,11 @@ $ephemeral
 $interactionUpdate[
 $title[Other]
 $description[
+* "Latency" section for \`ping\` has been renamed to simply say "Ping"
+* Slight wording change to \`report\` command regarding first sentence
 * (Pre-release only) The warning icon in \`version\` command has been refreshed
+* Renamed \`report\` command's embed title to simply say "Reporting bugs"
+* "Version History" button in this command has been renamed to "Changelog History"
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -77,7 +84,7 @@ $addButton[versionchanges_$authorID;Changes;Secondary]
 $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
 $addButton[versionother_$authorID;Other;Secondary;;true]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 },{
     type:"interactionCreate",
@@ -107,6 +114,6 @@ $footer[Testing is recommended;attachment://warning.png]
     $addButton[versionbugfixes_$authorID;Bug Fixes;Secondary]
     $addButton[versionother_$authorID;Other;Secondary]
 $addActionRow
-$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Version History;Link;📜]
+$addButton[https://github.com/DodoGames7/Dodo-Bot/releases;Changelog History;Link;📜]
 ]`
 }]

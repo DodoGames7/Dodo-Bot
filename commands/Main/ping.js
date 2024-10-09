@@ -1,7 +1,7 @@
 module.exports = {
 name: "ping",
 info: {
-        description: "Returns the current ping of the bot",
+        description: "Returns the bot's Latency",
         perms: "`SendMessages`"
 },
 type: "messageCreate",
@@ -12,7 +12,7 @@ $let[restart;<t:$round[$divide[$sub[$getTimestamp;$uptime];1000]]:R>]
 $let[messageID;$sendMessage[$channelID;Pong! 🏓;true]]
 $wait[3000]
 $!editMessage[$channelID;$get[messageID];
-Latency: $pingms
+Ping: $pingms
 Last restart: $get[restart]
 ]
 `

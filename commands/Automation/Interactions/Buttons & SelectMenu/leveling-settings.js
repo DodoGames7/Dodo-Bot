@@ -263,7 +263,7 @@ $onlyIf[$customID==levelingmessagesetup;]
 
 $showModal
 $modal[levelingmessagemodalsetup;Set Message]
-$addTextInput[messageInput;Message to use;Paragraph;true;<username> has leveled UP! Their new level is now <newlevel>!;$getGuildVar[levelingmessage];0;200]
+$addTextInput[messageInput;Message to use;Paragraph;true;e.g, <member.username> has Leveled up!;$getGuildVar[levelingmessage];0;200]
 
 `
 },{
