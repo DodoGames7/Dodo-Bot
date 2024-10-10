@@ -617,7 +617,7 @@ $description[This option let's you configure how many members are needed for a s
 
 When the requirement is not met, the bot will simply leave the server.
 ]
-$addField[Current requirement;$getGlobalVar[embedcolor]]
+$addField[Current requirement;$getGlobalVar[servermemberrequirement]]
 $color[Yellow]
 $addActionRow
 $addButton[setmemberrequirement;Set Requirement;Secondary]
@@ -659,7 +659,7 @@ $setGlobalVar[servermemberrequirement;$input[numberInput]]
 $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
-$addField[$get[fieldname];$getGlobalVar[embedcolor]]
+$addField[$get[fieldname];$getGlobalVar[servermemberrequirement]]
 $color[Yellow]
 $addActionRow
 $addButton[setmemberrequirement;Set Requirement;Secondary]
@@ -689,7 +689,7 @@ $let[fieldname;$getEmbeds[$channelID;$messageID;0;fieldName;0]]
 $interactionUpdate[
 $title[$get[title]]
 $description[$get[description]]
-$addField[$get[fieldname];$getGlobalVar[embedcolor]]
+$addField[$get[fieldname];$getGlobalVar[servermemberrequirement]]
 $color[Yellow]
 $addActionRow
 $addButton[setmemberrequirement;Set Requirement;Secondary]

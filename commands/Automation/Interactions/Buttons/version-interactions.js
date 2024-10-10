@@ -12,7 +12,7 @@ $title[Changes]
 $description[
 * "Users" section in \`stats\` command has been updated to use separator for large numbers
 * Added a button in \`perms\` command dedicated to explaining why the command exists
-* Added 2 new image commands called \`invert\` and \`jokeoverhead\`
+* Added 2 new image commands called \`invert\` and \`drip\`
 ]
 $if[$getGlobalVar[pre_release]==on;
 $attachment[./handlers/assets/warning.png;warning.png]
@@ -40,6 +40,7 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Spelling fixes to \`about\` command regarding first sentence
+* Added interal fix to the panel meant for bot owners (Revision 1)
 * Fixed a non-existent placeholder being mentioned in \`leveling\` when setting message
 ]
 $if[$getGlobalVar[pre_release]==on;
@@ -68,9 +69,9 @@ $interactionUpdate[
 $title[Other]
 $description[
 * "Latency" section for \`ping\` has been renamed to simply say "Ping"
-* Slight wording change to \`report\` command regarding first sentence
+* Slight wording changes to \`report\` command regarding first sentence
+* Replaced \`jokeoverhead\` with \`drip\` cmd (pop cat, you seriously need to have functional endpoints) (Revision 1)
 * (Pre-release only) The warning icon in \`version\` command has been refreshed
-* Renamed \`report\` command's embed title to simply say "Reporting bugs"
 * "Version History" button in this command has been renamed to "Changelog History"
 ]
 $if[$getGlobalVar[pre_release]==on;
