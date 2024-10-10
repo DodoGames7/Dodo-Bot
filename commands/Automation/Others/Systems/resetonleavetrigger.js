@@ -3,6 +3,6 @@ module.exports = {
     type: "leave",
     channel: "$randomChannelID[$guildID;all]",
     code: `$ifAwaited[$getGuildVar[levelleaveonreset]==on;{execute:resetonleave}]
-    $onlyIf[$getGuildVar[levelsystem]==on;]
-    $onlyIf[$guildID==$guildID;]`
+$onlyIf[$getGuildVar[levelsystem]==on;]
+$onlyIf[$guildID==$guildID;]`
 }

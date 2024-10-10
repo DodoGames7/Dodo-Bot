@@ -62,5 +62,21 @@ This bot is no longer in this server.
 $let[botID;$advancedTextSplit[$interactionData[customId];_;2]]
 $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==viewbotpermsbutton;]
 `
+},{
+    type: "interaction",
+    prototype: "button",
+    code: `$interactionReply[{newEmbed:{title:Why this exists?}{description:Administrator permission is generally dangerous and should only be given to people you trust. It is always a good idea to only select the required permissions which is why \`perms\` command exists to ensure that this does not happen.
+
+This is also to reduce the chances of raiding in case where the bot gets hacked by having less dangerous permissions.
+    }{color:$getVar[embedcolor]}};all;true]
+
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];This interaction is not for you.
+{ephemeral}
+{interaction}
+    ]
+
+$onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==whynoadminperm;]
+`
 }]
 

@@ -17,7 +17,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogshomebutton;
 },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Message Delete:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msgdeletelogchannel]
@@ -41,7 +41,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Delete logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Message Delete:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msgdeletelogchannel]
@@ -91,7 +91,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Message Delete:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msgdeletelogchannel]
@@ -120,7 +120,7 @@ $interactionUpdate[{newEmbed:{author:Message Delete:$userAvatar[$clientID]}{titl
     },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Message Edit:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msglogeditchannel]
@@ -144,7 +144,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Message Edit logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Message Edit:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msglogeditchannel]
@@ -194,7 +194,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Message Edit:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[msglogeditchannel]
@@ -223,7 +223,7 @@ $interactionUpdate[{newEmbed:{author:Message Edit:$userAvatar[$clientID]}{title:
     },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Ban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -247,7 +247,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Ban logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Ban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -297,7 +297,7 @@ $interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel S
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Ban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[banneduserschannel]
@@ -326,7 +326,7 @@ $interactionUpdate[{newEmbed:{author:Ban:$userAvatar[$clientID]}{title:Channel S
     },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Unban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[unbanneduserschannel]
@@ -350,7 +350,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Unban logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Unban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[unbanneduserschannel]
@@ -400,7 +400,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Unban:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[unbanneduserschannel]
@@ -429,7 +429,7 @@ $interactionUpdate[{newEmbed:{author:Unban:$userAvatar[$clientID]}{title:Channel
     },{
     type: "interaction",
     prototype: "selectMenu",
-    code: `$interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+    code: `$interactionUpdate[{newEmbed:{author:Integration:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[Integrationchannel]
@@ -453,7 +453,7 @@ $onlyIf[$advancedTextSplit[$interactionData[customId];_;1]==setuplogsmenu;]
         prototype: "selectMenu",
         code: `$interactionFollowUp[<#$getSelectMenuValues[all]> will now be used for Integration logs!;true]
 
-$interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Integration:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[Integrationchannel]
@@ -503,7 +503,7 @@ $interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:C
         prototype: "button",
         code: `$interactionFollowUp[Channel has been reset!;true]
 
-$interactionUpdate[{newEmbed:{author:Integration:$userAvatar[$clientID]}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
+$interactionUpdate[{newEmbed:{author:Integration:$clientAvatar}{title:Channel Setup}{description:Select a channel using the menu below for this log type.
 
 **Current Setting(s)**
 **Channel#COLON#** $get[Integrationchannel]

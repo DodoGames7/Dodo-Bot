@@ -14,8 +14,8 @@ module.exports = {
   version: "2.2.0",
   versionCodename: "Iron",
   libraryversiondevcheck: "on",
-  buildStatus: "Incomplete",
-  buildDate: "1728321904842",
+  buildStatus: "Complete",
+  buildDate: "1728577025284",
   buildType: "Pre-release",
   buildBranch: "gitbuilds",
   buildRevision: "0",
@@ -62,6 +62,7 @@ module.exports = {
   startupchannel: "none",
   startupchannelsystem: "off",
   pre_release_mode: "on",
-  botinvitationmessage: "on"
+  botinvitationmessage: "on",
+  servermemberrequirement: "0"
   }
 }

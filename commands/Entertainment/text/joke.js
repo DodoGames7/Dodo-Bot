@@ -9,7 +9,7 @@ module.exports = [{
   $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for jokes. Please, try again later.]
 $let[jsonresponse;$jsonRequest[https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&safe-mode;;Error]]
-  $cooldown[3s; Slow down! Don't spam the command!
+$cooldown[3s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;joke;$authorID];$dateStamp];1000]]:R>]`
 },{
 name: "twopart",

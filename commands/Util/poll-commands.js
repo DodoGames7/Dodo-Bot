@@ -50,7 +50,7 @@ $onlyPerms[managechannels;You do not have \`ManageChannels\` permission to use t
     aliases: ["createpoll", "startpoll"],
     code: `
 
-$author[Poll by $username;$userAvatar;$nonEscape[$get[userURL]]]
+$author[Poll by $username;$userAvatar;$userURL[$authorID]]
 $description[$splitText[1]
 
 1️⃣: **$splitText[2]**
@@ -77,7 +77,6 @@ $onlyIf[$or[$splitText[1]==;$splitText[2]==;$splitText[3]==]==false;Hey there! Y
 
 A example of a usage should be \`$getGuildVar[prefix]$nonEscape[$commandInfo[poll;info.usage]]\`]
 $textSplit[$message;/]
-$let[userURL;https://discord.com/users/$authorID]
 $cooldown[5s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;poll;$authorID];$dateStamp];1000]]:R>]
 $onlyPerms[managemessages;You need to have \`ManageMessages\` permission to proceed.]

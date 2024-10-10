@@ -12,7 +12,7 @@ Alternatively, you can invite Dodo Canary (using the button below) to a server t
 ]
 $addField[Introduction;GitBuilds is a way to test pre-release builds of upcoming versions of Dodo-Bot before they eventually release as a stable version.
 
-    Builds released in this state are incomplete and may have bugs as a result so it is not recommended to use them for production purposes.
+Builds released in this state are incomplete and may have bugs as a result so it is not recommended to use them for production purposes.
 ]
 $addButton[1;Invite Dodo Canary;5;https://discord.com/api/oauth2/authorize?client_id=970481494797738016&scope=bot+applications.commands&permissions=36032;false]
 $color[$getVar[embedcolor]]

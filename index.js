@@ -17,7 +17,7 @@ const client = new AoiClient({
     type: "aoi.db",
     db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
-    tables: ["main"],
+    tables: ["main"], // tables for the database
     securityKey: process.env.DBsecurityKey || config.DBsecurityKey // Security Key with either env or config
   },
  disableFunctions: ["$clientToken"], // For safety reasons
@@ -26,8 +26,8 @@ const client = new AoiClient({
  interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
 },
 respondOnEdit: {
-        commands: config.respondOnEdit,
-        time: 2000
+    commands: config.respondOnEdit,
+    time: 20000
     }
 });
 

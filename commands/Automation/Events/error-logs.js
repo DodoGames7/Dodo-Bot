@@ -2,7 +2,7 @@ module.exports = {
 name: "Error logger",
 type: "functionError",
 channel: "$getVar[errorchannel]",
-code: `$author[Error detected!;$userAvatar[$clientID]]
+code: `$author[Error detected!;$clientAvatar]
 $description[**Error code**:
 $handleError[error]
 ]
@@ -12,7 +12,7 @@ Command name: \`$get[commandname]\`
 Server: \`$guildName\` (\`$guildID\`)
 ]
 $color[Yellow]
-$footer[Date since it occurred]
+$footer[Occurred on]
 $addTimestamp
 $let[commandname;$advancedReplaceText[$checkCondition[$handleError[command]==];true;undefined;false;$handleError[command]]]
 $onlyIf[$hasPermsInChannel[$getVar[errorchannel];$clientID;sendmessages;viewchannel]==true;]

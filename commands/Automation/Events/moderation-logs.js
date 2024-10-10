@@ -13,7 +13,7 @@ module.exports = [{
     $addTimeStamp
     $color[Red]
     $let[moderatorchecker;$advancedReplaceText[$checkCondition[$isBot[$get[staff]]==false&&$getGuildVar[anonymous]==on];true;Unknown;false;$username[$get[staff]] <@$get[staff]>]]
-    $let[reason;$advancedReplaceText[$checkCondition[$getAuditLogs[$guildID;;1;22;{reason}]==null];true;None;false;$getAuditLogs[$guildID;;1;22;{reason}]]]
+    $let[reason;$advancedReplaceText[$checkCondition[$getAuditLogs[$guildID;;1;22;{reason}]==null];true;none;false;$getAuditLogs[$guildID;;1;22;{reason}]]]
     $let[staff;$getAuditLogs[$guildID;;1;22;{executor.id}]]
     $let[accounttype;$advancedReplaceText[$checkCondition[$isBot==true];true;Bot;false;User]]
     $onlyIf[$hasPerms[$guildID;$clientID;viewauditlog]==true;In order to have ban logs work, i must have \`ViewAuditLog\` permission!]

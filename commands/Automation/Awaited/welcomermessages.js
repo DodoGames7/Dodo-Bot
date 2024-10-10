@@ -19,7 +19,7 @@ module.exports = [{
     $thumbnail[$authorAvatar]
     $color[$getGuildVar[welcomemessageembedcolor]]
     
-    $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
+    $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$clientAvatar]]
     
     $useChannel[$getGuildVar[welcomechannel]]
     $disableMentionType[roles]
@@ -46,7 +46,7 @@ module.exports = [{
     $thumbnail[$authorAvatar]
     $color[$getGuildVar[welcomemessageembedcolor]]
     
-    $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$userAvatar[$clientID]]]
+    $let[serverimage;$advancedReplaceText[$checkCondition[$guildIcon==];false;$guildIcon;true;$clientAvatar]]
     
     $useChannel[$getGuildVar[welcomechannel]]
     $disableMentionType[roles]

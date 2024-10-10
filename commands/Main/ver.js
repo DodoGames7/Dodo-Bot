@@ -8,7 +8,7 @@ module.exports = {
   $if: "old",
   code: `$title[Dodo-Bot version]
   $description[
-* **Version**: $getVar[version]
+* **Version**: $getVar[version]$if[$getVar[buildRevision]!=0; (Revision $getVar[buildRevision])]
 * **Release type**: $getVar[release_type]
 * **$get[releasedatetype]**: <t:$truncate[$divide[$getVar[buildDate];1000]]:f>
   ]
@@ -16,7 +16,7 @@ module.exports = {
   $if[$getVar[pre_release_mode]==on]
   $footer[Testing is recommended;https://us-east-1.tixte.net/uploads/dodogames.wants.solutions/warningsign.png]
   $endif
-  $addButton[2;Version history;5;https://github.com/DodoGames7/Dodo-Bot/releases;false;🔎]
+  $addButton[2;Changelog history;5;https://github.com/DodoGames7/Dodo-Bot/releases;false;📜]
   $addButton[1;Other;2;versionother_$authorID;false]
   $addButton[1;Bug Fixes;2;versionbugfixes_$authorID;false]
   $addButton[1;Changes;2;versionchanges_$authorID;false]

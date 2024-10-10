@@ -5,7 +5,6 @@ info: {
  perms: "`SendMessages`"
 },
 code: `
-
 $title[8ball]
 $addField[Answer;$8ballanswers]
 $addField[Your question;$message]
@@ -14,7 +13,6 @@ $color[$getVar[embedcolor]]
 $footer[Feel free to ask me more questions!]
 $onlyIf[$message!=;Please enter a text.]
 $onlyIf[$charCount[$message]<=200;Your question can't be longer than 200 characters.]
-
 $cooldown[3s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[3s;user;8ball;$authorID];$dateStamp];1000]]:R>]
 `

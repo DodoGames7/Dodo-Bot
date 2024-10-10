@@ -1,4 +1,3 @@
-
 module.exports = [{
     name: "$clientAvatar",
     type: "aoi.js",
@@ -81,4 +80,9 @@ $let[Input;{url}]
       code: d.util.setCode(data)
     }
   }
+},{
+  name: "$excludeSpecialChars",
+  type: "aoi.js",
+  params: ["text"],
+  code: `$removeContains[{text};+;-;/;%;&;!;?;@;^;*;<;>;$;#;.;_;=;~]`
 }]
