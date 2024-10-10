@@ -19,6 +19,7 @@ $addField[\`AttachFiles\`;Required for image commands such as \`gun\`.]
 $addField[\`AddReactions\`;Required for \`suggest\` command.]
 $addField[\`ViewAuditLog\`;Required for logs such as moderation and Integration.]
 $color[$getGlobalVar[embedcolor]]
+$addActionRow
 $addButton[whynoadminperm_$authorID;Why this exists?;Secondary;❓;false]
 
 `
