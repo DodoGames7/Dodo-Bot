@@ -40,7 +40,7 @@ $interactionUpdate[
 $title[Bug Fixes]
 $description[
 * Spelling fixes to \`about\` command regarding first sentence
-* Added interal fix to the panel meant for bot owners (Revision 1)
+* Added internal fix to the panel meant for bot owners (Revision 1)
 * Fixed a non-existent placeholder being mentioned in \`leveling\` when setting message
 ]
 $if[$getGlobalVar[pre_release]==on;
