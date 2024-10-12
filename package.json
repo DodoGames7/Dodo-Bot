@@ -1,6 +1,6 @@
 {
   "name": "Dodo-Bot",
-  "version": "2.2.0-build.2170",
+  "version": "2.2.0-build.2174",
   "description": "A personal bot project made in aoi.js v6 aiming to both entertain and provide users some features to use.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "dodoGames",
   "license": "Apache-2.0",
   "dependencies": {
-    "aoi.js": "github:aoijs/aoi.js#bc74f2f",
+    "aoi.js": "github:aoijs/aoi.js#c558900",
     "@aoijs/aoi.db": "^0.0.0",
     "discord-gamecord": "^4.4.2",
     "dotenv": "^16.4.5"
