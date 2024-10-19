@@ -13,18 +13,18 @@ module.exports = {
   includebots: "on",
   version: "2.2.0",
   versionCodename: "Iron",
-  libraryversiondevcheck: "on",
-  buildStatus: "Incomplete",
-  buildDate: "1728716127199",
-  buildType: "Pre-release",
+  libraryversiondevcheck: "off",
+  buildStatus: "Complete",
+  buildDate: "1729375176533",
+  buildType: "Official Beta",
   buildBranch: "gitbuilds",
   buildRevision: "0",
-  showbuildinfo: "on",
+  showbuildinfo: "off",
   buildNumber: "2174",
   embedcolor: config.Embedcolor,
   originalembedcolor: config.Embedcolor,
   release_type: "Stable",
-  DevReleaseTypeToSet: "Pre-release",
+  DevReleaseTypeToSet: "Beta",
   prefix: config.prefix,
   originalprefix: config.prefix,
   // Feature variables
@@ -63,6 +63,9 @@ module.exports = {
   startupchannelsystem: "off",
   pre_release_mode: "on",
   botinvitationmessage: "on",
-  servermemberrequirement: "0"
+  servermemberrequirement: "0",
+  userapps: config.EnableUserAppSupport,
+  isuserappsalreadysetup: "no",
+  errorsdisabled: config.DisableAllErrors
   }
 }

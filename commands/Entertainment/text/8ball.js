@@ -7,7 +7,7 @@ info: {
 code: `
 $title[8ball]
 $addField[Answer;$8ballanswers]
-$addField[Your question;$message]
+$addField[Question;$message]
 $thumbnail[https://us-east-1.tixte.net/uploads/dodo-bot.wants.solutions/black8ball.png]
 $color[$getVar[embedcolor]]
 $footer[Feel free to ask me more questions!]

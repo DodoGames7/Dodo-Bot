@@ -37,7 +37,7 @@ $let[userInput;{userID}]
 
    $let[userInput;{userID}]
    `
-  },{
+  },{ // not used yet
     name: "$fallbackAttachment",
     type: "aoi.js",
     params: ["url", "fallbacktoUse"],
@@ -47,7 +47,7 @@ $let[FallbackInput;{fallbacktoUse}]
 $let[Input;{url}]
 
     `
-  },{
+  },{ // not used yet
     name: "$autoList",
     type: "aoi.js",
     params: ["variable", "separator"],
@@ -70,7 +70,7 @@ $let[Input;{url}]
     const [value, max, barLength = 15] = data.inside.splits;
 
     function createBar(value, max, barLength) {
-      const progress = Math.round((value / max) * barLength);
+      const progress = Math.round((Math.max(value, 0) / max) * barLength);
       const progressText = "=".repeat(progress) + "-".repeat(barLength- progress);
       return progressText;
     }
@@ -85,4 +85,22 @@ $let[Input;{url}]
   type: "aoi.js",
   params: ["text"],
   code: `$removeContains[{text};+;-;/;%;&;!;?;@;^;*;<;>;$;#;.;_;=;~]`
+},{
+  name: "$randomColor", // Exclusive to user apps for now
+  type: "djs",
+  code: async (d) => {
+    const data = d.util.aoiFunc(d);
+
+    const hex = Math.floor(Math.random() * 16777215).toString(16);
+    data.result = `#${hex.padStart(6, "0")}`;
+
+    return {
+      code: d.util.setCode(data)
+    }
+  }
+},{
+  name: "$owoify",
+  type: "aoi.js",
+  params: ["text"],
+  code: `$replaceTextWithRegex[$replaceTextWithRegex[{text};/r|l/;g;w];/R|L/;g;W]`
 }]

@@ -26,9 +26,10 @@ const client = new AoiClient({
  interpreter: config.EnableDebugMode // Whether or not to enable aoi.js debug mode
 },
 respondOnEdit: {
-    commands: config.respondOnEdit,
-    time: 20000
-    }
+ commands: config.respondOnEdit,
+ time: 20000
+},
+suppressAllErrors: config.DisableAllErrors
 });
 
 // Handlers

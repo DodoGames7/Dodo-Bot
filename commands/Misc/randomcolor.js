@@ -12,7 +12,7 @@ $color[$getObjectProperty[api;hex]]
 $thumbnail[$getObjectProperty[api;image]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for randomcolor. Please, try again later.]
-$let[jsonresponse;$jsonRequest[https://api.popcat.xyz/randomcolor;;Error]]
+$let[jsonresponse;$httpRequest[https://api.popcat.xyz/randomcolor;GET;;;dead]]
 $cooldown[5s;Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[5s;user;randomcolor;$authorID];$dateStamp];1000]]:R>]
 `

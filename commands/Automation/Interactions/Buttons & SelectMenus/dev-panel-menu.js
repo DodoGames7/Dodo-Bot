@@ -75,6 +75,10 @@ When an error occurs, information such as the server name, it's id, alongside wi
     $let[errorsystem;$advancedReplaceText[$checkCondition[$getVar[errorsystem]==on];true;Enabled;false;Disabled]]
     $let[errorchannel;$advancedReplaceText[$checkCondition[$getVar[errorchannel]==none];true;none;false;<#$getVar[errorchannel]> (\`$getVar[errorchannel]\`)]]
 
+$onlyIf[$getVar[errorsdisabled]==false;To configure this option, you need to disable \`DisableAllErrors\` from setup options first.
+{ephemeral}
+{interaction}
+]
 
     $onlyIf[$advancedTextSplit[$interactionData[customId];_;2]==$interactionData[author.id];You're not the author of this command! {ephemeral}
 {interaction}]

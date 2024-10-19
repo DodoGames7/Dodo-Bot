@@ -24,7 +24,7 @@ $endif
 $color[$getVar[embedcolor]]
 $createObject[api;$nonEscape[$get[jsonresponse]]]
 $onlyIf[$isValidObject[$nonEscape[$get[jsonresponse]]]==true;Unable to fetch data for wyr. Please, try again later.]
-$let[jsonresponse;$jsonRequest[https://api.gamecord.xyz/wyr;;Error]]
+$let[jsonresponse;$httpRequest[https://api.gamecord.xyz/wyr;GET;;;dead]]
 $suppressErrors[Unable to fetch data for wyr. Please, try again later.]
 $cooldown[4s; Slow down! Don't spam the command!
 Time remaining: <t:$truncate[$divide[$sum[$getCooldownTime[4s;user;would-you-rather;$authorID];$dateStamp];1000]]:R>]
